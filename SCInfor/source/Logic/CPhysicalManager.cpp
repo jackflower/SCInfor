@@ -19,7 +19,7 @@
 #include "../Equipment/Engine/CEngine.h"
 #include "../Equipment/Engine/FuelTank/CFuelTank.h"
 #include "../Equipment/Engine/FuelBar/CFuelBar.h"
-#include "../Equipment/Energy/CEnergy.h"
+#include "../Equipment/Energy/Energy.h"
 #include "../Equipment/Energy/EnergyTank/CEnergyTank.h"
 #include "../Equipment/Energy/Battery/CBattery.h"
 #include "../Equipment/Energy/Battery/CSolarBattery.h"
@@ -163,11 +163,11 @@ namespace logic
 		return Create<CFuelTank>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CEnergy i zwraca wskaünik na ten obiekt
-	CEnergy *CPhysicalManager::CreateEnergy(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Energy i zwraca wskaünik na ten obiekt
+	Energy *CPhysicalManager::CreateEnergy(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CEnergy created\n");
-		return Create<CEnergy>(uniqueId);
+		fprintf(stderr, "Energy created\n");
+		return Create<Energy>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CEnergyTank i zwraca wskaünik na ten obiekt

@@ -138,7 +138,7 @@
     <ClCompile Include="source\Equipment\CSwitch.cpp" />
     <ClCompile Include="source\Equipment\Energy\Battery\CBattery.cpp" />
     <ClCompile Include="source\Equipment\Energy\Battery\CSolarBattery.cpp" />
-    <ClCompile Include="source\Equipment\Energy\CEnergy.cpp" />
+    <ClCompile Include="source\Equipment\Energy\Energy.cpp" />
     <ClCompile Include="source\Equipment\Energy\CFixedColor.cpp" />
     <ClCompile Include="source\Equipment\Energy\EnergyTank\CEnergyTank.cpp" />
     <ClCompile Include="source\Equipment\Engine\CEngine.cpp" />
@@ -348,7 +348,7 @@
     <ClInclude Include="source\Equipment\Energy\Battery\CBattery.h" />
     <ClInclude Include="source\Equipment\Energy\Battery\CSolarBattery.h" />
     <ClInclude Include="source\Equipment\Energy\Battery\EBatteryState.h" />
-    <ClInclude Include="source\Equipment\Energy\CEnergy.h" />
+    <ClInclude Include="source\Equipment\Energy\Energy.h" />
     <ClInclude Include="source\Equipment\Energy\CFixedColor.h" />
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h" />
     <ClInclude Include="source\Equipment\Energy\EnergyTank\CEnergyTank.h" />

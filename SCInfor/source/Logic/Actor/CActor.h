@@ -41,7 +41,7 @@ namespace rendering
 namespace equipment
 {
 	class CEngine;
-	class CEnergy;
+	class Energy;
 	class CAirconditioning;
 	class CVentilator;
 	namespace weapon
@@ -324,16 +324,16 @@ namespace logic
 		void setGunTransformed(CTransformation & transformation);
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CEnergy
+		///Metoda zwraca wskaünik na obiekt klasy Energy
 		///
-		CEnergy* GetEnergy();
+		Energy* GetEnergy();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CEnergy
+		///Metoda ustawia wskaünik na obiekt klasy Energy
 		///
-		///@param *engine - wskaünik na obiekt klasy CEnergy
+		///@param *engine - wskaünik na obiekt klasy Energy
 		///
-		void SetEnergy(CEnergy* energy);
+		void SetEnergy(Energy* energy);
 
 		///
 		///Metoda zwraca wskaünik na obiekt klasy CAirconditioning
@@ -376,7 +376,7 @@ namespace logic
 		///
 		///@param dt - czas
 		///
-		virtual void UpdateAnimations(float dt);
+		virtual void updateAnimations(float dt);
 
 		///
 		///Metoda zwraca opakowanie stanÛw obiektu
@@ -459,7 +459,7 @@ namespace logic
 		//metoda aktualizuje funkcjonalnoúÊ CEngine
 		void updateEngine(float dt);
 
-		//metoda aktualizuje funkcjonalnoúÊ CEnergy
+		//metoda aktualizuje funkcjonalnoúÊ Energy
 		void updateEnergy(float dt);
 		
 		//metoda aktualizuje funkcjonalnoúÊ CAirconditioning

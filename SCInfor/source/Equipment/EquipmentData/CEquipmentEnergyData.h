@@ -14,7 +14,7 @@
 ///
 namespace equipment
 {
-	class CEnergy;
+	class Energy;
 }
 
 using namespace equipment;
@@ -53,20 +53,20 @@ namespace equipmentdata
 		const std::string GetType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CEnergy
+		///Metoda zwraca wskaünik na obiekt klasy Energy
 		///
-		CEnergy* getEnergy();
+		Energy* getEnergy();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CEnergy
+		///Metoda ustawia wskaünik na obiekt klasy Energy
 		///
-		///@param *energy - wskaünik na obiekt klasy CEnergy
+		///@param *energy - wskaünik na obiekt klasy Energy
 		///
-		void setEnergy(CEnergy* energy);
+		void setEnergy(Energy* energy);
 
 	private:
 
-		CEnergy*	p_energy;	//wskaünik na klasÍ CEnergy - energia
+		Energy*	p_energy;	//wskaünik na klasÍ Energy - energia
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_ENERGY_DATA_JACK

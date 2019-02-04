@@ -129,15 +129,15 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CEngine
-	CEnergy* CEnergyTemplate::Create(std::wstring id)
+	Energy* CEnergyTemplate::Create(std::wstring id)
 	{
-		CEnergy* energy = gPhysicalManager.CreateEnergy(id);
+		Energy* energy = gPhysicalManager.CreateEnergy(id);
 		Fill(energy);
 		return energy;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CEnergyTemplate::Fill(CEnergy *p_energy)
+	void CEnergyTemplate::Fill(Energy *p_energy)
 	{
 		if(p_energy)
 		{
@@ -158,16 +158,16 @@ namespace factory
 			}
 
 			//pola tej klasy wzorca
-			p_energy->SetEnergyName(m_templ_energy_name);
-			p_energy->SetUseEnergyTank(m_templ_energytank_data.getUseEquipment());
+			p_energy->setEnergyName(m_templ_energy_name);
+			p_energy->setUseEnergyTank(m_templ_energytank_data.getUseEquipment());
 			p_energy->setEnergyTankTransformed(m_templ_energytank_data.getTransformed());
-			p_energy->SetPercentageReserveEnergy(m_templ_percentage_reserve_energy);
-			p_energy->SetEnergyTimeDelayed(m_templ_energy_time_delayed);
-			p_energy->SetEnergyEmptyMessage(m_templ_energy_empty_message);
-			p_energy->SetEnergyRegeneration(m_templ_energy_regeneration);
-			p_energy->SetEnergyRegenerationTime(m_templ_regeneration_time);
-			p_energy->SetEnergyRotationSpeed(m_templ_energy_rotation_speed);
-			p_energy->SetEnergyRotationSpeed(m_templ_energy_rotation_speed);
+			p_energy->setPercentageReserveEnergy(m_templ_percentage_reserve_energy);
+			p_energy->setEnergyTimeDelayed(m_templ_energy_time_delayed);
+			p_energy->setEnergyEmptyMessage(m_templ_energy_empty_message);
+			p_energy->setEnergyRegeneration(m_templ_energy_regeneration);
+			p_energy->setEnergyRegenerationTime(m_templ_regeneration_time);
+			p_energy->setEnergyRotationSpeed(m_templ_energy_rotation_speed);
+			p_energy->setEnergyRotationSpeed(m_templ_energy_rotation_speed);
 			p_energy->setUseBattery(m_templ_battery_data.getUseEquipment());
 			p_energy->setCriticalDuration(m_templ_critical_duration);
 			p_energy->setDamageDuration(m_templ_damage_duration);
@@ -178,11 +178,11 @@ namespace factory
 				if(p_energy)
 				{
 					//pobieramy sk³adow¹ fueltank i wzorzec wype³nia wskaŸnik danymi
-					p_energy->SetEnergyTank(p_templ_energy_tank->Create(L""));
+					p_energy->setEnergyTank(p_templ_energy_tank->Create(L""));
 					//przekazanie wskaŸnikowi na klasê CEnergyTank informacji o wzorcu
-					p_energy->GetEnergyTank()->SetTemplate(p_templ_energy_tank);
+					p_energy->getEnergyTank()->SetTemplate(p_templ_energy_tank);
 					//decorator
-					p_energy->GetEnergyTank()->setSmoothing(true);
+					p_energy->getEnergyTank()->setSmoothing(true);
 				}
 			}
 

@@ -142,7 +142,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-	void CWindTurbine::UpdateAnimations(float dt)
+	void CWindTurbine::updateAnimations(float dt)
 	{
 
 		switch(m_turbine_state)
@@ -238,7 +238,7 @@ namespace equipment
 		if(m_unit_controller.getState())
 		{
 			updateTurbineState(dt);
-			UpdateAnimations(dt);
+			updateAnimations(dt);
 		}
 	}
 

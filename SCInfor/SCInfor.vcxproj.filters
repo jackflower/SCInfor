@@ -390,9 +390,6 @@
     <ClCompile Include="source\Equipment\CSwitch.cpp">
       <Filter>source\Equipment</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\Energy\CEnergy.cpp">
-      <Filter>source\Equipment\Energy</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\Energy\CFixedColor.cpp">
       <Filter>source\Equipment\Energy</Filter>
     </ClCompile>
@@ -996,6 +993,9 @@
     <ClCompile Include="source\Game\GameProperties.cpp">
       <Filter>source\Game</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\Energy.cpp">
+      <Filter>source\Equipment\Energy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1005,9 +1005,6 @@
   <ItemGroup>
     <ClInclude Include="source\Equipment\CSwitch.h">
       <Filter>source\Equipment</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Energy\CEnergy.h">
-      <Filter>source\Equipment\Energy</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Energy\CFixedColor.h">
       <Filter>source\Equipment\Energy</Filter>
@@ -1749,6 +1746,9 @@
     </ClInclude>
     <ClInclude Include="source\Game\GameProperties.h">
       <Filter>source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\Energy.h">
+      <Filter>source\Equipment\Energy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -178,7 +178,7 @@ namespace factory
 			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ energy
 			std::string energy_filename_tmp = xml.GetString(node, "energy_filename");
 			
-			//emitery dla obiektu klasy CEnergy
+			//emitery dla obiektu klasy Energy
 			m_templ_energy_data.setEmiter(xml.GetFloat(node, "energy_emiter_x"), xml.GetFloat(node, "energy_emiter_y"));
 			
 			if(m_templ_energy_data.getUseEquipment())
@@ -320,14 +320,14 @@ namespace factory
 			//jeœli obiekt posiada energiê (akumulator) energy
 			if(m_templ_energy_data.getUseEquipment())
 			{
-				//emitery dla obiektu klasy CEnergy
+				//emitery dla obiektu klasy Energy
 				actor->setEnergyTransformed(m_templ_energy_data.getTransformed());
 
 				if(p_templ_energy)
 				{
 					//pobieramy sk³adow¹ energy i wzorzec wype³nia wskaŸnik danymi
 					actor->SetEnergy(p_templ_energy->Create(L""));
-					//przekazanie wskaŸnikowi na klasê CEnergy informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê Energy informacji o wzorcu
 					actor->GetEnergy()->SetTemplate(p_templ_energy);
 					//decorator
 					actor->GetEnergy()->setSmoothing(true);

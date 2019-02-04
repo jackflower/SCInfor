@@ -125,7 +125,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-		void CCommunication::UpdateAnimations(float dt)
+		void CCommunication::updateAnimations(float dt)
 		{
 			//to do...
 			switch(e_communication_state)

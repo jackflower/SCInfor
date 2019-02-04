@@ -58,7 +58,7 @@ namespace equipment
 {
 	class CEngine;
 	class CFuelTank;
-	class CEnergy;
+	class Energy;
 	class CEnergyTank;
 	class CFuelBar;
 	class CAirconditioning;
@@ -184,11 +184,11 @@ namespace logic
 		CFuelTank *CreateFuelTank(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CEnergy i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Energy i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CEnergy *CreateEnergy(const std::wstring &uniqueId = L"");
+		Energy *CreateEnergy(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CEnergyTank i zwraca wskaünik na ten obiekt

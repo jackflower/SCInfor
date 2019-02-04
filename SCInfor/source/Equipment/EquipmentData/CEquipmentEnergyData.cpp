@@ -5,7 +5,7 @@
 //
 
 #include "CEquipmentEnergyData.h"
-#include "../Energy/CEnergy.h"
+#include "../Energy/Energy.h"
 #include "../../Logic/CPhysicalManager.h"
 
 namespace equipmentdata
@@ -43,14 +43,14 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CEngine
-	CEnergy* CEquipmentEnergyData::getEnergy()
+	//Metoda zwraca wskaünik na obiekt klasy Energy
+	Energy* CEquipmentEnergyData::getEnergy()
 	{
 		return p_energy;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CEngine
-	void CEquipmentEnergyData::setEnergy(CEnergy* energy)
+	//Metoda ustawia wskaünik na obiekt klasy Energy
+	void CEquipmentEnergyData::setEnergy(Energy* energy)
 	{
 		p_energy = energy;
 	}

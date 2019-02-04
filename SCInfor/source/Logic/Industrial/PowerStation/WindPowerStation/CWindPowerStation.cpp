@@ -168,7 +168,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-		void CWindPowerStation::UpdateAnimations(float dt)
+		void CWindPowerStation::updateAnimations(float dt)
 		{
 			switch(m_windpower_station_state)
 			{
@@ -226,7 +226,7 @@ namespace logic
 			if(m_unit_controller.getState())
 			{
 				updateWindPowerState(dt);
-				UpdateAnimations(dt);
+				updateAnimations(dt);
 			}
 
 			//aktualizuja po³o¿enia turbiny wzglêdem w³aœciciela

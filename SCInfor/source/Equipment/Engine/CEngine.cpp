@@ -251,7 +251,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
-	void CEngine::UpdateAnimations(float dt)
+	void CEngine::updateAnimations(float dt)
 	{
 		switch(m_engine_state)
 		{
@@ -357,7 +357,7 @@ namespace equipment
 			}
 
 			updateEngineState(dt);	//aktualizuja stanu obiektu
-			UpdateAnimations(dt);	//aktualizacja animacji (stany engine)
+			updateAnimations(dt);	//aktualizacja animacji (stany engine)
 		}
 	}
 

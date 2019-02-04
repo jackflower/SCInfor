@@ -396,7 +396,7 @@ namespace equipment
 		}
 
 		//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-		void CGun::UpdateAnimations(float dt)
+		void CGun::updateAnimations(float dt)
 		{
 			switch (m_gun_state)
 			{
@@ -502,7 +502,7 @@ namespace equipment
 			updateGunState(dt);
 
 			//aktualizacja animacji
-			UpdateAnimations(dt);
+			updateAnimations(dt);
 
 			//c  h  a  o  s  - testy
 			//

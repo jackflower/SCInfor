@@ -11,7 +11,7 @@
 #include "../../Rendering/Animations/CAnimationState.h"
 #include "../../Rendering/Animations/CNameAnimPairTranslator.h"
 #include "../../Equipment/Engine/CEngine.h"
-#include "../../Equipment/Energy/CEnergy.h"
+#include "../../Equipment/Energy/Energy.h"
 #include "../../Equipment/Thermodynamics/Airconditioning/CAirconditioning.h"
 #include "../../Equipment/Thermodynamics/Ventilator/CVentilator.h"
 #include "../../Equipment/Weapon/Gun/CGun.h"
@@ -300,14 +300,14 @@ namespace logic
 		m_gun_data.setTransformed(transformation);
 	}
 
-	//Metoda zwraca wskaŸnik na obiekt klasy CEnergy
-	CEnergy* CActor::GetEnergy()
+	//Metoda zwraca wskaŸnik na obiekt klasy Energy
+	Energy* CActor::GetEnergy()
 	{
 		return m_energy_data.getEnergy();
 	}
 
-	//Metoda ustawia wskaŸnik na obiekt klasy CEnergy
-	void CActor::SetEnergy(CEnergy* energy)
+	//Metoda ustawia wskaŸnik na obiekt klasy Energy
+	void CActor::SetEnergy(Energy* energy)
 	{
 		m_energy_data.setEnergy(energy);
 	}
@@ -350,7 +350,7 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-	void CActor::UpdateAnimations(float dt)
+	void CActor::updateAnimations(float dt)
 	{
 		//aktualizacja aktora w zale¿noœci od EActorState
 		//(ten plik bêdzie dopiero utworzony)
@@ -421,7 +421,7 @@ namespace logic
 		CPhysical::Update(dt);		
 
 		//aktualizacja animacji
-		UpdateAnimations(dt);
+		updateAnimations(dt);
 
 		CActor::updateComponents(dt);
 
@@ -480,7 +480,7 @@ namespace logic
 		m_engine_data.Transform(this, m_engine_data.getEngine());
 	}
 
-	//metoda aktualizuje funkcjonalnoœæ CEnergy
+	//metoda aktualizuje funkcjonalnoœæ Energy
 	void CActor::updateEnergy(float dt)
 	{
 		//transformacja
@@ -494,8 +494,8 @@ namespace logic
 		{
 			if(m_energy_data.getEnergy())//modu³ klimatyzatora zu¿ywa energiê
 			{
-				if(m_energy_data.getEnergy()->GetEnergyTank()->GetEnergy())//w akumulatorze jest energia
-					m_energy_data.getEnergy()->GetEnergyTank()->SetEnergy(m_energy_data.getEnergy()->GetEnergyTank()->GetEnergy() - m_airconditiong_data.getAirconditioning()->getEnergyConsumption());
+				if(m_energy_data.getEnergy()->getEnergyTank()->GetEnergy())//w akumulatorze jest energia
+					m_energy_data.getEnergy()->getEnergyTank()->SetEnergy(m_energy_data.getEnergy()->getEnergyTank()->GetEnergy() - m_airconditiong_data.getAirconditioning()->getEnergyConsumption());
 			}
 		}
 
@@ -510,8 +510,8 @@ namespace logic
 		{
 			if(m_energy_data.getEnergy())//modu³ wentylatora zu¿ywa energiê
 			{
-				if(m_energy_data.getEnergy()->GetEnergyTank()->GetEnergy())//w akumulatorze jest energia
-					m_energy_data.getEnergy()->GetEnergyTank()->SetEnergy(m_energy_data.getEnergy()->GetEnergyTank()->GetEnergy() - m_ventilator_data.getVentilator()->getEnergyConsumptionFactor());
+				if(m_energy_data.getEnergy()->getEnergyTank()->GetEnergy())//w akumulatorze jest energia
+					m_energy_data.getEnergy()->getEnergyTank()->SetEnergy(m_energy_data.getEnergy()->getEnergyTank()->GetEnergy() - m_ventilator_data.getVentilator()->getEnergyConsumptionFactor());
 			}
 		}
 

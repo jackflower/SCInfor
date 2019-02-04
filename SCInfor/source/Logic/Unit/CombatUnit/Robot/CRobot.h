@@ -74,7 +74,7 @@ namespace logic
 			///
 			///@param dt - czas
 			///
-			virtual void UpdateAnimations(float dt);
+			virtual void updateAnimations(float dt);
 
 			///
 			///Wirtualan metoda zabija obiekt klasy CActor i wywo³uje odpowiednie czynnoœci z tym zwi¹zane

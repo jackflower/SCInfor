@@ -68,7 +68,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
-		void CRobot::UpdateAnimations(float dt)
+		void CRobot::updateAnimations(float dt)
 		{
 			switch (m_robot_state)
 			{
@@ -189,7 +189,7 @@ namespace logic
 			//CActor::Update(dt);
 
 			updateState(dt);
-			UpdateAnimations(dt);
+			updateAnimations(dt);
 			CPhysical::UpdateShadow(dt);
 			CActor::updateComponents(dt);
 		}

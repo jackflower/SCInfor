@@ -9,7 +9,7 @@
 
 #include "EnergyTankFactory/CEnergyTankTemplate.h"
 #include "BatteryFactory/CBatteryTemplate.h"
-#include "../../../Equipment/Energy/CEnergy.h"
+#include "../../../Equipment/Energy/Energy.h"
 #include "../../../Equipment/EquipmentData/CEquipmentEnergyTankData.h"
 #include "../../../Equipment/Energy/Battery/CBattery.h"
 #include "../../../Equipment/EquipmentData/CEquipmentBatteryData.h"
@@ -62,18 +62,18 @@ namespace factory
 		virtual bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CEnergy
+		///Metoda tworzy obiekt klasy Energy
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CEnergy* Create(std::wstring id = L"");
+		Energy* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_energy - wskaünik na obiekt klasy CEnergy
+		///@param *p_energy - wskaünik na obiekt klasy Energy
 		///
-		virtual void Fill(CEnergy *p_energy);
+		virtual void Fill(Energy *p_energy);
 
 
 		//metody  p o m o c n i c z e

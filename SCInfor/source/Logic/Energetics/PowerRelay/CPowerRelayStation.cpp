@@ -233,7 +233,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-		void CPowerRelayStation::UpdateAnimations(float dt)
+		void CPowerRelayStation::updateAnimations(float dt)
 		{
 			switch(m_powerrelaystation_state)
 			{
@@ -309,7 +309,7 @@ namespace logic
 				{
 					updatePowerRelayStationBehavior(dt);//obiekt siê "rozgl¹da"
 					updatePowerRelayStationState(dt);	//aktualizacja stanów
-					UpdateAnimations(dt);				//aktualizacja animacji
+					updateAnimations(dt);				//aktualizacja animacji
 				}
 			}
 		}

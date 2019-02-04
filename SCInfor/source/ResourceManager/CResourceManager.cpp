@@ -432,7 +432,7 @@ namespace resource
 		//		- CFuelTankTemplate						->tworzy->	CFuelTank
 		//		- CEnergyTankTemplate					->tworzy->	CEnergyTank
 		//		- CFuelBarTemplate						->tworzy->	CFuelBar
-		//		- CEnergyTemplate						->tworzy->	CEnergy
+		//		- CEnergyTemplate						->tworzy->	Energy
 		//		- CBatteryTemplate						->tworzy->	CBattery
 		//		- CSolarBatteryTemplate					->tworzy->	CSolarBattery
 		//		- CAirconditioningTemplate				->tworzy->	CAirconditioning

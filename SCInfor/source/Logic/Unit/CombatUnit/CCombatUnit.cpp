@@ -37,7 +37,7 @@ namespace logic
 		}
 
 		////Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
-		//void CCombatUnit::UpdateAnimations(float dt)
+		//void CCombatUnit::updateAnimations(float dt)
 		//{
 		//}
 

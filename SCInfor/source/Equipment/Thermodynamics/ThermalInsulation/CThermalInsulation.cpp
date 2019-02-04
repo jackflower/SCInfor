@@ -145,7 +145,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
-	void CThermalInsulation::UpdateAnimations(float dt)
+	void CThermalInsulation::updateAnimations(float dt)
 	{
 		switch (m_thermalinsulation_state)
 		{

@@ -1,7 +1,7 @@
-//  ____________________________________
-// | CEnergy.h - class definition       |
-// | Jack Flower May 2014               |
-// |____________________________________|
+//  __________________________________________
+// | CSolarBattery.h - class definition       |
+// | Jack Flower May 2014                     |
+// |__________________________________________|
 //
 
 #ifndef H_SOLAR_BATTERY_JACK

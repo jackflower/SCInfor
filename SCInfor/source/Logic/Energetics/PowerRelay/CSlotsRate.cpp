@@ -57,7 +57,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-		void CSlotsRate::UpdateAnimations(float dt)
+		void CSlotsRate::updateAnimations(float dt)
 		{
 			switch (m_slot_counter)
 			{
@@ -117,7 +117,7 @@ namespace logic
 			//aktualizacja shadow engine
 			CPhysical::UpdateShadow(dt);
 
-			UpdateAnimations(dt);
+			updateAnimations(dt);
 		}
 	}//namespace energetics
 }//namespace logic

@@ -10,7 +10,7 @@
 namespace logic
 {
 	///
-	///Wyliczenie stanów dla obiektu CEnergy
+	///Wyliczenie stanów dla obiektu CWindTurbine
 	///
 	enum ETurbineState
 	{

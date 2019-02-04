@@ -83,7 +83,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (light on/off, run, etc...)
-	void CLightingEquipment::UpdateAnimations(float dt)
+	void CLightingEquipment::updateAnimations(float dt)
 	{
 		switch(m_lighting_equipment_state)
 		{
@@ -146,7 +146,7 @@ namespace equipment
 		//jeœli urz¹dzenie jest w³¹czone
 		if(m_unit_controller.getState())
 		{
-			UpdateAnimations(dt);	//aktualizacja animacji (stany energy)
+			updateAnimations(dt);	//aktualizacja animacji (stany energy)
 		}
 	}
 

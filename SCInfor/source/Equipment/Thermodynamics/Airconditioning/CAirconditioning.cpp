@@ -210,7 +210,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
-	void CAirconditioning::UpdateAnimations(float dt)
+	void CAirconditioning::updateAnimations(float dt)
 	{
 		switch (m_airconditioning_state)
 		{

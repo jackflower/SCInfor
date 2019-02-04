@@ -10,7 +10,7 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stanów dla obiektu CEnergy
+	///Wyliczenie stanów dla obiektu Energy
 	///
 	enum EEnergyState
 	{

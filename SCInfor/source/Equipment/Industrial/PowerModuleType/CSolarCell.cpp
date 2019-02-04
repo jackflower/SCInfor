@@ -104,7 +104,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-	void CSolarCell::UpdateAnimations(float dt)
+	void CSolarCell::updateAnimations(float dt)
 	{
 
 		switch(m_solarcell_state)
@@ -159,7 +159,7 @@ namespace equipment
 		if(m_unit_controller.getState())
 		{
 			updateSolarCellState(dt);
-			UpdateAnimations(dt);
+			updateAnimations(dt);
 		}
 	}
 

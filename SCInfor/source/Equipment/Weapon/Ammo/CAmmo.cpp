@@ -214,7 +214,7 @@ namespace equipment
 		}
 
 		//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-		void CAmmo::UpdateAnimations(float dt)
+		void CAmmo::updateAnimations(float dt)
 		{
 			switch (m_ammo_state)
 			{
@@ -280,7 +280,7 @@ namespace equipment
 			//future - warunek dla stanu AMMO_DAMAGE (ju¿ siê pisze - chaos/zaciêcie jêzyka spustowego)
 		
 			//aktualizacja animacji
-			UpdateAnimations(dt);
+			updateAnimations(dt);
 		}
 	}//namespace weapon
 }//namespace equipment

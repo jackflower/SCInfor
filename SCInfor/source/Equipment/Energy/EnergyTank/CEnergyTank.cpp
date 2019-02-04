@@ -130,7 +130,7 @@ namespace equipment
 	}
 
 	//CEnergyTank metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
-	void CEnergyTank::UpdateAnimations(float dt)
+	void CEnergyTank::updateAnimations(float dt)
 	{
 		switch(m_energytank_state)
 		{
@@ -193,7 +193,7 @@ namespace equipment
 				m_energy_tank_rotor_speed = (m_energy/m_energy_tank_capacity) * m_energy_tank_rotation_speed;
 
 			RotateHead(m_energy_tank_rotor_speed * dt);
-			UpdateAnimations(dt);
+			updateAnimations(dt);
 		}
 	}
 }//namespace equipment

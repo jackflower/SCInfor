@@ -114,7 +114,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
-	void CFuelTank::UpdateAnimations(float dt)
+	void CFuelTank::updateAnimations(float dt)
 	{
 		switch (m_fueltank_state)
 		{
@@ -171,6 +171,6 @@ namespace equipment
 		UpdateShadow(dt);	//aktualizacja shadow engine
 
 		if (m_unit_controller.getState())
-			UpdateAnimations(dt);
+			updateAnimations(dt);
 	}
 }//namespace equipment

@@ -199,7 +199,7 @@ namespace equipment
 		///
 		///@param dt - czas
 		///
-		virtual void UpdateAnimations(float dt);
+		virtual void updateAnimations(float dt);
 
 		///
 		///Wirtualna metoda aktualizuje logikê obiektu

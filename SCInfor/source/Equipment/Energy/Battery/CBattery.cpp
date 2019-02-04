@@ -1,7 +1,7 @@
-//  ____________________________________
-// | CEnergy.cpp - class implementation |
-// | Jack Flower May 2014               |
-// |____________________________________|
+//  _____________________________________
+// | CBattery.cpp - class implementation |
+// | Jack Flower May 2014                |
+// |_____________________________________|
 //
 
 #include "CBattery.h"

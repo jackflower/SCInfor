@@ -104,7 +104,7 @@ namespace equipment
 		///
 		///@param dt - czas
 		///
-		virtual void UpdateAnimations(float dt);
+		virtual void updateAnimations(float dt);
 
 		///
 		///Metoda zwraca referencjcê na modu³ sterowania

@@ -51,7 +51,7 @@ namespace logic
 			if (m_unit_controller.getState())
 			{
 				updateWindPowerStateMultipled(dt);
-				UpdateAnimations(dt);
+				updateAnimations(dt);
 			}
 
 			//jeœli flaga jest ustawiona na true - obraca siê modu³ - korpus (HEAD)
