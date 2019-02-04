@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<root type = "gun">
+
+	<!--CPhysical-->
+	
+	<!--nazwa obiektu-->
+	<genre genre = "Gun Delta" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "45.254834"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "64.0"
+		rect_size_y = "64.0"
+		rect_size_body_x = "64.0"
+		rect_size_body_y = "64.0"
+		rect_size_head_x = "64.0"
+		rect_size_head_y = "64.0"		
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgledem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body  = "true"
+		use_shadow_body       = "true"
+		use_displayable_head  = "true"
+		use_shadow_head       = "true"
+	/>
+	
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+	
+	<!--CActor-->
+	
+	<!--dane techniczne-->
+	<technical_data
+		mass        = "8.20"
+		speed       = "0"
+		movabled    = "false"
+	/>
+		
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajacej zdefiniowane typy animacji, class CAnimSet-->
+	<animset name_animset = "animset_one">
+		<!--body-->
+		<anim name = "anim_gun_delta_body_default"		type = "gun_body_default"		/>
+		<anim name = "anim_gun_delta_body_shoot"		type = "gun_body_shoot"			/>
+		<anim name = "anim_gun_delta_body_ammo_loading"	type = "gun_body_ammo_loading"	/>
+		<anim name = "anim_gun_delta_body_ammo_empty"	type = "gun_body_ammo_empty"	/>
+		<anim name = "anim_gun_delta_body_damage"		type = "gun_body_damage"		/>
+		<anim name = "anim_gun_delta_body_service"		type = "gun_body_service"		/>
+		<anim name = "anim_gun_delta_body_death"		type = "gun_body_death"		    />
+		<!--head-->
+		<anim name = "anim_gun_delta_head_default"		type = "gun_head_default"		/>
+		<anim name = "anim_gun_delta_head_shoot"		type = "gun_head_shoot"			/>
+		<anim name = "anim_gun_delta_head_ammo_loading"	type = "gun_head_ammo_loading"	/>
+		<anim name = "anim_gun_delta_head_ammo_empty"	type = "gun_head_ammo_empty"	/>
+		<anim name = "anim_gun_delta_head_damage"		type = "gun_head_damage"		/>
+		<anim name = "anim_gun_delta_head_service"		type = "gun_head_service"		/>		
+		<anim name = "anim_gun_delta_head_death"		type = "gun_head_death"		    />
+	</animset>
+	
+	<animset name_animset = "animset_two">
+		<!--body-->
+		<anim name = "anim_gun_delta_body_default"		type = "gun_body_default"		/>
+		<anim name = "anim_gun_delta_body_shoot"		type = "gun_body_shoot"			/>
+		<anim name = "anim_gun_delta_body_ammo_loading"	type = "gun_body_ammo_loading"	/>
+		<anim name = "anim_gun_delta_body_ammo_empty"	type = "gun_body_ammo_empty"	/>
+		<anim name = "anim_gun_delta_body_damage"		type = "gun_body_damage"		/>
+		<anim name = "anim_gun_delta_body_service"		type = "gun_body_service"		/>
+		<anim name = "anim_gun_delta_body_death"		type = "gun_body_death"		    />
+		<!--head-->
+		<anim name = "anim_gun_delta_head_default"		type = "gun_head_default"		/>
+		<anim name = "anim_gun_delta_head_shoot"		type = "gun_head_shoot"			/>
+		<anim name = "anim_gun_delta_head_ammo_loading"	type = "gun_head_ammo_loading"	/>
+		<anim name = "anim_gun_delta_head_ammo_empty"	type = "gun_head_ammo_empty"	/>
+		<anim name = "anim_gun_delta_head_damage"		type = "gun_head_damage"		/>
+		<anim name = "anim_gun_delta_head_service"		type = "gun_head_service"		/>		
+		<anim name = "anim_gun_delta_head_death"		type = "gun_head_death"		    />
+	</animset>
+	
+	<!--CGun-->
+	<!--bool flaga, czy obiekt posiada magazynek na amunicje CAmmo/CAmmoTemplate-->
+	<!--std::string nazwa pliku z danymi dla obiektu CAmmo/CAmmoTemplate-->
+	<!--poprawka pozycji reprezentacji graficznej amunicji wzgledem wlasciciela - x-->
+	<!--poprawka pozycji reprezentacji graficznej amunicji wzgledem wlasciciela - y-->
+	<!--float czas potrzebny do przeladowania amunicji-->
+	<!--float czas trwania strzalu-->
+	<!--float zasieg strzalu-->
+	<!--float predkosc pocisku - dzialo decyduje-->
+	<!--int ilosc luf, ktore posiada dzialo-->
+	<!--float apogeum pulapu - apogeum wysokosci jaka moze osiagnac pocisk-->
+	<!--sf::Vector2f::x  polozenia emitera eksplozji wystrzalu wzgledem lufy-->
+	<!--sf::Vector2f::y  polozenia emitera eksplozji wystrzalu wzgledem lufy-->
+	<!--float czas opoznienia komunikatu uzupelnienia amunicji - jako dana wejsciowa dla sf::Randomizer-->
+	<!--unsigned licznik uszkodzen, po ktorym nastepuje stan serwisowy->
+	<!--CDamage-->
+	<!--std::pair<float, float> przedział w zakresie którego definiujemy zacięcie działa <0..1>-->
+	<!--float czas trwania uszkodzenia-->
+	<gun_data
+		use_ammo = "true"
+		ammo_filename = "../data/xml_data/equipment/weapon/ammo_delta.xml"
+		ammo_emiter_x = "-50.0"
+		ammo_emiter_y = "-34.0"		
+		time_ammo_load_delay = "0.25"
+		time_shot = "0.2"
+		range_shot= "100"
+		bullet_speed = "150"
+		barrel_count ="1"
+		target_altitude ="0"
+		explosion_emiter_x ="0"
+		explosion_emiter_y ="0"
+		ammo_time_delayed = "0"
+		limit_amount_damage = "10"
+		reliability_range_first = "0.1612"
+		reliability_range_second = "0.1648"
+		duration_damage = "0.25"
+	/>
+	<!--0.1648-0.1612 = 0.0036-->
+</root>

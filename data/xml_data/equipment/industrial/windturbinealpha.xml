@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<root type = "windturbine">
+
+	<!--CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Turbine Alpha wind power module" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "22.627417"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->
+	<rect_size
+		rect_size_x = "32.0"
+		rect_size_y = "32.0"
+		rect_size_body_x = "32.0"
+		rect_size_body_y = "32.0"
+		rect_size_head_x = "32.0"
+		rect_size_head_y = "32.0"				
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgledem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body  = "true"
+		use_shadow_body       = "false"
+		use_displayable_head  = "true"
+		use_shadow_head       = "true"
+	/>
+
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+	
+	<!--CActor-->
+	
+	<!--dane techniczne-->
+	<technical_data
+		mass        = "125"
+		speed       = "0"
+		movabled    = "false"
+	/>
+
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowqanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajcej zdefiniowane typy animacji, class CAnimSet-->
+	<animset name_animset = "animset_turbine_one">
+		<!--body-->
+		<anim name = "anim_windturbine_alpha_body_default"		type = "windturbine_body_default"		/>
+		<anim name = "anim_windturbine_alpha_body_damage"		type = "windturbine_body_damage"		/>
+		<anim name = "anim_windturbine_alpha_body_death"		type = "windturbine_body_death"			/>
+		<!--head-->
+		<anim name = "anim_windturbine_alpha_head_default"		type = "windturbine_head_default"		/>
+		<anim name = "anim_windturbine_alpha_head_cargo_open"	type = "windturbine_head_cargo_open"	/>
+		<anim name = "anim_windturbine_alpha_head_cargo_close"	type = "windturbine_head_cargo_close"	/>
+		<anim name = "anim_windturbine_alpha_head_update_energy"type = "windturbine_head_update_energy"	/>
+		<anim name = "anim_windturbine_alpha_head_damage"		type = "windturbine_head_damage"		/>
+		<anim name = "anim_windturbine_alpha_head_death"		type = "windturbine_head_death"			/>
+	</animset>
+
+	<animset name_animset = "animset_turbine_two">
+		<!--body-->
+		<anim name = "anim_windturbine_alpha_body_default"		type = "windturbine_body_default"		/>
+		<anim name = "anim_windturbine_alpha_body_damage"		type = "windturbine_body_damage"		/>
+		<anim name = "anim_windturbine_alpha_body_death"		type = "windturbine_body_death"			/>
+		<!--head-->
+		<anim name = "anim_windturbine_alpha_head_default"		type = "windturbine_head_default"		/>
+		<anim name = "anim_windturbine_alpha_head_cargo_open"	type = "windturbine_head_cargo_open"	/>
+		<anim name = "anim_windturbine_alpha_head_cargo_close"	type = "windturbine_head_cargo_close"	/>
+		<anim name = "anim_windturbine_alpha_head_update_energy"type = "windturbine_head_update_energy"	/>
+		<anim name = "anim_windturbine_alpha_head_damage"		type = "windturbine_head_damage"		/>
+		<anim name = "anim_windturbine_alpha_head_death"		type = "windturbine_head_death"			/>
+	</animset>
+
+	<!--CWindTurbine-->
+
+	<!--std::string nazwa turbiny-->
+	<!--float predkosc wirowania turbiny-->
+	<!--float przekladnia - przelozenie predkosci obrotowej-->
+	<!--float energia, ktora moze zostac zgromadzona-->
+	<!--float moc turbiny (wartosc energii dodawana przy kazdym pelnym obrocie)-->
+	<!--float procentowy wspolczynnik aktywacji turbiny-->
+	<!--float czas trwania stanu, po zgromadzeniu pelnej energii-->
+
+	<turbine_config
+		turbine_name			= "Wind turbine Alpha default"
+		speed_rotor				= "240"
+		speed_transmission		= "1"
+		energy_capacitor		= "100"
+		power_turbine			= "0.025"
+		percentage_activation	= "0.82"
+		energy_full_duration	= "1.125"
+	/>
+
+</root>

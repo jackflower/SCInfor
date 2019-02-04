@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<root type = "groundwork">
+
+	<!-- CMapPhysical -->
+	<!-- nazwa kodu dla typu podloza (nazwa w tablicy 2D - zapisanej w pliku xml) -->
+	<!-- typ graficznej reprezentacji obiektu -->
+	<!-- nazwa dla tektury -->
+	<!-- szerokosc tekstury w pikselach -->
+	<!-- wysokosc tekstury w pikselach -->
+	<!-- kolor obiektu - skladowa red -->
+	<!-- kolor obiektu - skladowa green -->
+	<!-- kolor obiektu - skladowa blue -->
+	<!-- kolor obiektu - skladowa alpha -->
+	<!-- nazwa dla animacji -->
+	<!-- skala obiektu - skladowa x -->
+	<!-- skala obiektu - skladowa y -->
+	<!-- wartosc obrotu obiektu -->
+	<!-- wielkosc obiektu (niezaleznie od rozmiaru tekstury) -->
+	<!-- flaga okreslajaca filtr wygladzajacy teksture -->
+  
+	<!-- grzezawisko -->
+	<mapphysical_config
+		code = "quagmire"
+		displayable_type = "synthetic"
+		texture_name = ""
+		texture_width = "64"
+		texture_height = "64"
+		color_r = "82"
+		color_g = "88"
+		color_b = "32"
+		color_a = "128"
+		animation_name =""
+		scale_x = "1"
+		scale_y = "1"
+		rotation = "0"
+		size_x = "64"
+		size_y = "64"
+		smooth ="false"
+	/>
+
+	<!-- CGroundWork -->
+  <!-- wspolczynnik tarcia -->
+  <!-- wspolczynnik wilgotnosci -->
+  <!-- wspolczynnik przenikalnosci cieplnej -->
+  <groundwork_config
+		friction = "0.32"
+    humidity = "0.32"
+    thermal_transmittance = "0.32"
+	/>
+  
+</root>

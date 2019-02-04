@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<root type = "fueltank">
+
+	<!--CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Fueltank Alpha" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "11.3137085"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "16.0"
+		rect_size_y = "16.0"
+		rect_size_body_x = "16.0"
+		rect_size_body_y = "16.0"
+		rect_size_head_x = "16.0"
+		rect_size_head_y = "16.0"		
+	/>	
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgeldem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body	= "true"
+		use_shadow_body			= "false"
+		use_displayable_head	= "false"
+		use_shadow_head			= "false"
+	/>
+
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>
+	
+	<!--CActor-->
+	
+	<!--dane techniczne-->
+	<technical_data
+		mass		= "45"
+		speed		= "0"
+		movabled	= "false"
+	/>
+
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowqanymi - class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajacej zdefiniowane typy animacji - class CAnimSetEquipment-->
+	<animset name_animset = "animset_fueltank_one">
+		<!--body-->
+		<anim name = "animation_equipment_fueltank_body_default"	type = "fueltank_body_default"	/>
+		<anim name = "animation_equipment_fueltank_body_reserve"	type = "fueltank_body_reserve"	/>
+		<anim name = "animation_equipment_fueltank_body_empty"		type = "fueltank_body_empty"	/>
+		<anim name = "animation_equipment_fueltank_body_damage"		type = "fueltank_body_damage"	/>
+		<!--head-->
+		<anim name = "animation_equipment_fueltank_head_default"	type = "fueltank_head_default"	/>
+		<anim name = "animation_equipment_fueltank_head_reserve"	type = "fueltank_head_reserve"	/>
+		<anim name = "animation_equipment_fueltank_head_empty"		type = "fueltank_head_empty"	/>
+		<anim name = "animation_equipment_fueltank_head_damage"		type = "fueltank_head_damage"	/>
+	</animset>
+
+	<animset name_animset = "animset_fueltank_two">
+		<!--body-->
+		<anim name = "animation_equipment_fueltank_body_default"	type = "fueltank_body_default"	/>
+		<anim name = "animation_equipment_fueltank_body_reserve"	type = "fueltank_body_reserve"	/>
+		<anim name = "animation_equipment_fueltank_body_empty"		type = "fueltank_body_empty"	/>
+		<anim name = "animation_equipment_fueltank_body_damage"		type = "fueltank_body_damage"	/>
+		<!--head-->
+		<anim name = "animation_equipment_fueltank_head_default"	type = "fueltank_head_default"	/>
+		<anim name = "animation_equipment_fueltank_head_reserve"	type = "fueltank_head_reserve"	/>
+		<anim name = "animation_equipment_fueltank_head_empty"		type = "fueltank_head_empty"	/>
+		<anim name = "animation_equipment_fueltank_head_damage"		type = "fueltank_head_damage"	/>
+	</animset>
+	
+	<!--CFuelTank-->
+	<!--nazwa zbiornika paliwa-->
+	<!--float pojemnosc zbiornika paliwa (material pedny)-->
+	<!--float ilosc paliwa - (materialu pednego)-->
+	<fueltank_config
+		fuel_tank_name		= "Fueltank Alpha"
+		fuel_tank_capacity	= "100"
+		fuel				= "40"
+	/>
+</root>

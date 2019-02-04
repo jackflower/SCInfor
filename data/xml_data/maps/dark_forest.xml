@@ -1,0 +1,117 @@
+<!--mapa zapisana w pliku xml - wezel root = map-->
+<map>
+	<!--wersja mapy-->
+	<!--szerokosc mapy w kaflach-->
+	<!--wysokosc mapy w kaflach-->
+	<!--ilosc potworow  na mapie-->
+	<map_header_config
+		version = "1"
+		width = "8"
+		height = "8"
+		max_living_monsters = "7"
+	/>
+
+	<!--plik z szablonem konfiguracyjmym zjawisk pogodowych-->
+	<weather_data
+		weather_data_filename = "../data/xml_data/maps/weather/temperate_climate.xml"
+	/>
+
+	<!--typy wzorcow kafli dostepnych na mapie-->
+	<!--code unikalna nazwa wzorca kafla -->
+	<!--image - nazwa pliku z tekstura kafla-->
+	<tiletype code = "a" image = "../data/graphics/maps/themes/tile_test.png"/>
+	<tiletype code = "b" image = "../data/graphics/maps/themes/tile_test_cross.png"/>
+
+	<tiles>
+		a a a a a a a a 
+		a a a a a a a a 
+		a a a a a a a a 
+		a a a a a a a a 
+		a a a a a a a a 
+		a a a a a a a a 
+		a a a a a a a a 
+		a a a a a a a b 
+	</tiles>
+
+	<!--typy wzorcow physical's dostepnych na mapie-->
+	<!--code - nazwa wzorca-->
+	<!--file - nazwa pliku xml-->
+	<objtype code = "monster_alpha" file = "../data/xml_data/units_monster/monster.xml"/>	
+	<objtype code = "enemy_alpha" file = "../data/xml_data/units_enemy/unit_alpha.xml"/>
+	<objtype code = "robot_alpha" file = "../data/xml_data/unit_robot/unit_robot_alpha.xml"/>
+	<objtype code = "flora" file = "../data/xml_data/units_flora/tree.xml"/>
+	<objtype code = "solarcell" file = "../data/xml_data/equipment/industrial/solarcell.xml"/>
+	<objtype code = "solarcellalpha" file = "../data/xml_data/equipment/industrial/solarcellalpha.xml"/>
+	<objtype code = "windpowerstation" file = "../data/xml_data/powerstation/wind_power_station.xml"/>
+	<objtype code = "windpowerstationalpha" file = "../data/xml_data/powerstation/wind_power_station_alpha.xml"/>
+	<objtype code = "windpowerstationbeta" file = "../data/xml_data/powerstation/wind_power_station_beta.xml"/>
+	<objtype code = "windpowerstationdelta" file = "../data/xml_data/powerstation/wind_power_station_delta.xml"/>
+	<objtype code = "windpowerstationomega" file = "../data/xml_data/powerstation/wind_power_station_omega.xml"/>
+	<objtype code = "powerrelaystationalpha" file = "../data/xml_data/powerrelaystation/power_relay_station_alpha.xml"/>
+	<objtype code = "powerrelaystationbeta" file = "../data/xml_data/powerrelaystation/power_relay_station_beta.xml"/>
+	<objtype code = "powerrelaystationgamma" file = "../data/xml_data/powerrelaystation/power_relay_station_gamma.xml"/>
+	<objtype code = "powerrelaystationdelta" file = "../data/xml_data/powerrelaystation/power_relay_station_delta.xml"/>
+	<objtype code = "grass" file = "../data/xml_data/maps/ground/ground_grass.xml"/>
+	<objtype code = "ground" file = "../data/xml_data/maps/ground/ground_ground.xml"/>
+	<objtype code = "ice" file = "../data/xml_data/maps/ground/ground_ice.xml"/>
+	<objtype code = "mud" file = "../data/xml_data/maps/ground/ground_mud.xml"/>
+	<objtype code = "quagmire" file = "../data/xml_data/maps/ground/ground_quagmire.xml"/>
+	<objtype code = "sand" file = "../data/xml_data/maps/ground/ground_sand.xml"/>
+	<objtype code = "stone" file = "../data/xml_data/maps/ground/ground_stone.xml"/>
+	<objtype code = "water" file = "../data/xml_data/maps/ground/ground_water.xml"/>
+	<objtype code = "static_image_test" file = "../data/xml_data/maps/static_image/static_image_test.xml"/>
+	<objtype code = "gunalpha" file = "../data/xml_data/equipment/weapon/gun_alpha.xml"/>
+	<objtype code = "gunbeta" file = "../data/xml_data/equipment/weapon/gun_beta.xml"/>
+	<objtype code = "gungamma" file = "../data/xml_data/equipment/weapon/gun_gamma.xml"/>
+	<objtype code = "gundelta" file = "../data/xml_data/equipment/weapon/gun_delta.xml"/>
+	
+	
+
+	<!--obiekty umieszczone na mapie - physicals-->
+	<!--code - nazwa wzorca dla obiektu na mapie-->
+	<!--name - nazwa obiektu na mapie-->
+	<!--x - wspolrzedna x pozycji obiektu na mapie-->
+	<!--y - wspolrzedna y pozycji obiektu na mapie-->
+	<!--rotation_body - wartosc rotacji poczatkowej obiektu na mapie body-->
+	<!--rotation_head - wartosc rotacji poczatkowej obiektu na mapie head-->
+	<!--smooth - flaga filtru graficznego smooth obiektu na mapie-->
+	
+	<obj code = "monster_alpha" name = "Monster 1" x = "100" y = "150" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "robot_alpha" name = "Robot 1" x = "200" y = "150" rotation_body = "0" rotation_head = "45" smooth = "true"/>
+	
+	<obj code = "flora" name = "Tree 1" x = "31" y = "34" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "flora" name = "Tree 2" x = "116" y = "20" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "flora" name = "Tree 3" x = "78" y = "51" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "flora" name = "Tree 4" x = "48" y = "71" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "flora" name = "Tree 5" x = "122" y = "65" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "flora" name = "Tree 6" x = "122" y = "65" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "flora" name = "Tree 6" x = "84" y = "97" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "solarcell" name = "Solarcell one" x = "300" y = "400" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "solarcellalpha" name = "Solarcell Alpha one" x = "620" y = "240" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "enemy_alpha" name = "Janek" x = "100" y = "100" rotation_body = "40" rotation_head = "40" smooth = "true"/>
+	<obj code = "enemy_alpha" name = "Zenek" x = "400" y = "300" rotation_body = "90" rotation_head = "-90" smooth = "true"/>
+	<obj code = "enemy_alpha" name = "Jurek" x = "100" y = "500" rotation_body = "100" rotation_head = "45" smooth = "true"/>
+	<obj code = "enemy_alpha" name = "Mirek" x = "500" y = "80" rotation_body = "-100" rotation_head = "40" smooth = "true"/>
+	<obj code = "enemy_alpha" name = "Marek" x = "600" y = "80" rotation_body = "-10" rotation_head = "75" smooth = "true"/>
+	<obj code = "enemy_alpha" name = "Tomek" x = "200" y = "300" rotation_body = "60" rotation_head = "-60" smooth = "true"/>
+	<obj code = "windpowerstation" name = "Elektrownia wiatrowa" x = "580" y = "160" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "windpowerstationalpha" name = "Elektrownia wiatrowa alpha" x = "700" y = "160" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "windpowerstationbeta" name = "Elektrownia wiatrowa beta" x = "700" y = "300" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "windpowerstationdelta" name = "Elektrownia wiatrowa delta" x = "700" y = "400" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "windpowerstationomega" name = "Elektrownia wiatrowa omega" x = "600" y = "500" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "powerrelaystationalpha" name = "Przekaznik alpha" x = "180" y = "230" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "powerrelaystationbeta" name = "Przekaznik beta" x = "260" y = "230" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "powerrelaystationgamma" name = "Przekaznik gamma" x = "340" y = "230" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "powerrelaystationdelta" name = "Przekaznik gamma" x = "420" y = "230" rotation_body = "0" rotation_head = "30" smooth = "true"/>
+	<obj code = "grass"	name = "grass_001" x = "0" y = "200" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "static_image_test" name = "obraz statyczny - testowy" x = "120" y = "400" rotation_body = "0" rotation_head = "-60" smooth = "true"/>
+	<obj code = "gunalpha" name = "Gun Alpha" x = "400" y = "400" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "gunbeta" name = "Gun Beta" x = "400" y = "470" rotation_body = "0" rotation_head = "-75" smooth = "true"/>
+	<obj code = "gungamma" name = "Gun Gamma" x = "460" y = "400" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+	<obj code = "gundelta" name = "Gun Delta" x = "460" y = "470" rotation_body = "0" rotation_head = "0" smooth = "true"/>
+</map>
+
+
+
+
+

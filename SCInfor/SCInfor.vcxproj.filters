@@ -13,5 +13,1742 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{2e11082e-c72d-46b8-bd2c-9345e5f6a464}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="notes">
+      <UniqueIdentifier>{d9e95221-c781-4c86-bdb8-6652acfd52cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Collision">
+      <UniqueIdentifier>{f48c0398-f520-4a49-9f5e-620c8377177b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment">
+      <UniqueIdentifier>{9462d17c-57b1-42cc-932a-1adebf26debc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Energy">
+      <UniqueIdentifier>{b38ee5af-5013-43b0-98d3-e29f6c4a8fe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Energy\Battery">
+      <UniqueIdentifier>{cfe9f634-7a94-4b74-afaf-a2c8219215d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Energy\EnergyTank">
+      <UniqueIdentifier>{0cc6fe77-4e34-451a-a0c8-c785973889b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Engine">
+      <UniqueIdentifier>{3652b324-b547-458a-8be8-e6f07aa81850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Engine\FuelBar">
+      <UniqueIdentifier>{5543c16a-2b8a-4b92-9660-96af865853d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Engine\FuelTank">
+      <UniqueIdentifier>{dadd16d8-ccd1-4045-bbdd-a1713df93a60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\EquipmentData">
+      <UniqueIdentifier>{215a46e4-23b9-4732-b6fe-1b76210cdda0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Industrial">
+      <UniqueIdentifier>{1fbe7c92-1ed2-4f0e-83e2-8ae5910a5b3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Industrial\PowerModule">
+      <UniqueIdentifier>{735f89f2-74fd-45dc-aa82-f8800d9b65ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Industrial\PowerModuleType">
+      <UniqueIdentifier>{2b46e87c-bfb9-47b7-8d04-973f7142dc27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Industrial\PowerStationData">
+      <UniqueIdentifier>{de6b84ce-23fd-4f40-a1e4-aef8b73c7551}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Lightingequipment">
+      <UniqueIdentifier>{473728cb-494d-42b1-aef6-43fa67d4cf15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Thermodynamics">
+      <UniqueIdentifier>{239eabd6-6d35-4905-9d53-f7ab9ae05c31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Thermodynamics\Airconditioning">
+      <UniqueIdentifier>{97ca8ab4-bd5d-40f1-9754-42d864951147}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Thermodynamics\ThermalInsulation">
+      <UniqueIdentifier>{d866fe50-7d6e-4d07-82f8-d15339b9d6f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Thermodynamics\Ventilator">
+      <UniqueIdentifier>{a628941d-7efd-4e19-ae06-87c37679df59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Thermometer">
+      <UniqueIdentifier>{89c1aed5-150a-4e18-9de1-2f4203c38236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Weapon">
+      <UniqueIdentifier>{3e3c0215-17cf-47e2-a724-c516728ccf41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Weapon\Ammo">
+      <UniqueIdentifier>{0db2ac2a-e6db-49f5-8987-92ce36058b24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Weapon\Ammunition">
+      <UniqueIdentifier>{eb35af05-87fb-4d81-8457-a97f369ef133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Weapon\Gun">
+      <UniqueIdentifier>{bb898ef1-1663-4237-a0da-fecebdcd37e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Equipment\Weapon\Gun\LockWeapon">
+      <UniqueIdentifier>{4ee021f5-2dca-4157-808f-795b1d3cf5c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory">
+      <UniqueIdentifier>{fc1555d8-c5e2-45a5-a9f6-c4fd2eb4d9ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory">
+      <UniqueIdentifier>{d52b6175-91ba-487b-8c35-03aaaaaae0f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\CommunicationFactory">
+      <UniqueIdentifier>{417a5967-412d-4fe2-8d0a-80600baae349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\EnergyFactory">
+      <UniqueIdentifier>{9eb02cad-b12e-46f6-86da-213f963cb69e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory">
+      <UniqueIdentifier>{3296382c-fb3b-4f43-86ca-4aaa506e4dbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory">
+      <UniqueIdentifier>{30969ac1-a6cc-41eb-98b2-7bc89f252228}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\EngineFactory">
+      <UniqueIdentifier>{c9eae6d6-1d5f-460e-b053-9f11de60668c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory">
+      <UniqueIdentifier>{1a133540-3bfb-403d-8f9a-3b1a5aaf8756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory">
+      <UniqueIdentifier>{be301beb-a660-45d2-a471-fd80d65e579e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\IndustrialFactory">
+      <UniqueIdentifier>{942bacd3-8cdf-460a-ab5b-1cae1c337ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory">
+      <UniqueIdentifier>{59922853-31d7-4662-b088-a29e9ec10cbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\ThermodynamicsFactory">
+      <UniqueIdentifier>{239b5f81-8378-408e-9d1c-ab57b92ec195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory">
+      <UniqueIdentifier>{d8a59441-96d7-4e60-bf45-6c8d316d3c8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory">
+      <UniqueIdentifier>{cefa0103-d0c3-4382-945e-fc347dbbed35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory">
+      <UniqueIdentifier>{c18e406e-2c39-47c3-b660-07a69dff22ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\WeaponFactory">
+      <UniqueIdentifier>{9c2a8c8c-fade-4574-900e-233cb4c02094}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory">
+      <UniqueIdentifier>{9645cba9-ae9a-4f05-a6bc-4be0e4139558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory">
+      <UniqueIdentifier>{7e86c922-0b99-4518-a9d8-7997b3d76a48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Game">
+      <UniqueIdentifier>{3e63f2f1-14b2-4118-abb2-7893ecd6ac84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Game\Listener">
+      <UniqueIdentifier>{06dfc224-6a46-4ecc-8c81-9455d673a1ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Information">
+      <UniqueIdentifier>{2f7dd9d0-45db-4ab6-b6d1-c1c5d142799f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic">
+      <UniqueIdentifier>{f1903d96-2417-4b10-ad0c-131fa54b4d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Actor">
+      <UniqueIdentifier>{adf5f537-9762-467e-8790-9ed81d667119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Actor\ActorStateData">
+      <UniqueIdentifier>{e27c0f2c-c3bf-4dc8-ad51-bb0e400f1e39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\ArtificialIntelligence">
+      <UniqueIdentifier>{6364618e-2500-47ce-9cb5-1951d8a7622d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Bullet">
+      <UniqueIdentifier>{7317d1d0-9765-48fc-9c1b-583c3bdf02e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Communication">
+      <UniqueIdentifier>{0f3ccd68-1fdb-41e4-9082-f3f0db2a1f4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Enemy">
+      <UniqueIdentifier>{635825ed-e3b6-48e9-86a1-719f39e19add}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Energetics">
+      <UniqueIdentifier>{c639113c-0e2f-45ad-8c26-af86de8b692e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Energetics\PowerRelay">
+      <UniqueIdentifier>{8ba0628d-5b56-48c4-bef3-f6c3b2a8ec4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Energetics\RelayStationData">
+      <UniqueIdentifier>{ab18b763-3744-4604-b309-529e9c5213d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Flora">
+      <UniqueIdentifier>{9583e9e3-e909-4676-a5af-54305796924d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Industrial">
+      <UniqueIdentifier>{487f9fb8-a911-481f-9fe0-c2437e7b268b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Industrial\PowerStation">
+      <UniqueIdentifier>{653dcf47-6a81-49b3-94ca-e5ba5029c275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Industrial\PowerStation\CoalPowerPlant">
+      <UniqueIdentifier>{46210c29-2e7b-40c0-bb2c-8b046fd77800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Industrial\PowerStation\Hydroelectric">
+      <UniqueIdentifier>{32b7fa13-8135-40b4-9498-62ade3ed1923}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Industrial\PowerStation\NuclearPowerPlant">
+      <UniqueIdentifier>{b1618a87-a4b3-4d5a-b50f-3f96155a5424}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Industrial\PowerStation\SolarPowerStation">
+      <UniqueIdentifier>{3c8d986b-b3cc-4247-b394-1472f982d01a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Industrial\PowerStation\SuppliedDieselPower">
+      <UniqueIdentifier>{46d529c1-1087-4ce9-824b-4bec85d81a34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Industrial\PowerStation\WindPowerStation">
+      <UniqueIdentifier>{4fbeb527-0aa0-47f1-ab64-56ebf80c959e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Monster">
+      <UniqueIdentifier>{f4c40df5-5c91-4739-963f-cf3c93faf333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Physical">
+      <UniqueIdentifier>{db4a962b-b929-4189-b04a-7c6939c48a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Physical\PartCollisionData">
+      <UniqueIdentifier>{cbfc393a-e022-44c5-8e7e-66176373e7ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Physical\PhysicalData">
+      <UniqueIdentifier>{04e94a74-a776-43bf-b8d8-effe29f04fec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Physical\PhysicalInfo">
+      <UniqueIdentifier>{c43929c0-7d45-4307-ba60-af247b3488f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Player">
+      <UniqueIdentifier>{8fee2e91-167e-4e57-982b-c9bd60adb2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Unit">
+      <UniqueIdentifier>{60f04a66-4521-4c90-b3b0-1a2e10fcfc5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Unit\CombatUnit">
+      <UniqueIdentifier>{924758a3-cc41-4139-b8be-4e129a9a97fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Unit\CombatUnit\Robot">
+      <UniqueIdentifier>{8251bd91-605b-47f2-86e6-4346f9bfa381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Map">
+      <UniqueIdentifier>{c1b646ca-5b95-4f8b-8636-50048a1c8430}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Map\Ground">
+      <UniqueIdentifier>{52bd611d-6958-49ef-a9a1-4eb59869c5ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Map\Ground\PhysicsGround">
+      <UniqueIdentifier>{098325b4-0904-4571-98d3-1525fb10d578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Map\MapPhysical">
+      <UniqueIdentifier>{88c89b1f-9820-4ef3-b4e6-a9cf2ad3c792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Map\MapPhysical\GroundWork">
+      <UniqueIdentifier>{cc023083-245e-4248-a2d8-00f93f178e96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Map\MapPhysicalObject">
+      <UniqueIdentifier>{9228013e-7159-46fc-90c8-63cd1a21f4a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Map\SceneManager">
+      <UniqueIdentifier>{bee8cef7-44b4-415c-8cc8-77f9ab2d2145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Map\SearchTools">
+      <UniqueIdentifier>{bedf0c72-0732-409b-9f05-f1e095013ec8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Map\Tile">
+      <UniqueIdentifier>{42494b25-0132-4858-a56e-0931194f23c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Rendering">
+      <UniqueIdentifier>{65076be2-1590-4254-930a-51945a09e908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Rendering\Animated">
+      <UniqueIdentifier>{75c51d89-c693-451c-b094-b133e0d29531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Rendering\Animations">
+      <UniqueIdentifier>{aef0b70f-cbfc-49f4-a773-46aab1446418}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Rendering\Camera">
+      <UniqueIdentifier>{140a5d0f-8375-4f57-a694-be88496ef0df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Rendering\Displayable">
+      <UniqueIdentifier>{de51a5fc-5445-438d-abf6-5b23a57e3d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Rendering\Drawable">
+      <UniqueIdentifier>{194a4e3c-0725-453a-9294-14eacb0e6297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Rendering\Particle">
+      <UniqueIdentifier>{4243a95e-07da-49e4-a542-f6d7fdc638f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\ResourceManager">
+      <UniqueIdentifier>{fe57820c-2c64-40a3-b336-3828cdcd98b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\RTTI">
+      <UniqueIdentifier>{a9c70e2c-fd0c-447b-b98c-30b967c4f19a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Universe">
+      <UniqueIdentifier>{bbecb24e-eb1e-4762-b568-03d58e2962f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Universe\Galaxy">
+      <UniqueIdentifier>{eff8caa1-aea7-45f6-aa65-b9205f7e6bae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Universe\Galaxy\Star">
+      <UniqueIdentifier>{3d69c358-5819-4368-8651-68f615781cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Universe\Galaxy\Star\Planet">
+      <UniqueIdentifier>{c2e9a801-8815-4df6-a8df-1456d8114114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Universe\Galaxy\Star\Planet\Satelite">
+      <UniqueIdentifier>{57961c7c-c93b-4330-8d6e-2b47f862ccbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Universe\Interaction">
+      <UniqueIdentifier>{488dccd5-5fd6-498b-96de-de38eecc66c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities">
+      <UniqueIdentifier>{dd80883a-a4cf-4a56-ad5f-82c003f44233}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\CharsetTools">
+      <UniqueIdentifier>{f787e869-ab4f-44e0-86ba-07ff9483a391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\EntityTranslator">
+      <UniqueIdentifier>{cebaa06b-2a96-4837-b312-0423cad2ac47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\FileUtils">
+      <UniqueIdentifier>{a39e5f66-252f-4040-a93a-54254d68804f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\FileUtils\PathManager">
+      <UniqueIdentifier>{10c6be86-4094-47e4-87bf-df8ed5f4a3a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\MathFunctions">
+      <UniqueIdentifier>{0b2b79f9-7e43-49d4-b070-cfd2b338dec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\Memory">
+      <UniqueIdentifier>{22b5822f-9bdf-4dba-88c2-d91f6fdc318f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\Miscellaneous">
+      <UniqueIdentifier>{454c52eb-3496-4a0d-a050-33b4263c1f76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\Random">
+      <UniqueIdentifier>{4b06dd0a-7ac6-4c7d-9bec-7184405810d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\Singleton">
+      <UniqueIdentifier>{7a38e5fc-6505-4535-984e-2326fa90e2fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\StringUtils">
+      <UniqueIdentifier>{129f68ff-4965-471a-9a56-a171ebfd6f86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\TimeUtilities">
+      <UniqueIdentifier>{8af22e2c-aa9b-45cc-9b88-93d3cc6fd973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\Transformation">
+      <UniqueIdentifier>{3f3809ac-5995-41f6-b65c-1bcbb79fd6ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\Translation">
+      <UniqueIdentifier>{02d4e65f-2644-412a-9f77-fe5f15fbe5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Utilities\Utilities">
+      <UniqueIdentifier>{28f0edca-f1a9-4ad2-80f2-84e4e0c9071b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Weather">
+      <UniqueIdentifier>{2c8211f0-929b-4435-a8d4-3e4e160bab5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\XML">
+      <UniqueIdentifier>{88f65d7f-0f79-4149-b262-c307c71aa04c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\XML\RapidXML">
+      <UniqueIdentifier>{3f760c3c-0bba-4ac9-ae65-cd017d5490fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Logic\Physics">
+      <UniqueIdentifier>{c01f867b-69b8-4863-8060-a89bd042eed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\IndustrialFactory">
+      <UniqueIdentifier>{7bc1d0c7-8c7e-4c1e-af1d-4dad834d69b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\IndustrialFactory\PowerStationFactory">
+      <UniqueIdentifier>{9b2d7e5c-b07e-412d-bef4-a16c9fd9e82b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory">
+      <UniqueIdentifier>{d4379e1c-4037-4ef8-9d59-6fff18ec7e1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\InformationFactory">
+      <UniqueIdentifier>{20d713fd-4a0b-4b57-87c3-156b5d153df3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Factory\MapPhysicalFactory">
+      <UniqueIdentifier>{4422b8b5-4cc8-4d67-91b6-1a1370bf3b08}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\CSwitch.cpp">
+      <Filter>source\Equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\CEnergy.cpp">
+      <Filter>source\Equipment\Energy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\CFixedColor.cpp">
+      <Filter>source\Equipment\Energy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\Battery\CBattery.cpp">
+      <Filter>source\Equipment\Energy\Battery</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\Battery\CSolarBattery.cpp">
+      <Filter>source\Equipment\Energy\Battery</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\EnergyTank\CEnergyTank.cpp">
+      <Filter>source\Equipment\Energy\EnergyTank</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Engine\CEngine.cpp">
+      <Filter>source\Equipment\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Engine\FuelBar\CFuelBar.cpp">
+      <Filter>source\Equipment\Engine\FuelBar</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Engine\FuelTank\CFuelTank.cpp">
+      <Filter>source\Equipment\Engine\FuelTank</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAmmoData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentBatteryData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentCommunicationData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEnergyData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEnergyTankData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEngineData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentFuelTankData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentGunData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentVentilatorData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\CThermalInsulationData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Industrial\PowerModule\CPowerModule.cpp">
+      <Filter>source\Equipment\Industrial\PowerModule</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Industrial\PowerModuleType\CSolarCell.cpp">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Industrial\PowerModuleType\CWindTurbine.cpp">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Industrial\PowerStationData\CWindTurbineData.cpp">
+      <Filter>source\Equipment\Industrial\PowerStationData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Lightingequipment\CLightingEquipment.cpp">
+      <Filter>source\Equipment\Lightingequipment</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Thermodynamics\Airconditioning\CAirconditioning.cpp">
+      <Filter>source\Equipment\Thermodynamics\Airconditioning</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Thermodynamics\ThermalInsulation\CThermalInsulation.cpp">
+      <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.cpp">
+      <Filter>source\Equipment\Thermodynamics\Ventilator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Thermometer\CThermometer.cpp">
+      <Filter>source\Equipment\Thermometer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\Ammo\CAmmo.cpp">
+      <Filter>source\Equipment\Weapon\Ammo</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\Ammunition\CMagazineAmmunition.cpp">
+      <Filter>source\Equipment\Weapon\Ammunition</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\CCaliber.cpp">
+      <Filter>source\Equipment\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\Gun\LockWeapon\CLockWeapon.cpp">
+      <Filter>source\Equipment\Weapon\Gun\LockWeapon</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\Gun\CGun.cpp">
+      <Filter>source\Equipment\Weapon\Gun</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\CActorTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\CBulletTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\CEnemyTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\CFloraTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\CMonsterTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\CPhysicalInfoTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\CPhysicalTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\CPlayerTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\CRobotTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\CommunicationFactory\CCommunicationTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\CommunicationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\CEnergyTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CBatteryTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CSolarBatteryTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory\CEnergyTankTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\CEngineTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\CFuelBarTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\CFuelTankTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CSolarCellTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CWindTurbineTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\CAirconditioningTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\CThermalInsulationTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\CAmmoTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\CGunTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\GunFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Game\CGameProperties.cpp">
+      <Filter>source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Information\CInfoManager.cpp">
+      <Filter>source\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Information\CInformation.cpp">
+      <Filter>source\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Information\CPresentation.cpp">
+      <Filter>source\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Information\IInformation.cpp">
+      <Filter>source\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Actor\ActorStateData\CActorStateData.cpp">
+      <Filter>source\Logic\Actor\ActorStateData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Actor\CActor.cpp">
+      <Filter>source\Logic\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Actor\CActorController.cpp">
+      <Filter>source\Logic\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\ArtificialIntelligence\CActorAI.cpp">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\ArtificialIntelligence\CActorAIData.cpp">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Bullet\CBullet.cpp">
+      <Filter>source\Logic\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Communication\CCommunication.cpp">
+      <Filter>source\Logic\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Communication\CLogin.cpp">
+      <Filter>source\Logic\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Communication\CReceiver.cpp">
+      <Filter>source\Logic\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Communication\CTransmitter.cpp">
+      <Filter>source\Logic\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Enemy\CEnemy.cpp">
+      <Filter>source\Logic\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Energetics\PowerRelay\CPowerRelayStation.cpp">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Energetics\PowerRelay\CRelayStation.cpp">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Energetics\PowerRelay\CSlotsRate.cpp">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Energetics\RelayStationData\CSlotsRateData.cpp">
+      <Filter>source\Logic\Energetics\RelayStationData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Flora\CFlora.cpp">
+      <Filter>source\Logic\Flora</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\CPowerStation.cpp">
+      <Filter>source\Logic\Industrial\PowerStation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\CoalPowerPlant\CCoalPowerPlant.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\CoalPowerPlant</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\Hydroelectric\CHydroelectric.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\Hydroelectric</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\NuclearPowerPlant\CNuclearPowerPlant.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\NuclearPowerPlant</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\SolarPowerStation\CSolarPowerStation.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\SolarPowerStation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\SuppliedDieselPower\CSuppliedDieselPower.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\SuppliedDieselPower</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStation.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStationMultipled.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Monster\CMonster.cpp">
+      <Filter>source\Logic\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physical\CPhysical.cpp">
+      <Filter>source\Logic\Physical</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
+      <Filter>source\Logic\Physical</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physical\PartCollisionData\CPartCollisionData.cpp">
+      <Filter>source\Logic\Physical\PartCollisionData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physical\PhysicalData\CPhysicalData.cpp">
+      <Filter>source\Logic\Physical\PhysicalData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physical\PhysicalInfo\CPhysicalInfo.cpp">
+      <Filter>source\Logic\Physical\PhysicalInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Player\CPlayer.cpp">
+      <Filter>source\Logic\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Unit\CombatUnit\Robot\CRobot.cpp">
+      <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Unit\CombatUnit\CCombatUnit.cpp">
+      <Filter>source\Logic\Unit\CombatUnit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Unit\CStrategyController.cpp">
+      <Filter>source\Logic\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Unit\CStrategyDuration.cpp">
+      <Filter>source\Logic\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Unit\CUnit.cpp">
+      <Filter>source\Logic\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\CLogic.cpp">
+      <Filter>source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\CMapPhysicalManager.cpp">
+      <Filter>source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\CPhysicalManager.cpp">
+      <Filter>source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\CCell.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\CCollisionMap.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\CDoodahDescriptor.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\CDynamicRegion.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\CDynamicRegionsGenerator.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\CMap.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\CMapManager.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\CMapPhysicalHeader.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\Ground\PhysicsGround\CPhysicsGround.cpp">
+      <Filter>source\Map\Ground\PhysicsGround</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\Ground\CGround.cpp">
+      <Filter>source\Map\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\CMapPhysical.cpp">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\CMapPhysicalDescriptor.cpp">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\CMapPhysicalType.cpp">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\GroundWork\CGroundWork.cpp">
+      <Filter>source\Map\MapPhysical\GroundWork</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\GroundWork\CGroundWorkCollision.cpp">
+      <Filter>source\Map\MapPhysical\GroundWork</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysicalObject\CMapObjectDescriptor.cpp">
+      <Filter>source\Map\MapPhysicalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysicalObject\CMapObjectType.cpp">
+      <Filter>source\Map\MapPhysicalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\SceneManager\CQuadtree.cpp">
+      <Filter>source\Map\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\SearchTools\CWaypoint.cpp">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\SearchTools\CWaypointCell.cpp">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\SearchTools\CWaypointPriorityQueue.cpp">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\Tile\CMapTileType.cpp">
+      <Filter>source\Map\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\Tile\CTile.cpp">
+      <Filter>source\Map\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animated\CAnimated.cpp">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animated\CAnimatedAnimation.cpp">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animated\CAnimatedFrame.cpp">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\CAnimation.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\CAnimationFrame.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\CAnimationManager.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\CAnimationState.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\CAnimSet.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\CNameAnimPairTranslator.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\CTimedAnimationFrame.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\CBar.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\CClippedSprite.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\CDisplayable.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\CHudSprite.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\CHudStaticText.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\CRectangle.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\CSprite.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\CTextHeadUpDisplay.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Drawable\CDrawableManager.cpp">
+      <Filter>source\Rendering\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Drawable\IDrawable.cpp">
+      <Filter>source\Rendering\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Particle\CParticle.cpp">
+      <Filter>source\Rendering\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Particle\CParticleState.cpp">
+      <Filter>source\Rendering\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\CFont.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\CMusic.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\CResourceManager.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\CSound.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\CTexture.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\IResource.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RTTI\RTTI.cpp">
+      <Filter>source\RTTI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\CUniverse.cpp">
+      <Filter>source\Universe</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Galaxy\CGalaxy.cpp">
+      <Filter>source\Universe\Galaxy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Galaxy\Star\CStar.cpp">
+      <Filter>source\Universe\Galaxy\Star</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Galaxy\Star\Planet\CPlanet.cpp">
+      <Filter>source\Universe\Galaxy\Star\Planet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Galaxy\Star\Planet\Satelite\CSatelite.cpp">
+      <Filter>source\Universe\Galaxy\Star\Planet\Satelite</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Interaction\CEntityTemperature.cpp">
+      <Filter>source\Universe\Interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Interaction\CGravity.cpp">
+      <Filter>source\Universe\Interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\CharsetTools\CCharSetManager.cpp">
+      <Filter>source\Utilities\CharsetTools</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\CharsetTools\CCharsetTranslator.cpp">
+      <Filter>source\Utilities\CharsetTools</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\EntityTranslator\CEntityTranslator.cpp">
+      <Filter>source\Utilities\EntityTranslator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\FileUtils\FileUtils.cpp">
+      <Filter>source\Utilities\FileUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\FileUtils\PathManager\CPathManager.cpp">
+      <Filter>source\Utilities\FileUtils\PathManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\MathFunctions\MathFunctions.cpp">
+      <Filter>source\Utilities\MathFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Memory\CPool.cpp">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Memory\CPoolable.cpp">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Memory\CPoolBase.cpp">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Memory\CRefPoolable.cpp">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Memory\MemoryTests.cpp">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Miscellaneous\Float.cpp">
+      <Filter>source\Utilities\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Miscellaneous\Integer.cpp">
+      <Filter>source\Utilities\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Miscellaneous\Miscellaneous.cpp">
+      <Filter>source\Utilities\Miscellaneous</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Random\CRandom.cpp">
+      <Filter>source\Utilities\Random</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Singleton\CSingletonCleaner.cpp">
+      <Filter>source\Utilities\Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\StringUtils\StringUtils.cpp">
+      <Filter>source\Utilities\StringUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\TimeUtilities\CClock.cpp">
+      <Filter>source\Utilities\TimeUtilities</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\TimeUtilities\CFPS.cpp">
+      <Filter>source\Utilities\TimeUtilities</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Transformation\CTransformation.cpp">
+      <Filter>source\Utilities\Transformation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utilities\Translation\Directions.cpp">
+      <Filter>source\Utilities\Translation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Weather\CDay.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Weather\CShadowEngine.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Weather\CTemperature.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Weather\CWeather.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Weather\CWind.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XML\CXml.cpp">
+      <Filter>source\XML</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physics\CActorTechnicalData.cpp">
+      <Filter>source\Logic\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physics\CPhysicsData.cpp">
+      <Filter>source\Logic\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CPowerStationTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationMultipledTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CPowerRelayStationTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CRelayStationTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CSlotsRateTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\InformationFactory\CInformationTemplate.cpp">
+      <Filter>source\Factory\InformationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\InformationFactory\CPresentationTemplate.cpp">
+      <Filter>source\Factory\InformationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\MapPhysicalFactory\CGroundTemplate.cpp">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\MapPhysicalFactory\CGroundWorkTemplate.cpp">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\MapPhysicalFactory\CMapPhysicalTemplate.cpp">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Game\Game.cpp">
+      <Filter>source\Game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="notes\notes.txt">
+      <Filter>notes</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Equipment\CSwitch.h">
+      <Filter>source\Equipment</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\CEnergy.h">
+      <Filter>source\Equipment\Energy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\CFixedColor.h">
+      <Filter>source\Equipment\Energy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\EEnergyState.h">
+      <Filter>source\Equipment\Energy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\Battery\CBattery.h">
+      <Filter>source\Equipment\Energy\Battery</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\Battery\CSolarBattery.h">
+      <Filter>source\Equipment\Energy\Battery</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\Battery\EBatteryState.h">
+      <Filter>source\Equipment\Energy\Battery</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\EnergyTank\CEnergyTank.h">
+      <Filter>source\Equipment\Energy\EnergyTank</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\EnergyTank\EEnergyTankState.h">
+      <Filter>source\Equipment\Energy\EnergyTank</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Engine\CEngine.h">
+      <Filter>source\Equipment\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Engine\EEngineState.h">
+      <Filter>source\Equipment\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Engine\FuelBar\CFuelBar.h">
+      <Filter>source\Equipment\Engine\FuelBar</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Engine\FuelTank\CFuelTank.h">
+      <Filter>source\Equipment\Engine\FuelTank</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Engine\FuelTank\EFuelTankState.h">
+      <Filter>source\Equipment\Engine\FuelTank</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentAmmoData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentBatteryData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentCommunicationData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEnergyData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEnergyTankData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEngineData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentFuelTankData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentGunData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentVentilatorData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\CThermalInsulationData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerModule\CPowerModule.h">
+      <Filter>source\Equipment\Industrial\PowerModule</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\CSolarCell.h">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\CWindTurbine.h">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\ESolarCellState.h">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\ETurbineState.h">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerStationData\CWindTurbineData.h">
+      <Filter>source\Equipment\Industrial\PowerStationData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Lightingequipment\CLightingEquipment.h">
+      <Filter>source\Equipment\Lightingequipment</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Lightingequipment\ELightingEquipmentState.h">
+      <Filter>source\Equipment\Lightingequipment</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\CAirconditioning.h">
+      <Filter>source\Equipment\Thermodynamics\Airconditioning</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\EAirconditioningState.h">
+      <Filter>source\Equipment\Thermodynamics\Airconditioning</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\CThermalInsulation.h">
+      <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\EThermalInsulationState.h">
+      <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\EVentilatorState.h">
+      <Filter>source\Equipment\Thermodynamics\Ventilator</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.h">
+      <Filter>source\Equipment\Thermodynamics\Ventilator</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermometer\CThermometer.h">
+      <Filter>source\Equipment\Thermometer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermometer\EDisplayType.h">
+      <Filter>source\Equipment\Thermometer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Ammo\CAmmo.h">
+      <Filter>source\Equipment\Weapon\Ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Ammo\EAmmoState.h">
+      <Filter>source\Equipment\Weapon\Ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Ammunition\CMagazineAmmunition.h">
+      <Filter>source\Equipment\Weapon\Ammunition</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\CCaliber.h">
+      <Filter>source\Equipment\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\ECaliber.h">
+      <Filter>source\Equipment\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\EGunState.h">
+      <Filter>source\Equipment\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Gun\LockWeapon\CLockWeapon.h">
+      <Filter>source\Equipment\Weapon\Gun\LockWeapon</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Gun\CGun.h">
+      <Filter>source\Equipment\Weapon\Gun</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\CActorTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\CBulletTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\CEnemyTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\CFloraTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\CMonsterTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\CPhysicalInfoTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\CPhysicalTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\CPlayerTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\CRobotTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\CommunicationFactory\CCommunicationTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\CommunicationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\CEnergyTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CBatteryTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CSolarBatteryTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory\CEnergyTankTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\CEngineTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\CFuelBarTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\CFuelTankTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CSolarCellTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CWindTurbineTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\CAirconditioningTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\CThermalInsulationTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\CAmmoTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\CGunTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\GunFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\Listener\IFrameListener.h">
+      <Filter>source\Game\Listener</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\Listener\IKeyListener.h">
+      <Filter>source\Game\Listener</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\Listener\IMouseListener.h">
+      <Filter>source\Game\Listener</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\CGameProperties.h">
+      <Filter>source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Information\CInfoManager.h">
+      <Filter>source\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Information\CInformation.h">
+      <Filter>source\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Information\CPresentation.h">
+      <Filter>source\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Information\IInformation.h">
+      <Filter>source\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Actor\ActorStateData\CActorStateData.h">
+      <Filter>source\Logic\Actor\ActorStateData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Actor\CActor.h">
+      <Filter>source\Logic\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Actor\CActorController.h">
+      <Filter>source\Logic\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Actor\EActorBasicState.h">
+      <Filter>source\Logic\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Actor\EActorMoveState.h">
+      <Filter>source\Logic\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Actor\EActorSpawnState.h">
+      <Filter>source\Logic\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\ArtificialIntelligence\CActorAI.h">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\ArtificialIntelligence\CActorAIData.h">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\ArtificialIntelligence\CAIScheme.h">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Bullet\CBullet.h">
+      <Filter>source\Logic\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\CCommunication.h">
+      <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\CLogin.h">
+      <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\CReceiver.h">
+      <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\CTransmitter.h">
+      <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\ECommunicationState.h">
+      <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\ENetworking.h">
+      <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Enemy\CEnemy.h">
+      <Filter>source\Logic\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\CPowerRelayStation.h">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\CRelayStation.h">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\CSlotsRate.h">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\EPowerRelayStationState.h">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Energetics\RelayStationData\CSlotsRateData.h">
+      <Filter>source\Logic\Energetics\RelayStationData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Flora\CFlora.h">
+      <Filter>source\Logic\Flora</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\CPowerStation.h">
+      <Filter>source\Logic\Industrial\PowerStation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\EWindPowerStationState.h">
+      <Filter>source\Logic\Industrial\PowerStation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\CoalPowerPlant\CCoalPowerPlant.h">
+      <Filter>source\Logic\Industrial\PowerStation\CoalPowerPlant</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\Hydroelectric\CHydroelectric.h">
+      <Filter>source\Logic\Industrial\PowerStation\Hydroelectric</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\NuclearPowerPlant\CNuclearPowerPlant.h">
+      <Filter>source\Logic\Industrial\PowerStation\NuclearPowerPlant</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\SolarPowerStation\CSolarPowerStation.h">
+      <Filter>source\Logic\Industrial\PowerStation\SolarPowerStation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\SuppliedDieselPower\CSuppliedDieselPower.h">
+      <Filter>source\Logic\Industrial\PowerStation\SuppliedDieselPower</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStation.h">
+      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStationMultipled.h">
+      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Monster\CMonster.h">
+      <Filter>source\Logic\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\CPhysical.h">
+      <Filter>source\Logic\Physical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\ECollisionShape.h">
+      <Filter>source\Logic\Physical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\EPhysicalPart.h">
+      <Filter>source\Logic\Physical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\PhysicalCategories.h">
+      <Filter>source\Logic\Physical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\PartCollisionData\CPartCollisionData.h">
+      <Filter>source\Logic\Physical\PartCollisionData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\PhysicalData\CPhysicalData.h">
+      <Filter>source\Logic\Physical\PhysicalData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\PhysicalInfo\CPhysicalInfo.h">
+      <Filter>source\Logic\Physical\PhysicalInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Player\CPlayer.h">
+      <Filter>source\Logic\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\CRobot.h">
+      <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\ERobotState.h">
+      <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\CombatUnit\CCombatUnit.h">
+      <Filter>source\Logic\Unit\CombatUnit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\CStrategyController.h">
+      <Filter>source\Logic\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\CStrategyDuration.h">
+      <Filter>source\Logic\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\CUnit.h">
+      <Filter>source\Logic\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\EStrategyState.h">
+      <Filter>source\Logic\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\CLogic.h">
+      <Filter>source\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\CMapPhysicalManager.h">
+      <Filter>source\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\CPhysicalManager.h">
+      <Filter>source\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\EEnemyAttitude.h">
+      <Filter>source\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\EEnemyState.h">
+      <Filter>source\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\CCell.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\CCollisionMap.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\CDoodahDescriptor.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\CDynamicRegion.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\CDynamicRegionsGenerator.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\CMap.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\CMapManager.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\CMapPhysicalHeader.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapHeader.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Ground\PhysicsGround\CPhysicsGround.h">
+      <Filter>source\Map\Ground\PhysicsGround</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Ground\CGround.h">
+      <Filter>source\Map\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\CMapPhysical.h">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\CMapPhysicalDescriptor.h">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\CMapPhysicalType.h">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\GroundWork\CGroundWork.h">
+      <Filter>source\Map\MapPhysical\GroundWork</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\GroundWork\CGroundWorkCollision.h">
+      <Filter>source\Map\MapPhysical\GroundWork</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysicalObject\CMapObjectDescriptor.h">
+      <Filter>source\Map\MapPhysicalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysicalObject\CMapObjectType.h">
+      <Filter>source\Map\MapPhysicalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\SceneManager\CQuadtree.h">
+      <Filter>source\Map\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\SearchTools\CWaypoint.h">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\SearchTools\CWaypointCell.h">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\SearchTools\CWaypointPriorityQueue.h">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Tile\CMapTileType.h">
+      <Filter>source\Map\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Tile\CTile.h">
+      <Filter>source\Map\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animated\CAnimated.h">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animated\CAnimatedAnimation.h">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animated\CAnimatedFrame.h">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\CAnimation.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\CAnimationFrame.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\CAnimationManager.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\CAnimationState.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\CAnimSet.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\CNameAnimPairTranslator.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\CTimedAnimationFrame.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\EAnimHandler.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\CBar.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\CClippedSprite.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\CDisplayable.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\CHudSprite.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\CHudStaticText.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\CRectangle.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\CSprite.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\CTextHeadUpDisplay.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Drawable\CDrawableManager.h">
+      <Filter>source\Rendering\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Drawable\IDrawable.h">
+      <Filter>source\Rendering\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Drawable\Layers.h">
+      <Filter>source\Rendering\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Particle\CParticle.h">
+      <Filter>source\Rendering\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Particle\CParticleState.h">
+      <Filter>source\Rendering\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\CFont.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\CMusic.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\CResourceManager.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\CSound.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\CTexture.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\IResource.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\RTTI\RTTI.h">
+      <Filter>source\RTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\CUniverse.h">
+      <Filter>source\Universe</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Galaxy\CGalaxy.h">
+      <Filter>source\Universe\Galaxy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Galaxy\Star\CStar.h">
+      <Filter>source\Universe\Galaxy\Star</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Galaxy\Star\Planet\CPlanet.h">
+      <Filter>source\Universe\Galaxy\Star\Planet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Galaxy\Star\Planet\Satelite\CSatelite.h">
+      <Filter>source\Universe\Galaxy\Star\Planet\Satelite</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Interaction\CGravity.h">
+      <Filter>source\Universe\Interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Interaction\CEntityTemperature.h">
+      <Filter>source\Universe\Interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\CharsetTools\CCharSetManager.h">
+      <Filter>source\Utilities\CharsetTools</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\CharsetTools\CCharsetTranslator.h">
+      <Filter>source\Utilities\CharsetTools</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\EntityTranslator\CEntityTranslator.h">
+      <Filter>source\Utilities\EntityTranslator</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\FileUtils\FileUtils.h">
+      <Filter>source\Utilities\FileUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\FileUtils\PathManager\CPathManager.h">
+      <Filter>source\Utilities\FileUtils\PathManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\MathFunctions\MathFunctions.h">
+      <Filter>source\Utilities\MathFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Memory\CPool.h">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Memory\CPoolable.h">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Memory\CPoolBase.h">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Memory\CRefPoolable.h">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Memory\CSafePtr.h">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Memory\CSafePtrable.h">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Memory\MemoryTests.h">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Memory\RefCntPtr.h">
+      <Filter>source\Utilities\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Miscellaneous\Float.h">
+      <Filter>source\Utilities\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Miscellaneous\Integer.h">
+      <Filter>source\Utilities\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Miscellaneous\Miscellaneous.h">
+      <Filter>source\Utilities\Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Random\CRandom.h">
+      <Filter>source\Utilities\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Singleton\CSingleton.h">
+      <Filter>source\Utilities\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Singleton\CSingletonCleaner.h">
+      <Filter>source\Utilities\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Singleton\ICleanupable.h">
+      <Filter>source\Utilities\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\StringUtils\StringUtils.h">
+      <Filter>source\Utilities\StringUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\TimeUtilities\CClock.h">
+      <Filter>source\Utilities\TimeUtilities</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\TimeUtilities\CFPS.h">
+      <Filter>source\Utilities\TimeUtilities</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\TimeUtilities\CPausableClock.h">
+      <Filter>source\Utilities\TimeUtilities</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Transformation\CTransformation.h">
+      <Filter>source\Utilities\Transformation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Translation\Directions.h">
+      <Filter>source\Utilities\Translation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Utilities\Utilities.h">
+      <Filter>source\Utilities\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\CDay.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\CShadowEngine.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\CTemperature.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\CWeather.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\CWind.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\XML\RapidXML\rapidxml.hpp">
+      <Filter>source\XML\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="source\XML\RapidXML\rapidxml_iterators.hpp">
+      <Filter>source\XML\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="source\XML\RapidXML\rapidxml_print.hpp">
+      <Filter>source\XML\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="source\XML\RapidXML\rapidxml_utils.hpp">
+      <Filter>source\XML\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="source\XML\CXml.h">
+      <Filter>source\XML</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physics\CActorTechnicalData.h">
+      <Filter>source\Logic\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physics\CPhysicsData.h">
+      <Filter>source\Logic\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CPowerStationTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationMultipledTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CPowerRelayStationTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CRelayStationTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CSlotsRateTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\InformationFactory\CInformationTemplate.h">
+      <Filter>source\Factory\InformationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\InformationFactory\CPresentationTemplate.h">
+      <Filter>source\Factory\InformationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\MapPhysicalFactory\CGroundTemplate.h">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\MapPhysicalFactory\CGroundWorkTemplate.h">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\MapPhysicalFactory\CMapPhysicalTemplate.h">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\Game.h">
+      <Filter>source\Game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

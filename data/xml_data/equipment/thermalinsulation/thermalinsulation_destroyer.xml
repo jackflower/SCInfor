@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<root type = "thermalinsulation">
+
+	<!--CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Destroyer thermalinsulation module" />
+
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "45.25"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->	
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "64.0"
+		rect_size_y = "64.0"	
+		rect_size_body_x = "64.0"
+		rect_size_body_y = "64.0"
+		rect_size_head_x = "64.0"
+		rect_size_head_y = "64.0"		
+	/>
+
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgledem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body  = "false"
+		use_shadow_body       = "false"
+		use_displayable_head  = "false"
+		use_shadow_head       = "false"
+	/>
+
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+	
+	<!--CActor-->
+
+	<!--dane techniczne-->
+	<technical_data
+		mass        = "25"
+		speed       = "0"
+		movabled    = "false"
+	/>
+
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajcej zdefiniowane typy animacji, class CAnimSet-->
+	<!--<animset name_animset = "animset_destroyer_energy_one">
+	<!--<!--body-->
+		<!--<anim name_body = "animation_name"	type_body = "type"	/>
+		<!--<!--head-->
+		<!--<anim name_body = "animation_name"	type_body = "type"	/>		
+	<!--</animset>
+
+	<!--CThermalInsulation-->
+
+	<!--std::string thermalinsulation_name - nazwa termoizolatora-->
+	<!--float temperature_ambient - temperatura otoczenia - skorygowana wielkoscia termiozolacji[ obliczana ]-->
+	<!--float thermal_protection - ochrona termiczna - termoizolator-->
+	<!--float thermal_protection_factor - obliczany wspolczynnik termoizolacji [ obliczany ]-->
+	<!--float thermal_protection_consume - wartosc zuzycia ochrony termicznej w jednostce czasu [ obliczana ]-->
+	<!--float thermal_protection_duration - czas cyklu procesu zuzycia/starzenia ochrony termicznej-->
+
+	<thermalinsulation_config
+		thermalinsulation_name      = "Termoizolator testowy"
+		temperature_ambient         = "0"
+		thermal_protection          = "7.62"
+		thermal_protection_factor   = "0"
+		thermal_protection_consume  = "0"
+		thermal_protection_duration = "1"
+	/>
+</root>

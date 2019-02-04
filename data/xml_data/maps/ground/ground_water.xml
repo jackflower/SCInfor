@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<root type = "ground">
+
+	<!-- CPhysical -->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Woda" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "45.25"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "64.0"
+		rect_size_y = "64.0"	
+		rect_size_body_x = "128.0"
+		rect_size_body_y = "128.0"
+		rect_size_head_x = "64.0"
+		rect_size_head_y = "64.0"		
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgeldem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<!--description:  -->
+	<physical_config
+		use_displayable_body  = "true"
+		use_shadow_body       = "false"
+		use_displayable_head  = "false"
+		use_shadow_head       = "false"
+	/>
+	
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+	
+	<!--kolor - synthetic-->
+	<!--body and head-->
+	<!--kolor obiektu part body - skladowa red-->
+	<!--kolor obiektu part body - skladowa green-->
+	<!--kolor obiektu part body - skladowa blue-->
+	<!--kolor obiektu part body - skladowa alpha-->
+	<!--kolor obiektu part head - skladowa red-->
+	<!--kolor obiektu part head - skladowa green-->
+	<!--kolor obiektu part head - skladowa blue-->
+	<!--kolor obiektu part head - skladowa alpha-->
+	<physical_color
+		color_body_r = "56"
+		color_body_g = "148"
+		color_body_b = "40"
+		color_body_a = "128"
+		color_head_r = "0"
+		color_head_g = "0"
+		color_head_b = "0"
+		color_head_a = "255"		
+	/>
+		
+	<!--CPhysicsGround-->
+	<!--wspolczynnik tarcia-->
+	<!--wspolczynnik wilgotnosci-->
+	<!--wspolczynnik przenikalnosci cieplnej-->
+	<ground_physics_config
+		friction = "0.98"
+		humidity = "0.98"
+		thermal_transmittance = "0.98"
+	/>
+	  
+</root>

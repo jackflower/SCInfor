@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<root type = "enemy">
+
+	<!--CPhysical-->
+	
+	<!--nazwa obiektu-->
+	<genre genre = "Unit Alpha" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "45.254834"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "64.0"
+		rect_size_y = "64.0"
+		rect_size_body_x = "64.0"
+		rect_size_body_y = "64.0"
+		rect_size_head_x = "64.0"
+		rect_size_head_y = "64.0"		
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgledem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body	= "true"
+		use_shadow_body			= "true"
+		use_displayable_head	= "true"
+		use_shadow_head			= "true"
+	/>
+	
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+	
+	<!--CActor-->
+	
+	<!--dane techniczne-->
+	<technical_data
+		mass        = "1320"
+		speed       = "100"
+		movabled    = "true"
+	/>
+		
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowqanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajacej zdefiniowane typy animacji, class CAnimSet-->
+	<animset name_animset = "animset_one">
+		<!--body-->
+		<anim name = "anim_destroyer_default_body"		type = "default_body"       />
+		<anim name = "anim_destroyer_move_body"         type = "move_body"		    />
+		<anim name = "anim_destroyer_death_body"        type = "death_body"		    />
+		<!--head-->
+		<anim name = "anim_destroyer_default_head"      type = "default_head"		/>
+		<anim name = "anim_destroyer_shot_head"         type = "shot_head"		    />
+		<anim name = "anim_destroyer_ammo_loading_head" type = "ammo_loading_head"  />
+		<anim name = "anim_destroyer_death_head"        type = "death_head"			/>
+	</animset>
+	
+	<animset name_animset = "animset_two">
+		<!--body-->
+		<anim name = "anim_destroyer_default_body"      type = "default_body"       />
+		<anim name = "anim_destroyer_move_body"         type = "move_body"          />
+		<anim name = "anim_destroyer_death_body"        type = "death_body"         />
+		<!--head-->
+		<anim name = "anim_destroyer_default_head"      type = "default_head"       />
+		<anim name = "anim_destroyer_shot_head"         type = "shot_head"          />
+		<anim name = "anim_destroyer_ammo_loading_head" type = "ammo_loading_head"  />
+		<anim name = "anim_destroyer_death_head"        type = "death_head"         />
+	</animset>
+
+	<!--CEngine-->
+	<!--bool flaga, czy obiekt posiada silnik-->
+	<!--std::string nazwa pliku z danymi dla obiektu CEngine/CEngineTemplate-->
+	<!--poprawka pozycji reprezentacji graficznej silnika wzgledem wlasciciela - x-->
+	<!--poprawka pozycji reprezentacji graficznej silnika wzgledem wlasciciela - y-->	
+	<engine_data
+		use_engine			= "true"
+		engine_filename		= "../data/xml_data/equipment/engine/equipment_engine_alpha.xml"
+		engine_emiter_x		= "-32.0"
+		engine_emiter_y		= "-12.0"
+	/>
+	
+	<!--CPhysicalInfo-->
+	<!--nazwa pliku z danymi dla obiektu CPhysicalInfo/CPhysicalInfoTemplate-->
+	<physical_info_data
+		use_physical_info		= "false"
+		physical_info_filename	= "../data/xml_data/units_information/physicalinfo/physicalinfo_destroyer.xml"
+	/>
+	
+	<!--CEnergy-->
+	<!--bool flaga, czy obiekt posiada modul zasilana-->
+	<!--nazwa pliku z danymi dla obiektu CEnergy/CEnergyTemplate-->
+	<!--poprawka pozycji reprezentacji graficznej zasilania wzgledem wlasciciela - x-->
+	<!--poprawka pozycji reprezentacji graficznej zasilania wzgledem wlasciciela - y-->		
+	<energy_data
+		use_energy		= "true"
+		energy_filename	= "../data/xml_data/equipment/energy/equipment_energy_alpha.xml"
+		energy_emiter_x		= "-50.0"
+		energy_emiter_y		= "-40.0"	
+	/>
+
+	<!--CAirconditioning-->
+	<!--nazwa pliku z danymi dla obiektu CAirconditioning/CAirconditioningTemplate-->
+	<airconditioning_data
+		use_airconditioning			= "true"
+		airconditioning_filename	= "../data/xml_data/equipment/airconditioning/airconditioning_destroyer.xml"
+	/>
+
+	<!--CVentilator-->
+	<!--nazwa pliku z danymi dla obiektu CVentilator/CVentilatorTemplate-->
+	<ventilator_data
+		use_ventilator		= "true"
+		ventilator_filename	= "../data/xml_data/equipment/ventilator/ventilator_destroyer.xml"
+	/>
+</root>

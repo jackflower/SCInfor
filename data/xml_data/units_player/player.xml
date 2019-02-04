@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<root type = "player">
+
+	<!--CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Uczen SCI" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "45.254834"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->	
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->
+	<rect_size
+		rect_size_x = "64.0"
+		rect_size_y = "64.0"
+		rect_size_body_x = "64.0"
+		rect_size_body_y = "64.0"
+		rect_size_head_x = "64.0"
+		rect_size_head_y = "64.0"		
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgldem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body = "true"
+		use_shadow_body = "true"
+		use_displayable_head = "true"
+		use_shadow_head = "true"
+	/>
+	
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+	
+	<!--animacja CPhysical - test-->
+	<unit_animation
+		animation_body = "anim_one"
+		animation_head = "anim_two"
+	/>
+
+	<!--CActor-->
+	
+	<!--dane techniczne-->
+	<technical_data
+		mass = "85"
+		speed = "100"
+		movabled = "true"
+	/>
+
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowqanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajacej zdefiniowane typy animacji, class CAnimSet-->
+	<animset name_animset = "animset_one">
+		<!--body-->
+		<anim name = "anim_destroyer_default_body" type = "default_body" />
+		<anim name = "anim_destroyer_move_body" type = "move_body" />
+		<anim name = "anim_destroyer_death_body" type = "death_body" />
+		<!--head-->
+		<anim name = "anim_destroyer_default_head" type = "default_head" />
+		<anim name = "anim_destroyer_shot_head" type = "shot_head" />
+		<anim name = "anim_destroyer_ammo_loading_head" type = "ammo_loading_head" />
+		<anim name = "anim_destroyer_death_head" type = "death_head" />
+	</animset>
+	
+	<animset name_animset = "animset_two">
+		<!--body-->
+		<anim name = "anim_destroyer_default_body" type = "default_body" />
+		<anim name = "anim_destroyer_move_body" type = "move_body" />
+		<anim name = "anim_destroyer_death_body" type = "death_body" />
+		<!--head-->
+		<anim name = "anim_destroyer_default_head" type = "default_head" />
+		<anim name = "anim_destroyer_shot_head" type = "shot_head" />
+		<anim name = "anim_destroyer_ammo_loading_head" type = "ammo_loading_head" />
+		<anim name = "anim_destroyer_death_head" type = "death_head" />
+	</animset>
+
+</root>

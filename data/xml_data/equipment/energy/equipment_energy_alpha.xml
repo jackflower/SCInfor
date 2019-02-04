@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<root type = "energy">
+
+	<!-- CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Destroyer energy electric energy module Alpha" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "11.3137085"
+	/>
+
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "16.0"
+		rect_size_y = "16.0"
+		rect_size_body_x = "16.0"
+		rect_size_body_y = "16.0"
+		rect_size_head_x = "16.0"
+		rect_size_head_y = "16.0"		
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgeldem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body  = "true"
+		use_shadow_body       = "false"
+		use_displayable_head  = "true"
+		use_shadow_head       = "false"
+	/>
+
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+	
+	<!--CActor-->
+	
+	<!--dane techniczne-->
+	<technical_data
+		mass        = "25"
+		speed       = "0"
+		movabled    = "false"
+	/>
+
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowqanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajcej zdefiniowane typy animacji, class CAnimSet-->
+	<animset name_animset = "animset_energy_alpha_one">
+		<!--body-->
+		<anim name = "animation_equipment_energy_body_default"	type = "energy_body_default"	/>
+		<anim name = "animation_equipment_energy_body_reserve"	type = "energy_body_reserve"	/>
+		<anim name = "animation_equipment_energy_body_empty"	type = "energy_body_empty"		/>
+		<anim name = "animation_equipment_energy_body_damage"	type = "energy_body_damage"		/>
+		<anim name = "animation_equipment_energy_body_death"	type = "energy_body_death"		/>
+		<!--head-->
+		<anim name = "animation_equipment_energy_head_default"	type = "energy_head_default"	/>
+		<anim name = "animation_equipment_energy_head_reserve"	type = "energy_head_reserve"	/>
+		<anim name = "animation_equipment_energy_head_empty"	type = "energy_head_empty"	 	/>
+		<anim name = "animation_equipment_energy_head_damage"	type = "energy_head_damage"		/>
+		<anim name = "animation_equipment_energy_head_death"	type = "energy_head_death"		/>
+	</animset>
+
+	<animset name_animset = "animset_energy_alpha_two">
+		<!--body-->
+		<anim name = "animation_equipment_energy_body_default"	type = "energy_body_default"	/>
+		<anim name = "animation_equipment_energy_body_reserve"	type = "energy_body_reserve"	/>
+		<anim name = "animation_equipment_energy_body_empty"	type = "energy_body_empty"		/>
+		<anim name = "animation_equipment_energy_body_damage"	type = "energy_body_damage"		/>
+		<anim name = "animation_equipment_energy_body_death"	type = "energy_body_death"		/>
+		<!--head-->
+		<anim name = "animation_equipment_energy_head_default"	type = "energy_head_default"	/>
+		<anim name = "animation_equipment_energy_head_reserve"	type = "energy_head_reserve"	/>
+		<anim name = "animation_equipment_energy_head_empty"	type = "energy_head_empty"	 	/>
+		<anim name = "animation_equipment_energy_head_damage"	type = "energy_head_damage"		/>
+		<anim name = "animation_equipment_energy_head_death"	type = "energy_head_death"		/>
+	</animset>
+	
+	
+	<!--CEnergy-->
+	
+	<!--nazwa akumulatora energii (niklowy, kadmowy, lityczny, atomowy...etc)-->
+	<!--procentowa wartosc energii, przy ktorej nastepuje komunikat informacyjny o rezerwie, wyczerpaniu energii-->
+	<!--czas opoznienia komunikatu o wyczerpaniu energii-->
+	<!--flaga, czy obiekt moze wysyłac komunikaty o wyczerpaniu energii-->
+	<!--wartosc samoregeneracji energii (obiekt regeneruje energię - odpoczywa)-->
+	<!--czestotliwosc regeneracji procesu-->
+	<!--poprawka pozycji wzgledem wlasciciela - x-->
+	<!--poprawka pozycji wzgledem wlasciciela - y-->
+	<!--czas trwania stanu krytycznego-->
+	<!--czas trwania stanu uszkodzenia-->
+
+	<energy_config
+		energy_name					= "Energy electric energy module Alpha"
+		percentage_reserve_energy	= "0.1"
+		energy_time_delayed			= "2.32"
+		energy_empty_message	  	= "false"
+		energy_regeneration 	  	= "1"
+		regeneration_time			= "1"
+		energy_rotation_speed		= "600"
+		use_battery					= "true"
+		critical_duration			= "5.0"
+		damage_duration				= "4.0"
+	/>
+  
+	<!--nazwa pliku z danymi dla obiektu CEnergyTank/CEnergyTankTemplate-->
+	<!--flaga, czy obiekt posiada akumulator energii-->
+	<!--poprawka pozycji reprezentacji graficznej akumulatora energii wzgledem wlasciciela - x-->
+	<!--poprawka pozycji reprezentacji graficznej akumulatora energii wzgledem wlasciciela - y-->		
+	<energy_tank_config
+		use_energytank			= "true"
+		energy_tank_filename	= "../data/xml_data/equipment/energy/energytank/equipment_energytank_alpha.xml"
+		energytank_emiter_x		= "-8.0"
+		energytank_emiter_y		= "2.0"
+	/>
+
+	<!--nazwa pliku z danymi dla obiektu CBattery/CBatteryTemplate-->
+	<!--flaga, czy obiekt posiada akumulator energii-->	
+	<battery_config
+		use_battery			= "true"
+		battery_filename	= "../data/xml_data/equipment/energy/battery/battery_destroyer.xml"
+		battery_emiter_x	= "0"
+		battery_emiter_y	= "0"	
+	/>
+</root>

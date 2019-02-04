@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root type = "fuelbar">
+
+	<!--CFuelBar-->
+	
+	<!--std::string nazwa paska paliwa-->
+	<!--float grubosc paska paliwa-->
+	<!--float skladowa x - rozmiar paska paliwa-->
+	<!--float skladowa y - rozmiar paska paliwa-->
+	<!--float skladowa x wektora kalibracji polozenia obiektu wzgledem wlasciciela-->
+	<!--float skladowa y wektora kalibracji polozenia obiektu wzgledem wlasciciela-->
+	<!--unsigned int skladowa koloru - red-->
+	<!--unsigned int skladowa koloru - green-->
+	<!--unsigned int skladowa koloru - blue-->
+	<!--unsigned int skladowa koloru - alpha-->
+	
+	<fuelbar_config
+		bar_fuelbar_name		= "Destroyer fuel bar"
+		bar_thickness			= "2"
+		bar_size_x				= "0"
+		bar_size_y				= "0"
+		bar_position_offset_x	= "0"
+		bar_position_offset_y	= "0"
+		bar_color_red			= "0"
+		bar_color_green			= "255"
+		bar_color_blue			= "0"
+		bar_color_alpha			= "255"
+	/>
+</root>

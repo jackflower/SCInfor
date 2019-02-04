@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<root type = "powerstation">
+
+	<!--CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Elektrownia wind power station alpha" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "45.254834"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "64.0"
+		rect_size_y = "64.0"	
+		rect_size_body_x = "64.0"
+		rect_size_body_y = "64.0"
+		rect_size_head_x = "64.0"
+		rect_size_head_y = "64.0"		
+	/>	
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgledem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body  = "true"
+		use_shadow_body       = "true"
+		use_displayable_head  = "true"
+		use_shadow_head       = "false"
+	/>
+	
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+	
+	<!--CActor-->
+	
+	<!--dane techniczne-->
+	<technical_data
+		mass        = "25"
+		speed       = "0"
+		movabled    = "false"
+	/>
+
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowqanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajcej zdefiniowane typy animacji, class CAnimSet-->
+	<animset name_animset = "animset_windpowerstation_one">
+		<!--body-->
+		<anim name = "anim_wind_powerstation_alpha_body_default"		type = "windpowerstation_body_default"		/>
+		<anim name = "anim_wind_powerstation_alpha_body_update_energy"	type = "windpowerstation_body_update_energy"/>
+		<anim name = "anim_wind_powerstation_alpha_body_damage"			type = "windpowerstation_body_damage"		/>
+		<anim name = "anim_wind_powerstation_alpha_body_death"			type = "windpowerstation_body_death"		/>
+		<!--head-->
+		<anim name = "anim_wind_powerstation_alpha_head_default"		type = "windpowerstation_head_default"		/>
+		<anim name = "anim_wind_powerstation_alpha_head_update_energy"	type = "windpowerstation_head_update_energy"/>
+		<anim name = "anim_wind_powerstation_alpha_head_damage"			type = "windpowerstation_head_damage"		/>
+		<anim name = "anim_wind_powerstation_alpha_head_death"			type = "windpowerstation_head_death"		/>
+	</animset>
+
+	<animset name_animset = "animset_windpowerstation_two">
+		<!--body-->
+		<anim name = "anim_wind_powerstation_alpha_body_default"		type = "windpowerstation_body_default"		/>
+		<anim name = "anim_wind_powerstation_alpha_body_update_energy"	type = "windpowerstation_body_update_energy"/>
+		<anim name = "anim_wind_powerstation_alpha_body_damage"			type = "windpowerstation_body_damage"		/>
+		<anim name = "anim_wind_powerstation_alpha_body_death"			type = "windpowerstation_body_death"		/>
+		<!--head-->
+		<anim name = "anim_wind_powerstation_alpha_head_default"		type = "windpowerstation_head_default"		/>
+		<anim name = "anim_wind_powerstation_alpha_head_update_energy"	type = "windpowerstation_head_update_energy"/>
+		<anim name = "anim_wind_powerstation_alpha_head_damage"			type = "windpowerstation_head_damage"		/>
+		<anim name = "anim_wind_powerstation_alpha_head_death"			type = "windpowerstation_head_death"		/>
+	</animset>
+
+	<!--CPowerStation-->
+	<!--std::string nazwa elektrowni-->
+	<!--float ilosc energii do zmagazynowania - pojemnosc (kondensator)-->
+	<!--unsigned ilosc modulow zasilajacych (turbin, przetwornikow, etc...)-->
+	<power_station_config
+		power_station_name		= "Wind power default"
+		energy_capacitor		= "100"
+		amount_power_modules	= "1"
+	/>	
+		
+	<!--CWindPowerStation-->
+	<!--float czas co jaki następuje kondensacja energii-->
+	<!--float porcja energii, ktora bede mogl zabierac z turbiny - mechanizm przepompowywania energii-->	
+	<windpower_station_config
+		energy_condensation_time	= "1"
+		portion_energy				= "0.276"
+		use_rotation_head			= "false"
+		speed_rotation_head			= "0.5"
+	/>
+
+	<!--CWindTurbine-->
+	<!--nazwa pliku z danymi dla obiektu CWindTurbine/CWindTurbineTemplate-->
+	<windturbine_data
+		use_windturbine = "true"
+		windturbine_filename = "../data/xml_data/equipment/industrial/windturbinealpha.xml"
+	/>
+	
+	<!--CCommunication-->
+	<!--flaga czy obiekt posiada modul komunikacyjny CCommunication-->
+	<!--nazwa pliku z danymi dla obiektu CCommunication/CCommunicationTemplate-->
+	<!--poprawka pozycji reprezentacji graficznej akumulatora energii wzgledem wlasciciela - x-->
+	<!--poprawka pozycji reprezentacji graficznej akumulatora energii wzgledem wlasciciela - y-->		
+	<communication_data
+		use_communication = "false"
+		communication_filename = "../data/xml_data/communication/communication_alpha.xml"
+		communication_emiter_x = "0"
+		communication_emiter_y = "0"
+	/>
+</root>

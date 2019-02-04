@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<root type = "relaystation">
+
+	<!--CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Power relay station beta" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "45.254834"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->	
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "64.0"
+		rect_size_y = "64.0"	
+		rect_size_body_x = "64.0"
+		rect_size_body_y = "64.0"
+		rect_size_head_x = "64.0"
+		rect_size_head_y = "64.0"		
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgeldem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body  = "true"
+		use_shadow_body       = "true"
+		use_displayable_head  = "true"
+		use_shadow_head       = "true"
+	/>
+	
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+	
+	<!--CActor-->
+	
+	<!--dane techniczne-->
+	<technical_data
+		mass        = "7.62"
+		speed       = "0"
+		movabled    = "false"
+	/>
+
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowqanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajcej zdefiniowane typy animacji, class CAnimSet-->
+	<animset name_animset = "animset_powerrelaystation_one">
+		<!--body-->
+		<anim name = "anim_power_relay_station_beta_body_default"			type = "powerrelaystation_body_default"			/>
+		<anim name = "anim_power_relay_station_beta_body_updateconnection"	type = "powerrelaystation_body_updateconnection"/>
+		<anim name = "anim_power_relay_station_beta_body_disconnect"		type = "powerrelaystation_body_disconnect"		/>
+		<anim name = "anim_power_relay_station_beta_body_damage"			type = "powerrelaystation_body_damage"			/>
+		<anim name = "anim_power_relay_station_beta_body_death"				type = "powerrelaystation_body_death"			/>
+		<!--head-->
+		<anim name = "anim_power_relay_station_beta_head_default"			type = "powerrelaystation_head_default"			/>
+		<anim name = "anim_power_relay_station_beta_head_updateconnection"	type = "powerrelaystation_head_updateconnection"/>
+		<anim name = "anim_power_relay_station_beta_head_disconnect"		type = "powerrelaystation_head_disconnect"		/>
+		<anim name = "anim_power_relay_station_beta_head_damage"			type = "powerrelaystation_head_damage"			/>
+		<anim name = "anim_power_relay_station_beta_head_death"				type = "powerrelaystation_head_death"			/>
+	</animset>
+
+	<animset name_animset = "animset_powerrelaystation_two">
+		<!--body-->
+		<anim name = "anim_power_relay_station_beta_body_default"			type = "powerrelaystation_body_default"			/>
+		<anim name = "anim_power_relay_station_beta_body_updateconnection"	type = "powerrelaystation_body_updateconnection"/>
+		<anim name = "anim_power_relay_station_beta_body_disconnect"		type = "powerrelaystation_body_disconnect"		/>
+		<anim name = "anim_power_relay_station_beta_body_damage"			type = "powerrelaystation_body_damage"			/>
+		<anim name = "anim_power_relay_station_beta_body_death"				type = "powerrelaystation_body_death"			/>
+		<!--head-->
+		<anim name = "anim_power_relay_station_beta_head_default"			type = "powerrelaystation_head_default"			/>
+		<anim name = "anim_power_relay_station_beta_head_updateconnection"	type = "powerrelaystation_head_updateconnection"/>
+		<anim name = "anim_power_relay_station_beta_head_disconnect"		type = "powerrelaystation_head_disconnect"		/>
+		<anim name = "anim_power_relay_station_beta_head_damage"			type = "powerrelaystation_head_damage"			/>
+		<anim name = "anim_power_relay_station_beta_head_death"				type = "powerrelaystation_head_death"			/>
+	</animset>
+
+	<!--CRelayStation-->
+	<!--std::string nazwa obiektu przekaznikowego-->
+	<!--bool flaga czy obiekt posiada modul przekaznika-->
+	<relay_station_config
+		relay_station_name = "Power relay station beta"
+		use_communication = "true"
+	/>
+	
+	<!--CCommunication-->
+	<!--nazwa pliku z danymi dla obiektu CCommunication/CCommunicationTemplate-->
+	<communication_data
+		use_communication = "false"
+		communication_filename = "../data/xml_data/communication/communication_beta.xml"
+	/>
+	
+	<!--CPowerRelayStation-->
+	<!--int ilosc obslugiwanych elektrowni - pojemnosc przekaznika-->
+	<!--float zakres czasu trwania stanu - wartosc minimalna dla generatora losowego - wizualizacja aktywności-->
+	<!--float zakres czasu trwania stanu - wartosc maksymalna dla generatora losowego - wizualizacja aktywności-->
+	<!--float zakres predkosci i kieruneku obracania sie mudulu - wartosc minimalna dla generatora losowego - wizualizacja aktywnosci-->
+	<!--float zakres predkosci i kieruneku obracania sie mudulu - wartosc maksymalna dla generatora losowego - wizualizacja aktywnosci-->
+	<!--float po tym czasie obiekt wchodzi do stanu obslugi elektrowni-->
+	<!--float czas trwania procesu disconnect-->
+	<power_relay_station_config
+		powerstations_capacity		= "4"
+		state_time_range_first		= "0.48"
+		state_time_range_second		= "1.32"
+		rotation_speed_range_first	= "-0.32"
+		rotation_speed_range_second	= "0.92"
+		time_to_start				= "4"
+		duration_disconnect			= "5"
+	/>
+	
+	<!--CSlotsRate-->
+	<!--nazwa pliku z danymi dla obiektu CSlotsRate/CSlotsRateTemplate-->
+	<slots_rate_data
+		use_slots_rate = "true"
+		slots_rate_filename = "../data/xml_data/powerrelaystation/slots_rate_beta.xml"
+	/>
+
+	<!--CBattery-->
+	<!--nazwa pliku z danymi dla obiektu CBattery/CBatteryTemplate-->
+	<battery_data
+		use_battery = "true"
+		battery_filename = "../data/xml_data/equipment/energy/battery/battery_beta.xml"
+	/>	
+
+</root>

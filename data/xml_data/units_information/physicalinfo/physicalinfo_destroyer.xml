@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<root type = "physicalinfo">
+
+	<!--CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "destroyer info" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "45.254834"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->	
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "64.0"
+		rect_size_y = "64.0"
+		rect_size_body_x = "64.0"
+		rect_size_body_y = "64.0"
+		rect_size_head_x = "64.0"
+		rect_size_head_y = "64.0"		
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgledem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body  = "true"
+		use_shadow_body       = "false"
+		use_displayable_head  = "true"
+		use_shadow_head       = "false"
+	/>
+	
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+
+	<!--animacja CPhysicalInfo -->
+	<unit_animation
+		use_animation = "false"
+		animation_name = "anim_one"
+	/>
+
+	<!--tekstura CPhysicalInfo -->
+	<unit_texture
+		use_texture = "false"
+		texture_name = "ToDo"
+	/>
+	
+	<!--CPhysicalInfo/CPhysicalInfoTemplate-->
+	<!--std::string nazwa obiektu-->
+	<!--bool flaga, czy obiekt posiada posiada progress bar (energia-zycie)-->
+	<!--bool flaga, czy obiekt posiada posiada progress bar (paliwo/tlen)-->
+	<!--unsigned int skladowa koloru - red energy-->
+	<!--unsigned int skladowa koloru - green energy-->
+	<!--unsigned int skladowa koloru - blue energy-->
+	<!--unsigned int skladowa koloru - alpha energy-->
+	<!--unsigned int skladowa koloru - red fuel-->
+	<!--unsigned int skladowa koloru - green fuel-->
+	<!--unsigned int skladowa koloru - blue fuel-->
+	<!--unsigned int skladowa koloru - alpha fuel-->
+	<!--rozmiar wskaznieka energii wzgldem wlasciciela-->
+	<!--rozmiar wskaznieka paliwa wzgldem wlasciciela-->
+	<!--wektor poprawki pozycji wzkaznika energii wzgldem wlasciciela-->
+	<!--wektor poprawki pozycji wzkaznika paliwa wzgldem wlasciciela-->
+
+	<physical_info_config
+		physical_info_name = "Physical info destroyer"
+		use_status_bar_energy = "true"
+		use_status_bar_fuel = "true"
+		energy_bar_color_red = "0"
+		energy_bar_color_green = "255"
+		energy_bar_color_blue = "0"
+		energy_bar_color_alpha = "255"
+		fuel_bar_color_red = "0"
+		fuel_bar_color_green = "0"
+		fuel_bar_color_blue = "255"
+		fuel_bar_color_alpha = "255"
+		size_energy_x="64"
+		size_energy_y="1"
+		size_fuel_x="64"
+		size_fuel_y="1"
+		position_offset_energy_x="0"
+		position_offset_energy_y="10"
+		position_offset_fuel_x="0"
+		position_offset_fuel_y="20"
+	/>
+</root>

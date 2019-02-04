@@ -76,7 +76,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\SFML-2.5.0-windows-vc15-32-bit\SFML-2.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\SFML-2.5.0-windows-vc15-32-bit\SFML-2.5.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-main-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -84,7 +90,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\SFML-2.5.0-windows-vc15-32-bit\SFML-2.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\SFML-2.5.0-windows-vc15-32-bit\SFML-2.5.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-main-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -94,10 +106,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\SFML-2.5.0-windows-vc15-32-bit\SFML-2.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\SFML-2.5.0-windows-vc15-32-bit\SFML-2.5.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-main.lib;sfml-graphics.lib;sfml-audio.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -108,13 +124,475 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\SFML-2.5.0-windows-vc15-32-bit\SFML-2.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\SFML-2.5.0-windows-vc15-32-bit\SFML-2.5.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-main.lib;sfml-graphics.lib;sfml-audio.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Equipment\CSwitch.cpp" />
+    <ClCompile Include="source\Equipment\Energy\Battery\CBattery.cpp" />
+    <ClCompile Include="source\Equipment\Energy\Battery\CSolarBattery.cpp" />
+    <ClCompile Include="source\Equipment\Energy\CEnergy.cpp" />
+    <ClCompile Include="source\Equipment\Energy\CFixedColor.cpp" />
+    <ClCompile Include="source\Equipment\Energy\EnergyTank\CEnergyTank.cpp" />
+    <ClCompile Include="source\Equipment\Engine\CEngine.cpp" />
+    <ClCompile Include="source\Equipment\Engine\FuelBar\CFuelBar.cpp" />
+    <ClCompile Include="source\Equipment\Engine\FuelTank\CFuelTank.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAmmoData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentBatteryData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentCommunicationData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEnergyData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEnergyTankData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEngineData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentFuelTankData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentGunData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentVentilatorData.cpp" />
+    <ClCompile Include="source\Equipment\EquipmentData\CThermalInsulationData.cpp" />
+    <ClCompile Include="source\Equipment\Industrial\PowerModuleType\CSolarCell.cpp" />
+    <ClCompile Include="source\Equipment\Industrial\PowerModuleType\CWindTurbine.cpp" />
+    <ClCompile Include="source\Equipment\Industrial\PowerModule\CPowerModule.cpp" />
+    <ClCompile Include="source\Equipment\Industrial\PowerStationData\CWindTurbineData.cpp" />
+    <ClCompile Include="source\Equipment\Lightingequipment\CLightingEquipment.cpp" />
+    <ClCompile Include="source\Equipment\Thermodynamics\Airconditioning\CAirconditioning.cpp" />
+    <ClCompile Include="source\Equipment\Thermodynamics\ThermalInsulation\CThermalInsulation.cpp" />
+    <ClCompile Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.cpp" />
+    <ClCompile Include="source\Equipment\Thermometer\CThermometer.cpp" />
+    <ClCompile Include="source\Equipment\Weapon\Ammo\CAmmo.cpp" />
+    <ClCompile Include="source\Equipment\Weapon\Ammunition\CMagazineAmmunition.cpp" />
+    <ClCompile Include="source\Equipment\Weapon\CCaliber.cpp" />
+    <ClCompile Include="source\Equipment\Weapon\Gun\CGun.cpp" />
+    <ClCompile Include="source\Equipment\Weapon\Gun\LockWeapon\CLockWeapon.cpp" />
+    <ClCompile Include="source\Factory\CActorTemplate.cpp" />
+    <ClCompile Include="source\Factory\CBulletTemplate.cpp" />
+    <ClCompile Include="source\Factory\CEnemyTemplate.cpp" />
+    <ClCompile Include="source\Factory\CFloraTemplate.cpp" />
+    <ClCompile Include="source\Factory\CMonsterTemplate.cpp" />
+    <ClCompile Include="source\Factory\CPhysicalInfoTemplate.cpp" />
+    <ClCompile Include="source\Factory\CPhysicalTemplate.cpp" />
+    <ClCompile Include="source\Factory\CPlayerTemplate.cpp" />
+    <ClCompile Include="source\Factory\CRobotTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\CommunicationFactory\CCommunicationTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CBatteryTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CSolarBatteryTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\CEnergyTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory\CEnergyTankTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\CEngineTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\CFuelBarTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\CFuelTankTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CSolarCellTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CWindTurbineTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\CAirconditioningTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\CThermalInsulationTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\CAmmoTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\CGunTemplate.cpp" />
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CPowerStationTemplate.cpp" />
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationMultipledTemplate.cpp" />
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationTemplate.cpp" />
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CPowerRelayStationTemplate.cpp" />
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CRelayStationTemplate.cpp" />
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CSlotsRateTemplate.cpp" />
+    <ClCompile Include="source\Factory\InformationFactory\CInformationTemplate.cpp" />
+    <ClCompile Include="source\Factory\InformationFactory\CPresentationTemplate.cpp" />
+    <ClCompile Include="source\Factory\MapPhysicalFactory\CGroundTemplate.cpp" />
+    <ClCompile Include="source\Factory\MapPhysicalFactory\CGroundWorkTemplate.cpp" />
+    <ClCompile Include="source\Factory\MapPhysicalFactory\CMapPhysicalTemplate.cpp" />
+    <ClCompile Include="source\Game\Game.cpp" />
+    <ClCompile Include="source\Game\CGameProperties.cpp" />
+    <ClCompile Include="source\Information\CInfoManager.cpp" />
+    <ClCompile Include="source\Information\CInformation.cpp" />
+    <ClCompile Include="source\Information\CPresentation.cpp" />
+    <ClCompile Include="source\Information\IInformation.cpp" />
+    <ClCompile Include="source\Logic\Actor\ActorStateData\CActorStateData.cpp" />
+    <ClCompile Include="source\Logic\Actor\CActor.cpp" />
+    <ClCompile Include="source\Logic\Actor\CActorController.cpp" />
+    <ClCompile Include="source\Logic\ArtificialIntelligence\CActorAI.cpp" />
+    <ClCompile Include="source\Logic\ArtificialIntelligence\CActorAIData.cpp" />
+    <ClCompile Include="source\Logic\Bullet\CBullet.cpp" />
+    <ClCompile Include="source\Logic\CLogic.cpp" />
+    <ClCompile Include="source\Logic\CMapPhysicalManager.cpp" />
+    <ClCompile Include="source\Logic\Communication\CCommunication.cpp" />
+    <ClCompile Include="source\Logic\Communication\CLogin.cpp" />
+    <ClCompile Include="source\Logic\Communication\CReceiver.cpp" />
+    <ClCompile Include="source\Logic\Communication\CTransmitter.cpp" />
+    <ClCompile Include="source\Logic\CPhysicalManager.cpp" />
+    <ClCompile Include="source\Logic\Enemy\CEnemy.cpp" />
+    <ClCompile Include="source\Logic\Energetics\PowerRelay\CPowerRelayStation.cpp" />
+    <ClCompile Include="source\Logic\Energetics\PowerRelay\CRelayStation.cpp" />
+    <ClCompile Include="source\Logic\Energetics\PowerRelay\CSlotsRate.cpp" />
+    <ClCompile Include="source\Logic\Energetics\RelayStationData\CSlotsRateData.cpp" />
+    <ClCompile Include="source\Logic\Flora\CFlora.cpp" />
+    <ClCompile Include="source\Logic\Industrial\PowerStation\CoalPowerPlant\CCoalPowerPlant.cpp" />
+    <ClCompile Include="source\Logic\Industrial\PowerStation\CPowerStation.cpp" />
+    <ClCompile Include="source\Logic\Industrial\PowerStation\Hydroelectric\CHydroelectric.cpp" />
+    <ClCompile Include="source\Logic\Industrial\PowerStation\NuclearPowerPlant\CNuclearPowerPlant.cpp" />
+    <ClCompile Include="source\Logic\Industrial\PowerStation\SolarPowerStation\CSolarPowerStation.cpp" />
+    <ClCompile Include="source\Logic\Industrial\PowerStation\SuppliedDieselPower\CSuppliedDieselPower.cpp" />
+    <ClCompile Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStation.cpp" />
+    <ClCompile Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStationMultipled.cpp" />
+    <ClCompile Include="source\Logic\Monster\CMonster.cpp" />
+    <ClCompile Include="source\Logic\Physical\CPhysical.cpp" />
+    <ClCompile Include="source\Logic\Physical\PartCollisionData\CPartCollisionData.cpp" />
+    <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp" />
+    <ClCompile Include="source\Logic\Physical\PhysicalData\CPhysicalData.cpp" />
+    <ClCompile Include="source\Logic\Physical\PhysicalInfo\CPhysicalInfo.cpp" />
+    <ClCompile Include="source\Logic\Physics\CActorTechnicalData.cpp" />
+    <ClCompile Include="source\Logic\Physics\CPhysicsData.cpp" />
+    <ClCompile Include="source\Logic\Player\CPlayer.cpp" />
+    <ClCompile Include="source\Logic\Unit\CombatUnit\CCombatUnit.cpp" />
+    <ClCompile Include="source\Logic\Unit\CombatUnit\Robot\CRobot.cpp" />
+    <ClCompile Include="source\Logic\Unit\CStrategyController.cpp" />
+    <ClCompile Include="source\Logic\Unit\CStrategyDuration.cpp" />
+    <ClCompile Include="source\Logic\Unit\CUnit.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\Map\CCell.cpp" />
+    <ClCompile Include="source\Map\CCollisionMap.cpp" />
+    <ClCompile Include="source\Map\CDoodahDescriptor.cpp" />
+    <ClCompile Include="source\Map\CDynamicRegion.cpp" />
+    <ClCompile Include="source\Map\CDynamicRegionsGenerator.cpp" />
+    <ClCompile Include="source\Map\CMap.cpp" />
+    <ClCompile Include="source\Map\CMapManager.cpp" />
+    <ClCompile Include="source\Map\CMapPhysicalHeader.cpp" />
+    <ClCompile Include="source\Map\Ground\CGround.cpp" />
+    <ClCompile Include="source\Map\Ground\PhysicsGround\CPhysicsGround.cpp" />
+    <ClCompile Include="source\Map\MapPhysicalObject\CMapObjectDescriptor.cpp" />
+    <ClCompile Include="source\Map\MapPhysicalObject\CMapObjectType.cpp" />
+    <ClCompile Include="source\Map\MapPhysical\CMapPhysical.cpp" />
+    <ClCompile Include="source\Map\MapPhysical\CMapPhysicalDescriptor.cpp" />
+    <ClCompile Include="source\Map\MapPhysical\CMapPhysicalType.cpp" />
+    <ClCompile Include="source\Map\MapPhysical\GroundWork\CGroundWork.cpp" />
+    <ClCompile Include="source\Map\MapPhysical\GroundWork\CGroundWorkCollision.cpp" />
+    <ClCompile Include="source\Map\SceneManager\CQuadtree.cpp" />
+    <ClCompile Include="source\Map\SearchTools\CWaypoint.cpp" />
+    <ClCompile Include="source\Map\SearchTools\CWaypointCell.cpp" />
+    <ClCompile Include="source\Map\SearchTools\CWaypointPriorityQueue.cpp" />
+    <ClCompile Include="source\Map\Tile\CMapTileType.cpp" />
+    <ClCompile Include="source\Map\Tile\CTile.cpp" />
+    <ClCompile Include="source\Rendering\Animated\CAnimated.cpp" />
+    <ClCompile Include="source\Rendering\Animated\CAnimatedAnimation.cpp" />
+    <ClCompile Include="source\Rendering\Animated\CAnimatedFrame.cpp" />
+    <ClCompile Include="source\Rendering\Animations\CAnimation.cpp" />
+    <ClCompile Include="source\Rendering\Animations\CAnimationFrame.cpp" />
+    <ClCompile Include="source\Rendering\Animations\CAnimationManager.cpp" />
+    <ClCompile Include="source\Rendering\Animations\CAnimationState.cpp" />
+    <ClCompile Include="source\Rendering\Animations\CAnimSet.cpp" />
+    <ClCompile Include="source\Rendering\Animations\CNameAnimPairTranslator.cpp" />
+    <ClCompile Include="source\Rendering\Animations\CTimedAnimationFrame.cpp" />
+    <ClCompile Include="source\Rendering\Displayable\CBar.cpp" />
+    <ClCompile Include="source\Rendering\Displayable\CClippedSprite.cpp" />
+    <ClCompile Include="source\Rendering\Displayable\CDisplayable.cpp" />
+    <ClCompile Include="source\Rendering\Displayable\CHudSprite.cpp" />
+    <ClCompile Include="source\Rendering\Displayable\CHudStaticText.cpp" />
+    <ClCompile Include="source\Rendering\Displayable\CRectangle.cpp" />
+    <ClCompile Include="source\Rendering\Displayable\CSprite.cpp" />
+    <ClCompile Include="source\Rendering\Displayable\CTextHeadUpDisplay.cpp" />
+    <ClCompile Include="source\Rendering\Drawable\CDrawableManager.cpp" />
+    <ClCompile Include="source\Rendering\Drawable\IDrawable.cpp" />
+    <ClCompile Include="source\Rendering\Particle\CParticle.cpp" />
+    <ClCompile Include="source\Rendering\Particle\CParticleState.cpp" />
+    <ClCompile Include="source\ResourceManager\CFont.cpp" />
+    <ClCompile Include="source\ResourceManager\CMusic.cpp" />
+    <ClCompile Include="source\ResourceManager\CResourceManager.cpp" />
+    <ClCompile Include="source\ResourceManager\CSound.cpp" />
+    <ClCompile Include="source\ResourceManager\CTexture.cpp" />
+    <ClCompile Include="source\ResourceManager\IResource.cpp" />
+    <ClCompile Include="source\RTTI\RTTI.cpp" />
+    <ClCompile Include="source\Universe\CUniverse.cpp" />
+    <ClCompile Include="source\Universe\Galaxy\CGalaxy.cpp" />
+    <ClCompile Include="source\Universe\Galaxy\Star\CStar.cpp" />
+    <ClCompile Include="source\Universe\Galaxy\Star\Planet\CPlanet.cpp" />
+    <ClCompile Include="source\Universe\Galaxy\Star\Planet\Satelite\CSatelite.cpp" />
+    <ClCompile Include="source\Universe\Interaction\CEntityTemperature.cpp" />
+    <ClCompile Include="source\Universe\Interaction\CGravity.cpp" />
+    <ClCompile Include="source\Utilities\CharsetTools\CCharSetManager.cpp" />
+    <ClCompile Include="source\Utilities\CharsetTools\CCharsetTranslator.cpp" />
+    <ClCompile Include="source\Utilities\EntityTranslator\CEntityTranslator.cpp" />
+    <ClCompile Include="source\Utilities\FileUtils\FileUtils.cpp" />
+    <ClCompile Include="source\Utilities\FileUtils\PathManager\CPathManager.cpp" />
+    <ClCompile Include="source\Utilities\MathFunctions\MathFunctions.cpp" />
+    <ClCompile Include="source\Utilities\Memory\CPool.cpp" />
+    <ClCompile Include="source\Utilities\Memory\CPoolable.cpp" />
+    <ClCompile Include="source\Utilities\Memory\CPoolBase.cpp" />
+    <ClCompile Include="source\Utilities\Memory\CRefPoolable.cpp" />
+    <ClCompile Include="source\Utilities\Memory\MemoryTests.cpp" />
+    <ClCompile Include="source\Utilities\Miscellaneous\Float.cpp" />
+    <ClCompile Include="source\Utilities\Miscellaneous\Integer.cpp" />
+    <ClCompile Include="source\Utilities\Miscellaneous\Miscellaneous.cpp" />
+    <ClCompile Include="source\Utilities\Random\CRandom.cpp" />
+    <ClCompile Include="source\Utilities\Singleton\CSingletonCleaner.cpp" />
+    <ClCompile Include="source\Utilities\StringUtils\StringUtils.cpp" />
+    <ClCompile Include="source\Utilities\TimeUtilities\CClock.cpp" />
+    <ClCompile Include="source\Utilities\TimeUtilities\CFPS.cpp" />
+    <ClCompile Include="source\Utilities\Transformation\CTransformation.cpp" />
+    <ClCompile Include="source\Utilities\Translation\Directions.cpp" />
+    <ClCompile Include="source\Weather\CDay.cpp" />
+    <ClCompile Include="source\Weather\CShadowEngine.cpp" />
+    <ClCompile Include="source\Weather\CTemperature.cpp" />
+    <ClCompile Include="source\Weather\CWeather.cpp" />
+    <ClCompile Include="source\Weather\CWind.cpp" />
+    <ClCompile Include="source\XML\CXml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="notes\notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Equipment\CSwitch.h" />
+    <ClInclude Include="source\Equipment\Energy\Battery\CBattery.h" />
+    <ClInclude Include="source\Equipment\Energy\Battery\CSolarBattery.h" />
+    <ClInclude Include="source\Equipment\Energy\Battery\EBatteryState.h" />
+    <ClInclude Include="source\Equipment\Energy\CEnergy.h" />
+    <ClInclude Include="source\Equipment\Energy\CFixedColor.h" />
+    <ClInclude Include="source\Equipment\Energy\EEnergyState.h" />
+    <ClInclude Include="source\Equipment\Energy\EnergyTank\CEnergyTank.h" />
+    <ClInclude Include="source\Equipment\Energy\EnergyTank\EEnergyTankState.h" />
+    <ClInclude Include="source\Equipment\Engine\CEngine.h" />
+    <ClInclude Include="source\Equipment\Engine\EEngineState.h" />
+    <ClInclude Include="source\Equipment\Engine\FuelBar\CFuelBar.h" />
+    <ClInclude Include="source\Equipment\Engine\FuelTank\CFuelTank.h" />
+    <ClInclude Include="source\Equipment\Engine\FuelTank\EFuelTankState.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentAmmoData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentBatteryData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentCommunicationData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEnergyData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEnergyTankData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEngineData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentFuelTankData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentGunData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentVentilatorData.h" />
+    <ClInclude Include="source\Equipment\EquipmentData\CThermalInsulationData.h" />
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\CSolarCell.h" />
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\CWindTurbine.h" />
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\ESolarCellState.h" />
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\ETurbineState.h" />
+    <ClInclude Include="source\Equipment\Industrial\PowerModule\CPowerModule.h" />
+    <ClInclude Include="source\Equipment\Industrial\PowerStationData\CWindTurbineData.h" />
+    <ClInclude Include="source\Equipment\Lightingequipment\CLightingEquipment.h" />
+    <ClInclude Include="source\Equipment\Lightingequipment\ELightingEquipmentState.h" />
+    <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\CAirconditioning.h" />
+    <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\EAirconditioningState.h" />
+    <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\CThermalInsulation.h" />
+    <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\EThermalInsulationState.h" />
+    <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.h" />
+    <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\EVentilatorState.h" />
+    <ClInclude Include="source\Equipment\Thermometer\CThermometer.h" />
+    <ClInclude Include="source\Equipment\Thermometer\EDisplayType.h" />
+    <ClInclude Include="source\Equipment\Weapon\Ammo\CAmmo.h" />
+    <ClInclude Include="source\Equipment\Weapon\Ammo\EAmmoState.h" />
+    <ClInclude Include="source\Equipment\Weapon\Ammunition\CMagazineAmmunition.h" />
+    <ClInclude Include="source\Equipment\Weapon\CCaliber.h" />
+    <ClInclude Include="source\Equipment\Weapon\ECaliber.h" />
+    <ClInclude Include="source\Equipment\Weapon\EGunState.h" />
+    <ClInclude Include="source\Equipment\Weapon\Gun\CGun.h" />
+    <ClInclude Include="source\Equipment\Weapon\Gun\LockWeapon\CLockWeapon.h" />
+    <ClInclude Include="source\Factory\CActorTemplate.h" />
+    <ClInclude Include="source\Factory\CBulletTemplate.h" />
+    <ClInclude Include="source\Factory\CEnemyTemplate.h" />
+    <ClInclude Include="source\Factory\CFloraTemplate.h" />
+    <ClInclude Include="source\Factory\CMonsterTemplate.h" />
+    <ClInclude Include="source\Factory\CPhysicalInfoTemplate.h" />
+    <ClInclude Include="source\Factory\CPhysicalTemplate.h" />
+    <ClInclude Include="source\Factory\CPlayerTemplate.h" />
+    <ClInclude Include="source\Factory\CRobotTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\CommunicationFactory\CCommunicationTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CBatteryTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CSolarBatteryTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\CEnergyTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory\CEnergyTankTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\CEngineTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\CFuelBarTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\CFuelTankTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CSolarCellTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CWindTurbineTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\CAirconditioningTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\CThermalInsulationTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\CAmmoTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\CGunTemplate.h" />
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CPowerStationTemplate.h" />
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationMultipledTemplate.h" />
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationTemplate.h" />
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CPowerRelayStationTemplate.h" />
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CRelayStationTemplate.h" />
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CSlotsRateTemplate.h" />
+    <ClInclude Include="source\Factory\InformationFactory\CInformationTemplate.h" />
+    <ClInclude Include="source\Factory\InformationFactory\CPresentationTemplate.h" />
+    <ClInclude Include="source\Factory\MapPhysicalFactory\CGroundTemplate.h" />
+    <ClInclude Include="source\Factory\MapPhysicalFactory\CGroundWorkTemplate.h" />
+    <ClInclude Include="source\Factory\MapPhysicalFactory\CMapPhysicalTemplate.h" />
+    <ClInclude Include="source\Game\Game.h" />
+    <ClInclude Include="source\Game\CGameProperties.h" />
+    <ClInclude Include="source\Game\Listener\IFrameListener.h" />
+    <ClInclude Include="source\Game\Listener\IKeyListener.h" />
+    <ClInclude Include="source\Game\Listener\IMouseListener.h" />
+    <ClInclude Include="source\Information\CInfoManager.h" />
+    <ClInclude Include="source\Information\CInformation.h" />
+    <ClInclude Include="source\Information\CPresentation.h" />
+    <ClInclude Include="source\Information\IInformation.h" />
+    <ClInclude Include="source\Logic\Actor\ActorStateData\CActorStateData.h" />
+    <ClInclude Include="source\Logic\Actor\CActor.h" />
+    <ClInclude Include="source\Logic\Actor\CActorController.h" />
+    <ClInclude Include="source\Logic\Actor\EActorBasicState.h" />
+    <ClInclude Include="source\Logic\Actor\EActorMoveState.h" />
+    <ClInclude Include="source\Logic\Actor\EActorSpawnState.h" />
+    <ClInclude Include="source\Logic\ArtificialIntelligence\CActorAI.h" />
+    <ClInclude Include="source\Logic\ArtificialIntelligence\CActorAIData.h" />
+    <ClInclude Include="source\Logic\ArtificialIntelligence\CAIScheme.h" />
+    <ClInclude Include="source\Logic\Bullet\CBullet.h" />
+    <ClInclude Include="source\Logic\CLogic.h" />
+    <ClInclude Include="source\Logic\CMapPhysicalManager.h" />
+    <ClInclude Include="source\Logic\Communication\CCommunication.h" />
+    <ClInclude Include="source\Logic\Communication\CLogin.h" />
+    <ClInclude Include="source\Logic\Communication\CReceiver.h" />
+    <ClInclude Include="source\Logic\Communication\CTransmitter.h" />
+    <ClInclude Include="source\Logic\Communication\ECommunicationState.h" />
+    <ClInclude Include="source\Logic\Communication\ENetworking.h" />
+    <ClInclude Include="source\Logic\CPhysicalManager.h" />
+    <ClInclude Include="source\Logic\EEnemyAttitude.h" />
+    <ClInclude Include="source\Logic\EEnemyState.h" />
+    <ClInclude Include="source\Logic\Enemy\CEnemy.h" />
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\CPowerRelayStation.h" />
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\CRelayStation.h" />
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\CSlotsRate.h" />
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\EPowerRelayStationState.h" />
+    <ClInclude Include="source\Logic\Energetics\RelayStationData\CSlotsRateData.h" />
+    <ClInclude Include="source\Logic\Flora\CFlora.h" />
+    <ClInclude Include="source\Logic\Industrial\PowerStation\CoalPowerPlant\CCoalPowerPlant.h" />
+    <ClInclude Include="source\Logic\Industrial\PowerStation\CPowerStation.h" />
+    <ClInclude Include="source\Logic\Industrial\PowerStation\EWindPowerStationState.h" />
+    <ClInclude Include="source\Logic\Industrial\PowerStation\Hydroelectric\CHydroelectric.h" />
+    <ClInclude Include="source\Logic\Industrial\PowerStation\NuclearPowerPlant\CNuclearPowerPlant.h" />
+    <ClInclude Include="source\Logic\Industrial\PowerStation\SolarPowerStation\CSolarPowerStation.h" />
+    <ClInclude Include="source\Logic\Industrial\PowerStation\SuppliedDieselPower\CSuppliedDieselPower.h" />
+    <ClInclude Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStation.h" />
+    <ClInclude Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStationMultipled.h" />
+    <ClInclude Include="source\Logic\Monster\CMonster.h" />
+    <ClInclude Include="source\Logic\Physical\CPhysical.h" />
+    <ClInclude Include="source\Logic\Physical\ECollisionShape.h" />
+    <ClInclude Include="source\Logic\Physical\EPhysicalPart.h" />
+    <ClInclude Include="source\Logic\Physical\PartCollisionData\CPartCollisionData.h" />
+    <ClInclude Include="source\Logic\Physical\PhysicalCategories.h" />
+    <ClInclude Include="source\Logic\Physical\PhysicalData\CPhysicalData.h" />
+    <ClInclude Include="source\Logic\Physical\PhysicalInfo\CPhysicalInfo.h" />
+    <ClInclude Include="source\Logic\Physics\CActorTechnicalData.h" />
+    <ClInclude Include="source\Logic\Physics\CPhysicsData.h" />
+    <ClInclude Include="source\Logic\Player\CPlayer.h" />
+    <ClInclude Include="source\Logic\Unit\CombatUnit\CCombatUnit.h" />
+    <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\CRobot.h" />
+    <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\ERobotState.h" />
+    <ClInclude Include="source\Logic\Unit\CStrategyController.h" />
+    <ClInclude Include="source\Logic\Unit\CStrategyDuration.h" />
+    <ClInclude Include="source\Logic\Unit\CUnit.h" />
+    <ClInclude Include="source\Logic\Unit\EStrategyState.h" />
+    <ClInclude Include="source\Map\CCell.h" />
+    <ClInclude Include="source\Map\CCollisionMap.h" />
+    <ClInclude Include="source\Map\CDoodahDescriptor.h" />
+    <ClInclude Include="source\Map\CDynamicRegion.h" />
+    <ClInclude Include="source\Map\CDynamicRegionsGenerator.h" />
+    <ClInclude Include="source\Map\CMap.h" />
+    <ClInclude Include="source\Map\CMapManager.h" />
+    <ClInclude Include="source\Map\CMapPhysicalHeader.h" />
+    <ClInclude Include="source\Map\Ground\CGround.h" />
+    <ClInclude Include="source\Map\Ground\PhysicsGround\CPhysicsGround.h" />
+    <ClInclude Include="source\Map\MapHeader.h" />
+    <ClInclude Include="source\Map\MapPhysicalObject\CMapObjectDescriptor.h" />
+    <ClInclude Include="source\Map\MapPhysicalObject\CMapObjectType.h" />
+    <ClInclude Include="source\Map\MapPhysical\CMapPhysical.h" />
+    <ClInclude Include="source\Map\MapPhysical\CMapPhysicalDescriptor.h" />
+    <ClInclude Include="source\Map\MapPhysical\CMapPhysicalType.h" />
+    <ClInclude Include="source\Map\MapPhysical\GroundWork\CGroundWork.h" />
+    <ClInclude Include="source\Map\MapPhysical\GroundWork\CGroundWorkCollision.h" />
+    <ClInclude Include="source\Map\SceneManager\CQuadtree.h" />
+    <ClInclude Include="source\Map\SearchTools\CWaypoint.h" />
+    <ClInclude Include="source\Map\SearchTools\CWaypointCell.h" />
+    <ClInclude Include="source\Map\SearchTools\CWaypointPriorityQueue.h" />
+    <ClInclude Include="source\Map\Tile\CMapTileType.h" />
+    <ClInclude Include="source\Map\Tile\CTile.h" />
+    <ClInclude Include="source\Rendering\Animated\CAnimated.h" />
+    <ClInclude Include="source\Rendering\Animated\CAnimatedAnimation.h" />
+    <ClInclude Include="source\Rendering\Animated\CAnimatedFrame.h" />
+    <ClInclude Include="source\Rendering\Animations\CAnimation.h" />
+    <ClInclude Include="source\Rendering\Animations\CAnimationFrame.h" />
+    <ClInclude Include="source\Rendering\Animations\CAnimationManager.h" />
+    <ClInclude Include="source\Rendering\Animations\CAnimationState.h" />
+    <ClInclude Include="source\Rendering\Animations\CAnimSet.h" />
+    <ClInclude Include="source\Rendering\Animations\CNameAnimPairTranslator.h" />
+    <ClInclude Include="source\Rendering\Animations\CTimedAnimationFrame.h" />
+    <ClInclude Include="source\Rendering\Animations\EAnimHandler.h" />
+    <ClInclude Include="source\Rendering\Displayable\CBar.h" />
+    <ClInclude Include="source\Rendering\Displayable\CClippedSprite.h" />
+    <ClInclude Include="source\Rendering\Displayable\CDisplayable.h" />
+    <ClInclude Include="source\Rendering\Displayable\CHudSprite.h" />
+    <ClInclude Include="source\Rendering\Displayable\CHudStaticText.h" />
+    <ClInclude Include="source\Rendering\Displayable\CRectangle.h" />
+    <ClInclude Include="source\Rendering\Displayable\CSprite.h" />
+    <ClInclude Include="source\Rendering\Displayable\CTextHeadUpDisplay.h" />
+    <ClInclude Include="source\Rendering\Drawable\CDrawableManager.h" />
+    <ClInclude Include="source\Rendering\Drawable\IDrawable.h" />
+    <ClInclude Include="source\Rendering\Drawable\Layers.h" />
+    <ClInclude Include="source\Rendering\Particle\CParticle.h" />
+    <ClInclude Include="source\Rendering\Particle\CParticleState.h" />
+    <ClInclude Include="source\ResourceManager\CFont.h" />
+    <ClInclude Include="source\ResourceManager\CMusic.h" />
+    <ClInclude Include="source\ResourceManager\CResourceManager.h" />
+    <ClInclude Include="source\ResourceManager\CSound.h" />
+    <ClInclude Include="source\ResourceManager\CTexture.h" />
+    <ClInclude Include="source\ResourceManager\IResource.h" />
+    <ClInclude Include="source\RTTI\RTTI.h" />
+    <ClInclude Include="source\Universe\CUniverse.h" />
+    <ClInclude Include="source\Universe\Galaxy\CGalaxy.h" />
+    <ClInclude Include="source\Universe\Galaxy\Star\CStar.h" />
+    <ClInclude Include="source\Universe\Galaxy\Star\Planet\CPlanet.h" />
+    <ClInclude Include="source\Universe\Galaxy\Star\Planet\Satelite\CSatelite.h" />
+    <ClInclude Include="source\Universe\Interaction\CEntityTemperature.h" />
+    <ClInclude Include="source\Universe\Interaction\CGravity.h" />
+    <ClInclude Include="source\Utilities\CharsetTools\CCharSetManager.h" />
+    <ClInclude Include="source\Utilities\CharsetTools\CCharsetTranslator.h" />
+    <ClInclude Include="source\Utilities\EntityTranslator\CEntityTranslator.h" />
+    <ClInclude Include="source\Utilities\FileUtils\FileUtils.h" />
+    <ClInclude Include="source\Utilities\FileUtils\PathManager\CPathManager.h" />
+    <ClInclude Include="source\Utilities\MathFunctions\MathFunctions.h" />
+    <ClInclude Include="source\Utilities\Memory\CPool.h" />
+    <ClInclude Include="source\Utilities\Memory\CPoolable.h" />
+    <ClInclude Include="source\Utilities\Memory\CPoolBase.h" />
+    <ClInclude Include="source\Utilities\Memory\CRefPoolable.h" />
+    <ClInclude Include="source\Utilities\Memory\CSafePtr.h" />
+    <ClInclude Include="source\Utilities\Memory\CSafePtrable.h" />
+    <ClInclude Include="source\Utilities\Memory\MemoryTests.h" />
+    <ClInclude Include="source\Utilities\Memory\RefCntPtr.h" />
+    <ClInclude Include="source\Utilities\Miscellaneous\Float.h" />
+    <ClInclude Include="source\Utilities\Miscellaneous\Integer.h" />
+    <ClInclude Include="source\Utilities\Miscellaneous\Miscellaneous.h" />
+    <ClInclude Include="source\Utilities\Random\CRandom.h" />
+    <ClInclude Include="source\Utilities\Singleton\CSingleton.h" />
+    <ClInclude Include="source\Utilities\Singleton\CSingletonCleaner.h" />
+    <ClInclude Include="source\Utilities\Singleton\ICleanupable.h" />
+    <ClInclude Include="source\Utilities\StringUtils\StringUtils.h" />
+    <ClInclude Include="source\Utilities\TimeUtilities\CClock.h" />
+    <ClInclude Include="source\Utilities\TimeUtilities\CFPS.h" />
+    <ClInclude Include="source\Utilities\TimeUtilities\CPausableClock.h" />
+    <ClInclude Include="source\Utilities\Transformation\CTransformation.h" />
+    <ClInclude Include="source\Utilities\Translation\Directions.h" />
+    <ClInclude Include="source\Utilities\Utilities\Utilities.h" />
+    <ClInclude Include="source\Weather\CDay.h" />
+    <ClInclude Include="source\Weather\CShadowEngine.h" />
+    <ClInclude Include="source\Weather\CTemperature.h" />
+    <ClInclude Include="source\Weather\CWeather.h" />
+    <ClInclude Include="source\Weather\CWind.h" />
+    <ClInclude Include="source\XML\CXml.h" />
+    <ClInclude Include="source\XML\RapidXML\rapidxml.hpp" />
+    <ClInclude Include="source\XML\RapidXML\rapidxml_iterators.hpp" />
+    <ClInclude Include="source\XML\RapidXML\rapidxml_print.hpp" />
+    <ClInclude Include="source\XML\RapidXML\rapidxml_utils.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

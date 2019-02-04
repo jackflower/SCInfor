@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root type = "information">
+
+	<!--CInformation-->
+	<!--nazwy tekstur - reprezentacja graficzna-->
+	<graphics_configuration
+		texture_digit_name = "../data/proxima.png"
+		texture_mask_name = "Beta"
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_digit_x = "1.0"
+		scale_digit_y = "1.0"
+		scale_mask_x = "1.0"
+		scale_mask_y = "1.0"
+	/>
+
+</root>

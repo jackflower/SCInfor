@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<root type = "engine">
+
+	<!--CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Engine diesel drive module Alpha" />
+	
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "11.3137085"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "16.0"
+		rect_size_y = "16.0"
+		rect_size_body_x = "16.0"
+		rect_size_body_y = "16.0"
+		rect_size_head_x = "16.0"
+		rect_size_head_y = "16.0"		
+	/>
+	
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgeldem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body  = "true"
+		use_shadow_body       = "false"
+		use_displayable_head  = "true"
+		use_shadow_head       = "false"
+	/>
+	
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+		
+	<!--CActor-->
+	
+	<!--dane techniczne-->
+	<technical_data
+		mass        = "200"
+		speed       = "0"
+		movabled    = "false"
+	/>
+
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowqanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajcej zdefiniowane typy animacji, class CAnimSet-->
+	<animset name_animset = "animset_engine_alpha_one">
+		<!--body-->
+		<anim name = "animation_equipment_engine_body_default"	type = "engine_body_default"	/>
+		<anim name = "animation_equipment_engine_body_start"	type = "engine_body_start"		/>
+		<anim name = "animation_equipment_engine_body_stop"	  	type = "engine_body_stop"	  	/>
+		<anim name = "animation_equipment_engine_body_damage"	type = "engine_body_damage"		/>
+		<anim name = "animation_equipment_engine_body_death"	type = "engine_body_death"		/>
+		<!--head-->
+		<anim name = "animation_equipment_engine_head_default"	type = "engine_head_default"	/>
+		<anim name = "animation_equipment_engine_head_start"	type = "engine_head_start"		/>
+		<anim name = "animation_equipment_engine_head_stop"		type = "engine_head_stop"	  	/>
+		<anim name = "animation_equipment_engine_head_damage"	type = "engine_head_damage"		/>
+		<anim name = "animation_equipment_engine_head_death"	type = "engine_head_death"		/>
+	</animset>
+
+	<animset name_animset = "animset_engine_alpha_two">
+		<!--body-->
+		<anim name = "animation_equipment_engine_body_default"	type = "engine_body_default"	/>
+		<anim name = "animation_equipment_engine_body_start"	type = "engine_body_start"		/>
+		<anim name = "animation_equipment_engine_body_stop"	  	type = "engine_body_stop"	  	/>
+		<anim name = "animation_equipment_engine_body_damage"	type = "engine_body_damage"		/>
+		<anim name = "animation_equipment_engine_body_death"	type = "engine_body_death"		/>
+		<!--head-->
+		<anim name = "animation_equipment_engine_head_default"	type = "engine_head_default"	/>
+		<anim name = "animation_equipment_engine_head_start"	type = "engine_head_start"		/>
+		<anim name = "animation_equipment_engine_head_stop"		type = "engine_head_stop"	  	/>
+		<anim name = "animation_equipment_engine_head_damage"	type = "engine_head_damage"		/>
+		<anim name = "animation_equipment_engine_head_death"	type = "engine_head_death"		/>
+	</animset>
+	
+	
+	<!--CEngine-->
+	
+	<!--nazwa silnika (spalinowy, elektryczny, atomowy, biologiczny...etc)-->
+	<!--flaga, czy obiekt posiada zbiornik paliwa-->
+	<!--procentowa wartosc paliwa, przy ktorej nastepuje komunikat informacyjny o rezerwie paliwa (default 10% - konstruktor)-->
+	<!--zuzycie paliwa gdy obiekt sie nie przemieszcza (aktualizowane co sekunde)-->
+	<!--zuzycie paliwa gdy obiekt sie przemieszcza - zwiazane z predkoscia obiektu-->
+	<!--czas opoznienia komunikatu o braku paliwa-->
+	<!--flaga, czy obiekt moze wysylac komunikaty o braku paliwa-->
+	<!--stacyjka (hardware (start/stop)-->
+	<!--predkosc wirowania wirnika w silniku-->
+	<!--czestotliwosc regeneracji procesu-->
+
+	<engine_config
+		engine_name				= "Engine diesel drive module Alpha"
+		use_fueltank			= "true"
+		percentage_reserve_fuel	= "0.1"
+		fuel_consumption	    = "1.0"
+		fuel_consumption_move	= "0.0001"
+		tank_time_delayed		= "2.32"
+		fuel_empty_message		= "false"
+		engine_run				= "true"
+		engine_rotation_speed	= "750"
+		regeneration_time		= "1"
+	/>
+	
+	<!--CFuelTank-->
+	
+	<!--nazwa pliku z danymi dla obiektu CFuelTank/CFuelTankTemplate-->
+	<!--poprawka pozycji reprezentacji graficznej zbiornika paliwa wzgledem wlasciciela - x-->
+	<!--poprawka pozycji reprezentacji graficznej zbiornika paliwa wzgledem wlasciciela - y-->	
+	<engine_fueltank_config
+		fueltank_filename	= "../data/xml_data/equipment/engine/fueltank/equipment_fueltank_alpha.xml"
+		fuel_tank_emiter_x	= "4.0"
+		fuel_tank_emiter_y	= "-8.0"	
+	/>	
+</root>

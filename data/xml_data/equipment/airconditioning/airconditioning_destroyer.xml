@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<root type = "airconditioning">
+
+	<!--CPhysical-->
+
+	<!--nazwa obiektu-->
+	<genre genre = "Destroyer airconditioning module" />
+
+	<!--zakres dla promienia kolizji-->
+	<radius
+		circle_radius = "45.25"
+	/>
+	
+	<!--rozmiar obszaru prostokatnego-->
+	<!--width-->
+	<!--height-->
+	<!--body - width-->
+	<!--body - height-->
+	<!--head - width-->
+	<!--head - height-->	
+	<rect_size
+		rect_size_x = "64.0"
+		rect_size_y = "64.0"	
+		rect_size_body_x = "64.0"
+		rect_size_body_y = "64.0"
+		rect_size_head_x = "64.0"
+		rect_size_head_y = "64.0"		
+	/>
+
+	<!--skala-->
+	<scale
+		scale_body = "1.0"
+		scale_head = "1.0"
+	/>
+
+	<!--pulap obiektu wzgledem podloza-->
+	<altitude
+		altitude = "1.0"
+	/>
+
+	<!--flagi decydujace o wygladzie obiektu-->
+	<physical_config
+		use_displayable_body  = "false"
+		use_shadow_body       = "false"
+		use_displayable_head  = "false"
+		use_shadow_head       = "false"
+	/>
+
+	<!--flagi decydujace o kolidowaniu poszczegolnych skladowych-->
+	<!--bool flaga kolidowania - body (default true)-->
+	<!--bool flaga kolidowania - body shadow-->
+	<!--bool flaga kolidowania - head-->
+	<!--bool flaga kolidowania - head shadow-->
+	<colliding_config
+		colliding_body			= "true"
+		colliding_body_shadow	= "false"
+		colliding_head			= "false"
+		colliding_head_shadow	= "false"
+	/>	
+
+	<!--CActor-->
+
+	<!--dane techniczne-->
+	<technical_data
+		mass        = "25"
+		speed       = "0"
+		movabled    = "false"
+	/>
+
+	<!--zestawy animacji-->
+	<!--nazwa animacji musi byc zgodna z nazwami zarejestrowanymi, class CAnimationManager-->
+	<!--typ animacji musi byc zgodny z wpisami w tablicy zawierajcej zdefiniowane typy animacji, class CAnimSet-->
+	<!--<animset name_animset = "animset_destroyer_energy_one">
+	<!--<!--body-->
+		<!--<anim name_body = "animation_name"	type_body = "type"	/>
+		<!--<!--head-->
+		<!--<anim name_body = "animation_name"	type_body = "type"	/>		
+	<!--</animset>
+
+	<!--CAirconditioning-->
+
+	<!--std::string nazwa klimatyzatora-->
+	<!--float temperatura [ obliczana ]-->
+	<!--float temperature_set [ losowana ]-->
+	<!--float temperature_range_cold [ temperature_range_cold ] wartosc chlodzenia - first-->
+	<!--float temperature_range_warm [ temperature_range_warm ] wartosc nagrzewania - second-->
+	<!--float temperature_increment - przyrost temperatury - cykl - dynammika-->
+	<!--float energy_consumption - zuzycie energii przez klimatyzator-->
+	<!--float fuel_consumption - zuzycie paliwa przez klimatyzator-->
+	  
+	<airconditioning_config
+		airconditioning_name        = "Klimatyzator testowy"
+		temperature                 = "0.0"
+		temperature_set             = "0.0"
+		temperature_range_cold      = "15.0"
+		temperature_range_warm      = "26.0"
+		temperature_increment       = "0.01"
+		energy_consumption          = "0.01"
+		fuel_consumption            = "0.01"
+	/>
+
+	<!--nazwa pliku z danymi dla obiektu CThermalInsulation/CThermalInsulationTemplate-->
+	<!--bool flaga, czy obiekt posiada termoizolator-->
+	<thermalinsulation_config
+		use_thermal_insulation      = "true"
+		thermalinsulation_filename	= "../data/xml_data/equipment/thermalinsulation/thermalinsulation_destroyer.xml"
+	/>
+</root>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+	<!--SCI wszechświat-->
+	<!--wszechświat-->
+
+	<!--potrzebuję z Internetu danych opisujacych galaktykę-->
+
+	<!--nazwa galaktyki - dane do kontenera (unique)-->
+    <!--nazwa galaktyki-->
+    <!--inne dane opisujące galaktykę-->
+
+	<galaxy_name name = "galaxy_one">
+		<galaxy_data
+			galaxy_name ="Andrometa"
+			galaxy_type ="spiralna"
+		/>
+	</galaxy_name>
+
+	<galaxy_name name = "galaxy_two">
+		<galaxy_data
+			galaxy_name ="Proxima"
+			galaxy_type ="spiralna"
+		/>
+	</galaxy_name>
+
+</root>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<weather>
+
+  <!--klimat umiarkowany-->
+  <!--flaga czy ma by generowany wiatr-->
+  <weather_configuration
+		use_wind      = "true"
+		climate_name  = "Klimat umiarkowany"
+	/>
+
+  <!--dane konfiguracyjne wiatru-->
+  <!--zakres czasu trwania wiatru minimum -->
+  <!--zakres czasu trwania wiatru maksimum -->
+  <!--zakres predkosci wiatru minimum -->
+  <!--zakres predkosci wiatru maksimum -->
+  <wind_config
+		wind_duration_range_begin = "5.0"
+		wind_duration_range_end   = "20.0"
+		wind_speeds_range_begin   = "0.25"
+		wind_speeds_range_end     = "3.0"
+	/>
+
+  <!--kolor cienia-->
+	<color_shadow_config
+		color_red   = "0"
+		color_green = "0"
+		color_blue  = "0"
+		color_alpha = "82"
+	/>
+  
+  <!--mechanizm pozornego obiegu zrodla swiatla wokol sceny i generowanie cienia-->
+  <!--co jaki czas ma następowac aktualizacja zjawisk pogodowych-->
+  <!--czas trwania doby-->
+  <!--dane do losowania pozycja słońca (min=>first, max=>secound)-->
+  <!--wartość składowej koloru - kanał alpha - wartość bazowa-->
+  <!--wartość składowej koloru - kanał alpha - wartość dodana gdy zawsze jest jakiś cień...białe noce-->
+  <!--pozycja slonca - zakres do losowania - pora doby-->
+  <!--przy ponizszych danych doba trwa ~= 15 minut-->
+  <!--doba = 900 sekund-->
+  <shadow_engine_config
+    update_time             = "1"
+    day_duration            = "900"
+    sun_position_range_min  = "0.0"
+    sun_position_range_max  = "360.0"
+    alpha_base              = "82.0"
+    alpha_extra             = "20.0"
+  />
+
+  <!--dane do losowania temperatura bezwgledna (min=>first, max=>secound)-->
+  <!--dane do losowania wspolczynnik wahan temperatury (min=>first, max=>secound)-->
+  <temperature_config
+    absolute_temperature_min      ="19"
+    absolute_temperature_max      ="23"
+    temperature_fluctuations_min  ="27"
+    temperature_fluctuations_max  ="32"
+  />
+
+</weather>
