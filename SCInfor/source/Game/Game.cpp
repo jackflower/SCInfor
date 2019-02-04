@@ -100,8 +100,8 @@ namespace game
 		MAX_ACCUMULATED_TIME(1.f)
 	{
 		std::cout << "Game::Game()" << std::endl;
-		gGameProperties.Load("../data/xml_data/gameconfiguration/game-config.xml");
-		gGameProperties.UpdateWindow();
+		gGameProperties.load("../data/xml_data/gameconfiguration/game-config.xml");
+		gGameProperties.updateWindow();
 	}
 
 	//Destruktor

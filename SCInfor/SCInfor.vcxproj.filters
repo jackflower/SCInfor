@@ -564,9 +564,6 @@
     <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\CGunTemplate.cpp">
       <Filter>source\Factory\EquipmentFactory\WeaponFactory\GunFactory</Filter>
     </ClCompile>
-    <ClCompile Include="source\Game\CGameProperties.cpp">
-      <Filter>source\Game</Filter>
-    </ClCompile>
     <ClCompile Include="source\Information\CInfoManager.cpp">
       <Filter>source\Information</Filter>
     </ClCompile>
@@ -996,6 +993,9 @@
     <ClCompile Include="source\Game\Game.cpp">
       <Filter>source\Game</Filter>
     </ClCompile>
+    <ClCompile Include="source\Game\GameProperties.cpp">
+      <Filter>source\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1233,9 +1233,6 @@
     </ClInclude>
     <ClInclude Include="source\Game\Listener\IMouseListener.h">
       <Filter>source\Game\Listener</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Game\CGameProperties.h">
-      <Filter>source\Game</Filter>
     </ClInclude>
     <ClInclude Include="source\Information\CInfoManager.h">
       <Filter>source\Information</Filter>
@@ -1748,6 +1745,9 @@
       <Filter>source\Factory\MapPhysicalFactory</Filter>
     </ClInclude>
     <ClInclude Include="source\Game\Game.h">
+      <Filter>source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\GameProperties.h">
       <Filter>source\Game</Filter>
     </ClInclude>
   </ItemGroup>

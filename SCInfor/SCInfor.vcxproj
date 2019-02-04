@@ -206,7 +206,7 @@
     <ClCompile Include="source\Factory\MapPhysicalFactory\CGroundWorkTemplate.cpp" />
     <ClCompile Include="source\Factory\MapPhysicalFactory\CMapPhysicalTemplate.cpp" />
     <ClCompile Include="source\Game\Game.cpp" />
-    <ClCompile Include="source\Game\CGameProperties.cpp" />
+    <ClCompile Include="source\Game\GameProperties.cpp" />
     <ClCompile Include="source\Information\CInfoManager.cpp" />
     <ClCompile Include="source\Information\CInformation.cpp" />
     <ClCompile Include="source\Information\CPresentation.cpp" />
@@ -430,7 +430,7 @@
     <ClInclude Include="source\Factory\MapPhysicalFactory\CGroundWorkTemplate.h" />
     <ClInclude Include="source\Factory\MapPhysicalFactory\CMapPhysicalTemplate.h" />
     <ClInclude Include="source\Game\Game.h" />
-    <ClInclude Include="source\Game\CGameProperties.h" />
+    <ClInclude Include="source\Game\GameProperties.h" />
     <ClInclude Include="source\Game\Listener\IFrameListener.h" />
     <ClInclude Include="source\Game\Listener\IKeyListener.h" />
     <ClInclude Include="source\Game\Listener\IMouseListener.h" />

@@ -19,7 +19,7 @@
 #include "../Logic/CLogic.h"
 //#include "../Logic/Boss/CBossManager.h"
 //#include "../Commands/CCommands.h"
-#include "../Game/CGameProperties.h"
+#include "../Game/GameProperties.h"
 //#include "../Utilities/HRTimer.h"
 //#include "../Utilities/FileUtils/FileUtils.h"
 

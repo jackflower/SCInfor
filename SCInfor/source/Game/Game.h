@@ -9,7 +9,7 @@
 
 #include <set>
 #include <SFML/Graphics.hpp>
-#include "CGameProperties.h"
+#include "GameProperties.h"
 #include "../Utilities/Singleton/CSingleton.h"
 #include "../Utilities/StringUtils/StringUtils.h"
 #include "../Rendering/Displayable/CHudStaticText.h"
