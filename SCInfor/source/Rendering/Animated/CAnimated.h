@@ -146,7 +146,7 @@ namespace animated
 		///
 		///@param elapsed_time - czas
 		///
-	    void Update(float elapsed_time);
+	    void update(float elapsed_time);
 	
 		///
 		///Metoda zwraca numer ostatnio wyœwietlanej klatki animacji
@@ -199,4 +199,4 @@ namespace animated
 //animated::CAnimated animek;
 //animek.SetAnimation(&animacja);
 //animek.setPosition(150.f, 150.f);
-////animek.Update(time); loop update game
+////animek.update(time); loop update game

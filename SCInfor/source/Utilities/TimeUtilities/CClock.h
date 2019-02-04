@@ -92,7 +92,7 @@ public:
 	///
 	///Metoda aktualizuje stan obiektu - wywo³ywana raz na klatkê
 	///
-	void Update();
+	void update();
 
 private:
     

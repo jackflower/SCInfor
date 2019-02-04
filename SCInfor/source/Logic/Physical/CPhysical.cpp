@@ -994,7 +994,7 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CPhysical::Update(float dt)
+	void CPhysical::update(float dt)
 	{
 		sf::Vector2f new_position;
 		new_position.x = m_physical_data.GetPosition().x + (dt * m_physical_data.GetVelocity().x);

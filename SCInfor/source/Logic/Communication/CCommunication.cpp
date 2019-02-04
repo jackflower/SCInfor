@@ -199,10 +199,10 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CCommunication::Update(float dt)
+		void CCommunication::update(float dt)
 		{
 			//aktualizacja shadow engine
-			CPhysical::Update(dt);
+			CPhysical::update(dt);
 
 			//aktualizacja tylko przy w³¹czonym urz¹dzeniu
 			if (m_unit_controller.getState())

@@ -387,21 +387,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\CSwitch.cpp">
-      <Filter>source\Equipment</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Energy\CFixedColor.cpp">
-      <Filter>source\Equipment\Energy</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Energy\Battery\CBattery.cpp">
-      <Filter>source\Equipment\Energy\Battery</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Energy\Battery\CSolarBattery.cpp">
-      <Filter>source\Equipment\Energy\Battery</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Energy\EnergyTank\CEnergyTank.cpp">
-      <Filter>source\Equipment\Energy\EnergyTank</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\Engine\CEngine.cpp">
       <Filter>source\Equipment\Engine</Filter>
     </ClCompile>
@@ -996,6 +981,21 @@
     <ClCompile Include="source\Equipment\Energy\Energy.cpp">
       <Filter>source\Equipment\Energy</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\Switch.cpp">
+      <Filter>source\Equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\FixedColor.cpp">
+      <Filter>source\Equipment\Energy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\Battery\Battery.cpp">
+      <Filter>source\Equipment\Energy\Battery</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\Battery\SolarBattery.cpp">
+      <Filter>source\Equipment\Energy\Battery</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Energy\EnergyTank\EnergyTank.cpp">
+      <Filter>source\Equipment\Energy\EnergyTank</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1003,26 +1003,11 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Equipment\CSwitch.h">
-      <Filter>source\Equipment</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Energy\CFixedColor.h">
-      <Filter>source\Equipment\Energy</Filter>
-    </ClInclude>
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h">
       <Filter>source\Equipment\Energy</Filter>
     </ClInclude>
-    <ClInclude Include="source\Equipment\Energy\Battery\CBattery.h">
-      <Filter>source\Equipment\Energy\Battery</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Energy\Battery\CSolarBattery.h">
-      <Filter>source\Equipment\Energy\Battery</Filter>
-    </ClInclude>
     <ClInclude Include="source\Equipment\Energy\Battery\EBatteryState.h">
       <Filter>source\Equipment\Energy\Battery</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Energy\EnergyTank\CEnergyTank.h">
-      <Filter>source\Equipment\Energy\EnergyTank</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Energy\EnergyTank\EEnergyTankState.h">
       <Filter>source\Equipment\Energy\EnergyTank</Filter>
@@ -1749,6 +1734,21 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Energy\Energy.h">
       <Filter>source\Equipment\Energy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Switch.h">
+      <Filter>source\Equipment</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\FixedColor.h">
+      <Filter>source\Equipment\Energy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\Battery\Battery.h">
+      <Filter>source\Equipment\Energy\Battery</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\Battery\SolarBattery.h">
+      <Filter>source\Equipment\Energy\Battery</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Energy\EnergyTank\EnergyTank.h">
+      <Filter>source\Equipment\Energy\EnergyTank</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@
 
 #include "../../Logic/Actor/CActor.h"
 #include "../../RTTI/RTTI.h"
-#include "../CSwitch.h"
+#include "../Switch.h"
 #include "ELightingEquipmentState.h"
 
 using namespace logic;
@@ -93,19 +93,19 @@ namespace equipment
 		///
 		///Metoda zwraca referencjcê na modu³ sterowania
 		///
-		CSwitch & getUnitController();
+		Switch & getUnitController();
 
 		///
 		///Wirtualna metoda aktualizuje logikê obiektu
 		///
 		///@param dt - czas
 		///
-		void Update(float dt);
+		void update(float dt);
 
 	private:
 
 		std::string					m_lighting_equipment_name;	//nazwa wyposa¿enia, uk³adu oœwietlajacego obiekt (reflektor, raca, pochodnia, ...etc)
-		CSwitch						m_unit_controller;			//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		Switch						m_unit_controller;			//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 		float						m_energy_consumption;		//zu¿ycie energii
 		ELightingEquipmentState		m_lighting_equipment_state;	//wyliczenie stanów dla obiektu CLightingEquipment
 		

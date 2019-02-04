@@ -319,7 +319,7 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CPhysicalInfo::Update(float dt)
+	void CPhysicalInfo::update(float dt)
 	{
 		if(p_status_bar_energy)
 			setPositionStatusBarEnergy(GetPosition().x - m_position_offset_energy.x, GetPosition().y - m_position_offset_energy.y);

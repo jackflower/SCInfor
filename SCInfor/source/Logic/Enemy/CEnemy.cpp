@@ -42,9 +42,9 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CEnemy::Update(float dt)
+	void CEnemy::update(float dt)
 	{
-		CActor::Update(dt);
+		CActor::update(dt);
 
 		//2014-05-12
 		//waste - testy pogl¹dowe....

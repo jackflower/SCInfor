@@ -73,22 +73,22 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CBattery
-	CBattery* CBatteryTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy Battery
+	Battery* CBatteryTemplate::Create(std::wstring id)
 	{
-		CBattery* battery = gPhysicalManager.CreateBattery(id);
+		Battery* battery = gPhysicalManager.CreateBattery(id);
 		Fill(battery);
 		return battery;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CBatteryTemplate::Fill(CBattery *p_battery)
+	void CBatteryTemplate::Fill(Battery *p_battery)
 	{
 		CActorTemplate::Fill(p_battery);
 		
 		if(p_battery)
 		{
-			p_battery->SetBatteryName(m_templ_battery_name);
+			p_battery->setBatteryName(m_templ_battery_name);
 			p_battery->setCapacity(m_templ_capacity);
 			p_battery->setFactoryCapacity(m_templ_factory_capacity);
 			p_battery->setParticleEnergy(m_templ_particle_energy);

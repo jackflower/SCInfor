@@ -8,7 +8,7 @@
 #define H_POWER_MODULE_JACK
 
 #include "../../../Logic/Actor/CActor.h"
-#include "../../CSwitch.h"
+#include "../../Switch.h"
 
 using namespace logic;
 
@@ -93,7 +93,7 @@ namespace equipment
 		float		m_energy_capacitor;	//energia, która mo¿e zostaæ zgromadzona
 		float		m_power;			//moc
 		float		m_stored_energy;	//zgromadzona energia
-		CSwitch		m_unit_controller;	//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		Switch		m_unit_controller;	//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 
 	private:
 	};

@@ -45,7 +45,7 @@ void CWaypointPriorityQueue::Push(CWaypoint * waypoint)
 }
 
 //Metoda aktualizuje dany waypoint przesuwaj¹c go w kolejce je¿eli potrzeba
-void CWaypointPriorityQueue::Update(CWaypoint * waypoint)
+void CWaypointPriorityQueue::update(CWaypoint * waypoint)
 {
 	//Przechodzimy przez kopiec i znajdujemy wêze³ wymagaj¹cy uaktualnienia
     for (Heap::iterator it = m_heap.begin(); it != m_heap.end(); ++it)

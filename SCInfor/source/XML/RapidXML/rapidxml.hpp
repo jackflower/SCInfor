@@ -625,7 +625,7 @@ namespace rapidxml
                 result = align(m_ptr);
             }
 
-            // Update pool and return aligned pointer
+            // update pool and return aligned pointer
             m_ptr = result + size;
             return result;
         }

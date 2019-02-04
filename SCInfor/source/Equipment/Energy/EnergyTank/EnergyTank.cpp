@@ -1,10 +1,10 @@
 //  ________________________________________
-// | CEnergyTank.cpp - class implementation |
+// | EnergyTank.cpp - class implementation |
 // | Jack Flower - December 2012.           |
 // |________________________________________|
 //
 
-#include "CEnergyTank.h"
+#include "EnergyTank.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 
@@ -13,10 +13,10 @@ using namespace rendering::drawable;
 
 namespace equipment
 {
-	RTTI_IMPL(CEnergyTank, CActor)
+	RTTI_IMPL(EnergyTank, CActor)
 
 	//Chroniony konstruktor domyœlny
-	CEnergyTank::CEnergyTank(const std::wstring& uniqueId)
+	EnergyTank::EnergyTank(const std::wstring& uniqueId)
 	:
 		CActor							(uniqueId),
 		m_energy_tank_name				(),
@@ -33,7 +33,7 @@ namespace equipment
 	}
 
 	//Chroniony konstruktor kopiuj¹cy
-	CEnergyTank::CEnergyTank(const CEnergyTank& CEnergyTankCopy)
+	EnergyTank::EnergyTank(const EnergyTank& CEnergyTankCopy)
 	:
 		CActor							(CEnergyTankCopy),
 		m_energy_tank_name				(CEnergyTankCopy.m_energy_tank_name),
@@ -46,7 +46,7 @@ namespace equipment
 	}
 
 	//Destruktor wirtualny
-	CEnergyTank::~CEnergyTank(void)
+	EnergyTank::~EnergyTank(void)
 	{
 		//CActor						not edit
 		m_energy_tank_name				= "";
@@ -58,44 +58,44 @@ namespace equipment
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CEnergyTank::GetType() const
+	const std::string EnergyTank::GetType() const
 	{
 		return rtti.GetNameClass();
 	}
 
 	//Metoda zwraca nazwê akumulatora energii
-	const std::string CEnergyTank::GetEnergyTankName() const
+	const std::string EnergyTank::GetEnergyTankName() const
 	{
 		return m_energy_tank_name;
 	}
 
 	//Metoda ustawia nazwê akumulatora energii
-	void CEnergyTank::SetEnergyTankName(const std::string& energy_tank_name)
+	void EnergyTank::SetEnergyTankName(const std::string& energy_tank_name)
 	{
 		m_energy_tank_name = energy_tank_name;
 	}
 
 	//Metoda zwraca pojemnoœæ pojemnoœæ akumulatora energii
-	const float CEnergyTank::GetEnergyTankCapacity() const
+	const float EnergyTank::GetEnergyTankCapacity() const
 	{
 		return m_energy_tank_capacity;
 	}
 
 	//Metoda ustawia pojemnoœæ akumulatora energii
-	void CEnergyTank::SetEnergyTankCapacity(float energy_tank_capacity)
+	void EnergyTank::SetEnergyTankCapacity(float energy_tank_capacity)
 	{
 		if (energy_tank_capacity < 0) return;
 		m_energy_tank_capacity = energy_tank_capacity;
 	}
 
 	//Metoda zwraca iloœæ energii
-	const float CEnergyTank::GetEnergy() const
+	const float EnergyTank::GetEnergy() const
 	{
 		return m_energy;
 	}
 
 	//Metoda ustawia iloœæ paliwa (tlenu) obiektu
-	void CEnergyTank::SetEnergy(float energy)
+	void EnergyTank::SetEnergy(float energy)
 	{
 		if (energy < 0)								//jeœli uzupe³niamy energiê wartoœci¹ ujemn¹ - opuszczamy funkcjê
 		{
@@ -118,19 +118,19 @@ namespace equipment
 
 
 	//Metoda zwraca prêdkoœæ wirowania wskaŸnika stanu akumulatora
-	const float CEnergyTank::GetEnergyTankRotationSpeed() const
+	const float EnergyTank::GetEnergyTankRotationSpeed() const
 	{
 		return m_energy_tank_rotation_speed;
 	}
 
 	//Metoda ustawia prêdkoœæ wirowania wskaŸnika stanu akumulatora
-	void CEnergyTank::SetEnergyTankRotationSpeed(float energy_tank_rotation_speed)
+	void EnergyTank::SetEnergyTankRotationSpeed(float energy_tank_rotation_speed)
 	{
 		m_energy_tank_rotation_speed = energy_tank_rotation_speed;
 	}
 
-	//CEnergyTank metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
-	void CEnergyTank::updateAnimations(float dt)
+	//EnergyTank metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
+	void EnergyTank::updateAnimations(float dt)
 	{
 		switch(m_energytank_state)
 		{
@@ -176,13 +176,13 @@ namespace equipment
 	}
 
 	//Metoda zwraca referencjcê na modu³ sterowania
-	CSwitch & CEnergyTank::getUnitController()
+	Switch & EnergyTank::getUnitController()
 	{
 		return m_unit_controller;
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CEnergyTank::Update(float dt)
+	void EnergyTank::update(float dt)
 	{
 		UpdateShadow(dt);	//aktualizacja shadow engine
 

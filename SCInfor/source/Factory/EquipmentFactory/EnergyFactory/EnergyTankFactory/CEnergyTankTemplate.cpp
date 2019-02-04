@@ -77,15 +77,15 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CFuelTank
-	CEnergyTank* CEnergyTankTemplate::Create(std::wstring id)
+	EnergyTank* CEnergyTankTemplate::Create(std::wstring id)
 	{
-		CEnergyTank* energytank = gPhysicalManager.CreateCEnergyTank(id);
+		EnergyTank* energytank = gPhysicalManager.CreateEnergyTank(id);
 		Fill(energytank);
 		return energytank;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CEnergyTankTemplate::Fill(CEnergyTank *p_energytank)
+	void CEnergyTankTemplate::Fill(EnergyTank *p_energytank)
 	{
 		if(p_energytank)
 		{

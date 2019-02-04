@@ -99,7 +99,7 @@ namespace logic
 		protected:
 
 			std::string			m_relay_station_name;	//nazwa przekaünika energii elektrycznej
-			CSwitch				m_unit_controller;		//w≥πcznik, sterownik, modu≥ zarzπdzania, starter, stacyjka
+			Switch				m_unit_controller;		//w≥πcznik, sterownik, modu≥ zarzπdzania, starter, stacyjka
 			bool				m_use_communication;	//flaga, czy obiekt posiada modu≥ do komunikacji
 			CCommunication*		p_communication;		//wskaünik na obiekt klasy Communication
 		};

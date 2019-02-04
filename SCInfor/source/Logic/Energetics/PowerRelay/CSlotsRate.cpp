@@ -112,7 +112,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CSlotsRate::Update(float dt)
+		void CSlotsRate::update(float dt)
 		{
 			//aktualizacja shadow engine
 			CPhysical::UpdateShadow(dt);

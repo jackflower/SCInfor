@@ -184,14 +184,14 @@ namespace logic
 			m_slotsrate_date.setSlotsRate(slots_rate);
 		}
 
-		//Metoda zwraca wskaünik na obiekt klasy CBattery
-		CBattery* CPowerRelayStation::getBattery()
+		//Metoda zwraca wskaünik na obiekt klasy Battery
+		Battery* CPowerRelayStation::getBattery()
 		{
 			return m_battery_data.getBattery();
 		}
 
-		//Metoda ustawia wskaünik na obiekt klasy CBattery
-		void CPowerRelayStation::setBattery(CBattery* battery)
+		//Metoda ustawia wskaünik na obiekt klasy Battery
+		void CPowerRelayStation::setBattery(Battery* battery)
 		{
 			m_battery_data.setBattery(battery);
 		}
@@ -288,7 +288,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizujπca obiekt
-		void CPowerRelayStation::Update(float dt)
+		void CPowerRelayStation::update(float dt)
 		{
 			//aktualizacja shadow engine
 			CPhysical::UpdateShadow(dt);

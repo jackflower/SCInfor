@@ -20,9 +20,9 @@
 #include "../Equipment/Engine/FuelTank/CFuelTank.h"
 #include "../Equipment/Engine/FuelBar/CFuelBar.h"
 #include "../Equipment/Energy/Energy.h"
-#include "../Equipment/Energy/EnergyTank/CEnergyTank.h"
-#include "../Equipment/Energy/Battery/CBattery.h"
-#include "../Equipment/Energy/Battery/CSolarBattery.h"
+#include "../Equipment/Energy/EnergyTank/EnergyTank.h"
+#include "../Equipment/Energy/Battery/Battery.h"
+#include "../Equipment/Energy/Battery/SolarBattery.h"
 #include "../Equipment/Thermodynamics/Airconditioning/CAirconditioning.h"
 #include "../Equipment/Thermodynamics/ThermalInsulation/CThermalInsulation.h"
 #include "../Equipment/Thermodynamics/Ventilator/CVentilator.h"
@@ -170,11 +170,11 @@ namespace logic
 		return Create<Energy>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CEnergyTank i zwraca wskaünik na ten obiekt
-	CEnergyTank *CPhysicalManager::CreateCEnergyTank(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy EnergyTank i zwraca wskaünik na ten obiekt
+	EnergyTank *CPhysicalManager::CreateEnergyTank(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CEnergyTank created\n");
-		return Create<CEnergyTank>(uniqueId);
+		fprintf(stderr, "EnergyTank created\n");
+		return Create<EnergyTank>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CMonster i zwraca wskaünik na ten obiekt
@@ -205,18 +205,18 @@ namespace logic
 		return Create<CPhysicalInfo>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CBattery i zwraca wskaünik na ten obiekt
-	CBattery *CPhysicalManager::CreateBattery(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Battery i zwraca wskaünik na ten obiekt
+	Battery *CPhysicalManager::CreateBattery(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CBattery created\n");
-		return Create<CBattery>(uniqueId);
+		fprintf(stderr, "Battery created\n");
+		return Create<Battery>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CSolarBattery i zwraca wskaünik na ten obiekt
-	CSolarBattery *CPhysicalManager::CreateSolarBattery(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy SolarBattery i zwraca wskaünik na ten obiekt
+	SolarBattery *CPhysicalManager::CreateSolarBattery(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CBatteCSolarBatteryry created\n");
-		return Create<CSolarBattery>(uniqueId);
+		return Create<SolarBattery>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CAirconditioning i zwraca wskaünik na ten obiekt

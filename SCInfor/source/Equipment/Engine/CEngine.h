@@ -229,14 +229,14 @@ namespace equipment
 		///
 		///Metoda zwraca referencjcê na modu³ sterowania
 		///
-		CSwitch & getUnitController();
+		Switch & getUnitController();
 
 		///
 		///Wirtualna metoda aktualizuje logikê obiektu
 		///
 		///@param dt - czas
 		///
-		virtual void Update(float dt);
+		virtual void update(float dt);
 
 
 	private:
@@ -255,7 +255,7 @@ namespace equipment
 		float					m_engine_timer;				//wyliczany up³ywaj¹cy czas procesów logiki
 		float					m_rotor_speed;				//wyliczana prêdkoœæ wirowania ³opat wirnika silnika
 		float					m_percentage_fuel;			//wyliczana procentowa zawartoœæ paliwa w zbiorniku
-		CSwitch					m_unit_controller;			//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		Switch					m_unit_controller;			//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 
 		//prywatna metoda aktualizuje stan obiektu - engine
 		void updateEngineState(float dt);

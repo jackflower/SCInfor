@@ -1,4 +1,4 @@
-//  _______________________________________________________
+﻿//  _______________________________________________________
 // | EEnergyTankState.h - enumeration of states energytank |
 // | Jack Flower - May 2014                                |
 // |_______________________________________________________|
@@ -10,7 +10,7 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stan�w dla obiektu CEnergyTank
+	///Wyliczenie stanów dla obiektu EnergyTank
 	///
 	enum EEnergyTankState
 	{

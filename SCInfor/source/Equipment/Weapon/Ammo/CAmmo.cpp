@@ -260,7 +260,7 @@ namespace equipment
 		}
 
 		//Metoda aktulizuje obiekt
-		void CAmmo::Update(float dt)
+		void CAmmo::update(float dt)
 		{
 			//aktualizacja shadow engine
 			CPhysical::UpdateShadow(dt);

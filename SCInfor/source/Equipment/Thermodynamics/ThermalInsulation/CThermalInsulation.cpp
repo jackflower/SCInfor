@@ -139,7 +139,7 @@ namespace equipment
 	}
 
 	//Metoda zwraca referencjcê na modu³ sterowania
-	CSwitch & CThermalInsulation::getUnitController()
+	Switch & CThermalInsulation::getUnitController()
 	{
 		return m_unit_controller;
 	}
@@ -173,7 +173,7 @@ namespace equipment
 	}
 
 	//Metoda aktualizuje logikê obiektu
-	void CThermalInsulation::Update(float dt)
+	void CThermalInsulation::update(float dt)
 	{
 		//aktywacja
 		m_unit_controller.updateToRun(dt);

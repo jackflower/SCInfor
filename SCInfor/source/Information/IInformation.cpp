@@ -55,7 +55,7 @@ namespace information
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void IInformation::Update(float dt)
+	void IInformation::update(float dt)
 	{
 		//nothing todo...
 	}

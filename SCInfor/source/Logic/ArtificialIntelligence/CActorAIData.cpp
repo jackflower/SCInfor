@@ -67,7 +67,7 @@ namespace artificialintelligence
 		//m_target_direction = newRot;
 	}
 
-	void CActorAIData::Update(float dt)
+	void CActorAIData::update(float dt)
 	{
 		//mCombatSchemeTimer+=dt;
 		//mMovementSchemeTimer+=dt;

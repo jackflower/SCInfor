@@ -204,7 +204,7 @@ namespace game
 		//wyświetlenie sceny w oknie
 		m_render_window->display();
 		//aktualizacja zegara
-		gClock.Update();
+		gClock.update();
 	}
 
 	//Metoda zwraca referencję do obiektu klasy sf::Event

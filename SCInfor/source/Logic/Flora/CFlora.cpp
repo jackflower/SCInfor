@@ -58,7 +58,7 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CFlora::Update(float dt)
+	void CFlora::update(float dt)
 	{
 		UpdateShadow(dt);	//aktualizacja shadow engine
 

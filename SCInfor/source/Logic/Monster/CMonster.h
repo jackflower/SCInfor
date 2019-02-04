@@ -45,7 +45,7 @@ namespace logic
 		///
 		///@param dt - czas
 		///
-		virtual void Update(float dt);
+		virtual void update(float dt);
 
 	private:
 		float m_time_do_death;//pol testowe...

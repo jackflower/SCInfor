@@ -115,7 +115,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje logikê obiektu
-	void CFuelBar::Update(float dt)
+	void CFuelBar::update(float dt)
 	{
 		//to do...
 		//this->ok..ok..ok...
@@ -123,7 +123,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje logikê obiektu
-	//void CEngine::Update(float dt)
+	//void CEngine::update(float dt)
 	//{
 	//	//odmiarzam czas
 	//	m_timer += dt;

@@ -39,13 +39,13 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CWindPowerStationMultipled::Update(float dt)
+		void CWindPowerStationMultipled::update(float dt)
 		{
 			//aktualizacja shadow engine
 			CPhysical::UpdateShadow(dt);
 
 			//Wywo³anie z klasy bazowej - AI logowania do systemu...
-			CPowerStation::Update(dt);
+			CPowerStation::update(dt);
 
 			//jeœli urz¹dzenie jest w³¹czone
 			if (m_unit_controller.getState())

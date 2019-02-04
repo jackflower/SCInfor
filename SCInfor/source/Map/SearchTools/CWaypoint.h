@@ -94,7 +94,7 @@ public:
 	///
 	///@param parent - wêze³ rodzicielski
 	///
-    void Update(int cost_from_start, int cost_to_goal, CWaypoint * parent);
+    void update(int cost_from_start, int cost_to_goal, CWaypoint * parent);
 
 	///
 	///Metoda zwraca flagê, czy dany waypoint (node) jest u¿yty podczas danego szukania

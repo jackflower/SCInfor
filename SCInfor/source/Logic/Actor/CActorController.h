@@ -87,7 +87,7 @@ namespace logic
 		///
 		///@param dt - czas
 		///
-		virtual void Update(float dt);
+		virtual void update(float dt);
 
 		//metoda informuj¹ca o otrzymaniu obra¿eñ z danego Ÿród³a
 		//wywo³ywana przez CActor, mo¿e s³u¿yæ do realizacji

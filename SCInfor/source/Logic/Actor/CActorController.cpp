@@ -88,7 +88,7 @@ namespace logic
 	}
 
 	//Wirtualan metoda aktualizuj¹ca obiekt
-	void CActorController::Update(float dt)
+	void CActorController::update(float dt)
 	{
 		//przed zejœciem z tego œwiata, obiekt siê zatrzymuje...
 	    if (p_actor->getSpawnState() != SPAWN_STATE_ALIVE)

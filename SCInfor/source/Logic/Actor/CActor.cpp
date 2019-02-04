@@ -415,10 +415,10 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CActor::Update(float dt)
+	void CActor::update(float dt)
 	{
 		//aktualizacja klasy bazowej
-		CPhysical::Update(dt);		
+		CPhysical::update(dt);		
 
 		//aktualizacja animacji
 		updateAnimations(dt);

@@ -159,7 +159,7 @@ namespace mapengine
             //if ( region != "" )
 			//{
             //    gPlayerManager.MovePlayersToRegion(region);
-			//	gCamera.Update(0.0f);
+			//	gCamera.update(0.0f);
             //}
 
             m_current_map_time_elapsed = 0.0f;

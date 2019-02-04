@@ -8,7 +8,7 @@
 #define H_RECIVER_JACK
 
 #include "../Actor/CActor.h"
-#include "../../Equipment/CSwitch.h"
+#include "../../Equipment/Switch.h"
 #include "CCommunication.h"
 
 namespace logic
@@ -74,12 +74,12 @@ namespace logic
 			///
 			///@param dt - czas
 			///
-			virtual void Update(float dt);
+			virtual void update(float dt);
 
 		protected:
 
 			std::string			m_receiver_name;		//nazwa modu≥u
-			CSwitch				m_unit_controller;		//w≥πcznik, sterownik, modu≥ zarzπdzania, starter, stacyjka
+			Switch				m_unit_controller;		//w≥πcznik, sterownik, modu≥ zarzπdzania, starter, stacyjka
 			bool				m_use_communication;	//flaga, czy obiekt posiada modu≥ komunikacji
 			CCommunication*		p_communication;		//wskaünik na obiekt klasy CCommunication (posiada modu≥ komunikacyjny)
 

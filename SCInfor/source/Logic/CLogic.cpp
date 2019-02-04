@@ -147,7 +147,7 @@ namespace logic
 
 		//aktualizacja - wywo³anie wirtualnej metody z logik¹
 		for (unsigned int i = 0; i < physicals.size(); ++i)
-			physicals[i]->Update( secondsPassed );
+			physicals[i]->update( secondsPassed );
 
 
 		//int test = 0;
@@ -197,7 +197,7 @@ namespace logic
 	{
 		const std::vector<CMapPhysical*> &mapphysicals = gMapPhysicalManager.GetMapPhysicals();
 		for (unsigned int i = 0; i < mapphysicals.size(); ++i)
-			mapphysicals[i]->Update( secondsPassed );
+			mapphysicals[i]->update( secondsPassed );
 	}
 
 }//namespace logic

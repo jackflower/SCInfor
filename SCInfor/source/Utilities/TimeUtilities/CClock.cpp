@@ -117,7 +117,7 @@ void CClock::Reset(bool paused)
 }
 
 //Metoda aktualizuje stan obiektu - wywo³ywana raz na klatkê
-void CClock::Update()
+void CClock::update()
 {
 	//w celu unikniêcia mini-b³êdów
 	static float tmp;

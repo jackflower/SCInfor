@@ -9,7 +9,7 @@
 
 #include "EThermalInsulationState.h"
 #include "../../../Logic/Actor/CActor.h"
-#include "../../CSwitch.h"
+#include "../../Switch.h"
 
 using namespace logic;
 
@@ -129,7 +129,7 @@ namespace equipment
 		///
 		///Metoda zwraca referencjcê na modu³ sterowania
 		///
-		CSwitch & getUnitController();
+		Switch & getUnitController();
 
 		///
 		///Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
@@ -143,7 +143,7 @@ namespace equipment
 		///
 		///@param dt - czas
 		///
-		void Update(float dt);
+		void update(float dt);
 
 	private:
 
@@ -154,7 +154,7 @@ namespace equipment
 		float					m_thermal_protection_consume;	//wartoœæ zu¿ycia ochrony termicznej w jednostce czasu
 		float					m_thermal_protection_duration;	//czas cyklu procesu zu¿ycia/starzenia ochrony termicznej
 		EThermalInsulationState m_thermalinsulation_state;		//wyliczenie stanów
-		CSwitch					m_unit_controller;				//w³¹cznik urz¹dzenie
+		Switch					m_unit_controller;				//w³¹cznik urz¹dzenie
 		float					m_elapsed_time;					//czas procesu - sk³adawa pomocnicza
 
 		//prywatna metoda aktualizuje stan obiektu - termoizolator

@@ -60,16 +60,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CSolarBattery
-	CSolarBattery* CSolarBatteryTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy SolarBattery
+	SolarBattery* CSolarBatteryTemplate::Create(std::wstring id)
 	{
-		CSolarBattery* solar_battery = gPhysicalManager.CreateSolarBattery(id);
+		SolarBattery* solar_battery = gPhysicalManager.CreateSolarBattery(id);
 		Fill(solar_battery);
 		return solar_battery;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CSolarBatteryTemplate::Fill(CSolarBattery *p_solar_battery)
+	void CSolarBatteryTemplate::Fill(SolarBattery *p_solar_battery)
 	{
 		CBatteryTemplate::Fill(p_solar_battery);
 		if(p_solar_battery)

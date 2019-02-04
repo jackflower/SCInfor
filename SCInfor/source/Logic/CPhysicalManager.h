@@ -59,7 +59,7 @@ namespace equipment
 	class CEngine;
 	class CFuelTank;
 	class Energy;
-	class CEnergyTank;
+	class EnergyTank;
 	class CFuelBar;
 	class CAirconditioning;
 	class CThermalInsulation;
@@ -76,8 +76,8 @@ namespace equipment
 
 	namespace battery
 	{
-		class CBattery;
-		class CSolarBattery;
+		class Battery;
+		class SolarBattery;
 	}
 }
 
@@ -191,11 +191,11 @@ namespace logic
 		Energy *CreateEnergy(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CEnergyTank i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy EnergyTank i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CEnergyTank *CreateCEnergyTank(const std::wstring &uniqueId = L"");
+		EnergyTank *CreateEnergyTank(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CMonster i zwraca wskaünik na ten obiekt
@@ -226,18 +226,18 @@ namespace logic
 		CPhysicalInfo *CreatePhysicalInfo(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CBattery i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Battery i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CBattery *CreateBattery(const std::wstring &uniqueId = L"");
+		Battery *CreateBattery(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CSolarBattery i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy SolarBattery i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CSolarBattery *CreateSolarBattery(const std::wstring &uniqueId = L"");
+		SolarBattery *CreateSolarBattery(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CAirconditioning i zwraca wskaünik na ten obiekt

@@ -8,7 +8,7 @@
 #define H_BATTERY_TEMPLATE_JACK
 
 #include "../../../CActorTemplate.h"
-#include "../../../../Equipment/Energy/Battery/CBattery.h"
+#include "../../../../Equipment/Energy/Battery/Battery.h"
 
 using namespace equipment::battery;
 
@@ -58,18 +58,18 @@ namespace factory
 		virtual bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CBattery
+		///Metoda tworzy obiekt klasy Battery
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CBattery* Create(std::wstring id = L"");
+		Battery* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_battery - wskaünik na obiekt klasy CBattery
+		///@param *p_battery - wskaünik na obiekt klasy Battery
 		///
-		virtual void Fill(CBattery *p_battery);
+		virtual void Fill(Battery *p_battery);
 
 	private:
 

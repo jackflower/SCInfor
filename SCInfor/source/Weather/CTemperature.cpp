@@ -83,7 +83,7 @@ namespace weather
 		}
 
 		//Metoda aktualizuje logikê obiektu
-		void CTemperature::Update(float dt)
+		void CTemperature::update(float dt)
 		{
 			m_temperature = (gWeather.getSolarEnergyFactor() * m_temperature_fluctuations) + m_absolute_temperature;
 		}

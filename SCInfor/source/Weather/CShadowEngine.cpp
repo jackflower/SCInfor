@@ -113,7 +113,7 @@ namespace weather
 		}
 
 		//Metoda aktualizuje obiekt
-		void CShadowEngine::Update(float dt)
+		void CShadowEngine::update(float dt)
 		{
 			//wyliczam wspó³czynnik energii s³onecznej (dodatni b¹dŸ ujemny: dzieñ-noc)
 			m_solar_energy_factor = sin(m_angle_sun.getRotation()* (float)RADIANS_PER_DEGREE);

@@ -10,7 +10,7 @@
 #include "EAirconditioningState.h"
 #include "../ThermalInsulation/CThermalInsulation.h"
 #include "../../EquipmentData/CThermalInsulationData.h"
-#include "../../CSwitch.h"
+#include "../../Switch.h"
 #include "../../../Logic/Actor/CActor.h"
 
 using namespace logic;
@@ -192,7 +192,7 @@ namespace equipment
 		///
 		///Metoda zwraca referencjcê na modu³ sterowania
 		///
-		CSwitch & getUnitController();
+		Switch & getUnitController();
 
 		///
 		///Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
@@ -206,7 +206,7 @@ namespace equipment
 		///
 		///@param dt - czas
 		///
-		void Update(float dt);
+		void update(float dt);
 
 	private:
 
@@ -219,7 +219,7 @@ namespace equipment
 		float					m_fuel_consumption;			//zu¿ycie paliwa przez klimatyzator
 		CThermalInsulationData	m_thermal_insulation_data;	//opakowanie funkcjonalnoœci termoizolatora
 		EAirconditioningState	m_airconditioning_state;	//wyliczenie stanów
-		CSwitch					m_unit_controller;			//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		Switch					m_unit_controller;			//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 
 		//prywatna metoda aktualizuje stan obiektu - klimatyzator
 		void updateAirconditioningState(float dt);

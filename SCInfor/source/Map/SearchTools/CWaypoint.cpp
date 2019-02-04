@@ -75,7 +75,7 @@ void CWaypoint::SetOnClosed(bool is_on_closed)
 }
 
 //Metoda aktualizuje obiekt (node)
-void CWaypoint::Update(int cost_from_start, int cost_to_goal, CWaypoint * parent)
+void CWaypoint::update(int cost_from_start, int cost_to_goal, CWaypoint * parent)
 {
 	m_cost_from_start	= cost_from_start;
 	m_cost_to_goal		= cost_to_goal;

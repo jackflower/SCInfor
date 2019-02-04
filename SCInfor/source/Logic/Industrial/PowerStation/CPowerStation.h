@@ -8,7 +8,7 @@
 #define H_POWER_STATION_JACK
 
 #include "../../Actor/CActor.h"
-#include "../../../Equipment/CSwitch.h"
+#include "../../../Equipment/Switch.h"
 #include "../../Communication/CCommunication.h"
 #include "../../../Equipment/EquipmentData/CEquipmentCommunicationData.h"
 
@@ -135,7 +135,7 @@ namespace logic
 			///
 			///@param dt - czas
 			///
-			virtual void Update(float dt);
+			virtual void update(float dt);
 
 		protected:
 
@@ -143,7 +143,7 @@ namespace logic
 			float						m_stored_energy;		//aktualnie zgromadzona energia
 			float						m_energy_capacitor;		//iloœæ energii do zmagazynowania - pojemnoœæ (kondensator)
 			unsigned					m_amount_power_modules;	//iloœæ modu³ów zasilajacych (turbin, przetworników, etc...)
-			CSwitch						m_unit_controller;		//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+			Switch						m_unit_controller;		//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 			CEquipmentCommunicationData m_communication_data;	//opakowanie funkcjonalnoœci modu³u komunikacyjnego
 
 		private:

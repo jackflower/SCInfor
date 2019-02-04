@@ -487,7 +487,7 @@ namespace equipment
 		}
 
 		//Wirtualna metoda aktualizuje logikê obiektu
-		void CGun::Update(float dt)
+		void CGun::update(float dt)
 		{
 			//aktualizacja shadow engine
 			CPhysical::UpdateShadow(dt);

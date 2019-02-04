@@ -148,7 +148,7 @@ namespace artificialintelligence
 		inline void SetAttitude(EEnemyAttitude a)	{ m_attitude = a; }
 
 		
-		void Update(float dt);
+		void update(float dt);
 
 
 	private:

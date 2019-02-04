@@ -322,7 +322,7 @@ namespace equipment
 			///
 			///@param dt - czas
 			///
-			void Update(float dt);
+			void update(float dt);
 
 		private:
 

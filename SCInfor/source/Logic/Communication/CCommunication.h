@@ -8,7 +8,7 @@
 #define H_COMMUNICATION_JACK
 
 #include "../Actor/CActor.h"
-#include "../../Equipment/CSwitch.h"
+#include "../../Equipment/Switch.h"
 #include "ECommunicationState.h"
 #include "CLogin.h"
 #include "ENetworking.h"
@@ -129,12 +129,12 @@ namespace logic
 			///
 			///@param dt - czas
 			///
-			virtual void Update(float dt);
+			virtual void update(float dt);
 
 		private:
 
 			std::string				m_communication_name;	//nazwa modu³u ³¹cznoœci
-			CSwitch					m_unit_controller;		//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+			Switch					m_unit_controller;		//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 			ECommunicationState		e_communication_state;	//wyliczenie stanów CCommunication
 			bool					m_connected;			//flaga, czy po zalogowaniu nast¹pi³a autoryzacja (walidacja)
 			float					m_range;				//zasiêg pracy urz¹dzenie - nadajnik/odbiornik

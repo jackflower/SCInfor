@@ -270,7 +270,7 @@ namespace logic
 		///
 		///@param dt - czas
 		///
-		virtual void Update(float dt);
+		virtual void update(float dt);
 
 		///
 		///Metoda zwraca wskaünik na obiekt klasy CRectangle - graficzna reprezentacja (energia-øycie)

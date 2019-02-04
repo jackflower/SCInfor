@@ -199,8 +199,8 @@ namespace weather
 		m_shadow_engine.setAlphaBase(m_alpha_base);
 		m_shadow_engine.setAlphaExtra(m_alpha_extra);
 		//inicjacja...
-		m_shadow_engine.Update(0);
-		m_temperature.Update(0);
+		m_shadow_engine.update(0);
+		m_temperature.update(0);
 		return true;
 	}
 
@@ -211,8 +211,8 @@ namespace weather
 
 		if (m_elapsed_time > m_update_time)			//aktualizacja co zadany czas
 		{
-			m_shadow_engine.Update(secondsPassed);	//aktualizacja pozycji s³oñca
-			m_temperature.Update(secondsPassed);	//aktualizacja temperatury
+			m_shadow_engine.update(secondsPassed);	//aktualizacja pozycji s³oñca
+			m_temperature.update(secondsPassed);	//aktualizacja temperatury
 			m_elapsed_time = 0.0f;
 		}
 

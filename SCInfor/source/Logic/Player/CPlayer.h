@@ -65,7 +65,7 @@ namespace logic
 		///
 		///@param dt - czas
 		///
-		virtual void Update(float dt);
+		virtual void update(float dt);
 
 		///
 		///Wirtualan metoda zabija obiekt klasy CPlayer i wywo³uje odpowiednie czynnoœci z tym zwi¹zane

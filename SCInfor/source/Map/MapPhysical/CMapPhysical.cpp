@@ -353,7 +353,7 @@ namespace mapengine
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CMapPhysical::Update(float dt)
+	void CMapPhysical::update(float dt)
 	{
 		//nothing to do...
 	}

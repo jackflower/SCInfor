@@ -38,7 +38,7 @@ public:
 	///
 	///@param *waypoint - wskaŸnik na waypoint, który chcemy uaktualniæ
 	///
-    void Update(CWaypoint * waypoint);
+    void update(CWaypoint * waypoint);
     
 	///
     ///Metoda sprawdza, czy kolejka jest pusta

@@ -10,7 +10,7 @@
 #include "../../../RTTI/RTTI.h"
 #include "../../../Logic/Actor/CActor.h"
 #include "EFuelTankState.h"
-#include "../../CSwitch.h"
+#include "../../Switch.h"
 
 using namespace logic;
 
@@ -109,14 +109,14 @@ namespace equipment
 		///
 		///Metoda zwraca referencjcê na modu³ sterowania
 		///
-		CSwitch & getUnitController();
+		Switch & getUnitController();
 
 		///
 		///Wirtualna metoda aktualizuj¹ca obiekt
 		///
 		///@param dt - czas
 		///
-		virtual void Update(float dt);
+		virtual void update(float dt);
 
 	private:
 
@@ -124,7 +124,7 @@ namespace equipment
 		float			m_fuel_tank_capacity;	//pojemnoœæ zbiornika paliwa (materia³ pêdny)
 		float			m_fuel;					//iloœæ paliwa - (materia³u pêdnego)
 		EFuelTankState	m_fueltank_state;		//wyliczenie stanów dla obiektu CFuelTank
-		CSwitch			m_unit_controller;		//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		Switch			m_unit_controller;		//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 
 	};
 }//namespace equipment

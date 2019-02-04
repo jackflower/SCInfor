@@ -5,7 +5,7 @@
 //
 
 #include "CEquipmentBatteryData.h"
-#include "../Energy/Battery/CBattery.h"
+#include "../Energy/Battery/Battery.h"
 #include "../../Logic/CPhysicalManager.h"
 
 namespace equipmentdata
@@ -44,13 +44,13 @@ namespace equipmentdata
 	}
 
 	//Metoda zwraca wskaünik na obiekt klasy CVentilator
-	CBattery* CEquipmentBatteryData::getBattery()
+	Battery* CEquipmentBatteryData::getBattery()
 	{
 		return p_battery;
 	}
 
 	//Metoda ustawia wskaünik na obiekt klasy CVentilator
-	void CEquipmentBatteryData::setBattery(CBattery* battery)
+	void CEquipmentBatteryData::setBattery(Battery* battery)
 	{
 		p_battery = battery;
 	}

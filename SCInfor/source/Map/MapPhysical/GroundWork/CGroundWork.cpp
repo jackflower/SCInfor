@@ -81,7 +81,7 @@ namespace mapengine
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CGroundWork::Update(float dt)
+		void CGroundWork::update(float dt)
 		{
 			//nothdig to do...
 		}

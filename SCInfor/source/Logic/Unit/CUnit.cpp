@@ -40,9 +40,9 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CUnit::Update(float dt)
+		void CUnit::update(float dt)
 		{
-			CActor::Update(dt);
+			CActor::update(dt);
 		}
 
 	}//namespace unit

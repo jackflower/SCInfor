@@ -1,4 +1,4 @@
-//  ___________________________________
+Ôªø//  ___________________________________
 // | Energy.cpp - class implementation |
 // | Jack Flower February 2014         |
 // |___________________________________|
@@ -41,19 +41,19 @@ namespace equipment
 		m_damage_duration(0.0f),
 		m_damage_timer(0.0f),
 		m_owner_death_candidate(false),
-		m_unit_controller(false)//urzπdzenie wy≥πczone - uruchamia siÍ z opÛünieniem
+		m_unit_controller(false)//urzƒÖdzenie wy≈ÇƒÖczone - uruchamia siƒô z op√≥≈∫nieniem
 	{
-		//inverse - docelowo jakaú metoda...
+		//inverse - docelowo jaka≈õ metoda...
 		SetZIndexBody(Z_PHYSICAL_ENERGY_HEAD);
 		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_HEAD);
 		SetZIndexHead(Z_PHYSICAL_ENERGY_BODY);
 		SetZIndexShadowHead(Z_PHYSICAL_ENERGY_BODY);
 	}
 
-	//Konstruktor kopiujπcy
+	//Konstruktor kopiujƒÖcy
 	Energy::Energy(const Energy & EnergyCopy)
 	:
-		CActor(EnergyCopy),//konstruktor kopiujπcy klasy bazowej
+		CActor(EnergyCopy),//konstruktor kopiujƒÖcy klasy bazowej
 		m_energy_name(EnergyCopy.m_energy_name),
 		m_energytank_data(EnergyCopy.m_energytank_data),
 		m_percentage_reserve_energy(EnergyCopy.m_percentage_reserve_energy),
@@ -106,139 +106,139 @@ namespace equipment
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca nazwÍ akumulatora energii
+	//Metoda zwraca nazwƒô akumulatora energii
 	const std::string Energy::getEnergyName() const
 	{
 		return m_energy_name;
 	}
 
-	//Metoda ustawia nazwÍ akumulatora energii
+	//Metoda ustawia nazwƒô akumulatora energii
 	void Energy::setEnergyName(const std::string & energy_name)
 	{
 		m_energy_name = energy_name;
 	}
 
-	//Metoda zwraca wartoúÊ, przy ktÛrej nastÍpuje komunikat informacyjny o niskim poziomie energii
+	//Metoda zwraca warto≈õƒá, przy kt√≥rej nastƒôpuje komunikat informacyjny o niskim poziomie energii
 	const float Energy::getPercentageReserveEnergy() const
 	{
 		return m_percentage_reserve_energy;
 	}
 
-	//Metoda ustawia wartoúÊ, przy ktÛrej nastÍpuje komunikat informacyjny o niskim poziomie energii
+	//Metoda ustawia warto≈õƒá, przy kt√≥rej nastƒôpuje komunikat informacyjny o niskim poziomie energii
 	void Energy::setPercentageReserveEnergy(float percentage_reserve_energy)
 	{
 		m_percentage_reserve_energy = percentage_reserve_energy;
 	}
 
-	//Metoda zwraca wartoúÊ flagi, czy obiekt moøe wysy≥aÊ komunikaty o braku energii
+	//Metoda zwraca warto≈õƒá flagi, czy obiekt mo≈ºe wysy≈Çaƒá komunikaty o braku energii
 	const bool Energy::getEnergyEmptyMessage() const
 	{
 		return m_energy_empty_message;
 	}
 
-	//Metoda ustawia wartoúÊ flagi, czy obiekt moøe wysy≥aÊ komunikaty o braku energii
+	//Metoda ustawia warto≈õƒá flagi, czy obiekt mo≈ºe wysy≈Çaƒá komunikaty o braku energii
 	void Energy::setEnergyEmptyMessage(bool energy_empty_message)
 	{
 		m_energy_empty_message = energy_empty_message;
 	}
 
-	//Metoda zwraca czas opÛünienia komunikatu o braku energii
+	//Metoda zwraca czas op√≥≈∫nienia komunikatu o braku energii
 	const float Energy::getEnergyTimeDelayed() const
 	{
 		return m_energy_time_delayed;
 	}
 
-	//Metoda ustawia czas opÛünienia komunikatu o braku energii
+	//Metoda ustawia czas op√≥≈∫nienia komunikatu o braku energii
 	void Energy::setEnergyTimeDelayed(float energy_time_delayed)
 	{
 		m_energy_time_delayed = energy_time_delayed;
 	}
 
-	//Metoda zwraca wartoúÊ energii dla procesu jej regeneracji
+	//Metoda zwraca warto≈õƒá energii dla procesu jej regeneracji
 	const float Energy::getEnergyRegeneration() const
 	{
 		return m_energy_regeneration;
 	}
 
-	//Metoda ustawia wartoúÊ energii dla procesu jej regeneracji
+	//Metoda ustawia warto≈õƒá energii dla procesu jej regeneracji
 	void Energy::setEnergyRegeneration(float energy_regeneration)
 	{
 		m_energy_regeneration = energy_regeneration;
 	}
 
-	//Metoda zwraca czÍstotliwoúÊ regeneracji procesu
+	//Metoda zwraca czƒôstotliwo≈õƒá regeneracji procesu
 	const float Energy::getEnergyRegenerationTime() const
 	{
 		return m_energy_regeneration_time;
 	}
 
-	//Metoda ustawia czÍstotliwoúÊ regeneracji procesu
+	//Metoda ustawia czƒôstotliwo≈õƒá regeneracji procesu
 	void Energy::setEnergyRegenerationTime(float energy_regeneration_time)
 	{
 		m_energy_regeneration_time = energy_regeneration_time;
 	}
 
-	//Metoda zwraca prÍdkoúÊ wirowania wskaünika energii w akumulatorze
+	//Metoda zwraca prƒôdko≈õƒá wirowania wska≈∫nika energii w akumulatorze
 	const float Energy::getEnergyRotationSpeed() const
 	{
 		return m_energy_rotation_speed;
 	}
 
-	//Metoda ustawia prÍdkoúÊ wirowania wskaünika energii w akumulatorze
+	//Metoda ustawia prƒôdko≈õƒá wirowania wska≈∫nika energii w akumulatorze
 	void Energy::setEnergyRotationSpeed(float energy_rotation_speed)
 	{
 		m_energy_rotation_speed = energy_rotation_speed;
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CEnergyTank
-	CEnergyTank * Energy::getEnergyTank()
+	//Metoda zwraca wska≈∫nik na obiekt klasy EnergyTank
+	EnergyTank * Energy::getEnergyTank()
 	{
 		return m_energytank_data.getEnergyTank();
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CEnergyTank
-	void Energy::setEnergyTank(CEnergyTank * energy_tank)
+	//Metoda ustawia wska≈∫nik na obiekt klasy EnergyTank
+	void Energy::setEnergyTank(EnergyTank * energy_tank)
 	{
 		m_energytank_data.setEnergyTank(energy_tank);
 	}
 
-	//Metoda zwraca flagÍ, czy obiekt posiada akumulator energii
+	//Metoda zwraca flagƒô, czy obiekt posiada akumulator energii
 	const bool Energy::getUseEnergyTank() const
 	{
 		return m_energytank_data.getUseEquipment();
 	}
 
-	//Metoda ustawia flagÍ, czy obiekt posiada akumulator energii
+	//Metoda ustawia flagƒô, czy obiekt posiada akumulator energii
 	void Energy::setUseEnergyTank(bool use_energytank)
 	{
 		m_energytank_data.setUseEquipment(use_energytank);
 	}
 
-	//Metoda zwraca referencjÍ na opakowanie funkcjonalnoúci akumulatora
+	//Metoda zwraca referencjƒô na opakowanie funkcjonalno≈õci akumulatora
 	CEquipmentEnergyTankData & Energy::getEquipmentEnergyTankData()
 	{
 		return m_energytank_data;
 	}
 
-	//Metoda ustawia referencjÍ na opakowanie funkcjonalnoúci akumulatora
+	//Metoda ustawia referencjƒô na opakowanie funkcjonalno≈õci akumulatora
 	void Energy::setEquipmentEnergyTankData(CEquipmentEnergyTankData & energytank_data)
 	{
 		m_energytank_data = energytank_data;
 	}
 
-	//Metoda zwraca referencjÍ na opakowanie danych dla transformacji
+	//Metoda zwraca referencjƒô na opakowanie danych dla transformacji
 	CTransformation & Energy::getEnergyTankTransformed()
 	{
 		return m_energytank_data.getTransformed();
 	}
 
-	//Metoda ustawia referencjÍ na opakowanie danych dla transformacji
+	//Metoda ustawia referencjƒô na opakowanie danych dla transformacji
 	void Energy::setEnergyTankTransformed(CTransformation & energytank_transformation)
 	{
 		m_energytank_data.setTransformed(energytank_transformation);
 	}
 
-	//Wirtualna metoda aktualizuje animacje w zaleønoúci od stanu logiki obiektu (move, attack, death, etc...)
+	//Wirtualna metoda aktualizuje animacje w zale≈ºno≈õci od stanu logiki obiektu (move, attack, death, etc...)
 	void Energy::updateAnimations(float dt)
 	{
 		switch(m_energy_state)
@@ -293,25 +293,25 @@ namespace equipment
 		}
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CBattery - bateria
-	CBattery * Energy::getBattery()
+	//Metoda zwraca wska≈∫nik na obiekt klasy Battery - bateria
+	Battery * Energy::getBattery()
 	{
 		return m_battery_data.getBattery();
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CBattery - bateria
-	void Energy::setBattery(CBattery *battery)
+	//Metoda ustawia wska≈∫nik na obiekt klasy Battery - bateria
+	void Energy::setBattery(Battery *battery)
 	{
 		m_battery_data.setBattery(battery);
 	}
 
-	//Metoda zwraca flagÍ, czy obiekt posiada bateriÍ
+	//Metoda zwraca flagƒô, czy obiekt posiada bateriƒô
 	const bool Energy::getUseBattery() const
 	{
 		return m_battery_data.getUseEquipment();
 	}
 
-	//Metoda ustawia flagÍ, czy obiekt posiada bateriÍ
+	//Metoda ustawia flagƒô, czy obiekt posiada bateriƒô
 	void Energy::setUseBattery(bool use_battery)
 	{
 		m_battery_data.setUseEquipment(use_battery);
@@ -341,13 +341,13 @@ namespace equipment
 		m_damage_duration = damage_duration;
 	}
 
-	//Metoda zwraca referencjcÍ na modu≥ sterowania
-	CSwitch & Energy::getUnitController()
+	//Metoda zwraca referencjcƒô na modu≈Ç sterowania
+	Switch & Energy::getUnitController()
 	{
 		return m_unit_controller;
 	}
 
-	//Wirtualna metoda aktualizuje logikÍ obiektu
+	//Wirtualna metoda aktualizuje logikƒô obiektu
 	void Energy::update(float dt)
 	{
 		CPhysical::UpdateShadow(dt);	//aktualizacja shadow engine
@@ -357,45 +357,45 @@ namespace equipment
 		//aktywacja
 		m_unit_controller.updateToRun(dt);
 
-		//jeúli urzπdzenie jest w≥πczone
+		//je≈õli urzƒÖdzenie jest w≈ÇƒÖczone
 		if(m_unit_controller.getState())
 		{
 			m_energy_timer += dt; //odmiarzam czas
 
-			//naleøy ustaliÊ rotacjÍ (prÍdkoúÊ i warunki)
+			//nale≈ºy ustaliƒá rotacjƒô (prƒôdko≈õƒá i warunki)
 			if(m_energytank_data.getEnergyTank())
 			{
-				//obliczamy procentowπ zawartoúÊ energii w akumulatorze
+				//obliczamy procentowƒÖ zawarto≈õƒá energii w akumulatorze
 				if(m_energytank_data.getEnergyTank()->GetEnergyTankCapacity())
 					m_energy_percentage_energy = m_energytank_data.getEnergyTank()->GetEnergy()/ m_energytank_data.getEnergyTank()->GetEnergyTankCapacity();
-				//aktualizacja prÍdkoúci wirowania ≥opatek wirnika w zaleønoúci od procentowej iloúci energii akumulatora
+				//aktualizacja prƒôdko≈õci wirowania ≈Çopatek wirnika w zale≈ºno≈õci od procentowej ilo≈õci energii akumulatora
 				m_energy_rotor_speed = m_energy_rotation_speed * m_energy_percentage_energy;
 
-				//prÍdkoúÊ rotacji wirnika alternatora zaleøy od energii akumulatora i stanu obiektu
+				//prƒôdko≈õƒá rotacji wirnika alternatora zale≈ºy od energii akumulatora i stanu obiektu
 				if(m_energytank_data.getEnergyTank()->GetEnergy() && m_energy_state != ENERGY_DEATH)
 					RotateHead(m_energy_rotor_speed * dt);
 				
-				//regeneracja - energii w akumulatorze jest mniej niø wynosi pojemnoúÊ akumulatora
+				//regeneracja - energii w akumulatorze jest mniej ni≈º wynosi pojemno≈õƒá akumulatora
 				if(m_energytank_data.getEnergyTank()->GetEnergy() < m_energytank_data.getEnergyTank()->GetEnergyTankCapacity())
 				{
-					if(m_energy_timer >= m_energy_regeneration_time)//jeúli up≥ynπ≥ jakiú czas
+					if(m_energy_timer >= m_energy_regeneration_time)//je≈õli up≈ÇynƒÖ≈Ç jaki≈õ czas
 					{
-						//regenerujemy energiÍ
+						//regenerujemy energiƒô
 						m_energytank_data.getEnergyTank()->SetEnergy(m_energytank_data.getEnergyTank()->GetEnergy() + (m_energy_regeneration * gWeather.getSolarEnergyFactor()));
 						m_energy_timer = 0.0f;//zerujemy czas
 					}
 				}
 
-				//prÍdkoúÊ rotacji wirnika - modu≥ energii uszkodony - zasilanie bateryjne
+				//prƒôdko≈õƒá rotacji wirnika - modu≈Ç energii uszkodony - zasilanie bateryjne
 				if(m_energy_state == ENERGY_DAMAGE)
 					RotateHead(- m_energy_rotation_speed * 0.5f * dt);
 
-				//prÍdkoúÊ rotacji wirnika - modu≥ energii zniszczony
+				//prƒôdko≈õƒá rotacji wirnika - modu≈Ç energii zniszczony
 				if(m_energy_state == ENERGY_DEATH)
 					RotateHead(- m_energy_rotation_speed * 0.25f * dt);
 			}
 
-			//aktualizacja energii - jeúli jest energia
+			//aktualizacja energii - je≈õli jest energia
 			if(m_energytank_data.getEnergyTank())
 				updateEnergyTank(dt);
 
@@ -411,7 +411,7 @@ namespace equipment
 	{
 		if(m_energytank_data.getEnergyTank() && m_energy_state != ENERGY_DAMAGE && m_energy_state != ENERGY_DEATH)
 		{
-			//jest wystarczajπca iloúÊ energii w akumulatorze
+			//jest wystarczajƒÖca ilo≈õƒá energii w akumulatorze
 			if(m_energytank_data.getEnergyTank()->GetEnergy() > m_energytank_data.getEnergyTank()->GetEnergyTankCapacity() * m_percentage_reserve_energy)
 				m_energy_state = ENERGY_DEFAULT;
 
@@ -423,42 +423,42 @@ namespace equipment
 			if(m_energytank_data.getEnergyTank()->GetEnergy() <= 0.f)
 				m_energy_state = ENERGY_EMPTY;
 
-			//brak energii w akumulatorze trwa jakiú czas - stan krytyczny
+			//brak energii w akumulatorze trwa jaki≈õ czas - stan krytyczny
 			if(m_energy_state == ENERGY_EMPTY)
 			{
-				//czekam jakiú czas, gdy akumulator jest roz≥adowany
+				//czekam jaki≈õ czas, gdy akumulator jest roz≈Çadowany
 				m_critical_timer += dt;
 				if(m_critical_timer >= m_critical_duration)
 				{
-					m_energy_state = ENERGY_DAMAGE;		//ustawiam modu≥ energii - uszkodzony
+					m_energy_state = ENERGY_DAMAGE;		//ustawiam modu≈Ç energii - uszkodzony
 					m_critical_timer = 0.0f;
 				}
 			}
 		}
 
-		//wykryto uszkodzenie - sprawdzam moøliwoúÊ zasilania z baterii
+		//wykryto uszkodzenie - sprawdzam mo≈ºliwo≈õƒá zasilania z baterii
 		if(m_energy_state == ENERGY_DAMAGE)
 		{
-			//czekam jakiú czas - akumulator jest uszkodzony
+			//czekam jaki≈õ czas - akumulator jest uszkodzony
 			m_damage_timer += dt;
 			if(m_damage_timer >= m_damage_duration)
 			{
-				m_energy_state = ENERGY_DEATH;				//modu≥ energii zniszczony
-				m_battery_data.getBattery()->runBattery();	//prze≥πczam siÍ na zasilanie bateryjne
+				m_energy_state = ENERGY_DEATH;				//modu≈Ç energii zniszczony
+				m_battery_data.getBattery()->runBattery();	//prze≈ÇƒÖczam siƒô na zasilanie bateryjne
 				m_damage_timer = 0.0f;
 			}
 		}
 
-		//bateria jest zainicjowana, a modu≥ energii przesta≥ dzia≥aÊ/istnieÊ
+		//bateria jest zainicjowana, a modu≈Ç energii przesta≈Ç dzia≈Çaƒá/istnieƒá
 		if(m_battery_data.getBattery() && m_energy_state == ENERGY_DEATH)
 		{
-			//jeúli modu≥ energii posiada bateriÍ
+			//je≈õli modu≈Ç energii posiada bateriƒô
 			if(m_battery_data.getBattery())
-				//bateria siÍ wyczerpa≥a
+				//bateria siƒô wyczerpa≈Ça
 				if (m_battery_data.getBattery()->getCapacity() <= 0)
 				{
-					m_energy_rotation_speed = 0.0f;	//wirnik siÍ zatrzymuje...
-					m_owner_death_candidate = true;	//informacja dla w≥aúciela tego obiektu o potencjalnym
+					m_energy_rotation_speed = 0.0f;	//wirnik siƒô zatrzymuje...
+					m_owner_death_candidate = true;	//informacja dla w≈Ça≈õciela tego obiektu o potencjalnym
 				}
 		}
 	}
@@ -468,7 +468,7 @@ namespace equipment
 	{
 		if (m_energytank_data.getEnergyTank())
 		{
-			//jest wystarczajπca iloúÊ energii
+			//jest wystarczajƒÖca ilo≈õƒá energii
 			if(m_energytank_data.getEnergyTank()->GetEnergy() > m_energytank_data.getEnergyTank()->GetEnergyTankCapacity() * m_percentage_reserve_energy)
 				m_energytank_data.getEnergyTank()->getEnergyTankState() = ENERGYTANK_DEFAULT;
 
@@ -482,7 +482,7 @@ namespace equipment
 		}
 	}
 
-	//prywatna metoda aktualizuje sk≥adowe transformacji wzglÍdem w≥aúciciela
+	//prywatna metoda aktualizuje sk≈Çadowe transformacji wzglƒôdem w≈Ça≈õciciela
 	void Energy::updateEnergyTankTransformation(float dt)
 	{
 		//m_energytank_transformation.Transform(this, p_energy_tank);

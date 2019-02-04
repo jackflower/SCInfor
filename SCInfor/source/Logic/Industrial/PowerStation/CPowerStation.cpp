@@ -141,7 +141,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CPowerStation::Update(float dt)
+		void CPowerStation::update(float dt)
 		{
 			if(m_communication_data.getUseEquipment())
 			{

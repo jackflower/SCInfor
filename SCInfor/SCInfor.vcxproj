@@ -135,12 +135,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\Equipment\CSwitch.cpp" />
-    <ClCompile Include="source\Equipment\Energy\Battery\CBattery.cpp" />
-    <ClCompile Include="source\Equipment\Energy\Battery\CSolarBattery.cpp" />
+    <ClCompile Include="source\Equipment\Switch.cpp" />
+    <ClCompile Include="source\Equipment\Energy\Battery\Battery.cpp" />
+    <ClCompile Include="source\Equipment\Energy\Battery\SolarBattery.cpp" />
     <ClCompile Include="source\Equipment\Energy\Energy.cpp" />
-    <ClCompile Include="source\Equipment\Energy\CFixedColor.cpp" />
-    <ClCompile Include="source\Equipment\Energy\EnergyTank\CEnergyTank.cpp" />
+    <ClCompile Include="source\Equipment\Energy\FixedColor.cpp" />
+    <ClCompile Include="source\Equipment\Energy\EnergyTank\EnergyTank.cpp" />
     <ClCompile Include="source\Equipment\Engine\CEngine.cpp" />
     <ClCompile Include="source\Equipment\Engine\FuelBar\CFuelBar.cpp" />
     <ClCompile Include="source\Equipment\Engine\FuelTank\CFuelTank.cpp" />
@@ -344,14 +344,14 @@
     <Text Include="notes\notes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Equipment\CSwitch.h" />
-    <ClInclude Include="source\Equipment\Energy\Battery\CBattery.h" />
-    <ClInclude Include="source\Equipment\Energy\Battery\CSolarBattery.h" />
+    <ClInclude Include="source\Equipment\Switch.h" />
+    <ClInclude Include="source\Equipment\Energy\Battery\Battery.h" />
+    <ClInclude Include="source\Equipment\Energy\Battery\SolarBattery.h" />
     <ClInclude Include="source\Equipment\Energy\Battery\EBatteryState.h" />
     <ClInclude Include="source\Equipment\Energy\Energy.h" />
-    <ClInclude Include="source\Equipment\Energy\CFixedColor.h" />
+    <ClInclude Include="source\Equipment\Energy\FixedColor.h" />
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h" />
-    <ClInclude Include="source\Equipment\Energy\EnergyTank\CEnergyTank.h" />
+    <ClInclude Include="source\Equipment\Energy\EnergyTank\EnergyTank.h" />
     <ClInclude Include="source\Equipment\Energy\EnergyTank\EEnergyTankState.h" />
     <ClInclude Include="source\Equipment\Engine\CEngine.h" />
     <ClInclude Include="source\Equipment\Engine\EEngineState.h" />

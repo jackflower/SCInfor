@@ -51,7 +51,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CReceiver::Update(float dt)
+		void CReceiver::update(float dt)
 		{
 		}
 	}//namespace communication

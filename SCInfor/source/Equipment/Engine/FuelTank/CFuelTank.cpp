@@ -160,13 +160,13 @@ namespace equipment
 	}
 
 	//Metoda zwraca referencjcê na modu³ sterowania
-	CSwitch & CFuelTank::getUnitController()
+	Switch & CFuelTank::getUnitController()
 	{
 		return m_unit_controller;
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CFuelTank::Update(float dt)
+	void CFuelTank::update(float dt)
 	{
 		UpdateShadow(dt);	//aktualizacja shadow engine
 

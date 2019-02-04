@@ -39,9 +39,9 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CPlayer::Update(float dt)
+	void CPlayer::update(float dt)
 	{
-		CActor::Update(dt);
+		CActor::update(dt);
 	}
 
 	//Wirtualan metoda zabija obiekt klasy CPlayer i wywo³uje odpowiednie czynnoœci z tym zwi¹zane

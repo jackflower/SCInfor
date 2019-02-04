@@ -8,7 +8,7 @@
 #define H_SOLAR_BATTERY_TEMPLATE_JACK
 
 #include "CBatteryTemplate.h"
-#include "../../../../Equipment/Energy/Battery/CSolarBattery.h"
+#include "../../../../Equipment/Energy/Battery/SolarBattery.h"
 
 namespace factory
 {
@@ -56,18 +56,18 @@ namespace factory
 		virtual bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CSolarBattery
+		///Metoda tworzy obiekt klasy SolarBattery
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CSolarBattery* Create(std::wstring id = L"");
+		SolarBattery* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_solar_battery - wskaünik na obiekt klasy CSolarBattery
+		///@param *p_solar_battery - wskaünik na obiekt klasy SolarBattery
 		///
-		virtual void Fill(CSolarBattery *p_solar_battery);
+		virtual void Fill(SolarBattery *p_solar_battery);
 
 	private:
 

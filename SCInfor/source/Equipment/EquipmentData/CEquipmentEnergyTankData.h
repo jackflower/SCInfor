@@ -8,7 +8,7 @@
 #define H_EQUIPMENT_ENERGYTANK_DATA_JACK
 
 #include "CEquipmentData.h"
-#include "../Energy/EnergyTank/CEnergyTank.h"
+#include "../Energy/EnergyTank/EnergyTank.h"
 
 namespace equipmentdata
 {
@@ -44,20 +44,20 @@ namespace equipmentdata
 		const std::string GetType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CEnergyTank
+		///Metoda zwraca wskaünik na obiekt klasy EnergyTank
 		///
-		CEnergyTank* getEnergyTank();
+		EnergyTank* getEnergyTank();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CEnergyTank
+		///Metoda ustawia wskaünik na obiekt klasy EnergyTank
 		///
-		///@param *fueltank - wskaünik na obiekt klasy CEnergyTank
+		///@param *fueltank - wskaünik na obiekt klasy EnergyTank
 		///
-		void setEnergyTank(CEnergyTank* energytank);
+		void setEnergyTank(EnergyTank* energytank);
 
 	private:
 
-		CEnergyTank*	p_energytank;	//wskaünik na klasÍ CEnergyTank - akumulator
+		EnergyTank*	p_energytank;	//wskaünik na klasÍ EnergyTank - akumulator
 
 	};
 }//namespace equipmentdata

@@ -43,7 +43,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje logikê obiektu
-	void CThermometer::Update(float dt)
+	void CThermometer::update(float dt)
 	{
 		//CPhysical::m_m
 		//this->m_ma

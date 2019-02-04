@@ -467,7 +467,7 @@ namespace information
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CInformation::Update(float dt)
+	void CInformation::update(float dt)
 	{
 		//to do...
 	}

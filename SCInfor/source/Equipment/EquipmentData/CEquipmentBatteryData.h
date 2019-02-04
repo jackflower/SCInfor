@@ -16,7 +16,7 @@ namespace equipment
 {
 	namespace battery
 	{
-		class CBattery;
+		class Battery;
 	}
 }
 
@@ -57,20 +57,20 @@ namespace equipmentdata
 		const std::string GetType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CBattery
+		///Metoda zwraca wskaünik na obiekt klasy Battery
 		///
-		CBattery* getBattery();
+		Battery* getBattery();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CBattery
+		///Metoda ustawia wskaünik na obiekt klasy Battery
 		///
-		///@param *battery - wskaünik na obiekt klasy CBattery
+		///@param *battery - wskaünik na obiekt klasy Battery
 		///
-		void setBattery(CBattery* battery);
+		void setBattery(Battery* battery);
 
 	private:
 
-		CBattery*	p_battery;	//wskaünik na klasÍ CVentilator - wentylator
+		Battery*	p_battery;	//wskaünik na klasÍ CVentilator - wentylator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_BATTERY_DATA_JACK

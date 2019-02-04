@@ -186,7 +186,7 @@ namespace animated
 	}
 
 	//Metoda uruchamia animacjê
-	void CAnimated::Update(float elapsed_time)
+	void CAnimated::update(float elapsed_time)
 	{
 		if (!m_paused && p_animation != NULL)
 		{

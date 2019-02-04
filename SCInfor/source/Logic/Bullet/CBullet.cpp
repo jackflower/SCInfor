@@ -196,9 +196,9 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CBullet::Update(float dt)
+	void CBullet::update(float dt)
 	{
-		CPhysical::Update(dt);
+		CPhysical::update(dt);
 		//this->Kill();
 		//this->MarkForDelete();
 		//potrzebujê klasy CDetector...
@@ -217,9 +217,9 @@ namespace logic
 
 /*
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CBullet::Update(float _elapsedtime)
+	void CBullet::update(float _elapsedtime)
 	{
-		CPhysical::Update(_elapsedtime);//aktualizcja
+		CPhysical::update(_elapsedtime);//aktualizcja
 
 		//obliczam drogê przebyt¹ przez pocisk
 		m_road = sqrtf( ((GetPosition().x - GetInitial().x)*(GetPosition().x - GetInitial().x)) + 

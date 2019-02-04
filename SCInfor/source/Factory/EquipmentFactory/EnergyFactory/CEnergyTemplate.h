@@ -11,7 +11,7 @@
 #include "BatteryFactory/CBatteryTemplate.h"
 #include "../../../Equipment/Energy/Energy.h"
 #include "../../../Equipment/EquipmentData/CEquipmentEnergyTankData.h"
-#include "../../../Equipment/Energy/Battery/CBattery.h"
+#include "../../../Equipment/Energy/Battery/Battery.h"
 #include "../../../Equipment/EquipmentData/CEquipmentBatteryData.h"
 
 using namespace equipment::battery;

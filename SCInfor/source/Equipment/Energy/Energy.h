@@ -1,4 +1,4 @@
-//  ___________________________________
+ï»¿//  ___________________________________
 // | Energy.h - class definition       |
 // | Jack Flower February 2014         |
 // |___________________________________|
@@ -8,7 +8,7 @@
 #define H_ENERGY_JACK
 
 #include "EEnergyState.h"
-#include "Battery/CBattery.h"
+#include "Battery/Battery.h"
 #include "../EquipmentData/CEquipmentEnergyTankData.h"
 #include "../EquipmentData/CEquipmentBatteryData.h"
 #include "../../Logic/Actor/CActor.h"
@@ -20,30 +20,30 @@ namespace equipment
 {
 
 	///
-	///Klasa reprezentuje mechanizm zarz¹dzania energi¹
+	///Klasa reprezentuje mechanizm zarzÄ…dzania energiÄ…
 	///
 	class Energy : public CActor
 	{
 		RTTI_DECL;
 
 		///
-		///Deklaracja przyjaŸni
+		///Deklaracja przyjaÅºni
 		///
 		friend class CPhysicalManager;
 	
-		//Aby uzyskaæ obiekt Energy, nale¿y wywo³aæ CPhysicalManager::CreateEnergy();
+		//Aby uzyskaÄ‡ obiekt Energy, naleÅ¼y wywoÅ‚aÄ‡ CPhysicalManager::CreateEnergy();
 
 	private:
 
 		///
-		///Chroniony konstruktor domyœlny
+		///Chroniony konstruktor domyÅ›lny
 		///
-		///@param uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///@param uniqueId - unikalny identyfikator obiektu - staÅ‚a referncja na obiekt klasy std::wstring
 		///
 		Energy(const std::wstring & uniqueId);
 
 		///
-		///Chroniony konstruktor kopiuj¹cy
+		///Chroniony konstruktor kopiujÄ…cy
 		///
 		///@param EnergyCopy - obiekt klasy Energy
 		///
@@ -62,165 +62,165 @@ namespace equipment
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca nazwê akumulatora energii
+		///Metoda zwraca nazwÄ™ akumulatora energii
 		///
 		const std::string getEnergyName() const;
 
 		///
-		///Metoda ustawia nazwê akumulatora energii
+		///Metoda ustawia nazwÄ™ akumulatora energii
 		///
-		///@param energy_name - typ akumulatora energii sta³a referencja na std::string
+		///@param energy_name - typ akumulatora energii staÅ‚a referencja na std::string
 		///
 		void setEnergyName(const std::string & energy_name);
 
 		///
-		///Metoda zwraca wartoœæ, przy której nastêpuje komunikat informacyjny o niskim poziomie energii
+		///Metoda zwraca wartoÅ›Ä‡, przy ktÃ³rej nastÄ™puje komunikat informacyjny o niskim poziomie energii
 		///
 		const float getPercentageReserveEnergy() const;
 
 		///
-		///Metoda ustawia wartoœæ, przy której nastêpuje komunikat informacyjny o niskim poziomie energii
+		///Metoda ustawia wartoÅ›Ä‡, przy ktÃ³rej nastÄ™puje komunikat informacyjny o niskim poziomie energii
 		///
-		///@param percentage_reserve_energy - wartoœæ, przy której nastêpuje komunikat informacyjny o niskim poziomie energii
+		///@param percentage_reserve_energy - wartoÅ›Ä‡, przy ktÃ³rej nastÄ™puje komunikat informacyjny o niskim poziomie energii
 		///
 		void setPercentageReserveEnergy(float percentage_reserve_energy);
 
 		///
-		///Metoda zwraca wartoœæ flagi, czy obiekt mo¿e wysy³aæ komunikaty o braku energii
+		///Metoda zwraca wartoÅ›Ä‡ flagi, czy obiekt moÅ¼e wysyÅ‚aÄ‡ komunikaty o braku energii
 		///
 		const bool getEnergyEmptyMessage() const;
 
 		///
-		///Metoda ustawia wartoœæ flagi, czy obiekt mo¿e wysy³aæ komunikaty o braku energii
+		///Metoda ustawia wartoÅ›Ä‡ flagi, czy obiekt moÅ¼e wysyÅ‚aÄ‡ komunikaty o braku energii
 		///
-		///@param energy_empty_message - flaga, czy obiekt mo¿e wysy³aæ komunikaty o braku energii
+		///@param energy_empty_message - flaga, czy obiekt moÅ¼e wysyÅ‚aÄ‡ komunikaty o braku energii
 		///
 		void setEnergyEmptyMessage(bool energy_empty_message);
 
 		///
-		///Metoda zwraca czas opóŸnienia komunikatu o braku energii
+		///Metoda zwraca czas opÃ³Åºnienia komunikatu o braku energii
 		///
 		const float getEnergyTimeDelayed() const;
 
 		///
-		///Metoda ustawia czas opóŸnienia komunikatu o braku energii
+		///Metoda ustawia czas opÃ³Åºnienia komunikatu o braku energii
 		///
-		///@param energy_time_delayed - czas opóŸnienia komunikatu o braku energii
+		///@param energy_time_delayed - czas opÃ³Åºnienia komunikatu o braku energii
 		///
 		void setEnergyTimeDelayed(float energy_time_delayed);
 
 		///
-		///Metoda zwraca wartoœæ energii dla procesu jej regeneracji
+		///Metoda zwraca wartoÅ›Ä‡ energii dla procesu jej regeneracji
 		///
 		const float getEnergyRegeneration() const;
 
 		///
-		///Metoda ustawia wartoœæ energii dla procesu jej regeneracji
+		///Metoda ustawia wartoÅ›Ä‡ energii dla procesu jej regeneracji
 		///
-		///@param energy_regeneration - wartoœæ energii dla procesu jej regeneracji
+		///@param energy_regeneration - wartoÅ›Ä‡ energii dla procesu jej regeneracji
 		///
 		void setEnergyRegeneration(float energy_regeneration);
 
 		///
-		///Metoda zwraca czêstotliwoœæ regeneracji procesu
+		///Metoda zwraca czÄ™stotliwoÅ›Ä‡ regeneracji procesu
 		///
 		const float getEnergyRegenerationTime() const;
 
 		///
-		///Metoda ustawia czêstotliwoœæ regeneracji procesu
+		///Metoda ustawia czÄ™stotliwoÅ›Ä‡ regeneracji procesu
 		///
-		///@param energy_regeneration_time - czêstotliwoœæ regeneracji procesu
+		///@param energy_regeneration_time - czÄ™stotliwoÅ›Ä‡ regeneracji procesu
 		///
 		void setEnergyRegenerationTime(float energy_regeneration_time);
 
 		///
-		///Metoda zwraca prêdkoœæ wirowania wskaŸnika energii w akumulatorze
+		///Metoda zwraca prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika energii w akumulatorze
 		///
 		const float getEnergyRotationSpeed() const;
 
 		///
-		///Metoda ustawia prêdkoœæ wirowania wskaŸnika energii w akumulatorze
+		///Metoda ustawia prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika energii w akumulatorze
 		///
-		///@param energy_rotation_speed - prêdkoœæ wirowania wskaŸnika energii w akumulatorze
+		///@param energy_rotation_speed - prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika energii w akumulatorze
 		///
 		void setEnergyRotationSpeed(float energy_rotation_speed);
 
 		///
-		///Metoda zwraca wskaŸnik na obiekt klasy CEnergyTank
+		///Metoda zwraca wskaÅºnik na obiekt klasy EnergyTank
 		///
-		CEnergyTank * getEnergyTank();
+		EnergyTank * getEnergyTank();
 
 		///
-		///Metoda ustawia wskaŸnik na obiekt klasy CEnergyTank
+		///Metoda ustawia wskaÅºnik na obiekt klasy EnergyTank
 		///
-		///@param *energy_tank - wskaŸnik na obiekt klasy CEnergyTank
+		///@param *energy_tank - wskaÅºnik na obiekt klasy EnergyTank
 		///
-		void setEnergyTank(CEnergyTank * energy_tank);
+		void setEnergyTank(EnergyTank * energy_tank);
 
 		///
-		///Metoda zwraca flagê, czy obiekt posiada akumulator energii
+		///Metoda zwraca flagÄ™, czy obiekt posiada akumulator energii
 		///
 		const bool getUseEnergyTank() const;
 
 		///
-		///Metoda ustawia flagê, czy obiekt posiada akumulator energii
+		///Metoda ustawia flagÄ™, czy obiekt posiada akumulator energii
 		///
 		///@param use_energytank - flaga, czy obiekt posiada akumulator energii
 		///
 		void setUseEnergyTank(bool use_energytank);
 
 		///
-		///Metoda zwraca referencjê na opakowanie funkcjonalnoœci akumulatora
+		///Metoda zwraca referencjÄ™ na opakowanie funkcjonalnoÅ›ci akumulatora
 		///
 		CEquipmentEnergyTankData & getEquipmentEnergyTankData();
 
 		///
-		///Metoda ustawia referencjê na opakowanie funkcjonalnoœci akumulatora
+		///Metoda ustawia referencjÄ™ na opakowanie funkcjonalnoÅ›ci akumulatora
 		///
 		///@param energytank_data - referencja na obiekt klasy CEquipmentEnergyTankData
 		///
 		void setEquipmentEnergyTankData(CEquipmentEnergyTankData & energytank_data);
 
 		///
-		///Metoda zwraca referencjê na opakowanie danych dla transformacji
+		///Metoda zwraca referencjÄ™ na opakowanie danych dla transformacji
 		///
 		CTransformation & getEnergyTankTransformed();
 
 		///
-		///Metoda ustawia referencjê na opakowanie danych dla transformacji
+		///Metoda ustawia referencjÄ™ na opakowanie danych dla transformacji
 		///
 		///@param energytank_transformation - referencja na obiekt klasy CTransformation
 		///
 		void setEnergyTankTransformed(CTransformation & energytank_transformation);
 
 		///
-		///Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
+		///Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu (move, attack, death, etc...)
 		///
 		///@param dt - czas
 		///
 		virtual void updateAnimations(float dt);
 
 		///
-		///Metoda zwraca wskaŸnik na obiekt klasy CBattery - bateria
+		///Metoda zwraca wskaÅºnik na obiekt klasy Battery - bateria
 		///
-		CBattery * getBattery();
+		Battery * getBattery();
 
 		///
-		///Metoda ustawia wskaŸnik na obiekt klasy CBattery - bateria
+		///Metoda ustawia wskaÅºnik na obiekt klasy Battery - bateria
 		///
-		///@param *battery - wskaŸnik na obiekt klasy CBattery - bateria
+		///@param *battery - wskaÅºnik na obiekt klasy Battery - bateria
 		///
-		void setBattery(CBattery * battery);
+		void setBattery(Battery * battery);
 
 		///
-		///Metoda zwraca flagê, czy obiekt posiada bateriê
+		///Metoda zwraca flagÄ™, czy obiekt posiada bateriÄ™
 		///
 		const bool getUseBattery() const;
 
 		///
-		///Metoda ustawia flagê, czy obiekt posiada bateriê
+		///Metoda ustawia flagÄ™, czy obiekt posiada bateriÄ™
 		///
-		///@param use_battery - flagê, czy obiekt posiada bateriê
+		///@param use_battery - flagÄ™, czy obiekt posiada bateriÄ™
 		///
 		void setUseBattery(bool use_battery);
 
@@ -249,17 +249,17 @@ namespace equipment
 		void setDamageDuration(float damage_duration);
 
 		///
-		///Metoda zwraca falgê determinuj¹ca do zniszczenia w³aœciciela tego obektu
+		///Metoda zwraca falgÄ™ determinujÄ…ca do zniszczenia wÅ‚aÅ›ciciela tego obektu
 		///
 		inline const bool getOwnerDeathCandidate() const { return m_owner_death_candidate; }
 
 		///
-		///Metoda zwraca referencjcê na modu³ sterowania
+		///Metoda zwraca referencjcÄ™ na moduÅ‚ sterowania
 		///
-		CSwitch & getUnitController();
+		Switch & getUnitController();
 
 		///
-		///Wirtualna metoda aktualizuje logikê obiektu
+		///Wirtualna metoda aktualizuje logikÄ™ obiektu
 		///
 		///@param dt - czas
 		///
@@ -267,25 +267,25 @@ namespace equipment
 
 	private:
 
-		std::string m_energy_name; //nazwa mechanizmu zarz¹dzania energi¹ <map>//potem usun¹æ, bo nie bêdzie ³adowania danych ze struktur...
-		CEquipmentEnergyTankData m_energytank_data; //opakowanie funkcjonalnoœci akumulatora
-		float m_percentage_reserve_energy; //procentowa wartoœæ energii, przy której nastêpuje komunikat informacyjny o niskim poziomie energii (default 10% - konstruktor)
-		float m_energy_time_delayed; //czas opóŸnienia komunikatu o braku energii - jako dana wejœciowa dla sf::Randomizer
-		bool m_energy_empty_message; //flaga, czy obiekt mo¿e wysy³aæ komunikaty o braku energii
-		float m_energy_regeneration; //wartoœæ energii dla procesu jej regeneracji (factor/sec)
-		float m_energy_regeneration_time; //czêstotliwoœæ regeneracji procesu regeneracji energii akumulatora
-		float m_energy_timer; //wyliczany up³ywaj¹cy czas procesów logiki
-		float m_energy_percentage_energy; //wyliczana procentowa zawartoœæ energii akumulatora
-		float m_energy_rotor_speed; //wyliczana prêdkoœæ wirowania wskaŸnika energii w akumulatorze
-		float m_energy_rotation_speed; //prêdkoœæ wirowania wskaŸnika energii w akumulatorze
-		EEnergyState m_energy_state; //wyliczenie stanów dla obiektu Energy
-		CEquipmentBatteryData m_battery_data; //opakowanie funkcjonalnoœci baterii
+		std::string m_energy_name; //nazwa mechanizmu zarzÄ…dzania energiÄ… <map>//potem usunÄ…Ä‡, bo nie bÄ™dzie Å‚adowania danych ze struktur...
+		CEquipmentEnergyTankData m_energytank_data; //opakowanie funkcjonalnoÅ›ci akumulatora
+		float m_percentage_reserve_energy; //procentowa wartoÅ›Ä‡ energii, przy ktÃ³rej nastÄ™puje komunikat informacyjny o niskim poziomie energii (default 10% - konstruktor)
+		float m_energy_time_delayed; //czas opÃ³Åºnienia komunikatu o braku energii - jako dana wejÅ›ciowa dla sf::Randomizer
+		bool m_energy_empty_message; //flaga, czy obiekt moÅ¼e wysyÅ‚aÄ‡ komunikaty o braku energii
+		float m_energy_regeneration; //wartoÅ›Ä‡ energii dla procesu jej regeneracji (factor/sec)
+		float m_energy_regeneration_time; //czÄ™stotliwoÅ›Ä‡ regeneracji procesu regeneracji energii akumulatora
+		float m_energy_timer; //wyliczany upÅ‚ywajÄ…cy czas procesÃ³w logiki
+		float m_energy_percentage_energy; //wyliczana procentowa zawartoÅ›Ä‡ energii akumulatora
+		float m_energy_rotor_speed; //wyliczana prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika energii w akumulatorze
+		float m_energy_rotation_speed; //prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika energii w akumulatorze
+		EEnergyState m_energy_state; //wyliczenie stanÃ³w dla obiektu Energy
+		CEquipmentBatteryData m_battery_data; //opakowanie funkcjonalnoÅ›ci baterii
 		float m_critical_duration; //czas trwania stanu krytycznego
 		float m_critical_timer; //lokalny timer stanu krytycznego
 		float m_damage_duration; //czas trwania stanu uszkodzenia
 		float m_damage_timer; //lokalny timer stanu uszkodzenia
-		bool m_owner_death_candidate; //flaga determinuj¹ca do zniszczenia w³aœciciela tego obektu
-		CSwitch m_unit_controller; //w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		bool m_owner_death_candidate; //flaga determinujÄ…ca do zniszczenia wÅ‚aÅ›ciciela tego obektu
+		Switch m_unit_controller; //wÅ‚Ä…cznik, sterownik, moduÅ‚ zarzÄ…dzania, starter, stacyjka
 
 		//prywatna metoda aktualizuje stan obiektu
 		void updateEnergyState(float dt);
@@ -293,7 +293,7 @@ namespace equipment
 		//prywatna metoda aktualizuje obiekt - energytank
 		void updateEnergyTank(float dt);
 
-		//prywatna metoda aktualizuje sk³adowe transformacji wzglêdem w³aœciciela
+		//prywatna metoda aktualizuje skÅ‚adowe transformacji wzglÄ™dem wÅ‚aÅ›ciciela
 		void updateEnergyTankTransformation(float dt);
 
 	};

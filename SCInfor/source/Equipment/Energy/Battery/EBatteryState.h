@@ -1,4 +1,4 @@
-//  _________________________________________________
+Ôªø//  _________________________________________________
 // | EBatteryState.h - enumeration of states battery |
 // | Jack Flower - May 2016                          |
 // |_________________________________________________|
@@ -10,14 +10,14 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stanÛw dla obiektu CBattery
+	///Wyliczenie stan√≥w dla obiektu Battery
 	///
 	enum EBatteryState
 	{
-		BATTERY_DEFAULT		= 0,//stan default - czas przed w≥πczeniem
-		BATTERY_CHARGED		= 1,//bateria - na≥adowana funkcjonuje
+		BATTERY_DEFAULT		= 0,//stan default - czas przed w≈ÇƒÖczeniem
+		BATTERY_CHARGED		= 1,//bateria - na≈Çadowana funkcjonuje
 		BATTERY_RESERVE		= 2,//bateria - stan rezerwy energii
-		BATTERY_DISCHARGED	= 3,//bateria roz≥adowna - zero energii
+		BATTERY_DISCHARGED	= 3,//bateria roz≈Çadowna - zero energii
 		BATTERY_DAMAGE		= 4 //bateria uszkodzona - tylk wymiana 
 	};
 }//namespace equipment

@@ -139,7 +139,7 @@ namespace equipment
 
 
 	//Wirtualna metoda aktualizuje logikê obiektu
-	void CLightingEquipment::Update(float dt)
+	void CLightingEquipment::update(float dt)
 	{
 		CPhysical::UpdateShadow(dt);	//aktualizacja shadow engine
 

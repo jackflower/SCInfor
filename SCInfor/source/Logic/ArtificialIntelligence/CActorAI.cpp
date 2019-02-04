@@ -115,12 +115,12 @@ namespace artificialintelligence
 	}
 
 	//Metoda aktualizuje obiekt
-	void CActorAI::Update(float dt)
+	void CActorAI::update(float dt)
 	{
 		/*
-		CActorController::Update(dt);
+		CActorController::update(dt);
 
-		m_data.Update(dt);
+		m_data.update(dt);
 
 		if ( GetActor()->GetSpawnState() != CActor::ssAlive )	return;
 		if ( p_scheme )											p_scheme->UpdateAI(&m_data, dt);

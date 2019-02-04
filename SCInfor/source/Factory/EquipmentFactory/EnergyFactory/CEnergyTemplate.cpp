@@ -101,7 +101,7 @@ namespace factory
 			//nazwa pliku z konfiguracj¹ fueltank
 			std::string energytank_filename_tmp = xml.GetString(node, "energy_tank_filename");
 			
-			//emitery dla obiektu klasy CEnergyTank
+			//emitery dla obiektu klasy EnergyTank
 			m_templ_energytank_data.setEmiter(xml.GetFloat(node, "energytank_emiter_x"), xml.GetFloat(node, "energytank_emiter_y"));
 
 			if(m_templ_energytank_data.getUseEquipment())
@@ -117,7 +117,7 @@ namespace factory
 			//nazwa pliku z konfiguracj¹ battery
 			std::string battery_filename_tmp = xml.GetString(node, "battery_filename");
 
-			//emitery dla obiektu klasy CBattery (dopisaæ do pliku xml)
+			//emitery dla obiektu klasy Battery (dopisaæ do pliku xml)
 			m_templ_battery_data.setEmiter(xml.GetFloat(node, "battery_emiter_x"), xml.GetFloat(node, "battery_emiter_y"));
 
 			if(m_templ_battery_data.getUseEquipment())
@@ -179,7 +179,7 @@ namespace factory
 				{
 					//pobieramy sk³adow¹ fueltank i wzorzec wype³nia wskaŸnik danymi
 					p_energy->setEnergyTank(p_templ_energy_tank->Create(L""));
-					//przekazanie wskaŸnikowi na klasê CEnergyTank informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê EnergyTank informacji o wzorcu
 					p_energy->getEnergyTank()->SetTemplate(p_templ_energy_tank);
 					//decorator
 					p_energy->getEnergyTank()->setSmoothing(true);
@@ -193,7 +193,7 @@ namespace factory
 				{
 					//pobieramy sk³adow¹ battery i wzorzec wype³nia wskaŸnik danymi
 					p_energy->setBattery(p_templ_battery->Create(L""));
-					//przekazanie wskaŸnikowi na klasê CBattery informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê Battery informacji o wzorcu
 					p_energy->getBattery()->SetTemplate(p_templ_battery);
 					//decorator
 					p_energy->getBattery()->setSmoothing(true);

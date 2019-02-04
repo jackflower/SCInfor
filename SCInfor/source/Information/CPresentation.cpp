@@ -428,7 +428,7 @@ namespace information
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CPresentation::Update(float dt)
+		void CPresentation::update(float dt)
 		{
 			//
 		}

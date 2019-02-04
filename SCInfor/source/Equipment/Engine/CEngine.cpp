@@ -306,13 +306,13 @@ namespace equipment
 	}
 
 	//Metoda zwraca referencjcê na modu³ sterowania
-	CSwitch & CEngine::getUnitController()
+	Switch & CEngine::getUnitController()
 	{
 		return m_unit_controller;
 	}
 
 	//Wirtualna metoda aktualizuje logikê obiektu
-	void CEngine::Update(float dt)
+	void CEngine::update(float dt)
 	{
 		CPhysical::UpdateShadow(dt);//aktualizacja shadow engine
 

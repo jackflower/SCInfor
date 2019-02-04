@@ -9,7 +9,7 @@
 
 #include "EVentilatorState.h"
 #include "../../../Logic/Actor/CActor.h"
-#include "../../CSwitch.h"
+#include "../../Switch.h"
 
 using namespace logic;
 
@@ -118,7 +118,7 @@ namespace equipment
 		///
 		///Metoda zwraca referencjcę na moduł sterowania
 		///
-		CSwitch & getUnitController();
+		Switch & getUnitController();
 
 		///
 		///Wirtualna metoda aktualizuje animacje w zależności od stanu logiki obiektu (move, attack, death, etc...)
@@ -132,7 +132,7 @@ namespace equipment
 		///
 		///@param dt - czas
 		///
-		void Update(float dt);
+		void update(float dt);
 
 	private:
 
@@ -142,7 +142,7 @@ namespace equipment
 		float				m_energy_consumption;			//zużycie energii
 		float				m_energy_consumption_factor;	//współczynnik zużycia energii [ obliczany ]
 		EVentilatorState	m_ventilator_state;				//wyliczenie stanów
-		CSwitch				m_unit_controller;				//włącznik, sterownik, moduł zarządzania, starter, stacyjka
+		Switch				m_unit_controller;				//włącznik, sterownik, moduł zarządzania, starter, stacyjka
 
 		//prywatna metoda aktualizuje stan obiektu - wentylator
 		void updateVentilatorState(float dt);

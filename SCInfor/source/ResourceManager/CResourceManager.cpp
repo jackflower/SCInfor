@@ -430,11 +430,11 @@ namespace resource
 		//		- CBulletTemplate						->tworzy->	CBullet
 		//		- CMonsterTemplate						->tworzy->	CMonster
 		//		- CFuelTankTemplate						->tworzy->	CFuelTank
-		//		- CEnergyTankTemplate					->tworzy->	CEnergyTank
+		//		- CEnergyTankTemplate					->tworzy->	EnergyTank
 		//		- CFuelBarTemplate						->tworzy->	CFuelBar
 		//		- CEnergyTemplate						->tworzy->	Energy
-		//		- CBatteryTemplate						->tworzy->	CBattery
-		//		- CSolarBatteryTemplate					->tworzy->	CSolarBattery
+		//		- CBatteryTemplate						->tworzy->	Battery
+		//		- CSolarBatteryTemplate					->tworzy->	SolarBattery
 		//		- CAirconditioningTemplate				->tworzy->	CAirconditioning
 		//		- CThermalInsulationTemplate			->tworzy->	CThermalInsulation
 		//		- CVentilatorTemplate					->tworzy->	CVentilator

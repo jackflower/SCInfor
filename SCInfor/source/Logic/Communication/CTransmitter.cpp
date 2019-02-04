@@ -39,7 +39,7 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CTransmitter::Update(float dt)
+		void CTransmitter::update(float dt)
 		{
 		}
 	}//namespace communication

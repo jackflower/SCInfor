@@ -106,7 +106,7 @@ namespace weather
 			///
 			///@param dt - czas
 			///
-			void Update(float dt);
+			void update(float dt);
 
 			///
 			///Metoda zwraca wspó³czynnik energii s³onecznej zale¿ny od wysokoœci s³oñca

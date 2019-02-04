@@ -15,7 +15,7 @@
 #include "../../Industrial/PowerStation/CPowerStation.h"
 #include "../../Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
 #include "../../Communication/CCommunication.h"
-#include "../../../Equipment/Energy/Battery/CBattery.h"
+#include "../../../Equipment/Energy/Battery/Battery.h"
 #include "../../../Equipment/EquipmentData/CEquipmentBatteryData.h"
 
 
@@ -165,16 +165,16 @@ namespace logic
 			void setSlotsRate(CSlotsRate* slots_rate);
 
 			///
-			///Metoda zwraca wskaünik na obiekt klasy CBattery
+			///Metoda zwraca wskaünik na obiekt klasy Battery
 			///
-			CBattery* getBattery();
+			Battery* getBattery();
 
 			///
-			///Metoda ustawia wskaünik na obiekt klasy CBattery
+			///Metoda ustawia wskaünik na obiekt klasy Battery
 			///
-			///@param *battery - wskaünik na obiekt CBattery
+			///@param *battery - wskaünik na obiekt Battery
 			///
-			void setBattery(CBattery* battery);
+			void setBattery(Battery* battery);
 
 			///
 			///Metoda zwraca flagÍ, czy obiekt posiada bateriÍ
@@ -224,7 +224,7 @@ namespace logic
 			///
 			///@param dt - czas
 			///
-			virtual void Update(float dt);
+			virtual void update(float dt);
 
 		private:
 

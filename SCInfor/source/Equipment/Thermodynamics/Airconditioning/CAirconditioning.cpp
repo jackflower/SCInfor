@@ -204,7 +204,7 @@ namespace equipment
 	}
 
 	//Metoda zwraca referencjcê na modu³ sterowania
-	CSwitch & CAirconditioning::getUnitController()
+	Switch & CAirconditioning::getUnitController()
 	{
 		return m_unit_controller;
 	}
@@ -265,7 +265,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje logikê obiektu
-	void CAirconditioning::Update(float dt)
+	void CAirconditioning::update(float dt)
 	{
 		//aktualizacja shadow engine
 		CPhysical::UpdateShadow(dt);

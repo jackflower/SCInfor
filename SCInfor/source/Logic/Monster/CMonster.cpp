@@ -35,9 +35,9 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CMonster::Update(float dt)
+	void CMonster::update(float dt)
 	{
-		CPhysical::Update(dt);
+		CPhysical::update(dt);
 		CActor::updateComponents(dt);
 
 		////////na razie testy..., bo w CActor bêdzie ju¿ opakowana metoda...
@@ -81,7 +81,7 @@ namespace logic
 
 		//Obs³ugiwane klawisze: RGBTY
 		//to dzia³a...
-		//uwaga, z racji tego, ¿e jestemm w Update, tak wszystko co testujê
+		//uwaga, z racji tego, ¿e jestemm w update, tak wszystko co testujê
 		//odbywa siê w pêtli czasu rzeczywistego...
 		//zatem, nale¿y pamiêtaæ, aby obs³uga odbywa³a siê "jeden raz",
 		//czyli ob³uga zdarzeñ...

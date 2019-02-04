@@ -1,5 +1,5 @@
 //  ________________________________________
-// | CEnergyTank.h - class definition       |
+// | EnergyTank.h - class definition       |
 // | Jack Flower - December 2012            |
 // |________________________________________|
 //
@@ -7,10 +7,10 @@
 #ifndef H_ENERGY_TANK_JACK
 #define H_ENERGY_TANK_JACK
 
+#include "EEnergyTankState.h"
+#include "../../Switch.h"
 #include "../../../RTTI/RTTI.h"
 #include "../../../Logic/Actor/CActor.h"
-#include "EEnergyTankState.h"
-#include "../../CSwitch.h"
 
 using namespace logic;
 
@@ -19,7 +19,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje akumulator energii /¿ycia/
 	///
-	class CEnergyTank : public CActor
+	class EnergyTank : public CActor
 	{
 		RTTI_DECL;
 
@@ -28,7 +28,7 @@ namespace equipment
 		///
 		friend class CPhysicalManager;
 			
-		//Aby uzyskaæ obiekt CEnergyTank, nale¿y wywo³aæ CPhysicalManager::CreateCEnergyTank();
+		//Aby uzyskaæ obiekt EnergyTank, nale¿y wywo³aæ CPhysicalManager::CreateCEnergyTank();
 
 	protected:
 
@@ -37,19 +37,19 @@ namespace equipment
 		///
 		///@param &uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
 		///
-		CEnergyTank(const std::wstring& uniqueId);
+		EnergyTank(const std::wstring& uniqueId);
 
 		///
 		///Chroniony konstruktor kopiuj¹cy
 		///
-		///@param &CEnergyTankCopy - obiekt klasy CEnergyTank
+		///@param &CEnergyTankCopy - obiekt klasy EnergyTank
 		///
-		CEnergyTank(const CEnergyTank& CEnergyTankCopy);
+		EnergyTank(const EnergyTank& CEnergyTankCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEnergyTank(void);
+		virtual ~EnergyTank(void);
 
 	public:
 
@@ -107,7 +107,7 @@ namespace equipment
 		void SetEnergyTankRotationSpeed(float energy_tank_rotation_speed);
 
 		///
-		///Metoda zwraca stan obiektu CEnergyTank
+		///Metoda zwraca stan obiektu EnergyTank
 		///
 		inline EEnergyTankState & getEnergyTankState() { return m_energytank_state; }
 
@@ -121,14 +121,14 @@ namespace equipment
 		///
 		///Metoda zwraca referencjcê na modu³ sterowania
 		///
-		CSwitch & getUnitController();
+		Switch & getUnitController();
 
 		///
 		///Wirtualna metoda aktualizuj¹ca obiekt
 		///
 		///@param dt - czas
 		///
-		virtual void Update(float dt);
+		virtual void update(float dt);
 
 
 	protected:
@@ -138,8 +138,8 @@ namespace equipment
 		float				m_energy;						//energia /¿ycie/ obiektu
 		float				m_energy_tank_rotation_speed;	//prêdkoœæ wirowania wskaŸnika stanu akumulatora
 		float				m_energy_tank_rotor_speed;		//wyliczana prêdkoœæ wirowania wskaŸnika stanu akumulatora
-		EEnergyTankState	m_energytank_state;				//wyliczenie stanów dla obiektu CEnergyTank
-		CSwitch				m_unit_controller;				//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		EEnergyTankState	m_energytank_state;				//wyliczenie stanów dla obiektu EnergyTank
+		Switch				m_unit_controller;				//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 	};
 }//namespace equipment
 #endif // H_ENERGY_TANK_JACK

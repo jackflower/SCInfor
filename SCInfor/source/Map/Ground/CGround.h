@@ -98,7 +98,7 @@ namespace mapengine
 		///
 		///@param dt - czas
 		///
-		virtual void Update(float dt);
+		virtual void update(float dt);
 
 	private:
 

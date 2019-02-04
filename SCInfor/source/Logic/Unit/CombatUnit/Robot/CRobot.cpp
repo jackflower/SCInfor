@@ -183,10 +183,10 @@ namespace logic
 		}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CRobot::Update(float dt)
+		void CRobot::update(float dt)
 		{
-			//CPhysical::Update(dt);
-			//CActor::Update(dt);
+			//CPhysical::update(dt);
+			//CActor::update(dt);
 
 			updateState(dt);
 			updateAnimations(dt);

@@ -126,7 +126,7 @@ namespace equipment
 	}
 
 	//Metoda zwraca referencjcê na modu³ sterowania
-	CSwitch & CVentilator::getUnitController()
+	Switch & CVentilator::getUnitController()
 	{
 		return m_unit_controller;
 	}
@@ -160,7 +160,7 @@ namespace equipment
 	}
 
 	//Metoda aktulizuje obiekt
-	void CVentilator::Update(float dt)
+	void CVentilator::update(float dt)
 	{
 		//jeœli obiekt posiada wentylator, to znaczy, ¿e w³aœciciel tego obiektu,
 		//mo¿e sch³adzaæ/nagrzewaæ wnêtrze poprzez wymuszony ruch powietrza

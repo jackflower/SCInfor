@@ -49,7 +49,7 @@ namespace artificialintelligence
 		virtual void UnregisterAI(CActorAI* ai);// {}
 
 
-		virtual void Update(float dt);// {}
+		virtual void update(float dt);// {}
 		virtual void UpdateAI(CActorAIData *ai, float dt) = 0;
 		virtual std::string GetName() const = 0;
 

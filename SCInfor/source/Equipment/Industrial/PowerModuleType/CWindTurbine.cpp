@@ -230,7 +230,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CWindTurbine::Update(float dt)
+	void CWindTurbine::update(float dt)
 	{
 		CPhysical::UpdateShadow(dt);	//aktualizacja shadow engine
 
