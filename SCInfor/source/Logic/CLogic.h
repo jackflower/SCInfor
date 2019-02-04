@@ -42,7 +42,7 @@ namespace logic
 		///
 		///Wirtualna metoda aktualizuj¹ca logikê obiektów
 		///
-		virtual void FrameStarted(float secondsPassed);
+		virtual void frameStarted(float secondsPassed);
 
 		///
 		///Wirtualna metoda aktualizuj¹ca logikê gry - zdarzenia klawiatury

@@ -59,7 +59,7 @@ namespace logic
 		///
 		///@param secondsPassed - up≥ywajπcy czas
 		///
-		virtual void FrameStarted(float secondsPassed);
+		virtual void frameStarted(float secondsPassed);
 
 		///
 		///Metoda tworzy obiekt klasy CMapPhysical i zwraca wskaünik na ten obiekt

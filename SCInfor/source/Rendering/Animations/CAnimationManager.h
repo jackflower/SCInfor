@@ -59,7 +59,7 @@ namespace rendering
 			///
 			///Wirtualna metoda aktualizuj¹ca logikê obiektów - implementacja
 			///
-			virtual void FrameStarted(float secondsPassed);
+			virtual void frameStarted(float secondsPassed);
 
 			///
 			///Metoda zwraca animacjê z kontenera na podstawie nazwy

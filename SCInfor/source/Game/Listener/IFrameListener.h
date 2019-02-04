@@ -26,7 +26,7 @@ namespace listener
 		///
 		///@param elapsed_time - up³ywaj¹cy czas
 		///
-		virtual void FrameStarted(float elapsed_time) = 0;
+		virtual void frameStarted(float elapsed_time) = 0;
 	};
 }//namespace listener
 #endif//H_FRAME_LISTENER_JACK

@@ -34,7 +34,7 @@ namespace logic
 	}
 
 	//Wirtualna metoda - czyœci obiekty z kontenera
-	void CMapPhysicalManager::FrameStarted(float secondsPassed)
+	void CMapPhysicalManager::frameStarted(float secondsPassed)
 	{
 		//std::cout << m_mapphysicals[0]->getCode() << std::endl;
 		//std::cout << "Zorro" << std::endl;//listener nas³uchuje...

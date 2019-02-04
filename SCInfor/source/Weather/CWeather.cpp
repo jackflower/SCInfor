@@ -42,7 +42,7 @@ namespace weather
 		printf("CWeather::CWeather()\n");
 		gGame.addFrameListener(this);	//dodajemy do kontenera wskaünik na ten obiekt
 										//celem aktualizacji jego stanu i aktualizacji logiki
-										//czyli metoda FrameStarted(float secondsPassed),
+										//czyli metoda frameStarted(float secondsPassed),
 										//aktualizacja zarejestrowanych zjawisk pogodowych
 	}
 
@@ -205,7 +205,7 @@ namespace weather
 	}
 
 	//Wirtualna metoda aktualizuje obiekty w kontenerze
-	void CWeather::FrameStarted(float secondsPassed)
+	void CWeather::frameStarted(float secondsPassed)
 	{
 		m_elapsed_time += secondsPassed;//odmierzam u≥yw czasu dla aktualizacji zjawisk pogodowych
 

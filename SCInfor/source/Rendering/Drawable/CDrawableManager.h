@@ -122,7 +122,7 @@ namespace rendering
 			///
 			///@param secondsPassed - czas
 			///
-			virtual void FrameStarted(float secondsPassed) {};
+			virtual void frameStarted(float secondsPassed) {};
 
 			///
 			///Metoda renderuj¹ca obiekt klasy CDisplayable

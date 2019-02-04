@@ -60,7 +60,7 @@ namespace infologic
 		///
 		///@param secondsPassed - up≥ywajπcy czas
 		///
-		virtual void FrameStarted(float secondsPassed);
+		virtual void frameStarted(float secondsPassed);
 
 		///
 		///Metoda tworzy obiekt klasy CInformation i zwraca wskaünik na ten obiekt

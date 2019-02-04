@@ -116,7 +116,7 @@ namespace mapengine
 		///
 		///@param secondsPassed - up³ywaj¹cy czas
 		///
-		virtual void FrameStarted(float secondsPassed);
+		virtual void frameStarted(float secondsPassed);
 
 		///
 		///Wirtualna metoda zwracaj¹ca stan zatrzymania gry

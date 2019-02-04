@@ -185,7 +185,7 @@ namespace mapengine
 	}
 
 	//Wirtualna metoda aktualizuj¹ca logikê mapy
-	void CMapManager::FrameStarted(float secondsPassed)
+	void CMapManager::frameStarted(float secondsPassed)
 	{
 		//sf::FloatRect cameraRect
 		//(

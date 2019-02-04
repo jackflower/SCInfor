@@ -34,7 +34,7 @@ namespace infologic
 	}
 
 	//Wirtualna metoda - czyœci obiekty z kontenera
-	void CInfoManager::FrameStarted(float secondsPassed)
+	void CInfoManager::frameStarted(float secondsPassed)
 	{
 		//std::cout << m_map_information[0]->GetUniqueId() << std::endl;
 		//testy, czy listener nas³uchuje...

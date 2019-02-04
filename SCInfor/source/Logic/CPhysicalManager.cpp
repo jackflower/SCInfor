@@ -64,7 +64,7 @@ namespace logic
 	}
 
 	//Wirtualna metoda - czyœci obiekty z kontenera
-	void CPhysicalManager::FrameStarted(float secondsPassed)
+	void CPhysicalManager::frameStarted(float secondsPassed)
 	{
 		//Czyszczenie obiektów
 		std::vector<CPhysical*>				dirty;		//kontener na obiekty do zniszczenia
@@ -370,7 +370,7 @@ namespace logic
 
 		if (force_destroy_instantly)
 		{
-			FrameStarted(0.0f);
+			frameStarted(0.0f);
 		}
 	}
 

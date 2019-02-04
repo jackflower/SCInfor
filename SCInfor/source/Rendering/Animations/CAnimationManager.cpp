@@ -47,7 +47,7 @@ namespace rendering
 		}
 
 		//Wirtualna metoda aktualizuj¹ca logikê obiektów - implementacja
-		void CAnimationManager::FrameStarted(float secondsPassed)
+		void CAnimationManager::frameStarted(float secondsPassed)
 		{
 			for (AnimationStatesSet::iterator it = m_animation_states.begin(); it != m_animation_states.end(); it++)
 			{

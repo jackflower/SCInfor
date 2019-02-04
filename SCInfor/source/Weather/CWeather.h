@@ -139,7 +139,7 @@ namespace weather
 		///
 		///@param secondsPassed - up³ywaj¹cy czas
 		///
-		virtual void FrameStarted(float secondsPassed);
+		virtual void frameStarted(float secondsPassed);
 
 		///
 		///Metoda zwraca nazwê pliku wraz ze œcie¿k¹ dostêpu, z którego zosta³a za³adowana konfiguracja pogody

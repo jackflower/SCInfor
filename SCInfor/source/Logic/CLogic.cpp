@@ -47,7 +47,7 @@ namespace logic
 	}
 
 	//Wirtualna metoda aktualizuj¹ca logikê obiektów - implementacja
-	void CLogic::FrameStarted(float secondsPassed)
+	void CLogic::frameStarted(float secondsPassed)
 	{
 		UpdatePhysicals(secondsPassed);
 		UpdateMapPhysicals(secondsPassed);

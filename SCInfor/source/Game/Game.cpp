@@ -162,7 +162,7 @@ namespace game
 		//aktulizacja listenerów...
 		std::set<IFrameListener*>::iterator i;
 		for (i = m_frameListeners.begin(); i != m_frameListeners.end(); i++)
-			(*i)->FrameStarted(dt);
+			(*i)->frameStarted(dt);
 
 		//czyszczenie okna gry
 		m_render_window->clear(sf::Color(255,255,255));
