@@ -1,7 +1,7 @@
-//  ________________________________________
+ï»¿//  _______________________________________
 // | EnergyTank.cpp - class implementation |
-// | Jack Flower - December 2012.           |
-// |________________________________________|
+// | Jack Flower - December 2012           |
+// |_______________________________________|
 //
 
 #include "EnergyTank.h"
@@ -15,16 +15,16 @@ namespace equipment
 {
 	RTTI_IMPL(EnergyTank, CActor)
 
-	//Chroniony konstruktor domyœlny
-	EnergyTank::EnergyTank(const std::wstring& uniqueId)
-	:
-		CActor							(uniqueId),
-		m_energy_tank_name				(),
-		m_energy_tank_capacity			(0.0f),	
-		m_energy						(0.0f),
-		m_energy_tank_rotation_speed	(0.0f),
-		m_energy_tank_rotor_speed		(0.0f),
-		m_unit_controller				(true)//urz¹dzenie w³¹czone
+	//Chroniony konstruktor domyÅ›lny
+	EnergyTank::EnergyTank(const std::wstring & uniqueId)
+	:							
+		CActor(uniqueId),
+		m_energy_tank_name(),
+		m_energy_tank_capacity(0.0f),	
+		m_energy(0.0f),
+		m_energy_tank_rotation_speed(0.0f),
+		m_energy_tank_rotor_speed(0.0f),
+		m_unit_controller(true)//urzÄ…dzenie wÅ‚Ä…czone
 	{
 		SetZIndexBody(Z_PHYSICAL_ENERGY_TANK_BODY);
 		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_TANK_BODY);
@@ -32,104 +32,110 @@ namespace equipment
 		SetZIndexShadowHead(Z_PHYSICAL_SHADOW_ENERGY_TANK_HEAD);
 	}
 
-	//Chroniony konstruktor kopiuj¹cy
-	EnergyTank::EnergyTank(const EnergyTank& CEnergyTankCopy)
+	//Chroniony konstruktor kopiujÄ…cy
+	EnergyTank::EnergyTank(const EnergyTank & EnergyTankCopy)
 	:
-		CActor							(CEnergyTankCopy),
-		m_energy_tank_name				(CEnergyTankCopy.m_energy_tank_name),
-		m_energy_tank_capacity			(CEnergyTankCopy.m_energy_tank_capacity),
-		m_energy						(CEnergyTankCopy.m_energy),
-		m_energy_tank_rotation_speed	(CEnergyTankCopy.m_energy_tank_rotation_speed),
-		m_energy_tank_rotor_speed		(CEnergyTankCopy.m_energy_tank_rotor_speed),
-		m_unit_controller				(CEnergyTankCopy.m_unit_controller)
+		CActor(EnergyTankCopy),//kostruktor kopiujÄ…cy klasy bazowej
+		m_energy_tank_name(EnergyTankCopy.m_energy_tank_name),
+		m_energy_tank_capacity(EnergyTankCopy.m_energy_tank_capacity),
+		m_energy(EnergyTankCopy.m_energy),
+		m_energy_tank_rotation_speed(EnergyTankCopy.m_energy_tank_rotation_speed),
+		m_energy_tank_rotor_speed(EnergyTankCopy.m_energy_tank_rotor_speed),
+		m_unit_controller(EnergyTankCopy.m_unit_controller)
 	{
 	}
 
 	//Destruktor wirtualny
 	EnergyTank::~EnergyTank(void)
 	{
-		//CActor						not edit
-		m_energy_tank_name				= "";
-		m_energy_tank_capacity			= 0.0f;
-		m_energy						= 0.0f;
-		m_energy_tank_rotation_speed	= 0.0f;
-		m_energy_tank_rotor_speed		= 0.0f;
-		//m_unit_controller				not edit
+		//CActor
+		m_energy_tank_name = "";
+		m_energy_tank_capacity = 0.0f;
+		m_energy = 0.0f;
+		m_energy_tank_rotation_speed = 0.0f;
+		m_energy_tank_rotor_speed = 0.0f;
+		//m_unit_controller
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string EnergyTank::GetType() const
+	const std::string EnergyTank::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca nazwê akumulatora energii
-	const std::string EnergyTank::GetEnergyTankName() const
+	//Metoda zwraca nazwÄ™ akumulatora energii
+	const std::string EnergyTank::getEnergyTankName() const
 	{
 		return m_energy_tank_name;
 	}
 
-	//Metoda ustawia nazwê akumulatora energii
-	void EnergyTank::SetEnergyTankName(const std::string& energy_tank_name)
+	//Metoda ustawia nazwÄ™ akumulatora energii
+	void EnergyTank::setEnergyTankName(const std::string& energy_tank_name)
 	{
 		m_energy_tank_name = energy_tank_name;
 	}
 
-	//Metoda zwraca pojemnoœæ pojemnoœæ akumulatora energii
-	const float EnergyTank::GetEnergyTankCapacity() const
+	//Metoda zwraca pojemnoÅ›Ä‡ pojemnoÅ›Ä‡ akumulatora energii
+	const float EnergyTank::getEnergyTankCapacity() const
 	{
 		return m_energy_tank_capacity;
 	}
 
-	//Metoda ustawia pojemnoœæ akumulatora energii
-	void EnergyTank::SetEnergyTankCapacity(float energy_tank_capacity)
+	//Metoda ustawia pojemnoÅ›Ä‡ akumulatora energii
+	void EnergyTank::setEnergyTankCapacity(float energy_tank_capacity)
 	{
 		if (energy_tank_capacity < 0) return;
 		m_energy_tank_capacity = energy_tank_capacity;
 	}
 
-	//Metoda zwraca iloœæ energii
-	const float EnergyTank::GetEnergy() const
+	//Metoda zwraca iloÅ›Ä‡ energii
+	const float EnergyTank::getEnergy() const
 	{
 		return m_energy;
 	}
 
-	//Metoda ustawia iloœæ paliwa (tlenu) obiektu
-	void EnergyTank::SetEnergy(float energy)
+	//Metoda ustawia iloÅ›Ä‡ paliwa (tlenu) obiektu
+	void EnergyTank::setEnergy(float energy)
 	{
-		if (energy < 0)								//jeœli uzupe³niamy energiê wartoœci¹ ujemn¹ - opuszczamy funkcjê
+		if (energy < 0) //jeÅ›li uzupeÅ‚niamy energiÄ™ wartoÅ›ciÄ… ujemnÄ… - opuszczamy funkcjÄ™
 		{
-			m_energy = 0;							//zerujemy
+			m_energy = 0; //zerujemy
 			return;
 		}
 
-		if (m_energy_tank_capacity > 0)				//jeœli akumulator energii ma pojemnoœæ
+		if (m_energy_tank_capacity > 0) //jeÅ›li akumulator energii ma pojemnoÅ›Ä‡
 		{
-			if (energy >= m_energy_tank_capacity)	//jeœli iloœæ energii, któr¹ chcemy uzupe³niæ akumulator
-													//jest wiêksza lub równa pojemnoœci akumulatoa energii
-													//reszta (nadmiar) nie jest wykorzystany
-				m_energy = m_energy_tank_capacity;	//ustawiamy iloœæ energii na pojemnoœæ akumulator energii
+			//jeÅ›li iloÅ›Ä‡ energii, ktÃ³rÄ… chcemy uzupeÅ‚niÄ‡ akumulator
+			//jest wiÄ™ksza lub rÃ³wna pojemnoÅ›ci akumulatoa energii
+			//reszta(nadmiar) nie jest wykorzystany
+			if (energy >= m_energy_tank_capacity)	
+				//ustawiamy iloÅ›Ä‡ energii na pojemnoÅ›Ä‡ akumulator energii
+				m_energy = m_energy_tank_capacity;	
 			else
-				m_energy = energy;					//uzupe³niamy akumulator energii tak¹ iloœci¹ jak¹ zamierzamy zamierzamy (Parametr funkcji energy)
+				//uzupeÅ‚niamy akumulator energii takÄ… iloÅ›ciÄ…
+				//jakÄ… zamierzamy (Parametr funkcji energy)
+				m_energy = energy;
 		}
-		else										//akumulator energii nie ma pojemnoœæi
-			m_energy = 0;							//nie mo¿na uzupe³niæ energii.
+		else
+			//akumulator energii nie ma pojemnoÅ›Ä‡i
+			//nie moÅ¼na uzupeÅ‚niÄ‡ energii.
+			m_energy = 0;
 	}
 
 
-	//Metoda zwraca prêdkoœæ wirowania wskaŸnika stanu akumulatora
-	const float EnergyTank::GetEnergyTankRotationSpeed() const
+	//Metoda zwraca prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika stanu akumulatora
+	const float EnergyTank::getEnergyTankRotationSpeed() const
 	{
 		return m_energy_tank_rotation_speed;
 	}
 
-	//Metoda ustawia prêdkoœæ wirowania wskaŸnika stanu akumulatora
-	void EnergyTank::SetEnergyTankRotationSpeed(float energy_tank_rotation_speed)
+	//Metoda ustawia prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika stanu akumulatora
+	void EnergyTank::setEnergyTankRotationSpeed(float energy_tank_rotation_speed)
 	{
 		m_energy_tank_rotation_speed = energy_tank_rotation_speed;
 	}
 
-	//EnergyTank metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
+	//EnergyTank metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu (move, attack, death, etc...)
 	void EnergyTank::updateAnimations(float dt)
 	{
 		switch(m_energytank_state)
@@ -175,22 +181,24 @@ namespace equipment
 		}
 	}
 
-	//Metoda zwraca referencjcê na modu³ sterowania
+	//Metoda zwraca referencjcÄ™ na moduÅ‚ sterowania
 	Switch & EnergyTank::getUnitController()
 	{
 		return m_unit_controller;
 	}
 
-	//Wirtualna metoda aktualizuj¹ca obiekt
+	//Wirtualna metoda aktualizujÄ…ca obiekt
 	void EnergyTank::update(float dt)
 	{
-		UpdateShadow(dt);	//aktualizacja shadow engine
+		UpdateShadow(dt); //aktualizacja shadow engine
 
 		if(m_unit_controller.getState())
 		{
-			//obliczamy procentow¹ prêdkoœæ obrotu wirnika w zale¿noœci od iloœci energii w akumulatorze
-			if(m_energy_tank_capacity)//jeœli jest pojemnoœæ
-				m_energy_tank_rotor_speed = (m_energy/m_energy_tank_capacity) * m_energy_tank_rotation_speed;
+			//obliczamy procentowÄ… prÄ™dkoÅ›Ä‡ obrotu wirnika
+			//w zaleÅ¼noÅ›ci od iloÅ›ci energii w akumulatorze
+			if(m_energy_tank_capacity)//jeÅ›li jest pojemnoÅ›Ä‡
+				m_energy_tank_rotor_speed = (m_energy/m_energy_tank_capacity) *
+											 m_energy_tank_rotation_speed;
 
 			RotateHead(m_energy_tank_rotor_speed * dt);
 			updateAnimations(dt);

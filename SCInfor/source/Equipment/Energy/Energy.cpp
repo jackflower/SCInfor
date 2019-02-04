@@ -366,8 +366,8 @@ namespace equipment
 			if(m_energytank_data.getEnergyTank())
 			{
 				//obliczamy procentową zawartość energii w akumulatorze
-				if(m_energytank_data.getEnergyTank()->GetEnergyTankCapacity())
-					m_energy_percentage_energy = m_energytank_data.getEnergyTank()->GetEnergy()/ m_energytank_data.getEnergyTank()->GetEnergyTankCapacity();
+				if(m_energytank_data.getEnergyTank()->getEnergyTankCapacity())
+					m_energy_percentage_energy = m_energytank_data.getEnergyTank()->getEnergy()/ m_energytank_data.getEnergyTank()->getEnergyTankCapacity();
 				//aktualizacja prędkości wirowania łopatek wirnika w zależności od procentowej ilości energii akumulatora
 				m_energy_rotor_speed = m_energy_rotation_speed * m_energy_percentage_energy;
 
@@ -376,12 +376,12 @@ namespace equipment
 					RotateHead(m_energy_rotor_speed * dt);
 				
 				//regeneracja - energii w akumulatorze jest mniej niż wynosi pojemność akumulatora
-				if(m_energytank_data.getEnergyTank()->GetEnergy() < m_energytank_data.getEnergyTank()->GetEnergyTankCapacity())
+				if(m_energytank_data.getEnergyTank()->getEnergy() < m_energytank_data.getEnergyTank()->getEnergyTankCapacity())
 				{
 					if(m_energy_timer >= m_energy_regeneration_time)//jeśli upłynął jakiś czas
 					{
 						//regenerujemy energię
-						m_energytank_data.getEnergyTank()->SetEnergy(m_energytank_data.getEnergyTank()->GetEnergy() + (m_energy_regeneration * gWeather.getSolarEnergyFactor()));
+						m_energytank_data.getEnergyTank()->setEnergy(m_energytank_data.getEnergyTank()->getEnergy() + (m_energy_regeneration * gWeather.getSolarEnergyFactor()));
 						m_energy_timer = 0.0f;//zerujemy czas
 					}
 				}
@@ -412,15 +412,15 @@ namespace equipment
 		if(m_energytank_data.getEnergyTank() && m_energy_state != ENERGY_DAMAGE && m_energy_state != ENERGY_DEATH)
 		{
 			//jest wystarczająca ilość energii w akumulatorze
-			if(m_energytank_data.getEnergyTank()->GetEnergy() > m_energytank_data.getEnergyTank()->GetEnergyTankCapacity() * m_percentage_reserve_energy)
+			if(m_energytank_data.getEnergyTank()->getEnergy() > m_energytank_data.getEnergyTank()->getEnergyTankCapacity() * m_percentage_reserve_energy)
 				m_energy_state = ENERGY_DEFAULT;
 
 			//rezerwa energii w akumulatorze
-			if(m_energytank_data.getEnergyTank()->GetEnergy() <= m_energytank_data.getEnergyTank()->GetEnergyTankCapacity() * m_percentage_reserve_energy)
+			if(m_energytank_data.getEnergyTank()->getEnergy() <= m_energytank_data.getEnergyTank()->getEnergyTankCapacity() * m_percentage_reserve_energy)
 				m_energy_state = ENERGY_RESERVE;
 
 			//brak energii w akumulatorze
-			if(m_energytank_data.getEnergyTank()->GetEnergy() <= 0.f)
+			if(m_energytank_data.getEnergyTank()->getEnergy() <= 0.f)
 				m_energy_state = ENERGY_EMPTY;
 
 			//brak energii w akumulatorze trwa jakiś czas - stan krytyczny
@@ -469,15 +469,15 @@ namespace equipment
 		if (m_energytank_data.getEnergyTank())
 		{
 			//jest wystarczająca ilość energii
-			if(m_energytank_data.getEnergyTank()->GetEnergy() > m_energytank_data.getEnergyTank()->GetEnergyTankCapacity() * m_percentage_reserve_energy)
+			if(m_energytank_data.getEnergyTank()->getEnergy() > m_energytank_data.getEnergyTank()->getEnergyTankCapacity() * m_percentage_reserve_energy)
 				m_energytank_data.getEnergyTank()->getEnergyTankState() = ENERGYTANK_DEFAULT;
 
 			//rezerwa energii
-			if(m_energytank_data.getEnergyTank()->GetEnergy() <= m_energytank_data.getEnergyTank()->GetEnergyTankCapacity() * m_percentage_reserve_energy)
+			if(m_energytank_data.getEnergyTank()->getEnergy() <= m_energytank_data.getEnergyTank()->getEnergyTankCapacity() * m_percentage_reserve_energy)
 				m_energytank_data.getEnergyTank()->getEnergyTankState() = ENERGYTANK_RESERVE;
 
 			//brak energii
-			if(m_energytank_data.getEnergyTank()->GetEnergy() <= 0.f)
+			if(m_energytank_data.getEnergyTank()->getEnergy() <= 0.f)
 				m_energytank_data.getEnergyTank()->getEnergyTankState() = ENERGYTANK_EMPTY;
 		}
 	}

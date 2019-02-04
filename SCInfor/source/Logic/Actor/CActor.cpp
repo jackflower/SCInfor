@@ -494,8 +494,8 @@ namespace logic
 		{
 			if(m_energy_data.getEnergy())//modu³ klimatyzatora zu¿ywa energiê
 			{
-				if(m_energy_data.getEnergy()->getEnergyTank()->GetEnergy())//w akumulatorze jest energia
-					m_energy_data.getEnergy()->getEnergyTank()->SetEnergy(m_energy_data.getEnergy()->getEnergyTank()->GetEnergy() - m_airconditiong_data.getAirconditioning()->getEnergyConsumption());
+				if(m_energy_data.getEnergy()->getEnergyTank()->getEnergy())//w akumulatorze jest energia
+					m_energy_data.getEnergy()->getEnergyTank()->setEnergy(m_energy_data.getEnergy()->getEnergyTank()->getEnergy() - m_airconditiong_data.getAirconditioning()->getEnergyConsumption());
 			}
 		}
 
@@ -510,8 +510,8 @@ namespace logic
 		{
 			if(m_energy_data.getEnergy())//modu³ wentylatora zu¿ywa energiê
 			{
-				if(m_energy_data.getEnergy()->getEnergyTank()->GetEnergy())//w akumulatorze jest energia
-					m_energy_data.getEnergy()->getEnergyTank()->SetEnergy(m_energy_data.getEnergy()->getEnergyTank()->GetEnergy() - m_ventilator_data.getVentilator()->getEnergyConsumptionFactor());
+				if(m_energy_data.getEnergy()->getEnergyTank()->getEnergy())//w akumulatorze jest energia
+					m_energy_data.getEnergy()->getEnergyTank()->setEnergy(m_energy_data.getEnergy()->getEnergyTank()->getEnergy() - m_ventilator_data.getVentilator()->getEnergyConsumptionFactor());
 			}
 		}
 

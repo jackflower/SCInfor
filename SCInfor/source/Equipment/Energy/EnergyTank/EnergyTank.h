@@ -1,7 +1,7 @@
-//  ________________________________________
+ï»¿//  _______________________________________
 // | EnergyTank.h - class definition       |
-// | Jack Flower - December 2012            |
-// |________________________________________|
+// | Jack Flower - December 2012           |
+// |_______________________________________|
 //
 
 #ifndef H_ENERGY_TANK_JACK
@@ -17,34 +17,34 @@ using namespace logic;
 namespace equipment
 {
 	///
-	///Klasa reprezentuje akumulator energii /¿ycia/
+	///Klasa reprezentuje akumulator energii /Å¼ycia/
 	///
 	class EnergyTank : public CActor
 	{
 		RTTI_DECL;
 
 		///
-		///Deklaracja przyjaŸni
+		///Deklaracja przyjaÅºni
 		///
 		friend class CPhysicalManager;
 			
-		//Aby uzyskaæ obiekt EnergyTank, nale¿y wywo³aæ CPhysicalManager::CreateCEnergyTank();
+		//Aby uzyskaÄ‡ obiekt EnergyTank, naleÅ¼y wywoÅ‚aÄ‡ CPhysicalManager::CreateCEnergyTank();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyœlny
+		///Chroniony konstruktor domyÅ›lny
 		///
-		///@param &uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///@param uniqueId - unikalny identyfikator obiektu - staÅ‚a referncja na obiekt klasy std::wstring
 		///
-		EnergyTank(const std::wstring& uniqueId);
+		EnergyTank(const std::wstring & uniqueId);
 
 		///
-		///Chroniony konstruktor kopiuj¹cy
+		///Chroniony konstruktor kopiujÄ…cy
 		///
-		///@param &CEnergyTankCopy - obiekt klasy EnergyTank
+		///@param EnergyTankCopy - obiekt klasy EnergyTank
 		///
-		EnergyTank(const EnergyTank& CEnergyTankCopy);
+		EnergyTank(const EnergyTank & EnergyTankCopy);
 
 		///
 		///Destruktor wirtualny
@@ -56,55 +56,55 @@ namespace equipment
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
-		///Metoda zwraca nazwê akumulatora energii
+		///Metoda zwraca nazwÄ™ akumulatora energii
 		///
-		const std::string GetEnergyTankName() const;
+		const std::string getEnergyTankName() const;
 
 		///
-		///Metoda ustawia nazwê akumulatora energii
+		///Metoda ustawia nazwÄ™ akumulatora energii
 		///
-		///@param & energy_tank_name - sta³a referencja na obiekt klasy std::string
+		///@param energy_tank_name - staÅ‚a referencja na obiekt klasy std::string
 		///
-		void SetEnergyTankName(const std::string& energy_tank_name);
+		void setEnergyTankName(const std::string& energy_tank_name);
 		
 		///
-		///Metoda zwraca pojemnoœæ pojemnoœæ akumulatora energii
+		///Metoda zwraca pojemnoÅ›Ä‡ pojemnoÅ›Ä‡ akumulatora energii
 		///
-		const float GetEnergyTankCapacity() const;
+		const float getEnergyTankCapacity() const;
 
 		///
-		///Metoda ustawia pojemnoœæ akumulatora energii
+		///Metoda ustawia pojemnoÅ›Ä‡ akumulatora energii
 		///
-		///@param energy_tank_capacity - pojemnoœæ akumulatora energii
+		///@param energy_tank_capacity - pojemnoÅ›Ä‡ akumulatora energii
 		///
-		void SetEnergyTankCapacity(float energy_tank_capacity);
+		void setEnergyTankCapacity(float energy_tank_capacity);
 
 		///
-		///Metoda zwraca iloœæ energii
+		///Metoda zwraca iloÅ›Ä‡ energii
 		///
-		const float GetEnergy() const;
+		const float getEnergy() const;
 
 		///
-		///Metoda ustawia iloœæ energii
+		///Metoda ustawia iloÅ›Ä‡ energii
 		///
-		///@param energy - iloœæ energii
+		///@param energy - iloÅ›Ä‡ energii
 		///
-		void SetEnergy(float energy);
+		void setEnergy(float energy);
 
 		///
-		///Metoda zwraca prêdkoœæ wirowania wskaŸnika stanu akumulatora
+		///Metoda zwraca prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika stanu akumulatora
 		///
-		const float GetEnergyTankRotationSpeed() const;
+		const float getEnergyTankRotationSpeed() const;
 
 		///
-		///Metoda ustawia prêdkoœæ wirowania wskaŸnika stanu akumulatora
+		///Metoda ustawia prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika stanu akumulatora
 		///
-		///@param energy_tank_rotation_speed - prêdkoœæ wirowania wskaŸnika stanu akumulatora
+		///@param energy_tank_rotation_speed - prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika stanu akumulatora
 		///
-		void SetEnergyTankRotationSpeed(float energy_tank_rotation_speed);
+		void setEnergyTankRotationSpeed(float energy_tank_rotation_speed);
 
 		///
 		///Metoda zwraca stan obiektu EnergyTank
@@ -112,19 +112,19 @@ namespace equipment
 		inline EEnergyTankState & getEnergyTankState() { return m_energytank_state; }
 
 		///
-		///Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
+		///Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu (move, attack, death, etc...)
 		///
 		///@param dt - czas
 		///
 		virtual void updateAnimations(float dt);
 
 		///
-		///Metoda zwraca referencjcê na modu³ sterowania
+		///Metoda zwraca referencjcÄ™ na moduÅ‚ sterowania
 		///
 		Switch & getUnitController();
 
 		///
-		///Wirtualna metoda aktualizuj¹ca obiekt
+		///Wirtualna metoda aktualizujÄ…ca obiekt
 		///
 		///@param dt - czas
 		///
@@ -133,13 +133,13 @@ namespace equipment
 
 	protected:
 
-		std::string			m_energy_tank_name;				//nazwa akulatora energii
-		float				m_energy_tank_capacity;			//pojemnoœæ akumulatora energii
-		float				m_energy;						//energia /¿ycie/ obiektu
-		float				m_energy_tank_rotation_speed;	//prêdkoœæ wirowania wskaŸnika stanu akumulatora
-		float				m_energy_tank_rotor_speed;		//wyliczana prêdkoœæ wirowania wskaŸnika stanu akumulatora
-		EEnergyTankState	m_energytank_state;				//wyliczenie stanów dla obiektu EnergyTank
-		Switch				m_unit_controller;				//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		std::string m_energy_tank_name; //nazwa akulatora energii
+		float m_energy_tank_capacity; //pojemnoÅ›Ä‡ akumulatora energii
+		float m_energy; //energia /Å¼ycie/ obiektu
+		float m_energy_tank_rotation_speed;	//prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika stanu akumulatora
+		float m_energy_tank_rotor_speed; //wyliczana prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika stanu akumulatora
+		EEnergyTankState m_energytank_state; //wyliczenie stanÃ³w dla obiektu EnergyTank
+		Switch m_unit_controller; //wÅ‚Ä…cznik, sterownik, moduÅ‚ zarzÄ…dzania, starter, stacyjka
 	};
 }//namespace equipment
 #endif // H_ENERGY_TANK_JACK

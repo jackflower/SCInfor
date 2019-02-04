@@ -106,10 +106,10 @@ namespace factory
 			}
 
 			//pola tej klasy wzorca
-			p_energytank->SetEnergyTankName(m_templ_energy_tank_name);
-			p_energytank->SetEnergyTankCapacity(m_templ_energy_tank_capacity);
-			p_energytank->SetEnergy(m_templ_energy);
-			p_energytank->SetEnergyTankRotationSpeed(m_templ_energy_tank_rotation_speed);
+			p_energytank->setEnergyTankName(m_templ_energy_tank_name);
+			p_energytank->setEnergyTankCapacity(m_templ_energy_tank_capacity);
+			p_energytank->setEnergy(m_templ_energy);
+			p_energytank->setEnergyTankRotationSpeed(m_templ_energy_tank_rotation_speed);
 		}
 	}
 }//namespace factory

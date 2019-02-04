@@ -1,4 +1,4 @@
-//  _______________________________________________
+﻿//  _______________________________________________
 // | EEnergyState.h - enumeration of states energy |
 // | Jack Flower - February 2014                   |
 // |_______________________________________________|
@@ -10,7 +10,7 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stan�w dla obiektu Energy
+	///Wyliczenie stanów dla obiektu Energy
 	///
 	enum EEnergyState
 	{
