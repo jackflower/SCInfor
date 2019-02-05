@@ -1,4 +1,4 @@
-//  ______________________________________________
+Ôªø//  ______________________________________________
 // | EquipmentAmmoData.h - class definition       |
 // | Jack Flower - May 2016                       |
 // |______________________________________________|
@@ -25,7 +25,7 @@ using namespace equipment::weapon;
 namespace equipmentdata
 {
 	///
-	///Klasa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem - amunicja
+	///Klasa reprezentuje funkcjonalno≈õƒá obiektu bƒôdƒÖcego wyposa≈ºaniem - amunicja
 	///
 	class EquipmentAmmoData : public EquipmentData
 	{
@@ -39,9 +39,9 @@ namespace equipmentdata
 		EquipmentAmmoData();
 
 		///
-		///Konstruktor kopiujπcy
+		///Konstruktor kopiujƒÖcy
 		///
-		///@param EquipmentAmmoDataCopy - sta≥a referencja na obiekt klasy EquipmentAmmoData
+		///@param EquipmentAmmoDataCopy - sta≈Ça referencja na obiekt klasy EquipmentAmmoData
 		///
 		EquipmentAmmoData(const EquipmentAmmoData & EquipmentAmmoDataCopy);
 
@@ -56,20 +56,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CAmmo
+		///Metoda zwraca wska≈∫nik na obiekt klasy CAmmo
 		///
 		CAmmo* getAmmo();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CAmmo
+		///Metoda ustawia wska≈∫nik na obiekt klasy CAmmo
 		///
-		///@param *ammo - wskaünik na obiekt klasy CAmmo
+		///@param *ammo - wska≈∫nik na obiekt klasy CAmmo
 		///
 		void setAmmo(CAmmo * ammo);
 
 	private:
 
-		CAmmo *p_ammo;	//wskaünik na klasÍ CAmmo - amunicja
+		CAmmo *p_ammo;	//wska≈∫nik na klasƒô CAmmo - amunicja
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_AMMO_DATA_JACK

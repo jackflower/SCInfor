@@ -1,4 +1,4 @@
-//  ____________________________________________________
+Ôªø//  ____________________________________________________
 // | EquipmentVentilatorData.cpp - class implementation |
 // | Jack Flower - May 2016                             |
 // |____________________________________________________|
@@ -20,10 +20,10 @@ namespace equipmentdata
 	{
 	}
 
-	//Konstruktor kopiujπcy
+	//Konstruktor kopiujƒÖcy
 	EquipmentVentilatorData::EquipmentVentilatorData(const EquipmentVentilatorData & EquipmentVentilatorDataCopy)
 	:
-		EquipmentData(EquipmentVentilatorDataCopy),//konstruktor kopiujπcy klasy bazowej
+		EquipmentData(EquipmentVentilatorDataCopy),//konstruktor kopiujƒÖcy klasy bazowej
 		p_ventilator(EquipmentVentilatorDataCopy.p_ventilator)
 	{
 	}
@@ -43,13 +43,13 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CVentilator
+	//Metoda zwraca wska≈∫nik na obiekt klasy CVentilator
 	CVentilator* EquipmentVentilatorData::getVentilator()
 	{
 		return p_ventilator;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CVentilator
+	//Metoda ustawia wska≈∫nik na obiekt klasy CVentilator
 	void EquipmentVentilatorData::setVentilator(CVentilator * ventilator)
 	{
 		p_ventilator = ventilator;

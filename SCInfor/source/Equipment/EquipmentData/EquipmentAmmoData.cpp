@@ -1,4 +1,4 @@
-//  ______________________________________________
+Ôªø//  ______________________________________________
 // | EquipmentAmmoData.cpp - class implementation |
 // | Jack Flower - May 2016                       |
 // |______________________________________________|
@@ -20,10 +20,10 @@ namespace equipmentdata
 	{
 	}
 
-	//Konstruktor kopiujπcy
+	//Konstruktor kopiujƒÖcy
 	EquipmentAmmoData::EquipmentAmmoData(const EquipmentAmmoData & EquipmentAmmoDataCopy)
 	:
-		EquipmentData(EquipmentAmmoDataCopy),//konstruktor kopiujπcy klasy bazowej
+		EquipmentData(EquipmentAmmoDataCopy),//konstruktor kopiujƒÖcy klasy bazowej
 		p_ammo(EquipmentAmmoDataCopy.p_ammo)
 	{
 	}
@@ -43,13 +43,13 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CAmmo
+	//Metoda zwraca wska≈∫nik na obiekt klasy CAmmo
 	CAmmo* EquipmentAmmoData::getAmmo()
 	{
 		return p_ammo;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CAmmo
+	//Metoda ustawia wska≈∫nik na obiekt klasy CAmmo
 	void EquipmentAmmoData::setAmmo(CAmmo* ammo)
 	{
 		p_ammo = ammo;

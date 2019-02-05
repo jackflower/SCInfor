@@ -1,4 +1,4 @@
-//  __________________________________________
+ï»¿//  __________________________________________
 // | EquipmentData.cpp - class implementation |
 // | Jack Flower - May 2016                   |
 // |__________________________________________|
@@ -39,43 +39,43 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca flagê, czy obiekt posiada wyposa¿enie
+	//Metoda zwraca flagÄ™, czy obiekt posiada wyposaÅ¼enie
 	const bool EquipmentData::getUseEquipment() const
 	{
 		return m_use_equipment;
 	}
 
-	//Metoda ustawia flagê, czy obiekt posiada wyposa¿enie
+	//Metoda ustawia flagÄ™, czy obiekt posiada wyposaÅ¼enie
 	void EquipmentData::setUseEquipment(bool use_equipment)
 	{
 		m_use_equipment = use_equipment;
 	}
 
-	//Metoda zwraca referencjê na opakowanie danych dla transformacji
+	//Metoda zwraca referencjÄ™ na opakowanie danych dla transformacji
 	CTransformation & EquipmentData::getTransformed()
 	{
 		return m_transformation;
 	}
 
-	//Metoda ustawia referencjê na opakowanie danych dla transformacji
+	//Metoda ustawia referencjÄ™ na opakowanie danych dla transformacji
 	void EquipmentData::setTransformed(CTransformation & transformation)
 	{
 		m_transformation = transformation;
 	}
 
-	//Metoda zwraca referencjê na wektora po³o¿enia emitera
+	//Metoda zwraca referencjÄ™ na wektora poÅ‚oÅ¼enia emitera
 	const sf::Vector2f & EquipmentData::getEmiter() const
 	{
 		return m_transformation.getEmiter();
 	}
 
-	//Metoda ustawia wektor po³o¿enia emitera
+	//Metoda ustawia wektor poÅ‚oÅ¼enia emitera
 	void EquipmentData::setEmiter(sf::Vector2f & emiter)
 	{
 		m_transformation.setEmiter(emiter);
 	}
 
-	//Metoda ustawia wektor po³o¿enia emitera
+	//Metoda ustawia wektor poÅ‚oÅ¼enia emitera
 	void EquipmentData::setEmiter(float emiter_x, float emiter_y)
 	{
 		m_transformation.setEmiter(emiter_x, emiter_y);

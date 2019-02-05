@@ -1,4 +1,4 @@
-//  _______________________________________________________
+Ôªø//  _______________________________________________________
 // | EquipmentCommunicationData.h - class definition       |
 // | Jack Flower - May 2016                                |
 // |_______________________________________________________|
@@ -25,7 +25,7 @@ using namespace logic::communication;
 namespace equipmentdata
 {
 	///
-	///Klasa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem - modu≥ komunikacyjny
+	///Klasa reprezentuje funkcjonalno≈õƒá obiektu bƒôdƒÖcego wyposa≈ºaniem - modu≈Ç komunikacyjny
 	///
 	class EquipmentCommunicationData : public EquipmentData
 	{
@@ -39,9 +39,9 @@ namespace equipmentdata
 		EquipmentCommunicationData();
 
 		///
-		///Konstruktor kopiujπcy
+		///Konstruktor kopiujƒÖcy
 		///
-		///@param EquipmentCommunicationDataCopy - sta≥a referencja na obiekt klasy EquipmentCommunicationData
+		///@param EquipmentCommunicationDataCopy - sta≈Ça referencja na obiekt klasy EquipmentCommunicationData
 		///
 		EquipmentCommunicationData(const EquipmentCommunicationData & EquipmentCommunicationDataCopy);
 
@@ -56,20 +56,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CCommunication
+		///Metoda zwraca wska≈∫nik na obiekt klasy CCommunication
 		///
 		CCommunication *getCommunication();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CCommunication
+		///Metoda ustawia wska≈∫nik na obiekt klasy CCommunication
 		///
-		///@param *communication - wskaünik na obiekt klasy CCommunication
+		///@param *communication - wska≈∫nik na obiekt klasy CCommunication
 		///
 		void setCommunication(CCommunication * communication);
 
 	private:
 
-		CCommunication *p_communication; //wskaünik na klasÍ CCommunication - modu≥ komunikacyjny
+		CCommunication *p_communication; //wska≈∫nik na klasƒô CCommunication - modu≈Ç komunikacyjny
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_COMMUNICATION_DATA_JACK

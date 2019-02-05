@@ -1,4 +1,4 @@
-//  ____________________________________________________
+Ôªø//  ____________________________________________________
 // | EquipmentVentilatorData.h - class definition       |
 // | Jack Flower - May 2016                             |
 // |____________________________________________________|
@@ -22,7 +22,7 @@ using namespace equipment;
 namespace equipmentdata
 {
 	///
-	///Klasa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem - wentylator
+	///Klasa reprezentuje funkcjonalno≈õƒá obiektu bƒôdƒÖcego wyposa≈ºaniem - wentylator
 	///
 	class EquipmentVentilatorData : public EquipmentData
 	{
@@ -36,9 +36,9 @@ namespace equipmentdata
 		EquipmentVentilatorData();
 
 		///
-		///Konstruktor kopiujπcy
+		///Konstruktor kopiujƒÖcy
 		///
-		///@param EquipmentVentilatorDataCopy - sta≥a referencja na obiekt klasy EquipmentVentilatorData
+		///@param EquipmentVentilatorDataCopy - sta≈Ça referencja na obiekt klasy EquipmentVentilatorData
 		///
 		EquipmentVentilatorData(const EquipmentVentilatorData & EquipmentVentilatorDataCopy);
 
@@ -53,20 +53,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CVentilator
+		///Metoda zwraca wska≈∫nik na obiekt klasy CVentilator
 		///
 		CVentilator* getVentilator();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CVentilator
+		///Metoda ustawia wska≈∫nik na obiekt klasy CVentilator
 		///
-		///@param *ventilator - wskaünik na obiekt klasy CVentilator
+		///@param *ventilator - wska≈∫nik na obiekt klasy CVentilator
 		///
 		void setVentilator(CVentilator * ventilator);
 
 	private:
 
-		CVentilator *p_ventilator;	//wskaünik na klasÍ CVentilator - wentylator
+		CVentilator *p_ventilator;	//wska≈∫nik na klasƒô CVentilator - wentylator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_VENTILATOR_DATA_JACK

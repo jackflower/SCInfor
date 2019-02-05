@@ -1,4 +1,4 @@
-//  _________________________________________________________
+Ôªø//  _________________________________________________________
 // | EquipmentAirconditioningData.h - class definition       |
 // | Jack Flower - May 2016                                  |
 // |_________________________________________________________|
@@ -22,7 +22,7 @@ using namespace equipment;
 namespace equipmentdata
 {
 	///
-	///Klasa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem - klimatyzator
+	///Klasa reprezentuje funkcjonalno≈õƒá obiektu bƒôdƒÖcego wyposa≈ºaniem - klimatyzator
 	///
 	class EquipmentAirconditioningData : public EquipmentData
 	{
@@ -36,9 +36,9 @@ namespace equipmentdata
 		EquipmentAirconditioningData();
 
 		///
-		///Konstruktor kopiujπcy
+		///Konstruktor kopiujƒÖcy
 		///
-		///@param EquipmentAirconditioningDataCopy - sta≥a referencja na obiekt klasy EquipmentAirconditioningData
+		///@param EquipmentAirconditioningDataCopy - sta≈Ça referencja na obiekt klasy EquipmentAirconditioningData
 		///
 		EquipmentAirconditioningData(const EquipmentAirconditioningData & EquipmentAirconditioningDataCopy);
 
@@ -53,20 +53,20 @@ namespace equipmentdata
 		const std::string getType() const;
 		
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CAirconditioning
+		///Metoda zwraca wska≈∫nik na obiekt klasy CAirconditioning
 		///
 		CAirconditioning* getAirconditioning();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CAirconditioning
+		///Metoda ustawia wska≈∫nik na obiekt klasy CAirconditioning
 		///
-		///@param *airconditiong - wskaünik na obiekt klasy CAirconditioning
+		///@param *airconditiong - wska≈∫nik na obiekt klasy CAirconditioning
 		///
 		void setAirconditioning(CAirconditioning* airconditiong);
 
 	private:
 
-		CAirconditioning*	p_airconditiong;	//wskaünik na klasÍ Airconditioning - klimatyzator
+		CAirconditioning*	p_airconditiong;	//wska≈∫nik na klasƒô Airconditioning - klimatyzator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_AIRCONDITIONING_DATA_JACK

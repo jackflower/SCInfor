@@ -1,4 +1,4 @@
-//  _________________________________________________
+ï»¿//  _________________________________________________
 // | EquipmentBatteryData.h - class definition       |
 // | Jack Flower - May 2016                          |
 // |_________________________________________________|
@@ -26,7 +26,7 @@ using namespace equipment::battery;
 namespace equipmentdata
 {
 	///
-	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - wentylator
+	///Klasa reprezentuje funkcjonalnoÅ›Ä‡ obiektu bÄ™dÄ…cego wyposaÅ¼aniem - wentylator
 	///
 	class EquipmentBatteryData : public EquipmentData
 	{
@@ -40,9 +40,9 @@ namespace equipmentdata
 		EquipmentBatteryData();
 
 		///
-		///Konstruktor kopiuj¹cy
+		///Konstruktor kopiujÄ…cy
 		///
-		///@param EquipmentBatteryDataCopy - sta³a referencja na obiekt klasy EquipmentBatteryData
+		///@param EquipmentBatteryDataCopy - staÅ‚a referencja na obiekt klasy EquipmentBatteryData
 		///
 		EquipmentBatteryData(const EquipmentBatteryData & EquipmentBatteryDataCopy);
 
@@ -57,20 +57,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaŸnik na obiekt klasy Battery
+		///Metoda zwraca wskaÅºnik na obiekt klasy Battery
 		///
 		Battery *getBattery();
 
 		///
-		///Metoda ustawia wskaŸnik na obiekt klasy Battery
+		///Metoda ustawia wskaÅºnik na obiekt klasy Battery
 		///
-		///@param *battery - wskaŸnik na obiekt klasy Battery
+		///@param *battery - wskaÅºnik na obiekt klasy Battery
 		///
 		void setBattery(Battery* battery);
 
 	private:
 
-		Battery *p_battery;	//wskaŸnik na klasê CVentilator - wentylator
+		Battery *p_battery;	//wskaÅºnik na klasÄ™ CVentilator - wentylator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_BATTERY_DATA_JACK

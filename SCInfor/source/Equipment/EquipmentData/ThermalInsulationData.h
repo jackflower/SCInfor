@@ -1,4 +1,4 @@
-//  __________________________________________________
+Ôªø//  __________________________________________________
 // | ThermalInsulationData.h - class definition       |
 // | Jack Flower - May 2016                           |
 // |__________________________________________________|
@@ -22,7 +22,7 @@ using namespace equipment;
 namespace equipmentdata
 {
 	///
-	///Klasa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem - termoizolator
+	///Klasa reprezentuje funkcjonalno≈õƒá obiektu bƒôdƒÖcego wyposa≈ºaniem - termoizolator
 	///
 	class ThermalInsulationData : public EquipmentData
 	{
@@ -36,9 +36,9 @@ namespace equipmentdata
 		ThermalInsulationData();
 
 		///
-		///Konstruktor kopiujπcy
+		///Konstruktor kopiujƒÖcy
 		///
-		///@param ThermalInsulationDataCopy - sta≥a referencja na obiekt klasy ThermalInsulationData
+		///@param ThermalInsulationDataCopy - sta≈Ça referencja na obiekt klasy ThermalInsulationData
 		///
 		ThermalInsulationData(const ThermalInsulationData & ThermalInsulationDataCopy);
 
@@ -53,20 +53,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CThermalInsulation
+		///Metoda zwraca wska≈∫nik na obiekt klasy CThermalInsulation
 		///
 		CThermalInsulation* getThermalInsulation();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CThermalInsulation
+		///Metoda ustawia wska≈∫nik na obiekt klasy CThermalInsulation
 		///
-		///@param *thermalinsulation - wskaünik na obiekt klasy CThermalInsulation
+		///@param *thermalinsulation - wska≈∫nik na obiekt klasy CThermalInsulation
 		///
 		void setThermalInsulation(CThermalInsulation* thermalinsulation);
 
 	private:
 
-		CThermalInsulation*	p_thermalinsulation;	//wskaünik na klasÍ CThermalInsulation - termoizolator
+		CThermalInsulation*	p_thermalinsulation;	//wska≈∫nik na klasƒô CThermalInsulation - termoizolator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_THERMALINSULATION_DATA_JACK

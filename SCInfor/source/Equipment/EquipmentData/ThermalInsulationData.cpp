@@ -1,4 +1,4 @@
-//  __________________________________________________
+Ôªø//  __________________________________________________
 // | ThermalInsulationData.cpp - class implementation |
 // | Jack Flower - May 2016                           |
 // |__________________________________________________|
@@ -20,10 +20,10 @@ namespace equipmentdata
 	{
 	}
 
-	//Konstruktor kopiujπcy
+	//Konstruktor kopiujƒÖcy
 	ThermalInsulationData::ThermalInsulationData(const ThermalInsulationData & ThermalInsulationDataCopy)
 	:
-		EquipmentData(ThermalInsulationDataCopy),//konstruktor kopiujπcy klasy bazowej
+		EquipmentData(ThermalInsulationDataCopy),//konstruktor kopiujƒÖcy klasy bazowej
 		p_thermalinsulation(ThermalInsulationDataCopy.p_thermalinsulation)
 	{
 	}
@@ -43,13 +43,13 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CThermalInsulation
+	//Metoda zwraca wska≈∫nik na obiekt klasy CThermalInsulation
 	CThermalInsulation* ThermalInsulationData::getThermalInsulation()
 	{
 		return p_thermalinsulation;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CThermalInsulation
+	//Metoda ustawia wska≈∫nik na obiekt klasy CThermalInsulation
 	void ThermalInsulationData::setThermalInsulation(CThermalInsulation* thermalinsulation)
 	{
 		p_thermalinsulation = thermalinsulation;

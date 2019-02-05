@@ -1,4 +1,4 @@
-//  _______________________________________________________
+Ôªø//  _______________________________________________________
 // | EquipmentCommunicationData.cpp - class implementation |
 // | Jack Flower - May 2016                                |
 // |_______________________________________________________|
@@ -20,10 +20,10 @@ namespace equipmentdata
 	{
 	}
 
-	//Konstruktor kopiujπcy
+	//Konstruktor kopiujƒÖcy
 	EquipmentCommunicationData::EquipmentCommunicationData(const EquipmentCommunicationData & EquipmentCommunicationDataCopy)
 		:
-		EquipmentData(EquipmentCommunicationDataCopy),//konstruktor kopiujπcy klasy bazowej
+		EquipmentData(EquipmentCommunicationDataCopy),//konstruktor kopiujƒÖcy klasy bazowej
 		p_communication(EquipmentCommunicationDataCopy.p_communication)
 	{
 	}
@@ -43,13 +43,13 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CCommunication
+	//Metoda zwraca wska≈∫nik na obiekt klasy CCommunication
 	CCommunication* EquipmentCommunicationData::getCommunication()
 	{
 		return p_communication;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CCommunication
+	//Metoda ustawia wska≈∫nik na obiekt klasy CCommunication
 	void EquipmentCommunicationData::setCommunication(CCommunication* communication)
 	{
 		p_communication = communication;

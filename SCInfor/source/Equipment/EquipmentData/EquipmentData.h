@@ -1,4 +1,4 @@
-//  __________________________________________
+Ôªø//  __________________________________________
 // | EquipmentData.h - class definition       |
 // | Jack Flower - May 2016                   |
 // |__________________________________________|
@@ -16,7 +16,7 @@ using namespace transformation;
 namespace equipmentdata
 {
 	///
-	///Klasa bazowa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem
+	///Klasa bazowa reprezentuje funkcjonalno≈õƒá obiektu bƒôdƒÖcego wyposa≈ºaniem
 	///
 	class EquipmentData
 	{
@@ -32,7 +32,7 @@ namespace equipmentdata
 		///
 		///Konstruktor kopiujacy
 		///
-		///@param EquipmentDataCopy - sta≥a referencja na obiekt klasy EquipmentData
+		///@param EquipmentDataCopy - sta≈Ça referencja na obiekt klasy EquipmentData
 		///
 		EquipmentData(const EquipmentData & EquipmentDataCopy);
 
@@ -47,63 +47,63 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca flagÍ, czy obiekt posiada wyposaøenie
+		///Metoda zwraca flagƒô, czy obiekt posiada wyposa≈ºenie
 		///
 		const bool getUseEquipment() const;
 
 		///
-		///Metoda ustawia flagÍ, czy obiekt posiada wyposaøenie
+		///Metoda ustawia flagƒô, czy obiekt posiada wyposa≈ºenie
 		///
-		///@param use_equipment - flaga, czy obiekt posiada wyposaøenie
+		///@param use_equipment - flaga, czy obiekt posiada wyposa≈ºenie
 		///
 		void setUseEquipment(bool use_equipment);
 
 		///
-		///Metoda zwraca referencjÍ na opakowanie danych dla transformacji
+		///Metoda zwraca referencjƒô na opakowanie danych dla transformacji
 		///
 		CTransformation & getTransformed();
 
 		///
-		///Metoda ustawia referencjÍ na opakowanie danych dla transformacji
+		///Metoda ustawia referencjƒô na opakowanie danych dla transformacji
 		///
 		///@param transformation - referencja na obiekt klasy CTransformation
 		///
 		void setTransformed(CTransformation & transformation);
 
 		///
-		///Metoda zwraca referencjÍ na wektora po≥oøenia emitera
+		///Metoda zwraca referencjƒô na wektora po≈Ço≈ºenia emitera
 		///
 		const sf::Vector2f & getEmiter() const;
 
 		///
-		///Metoda ustawia wektor po≥oøenia emitera
+		///Metoda ustawia wektor po≈Ço≈ºenia emitera
 		///
 		///@param emiter - referencja na wektor emitera
 		///
 		void setEmiter(sf::Vector2f & emiter);
 
 		///
-		///Metoda ustawia wektor po≥oøenia emitera
+		///Metoda ustawia wektor po≈Ço≈ºenia emitera
 		///
-		///@param emiter_x - wspÛ≥rzedna X
+		///@param emiter_x - wsp√≥≈Çrzedna X
 		///
-		///@param emiter_y - wspÛ≥rzedna Y
+		///@param emiter_y - wsp√≥≈Çrzedna Y
 		///
 		void setEmiter(float emiter_x, float emiter_y);
 
 		///
 		///Metoda dokonuje transformacji skali, pozycji, obrotu
 		///
-		///@param * p_parent - wskaünik na obiekt klasy CActor
+		///@param * p_parent - wska≈∫nik na obiekt klasy CActor
 		///
-		////@param * p_child - wskaünik na obiekt klasy CActor
+		////@param * p_child - wska≈∫nik na obiekt klasy CActor
 		///
 		void Transform(CActor * p_parent, CActor * p_child);
 
 	protected:
 
-		bool m_use_equipment; //flaga, czy obiekt uøywa wyposaøenia
-		CTransformation m_transformation; //dane dla transformacji (pozycja, skala, obrÛt)
+		bool m_use_equipment; //flaga, czy obiekt u≈ºywa wyposa≈ºenia
+		CTransformation m_transformation; //dane dla transformacji (pozycja, skala, obr√≥t)
 
 	};
 }//namespace equipmentdata

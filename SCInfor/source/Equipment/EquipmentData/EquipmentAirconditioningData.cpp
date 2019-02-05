@@ -1,4 +1,4 @@
-//  _________________________________________________________
+Ôªø//  _________________________________________________________
 // | EquipmentAirconditioningData.cpp - class implementation |
 // | Jack Flower - May 2016                                  |
 // |_________________________________________________________|
@@ -20,10 +20,10 @@ namespace equipmentdata
 	{
 	}
 
-	//Konstruktor kopiujπcy
+	//Konstruktor kopiujƒÖcy
 	EquipmentAirconditioningData::EquipmentAirconditioningData(const EquipmentAirconditioningData & EquipmentAirconditioningDataCopy)
 	:
-		EquipmentData(EquipmentAirconditioningDataCopy),//konstruktor kopiujπcy klasy bazowej
+		EquipmentData(EquipmentAirconditioningDataCopy),//konstruktor kopiujƒÖcy klasy bazowej
 		p_airconditiong(EquipmentAirconditioningDataCopy.p_airconditiong)
 	{
 	}
@@ -43,13 +43,13 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy Engine
+	//Metoda zwraca wska≈∫nik na obiekt klasy Engine
 	CAirconditioning* EquipmentAirconditioningData::getAirconditioning()
 	{
 		return p_airconditiong;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy Engine
+	//Metoda ustawia wska≈∫nik na obiekt klasy Engine
 	void EquipmentAirconditioningData::setAirconditioning(CAirconditioning* airconditiong)
 	{
 		p_airconditiong = airconditiong;
