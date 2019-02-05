@@ -14,7 +14,7 @@
 ///
 namespace equipment
 {
-	class CEngine;
+	class Engine;
 }
 
 using namespace equipment;
@@ -53,20 +53,20 @@ namespace equipmentdata
 		const std::string GetType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CEngine
+		///Metoda zwraca wskaünik na obiekt klasy Engine
 		///
-		CEngine* getEngine();
+		Engine* getEngine();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CEngine
+		///Metoda ustawia wskaünik na obiekt klasy Engine
 		///
-		///@param *engine - wskaünik na obiekt klasy CEngine
+		///@param *engine - wskaünik na obiekt klasy Engine
 		///
-		void setEngine(CEngine* engine);
+		void setEngine(Engine* engine);
 
 	private:
 
-		CEngine*	p_engine;	//wskaünik na klasÍ CEngine - silnik
+		Engine*	p_engine;	//wskaünik na klasÍ Engine - silnik
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_ENGINE_DATA_JACK

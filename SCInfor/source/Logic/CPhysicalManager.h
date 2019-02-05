@@ -56,7 +56,7 @@ namespace logic
 ///
 namespace equipment
 {
-	class CEngine;
+	class Engine;
 	class CFuelTank;
 	class Energy;
 	class EnergyTank;
@@ -170,11 +170,11 @@ namespace logic
 		CBullet *CreateBullet(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CEngine i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Engine i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CEngine *CreateEngine(const std::wstring &uniqueId = L"");
+		Engine *CreateEngine(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CFuelTank i zwraca wskaünik na ten obiekt

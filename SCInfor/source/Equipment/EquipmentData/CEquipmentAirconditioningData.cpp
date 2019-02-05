@@ -43,13 +43,13 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CEngine
+	//Metoda zwraca wskaünik na obiekt klasy Engine
 	CAirconditioning* CEquipmentAirconditioningData::getAirconditioning()
 	{
 		return p_airconditiong;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CEngine
+	//Metoda ustawia wskaünik na obiekt klasy Engine
 	void CEquipmentAirconditioningData::setAirconditioning(CAirconditioning* airconditiong)
 	{
 		p_airconditiong = airconditiong;

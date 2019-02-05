@@ -16,7 +16,7 @@
 #include "Monster/CMonster.h"
 #include "Flora/CFlora.h"
 #include "Unit/CombatUnit/Robot/CRobot.h"
-#include "../Equipment/Engine/CEngine.h"
+#include "../Equipment/Engine/Engine.h"
 #include "../Equipment/Engine/FuelTank/CFuelTank.h"
 #include "../Equipment/Engine/FuelBar/CFuelBar.h"
 #include "../Equipment/Energy/Energy.h"
@@ -149,11 +149,11 @@ namespace logic
 		return Create<CBullet>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CEngine i zwraca wskaünik na ten obiekt
-	CEngine *CPhysicalManager::CreateEngine(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Engine i zwraca wskaünik na ten obiekt
+	Engine *CPhysicalManager::CreateEngine(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CEngine created\n");
-		return Create<CEngine>(uniqueId);
+		fprintf(stderr, "Engine created\n");
+		return Create<Engine>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CFuelTank i zwraca wskaünik na ten obiekt

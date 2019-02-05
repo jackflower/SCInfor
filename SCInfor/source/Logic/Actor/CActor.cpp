@@ -10,7 +10,7 @@
 #include "../../Rendering/Animations/CAnimSet.h"
 #include "../../Rendering/Animations/CAnimationState.h"
 #include "../../Rendering/Animations/CNameAnimPairTranslator.h"
-#include "../../Equipment/Engine/CEngine.h"
+#include "../../Equipment/Engine/Engine.h"
 #include "../../Equipment/Energy/Energy.h"
 #include "../../Equipment/Thermodynamics/Airconditioning/CAirconditioning.h"
 #include "../../Equipment/Thermodynamics/Ventilator/CVentilator.h"
@@ -228,14 +228,14 @@ namespace logic
 		m_ventilator_data.setUseEquipment(use_ventilator);
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CEngine
-	CEngine* CActor::GetEngine()
+	//Metoda zwraca wskaünik na obiekt klasy Engine
+	Engine* CActor::GetEngine()
 	{
 		return m_engine_data.getEngine();
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CEngine
-	void CActor::SetEngine(CEngine* engine)
+	//Metoda ustawia wskaünik na obiekt klasy Engine
+	void CActor::SetEngine(Engine* engine)
 	{
 		m_engine_data.setEngine(engine);
 	}
@@ -473,7 +473,7 @@ namespace logic
 
 	//implementacja metod private:
 
-	//metoda aktualizuje funkcjonalnoúÊ CEngine
+	//metoda aktualizuje funkcjonalnoúÊ Engine
 	void CActor::updateEngine(float dt)
 	{
 		//transformacja

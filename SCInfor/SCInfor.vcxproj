@@ -141,7 +141,7 @@
     <ClCompile Include="source\Equipment\Energy\Energy.cpp" />
     <ClCompile Include="source\Equipment\Energy\FixedColor.cpp" />
     <ClCompile Include="source\Equipment\Energy\EnergyTank\EnergyTank.cpp" />
-    <ClCompile Include="source\Equipment\Engine\CEngine.cpp" />
+    <ClCompile Include="source\Equipment\Engine\Engine.cpp" />
     <ClCompile Include="source\Equipment\Engine\FuelBar\CFuelBar.cpp" />
     <ClCompile Include="source\Equipment\Engine\FuelTank\CFuelTank.cpp" />
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.cpp" />
@@ -353,7 +353,7 @@
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h" />
     <ClInclude Include="source\Equipment\Energy\EnergyTank\EnergyTank.h" />
     <ClInclude Include="source\Equipment\Energy\EnergyTank\EEnergyTankState.h" />
-    <ClInclude Include="source\Equipment\Engine\CEngine.h" />
+    <ClInclude Include="source\Equipment\Engine\Engine.h" />
     <ClInclude Include="source\Equipment\Engine\EEngineState.h" />
     <ClInclude Include="source\Equipment\Engine\FuelBar\CFuelBar.h" />
     <ClInclude Include="source\Equipment\Engine\FuelTank\CFuelTank.h" />

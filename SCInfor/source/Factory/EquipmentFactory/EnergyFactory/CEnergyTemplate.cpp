@@ -128,7 +128,7 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CEngine
+	//Metoda tworzy obiekt klasy Engine
 	Energy* CEnergyTemplate::Create(std::wstring id)
 	{
 		Energy* energy = gPhysicalManager.CreateEnergy(id);

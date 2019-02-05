@@ -33,7 +33,7 @@ namespace logic
 namespace equipment
 {
 	class CFuelTank;
-	class CEngine;
+	class Engine;
 }
 using namespace resource;
 using namespace xml;

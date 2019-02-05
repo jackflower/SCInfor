@@ -110,7 +110,7 @@ namespace factory
 		CEquipmentAirconditioningData	m_templ_airconditioning_data;	//opakowanie funkcjonalnoúci klimatyzacji
 		CEquipmentVentilatorData		m_templ_ventilator_data;		//opakowanie funkcjonalnoúci wentylatora
 		CEquipmentGunData				m_templ_gun_data;				//opakowanie funkcjonalnoúci dzia≥o
-		CEngineTemplate*				p_templ_engine;					//dane wzorca obiektu CEngine
+		CEngineTemplate*				p_templ_engine;					//dane wzorca obiektu Engine
 		CEnergyTemplate*				p_templ_energy;					//dane wzorca obiektu Energy
 		CAirconditioningTemplate*		p_templ_airconditioning;		//wskaünik na obiekt CAirconditioning z logikπ zarzπdzania modu≥em klimatyzatora
 		CVentilatorTemplate*			p_templ_ventilator;				//wskaünik na obiekt CVentilatorTemplate z logikπ zarzπdzania modu≥em wentylatora

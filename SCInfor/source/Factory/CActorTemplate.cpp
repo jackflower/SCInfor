@@ -151,7 +151,7 @@ namespace factory
 			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ engine
 			std::string engine_filename_tmp = xml.GetString(node, "engine_filename");
 			
-			//emitery dla obiektu klasy CEngine
+			//emitery dla obiektu klasy Engine
 			m_templ_engine_data.setEmiter(xml.GetFloat(node, "engine_emiter_x"), xml.GetFloat(node, "engine_emiter_y"));
 
 			if(m_templ_engine_data.getUseEquipment())
@@ -281,7 +281,7 @@ namespace factory
 			//jeœli obiekt posiada silnik engine
 			if (m_templ_engine_data.getUseEquipment())
 			{
-				//emitery dla obiektu klasy CEngine
+				//emitery dla obiektu klasy Engine
 				actor->setEngineTransformed(m_templ_engine_data.getTransformed());
 				
 				if(p_templ_engine)
@@ -295,7 +295,7 @@ namespace factory
 					//
 					//actor->SetEngine(p_templ_engine->Create(engine_genre));
 					//
-					//przekazanie wskaŸnikowi na klasê CEngine informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê Engine informacji o wzorcu
 					actor->GetEngine()->SetTemplate(p_templ_engine);
 					//decorator
 					actor->GetEngine()->setSmoothing(true);

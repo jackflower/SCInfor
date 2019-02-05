@@ -387,9 +387,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\Engine\CEngine.cpp">
-      <Filter>source\Equipment\Engine</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\Engine\FuelBar\CFuelBar.cpp">
       <Filter>source\Equipment\Engine\FuelBar</Filter>
     </ClCompile>
@@ -996,6 +993,9 @@
     <ClCompile Include="source\Equipment\Energy\EnergyTank\EnergyTank.cpp">
       <Filter>source\Equipment\Energy\EnergyTank</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\Engine\Engine.cpp">
+      <Filter>source\Equipment\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1011,9 +1011,6 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Energy\EnergyTank\EEnergyTankState.h">
       <Filter>source\Equipment\Energy\EnergyTank</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Engine\CEngine.h">
-      <Filter>source\Equipment\Engine</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Engine\EEngineState.h">
       <Filter>source\Equipment\Engine</Filter>
@@ -1749,6 +1746,9 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Energy\EnergyTank\EnergyTank.h">
       <Filter>source\Equipment\Energy\EnergyTank</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Engine\Engine.h">
+      <Filter>source\Equipment\Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

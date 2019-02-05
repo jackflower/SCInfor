@@ -105,16 +105,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CEngine
-	CEngine* CEngineTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy Engine
+	Engine* CEngineTemplate::Create(std::wstring id)
 	{
-		CEngine* engine = gPhysicalManager.CreateEngine(id);
+		Engine* engine = gPhysicalManager.CreateEngine(id);
 		Fill(engine);
 		return engine;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CEngineTemplate::Fill(CEngine *p_engine)
+	void CEngineTemplate::Fill(Engine *p_engine)
 	{
 		if(p_engine)
 		{
@@ -135,17 +135,17 @@ namespace factory
 			}
 
 			//pola tej klasy wzorca
-			p_engine->SetEngineName(m_templ_engine_name);
-			p_engine->SetUseFuelTank(m_templ_fueltank_data.getUseEquipment());
+			p_engine->setEngineName(m_templ_engine_name);
+			p_engine->setUseFuelTank(m_templ_fueltank_data.getUseEquipment());
 			p_engine->setFuelTankTransformed(m_templ_fueltank_data.getTransformed());
-			p_engine->SetPercentageReserveFuel(m_templ_percentage_reserve_fuel);
-			p_engine->SetFuelConsumption(m_templ_fuel_consumption);
-			p_engine->SetFuelConsumptionMove(m_templ_fuel_consumption_move);
-			p_engine->SetTankTimeDelayed(m_templ_tank_time_delayed);
-			p_engine->SetFuelEmptyMessage(m_templ_fuel_empty_message);
-			p_engine->SetRunEngine(m_templ_engine_run);
-			p_engine->SetEngineRegenerationTime(m_templ_regeneration_time);
-			p_engine->SetEngineRotationSpeed(m_templ_engine_rotation_speed);
+			p_engine->setPercentageReserveFuel(m_templ_percentage_reserve_fuel);
+			p_engine->setFuelConsumption(m_templ_fuel_consumption);
+			p_engine->setFuelConsumptionMove(m_templ_fuel_consumption_move);
+			p_engine->setTankTimeDelayed(m_templ_tank_time_delayed);
+			p_engine->setFuelEmptyMessage(m_templ_fuel_empty_message);
+			p_engine->setRunEngine(m_templ_engine_run);
+			p_engine->setEngineRegenerationTime(m_templ_regeneration_time);
+			p_engine->setEngineRotationSpeed(m_templ_engine_rotation_speed);
 
 			//jeœli obiekt posiada fueltank (zbiornika paliwa)
 			if (m_templ_fueltank_data.getUseEquipment())
@@ -153,11 +153,11 @@ namespace factory
 				if(p_engine)
 				{
 					//pobieramy sk³adow¹ fueltank i wzorzec wype³nia wskaŸnik danymi
-					p_engine->SetFuelTank(p_templ_fuel_tank->Create(L""));
+					p_engine->setFuelTank(p_templ_fuel_tank->Create(L""));
 					//przekazanie wskaŸnikowi na klasê CFuelTank informacji o wzorcu
-					p_engine->GetFuelTank()->SetTemplate(p_templ_fuel_tank);
+					p_engine->getFuelTank()->SetTemplate(p_templ_fuel_tank);
 					//decorator
-					p_engine->GetFuelTank()->setSmoothing(true);
+					p_engine->getFuelTank()->setSmoothing(true);
 				}
 			}
 		}

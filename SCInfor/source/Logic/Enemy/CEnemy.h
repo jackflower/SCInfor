@@ -20,7 +20,7 @@ class CActorAI;
 ///
 namespace equipment
 {
-	class CEngine;
+	class Engine;
 }
 
 using namespace equipment;

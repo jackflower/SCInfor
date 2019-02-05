@@ -5,7 +5,7 @@
 //
 
 #include "CEquipmentEngineData.h"
-#include "../Engine/CEngine.h"
+#include "../Engine/Engine.h"
 #include "../../Logic/CPhysicalManager.h"
 
 namespace equipmentdata
@@ -43,14 +43,14 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CEngine
-	CEngine* CEquipmentEngineData::getEngine()
+	//Metoda zwraca wskaünik na obiekt klasy Engine
+	Engine* CEquipmentEngineData::getEngine()
 	{
 		return p_engine;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CEngine
-	void CEquipmentEngineData::setEngine(CEngine* engine)
+	//Metoda ustawia wskaünik na obiekt klasy Engine
+	void CEquipmentEngineData::setEngine(Engine* engine)
 	{
 		p_engine = engine;
 	}

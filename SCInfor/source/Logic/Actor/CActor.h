@@ -40,7 +40,7 @@ namespace rendering
 ///
 namespace equipment
 {
-	class CEngine;
+	class Engine;
 	class Energy;
 	class CAirconditioning;
 	class CVentilator;
@@ -252,16 +252,16 @@ namespace logic
 		void SetUseWentilator(bool use_ventilator);
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CEngine
+		///Metoda zwraca wskaünik na obiekt klasy Engine
 		///
-		CEngine* GetEngine();
+		Engine* GetEngine();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CEngine
+		///Metoda ustawia wskaünik na obiekt klasy Engine
 		///
-		///@param *engine - wskaünik na obiekt klasy CEngine
+		///@param *engine - wskaünik na obiekt klasy Engine
 		///
-		void SetEngine(CEngine* engine);
+		void SetEngine(Engine* engine);
 
 		///
 		///Metoda zwraca referencjÍ na opakowanie danych dla transformacji
@@ -456,7 +456,7 @@ namespace logic
 		void updateComponents(float dt);
 		
 	private:
-		//metoda aktualizuje funkcjonalnoúÊ CEngine
+		//metoda aktualizuje funkcjonalnoúÊ Engine
 		void updateEngine(float dt);
 
 		//metoda aktualizuje funkcjonalnoúÊ Energy

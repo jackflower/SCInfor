@@ -7,7 +7,7 @@
 #ifndef H_ENGINE_TEMPLATE_JACK
 #define H_ENGINE_TEMPLATE_JACK
 
-#include "../../../Equipment/Engine/CEngine.h"
+#include "../../../Equipment/Engine/Engine.h"
 #include "FuelTankFactory/CFuelTankTemplate.h"
 #include "../../../Equipment/EquipmentData/CEquipmentFuelTankData.h"
 
@@ -57,18 +57,18 @@ namespace factory
 		virtual bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CEngine
+		///Metoda tworzy obiekt klasy Engine
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CEngine* Create(std::wstring id = L"");
+		Engine* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_engine - wskaünik na obiekt klasy CEngine
+		///@param *p_engine - wskaünik na obiekt klasy Engine
 		///
-		virtual void Fill(CEngine *p_engine);
+		virtual void Fill(Engine *p_engine);
 
 
 		//metody  p o m o c n i c z e

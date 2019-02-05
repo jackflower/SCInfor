@@ -10,7 +10,7 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stanów dla obiektu CEngine
+	///Wyliczenie stanów dla obiektu Engine
 	///
 	enum EEngineState
 	{

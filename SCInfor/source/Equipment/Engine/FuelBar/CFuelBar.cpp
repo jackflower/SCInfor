@@ -123,7 +123,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje logikę obiektu
-	//void CEngine::update(float dt)
+	//void Engine::update(float dt)
 	//{
 	//	//odmiarzam czas
 	//	m_timer += dt;
