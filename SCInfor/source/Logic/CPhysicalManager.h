@@ -57,7 +57,7 @@ namespace logic
 namespace equipment
 {
 	class Engine;
-	class CFuelTank;
+	class FuelTank;
 	class Energy;
 	class EnergyTank;
 	class CFuelBar;
@@ -177,11 +177,11 @@ namespace logic
 		Engine *CreateEngine(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CFuelTank i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy FuelTank i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CFuelTank *CreateFuelTank(const std::wstring &uniqueId = L"");
+		FuelTank *CreateFuelTank(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy Energy i zwraca wskaünik na ten obiekt

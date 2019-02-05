@@ -1,10 +1,10 @@
-﻿//  ______________________________________
-// | CFuelTank.cpp - class implementation |
-// | Jack Flower - December 2012          |
-// |______________________________________|
+﻿//  _____________________________________
+// | FuelTank.cpp - class implementation |
+// | Jack Flower - December 2012         |
+// |_____________________________________|
 //
 
-#include "CFuelTank.h"
+#include "FuelTank.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 
@@ -13,17 +13,17 @@ using namespace rendering::drawable;
 
 namespace equipment
 {
-	RTTI_IMPL(CFuelTank, CActor)
+	RTTI_IMPL(FuelTank, CActor)
 
 	//Chroniony konstruktor domyślny
-	CFuelTank::CFuelTank(const std::wstring& uniqueId)
+	FuelTank::FuelTank(const std::wstring & uniqueId)
 	:
-		CActor					(uniqueId),//konstruktor klasy bazowej
-		m_fuel_tank_name		(),
-		m_fuel_tank_capacity	(0.0f),
-		m_fuel					(0.0f),
-		m_fueltank_state		(EFuelTankState::FUELTANK_DEFAULT),
-		m_unit_controller		(true)//urządzenie włączone
+		CActor(uniqueId),//konstruktor klasy bazowej
+		m_fuel_tank_name(),
+		m_fuel_tank_capacity(0.0f),
+		m_fuel(0.0f),
+		m_fueltank_state(EFuelTankState::FUELTANK_DEFAULT),
+		m_unit_controller(true)//urządzenie włączone
 	{
 		SetZIndexBody(Z_PHYSICAL_FUEL_TANK_BODY);
 		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_FUEL_TANK_BODY);
@@ -32,71 +32,71 @@ namespace equipment
 	}
 
 	//Chroniony konstruktor kopiujący
-	CFuelTank::CFuelTank(const CFuelTank& CFuelTankCopy)
+	FuelTank::FuelTank(const FuelTank & FuelTankCopy)
 	:
-		CActor					(CFuelTankCopy),//konstruktor kopiujący klasy bazowej
-		m_fuel_tank_name		(CFuelTankCopy.m_fuel_tank_name),
-		m_fuel_tank_capacity	(CFuelTankCopy.m_fuel_tank_capacity),
-		m_fuel					(CFuelTankCopy.m_fuel),
-		m_fueltank_state		(CFuelTankCopy.m_fueltank_state),
-		m_unit_controller		(CFuelTankCopy.m_unit_controller)
+		CActor(FuelTankCopy),//konstruktor kopiujący klasy bazowej
+		m_fuel_tank_name(FuelTankCopy.m_fuel_tank_name),
+		m_fuel_tank_capacity(FuelTankCopy.m_fuel_tank_capacity),
+		m_fuel(FuelTankCopy.m_fuel),
+		m_fueltank_state(FuelTankCopy.m_fueltank_state),
+		m_unit_controller(FuelTankCopy.m_unit_controller)
 	{
 	}
 
 	//Destruktor wirtualny
-	CFuelTank::~CFuelTank(void)
+	FuelTank::~FuelTank(void)
 	{
-		//CActor				not edit
-		m_fuel_tank_name		= "";
-		m_fuel_tank_capacity	= 0.0f;
-		m_fuel					= 0.0f;
-		m_fueltank_state		= EFuelTankState::FUELTANK_DEFAULT;
-		//m_unit_controller		not edit
+		//CActor
+		m_fuel_tank_name = "";
+		m_fuel_tank_capacity = 0.0f;
+		m_fuel = 0.0f;
+		m_fueltank_state = EFuelTankState::FUELTANK_DEFAULT;
+		//m_unit_controller
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CFuelTank::GetType() const
+	const std::string FuelTank::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
 	//Metoda zwraca nazwę zbiornika
-	const std::string CFuelTank::GetFuelTankName() const
+	const std::string FuelTank::getFuelTankName() const
 	{
 		return m_fuel_tank_name;
 	}
 
 	//Metoda ustawia nazwę zbiornika
-	void CFuelTank::SetFuelTankName(const std::string& fuel_tank_name)
+	void FuelTank::setFuelTankName(const std::string& fuel_tank_name)
 	{
 		m_fuel_tank_name = fuel_tank_name;
 	}
 
 	//Metoda zwraca pojemność zbiornika
-	const float CFuelTank::GetFuelTankCapacity() const
+	const float FuelTank::getFuelTankCapacity() const
 	{
 		return m_fuel_tank_capacity;
 	}
 
 	//Metoda ustawia pojemność zbiornika paliwa (tlenu)
-	void CFuelTank::SetFuelTankCapacity(float fuel_tank_capacity)
+	void FuelTank::setFuelTankCapacity(float fuel_tank_capacity)
 	{
 		if (fuel_tank_capacity < 0) return;
 		m_fuel_tank_capacity = fuel_tank_capacity;
 	}
 
 	//Metoda zwraca ilość paliwa (tlenu) obiektu
-	const float CFuelTank::GetFuel() const
+	const float FuelTank::getFuel() const
 	{
 		return m_fuel;
 	}
 
 	//Metoda ustawia ilość paliwa (tlenu) obiektu
-	void CFuelTank::SetFuel(float fuel)
+	void FuelTank::setFuel(float fuel)
 	{
-		if (fuel < 0)						//jeśli tankujemy wartością ujemną - opuszczamy funkcję
+		if (fuel < 0) //jeśli tankujemy wartością ujemną - opuszczamy funkcję
 		{
-			m_fuel = 0;						//zerujemy
+			m_fuel = 0; //zerujemy
 			return;
 		}
 
@@ -114,7 +114,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zależności od stanu logiki obiektu (move, attack, death, etc...)
-	void CFuelTank::updateAnimations(float dt)
+	void FuelTank::updateAnimations(float dt)
 	{
 		switch (m_fueltank_state)
 		{
@@ -160,13 +160,13 @@ namespace equipment
 	}
 
 	//Metoda zwraca referencjcę na moduł sterowania
-	Switch & CFuelTank::getUnitController()
+	Switch & FuelTank::getUnitController()
 	{
 		return m_unit_controller;
 	}
 
 	//Wirtualna metoda aktualizująca obiekt
-	void CFuelTank::update(float dt)
+	void FuelTank::update(float dt)
 	{
 		UpdateShadow(dt);	//aktualizacja shadow engine
 

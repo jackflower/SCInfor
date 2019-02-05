@@ -43,14 +43,14 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CFuelTank
-	CFuelTank* CEquipmentFuelTankData::getFuelTank()
+	//Metoda zwraca wskaünik na obiekt klasy FuelTank
+	FuelTank* CEquipmentFuelTankData::getFuelTank()
 	{
 		return p_fueltank;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CFuelTank
-	void CEquipmentFuelTankData::setFuelTank(CFuelTank* fueltank)
+	//Metoda ustawia wskaünik na obiekt klasy FuelTank
+	void CEquipmentFuelTankData::setFuelTank(FuelTank* fueltank)
 	{
 		p_fueltank = fueltank;
 	}

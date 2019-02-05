@@ -73,14 +73,14 @@ namespace equipment
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy FuelTank
 		///
-		CFuelTank* getFuelTank();
+		FuelTank* getFuelTank();
 
 		///
 		///Metoda ustawia wskaźnik na obiekt klasy FuelTank
 		///
-		///@param *fuel_tank - wskaźnik na obiekt klasy CFuelTank
+		///@param *fuel_tank - wskaźnik na obiekt klasy FuelTank
 		///
-		void setFuelTank(CFuelTank* fuel_tank);
+		void setFuelTank(FuelTank* fuel_tank);
 
 		///
 		///Metoda zwraca flagę, czy obiekt posiada zbiornik paliwa

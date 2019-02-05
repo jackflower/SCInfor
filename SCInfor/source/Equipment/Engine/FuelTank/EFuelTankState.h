@@ -9,7 +9,7 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stanów dla obiektu CFuelTank
+	///Wyliczenie stanów dla obiektu FuelTank
 	///
 	enum EFuelTankState
 	{

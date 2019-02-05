@@ -143,7 +143,7 @@
     <ClCompile Include="source\Equipment\Energy\EnergyTank\EnergyTank.cpp" />
     <ClCompile Include="source\Equipment\Engine\Engine.cpp" />
     <ClCompile Include="source\Equipment\Engine\FuelBar\CFuelBar.cpp" />
-    <ClCompile Include="source\Equipment\Engine\FuelTank\CFuelTank.cpp" />
+    <ClCompile Include="source\Equipment\Engine\FuelTank\FuelTank.cpp" />
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.cpp" />
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAmmoData.cpp" />
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentBatteryData.cpp" />
@@ -356,7 +356,7 @@
     <ClInclude Include="source\Equipment\Engine\Engine.h" />
     <ClInclude Include="source\Equipment\Engine\EEngineState.h" />
     <ClInclude Include="source\Equipment\Engine\FuelBar\CFuelBar.h" />
-    <ClInclude Include="source\Equipment\Engine\FuelTank\CFuelTank.h" />
+    <ClInclude Include="source\Equipment\Engine\FuelTank\FuelTank.h" />
     <ClInclude Include="source\Equipment\Engine\FuelTank\EFuelTankState.h" />
     <ClInclude Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.h" />
     <ClInclude Include="source\Equipment\EquipmentData\CEquipmentAmmoData.h" />

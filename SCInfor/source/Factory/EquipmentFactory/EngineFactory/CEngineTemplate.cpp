@@ -94,7 +94,7 @@ namespace factory
 		{
 			//nazwa pliku z konfiguracj¹ fueltank
 			std::string fueltank_filename_tmp = xml.GetString(node, "fueltank_filename");
-			//emitery dla obiektu klasy CFuelTank
+			//emitery dla obiektu klasy FuelTank
 			m_templ_fueltank_data.setEmiter(xml.GetFloat(node, "fuel_tank_emiter_x"), xml.GetFloat(node, "fuel_tank_emiter_y"));
 
 			if(m_templ_fueltank_data.getUseEquipment())
@@ -154,7 +154,7 @@ namespace factory
 				{
 					//pobieramy sk³adow¹ fueltank i wzorzec wype³nia wskaŸnik danymi
 					p_engine->setFuelTank(p_templ_fuel_tank->Create(L""));
-					//przekazanie wskaŸnikowi na klasê CFuelTank informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê FuelTank informacji o wzorcu
 					p_engine->getFuelTank()->SetTemplate(p_templ_fuel_tank);
 					//decorator
 					p_engine->getFuelTank()->setSmoothing(true);

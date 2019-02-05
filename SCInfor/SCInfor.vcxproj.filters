@@ -390,9 +390,6 @@
     <ClCompile Include="source\Equipment\Engine\FuelBar\CFuelBar.cpp">
       <Filter>source\Equipment\Engine\FuelBar</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\Engine\FuelTank\CFuelTank.cpp">
-      <Filter>source\Equipment\Engine\FuelTank</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.cpp">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClCompile>
@@ -996,6 +993,9 @@
     <ClCompile Include="source\Equipment\Engine\Engine.cpp">
       <Filter>source\Equipment\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\Engine\FuelTank\FuelTank.cpp">
+      <Filter>source\Equipment\Engine\FuelTank</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1017,9 +1017,6 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Engine\FuelBar\CFuelBar.h">
       <Filter>source\Equipment\Engine\FuelBar</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Engine\FuelTank\CFuelTank.h">
-      <Filter>source\Equipment\Engine\FuelTank</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Engine\FuelTank\EFuelTankState.h">
       <Filter>source\Equipment\Engine\FuelTank</Filter>
@@ -1749,6 +1746,9 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Engine\Engine.h">
       <Filter>source\Equipment\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Engine\FuelTank\FuelTank.h">
+      <Filter>source\Equipment\Engine\FuelTank</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

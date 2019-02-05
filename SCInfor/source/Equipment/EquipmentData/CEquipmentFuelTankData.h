@@ -8,7 +8,7 @@
 #define H_EQUIPMENT_FUELTANK_DATA_JACK
 
 #include "CEquipmentData.h"
-#include "../Engine/FuelTank/CFuelTank.h"
+#include "../Engine/FuelTank/FuelTank.h"
 
 namespace equipmentdata
 {
@@ -44,20 +44,20 @@ namespace equipmentdata
 		const std::string GetType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CFuelTank
+		///Metoda zwraca wskaünik na obiekt klasy FuelTank
 		///
-		CFuelTank* getFuelTank();
+		FuelTank* getFuelTank();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CFuelTank
+		///Metoda ustawia wskaünik na obiekt klasy FuelTank
 		///
-		///@param *fueltank - wskaünik na obiekt klasy CFuelTank
+		///@param *fueltank - wskaünik na obiekt klasy FuelTank
 		///
-		void setFuelTank(CFuelTank* fueltank);
+		void setFuelTank(FuelTank* fueltank);
 
 	private:
 
-		CFuelTank*	p_fueltank;	//wskaünik na klasÍ CFuelTank - zbiornik paliwa
+		FuelTank*	p_fueltank;	//wskaünik na klasÍ FuelTank - zbiornik paliwa
 
 	};
 }//namespace equipmentdata

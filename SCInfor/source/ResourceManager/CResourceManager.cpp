@@ -429,7 +429,7 @@ namespace resource
 		//		- CPlayerTemplate						->tworzy->	CPlayer
 		//		- CBulletTemplate						->tworzy->	CBullet
 		//		- CMonsterTemplate						->tworzy->	CMonster
-		//		- CFuelTankTemplate						->tworzy->	CFuelTank
+		//		- CFuelTankTemplate						->tworzy->	FuelTank
 		//		- CEnergyTankTemplate					->tworzy->	EnergyTank
 		//		- CFuelBarTemplate						->tworzy->	CFuelBar
 		//		- CEnergyTemplate						->tworzy->	Energy

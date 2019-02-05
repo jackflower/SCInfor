@@ -76,7 +76,7 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CFuelTank
+	//Metoda tworzy obiekt klasy FuelTank
 	EnergyTank* CEnergyTankTemplate::Create(std::wstring id)
 	{
 		EnergyTank* energytank = gPhysicalManager.CreateEnergyTank(id);

@@ -73,16 +73,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CFuelTank
-	CFuelTank* CFuelTankTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy FuelTank
+	FuelTank* CFuelTankTemplate::Create(std::wstring id)
 	{
-		CFuelTank* fueltank = gPhysicalManager.CreateFuelTank(id);
+		FuelTank* fueltank = gPhysicalManager.CreateFuelTank(id);
 		Fill(fueltank);
 		return fueltank;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CFuelTankTemplate::Fill(CFuelTank *p_fueltank)
+	void CFuelTankTemplate::Fill(FuelTank *p_fueltank)
 	{
 		if(p_fueltank)
 		{
@@ -103,9 +103,9 @@ namespace factory
 			}
 
 			//pola tej klasy wzorca
-			p_fueltank->SetFuelTankName(m_templ_fuel_tank_name);
-			p_fueltank->SetFuelTankCapacity(m_templ_fuel_tank_capacity);
-			p_fueltank->SetFuel(m_templ_fuel);
+			p_fueltank->setFuelTankName(m_templ_fuel_tank_name);
+			p_fueltank->setFuelTankCapacity(m_templ_fuel_tank_capacity);
+			p_fueltank->setFuel(m_templ_fuel);
 		}
 	}
 }//namespace factory

@@ -106,14 +106,14 @@ namespace equipment
 		m_engine_name = engine_name;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CFuelTank
-	CFuelTank* Engine::getFuelTank()
+	//Metoda zwraca wskaźnik na obiekt klasy FuelTank
+	FuelTank* Engine::getFuelTank()
 	{
 		return m_fueltank_data.getFuelTank();
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CFuelTank
-	void Engine::setFuelTank(CFuelTank* fuel_tank)
+	//Metoda ustawia wskaźnik na obiekt klasy FuelTank
+	void Engine::setFuelTank(FuelTank* fuel_tank)
 	{
 		m_fueltank_data.setFuelTank(fuel_tank);
 	}
@@ -329,23 +329,23 @@ namespace equipment
 			if(m_fueltank_data.getFuelTank())
 			{
 				//aktualizacja stanu paliwa ma miejsce jeśli jest paliwo oraz silnik jest włączony
-				if (m_fueltank_data.getFuelTank()->GetFuel() && m_engine_run)
+				if (m_fueltank_data.getFuelTank()->getFuel() && m_engine_run)
 				{
 					if (m_engine_timer >= m_engine_regeneration_time)//jeśli upłynął skumulowany czas
 					{
-						if(m_fueltank_data.getFuelTank()->GetFuel())//jeśli jest paliwo - zużywamy je
-							m_fueltank_data.getFuelTank()->SetFuel(m_fueltank_data.getFuelTank()->GetFuel() - m_fuel_consumption);
+						if(m_fueltank_data.getFuelTank()->getFuel())//jeśli jest paliwo - zużywamy je
+							m_fueltank_data.getFuelTank()->setFuel(m_fueltank_data.getFuelTank()->getFuel() - m_fuel_consumption);
 						m_engine_timer = 0.0f;//resetujemy czas procesu
 					}
 					//obliczamy procentową zawartość paliwa w zbiorniku
-					if(m_fueltank_data.getFuelTank()->GetFuelTankCapacity())
-						m_percentage_fuel = m_fueltank_data.getFuelTank()->GetFuel()/ m_fueltank_data.getFuelTank()->GetFuelTankCapacity();
+					if(m_fueltank_data.getFuelTank()->getFuelTankCapacity())
+						m_percentage_fuel = m_fueltank_data.getFuelTank()->getFuel()/ m_fueltank_data.getFuelTank()->getFuelTankCapacity();
 					//aktualizacja prędkości wirowania łopatek wirnika w zależności od procentowej ilości paliwa
 					m_rotor_speed = m_engine_rotation_speed * m_percentage_fuel;
 				}
 
 				//brak paliwa - silnik stop
-				if(!m_fueltank_data.getFuelTank()->GetFuel())
+				if(!m_fueltank_data.getFuelTank()->getFuel())
 				{
 					m_engine_run = false;
 					m_rotor_speed = 0.0f;
@@ -380,15 +380,15 @@ namespace equipment
 		if (m_fueltank_data.getFuelTank())
 		{
 			//jest wystarczająca ilość paliwa
-			if(m_fueltank_data.getFuelTank()->GetFuel() > m_fueltank_data.getFuelTank()->GetFuelTankCapacity() * m_percentage_reserve_fuel)
+			if(m_fueltank_data.getFuelTank()->getFuel() > m_fueltank_data.getFuelTank()->getFuelTankCapacity() * m_percentage_reserve_fuel)
 				m_fueltank_data.getFuelTank()->getFuelTankState() = EFuelTankState::FUELTANK_DEFAULT;
 
 			//rezerwa paliwa
-			if(m_fueltank_data.getFuelTank()->GetFuel() <= m_fueltank_data.getFuelTank()->GetFuelTankCapacity() * m_percentage_reserve_fuel)
+			if(m_fueltank_data.getFuelTank()->getFuel() <= m_fueltank_data.getFuelTank()->getFuelTankCapacity() * m_percentage_reserve_fuel)
 				m_fueltank_data.getFuelTank()->getFuelTankState() = EFuelTankState::FUELTANK_RESERVE;
 
 			//brak paliwa
-			if(m_fueltank_data.getFuelTank()->GetFuel() <= 0.f)
+			if(m_fueltank_data.getFuelTank()->getFuel() <= 0.f)
 				m_fueltank_data.getFuelTank()->getFuelTankState() = EFuelTankState::FUELTANK_EMPTY;
 		}
 	}

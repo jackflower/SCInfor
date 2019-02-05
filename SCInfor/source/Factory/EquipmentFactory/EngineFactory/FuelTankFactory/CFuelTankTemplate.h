@@ -11,7 +11,7 @@
 #include "../../../../Factory/CActorTemplate.h"
 #include "../../../../XML/CXml.h"
 #include "../../../../RTTI/RTTI.h"
-#include "../../../../Equipment/Engine/FuelTank/CFuelTank.h"
+#include "../../../../Equipment/Engine/FuelTank/FuelTank.h"
 
 using namespace logic;
 using namespace resource;
@@ -64,18 +64,18 @@ namespace factory
 		virtual bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CFuelTank
+		///Metoda tworzy obiekt klasy FuelTank
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CFuelTank* Create(std::wstring id = L"");
+		FuelTank* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_fueltank - wskaünik na obiekt klasy CFuelTank
+		///@param *p_fueltank - wskaünik na obiekt klasy FuelTank
 		///
-		virtual void Fill(CFuelTank *p_fueltank);
+		virtual void Fill(FuelTank *p_fueltank);
 
 
 		//metody  p o m o c n i c z e
