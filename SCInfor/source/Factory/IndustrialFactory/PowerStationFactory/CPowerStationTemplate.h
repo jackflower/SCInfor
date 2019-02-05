@@ -9,7 +9,7 @@
 
 #include "../../CActorTemplate.h"
 #include "../../../Logic/Industrial/PowerStation/CPowerStation.h"
-#include "../../../Equipment/EquipmentData/CEquipmentCommunicationData.h"
+#include "../../../Equipment/EquipmentData/EquipmentCommunicationData.h"
 
 ///
 ///Forward declaration
@@ -83,7 +83,7 @@ namespace factory
 		std::string					m_templ_power_station_name;		//nazwa elektrowni
 		float						m_templ_energy_capacitor;		//iloœæ energii do zmagazynowania - pojemnoœæ (kondensator)
 		unsigned					m_templ_amount_power_modules;	//iloœæ modu³ów zasilajacych (turbin, przetworników, etc...)
-		CEquipmentCommunicationData mm_templ_communication_data;	//opakowanie funkcjonalnoœci modu³u komunikacyjnego
+		EquipmentCommunicationData mm_templ_communication_data;	//opakowanie funkcjonalnoœci modu³u komunikacyjnego
 		CCommunicationTemplate*		p_templ_communication;			//wskaŸnik na obiekt klasy CCommunicationTemplate (wzorzsec modu³u komunikacji)
 	};
 }//namespace factory

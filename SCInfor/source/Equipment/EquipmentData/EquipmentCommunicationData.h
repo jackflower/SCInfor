@@ -1,7 +1,7 @@
-//  ________________________________________________________
-// | CEquipmentCommunicationData.h - class definition       |
-// | Jack Flower - May 2016                                 |
-// |________________________________________________________|
+//  _______________________________________________________
+// | EquipmentCommunicationData.h - class definition       |
+// | Jack Flower - May 2016                                |
+// |_______________________________________________________|
 //
 
 #ifndef H_EQUIPMENT_COMMUNICATION_DATA_JACK
@@ -27,7 +27,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem - modu≥ komunikacyjny
 	///
-	class CEquipmentCommunicationData : public EquipmentData
+	class EquipmentCommunicationData : public EquipmentData
 	{
 		RTTI_DECL;
 
@@ -36,40 +36,40 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CEquipmentCommunicationData();
+		EquipmentCommunicationData();
 
 		///
 		///Konstruktor kopiujπcy
 		///
-		///@param & CEquipmentCommunicationDataCopy - sta≥a referencja na obiekt klasy CEquipmentCommunicationData
+		///@param EquipmentCommunicationDataCopy - sta≥a referencja na obiekt klasy EquipmentCommunicationData
 		///
-		CEquipmentCommunicationData(const CEquipmentCommunicationData & CEquipmentCommunicationDataCopy);
+		EquipmentCommunicationData(const EquipmentCommunicationData & EquipmentCommunicationDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEquipmentCommunicationData();
+		virtual ~EquipmentCommunicationData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca wskaünik na obiekt klasy CCommunication
 		///
-		CCommunication* getCommunication();
+		CCommunication *getCommunication();
 
 		///
 		///Metoda ustawia wskaünik na obiekt klasy CCommunication
 		///
 		///@param *communication - wskaünik na obiekt klasy CCommunication
 		///
-		void setCommunication(CCommunication* communication);
+		void setCommunication(CCommunication * communication);
 
 	private:
 
-		CCommunication*	p_communication;	//wskaünik na klasÍ CCommunication - modu≥ komunikacyjny
+		CCommunication *p_communication; //wskaünik na klasÍ CCommunication - modu≥ komunikacyjny
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_COMMUNICATION_DATA_JACK

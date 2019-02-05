@@ -9,7 +9,7 @@
 
 #include "../../../Logic/Actor/CActor.h"
 #include "LockWeapon/CLockWeapon.h"
-#include "../../EquipmentData/CEquipmentAmmoData.h"
+#include "../../EquipmentData/EquipmentAmmoData.h"
 #include <SFML/System/Vector2.hpp>
 #include "../Ammo/CAmmo.h"
 #include "../EGunState.h"
@@ -105,14 +105,14 @@ namespace equipment
 			///
 			///Metoda zwraca referencjê na opakowanie funkcjonalnoœci amunicji
 			///
-			CEquipmentAmmoData & getEquipmentAmmoData();
+			EquipmentAmmoData & getEquipmentAmmoData();
 
 			///
 			///Metoda ustawia referencjê na opakowanie funkcjonalnoœci amunicji
 			///
-			///@param & ammo_data - referencja na obiekt klasy CEquipmentAmmoData
+			///@param & ammo_data - referencja na obiekt klasy EquipmentAmmoData
 			///
-			void setEquipmentAmmoData(CEquipmentAmmoData & ammo_data);
+			void setEquipmentAmmoData(EquipmentAmmoData & ammo_data);
 
 			///
 			///Metoda zwraca flagê, czy mo¿na prze³adowaæ amunicjê
@@ -326,7 +326,7 @@ namespace equipment
 
 		private:
 
-			CEquipmentAmmoData		m_ammo_data;				//opakowanie funkcjonalnoœci dzia³a
+			EquipmentAmmoData		m_ammo_data;				//opakowanie funkcjonalnoœci dzia³a
 			bool					m_ammo_loading;				//flaga, czy mo¿na prze³adowaæ amunicjê
 			float					m_time_ammo_load_delay;		//czas potrzebny do prze³adowania amunicji
 			bool					m_shot_enabled;				//flaga, czy mo¿na oddaæ strza³

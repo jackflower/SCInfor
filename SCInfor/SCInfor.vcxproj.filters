@@ -387,15 +387,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAmmoData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentBatteryData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentCommunicationData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEnergyData.cpp">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClCompile>
@@ -409,12 +400,6 @@
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClCompile>
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentGunData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentVentilatorData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CThermalInsulationData.cpp">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClCompile>
     <ClCompile Include="source\Equipment\Industrial\PowerModule\CPowerModule.cpp">
@@ -996,6 +981,21 @@
     <ClCompile Include="source\Equipment\EquipmentData\EquipmentAirconditioningData.cpp">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\ThermalInsulationData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentVentilatorData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentAmmoData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentBatteryData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentCommunicationData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1018,15 +1018,6 @@
     <ClInclude Include="source\Equipment\Engine\FuelTank\EFuelTankState.h">
       <Filter>source\Equipment\Engine\FuelTank</Filter>
     </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentAmmoData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentBatteryData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentCommunicationData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
     <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEnergyData.h">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClInclude>
@@ -1040,12 +1031,6 @@
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\EquipmentData\CEquipmentGunData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentVentilatorData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CThermalInsulationData.h">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Industrial\PowerModule\CPowerModule.h">
@@ -1748,6 +1733,21 @@
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\EquipmentData\EquipmentAirconditioningData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\ThermalInsulationData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentVentilatorData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentAmmoData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentBatteryData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentCommunicationData.h">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClInclude>
   </ItemGroup>

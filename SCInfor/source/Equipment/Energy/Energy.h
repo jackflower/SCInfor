@@ -10,7 +10,7 @@
 #include "EEnergyState.h"
 #include "Battery/Battery.h"
 #include "../EquipmentData/CEquipmentEnergyTankData.h"
-#include "../EquipmentData/CEquipmentBatteryData.h"
+#include "../EquipmentData/EquipmentBatteryData.h"
 #include "../../Logic/Actor/CActor.h"
 #include "../../RTTI/RTTI.h"
 
@@ -279,7 +279,7 @@ namespace equipment
 		float m_energy_rotor_speed; //wyliczana prędkość wirowania wskaźnika energii w akumulatorze
 		float m_energy_rotation_speed; //prędkość wirowania wskaźnika energii w akumulatorze
 		EEnergyState m_energy_state; //wyliczenie stanów dla obiektu Energy
-		CEquipmentBatteryData m_battery_data; //opakowanie funkcjonalności baterii
+		EquipmentBatteryData m_battery_data; //opakowanie funkcjonalności baterii
 		float m_critical_duration; //czas trwania stanu krytycznego
 		float m_critical_timer; //lokalny timer stanu krytycznego
 		float m_damage_duration; //czas trwania stanu uszkodzenia

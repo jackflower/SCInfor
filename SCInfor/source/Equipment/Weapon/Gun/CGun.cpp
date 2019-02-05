@@ -153,13 +153,13 @@ namespace equipment
 		}
 
 		//Metoda zwraca referencjê na opakowanie funkcjonalnoœci amunicji
-		CEquipmentAmmoData & CGun::getEquipmentAmmoData()
+		EquipmentAmmoData & CGun::getEquipmentAmmoData()
 		{
 			return m_ammo_data;
 		}
 
 		//Metoda ustawia referencjê na opakowanie funkcjonalnoœci amunicji
-		void CGun::setEquipmentAmmoData(CEquipmentAmmoData & ammo_data)
+		void CGun::setEquipmentAmmoData(EquipmentAmmoData & ammo_data)
 		{
 			m_ammo_data = ammo_data;
 		}

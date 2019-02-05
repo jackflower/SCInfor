@@ -1,7 +1,7 @@
-//  ___________________________________________________
-// | CThermalInsulationData.h - class definition       |
-// | Jack Flower - May 2016                            |
-// |___________________________________________________|
+//  __________________________________________________
+// | ThermalInsulationData.h - class definition       |
+// | Jack Flower - May 2016                           |
+// |__________________________________________________|
 //
 
 #ifndef H_EQUIPMENT_THERMALINSULATION_DATA_JACK
@@ -24,7 +24,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - termoizolator
 	///
-	class CThermalInsulationData : public EquipmentData
+	class ThermalInsulationData : public EquipmentData
 	{
 		RTTI_DECL;
 
@@ -33,24 +33,24 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CThermalInsulationData();
+		ThermalInsulationData();
 
 		///
 		///Konstruktor kopiuj¹cy
 		///
-		///@param & CThermalInsulationDataCopy - sta³a referencja na obiekt klasy CThermalInsulationData
+		///@param ThermalInsulationDataCopy - sta³a referencja na obiekt klasy ThermalInsulationData
 		///
-		CThermalInsulationData(const CThermalInsulationData & CThermalInsulationDataCopy);
+		ThermalInsulationData(const ThermalInsulationData & ThermalInsulationDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CThermalInsulationData();
+		virtual ~ThermalInsulationData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca wskaŸnik na obiekt klasy CThermalInsulation

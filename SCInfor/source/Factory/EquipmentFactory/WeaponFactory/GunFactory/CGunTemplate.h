@@ -7,7 +7,7 @@
 #ifndef H_GUN_TEMPLATE_JACK
 #define H_GUN_TEMPLATE_JACK
 
-#include "../../../../Equipment/EquipmentData/CEquipmentAmmoData.h"
+#include "../../../../Equipment/EquipmentData/EquipmentAmmoData.h"
 #include "../../../../Equipment/Weapon/Gun/CGun.h"
 #include "../AmmoFactory/CAmmoTemplate.h"
 
@@ -74,7 +74,7 @@ namespace factory
 
 	private:
 
-		CEquipmentAmmoData	m_templ_ammo_data;				//opakowanie funkcjonalnoúci amunicji
+		EquipmentAmmoData	m_templ_ammo_data;				//opakowanie funkcjonalnoúci amunicji
 		CAmmoTemplate*		p_templ_ammo;					//wskaünik na obiekt klasy CAmmoTemplate - fabryka amunicji
 		float				m_templ_time_ammo_load_delay;	//czas potrzebny do prze≥adowania amunicji
 		float				m_templ_time_shot;				//czas trwania strza≥u

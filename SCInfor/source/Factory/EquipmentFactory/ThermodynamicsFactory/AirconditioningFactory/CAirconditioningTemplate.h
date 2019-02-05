@@ -10,7 +10,7 @@
 #include "../../../CActorTemplate.h"
 #include "../ThermalInsulationFactory/CThermalInsulationTemplate.h"
 #include "../../../../Equipment/Thermodynamics/Airconditioning/CAirconditioning.h"
-#include "../../../../Equipment/EquipmentData/CThermalInsulationData.h"
+#include "../../../../Equipment/EquipmentData/ThermalInsulationData.h"
 
 using namespace equipmentdata;
 
@@ -82,7 +82,7 @@ namespace factory
 		float						m_templ_temperature_increment;		//przyrost temperatury - cykl - dynammika
 		float						m_templ_energy_consumption;			//zuøycie energii przez klimatyzator
 		float						m_templ_fuel_consumption;			//zuøycie paliwa przez klimatyzator
-		CThermalInsulationData		m_templ_thermalinsulation_data;		//opakowanie funkcjonalnoúci termoizolatora
+		ThermalInsulationData		m_templ_thermalinsulation_data;		//opakowanie funkcjonalnoúci termoizolatora
 		CThermalInsulationTemplate* p_templ_thermal_insulation;			//wskaünik na obiekt CThermalInsulationTemplate (wzorzec termoizolaora)
 	};
 }//namespace factory

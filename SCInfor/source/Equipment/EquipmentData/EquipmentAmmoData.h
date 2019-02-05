@@ -1,7 +1,7 @@
-//  _______________________________________________
-// | CEquipmentAmmoData.h - class definition       |
-// | Jack Flower - May 2016                        |
-// |_______________________________________________|
+//  ______________________________________________
+// | EquipmentAmmoData.h - class definition       |
+// | Jack Flower - May 2016                       |
+// |______________________________________________|
 //
 
 #ifndef H_EQUIPMENT_AMMO_DATA_JACK
@@ -27,7 +27,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - amunicja
 	///
-	class CEquipmentAmmoData : public EquipmentData
+	class EquipmentAmmoData : public EquipmentData
 	{
 		RTTI_DECL;
 
@@ -36,24 +36,24 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CEquipmentAmmoData();
+		EquipmentAmmoData();
 
 		///
 		///Konstruktor kopiuj¹cy
 		///
-		///@param & CEquipmentAmmoDataCopy - sta³a referencja na obiekt klasy CEquipmentAmmoData
+		///@param EquipmentAmmoDataCopy - sta³a referencja na obiekt klasy EquipmentAmmoData
 		///
-		CEquipmentAmmoData(const CEquipmentAmmoData & CEquipmentAmmoDataCopy);
+		EquipmentAmmoData(const EquipmentAmmoData & EquipmentAmmoDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEquipmentAmmoData();
+		virtual ~EquipmentAmmoData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca wskaŸnik na obiekt klasy CAmmo
@@ -65,11 +65,11 @@ namespace equipmentdata
 		///
 		///@param *ammo - wskaŸnik na obiekt klasy CAmmo
 		///
-		void setAmmo(CAmmo* ammo);
+		void setAmmo(CAmmo * ammo);
 
 	private:
 
-		CAmmo*	p_ammo;	//wskaŸnik na klasê CAmmo - amunicja
+		CAmmo *p_ammo;	//wskaŸnik na klasê CAmmo - amunicja
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_AMMO_DATA_JACK

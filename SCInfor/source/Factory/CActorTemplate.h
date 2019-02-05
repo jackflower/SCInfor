@@ -108,7 +108,7 @@ namespace factory
 		CEquipmentEngineData			m_templ_engine_data;			//opakowanie funkcjonalnoœci silnika
 		CEquipmentEnergyData			m_templ_energy_data;			//opakowanie funkcjonalnoœci energii
 		EquipmentAirconditioningData	m_templ_airconditioning_data;	//opakowanie funkcjonalnoœci klimatyzacji
-		CEquipmentVentilatorData		m_templ_ventilator_data;		//opakowanie funkcjonalnoœci wentylatora
+		EquipmentVentilatorData		m_templ_ventilator_data;		//opakowanie funkcjonalnoœci wentylatora
 		CEquipmentGunData				m_templ_gun_data;				//opakowanie funkcjonalnoœci dzia³o
 		CEngineTemplate*				p_templ_engine;					//dane wzorca obiektu Engine
 		CEnergyTemplate*				p_templ_energy;					//dane wzorca obiektu Energy

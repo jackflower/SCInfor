@@ -10,7 +10,7 @@
 #include "../../Actor/CActor.h"
 #include "../../../Equipment/Switch.h"
 #include "../../Communication/CCommunication.h"
-#include "../../../Equipment/EquipmentData/CEquipmentCommunicationData.h"
+#include "../../../Equipment/EquipmentData/EquipmentCommunicationData.h"
 
 using namespace logic::communication;
 
@@ -144,7 +144,7 @@ namespace logic
 			float						m_energy_capacitor;		//iloœæ energii do zmagazynowania - pojemnoœæ (kondensator)
 			unsigned					m_amount_power_modules;	//iloœæ modu³ów zasilajacych (turbin, przetworników, etc...)
 			Switch						m_unit_controller;		//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
-			CEquipmentCommunicationData m_communication_data;	//opakowanie funkcjonalnoœci modu³u komunikacyjnego
+			EquipmentCommunicationData m_communication_data;	//opakowanie funkcjonalnoœci modu³u komunikacyjnego
 
 		private:
 

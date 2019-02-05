@@ -1,7 +1,7 @@
-//  __________________________________________________
-// | CEquipmentBatteryData.h - class definition       |
-// | Jack Flower - May 2016                           |
-// |__________________________________________________|
+//  _________________________________________________
+// | EquipmentBatteryData.h - class definition       |
+// | Jack Flower - May 2016                          |
+// |_________________________________________________|
 //
 
 #ifndef H_EQUIPMENT_BATTERY_DATA_JACK
@@ -28,7 +28,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - wentylator
 	///
-	class CEquipmentBatteryData : public EquipmentData
+	class EquipmentBatteryData : public EquipmentData
 	{
 		RTTI_DECL;
 
@@ -37,29 +37,29 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CEquipmentBatteryData();
+		EquipmentBatteryData();
 
 		///
 		///Konstruktor kopiuj¹cy
 		///
-		///@param & CEquipmentBatteryDataCopy - sta³a referencja na obiekt klasy CEquipmentBatteryData
+		///@param EquipmentBatteryDataCopy - sta³a referencja na obiekt klasy EquipmentBatteryData
 		///
-		CEquipmentBatteryData(const CEquipmentBatteryData & CEquipmentBatteryDataCopy);
+		EquipmentBatteryData(const EquipmentBatteryData & EquipmentBatteryDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEquipmentBatteryData();
+		virtual ~EquipmentBatteryData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca wskaŸnik na obiekt klasy Battery
 		///
-		Battery* getBattery();
+		Battery *getBattery();
 
 		///
 		///Metoda ustawia wskaŸnik na obiekt klasy Battery
@@ -70,7 +70,7 @@ namespace equipmentdata
 
 	private:
 
-		Battery*	p_battery;	//wskaŸnik na klasê CVentilator - wentylator
+		Battery *p_battery;	//wskaŸnik na klasê CVentilator - wentylator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_BATTERY_DATA_JACK

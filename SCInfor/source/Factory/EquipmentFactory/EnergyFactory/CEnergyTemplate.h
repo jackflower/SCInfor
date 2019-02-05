@@ -12,7 +12,7 @@
 #include "../../../Equipment/Energy/Energy.h"
 #include "../../../Equipment/EquipmentData/CEquipmentEnergyTankData.h"
 #include "../../../Equipment/Energy/Battery/Battery.h"
-#include "../../../Equipment/EquipmentData/CEquipmentBatteryData.h"
+#include "../../../Equipment/EquipmentData/EquipmentBatteryData.h"
 
 using namespace equipment::battery;
 
@@ -194,7 +194,7 @@ namespace factory
 		std::string					m_templ_energy_name;				//nazwa akumulatora energii (niklowy, kadmowy, lityczny, atomowy...etc)
 		CEquipmentEnergyTankData	m_templ_energytank_data;			//opakowanie funkcjonalnoœci zbiornika paliwa
 		CEnergyTankTemplate*		p_templ_energy_tank;				//wskaŸnik na dane wzorca akumulatora energii
-		CEquipmentBatteryData		m_templ_battery_data;				//opakowanie funkcjonalnoœci baterii
+		EquipmentBatteryData		m_templ_battery_data;				//opakowanie funkcjonalnoœci baterii
 		CBatteryTemplate*			p_templ_battery;					//wskaŸnik na dane wzorca baterii
 		float						m_templ_percentage_reserve_energy;	//procentowa wartoœæ energii, przy której nastêpuje komunikat informacyjny o rezerwie, wyczerpaniu energii
 		float						m_templ_energy_time_delayed;		//czas opóŸnienia komunikatu o wyczerpaniu energii

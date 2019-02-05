@@ -9,7 +9,7 @@
 
 #include "EAirconditioningState.h"
 #include "../ThermalInsulation/CThermalInsulation.h"
-#include "../../EquipmentData/CThermalInsulationData.h"
+#include "../../EquipmentData/ThermalInsulationData.h"
 #include "../../Switch.h"
 #include "../../../Logic/Actor/CActor.h"
 
@@ -217,7 +217,7 @@ namespace equipment
 		float					m_temperature_increment;	//przyrost temperatury - cykl - dynammika
 		float					m_energy_consumption;		//zu¿ycie energii przez klimatyzator
 		float					m_fuel_consumption;			//zu¿ycie paliwa przez klimatyzator
-		CThermalInsulationData	m_thermal_insulation_data;	//opakowanie funkcjonalnoœci termoizolatora
+		ThermalInsulationData	m_thermal_insulation_data;	//opakowanie funkcjonalnoœci termoizolatora
 		EAirconditioningState	m_airconditioning_state;	//wyliczenie stanów
 		Switch					m_unit_controller;			//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 

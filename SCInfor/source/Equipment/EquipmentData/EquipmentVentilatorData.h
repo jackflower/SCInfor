@@ -1,7 +1,7 @@
-//  _____________________________________________________
-// | CEquipmentVentilatorData.h - class definition       |
-// | Jack Flower - May 2016                              |
-// |_____________________________________________________|
+//  ____________________________________________________
+// | EquipmentVentilatorData.h - class definition       |
+// | Jack Flower - May 2016                             |
+// |____________________________________________________|
 //
 
 #ifndef H_EQUIPMENT_VENTILATOR_DATA_JACK
@@ -24,7 +24,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - wentylator
 	///
-	class CEquipmentVentilatorData : public EquipmentData
+	class EquipmentVentilatorData : public EquipmentData
 	{
 		RTTI_DECL;
 
@@ -33,24 +33,24 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CEquipmentVentilatorData();
+		EquipmentVentilatorData();
 
 		///
 		///Konstruktor kopiuj¹cy
 		///
-		///@param & CEquipmentVentilatorDataCopy - sta³a referencja na obiekt klasy CEquipmentVentilatorData
+		///@param EquipmentVentilatorDataCopy - sta³a referencja na obiekt klasy EquipmentVentilatorData
 		///
-		CEquipmentVentilatorData(const CEquipmentVentilatorData & CEquipmentVentilatorDataCopy);
+		EquipmentVentilatorData(const EquipmentVentilatorData & EquipmentVentilatorDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEquipmentVentilatorData();
+		virtual ~EquipmentVentilatorData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca wskaŸnik na obiekt klasy CVentilator
@@ -62,11 +62,11 @@ namespace equipmentdata
 		///
 		///@param *ventilator - wskaŸnik na obiekt klasy CVentilator
 		///
-		void setVentilator(CVentilator* ventilator);
+		void setVentilator(CVentilator * ventilator);
 
 	private:
 
-		CVentilator*	p_ventilator;	//wskaŸnik na klasê CVentilator - wentylator
+		CVentilator *p_ventilator;	//wskaŸnik na klasê CVentilator - wentylator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_VENTILATOR_DATA_JACK

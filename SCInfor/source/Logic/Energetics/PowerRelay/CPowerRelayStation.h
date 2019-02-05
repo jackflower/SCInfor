@@ -16,7 +16,7 @@
 #include "../../Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
 #include "../../Communication/CCommunication.h"
 #include "../../../Equipment/Energy/Battery/Battery.h"
-#include "../../../Equipment/EquipmentData/CEquipmentBatteryData.h"
+#include "../../../Equipment/EquipmentData/EquipmentBatteryData.h"
 
 
 using namespace equipment::battery;
@@ -239,7 +239,7 @@ namespace logic
 			std::pair<float, float>		m_rotation_speed_range;		//zakres prêdkoœci i kierunek obracania siê mudu³u
 			float						m_state_time;				//czas trwania stanu - wizualizacja aktywnoœci behawiorystyka
 			float						m_rotation_speed;			//prêdkoœæ i kierunek obracania siê mudu³u
-			CEquipmentBatteryData		m_battery_data;				//opakowanie funkcjonalnoœci baterii
+			EquipmentBatteryData		m_battery_data;				//opakowanie funkcjonalnoœci baterii
 			float						m_time_to_start;			//po tym czasie obiekt wchodzi do stanu obs³ugi elektrowni
 			float						m_duration_disconnect;		//czas trwania procesu disconnect
 
