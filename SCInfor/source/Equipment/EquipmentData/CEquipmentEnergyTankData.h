@@ -7,7 +7,7 @@
 #ifndef H_EQUIPMENT_ENERGYTANK_DATA_JACK
 #define H_EQUIPMENT_ENERGYTANK_DATA_JACK
 
-#include "CEquipmentData.h"
+#include "EquipmentData.h"
 #include "../Energy/EnergyTank/EnergyTank.h"
 
 namespace equipmentdata
@@ -15,7 +15,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - akumulator
 	///
-	class CEquipmentEnergyTankData : public CEquipmentData
+	class CEquipmentEnergyTankData : public EquipmentData
 	{
 		RTTI_DECL;
 

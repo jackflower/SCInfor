@@ -7,7 +7,7 @@
 #ifndef H_EQUIPMENT_THERMALINSULATION_DATA_JACK
 #define H_EQUIPMENT_THERMALINSULATION_DATA_JACK
 
-#include "CEquipmentData.h"
+#include "EquipmentData.h"
 
 ///
 ///Forward declaration
@@ -24,7 +24,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - termoizolator
 	///
-	class CThermalInsulationData : public CEquipmentData
+	class CThermalInsulationData : public EquipmentData
 	{
 		RTTI_DECL;
 

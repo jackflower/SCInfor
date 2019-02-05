@@ -12,7 +12,7 @@
 #include "../Physics/CActorTechnicalData.h"
 #include "../../Equipment/EquipmentData/CEquipmentEngineData.h"
 #include "../../Equipment/EquipmentData/CEquipmentEnergyData.h"
-#include "../../Equipment/EquipmentData/CEquipmentAirconditioningData.h"
+#include "../../Equipment/EquipmentData/EquipmentAirconditioningData.h"
 #include "../../Equipment/EquipmentData/CEquipmentVentilatorData.h"
 #include "../../Equipment/EquipmentData/CEquipmentGunData.h"
 
@@ -444,7 +444,7 @@ namespace logic
 		CActorTechnicalData				m_technical_data;		//opakowanie fizyki
 		CEquipmentEngineData			m_engine_data;			//opakowanie funkcjonalnoœci silnika
 		CEquipmentEnergyData			m_energy_data;			//opakowanie funkcjonalnoœci energii
-		CEquipmentAirconditioningData	m_airconditiong_data;	//opakowanie funkcjonalnoœci klimatyzatora
+		EquipmentAirconditioningData	m_airconditiong_data;	//opakowanie funkcjonalnoœci klimatyzatora
 		CEquipmentVentilatorData		m_ventilator_data;		//opakowanie funkcjonalnoœci wentylatora
 		CEquipmentGunData				m_gun_data;				//opakowanie funkcjonalnoœci dzia³a
 		CActorStateData					m_state_data;			//opakowanie wyliczenia stanów

@@ -1,7 +1,7 @@
-//  ___________________________________________
-// | CEquipmentData.h - class definition       |
-// | Jack Flower - May 2016                    |
-// |___________________________________________|
+//  __________________________________________
+// | EquipmentData.h - class definition       |
+// | Jack Flower - May 2016                   |
+// |__________________________________________|
 //
 
 
@@ -18,7 +18,7 @@ namespace equipmentdata
 	///
 	///Klasa bazowa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem
 	///
-	class CEquipmentData
+	class EquipmentData
 	{
 		RTTI_DECL;
 
@@ -27,24 +27,24 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CEquipmentData();
+		EquipmentData();
 
 		///
 		///Konstruktor kopiujacy
 		///
-		///@param & CEquipmentDataCopy - sta³a referencja na obiekt klasy CEquipmentData
+		///@param EquipmentDataCopy - sta³a referencja na obiekt klasy EquipmentData
 		///
-		CEquipmentData(const CEquipmentData & CEquipmentDataCopy);
+		EquipmentData(const EquipmentData & EquipmentDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEquipmentData();
+		virtual ~EquipmentData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca flagê, czy obiekt posiada wyposa¿enie
@@ -66,7 +66,7 @@ namespace equipmentdata
 		///
 		///Metoda ustawia referencjê na opakowanie danych dla transformacji
 		///
-		///@param & transformation - referencja na obiekt klasy CTransformation
+		///@param transformation - referencja na obiekt klasy CTransformation
 		///
 		void setTransformed(CTransformation & transformation);
 
@@ -102,8 +102,8 @@ namespace equipmentdata
 
 	protected:
 
-		bool			m_use_equipment;	//flaga, czy obiekt u¿ywa wyposa¿enia
-		CTransformation m_transformation;	//dane dla transformacji (pozycja, skala, obrót)
+		bool m_use_equipment; //flaga, czy obiekt u¿ywa wyposa¿enia
+		CTransformation m_transformation; //dane dla transformacji (pozycja, skala, obrót)
 
 	};
 }//namespace equipmentdata

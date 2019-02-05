@@ -431,7 +431,7 @@ namespace resource
 		//		- CMonsterTemplate						->tworzy->	CMonster
 		//		- CFuelTankTemplate						->tworzy->	FuelTank
 		//		- CEnergyTankTemplate					->tworzy->	EnergyTank
-		//		- CFuelBarTemplate						->tworzy->	CFuelBar
+		//		- CFuelBarTemplate						->tworzy->	FuelBar
 		//		- CEnergyTemplate						->tworzy->	Energy
 		//		- CBatteryTemplate						->tworzy->	Battery
 		//		- CSolarBatteryTemplate					->tworzy->	SolarBattery

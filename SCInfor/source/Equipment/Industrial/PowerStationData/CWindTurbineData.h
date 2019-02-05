@@ -7,7 +7,7 @@
 #ifndef H_WIND_TURBINE_DATA_JACK
 #define H_WIND_TURBINE_DATA_JACK
 
-#include "../../EquipmentData/CEquipmentData.h"
+#include "../../EquipmentData/EquipmentData.h"
 
 ///
 ///Forward declaration
@@ -25,7 +25,7 @@ namespace equipmentpowerstationdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - turbina
 	///
-	class CWindTurbineData : public CEquipmentData
+	class CWindTurbineData : public EquipmentData
 	{
 		RTTI_DECL;
 

@@ -1,13 +1,13 @@
-//  __________________________________________________________
-// | CEquipmentAirconditioningData.h - class definition       |
-// | Jack Flower - May 2016                                   |
-// |__________________________________________________________|
+//  _________________________________________________________
+// | EquipmentAirconditioningData.h - class definition       |
+// | Jack Flower - May 2016                                  |
+// |_________________________________________________________|
 //
 
 #ifndef H_EQUIPMENT_AIRCONDITIONING_DATA_JACK
 #define H_EQUIPMENT_AIRCONDITIONING_DATA_JACK
 
-#include "CEquipmentData.h"
+#include "EquipmentData.h"
 
 ///
 ///Forward declaration
@@ -24,7 +24,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - klimatyzator
 	///
-	class CEquipmentAirconditioningData : public CEquipmentData
+	class EquipmentAirconditioningData : public EquipmentData
 	{
 		RTTI_DECL;
 
@@ -33,24 +33,24 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CEquipmentAirconditioningData();
+		EquipmentAirconditioningData();
 
 		///
 		///Konstruktor kopiuj¹cy
 		///
-		///@param & CEquipmentAirconditioningDataCopy - sta³a referencja na obiekt klasy CEquipmentAirconditioningData
+		///@param EquipmentAirconditioningDataCopy - sta³a referencja na obiekt klasy EquipmentAirconditioningData
 		///
-		CEquipmentAirconditioningData(const CEquipmentAirconditioningData & CEquipmentAirconditioningDataCopy);
+		EquipmentAirconditioningData(const EquipmentAirconditioningData & EquipmentAirconditioningDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEquipmentAirconditioningData();
+		virtual ~EquipmentAirconditioningData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 		
 		///
 		///Metoda zwraca wskaŸnik na obiekt klasy CAirconditioning
@@ -66,7 +66,7 @@ namespace equipmentdata
 
 	private:
 
-		CAirconditioning*	p_airconditiong;	//wskaŸnik na klasê CAirconditioning - klimatyzator
+		CAirconditioning*	p_airconditiong;	//wskaŸnik na klasê Airconditioning - klimatyzator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_AIRCONDITIONING_DATA_JACK

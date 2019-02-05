@@ -7,7 +7,7 @@
 #ifndef H_SLOTS_RATE_DATA_JACK
 #define H_SLOTS_RATE_DATA_JACK
 
-#include "../../../Equipment/EquipmentData/CEquipmentData.h"
+#include "../../../Equipment/EquipmentData/EquipmentData.h"
 
 ///
 ///Forward declaration
@@ -28,7 +28,7 @@ namespace relaystationdata
 	///
 	///Klasa reprezentuje funkcjonalnoúÊ wskaünika przekaünika - sloty
 	///
-	class CSlotsRateData : public CEquipmentData
+	class CSlotsRateData : public EquipmentData
 	{
 		RTTI_DECL;
 

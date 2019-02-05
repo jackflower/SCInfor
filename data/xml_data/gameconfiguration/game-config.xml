@@ -19,7 +19,7 @@
 		vsync="false"
 		sound_volume="100"
 		music_volume="100"
-		windows_name="SCI Game 2016"
+		windows_name="SCI Game 2019"
 		time_step="0.025"
 	/>
 </root>

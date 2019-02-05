@@ -10,12 +10,12 @@
 
 namespace relaystationdata
 {
-	RTTI_IMPL(CSlotsRateData, CEquipmentData);
+	RTTI_IMPL(CSlotsRateData, EquipmentData);
 
 	//Konstruktor
 	CSlotsRateData::CSlotsRateData()
 	:
-		CEquipmentData	(),//konstruktor klasy bazowej
+		EquipmentData	(),//konstruktor klasy bazowej
 		p_slotsrate		(NULL)
 	{
 	}
@@ -23,7 +23,7 @@ namespace relaystationdata
 	//Konstruktor kopiuj¹cy
 	CSlotsRateData::CSlotsRateData(const CSlotsRateData & CSlotsRateDataCopy)
 	:
-		CEquipmentData	(CSlotsRateDataCopy),//konstruktor kopiuj¹cy klasy bazowej
+		EquipmentData	(CSlotsRateDataCopy),//konstruktor kopiuj¹cy klasy bazowej
 		p_slotsrate		(CSlotsRateDataCopy.p_slotsrate)
 	{
 	}
@@ -31,7 +31,7 @@ namespace relaystationdata
 	//Destruktor wirtualny
 	CSlotsRateData::~CSlotsRateData()
 	{
-		//CEquipmentData	not edit
+		//EquipmentData	not edit
 		if (p_slotsrate)
 			gPhysicalManager.DestroyPhysical(p_slotsrate);
 		p_slotsrate	= NULL;

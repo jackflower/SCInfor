@@ -74,23 +74,23 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CFuelBar
-	CFuelBar* CFuelBarTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy FuelBar
+	FuelBar* CFuelBarTemplate::Create(std::wstring id)
 	{
-		CFuelBar* fuelbar = gPhysicalManager.CreateFuelBar(id);
+		FuelBar* fuelbar = gPhysicalManager.CreateFuelBar(id);
 		Fill(fuelbar);
 		return fuelbar;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CFuelBarTemplate::Fill(CFuelBar *p_fuelbar)
+	void CFuelBarTemplate::Fill(FuelBar *p_fuelbar)
 	{
 		if(p_fuelbar)
 		{
-			p_fuelbar->SetFuelBarName(m_templ_fuelbar_name);
-			p_fuelbar->SetThickness(m_templ_thickness);
-			p_fuelbar->SetBarSize(m_templ_size);
-			p_fuelbar->SetBarPositionOffset(m_templ_position_offset);
+			p_fuelbar->setFuelBarName(m_templ_fuelbar_name);
+			p_fuelbar->setThickness(m_templ_thickness);
+			p_fuelbar->setBarSize(m_templ_size);
+			p_fuelbar->setBarPositionOffset(m_templ_position_offset);
 			p_fuelbar->SetColor(m_templ_color);
 		}
 	}

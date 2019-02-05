@@ -387,12 +387,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\Engine\FuelBar\CFuelBar.cpp">
-      <Filter>source\Equipment\Engine\FuelBar</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentAmmoData.cpp">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClCompile>
@@ -400,9 +394,6 @@
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClCompile>
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentCommunicationData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentData.cpp">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClCompile>
     <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEnergyData.cpp">
@@ -996,6 +987,15 @@
     <ClCompile Include="source\Equipment\Engine\FuelTank\FuelTank.cpp">
       <Filter>source\Equipment\Engine\FuelTank</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\Engine\FuelBar\FuelBar.cpp">
+      <Filter>source\Equipment\Engine\FuelBar</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentAirconditioningData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1015,14 +1015,8 @@
     <ClInclude Include="source\Equipment\Engine\EEngineState.h">
       <Filter>source\Equipment\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="source\Equipment\Engine\FuelBar\CFuelBar.h">
-      <Filter>source\Equipment\Engine\FuelBar</Filter>
-    </ClInclude>
     <ClInclude Include="source\Equipment\Engine\FuelTank\EFuelTankState.h">
       <Filter>source\Equipment\Engine\FuelTank</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentAirconditioningData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\EquipmentData\CEquipmentAmmoData.h">
       <Filter>source\Equipment\EquipmentData</Filter>
@@ -1031,9 +1025,6 @@
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\EquipmentData\CEquipmentCommunicationData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentData.h">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEnergyData.h">
@@ -1749,6 +1740,15 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Engine\FuelTank\FuelTank.h">
       <Filter>source\Equipment\Engine\FuelTank</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Engine\FuelBar\FuelBar.h">
+      <Filter>source\Equipment\Engine\FuelBar</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentAirconditioningData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

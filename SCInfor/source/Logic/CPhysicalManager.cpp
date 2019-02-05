@@ -18,7 +18,7 @@
 #include "Unit/CombatUnit/Robot/CRobot.h"
 #include "../Equipment/Engine/Engine.h"
 #include "../Equipment/Engine/FuelTank/FuelTank.h"
-#include "../Equipment/Engine/FuelBar/CFuelBar.h"
+#include "../Equipment/Engine/FuelBar/FuelBar.h"
 #include "../Equipment/Energy/Energy.h"
 #include "../Equipment/Energy/EnergyTank/EnergyTank.h"
 #include "../Equipment/Energy/Battery/Battery.h"
@@ -191,11 +191,11 @@ namespace logic
 		return Create<CFlora>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CFuelBar i zwraca wskaünik na ten obiekt
-	CFuelBar *CPhysicalManager::CreateFuelBar(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy FuelBar i zwraca wskaünik na ten obiekt
+	FuelBar *CPhysicalManager::CreateFuelBar(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CFuelBar created\n");
-		return Create<CFuelBar>(uniqueId);
+		fprintf(stderr, "FuelBar created\n");
+		return Create<FuelBar>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CPhysicalInfo i zwraca wskaünik na ten obiekt

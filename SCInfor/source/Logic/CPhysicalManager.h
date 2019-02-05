@@ -60,7 +60,7 @@ namespace equipment
 	class FuelTank;
 	class Energy;
 	class EnergyTank;
-	class CFuelBar;
+	class FuelBar;
 	class CAirconditioning;
 	class CThermalInsulation;
 	class CVentilator;
@@ -212,11 +212,11 @@ namespace logic
 		CFlora *CreateFlora(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CFuelBar i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy FuelBar i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CFuelBar *CreateFuelBar(const std::wstring &uniqueId = L"");
+		FuelBar *CreateFuelBar(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CPhysicalInfo i zwraca wskaünik na ten obiekt

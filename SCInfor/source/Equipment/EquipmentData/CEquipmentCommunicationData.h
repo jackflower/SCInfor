@@ -7,7 +7,7 @@
 #ifndef H_EQUIPMENT_COMMUNICATION_DATA_JACK
 #define H_EQUIPMENT_COMMUNICATION_DATA_JACK
 
-#include "CEquipmentData.h"
+#include "EquipmentData.h"
 
 ///
 ///Forward declaration
@@ -27,7 +27,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - modu³ komunikacyjny
 	///
-	class CEquipmentCommunicationData : public CEquipmentData
+	class CEquipmentCommunicationData : public EquipmentData
 	{
 		RTTI_DECL;
 

@@ -7,7 +7,7 @@
 #ifndef H_EQUIPMENT_FUELTANK_DATA_JACK
 #define H_EQUIPMENT_FUELTANK_DATA_JACK
 
-#include "CEquipmentData.h"
+#include "EquipmentData.h"
 #include "../Engine/FuelTank/FuelTank.h"
 
 namespace equipmentdata
@@ -15,7 +15,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - zbiornik paliwa
 	///
-	class CEquipmentFuelTankData : public CEquipmentData
+	class CEquipmentFuelTankData : public EquipmentData
 	{
 		RTTI_DECL;
 	

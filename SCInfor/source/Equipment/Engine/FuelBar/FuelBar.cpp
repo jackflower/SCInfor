@@ -1,125 +1,123 @@
-﻿//  _____________________________________
-// | CFuelBar.cpp - class implementation |
-// | Jack Flower March 2014              |
-// |_____________________________________|
+﻿//  ____________________________________
+// | FuelBar.cpp - class implementation |
+// | Jack Flower March 2014             |
+// |____________________________________|
 //
 
-#include "CFuelBar.h"
+#include "FuelBar.h"
 
 namespace equipment
 {
 
-	RTTI_IMPL(CFuelBar, CPhysical);
+	RTTI_IMPL(FuelBar, CPhysical);
 
 
 	//Konstruktor
-	CFuelBar::CFuelBar(const std::wstring& uniqueId)
+	FuelBar::FuelBar(const std::wstring & uniqueId)
 	:
-		CPhysical			(uniqueId),//konstruktor klasy bazowej
-		m_fuelbar_name		(),
-		m_thickness			(0.0f),
-		m_size				(0.0f, 0.0f),
-		m_position_offset	(0.0f, 0.0f)
+		CPhysical(uniqueId),//konstruktor klasy bazowej
+		m_fuelbar_name(),
+		m_thickness(0.0f),
+		m_size(0.0f, 0.0f),
+		m_position_offset(0.0f, 0.0f)
 	{
 	}
 
 	//Konstruktor kopiujący
-	CFuelBar::CFuelBar(const CFuelBar& CFuelBarCopy)
+	FuelBar::FuelBar(const FuelBar & FuelBarCopy)
 	:
-		CPhysical			(CFuelBarCopy),//konstruktor kopiujący klasy bazowej
-		m_fuelbar_name		(CFuelBarCopy.m_fuelbar_name),
-		m_thickness			(CFuelBarCopy.m_thickness),
-		m_size				(CFuelBarCopy.m_size),
-		m_position_offset	(CFuelBarCopy.m_position_offset)
+		CPhysical(FuelBarCopy),//konstruktor kopiujący klasy bazowej
+		m_fuelbar_name(FuelBarCopy.m_fuelbar_name),
+		m_thickness(FuelBarCopy.m_thickness),
+		m_size(FuelBarCopy.m_size),
+		m_position_offset(FuelBarCopy.m_position_offset)
 	{
 	}
 
 	//Destruktor
-	CFuelBar::~CFuelBar(void)
+	FuelBar::~FuelBar(void)
 	{
-		//CPhysical			not edit
-		m_fuelbar_name		= "";
-		m_thickness			= 0.0f;
-		m_size.x			= 0.0f;
-		m_size.y			= 0.0f;
+		//CPhysical
+		m_fuelbar_name = "";
+		m_thickness = 0.0f;
+		m_size.x = 0.0f;
+		m_size.y = 0.0f;
 		m_position_offset.x	= 0.0f;
 		m_position_offset.y	= 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CFuelBar::GetType() const
+	const std::string FuelBar::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
 	//Metoda zwraca nazwę obiektu
-	const std::string & CFuelBar::GetFuelBarName() const
+	const std::string & FuelBar::getFuelBarName() const
 	{
 		return m_fuelbar_name;
 	}
 
 	//Metoda ustawia nazwę obiektu
-	void CFuelBar::SetFuelBarName(const std::string & fuelbar_name)
+	void FuelBar::setFuelBarName(const std::string & fuelbar_name)
 	{
 		m_fuelbar_name = fuelbar_name;
 	}
 
 	//Metoda zwraca grubość paska
-	const float CFuelBar::GetThickness() const
+	const float FuelBar::getThickness() const
 	{
 		return m_thickness;
 	}
 
 	//Metoda ustawia grubość paska
-	const void CFuelBar::SetThickness(float thickness)
+	const void FuelBar::setThickness(float thickness)
 	{
 		m_thickness = thickness;
 	}
 
 	//Metoda zwraca rozmiar obiektu
-	const sf::Vector2f & CFuelBar::GetBarSize() const
+	const sf::Vector2f & FuelBar::getBarSize() const
 	{
 		return m_size;
 	}
 
 	//Metoda ustawia rozmiar obiektu
-	void CFuelBar::SetBarSize(const sf::Vector2f& size)
+	void FuelBar::setBarSize(const sf::Vector2f & size)
 	{
 		m_size = size;
 	}
 
 	//Metoda ustawia rozmiar obiektu
-	void CFuelBar::SetBarSize(float size_x, float size_y)
+	void FuelBar::setBarSize(float size_x, float size_y)
 	{
 		m_size.x = size_x;
 		m_size.y = size_y;
 	}
 
 	//Metoda zwraca wektor kalibracji pozycji obiektu
-	const sf::Vector2f & CFuelBar::GetBarPositionOffset() const
+	const sf::Vector2f & FuelBar::getBarPositionOffset() const
 	{
 		return m_position_offset;
 	}
 
 	//Metoda ustawia wektor kalibracji pozycji obiektu
-	void CFuelBar::SetBarPositionOffset(const sf::Vector2f& position_offset)
+	void FuelBar::setBarPositionOffset(const sf::Vector2f& position_offset)
 	{
 		m_position_offset = position_offset;
 	}
 
 	//Metoda ustawia wektor kalibracji pozycji obiektu
-	void CFuelBar::SetBarPositionOffset(float position_offset_x, float position_offset_y)
+	void FuelBar::setBarPositionOffset(float position_offset_x, float position_offset_y)
 	{
 		m_position_offset.x = position_offset_x;
 		m_position_offset.y = position_offset_y;
 	}
 
 	//Wirtualna metoda aktualizuje logikę obiektu
-	void CFuelBar::update(float dt)
+	void FuelBar::update(float dt)
 	{
 		//to do...
-		//this->ok..ok..ok...
-		//this->
 	}
 
 	//Wirtualna metoda aktualizuje logikę obiektu

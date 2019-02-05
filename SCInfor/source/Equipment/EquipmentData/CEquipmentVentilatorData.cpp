@@ -10,12 +10,12 @@
 
 namespace equipmentdata
 {
-	RTTI_IMPL(CEquipmentVentilatorData, CEquipmentData);
+	RTTI_IMPL(CEquipmentVentilatorData, EquipmentData);
 
 	//Konstruktor
 	CEquipmentVentilatorData::CEquipmentVentilatorData()
 	:
-		CEquipmentData	(),//konstruktor klasy bazowej
+		EquipmentData	(),//konstruktor klasy bazowej
 		p_ventilator	(NULL)
 	{
 	}
@@ -23,7 +23,7 @@ namespace equipmentdata
 	//Konstruktor kopiuj¹cy
 	CEquipmentVentilatorData::CEquipmentVentilatorData(const CEquipmentVentilatorData & CEquipmentVentilatorDataCopy)
 	:
-		CEquipmentData	(CEquipmentVentilatorDataCopy),//konstruktor kopiuj¹cy klasy bazowej
+		EquipmentData	(CEquipmentVentilatorDataCopy),//konstruktor kopiuj¹cy klasy bazowej
 		p_ventilator	(CEquipmentVentilatorDataCopy.p_ventilator)
 	{
 	}
@@ -31,7 +31,7 @@ namespace equipmentdata
 	//Destruktor wirtualny
 	CEquipmentVentilatorData::~CEquipmentVentilatorData()
 	{
-		//CEquipmentData	not edit
+		//EquipmentData	not edit
 		if (p_ventilator)
 			gPhysicalManager.DestroyPhysical(p_ventilator);
 		p_ventilator = NULL;

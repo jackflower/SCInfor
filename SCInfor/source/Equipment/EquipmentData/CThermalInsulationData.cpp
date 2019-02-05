@@ -10,12 +10,12 @@
 
 namespace equipmentdata
 {
-	RTTI_IMPL(CThermalInsulationData, CEquipmentData);
+	RTTI_IMPL(CThermalInsulationData, EquipmentData);
 
 	//Konstruktor
 	CThermalInsulationData::CThermalInsulationData()
 	:
-		CEquipmentData		(),//konstruktor klasy bazowej
+		EquipmentData		(),//konstruktor klasy bazowej
 		p_thermalinsulation	(NULL)
 	{
 	}
@@ -23,7 +23,7 @@ namespace equipmentdata
 	//Konstruktor kopiuj¹cy
 	CThermalInsulationData::CThermalInsulationData(const CThermalInsulationData & CThermalInsulationDataCopy)
 	:
-		CEquipmentData		(CThermalInsulationDataCopy),//konstruktor kopiuj¹cy klasy bazowej
+		EquipmentData		(CThermalInsulationDataCopy),//konstruktor kopiuj¹cy klasy bazowej
 		p_thermalinsulation	(CThermalInsulationDataCopy.p_thermalinsulation)
 	{
 	}
@@ -31,7 +31,7 @@ namespace equipmentdata
 	//Destruktor wirtualny
 	CThermalInsulationData::~CThermalInsulationData()
 	{
-		//CEquipmentData	not edit
+		//EquipmentData	not edit
 		if (p_thermalinsulation)
 			gPhysicalManager.DestroyPhysical(p_thermalinsulation);
 		p_thermalinsulation = NULL;

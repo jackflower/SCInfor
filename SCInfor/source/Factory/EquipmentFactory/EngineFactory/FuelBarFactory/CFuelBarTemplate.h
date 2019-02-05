@@ -11,7 +11,7 @@
 #include "../../../../Factory/CActorTemplate.h"
 #include "../../../../XML/CXml.h"
 #include "../../../../RTTI/RTTI.h"
-#include "../../../../Equipment/Engine/FuelBar/CFuelBar.h"
+#include "../../../../Equipment/Engine/FuelBar/FuelBar.h"
 
 namespace factory
 {
@@ -59,18 +59,18 @@ namespace factory
 		bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CFuelBar
+		///Metoda tworzy obiekt klasy FuelBar
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CFuelBar* Create(std::wstring id = L"");
+		FuelBar* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_fuelbar - wskaünik na obiekt klasy CFuelBar
+		///@param *p_fuelbar - wskaünik na obiekt klasy FuelBar
 		///
-		virtual void Fill(CFuelBar *p_fuelbar);
+		virtual void Fill(FuelBar *p_fuelbar);
 
 	private:
 

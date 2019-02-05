@@ -10,12 +10,12 @@
 
 namespace equipmentdata
 {
-	RTTI_IMPL(CEquipmentGunData, CEquipmentData);
+	RTTI_IMPL(CEquipmentGunData, EquipmentData);
 
 	//Konstruktor
 	CEquipmentGunData::CEquipmentGunData()
 	:
-		CEquipmentData	(),//konstruktor klasy bazowej
+		EquipmentData	(),//konstruktor klasy bazowej
 		p_gun			(NULL)
 	{
 	}
@@ -23,7 +23,7 @@ namespace equipmentdata
 	//Konstruktor kopiuj¹cy
 	CEquipmentGunData::CEquipmentGunData(const CEquipmentGunData & CEquipmentGunDataCopy)
 	:
-		CEquipmentData	(CEquipmentGunDataCopy),//konstruktor kopiuj¹cy klasy bazowej
+		EquipmentData	(CEquipmentGunDataCopy),//konstruktor kopiuj¹cy klasy bazowej
 		p_gun			(CEquipmentGunDataCopy.p_gun)
 	{
 	}
@@ -31,7 +31,7 @@ namespace equipmentdata
 	//Destruktor wirtualny
 	CEquipmentGunData::~CEquipmentGunData()
 	{
-		//CEquipmentData	not edit
+		//EquipmentData	not edit
 		if (p_gun)
 			gPhysicalManager.DestroyPhysical(p_gun);
 		p_gun			= NULL;

@@ -7,7 +7,7 @@
 #ifndef H_EQUIPMENT_VENTILATOR_DATA_JACK
 #define H_EQUIPMENT_VENTILATOR_DATA_JACK
 
-#include "CEquipmentData.h"
+#include "EquipmentData.h"
 
 ///
 ///Forward declaration
@@ -24,7 +24,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoœæ obiektu bêd¹cego wyposa¿aniem - wentylator
 	///
-	class CEquipmentVentilatorData : public CEquipmentData
+	class CEquipmentVentilatorData : public EquipmentData
 	{
 		RTTI_DECL;
 

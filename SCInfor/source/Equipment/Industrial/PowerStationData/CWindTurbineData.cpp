@@ -10,12 +10,12 @@
 
 namespace equipmentpowerstationdata
 {
-	RTTI_IMPL(CWindTurbineData, CEquipmentData);
+	RTTI_IMPL(CWindTurbineData, EquipmentData);
 
 	//Konstruktor
 	CWindTurbineData::CWindTurbineData()
 	:
-		CEquipmentData	(),//konstruktor klasy bazowej
+		EquipmentData	(),//konstruktor klasy bazowej
 		p_turbine		(NULL)
 	{
 	}
@@ -23,7 +23,7 @@ namespace equipmentpowerstationdata
 	//Konstruktor kopiuj¹cy
 	CWindTurbineData::CWindTurbineData(const CWindTurbineData & CWindTurbineDataCopy)
 	:
-		CEquipmentData	(CWindTurbineDataCopy),//konstruktor kopiuj¹cy klasy bazowej
+		EquipmentData	(CWindTurbineDataCopy),//konstruktor kopiuj¹cy klasy bazowej
 		p_turbine		(CWindTurbineDataCopy.p_turbine)
 	{
 	}
@@ -31,7 +31,7 @@ namespace equipmentpowerstationdata
 	//Destruktor wirtualny
 	CWindTurbineData::~CWindTurbineData()
 	{
-		//CEquipmentData	not edit
+		//EquipmentData	not edit
 		if (p_turbine)
 			gPhysicalManager.DestroyPhysical(p_turbine);
 		p_turbine = NULL;

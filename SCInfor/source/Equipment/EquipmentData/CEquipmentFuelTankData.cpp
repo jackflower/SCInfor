@@ -10,12 +10,12 @@
 namespace equipmentdata
 {
 
-	RTTI_IMPL(CEquipmentFuelTankData, CEquipmentData);
+	RTTI_IMPL(CEquipmentFuelTankData, EquipmentData);
 
 	//Konstruktor
 	CEquipmentFuelTankData::CEquipmentFuelTankData()
 	:
-		CEquipmentData		(),//konstruktor klasy bazowej
+		EquipmentData		(),//konstruktor klasy bazowej
 		p_fueltank			(NULL)
 	{
 	}
@@ -23,7 +23,7 @@ namespace equipmentdata
 	//Konstruktor kopiujacy
 	CEquipmentFuelTankData::CEquipmentFuelTankData(const CEquipmentFuelTankData & CEquipmentFuelTankDataCopy)
 	:
-		CEquipmentData		(CEquipmentFuelTankDataCopy),//konstruktor kopiuj¹cy klasy bazowej
+		EquipmentData		(CEquipmentFuelTankDataCopy),//konstruktor kopiuj¹cy klasy bazowej
 		p_fueltank			(CEquipmentFuelTankDataCopy.p_fueltank)
 	{
 	}
@@ -31,7 +31,7 @@ namespace equipmentdata
 	//Destruktor wirtualny
 	CEquipmentFuelTankData::~CEquipmentFuelTankData()
 	{
-		//CEquipmentData	not edit
+		//EquipmentData	not edit
 		if (p_fueltank)
 			gPhysicalManager.DestroyPhysical(p_fueltank);
 		p_fueltank			= NULL;
