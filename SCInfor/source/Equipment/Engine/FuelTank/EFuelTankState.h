@@ -1,4 +1,4 @@
-//  ___________________________________________________
+﻿//  ___________________________________________________
 // | EFuelTankState.h - enumeration of states fueltank |
 // | Jack Flower - April 2014                          |
 // |___________________________________________________|
@@ -9,7 +9,7 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stan�w dla obiektu CFuelTank
+	///Wyliczenie stanów dla obiektu CFuelTank
 	///
 	enum EFuelTankState
 	{

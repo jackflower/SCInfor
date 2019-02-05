@@ -1,4 +1,4 @@
-//  ____________________________________
+Ôªø//  ____________________________________
 // | CEngine.cpp - class implementation |
 // | Jack Flower - December 2012        |
 // |____________________________________|
@@ -19,7 +19,7 @@ namespace equipment
 {
 	RTTI_IMPL(CEngine, CActor)
 
-	//Chroniony konstruktor domyúlny
+	//Chroniony konstruktor domy≈õlny
 	CEngine::CEngine(const std::wstring& uniqueId)
 	:
 		CActor							(uniqueId),//konstruktor klasy bazowej
@@ -37,7 +37,7 @@ namespace equipment
 		m_engine_timer					(0.0f),
 		m_rotor_speed					(0.0f),
 		m_percentage_fuel				(0.0f),
-		m_unit_controller				(true)//urzπdzenie w≥πczone
+		m_unit_controller				(true)//urzƒÖdzenie w≈ÇƒÖczone
 	{
 		SetZIndexBody(Z_PHYSICAL_ENGINE_BODY);
 		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_ENGINE_BODY);
@@ -45,10 +45,10 @@ namespace equipment
 		SetZIndexShadowHead(Z_PHYSICAL_SHADOW_ENGINE_HEAD);
 	}
 
-	//Chroniony konstruktor kopiujπcy
+	//Chroniony konstruktor kopiujƒÖcy
 	CEngine::CEngine(const CEngine& CEngineCopy)
 	:
-		CActor							(CEngineCopy),//konstruktor kopiujπcy klasy bazowej
+		CActor							(CEngineCopy),//konstruktor kopiujƒÖcy klasy bazowej
 		m_engine_name					(CEngineCopy.m_engine_name),
 		m_fueltank_data					(CEngineCopy.m_fueltank_data),
 		m_percentage_reserve_fuel		(CEngineCopy.m_percentage_reserve_fuel),
@@ -67,7 +67,7 @@ namespace equipment
 	{
 	}
 
-	//Chroniony destruktor wirtualny - uøywany wy≥πcznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - u≈ºywany wy≈ÇƒÖcznie przez CPhysicalManager
 	CEngine::~CEngine(void)
 	{
 		//CActor						not edit
@@ -106,151 +106,151 @@ namespace equipment
 		m_engine_name = engine_name;
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CFuelTank
+	//Metoda zwraca wska≈∫nik na obiekt klasy CFuelTank
 	CFuelTank* CEngine::GetFuelTank()
 	{
 		return m_fueltank_data.getFuelTank();
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CFuelTank
+	//Metoda ustawia wska≈∫nik na obiekt klasy CFuelTank
 	void CEngine::SetFuelTank(CFuelTank* fuel_tank)
 	{
 		m_fueltank_data.setFuelTank(fuel_tank);
 	}
 
-	//Metoda zwraca flagÍ, czy obiekt posiada zbiornik paliwa
+	//Metoda zwraca flagƒô, czy obiekt posiada zbiornik paliwa
 	const bool CEngine::GetUseFuelTank() const
 	{
 		return m_fueltank_data.getUseEquipment();
 	}
 
-	//Metoda ustawia flagÍ, czy obiekt posiada zbiornik paliwa
+	//Metoda ustawia flagƒô, czy obiekt posiada zbiornik paliwa
 	void CEngine::SetUseFuelTank(bool use_fueltank)
 	{
 		m_fueltank_data.setUseEquipment(use_fueltank);
 	}
 
-	//Metoda zwraca referencjÍ na opakowanie funkcjonalnoúci zbiornika paliwa
+	//Metoda zwraca referencjƒô na opakowanie funkcjonalno≈õci zbiornika paliwa
 	CEquipmentFuelTankData & CEngine::getEquipmentFuelTankData()
 	{
 		return m_fueltank_data;
 	}
 
-	//Metoda ustawia referencjÍ na opakowanie funkcjonalnoúci zbiornika paliwa
+	//Metoda ustawia referencjƒô na opakowanie funkcjonalno≈õci zbiornika paliwa
 	void CEngine::setEquipmentFuelTankData(CEquipmentFuelTankData & fueltank_data)
 	{
 		m_fueltank_data = fueltank_data;
 	}
 
-	//Metoda zwraca referencjÍ na opakowanie danych dla transformacji
+	//Metoda zwraca referencjƒô na opakowanie danych dla transformacji
 	CTransformation & CEngine::getFuelTankTransformed()
 	{
 		return m_fueltank_data.getTransformed();
 	}
 
-	//Metoda ustawia referencjÍ na opakowanie danych dla transformacji
+	//Metoda ustawia referencjƒô na opakowanie danych dla transformacji
 	void CEngine::setFuelTankTransformed(CTransformation & fuel_tank_transformation)
 	{
 		m_fueltank_data.setTransformed(fuel_tank_transformation);
 	}
 
-	//Metoda zwraca wartoúÊ, przy ktÛrej nastÍpuje komunikat informacyjny o rezerwie paliwa (procent)
+	//Metoda zwraca warto≈õƒá, przy kt√≥rej nastƒôpuje komunikat informacyjny o rezerwie paliwa (procent)
 	const float CEngine::GetPercentageReserveFuel() const
 	{
 		return m_percentage_reserve_fuel;
 	}
 
-	//Metoda ustawia wartoúÊ, przy ktÛrej nastÍpuje komunikat informacyjny o rezerwie paliwa
+	//Metoda ustawia warto≈õƒá, przy kt√≥rej nastƒôpuje komunikat informacyjny o rezerwie paliwa
 	void CEngine::SetPercentageReserveFuel(float percentage_reserve_fuel)
 	{
 		m_percentage_reserve_fuel = percentage_reserve_fuel;
 	}
 
-	//Metoda zwraca wartoúÊ flagi, czy obiekt moøe wysy≥aÊ komunikaty o braku paliwa
+	//Metoda zwraca warto≈õƒá flagi, czy obiekt mo≈ºe wysy≈Çaƒá komunikaty o braku paliwa
 	const bool CEngine::GetFuelEmptyMessage() const
 	{
 		return m_fuel_empty_message;
 	}
 
-	//Metoda ustawia wartoúÊ flagi, czy obiekt moøe wysy≥aÊ komunikaty o braku paliwa
+	//Metoda ustawia warto≈õƒá flagi, czy obiekt mo≈ºe wysy≈Çaƒá komunikaty o braku paliwa
 	void CEngine::SetFuelEmptyMessage(bool fuel_empty_message)
 	{
 		m_fuel_empty_message = fuel_empty_message;
 	}
 
-	//Metoda zwraca czas opÛünienia komunikatu o braku paliwa
+	//Metoda zwraca czas op√≥≈∫nienia komunikatu o braku paliwa
 	const float CEngine::GetTankTimeDelayed() const
 	{
 		return m_tank_time_delayed;
 	}
 
-	//Metoda ustawia czas opÛünienia komunikatu o braku paliwa
+	//Metoda ustawia czas op√≥≈∫nienia komunikatu o braku paliwa
 	void CEngine::SetTankTimeDelayed(float tank_time_delayed)
 	{
 		m_tank_time_delayed = tank_time_delayed;
 	}
 
-	//Metoda zwraca zuøycie paliwa gdy obiekt siÍ nie przemieszcza
+	//Metoda zwraca zu≈ºycie paliwa gdy obiekt siƒô nie przemieszcza
 	const float CEngine::GetFuelConsumption() const
 	{
 		return m_fuel_consumption;
 	}
 
-	//Metoda ustawia zuøycie paliwa gdy obiekt siÍ nie przemieszcza
+	//Metoda ustawia zu≈ºycie paliwa gdy obiekt siƒô nie przemieszcza
 	void CEngine::SetFuelConsumption(float fuel_consumption)
 	{
 		m_fuel_consumption = fuel_consumption;
 	}
 
-	//Metoda zwraca zuøycie paliwa gdy obiekt siÍ przemieszcza - zwiπzane z prÍdkoúciπ obiektu
+	//Metoda zwraca zu≈ºycie paliwa gdy obiekt siƒô przemieszcza - zwiƒÖzane z prƒôdko≈õciƒÖ obiektu
 	const float CEngine::GetFuelConsumptionMove() const
 	{
 		return m_fuel_consumption_move;
 	}
 
-	//Metoda ustawia zuøycie paliwa gdy obiekt siÍ przemieszcza - zwiπzane z prÍdkoúciπ obiektu
+	//Metoda ustawia zu≈ºycie paliwa gdy obiekt siƒô przemieszcza - zwiƒÖzane z prƒôdko≈õciƒÖ obiektu
 	void CEngine::SetFuelConsumptionMove(float fuel_consumption_move)
 	{
 		m_fuel_consumption_move = fuel_consumption_move;
 	}
 
-	//Metoda uruchamia pracÍ silnika
+	//Metoda uruchamia pracƒô silnika
 	const bool CEngine::GetRunEngine() const
 	{
 		return m_engine_run;
 	}
 
-	//Metoda ustawia pracÍ silnika
+	//Metoda ustawia pracƒô silnika
 	void CEngine::SetRunEngine(bool engine_run)
 	{
 		m_engine_run = engine_run;
 	}
 
-	//Metoda zwraca czÍstotliwoúÊ regeneracji procesu
+	//Metoda zwraca czƒôstotliwo≈õƒá regeneracji procesu
 	const float CEngine::GetEngineRegenerationTime() const
 	{
 		return m_engine_regeneration_time;
 	}
 
-	//Metoda ustawia czÍstotliwoúÊ regeneracji procesu
+	//Metoda ustawia czƒôstotliwo≈õƒá regeneracji procesu
 	void CEngine::SetEngineRegenerationTime(float engine_regeneration_time)
 	{
 		m_engine_regeneration_time = engine_regeneration_time;
 	}
 
-	//Metoda zwraca prÍdkoúÊ wirowania ≥opatek silnika
+	//Metoda zwraca prƒôdko≈õƒá wirowania ≈Çopatek silnika
 	const float CEngine::GetEngineRotationSpeed() const
 	{
 		return m_engine_rotation_speed;
 	}
 
-	//Metoda ustawia prÍdkoúÊ wirowania ≥opatek silnika
+	//Metoda ustawia prƒôdko≈õƒá wirowania ≈Çopatek silnika
 	void CEngine::SetEngineRotationSpeed(float engine_rotation_speed)
 	{
 		m_engine_rotation_speed = engine_rotation_speed;
 	}
 
-	//Wirtualna metoda aktualizuje animacje w zaleønoúci od stanu logiki obiektu (move, attack, death, etc...)
+	//Wirtualna metoda aktualizuje animacje w zale≈ºno≈õci od stanu logiki obiektu (move, attack, death, etc...)
 	void CEngine::updateAnimations(float dt)
 	{
 		switch(m_engine_state)
@@ -305,13 +305,13 @@ namespace equipment
 		}
 	}
 
-	//Metoda zwraca referencjcÍ na modu≥ sterowania
+	//Metoda zwraca referencjcƒô na modu≈Ç sterowania
 	Switch & CEngine::getUnitController()
 	{
 		return m_unit_controller;
 	}
 
-	//Wirtualna metoda aktualizuje logikÍ obiektu
+	//Wirtualna metoda aktualizuje logikƒô obiektu
 	void CEngine::update(float dt)
 	{
 		CPhysical::UpdateShadow(dt);//aktualizacja shadow engine
@@ -320,27 +320,27 @@ namespace equipment
 
 		if(m_unit_controller.getState())
 		{
-			m_engine_timer += dt;	//kumulacja up≥ywajπcego czasu
+			m_engine_timer += dt;	//kumulacja up≈ÇywajƒÖcego czasu
 
-			if(m_engine_run)//jeúli silnik pracuje, ≥opatki wirnika siÍ obracajπ
+			if(m_engine_run)//je≈õli silnik pracuje, ≈Çopatki wirnika siƒô obracajƒÖ
 				RotateHead(m_rotor_speed * dt);
 			
 			//engine - aktualizacja paliwa
 			if(m_fueltank_data.getFuelTank())
 			{
-				//aktualizacja stanu paliwa ma miejsce jeúli jest paliwo oraz silnik jest w≥πczony
+				//aktualizacja stanu paliwa ma miejsce je≈õli jest paliwo oraz silnik jest w≈ÇƒÖczony
 				if (m_fueltank_data.getFuelTank()->GetFuel() && m_engine_run)
 				{
-					if (m_engine_timer >= m_engine_regeneration_time)//jeúli up≥ynπ≥ skumulowany czas
+					if (m_engine_timer >= m_engine_regeneration_time)//je≈õli up≈ÇynƒÖ≈Ç skumulowany czas
 					{
-						if(m_fueltank_data.getFuelTank()->GetFuel())//jeúli jest paliwo - zuøywamy je
+						if(m_fueltank_data.getFuelTank()->GetFuel())//je≈õli jest paliwo - zu≈ºywamy je
 							m_fueltank_data.getFuelTank()->SetFuel(m_fueltank_data.getFuelTank()->GetFuel() - m_fuel_consumption);
 						m_engine_timer = 0.0f;//resetujemy czas procesu
 					}
-					//obliczamy procentowπ zawartoúÊ paliwa w zbiorniku
+					//obliczamy procentowƒÖ zawarto≈õƒá paliwa w zbiorniku
 					if(m_fueltank_data.getFuelTank()->GetFuelTankCapacity())
 						m_percentage_fuel = m_fueltank_data.getFuelTank()->GetFuel()/ m_fueltank_data.getFuelTank()->GetFuelTankCapacity();
-					//aktualizacja prÍdkoúci wirowania ≥opatek wirnika w zaleønoúci od procentowej iloúci paliwa
+					//aktualizacja prƒôdko≈õci wirowania ≈Çopatek wirnika w zale≈ºno≈õci od procentowej ilo≈õci paliwa
 					m_rotor_speed = m_engine_rotation_speed * m_percentage_fuel;
 				}
 
@@ -351,7 +351,7 @@ namespace equipment
 					m_rotor_speed = 0.0f;
 				}
 
-				//aktualizacja paliwa - jeúli jest paliwo
+				//aktualizacja paliwa - je≈õli jest paliwo
 				if(m_fueltank_data.getFuelTank())
 					updateFuelTank(dt);
 			}
@@ -379,7 +379,7 @@ namespace equipment
 	{
 		if (m_fueltank_data.getFuelTank())
 		{
-			//jest wystarczajπca iloúÊ paliwa
+			//jest wystarczajƒÖca ilo≈õƒá paliwa
 			if(m_fueltank_data.getFuelTank()->GetFuel() > m_fueltank_data.getFuelTank()->GetFuelTankCapacity() * m_percentage_reserve_fuel)
 				m_fueltank_data.getFuelTank()->getFuelTankState() = EFuelTankState::FUELTANK_DEFAULT;
 
@@ -393,7 +393,7 @@ namespace equipment
 		}
 	}
 
-	//prywatna metoda aktualizuje sk≥adowe transformacji wzglÍdem w≥aúciciela
+	//prywatna metoda aktualizuje sk≈Çadowe transformacji wzglƒôdem w≈Ça≈õciciela
 	void CEngine::updateFuelTankTransformation(float dt)
 	{
 		m_fueltank_data.getTransformed().Transform(this, m_fueltank_data.getFuelTank());

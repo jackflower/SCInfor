@@ -1,4 +1,4 @@
-//  ______________________________________
+ï»¿//  ______________________________________
 // | CFuelTank.h - class definition       |
 // | Jack Flower - December 2012          |
 // |______________________________________|
@@ -24,23 +24,23 @@ namespace equipment
 		RTTI_DECL;
 
 		///
-		///Deklaracja przyjaŸni
+		///Deklaracja przyjaÅºni
 		///
 		friend class CPhysicalManager;
 			
-		//Aby uzyskaæ obiekt CFuelTank, nale¿y wywo³aæ CPhysicalManager::CreateFuelTank();
+		//Aby uzyskaÄ‡ obiekt CFuelTank, naleÅ¼y wywoÅ‚aÄ‡ CPhysicalManager::CreateFuelTank();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyœlny
+		///Chroniony konstruktor domyÅ›lny
 		///
-		///@param &uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///@param &uniqueId - unikalny identyfikator obiektu - staÅ‚a referncja na obiekt klasy std::wstring
 		///
 		CFuelTank(const std::wstring& uniqueId);
 
 		///
-		///Chroniony konstruktor kopiuj¹cy
+		///Chroniony konstruktor kopiujÄ…cy
 		///
 		///@param &CFuelTankCopy - obiekt klasy CFuelTank
 		///
@@ -59,38 +59,38 @@ namespace equipment
 		const std::string GetType() const;
 
 		///
-		///Metoda zwraca nazwê zbiornika
+		///Metoda zwraca nazwÄ™ zbiornika
 		///
 		const std::string GetFuelTankName() const;
 
 		///
-		///Metoda ustawia nazwê zbiornika
+		///Metoda ustawia nazwÄ™ zbiornika
 		///
-		///@param &fuel_tank_name - sta³a referencja na obiekt klasy std::string
+		///@param &fuel_tank_name - staÅ‚a referencja na obiekt klasy std::string
 		///
 		void SetFuelTankName(const std::string& fuel_tank_name);
 
 		///
-		///Metoda zwraca pojemnoœæ zbiornika
+		///Metoda zwraca pojemnoÅ›Ä‡ zbiornika
 		///
 		const float GetFuelTankCapacity() const;
 
 		///
-		///Metoda ustawia pojemnoœæ zbiornika
+		///Metoda ustawia pojemnoÅ›Ä‡ zbiornika
 		///
-		///@param fuel_tank_capacity - pojemnoœæ zbiornika
+		///@param fuel_tank_capacity - pojemnoÅ›Ä‡ zbiornika
 		///
 		void SetFuelTankCapacity(float fuel_tank_capacity);
 
 		///
-		///Metoda zwraca iloœæ paliwa
+		///Metoda zwraca iloÅ›Ä‡ paliwa
 		///
 		const float GetFuel() const;
 
 		///
-		///Metoda ustawia iloœæ paliwa
+		///Metoda ustawia iloÅ›Ä‡ paliwa
 		///
-		///@param fuel - iloœæ paliwa
+		///@param fuel - iloÅ›Ä‡ paliwa
 		///
 		void SetFuel(float fuel);
 
@@ -100,19 +100,19 @@ namespace equipment
 		inline EFuelTankState & getFuelTankState() { return m_fueltank_state; }
 
 		///
-		///Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
+		///Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu (move, attack, death, etc...)
 		///
 		///@param dt - czas
 		///
 		virtual void updateAnimations(float dt);
 
 		///
-		///Metoda zwraca referencjcê na modu³ sterowania
+		///Metoda zwraca referencjcÄ™ na moduÅ‚ sterowania
 		///
 		Switch & getUnitController();
 
 		///
-		///Wirtualna metoda aktualizuj¹ca obiekt
+		///Wirtualna metoda aktualizujÄ…ca obiekt
 		///
 		///@param dt - czas
 		///
@@ -121,10 +121,10 @@ namespace equipment
 	private:
 
 		std::string		m_fuel_tank_name;		//nazwa zbiornika paliwa
-		float			m_fuel_tank_capacity;	//pojemnoœæ zbiornika paliwa (materia³ pêdny)
-		float			m_fuel;					//iloœæ paliwa - (materia³u pêdnego)
-		EFuelTankState	m_fueltank_state;		//wyliczenie stanów dla obiektu CFuelTank
-		Switch			m_unit_controller;		//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		float			m_fuel_tank_capacity;	//pojemnoÅ›Ä‡ zbiornika paliwa (materiaÅ‚ pÄ™dny)
+		float			m_fuel;					//iloÅ›Ä‡ paliwa - (materiaÅ‚u pÄ™dnego)
+		EFuelTankState	m_fueltank_state;		//wyliczenie stanÃ³w dla obiektu CFuelTank
+		Switch			m_unit_controller;		//wÅ‚Ä…cznik, sterownik, moduÅ‚ zarzÄ…dzania, starter, stacyjka
 
 	};
 }//namespace equipment

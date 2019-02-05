@@ -1,4 +1,4 @@
-//  ____________________________________
+ï»¿//  ____________________________________
 // | CEngine.h - class definition       |
 // | Jack Flower - December 2012        |
 // |____________________________________|
@@ -17,37 +17,37 @@ using namespace logic;
 namespace equipment
 {
 	///
-	///Klasa reprezentuje abstrakcyjny silnik napêdzajacy dowolny obiekt
+	///Klasa reprezentuje abstrakcyjny silnik napÄ™dzajacy dowolny obiekt
 	///
 	class CEngine : public CActor
 	{
 		RTTI_DECL;
 			
 		///
-		///Deklaracja przyjaŸni
+		///Deklaracja przyjaÅºni
 		///
 		friend class CPhysicalManager;
 			
-		//Aby uzyskaæ obiekt CEngine, nale¿y wywo³aæ CPhysicalManager::CreateEngine();
+		//Aby uzyskaÄ‡ obiekt CEngine, naleÅ¼y wywoÅ‚aÄ‡ CPhysicalManager::CreateEngine();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyœlny
+		///Chroniony konstruktor domyÅ›lny
 		///
-		///@param &uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///@param &uniqueId - unikalny identyfikator obiektu - staÅ‚a referncja na obiekt klasy std::wstring
 		///
 		CEngine(const std::wstring& uniqueId);
 
 		///
-		///Chroniony konstruktor kopiuj¹cy
+		///Chroniony konstruktor kopiujÄ…cy
 		///
 		///@param &CEngineCopy - obiekt klasy CEngine
 		///
 		CEngine(const CEngine& CEngineCopy);
 				
 		///
-		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - uÅ¼ywany wyÅ‚Ä…cznie przez CPhysicalManager
 		///
 		virtual ~CEngine(void);
 
@@ -59,163 +59,163 @@ namespace equipment
 		const std::string GetType() const;
 
 		///
-		///Metoda zwraca nazwê silnika
+		///Metoda zwraca nazwÄ™ silnika
 		///
 		const std::string GetEngineName() const;
 
 		///
 		///Metoda ustawia typ silnika
 		///
-		///@param &engine_name - typ silnika sta³a referencja na std::string
+		///@param &engine_name - typ silnika staÅ‚a referencja na std::string
 		///
 		void SetEngineName(const std::string& engine_name);
 
 		///
-		///Metoda zwraca wskaŸnik na obiekt klasy CFuelTank
+		///Metoda zwraca wskaÅºnik na obiekt klasy CFuelTank
 		///
 		CFuelTank* GetFuelTank();
 
 		///
-		///Metoda ustawia wskaŸnik na obiekt klasy CFuelTank
+		///Metoda ustawia wskaÅºnik na obiekt klasy CFuelTank
 		///
-		///@param *fuel_tank - wskaŸnik na obiekt klasy CFuelTank
+		///@param *fuel_tank - wskaÅºnik na obiekt klasy CFuelTank
 		///
 		void SetFuelTank(CFuelTank* fuel_tank);
 
 		///
-		///Metoda zwraca flagê, czy obiekt posiada zbiornik paliwa
+		///Metoda zwraca flagÄ™, czy obiekt posiada zbiornik paliwa
 		///
 		const bool GetUseFuelTank() const;
 
 		///
-		///Metoda ustawia flagê, czy obiekt posiada zbiornik paliwa
+		///Metoda ustawia flagÄ™, czy obiekt posiada zbiornik paliwa
 		///
 		///@param use_fueltank - flaga, czy obiekt posiada zbiornik paliwa
 		///
 		void SetUseFuelTank(bool use_fueltank);
 
 		///
-		///Metoda zwraca referencjê na opakowanie funkcjonalnoœci zbiornika paliwa
+		///Metoda zwraca referencjÄ™ na opakowanie funkcjonalnoÅ›ci zbiornika paliwa
 		///
 		CEquipmentFuelTankData & getEquipmentFuelTankData();
 
 		///
-		///Metoda ustawia referencjê na opakowanie funkcjonalnoœci zbiornika paliwa
+		///Metoda ustawia referencjÄ™ na opakowanie funkcjonalnoÅ›ci zbiornika paliwa
 		///
 		///@param & fueltank_data - referencja na obiekt klasy CEquipmentFuelTankData
 		///
 		void setEquipmentFuelTankData(CEquipmentFuelTankData & fueltank_data);
 
 		///
-		///Metoda zwraca referencjê na opakowanie danych dla transformacji
+		///Metoda zwraca referencjÄ™ na opakowanie danych dla transformacji
 		///
 		CTransformation & getFuelTankTransformed();
 
 		///
-		///Metoda ustawia referencjê na opakowanie danych dla transformacji
+		///Metoda ustawia referencjÄ™ na opakowanie danych dla transformacji
 		///
 		///@param & fuel_tank_transformation - referencja na obiekt klasy CTransformation
 		///
 		void setFuelTankTransformed(CTransformation & fuel_tank_transformation);
 
 		///
-		///Metoda zwraca wartoœæ, przy której nastêpuje komunikat informacyjny o rezerwie paliwa (procent)
+		///Metoda zwraca wartoÅ›Ä‡, przy ktÃ³rej nastÄ™puje komunikat informacyjny o rezerwie paliwa (procent)
 		///
 		const float GetPercentageReserveFuel() const;
 
 		///
-		///Metoda ustawia wartoœæ, przy której nastêpuje komunikat informacyjny o rezerwie paliwa
+		///Metoda ustawia wartoÅ›Ä‡, przy ktÃ³rej nastÄ™puje komunikat informacyjny o rezerwie paliwa
 		///
-		///@param percentage_reserve_fuel - procentowa wartoœæ paliwa, przy której nastêpuje komunikat informacyjny o rezerwie paliwa
+		///@param percentage_reserve_fuel - procentowa wartoÅ›Ä‡ paliwa, przy ktÃ³rej nastÄ™puje komunikat informacyjny o rezerwie paliwa
 		///
 		void SetPercentageReserveFuel(float percentage_reserve_fuel);
 
 		///
-		///Metoda zwraca wartoœæ flagi, czy obiekt mo¿e wysy³aæ komunikaty o braku paliwa
+		///Metoda zwraca wartoÅ›Ä‡ flagi, czy obiekt moÅ¼e wysyÅ‚aÄ‡ komunikaty o braku paliwa
 		///
 		const bool GetFuelEmptyMessage() const;
 
 		///
-		///Metoda ustawia wartoœæ flagi, czy obiekt mo¿e wysy³aæ komunikaty o braku paliwa
+		///Metoda ustawia wartoÅ›Ä‡ flagi, czy obiekt moÅ¼e wysyÅ‚aÄ‡ komunikaty o braku paliwa
 		///
-		///@param fuel_empty_message - flaga, czy obiekt mo¿e wysy³aæ komunikaty o braku paliwa
+		///@param fuel_empty_message - flaga, czy obiekt moÅ¼e wysyÅ‚aÄ‡ komunikaty o braku paliwa
 		///
 		void SetFuelEmptyMessage(bool fuel_empty_message);
 
 		///
-		///Metoda zwraca czas opóŸnienia komunikatu o braku paliwa
+		///Metoda zwraca czas opÃ³Åºnienia komunikatu o braku paliwa
 		///
 		const float GetTankTimeDelayed() const;
 
 		///
-		///Metoda ustawia czas opóŸnienia komunikatu o braku paliwa
+		///Metoda ustawia czas opÃ³Åºnienia komunikatu o braku paliwa
 		///
-		///@param tank_time_delayed - czas opóŸnienia komunikatu o braku paliwa
+		///@param tank_time_delayed - czas opÃ³Åºnienia komunikatu o braku paliwa
 		///
 		void SetTankTimeDelayed(float tank_time_delayed);
 
 		///
-		///Metoda zwraca zu¿ycie paliwa gdy obiekt siê nie przemieszcza
+		///Metoda zwraca zuÅ¼ycie paliwa gdy obiekt siÄ™ nie przemieszcza
 		///
 		const float GetFuelConsumption() const;
 
 		///
-		///Metoda ustawia zu¿ycie paliwa gdy obiekt siê nie przemieszcza
+		///Metoda ustawia zuÅ¼ycie paliwa gdy obiekt siÄ™ nie przemieszcza
 		///
-		///@param fuel_consumption - zu¿ycie paliwa gdy obiekt siê nie przemieszcza
+		///@param fuel_consumption - zuÅ¼ycie paliwa gdy obiekt siÄ™ nie przemieszcza
 		///
 		void SetFuelConsumption(float fuel_consumption);
 
 		///
-		///Metoda zwraca zu¿ycie paliwa gdy obiekt siê przemieszcza - zwi¹zane z prêdkoœci¹ obiektu
+		///Metoda zwraca zuÅ¼ycie paliwa gdy obiekt siÄ™ przemieszcza - zwiÄ…zane z prÄ™dkoÅ›ciÄ… obiektu
 		///
 		const float GetFuelConsumptionMove() const;
 
 		///
-		///Metoda ustawia zu¿ycie paliwa gdy obiekt siê przemieszcza - zwi¹zane z prêdkoœci¹ obiektu
+		///Metoda ustawia zuÅ¼ycie paliwa gdy obiekt siÄ™ przemieszcza - zwiÄ…zane z prÄ™dkoÅ›ciÄ… obiektu
 		///
-		///@param fuel_consumption_move - zu¿ycie paliwa gdy obiekt siê przemieszcza
+		///@param fuel_consumption_move - zuÅ¼ycie paliwa gdy obiekt siÄ™ przemieszcza
 		///
 		void SetFuelConsumptionMove(float fuel_consumption_move);
 
 		///
-		///Metoda uruchamia pracê silnika
+		///Metoda uruchamia pracÄ™ silnika
 		///
 		const bool GetRunEngine() const;
 
 		///
-		///Metoda ustawia pracê silnika
+		///Metoda ustawia pracÄ™ silnika
 		///
 		///@param engine_run - stan pracy silnika (start/stop)
 		///
 		void SetRunEngine(bool engine_run);
 
 		///
-		///Metoda zwraca czêstotliwoœæ regeneracji procesu
+		///Metoda zwraca czÄ™stotliwoÅ›Ä‡ regeneracji procesu
 		///
 		const float GetEngineRegenerationTime() const;
 
 		///
-		///Metoda ustawia czêstotliwoœæ regeneracji procesu
+		///Metoda ustawia czÄ™stotliwoÅ›Ä‡ regeneracji procesu
 		///
-		///@param engine_regeneration_time - czêstotliwoœæ regeneracji procesu
+		///@param engine_regeneration_time - czÄ™stotliwoÅ›Ä‡ regeneracji procesu
 		///
 		void SetEngineRegenerationTime(float engine_regeneration_time);
 
 		///
-		///Metoda zwraca prêdkoœæ wirowania ³opatek silnika
+		///Metoda zwraca prÄ™dkoÅ›Ä‡ wirowania Å‚opatek silnika
 		///
 		const float GetEngineRotationSpeed() const;
 
 		///
-		///Metoda ustawia prêdkoœæ wirowania ³opatek silnika
+		///Metoda ustawia prÄ™dkoÅ›Ä‡ wirowania Å‚opatek silnika
 		///
-		///@param engine_rotation_speed - prêdkoœæ wirowania ³opatek silnika
+		///@param engine_rotation_speed - prÄ™dkoÅ›Ä‡ wirowania Å‚opatek silnika
 		///
 		void SetEngineRotationSpeed(float engine_rotation_speed);
 
 		///
-		///Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
+		///Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu (move, attack, death, etc...)
 		///
 		///@param dt - czas
 		///
@@ -227,12 +227,12 @@ namespace equipment
 		inline EEngineState & getEngineState() { return m_engine_state; }
 
 		///
-		///Metoda zwraca referencjcê na modu³ sterowania
+		///Metoda zwraca referencjcÄ™ na moduÅ‚ sterowania
 		///
 		Switch & getUnitController();
 
 		///
-		///Wirtualna metoda aktualizuje logikê obiektu
+		///Wirtualna metoda aktualizuje logikÄ™ obiektu
 		///
 		///@param dt - czas
 		///
@@ -242,20 +242,20 @@ namespace equipment
 	private:
 
 		std::string				m_engine_name;				//nazwa silnika (spalinowy, elektryczny, atomowy, biologiczny...etc)
-		CEquipmentFuelTankData	m_fueltank_data;			//opakowanie funkcjonalnoœci zbiornika paliwa
-		float					m_percentage_reserve_fuel;	//procentowa wartoœæ paliwa, przy której nastêpuje komunikat informacyjny o rezerwie paliwa (default 10% - konstruktor)
-		float					m_fuel_consumption;			//zu¿ycie paliwa gdy obiekt siê nie przemieszcza (aktualizowane co sekundê)
-		float					m_fuel_consumption_move;	//zu¿ycie paliwa gdy obiekt siê przemieszcza - zwi¹zane z prêdkoœci¹ obiektu
-		float					m_tank_time_delayed;		//czas opóŸnienia komunikatu o braku paliwa - jako dana wejœciowa dla sf::Randomizer
-		bool					m_fuel_empty_message;		//flaga, czy biekt mo¿e wysy³aæ komunikaty o braku paliwa
+		CEquipmentFuelTankData	m_fueltank_data;			//opakowanie funkcjonalnoÅ›ci zbiornika paliwa
+		float					m_percentage_reserve_fuel;	//procentowa wartoÅ›Ä‡ paliwa, przy ktÃ³rej nastÄ™puje komunikat informacyjny o rezerwie paliwa (default 10% - konstruktor)
+		float					m_fuel_consumption;			//zuÅ¼ycie paliwa gdy obiekt siÄ™ nie przemieszcza (aktualizowane co sekundÄ™)
+		float					m_fuel_consumption_move;	//zuÅ¼ycie paliwa gdy obiekt siÄ™ przemieszcza - zwiÄ…zane z prÄ™dkoÅ›ciÄ… obiektu
+		float					m_tank_time_delayed;		//czas opÃ³Åºnienia komunikatu o braku paliwa - jako dana wejÅ›ciowa dla sf::Randomizer
+		bool					m_fuel_empty_message;		//flaga, czy biekt moÅ¼e wysyÅ‚aÄ‡ komunikaty o braku paliwa
 		bool					m_engine_run;				//stacyjka - start/stop engine
-		float					m_engine_rotation_speed;	//prêdkoœæ wirowania wirnika w silniku
-		float					m_engine_regeneration_time;	//czêstotliwoœæ regeneracji procesu
-		EEngineState			m_engine_state;				//wyliczenie stanów dla obiektu CEngine
-		float					m_engine_timer;				//wyliczany up³ywaj¹cy czas procesów logiki
-		float					m_rotor_speed;				//wyliczana prêdkoœæ wirowania ³opat wirnika silnika
-		float					m_percentage_fuel;			//wyliczana procentowa zawartoœæ paliwa w zbiorniku
-		Switch					m_unit_controller;			//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		float					m_engine_rotation_speed;	//prÄ™dkoÅ›Ä‡ wirowania wirnika w silniku
+		float					m_engine_regeneration_time;	//czÄ™stotliwoÅ›Ä‡ regeneracji procesu
+		EEngineState			m_engine_state;				//wyliczenie stanÃ³w dla obiektu CEngine
+		float					m_engine_timer;				//wyliczany upÅ‚ywajÄ…cy czas procesÃ³w logiki
+		float					m_rotor_speed;				//wyliczana prÄ™dkoÅ›Ä‡ wirowania Å‚opat wirnika silnika
+		float					m_percentage_fuel;			//wyliczana procentowa zawartoÅ›Ä‡ paliwa w zbiorniku
+		Switch					m_unit_controller;			//wÅ‚Ä…cznik, sterownik, moduÅ‚ zarzÄ…dzania, starter, stacyjka
 
 		//prywatna metoda aktualizuje stan obiektu - engine
 		void updateEngineState(float dt);
@@ -263,7 +263,7 @@ namespace equipment
 		//prywatna metoda aktualizuje obiekt - fueltank (zbiornik paliwa)
 		void updateFuelTank(float dt);
 
-		//prywatna metoda aktualizuje sk³adowe transformacji wzglêdem w³aœciciela
+		//prywatna metoda aktualizuje skÅ‚adowe transformacji wzglÄ™dem wÅ‚aÅ›ciciela
 		void updateFuelTankTransformation(float dt);
 	};
 }//namespace equipment

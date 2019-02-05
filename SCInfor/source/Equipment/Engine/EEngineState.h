@@ -1,4 +1,4 @@
-//  _______________________________________________
+﻿//  _______________________________________________
 // | EEngineState.h - enumeration of states engine |
 // | Jack Flower - December 2013                   |
 // |_______________________________________________|
@@ -10,7 +10,7 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stan�w dla obiektu CEngine
+	///Wyliczenie stanów dla obiektu CEngine
 	///
 	enum EEngineState
 	{

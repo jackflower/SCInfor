@@ -1,4 +1,4 @@
-//  _____________________________________
+Ôªø//  _____________________________________
 // | CFuelBar.cpp - class implementation |
 // | Jack Flower March 2014              |
 // |_____________________________________|
@@ -23,10 +23,10 @@ namespace equipment
 	{
 	}
 
-	//Konstruktor kopiujπcy
+	//Konstruktor kopiujƒÖcy
 	CFuelBar::CFuelBar(const CFuelBar& CFuelBarCopy)
 	:
-		CPhysical			(CFuelBarCopy),//konstruktor kopiujπcy klasy bazowej
+		CPhysical			(CFuelBarCopy),//konstruktor kopiujƒÖcy klasy bazowej
 		m_fuelbar_name		(CFuelBarCopy.m_fuelbar_name),
 		m_thickness			(CFuelBarCopy.m_thickness),
 		m_size				(CFuelBarCopy.m_size),
@@ -52,25 +52,25 @@ namespace equipment
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca nazwÍ obiektu
+	//Metoda zwraca nazwƒô obiektu
 	const std::string & CFuelBar::GetFuelBarName() const
 	{
 		return m_fuelbar_name;
 	}
 
-	//Metoda ustawia nazwÍ obiektu
+	//Metoda ustawia nazwƒô obiektu
 	void CFuelBar::SetFuelBarName(const std::string & fuelbar_name)
 	{
 		m_fuelbar_name = fuelbar_name;
 	}
 
-	//Metoda zwraca gruboúÊ paska
+	//Metoda zwraca grubo≈õƒá paska
 	const float CFuelBar::GetThickness() const
 	{
 		return m_thickness;
 	}
 
-	//Metoda ustawia gruboúÊ paska
+	//Metoda ustawia grubo≈õƒá paska
 	const void CFuelBar::SetThickness(float thickness)
 	{
 		m_thickness = thickness;
@@ -114,7 +114,7 @@ namespace equipment
 		m_position_offset.y = position_offset_y;
 	}
 
-	//Wirtualna metoda aktualizuje logikÍ obiektu
+	//Wirtualna metoda aktualizuje logikƒô obiektu
 	void CFuelBar::update(float dt)
 	{
 		//to do...
@@ -122,18 +122,18 @@ namespace equipment
 		//this->
 	}
 
-	//Wirtualna metoda aktualizuje logikÍ obiektu
+	//Wirtualna metoda aktualizuje logikƒô obiektu
 	//void CEngine::update(float dt)
 	//{
 	//	//odmiarzam czas
 	//	m_timer += dt;
 	//	
-	//	//aktualizacja stanu paliwa ma miejsce jeúli jest paliwo
+	//	//aktualizacja stanu paliwa ma miejsce je≈õli jest paliwo
 	//	if(GetFuel())
 	//	{
-	//		if (m_timer >= CEquipment::m_regeneration_time)		//jeúli up≥ynπ≥ jakiú czas
+	//		if (m_timer >= CEquipment::m_regeneration_time)		//je≈õli up≈ÇynƒÖ≈Ç jaki≈õ czas
 	//		{
-	//			SetFuel(GetFuel() - m_fuel_consumption);		//zuøywamy paliwo
+	//			SetFuel(GetFuel() - m_fuel_consumption);		//zu≈ºywamy paliwo
 	//			m_timer = 0.0f;									//zerujemy czas
 	//		}
 	//	}

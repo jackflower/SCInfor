@@ -1,4 +1,4 @@
-//  ______________________________________
+ï»¿//  ______________________________________
 // | CFuelTank.cpp - class implementation |
 // | Jack Flower - December 2012          |
 // |______________________________________|
@@ -15,7 +15,7 @@ namespace equipment
 {
 	RTTI_IMPL(CFuelTank, CActor)
 
-	//Chroniony konstruktor domyœlny
+	//Chroniony konstruktor domyÅ›lny
 	CFuelTank::CFuelTank(const std::wstring& uniqueId)
 	:
 		CActor					(uniqueId),//konstruktor klasy bazowej
@@ -23,7 +23,7 @@ namespace equipment
 		m_fuel_tank_capacity	(0.0f),
 		m_fuel					(0.0f),
 		m_fueltank_state		(EFuelTankState::FUELTANK_DEFAULT),
-		m_unit_controller		(true)//urz¹dzenie w³¹czone
+		m_unit_controller		(true)//urzÄ…dzenie wÅ‚Ä…czone
 	{
 		SetZIndexBody(Z_PHYSICAL_FUEL_TANK_BODY);
 		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_FUEL_TANK_BODY);
@@ -31,10 +31,10 @@ namespace equipment
 		SetZIndexShadowHead(Z_PHYSICAL_SHADOW_FUEL_TANK_HEAD);
 	}
 
-	//Chroniony konstruktor kopiuj¹cy
+	//Chroniony konstruktor kopiujÄ…cy
 	CFuelTank::CFuelTank(const CFuelTank& CFuelTankCopy)
 	:
-		CActor					(CFuelTankCopy),//konstruktor kopiuj¹cy klasy bazowej
+		CActor					(CFuelTankCopy),//konstruktor kopiujÄ…cy klasy bazowej
 		m_fuel_tank_name		(CFuelTankCopy.m_fuel_tank_name),
 		m_fuel_tank_capacity	(CFuelTankCopy.m_fuel_tank_capacity),
 		m_fuel					(CFuelTankCopy.m_fuel),
@@ -60,60 +60,60 @@ namespace equipment
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca nazwê zbiornika
+	//Metoda zwraca nazwÄ™ zbiornika
 	const std::string CFuelTank::GetFuelTankName() const
 	{
 		return m_fuel_tank_name;
 	}
 
-	//Metoda ustawia nazwê zbiornika
+	//Metoda ustawia nazwÄ™ zbiornika
 	void CFuelTank::SetFuelTankName(const std::string& fuel_tank_name)
 	{
 		m_fuel_tank_name = fuel_tank_name;
 	}
 
-	//Metoda zwraca pojemnoœæ zbiornika
+	//Metoda zwraca pojemnoÅ›Ä‡ zbiornika
 	const float CFuelTank::GetFuelTankCapacity() const
 	{
 		return m_fuel_tank_capacity;
 	}
 
-	//Metoda ustawia pojemnoœæ zbiornika paliwa (tlenu)
+	//Metoda ustawia pojemnoÅ›Ä‡ zbiornika paliwa (tlenu)
 	void CFuelTank::SetFuelTankCapacity(float fuel_tank_capacity)
 	{
 		if (fuel_tank_capacity < 0) return;
 		m_fuel_tank_capacity = fuel_tank_capacity;
 	}
 
-	//Metoda zwraca iloœæ paliwa (tlenu) obiektu
+	//Metoda zwraca iloÅ›Ä‡ paliwa (tlenu) obiektu
 	const float CFuelTank::GetFuel() const
 	{
 		return m_fuel;
 	}
 
-	//Metoda ustawia iloœæ paliwa (tlenu) obiektu
+	//Metoda ustawia iloÅ›Ä‡ paliwa (tlenu) obiektu
 	void CFuelTank::SetFuel(float fuel)
 	{
-		if (fuel < 0)						//jeœli tankujemy wartoœci¹ ujemn¹ - opuszczamy funkcjê
+		if (fuel < 0)						//jeÅ›li tankujemy wartoÅ›ciÄ… ujemnÄ… - opuszczamy funkcjÄ™
 		{
 			m_fuel = 0;						//zerujemy
 			return;
 		}
 
-		if (m_fuel_tank_capacity > 0)			//jeœli zbiornik ma pojemnoœæ
+		if (m_fuel_tank_capacity > 0)			//jeÅ›li zbiornik ma pojemnoÅ›Ä‡
 		{
-			if (fuel >= m_fuel_tank_capacity)	//jeœli iloœæ paliwa, któr¹ chcemy zatankowaæ
-												//jest wiêksza lub równa pojemnoœci zbiornika
+			if (fuel >= m_fuel_tank_capacity)	//jeÅ›li iloÅ›Ä‡ paliwa, ktÃ³rÄ… chcemy zatankowaÄ‡
+												//jest wiÄ™ksza lub rÃ³wna pojemnoÅ›ci zbiornika
 												//reszta (nadmiar) nie jest wykorzystany
-				m_fuel = m_fuel_tank_capacity;	//ustawiamy iloœæ paliwa na pojemnoœæ zbiornika
+				m_fuel = m_fuel_tank_capacity;	//ustawiamy iloÅ›Ä‡ paliwa na pojemnoÅ›Ä‡ zbiornika
 			else
 				m_fuel = fuel;					//tankujemy tyle ile zamierzamy (Parametr funkcji fuel)
 		}
-		else									//zbiornik nie ma pojemnoœæi
-			m_fuel = 0;							//nie mo¿na tankowaæ.
+		else									//zbiornik nie ma pojemnoÅ›Ä‡i
+			m_fuel = 0;							//nie moÅ¼na tankowaÄ‡.
 	}
 
-	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
+	//Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu (move, attack, death, etc...)
 	void CFuelTank::updateAnimations(float dt)
 	{
 		switch (m_fueltank_state)
@@ -159,13 +159,13 @@ namespace equipment
 		}
 	}
 
-	//Metoda zwraca referencjcê na modu³ sterowania
+	//Metoda zwraca referencjcÄ™ na moduÅ‚ sterowania
 	Switch & CFuelTank::getUnitController()
 	{
 		return m_unit_controller;
 	}
 
-	//Wirtualna metoda aktualizuj¹ca obiekt
+	//Wirtualna metoda aktualizujÄ…ca obiekt
 	void CFuelTank::update(float dt)
 	{
 		UpdateShadow(dt);	//aktualizacja shadow engine

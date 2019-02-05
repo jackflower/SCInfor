@@ -1,4 +1,4 @@
-//  _____________________________________
+ï»¿//  _____________________________________
 // | CFuelBar.h - class definition       |
 // | Jack Flower March 2014              |
 // |_____________________________________|
@@ -16,28 +16,28 @@ namespace equipment
 {
 
 	///
-	///Klasa reprezentuje wskaŸnik stanu paliwa - progress bar
+	///Klasa reprezentuje wskaÅºnik stanu paliwa - progress bar
 	///
 	class CFuelBar : public CPhysical
 	{
 		RTTI_DECL;
 	
 		///
-		///Deklaracja przyjaŸni
+		///Deklaracja przyjaÅºni
 		///
 		friend class CPhysicalManager;
 	
-		//Aby uzyskaæ obiekt CFuelBar, nale¿y wywo³aæ CPhysicalManager::CreateFuelBar();
+		//Aby uzyskaÄ‡ obiekt CFuelBar, naleÅ¼y wywoÅ‚aÄ‡ CPhysicalManager::CreateFuelBar();
 
 	private:
 
 		///
-		///Prywatny konstruktor domyœlny - u¿ywany wy³¹cznie przez CPhysicalManager
+		///Prywatny konstruktor domyÅ›lny - uÅ¼ywany wyÅ‚Ä…cznie przez CPhysicalManager
 		///
 		CFuelBar(const std::wstring& uniqueId);
 
 		///
-		///Prywatny konstruktor kopiuj¹cy
+		///Prywatny konstruktor kopiujÄ…cy
 		///
 		///@param &CFuelBarCopy - obiekt klasy CFuelBar
 		///
@@ -57,26 +57,26 @@ namespace equipment
 		const std::string GetType() const;
 
 		///
-		///Metoda zwraca nazwê obiektu
+		///Metoda zwraca nazwÄ™ obiektu
 		///
 		const std::string &GetFuelBarName() const;
 
 		///
-		///Metoda ustawia nazwê obiektu
+		///Metoda ustawia nazwÄ™ obiektu
 		///
-		///@param & fuelbar_name - sta³a referencja na obiekt klasy std::string
+		///@param & fuelbar_name - staÅ‚a referencja na obiekt klasy std::string
 		///
 		void SetFuelBarName(const std::string & fuelbar_name);
 
 		///
-		///Metoda zwraca gruboœæ paska
+		///Metoda zwraca gruboÅ›Ä‡ paska
 		///
 		const float GetThickness() const;
 
 		///
-		///Metoda ustawia gruboœæ paska
+		///Metoda ustawia gruboÅ›Ä‡ paska
 		///
-		///@param thickness - gruboœæ paska
+		///@param thickness - gruboÅ›Ä‡ paska
 		///
 		const void SetThickness(float thickness);
 
@@ -116,14 +116,14 @@ namespace equipment
 		///
 		///Metoda ustawia wektor kalibracji pozycji obiektu
 		///
-		///@param position_offset_x - wektor kalibracji sk³adowa - x
+		///@param position_offset_x - wektor kalibracji skÅ‚adowa - x
 		///
-		///@param position_offset_y - wektor kalibracji sk³adowa - y
+		///@param position_offset_y - wektor kalibracji skÅ‚adowa - y
 		///
 		void SetBarPositionOffset(float position_offset_x, float position_offset_y);
 
 		///
-		///Wirtualna metoda aktualizuje logikê obiektu
+		///Wirtualna metoda aktualizuje logikÄ™ obiektu
 		///
 		///@param dt - czas
 		///
@@ -131,12 +131,12 @@ namespace equipment
 
 	private:
 
-		std::string		m_fuelbar_name;		//nazwa wskaŸnika paliwa - progress bar
-		float			m_thickness;		//gruboœæ paska - progress bar
+		std::string		m_fuelbar_name;		//nazwa wskaÅºnika paliwa - progress bar
+		float			m_thickness;		//gruboÅ›Ä‡ paska - progress bar
 		sf::Vector2f	m_size;				//rozmiar paska - progress bar
-		sf::Vector2f	m_position_offset;	//wektor kalibracji po³o¿enia obiektu - progress bar
+		sf::Vector2f	m_position_offset;	//wektor kalibracji poÅ‚oÅ¼enia obiektu - progress bar
 
-		//CFuelBarTemplate*	p_template;					//wskaŸnik na obiekt klasy CPhysicalTemplate
+		//CFuelBarTemplate*	p_template;					//wskaÅºnik na obiekt klasy CPhysicalTemplate
 
 	};
 }//namespace equipment
