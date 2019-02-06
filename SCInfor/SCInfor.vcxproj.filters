@@ -387,12 +387,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\Industrial\PowerStationData\CWindTurbineData.cpp">
-      <Filter>source\Equipment\Industrial\PowerStationData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Lightingequipment\CLightingEquipment.cpp">
-      <Filter>source\Equipment\Lightingequipment</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\Thermodynamics\Airconditioning\CAirconditioning.cpp">
       <Filter>source\Equipment\Thermodynamics\Airconditioning</Filter>
     </ClCompile>
@@ -996,6 +990,12 @@
     <ClCompile Include="source\Equipment\Industrial\PowerModuleType\WindTurbine.cpp">
       <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\Industrial\PowerStationData\WindTurbineData.cpp">
+      <Filter>source\Equipment\Industrial\PowerStationData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Lightingequipment\LightingEquipment.cpp">
+      <Filter>source\Equipment\Lightingequipment</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1023,12 +1023,6 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Industrial\PowerModuleType\ETurbineState.h">
       <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Industrial\PowerStationData\CWindTurbineData.h">
-      <Filter>source\Equipment\Industrial\PowerStationData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Lightingequipment\CLightingEquipment.h">
-      <Filter>source\Equipment\Lightingequipment</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Lightingequipment\ELightingEquipmentState.h">
       <Filter>source\Equipment\Lightingequipment</Filter>
@@ -1749,6 +1743,12 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Industrial\PowerModuleType\WindTurbine.h">
       <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerStationData\WindTurbineData.h">
+      <Filter>source\Equipment\Industrial\PowerStationData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Lightingequipment\LightingEquipment.h">
+      <Filter>source\Equipment\Lightingequipment</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

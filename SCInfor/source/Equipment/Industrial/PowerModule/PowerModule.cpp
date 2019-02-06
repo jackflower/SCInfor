@@ -1,4 +1,4 @@
-//  ________________________________________
+ï»¿//  ________________________________________
 // | PowerModule.cpp - class implementation |
 // | Jack Flower - July 2014                |
 // |________________________________________|
@@ -10,7 +10,7 @@ namespace equipment
 {
 	RTTI_IMPL(PowerModule, CActor);
 		
-	//Chroniony konstruktor domyœlny
+	//Chroniony konstruktor domyÅ›lny
 	PowerModule::PowerModule(const std::wstring & uniqueId)
 	:
 		CActor(uniqueId),//konstruktor klasy bazowej
@@ -21,10 +21,10 @@ namespace equipment
 	{
 	}
 
-	//Chroniony konstruktor kopiuj¹cy
+	//Chroniony konstruktor kopiujÄ…cy
 	PowerModule::PowerModule(const PowerModule & PowerModuleCopy)
 	:
-		CActor(PowerModuleCopy),//konstruktor kopiuj¹cy klasy bazowej
+		CActor(PowerModuleCopy),//konstruktor kopiujÄ…cy klasy bazowej
 		m_energy_capacitor(PowerModuleCopy.m_energy_capacitor),
 		m_power(PowerModuleCopy.m_power),
 		m_stored_energy(PowerModuleCopy.m_stored_energy),
@@ -32,7 +32,7 @@ namespace equipment
 	{
 	}
 
-	//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - uÅ¼ywany wyÅ‚Ä…cznie przez CPhysicalManager
 	PowerModule::~PowerModule(void)
 	{
 		//CActor
@@ -48,13 +48,13 @@ namespace equipment
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca iloœæ energii, któr¹ mo¿na zgromadziæ
+	//Metoda zwraca iloÅ›Ä‡ energii, ktÃ³rÄ… moÅ¼na zgromadziÄ‡
 	const float PowerModule::getEnergyCapacitor() const
 	{
 		return m_energy_capacitor;
 	}
 
-	//Metoda ustawia iloœæ energii, któr¹ mo¿na zgromadziæ
+	//Metoda ustawia iloÅ›Ä‡ energii, ktÃ³rÄ… moÅ¼na zgromadziÄ‡
 	void PowerModule::setEnergyCapacitor(float energy_capacitor)
 	{
 		m_energy_capacitor = energy_capacitor;
@@ -72,13 +72,13 @@ namespace equipment
 		m_power = power;
 	}
 
-	//Metoda zwraca iloœæ zgromadzonej energii
+	//Metoda zwraca iloÅ›Ä‡ zgromadzonej energii
 	const float PowerModule::getStoredEnergy() const
 	{
 		return m_stored_energy;
 	}
 
-	//Metoda ustawia iloœæ zgromadzonej energii
+	//Metoda ustawia iloÅ›Ä‡ zgromadzonej energii
 	void PowerModule::setStoredEnergy(float stored_energy)
 	{
 			m_stored_energy = stored_energy;

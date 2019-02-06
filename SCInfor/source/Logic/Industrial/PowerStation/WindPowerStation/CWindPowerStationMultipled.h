@@ -8,7 +8,7 @@
 #define H_WIND_POWER_STATION_MULTIPLED_JACK
 
 #include "CWindPowerStation.h"
-#include "../../../../Equipment/Industrial/PowerStationData/CWindTurbineData.h"
+#include "../../../../Equipment/Industrial/PowerStationData/WindTurbineData.h"
 
 using namespace equipmentpowerstationdata;
 
@@ -67,7 +67,7 @@ namespace logic
 			//
 			//ctors, dtor, gets, sets, comments
 
-			typedef std::vector<CWindTurbineData *> WindTurbines;
+			typedef std::vector<WindTurbineData *> WindTurbines;
 			WindTurbines::iterator it_turbines;
 			
 			WindTurbines m_wind_turbines;

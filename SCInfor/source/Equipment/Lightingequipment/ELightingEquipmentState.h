@@ -1,4 +1,4 @@
-//  _____________________________________________________________________
+﻿//  _____________________________________________________________________
 // | ELightingEquipmentState.h - enumeration of states lightingequipment |
 // | Jack Flower - February 2014                                         |
 // |_____________________________________________________________________|
@@ -10,7 +10,7 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stan�w dla obiektu CLightingEquipment
+	///Wyliczenie stanów dla obiektu LightingEquipment
 	///
 	enum ELightingEquipmentState
 	{

@@ -1,4 +1,4 @@
-//  ________________________________________
+ï»¿//  ________________________________________
 // | WindTurbine.h - class definition       |
 // | Jack Flower - July 2014                |
 // |________________________________________|
@@ -14,37 +14,37 @@
 namespace equipment
 {
 	///
-	///Klasa reprezentuej funkcjonalnoœc turbiny
+	///Klasa reprezentuej funkcjonalnoÅ›c turbiny
 	///
 	class WindTurbine : public PowerModule
 	{
 		RTTI_DECL;
 
 		///
-		///Deklaracja przyjaŸni
+		///Deklaracja przyjaÅºni
 		///
 		friend class CPhysicalManager;
 		
-		//Aby uzyskaæ obiekt WindTurbine, nale¿y wywo³aæ CPhysicalManager::CreateWindTurbine();
+		//Aby uzyskaÄ‡ obiekt WindTurbine, naleÅ¼y wywoÅ‚aÄ‡ CPhysicalManager::CreateWindTurbine();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyœlny
+		///Chroniony konstruktor domyÅ›lny
 		///
-		///@param uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///@param uniqueId - unikalny identyfikator obiektu - staÅ‚a referncja na obiekt klasy std::wstring
 		///
 		WindTurbine(const std::wstring & uniqueId);
 
 		///
-		///Chroniony konstruktor kopiuj¹cy
+		///Chroniony konstruktor kopiujÄ…cy
 		///
 		///@param WindTurbineCopy - obiekt klasy WindTurbine
 		///
 		WindTurbine(const WindTurbine & WindTurbineCopy);
 
 		///
-		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - uÅ¼ywany wyÅ‚Ä…cznie przez CPhysicalManager
 		///
 		virtual ~WindTurbine(void);
 
@@ -56,74 +56,74 @@ namespace equipment
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca nazwê turbiny
+		///Metoda zwraca nazwÄ™ turbiny
 		///
 		const std::string getTurbineName() const;
 
 		///
-		///Metoda ustawia nazwê turbiny
+		///Metoda ustawia nazwÄ™ turbiny
 		///
-		///@param turbine_name - nazwa turbiny sta³a referencja na std::string
+		///@param turbine_name - nazwa turbiny staÅ‚a referencja na std::string
 		///
 		void setTurbineName(const std::string & turbine_name);
 
 		///
-		///Metoda zwraca prêdkoœæ wirowania turbiny
+		///Metoda zwraca prÄ™dkoÅ›Ä‡ wirowania turbiny
 		///
 		const float getSpeedRotor() const;
 
 		///
-		///Metoda ustawia prêdkoœæ wirowania turbiny
+		///Metoda ustawia prÄ™dkoÅ›Ä‡ wirowania turbiny
 		///
-		///@param speed_rotor - prêdkoœæ wirowania turbiny
+		///@param speed_rotor - prÄ™dkoÅ›Ä‡ wirowania turbiny
 		///
 		void setSpeedRotor(float speed_rotor);
 
 		///
-		///Metoda zwraca prze³o¿enie prêdkoœci obrotowej
+		///Metoda zwraca przeÅ‚oÅ¼enie prÄ™dkoÅ›ci obrotowej
 		///
 		const float getSpeedTransmission() const;
 
 		///
-		///Metoda ustawia prze³o¿enie prêdkoœci obrotowej
+		///Metoda ustawia przeÅ‚oÅ¼enie prÄ™dkoÅ›ci obrotowej
 		///
-		///@param speed_transmission - prze³o¿enie prêdkoœci obrotowej
+		///@param speed_transmission - przeÅ‚oÅ¼enie prÄ™dkoÅ›ci obrotowej
 		///
 		void setSpeedTransmission(float speed_transmission);
 
 		///
-		///Metoda zwraca procentowy wspó³czynnik aktywacji turbiny
+		///Metoda zwraca procentowy wspÃ³Å‚czynnik aktywacji turbiny
 		///
 		const float getPercentageActivation() const;
 
 		///
-		///Metoda ustawia procentowy wspó³czynnik aktywacji turbiny
+		///Metoda ustawia procentowy wspÃ³Å‚czynnik aktywacji turbiny
 		///
-		///@param percentage_activation - procentowy wspó³czynnik aktywacji turbiny
+		///@param percentage_activation - procentowy wspÃ³Å‚czynnik aktywacji turbiny
 		///
 		void setPercentageActivation(float percentage_activation);
 
 		///
-		///Metoda zwraca czas trwania stanu, po zgromadzeniu pe³nej energii
+		///Metoda zwraca czas trwania stanu, po zgromadzeniu peÅ‚nej energii
 		///
 		const float getEnergyFuelDuration() const;
 
 		///
-		///Metoda ustawia czas trwania stanu, po zgromadzeniu pe³nej energii
+		///Metoda ustawia czas trwania stanu, po zgromadzeniu peÅ‚nej energii
 		///
-		///@param energy_full_duration - czas trwania stanu, po zgromadzeniu pe³nej energii
+		///@param energy_full_duration - czas trwania stanu, po zgromadzeniu peÅ‚nej energii
 		///
 		void setEnergyFuelDuration(float energy_full_duration);
 
 		///
-		///Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
+		///Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu
 		///
 		///@param dt - czas
 		///
 		virtual void updateAnimations(float dt);
 
 		///
-		///Wirtualna metoda aktualizuj¹ca obiekt
+		///Wirtualna metoda aktualizujÄ…ca obiekt
 		///
 		///@param dt - czas
 		///
@@ -132,16 +132,16 @@ namespace equipment
 	private:
 
 		std::string m_turbine_name; //nazwa turbiny
-		float m_speed_rotor; //prêdkoœæ wirowania turbiny
-		float m_speed_transmission; //przek³adnia - prze³o¿enie prêdkoœci obrotowej
-		float m_percentage_activation; //procentowy wspó³czynnik aktywacji turbiny
-		float m_energy_full_duration; //czas trwania stanu, po zgromadzeniu pe³nej energii
-		ETurbineState m_turbine_state; //wyliczenie stanów logicznych turbiny (maszyna stanów)
+		float m_speed_rotor; //prÄ™dkoÅ›Ä‡ wirowania turbiny
+		float m_speed_transmission; //przekÅ‚adnia - przeÅ‚oÅ¼enie prÄ™dkoÅ›ci obrotowej
+		float m_percentage_activation; //procentowy wspÃ³Å‚czynnik aktywacji turbiny
+		float m_energy_full_duration; //czas trwania stanu, po zgromadzeniu peÅ‚nej energii
+		ETurbineState m_turbine_state; //wyliczenie stanÃ³w logicznych turbiny (maszyna stanÃ³w)
 
 		float m_cargo_open_duration; //czas trwania otwierania luku cargo
 		float m_cargo_close_duration; //czas trwania zamykania luku cargo
-		float m_calculated_speed_rotor; //obliczana prêdkoœæ wirowania ³opat turbiny
-		float m_calculated_energy_full_duration; //obliczany czas trwania stanu, po zgromadzeniu pe³nej energii
+		float m_calculated_speed_rotor; //obliczana prÄ™dkoÅ›Ä‡ wirowania Å‚opat turbiny
+		float m_calculated_energy_full_duration; //obliczany czas trwania stanu, po zgromadzeniu peÅ‚nej energii
 
 		//prywatna metoda aktualizuje stan obiektu
 		void updateTurbineState(float dt);

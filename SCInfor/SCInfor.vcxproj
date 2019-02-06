@@ -159,8 +159,8 @@
     <ClCompile Include="source\Equipment\Industrial\PowerModuleType\SolarCell.cpp" />
     <ClCompile Include="source\Equipment\Industrial\PowerModuleType\WindTurbine.cpp" />
     <ClCompile Include="source\Equipment\Industrial\PowerModule\PowerModule.cpp" />
-    <ClCompile Include="source\Equipment\Industrial\PowerStationData\CWindTurbineData.cpp" />
-    <ClCompile Include="source\Equipment\Lightingequipment\CLightingEquipment.cpp" />
+    <ClCompile Include="source\Equipment\Industrial\PowerStationData\WindTurbineData.cpp" />
+    <ClCompile Include="source\Equipment\Lightingequipment\LightingEquipment.cpp" />
     <ClCompile Include="source\Equipment\Thermodynamics\Airconditioning\CAirconditioning.cpp" />
     <ClCompile Include="source\Equipment\Thermodynamics\ThermalInsulation\CThermalInsulation.cpp" />
     <ClCompile Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.cpp" />
@@ -375,8 +375,8 @@
     <ClInclude Include="source\Equipment\Industrial\PowerModuleType\ESolarCellState.h" />
     <ClInclude Include="source\Equipment\Industrial\PowerModuleType\ETurbineState.h" />
     <ClInclude Include="source\Equipment\Industrial\PowerModule\PowerModule.h" />
-    <ClInclude Include="source\Equipment\Industrial\PowerStationData\CWindTurbineData.h" />
-    <ClInclude Include="source\Equipment\Lightingequipment\CLightingEquipment.h" />
+    <ClInclude Include="source\Equipment\Industrial\PowerStationData\WindTurbineData.h" />
+    <ClInclude Include="source\Equipment\Lightingequipment\LightingEquipment.h" />
     <ClInclude Include="source\Equipment\Lightingequipment\ELightingEquipmentState.h" />
     <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\CAirconditioning.h" />
     <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\EAirconditioningState.h" />

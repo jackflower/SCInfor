@@ -10,7 +10,7 @@
 #include "../CPowerStation.h"
 #include "../EWindPowerStationState.h"
 #include "../../../../Equipment/Industrial/PowerModuleType/WindTurbine.h"
-#include "../../../../Equipment/Industrial/PowerStationData/CWindTurbineData.h"
+#include "../../../../Equipment/Industrial/PowerStationData/WindTurbineData.h"
 #include "../../../../RTTI/RTTI.h"
 
 using namespace equipment;
@@ -173,7 +173,7 @@ namespace logic
 		protected:
 
 			EWindPowerStationState		m_windpower_station_state;		//wyliczenie stanów obiektu
-			CWindTurbineData			m_windturbine_data;				//opakowanie funkcjonalnoœci turbiny wiatrowej
+			WindTurbineData			m_windturbine_data;				//opakowanie funkcjonalnoœci turbiny wiatrowej
 			float						m_energy_condensation_time;		//czas co jaki nastêpuje kondensacja energii
 			float						m_portion_energy_factor;		//wspó³czynnik bezw³adnoœci (z turbiny pobieramy mniej energii ni¿ mo¿emy)
 			float						m_portion_energy;				//porcja energii, któr¹ bêdê móg³ zabieraæ z turbiny

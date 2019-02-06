@@ -1,4 +1,4 @@
-//  ________________________________________
+ï»¿//  ________________________________________
 // | PowerModule.h - class definition       |
 // | Jack Flower - July 2014                |
 // |________________________________________|
@@ -15,35 +15,35 @@ using namespace logic;
 namespace equipment
 {
 	///
-	///Klasa bazowa dla modu³ów wytwarzania, gromadzenia i przetwarzania energii
+	///Klasa bazowa dla moduÅ‚Ã³w wytwarzania, gromadzenia i przetwarzania energii
 	///
 	class PowerModule : public CActor
 	{
 		RTTI_DECL;
 
 		///
-		///Deklaracja przyjaŸni
+		///Deklaracja przyjaÅºni
 		///
 		friend class CPhysicalManager;
 		
-		//Aby uzyskaæ obiekt PowerModule, nale¿y wywo³aæ CPhysicalManager::CreatePowerModule();
+		//Aby uzyskaÄ‡ obiekt PowerModule, naleÅ¼y wywoÅ‚aÄ‡ CPhysicalManager::CreatePowerModule();
 
 		///
-		///Chroniony konstruktor domyœlny
+		///Chroniony konstruktor domyÅ›lny
 		///
-		///@param uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///@param uniqueId - unikalny identyfikator obiektu - staÅ‚a referncja na obiekt klasy std::wstring
 		///
 		PowerModule(const std::wstring & uniqueId);
 
 		///
-		///Chroniony konstruktor kopiuj¹cy
+		///Chroniony konstruktor kopiujÄ…cy
 		///
 		///@param PowerModuleCopy - obiekt klasy PowerModule
 		///
 		PowerModule(const PowerModule & PowerModuleCopy);
 
 		///
-		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - uÅ¼ywany wyÅ‚Ä…cznie przez CPhysicalManager
 		///
 		virtual ~PowerModule(void);
 
@@ -55,14 +55,14 @@ namespace equipment
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca iloœæ energii, któr¹ mo¿na zgromadziæ
+		///Metoda zwraca iloÅ›Ä‡ energii, ktÃ³rÄ… moÅ¼na zgromadziÄ‡
 		///
 		const float getEnergyCapacitor() const;
 
 		///
-		///Metoda ustawia iloœæ energii, któr¹ mo¿na zgromadziæ
+		///Metoda ustawia iloÅ›Ä‡ energii, ktÃ³rÄ… moÅ¼na zgromadziÄ‡
 		///
-		///@param energy_capacitor - iloœæ energii, któr¹ mo¿na zgromadziæ
+		///@param energy_capacitor - iloÅ›Ä‡ energii, ktÃ³rÄ… moÅ¼na zgromadziÄ‡
 		///
 		void setEnergyCapacitor(float energy_capacitor);
 
@@ -79,23 +79,23 @@ namespace equipment
 		void setPower(float power);
 
 		///
-		///Metoda zwraca iloœæ zgromadzonej energii
+		///Metoda zwraca iloÅ›Ä‡ zgromadzonej energii
 		///
 		const float getStoredEnergy() const;
 
 		///
-		///Metoda ustawia iloœæ zgromadzonej energii
+		///Metoda ustawia iloÅ›Ä‡ zgromadzonej energii
 		///
-		///@param stored_energy - iloœæ zgromadzonej energii
+		///@param stored_energy - iloÅ›Ä‡ zgromadzonej energii
 		///
 		void setStoredEnergy(float stored_energy);
 
 	protected:
 
-		float m_energy_capacitor; //energia, która mo¿e zostaæ zgromadzona
+		float m_energy_capacitor; //energia, ktÃ³ra moÅ¼e zostaÄ‡ zgromadzona
 		float m_power; //moc
 		float m_stored_energy; //zgromadzona energia
-		Switch m_unit_controller; //w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		Switch m_unit_controller; //wÅ‚Ä…cznik, sterownik, moduÅ‚ zarzÄ…dzania, starter, stacyjka
 
 	private:
 	};

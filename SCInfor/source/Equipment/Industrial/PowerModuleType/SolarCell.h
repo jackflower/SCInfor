@@ -1,4 +1,4 @@
-//  ______________________________________
+ï»¿//  ______________________________________
 // | SolarCell.h - class definition       |
 // | Jack Flower - July 2014              |
 // |______________________________________|
@@ -20,30 +20,30 @@ namespace equipment
 		RTTI_DECL;
 
 		///
-		///Deklaracja przyjaŸni
+		///Deklaracja przyjaÅºni
 		///
 		friend class CPhysicalManager;
 		
-		//Aby uzyskaæ obiekt SolarCell, nale¿y wywo³aæ CPhysicalManager::CreateSolarCell();
+		//Aby uzyskaÄ‡ obiekt SolarCell, naleÅ¼y wywoÅ‚aÄ‡ CPhysicalManager::CreateSolarCell();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyœlny
+		///Chroniony konstruktor domyÅ›lny
 		///
-		///@param uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///@param uniqueId - unikalny identyfikator obiektu - staÅ‚a referncja na obiekt klasy std::wstring
 		///
 		SolarCell(const std::wstring & uniqueId);
 
 		///
-		///Chroniony konstruktor kopiuj¹cy
+		///Chroniony konstruktor kopiujÄ…cy
 		///
 		///@param SolarCellCopy - obiekt klasy SolarCell
 		///
 		SolarCell(const SolarCell & SolarCellCopy);
 
 		///
-		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - uÅ¼ywany wyÅ‚Ä…cznie przez CPhysicalManager
 		///
 		virtual ~SolarCell(void);
 
@@ -55,50 +55,50 @@ namespace equipment
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca nazwê fotoogniwa
+		///Metoda zwraca nazwÄ™ fotoogniwa
 		///
 		const std::string getSolarCellName() const;
 
 		///
-		///Metoda ustawia nazwê fotoogniwa
+		///Metoda ustawia nazwÄ™ fotoogniwa
 		///
-		///@param solarcell_name - nazwa turbiny sta³a referencja na std::string
+		///@param solarcell_name - nazwa turbiny staÅ‚a referencja na std::string
 		///
 		void setSolarCellName(const std::string & solarcell_name);
 
 		///
-		///Metoda zwraca czas, co jaki nastêpujê proces do³¹dowywania energii
+		///Metoda zwraca czas, co jaki nastÄ™pujÄ™ proces doÅ‚Ä…dowywania energii
 		///
 		const float getEnergyDuration() const;
 
 		///
-		///Metoda ustawia czas, co jaki nastêpujê proces do³¹dowywania energii
+		///Metoda ustawia czas, co jaki nastÄ™pujÄ™ proces doÅ‚Ä…dowywania energii
 		///
-		///@param energy_duration - czas, co jaki nastêpujê proces do³¹dowywania energii
+		///@param energy_duration - czas, co jaki nastÄ™pujÄ™ proces doÅ‚Ä…dowywania energii
 		///
 		void setEnergyDuration(float energy_duration);
 
 		///
-		///Metoda zwraca prêdkoœæ obrotu
+		///Metoda zwraca prÄ™dkoÅ›Ä‡ obrotu
 		///
 		const float getRotationSpeed() const;
 
 		///
-		///Metoda ustawia prêdkoœæ obrotu
+		///Metoda ustawia prÄ™dkoÅ›Ä‡ obrotu
 		///
-		///@param rotation_speed - prêdkoœæ obrotu
+		///@param rotation_speed - prÄ™dkoÅ›Ä‡ obrotu
 		///
 		void setRotationSpeed(float rotation_speed);
 
 		///
-		///Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
+		///Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu
 		///
 		///@param dt - czas
 		///
 		virtual void updateAnimations(float dt);
 
 		///
-		///Wirtualna metoda aktualizuj¹ca obiekt
+		///Wirtualna metoda aktualizujÄ…ca obiekt
 		///
 		///@param dt - czas
 		///
@@ -107,18 +107,18 @@ namespace equipment
 	private:
 		
 		std::string m_solarcell_name; //nazwa fotoogniwa
-		float m_energy_duration; //czas, co jaki nastêpuje proces ³adowania fotoogniwa
-		float m_rotation_speed; //prêdkoœæ obrotu obiektu
-		ESolarCellState m_solarcell_state; //wyliczenie stanów logicznych fotoogniwa (maszyna stanów)
+		float m_energy_duration; //czas, co jaki nastÄ™puje proces Å‚adowania fotoogniwa
+		float m_rotation_speed; //prÄ™dkoÅ›Ä‡ obrotu obiektu
+		ESolarCellState m_solarcell_state; //wyliczenie stanÃ³w logicznych fotoogniwa (maszyna stanÃ³w)
 
 		float m_damage_duration; //obliczany czas trwania stanu uszkodzenia
 		float m_death_duration; //obliczany czas trwania stanu death (tylko serwis, wymiana)
-		float m_calculated_energy_duration;	//obliczany czas, co jaki nastêpuje proces ³adowania fotoogniwa
+		float m_calculated_energy_duration;	//obliczany czas, co jaki nastÄ™puje proces Å‚adowania fotoogniwa
 
 		//prywatna metoda aktualizuje stan obiektu
 		void updateSolarCellState(float dt);
 
-		//prywatna metoda p³ynnie obracaj¹ca fotoogniwo w kierunku Ÿród³a energii
+		//prywatna metoda pÅ‚ynnie obracajÄ…ca fotoogniwo w kierunku ÅºrÃ³dÅ‚a energii
 		void updateRotation(float dt);
 
 	};

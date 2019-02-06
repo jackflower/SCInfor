@@ -28,7 +28,7 @@
 #include "../Equipment/Thermodynamics/Ventilator/CVentilator.h"
 #include "../Equipment/Weapon/Ammo/CAmmo.h"
 #include "../Equipment/Weapon/Gun/CGun.h"
-#include "../Equipment/Lightingequipment/CLightingEquipment.h"
+#include "../Equipment/Lightingequipment/LightingEquipment.h"
 #include "../Equipment/Industrial/PowerModuleType/WindTurbine.h"
 #include "../Equipment/Industrial/PowerModuleType/SolarCell.h"
 #include "Industrial/PowerStation//CPowerStation.h"
@@ -318,11 +318,11 @@ namespace logic
 		return Create<CCommunication>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CLightingEquipment i zwraca wskaünik na ten obiekt
-	CLightingEquipment *CPhysicalManager::CreateLightingEquipment(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy LightingEquipment i zwraca wskaünik na ten obiekt
+	LightingEquipment *CPhysicalManager::CreateLightingEquipment(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CLightingEquipment created\n");
-		return Create<CLightingEquipment>(uniqueId);
+		fprintf(stderr, "LightingEquipment created\n");
+		return Create<LightingEquipment>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CGround i zwraca wskaünik na ten obiekt

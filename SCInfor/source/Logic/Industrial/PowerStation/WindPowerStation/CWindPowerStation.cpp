@@ -325,7 +325,7 @@ namespace logic
 			if (m_windturbine_data.getTurbine())
 			{
 				//Aktualizacja po³o¿enia turbiny wzglêdem w³aœciciela (ta klasa)
-				//generalnie podpinam CWindTurbineData aby mieæ
+				//generalnie podpinam WindTurbineData aby mieæ
 				//mo¿liwoœæ dowolnego dobory po³o¿enia turbin.
 				//W tej klasie - nie korzystam z tego mechanizmu,
 				//turbina jest po³o¿ona na wspólnej osi jej w³aœciciela

@@ -66,7 +66,7 @@ namespace equipment
 	class CVentilator;
 	class WindTurbine;
 	class SolarCell;
-	class CLightingEquipment;
+	class LightingEquipment;
 
 	namespace weapon
 	{
@@ -338,11 +338,11 @@ namespace logic
 		CCommunication *CreateCommunication(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CLightingEquipment i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy LightingEquipment i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CLightingEquipment *CreateLightingEquipment(const std::wstring &uniqueId = L"");
+		LightingEquipment *CreateLightingEquipment(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CGround i zwraca wskaünik na ten obiekt

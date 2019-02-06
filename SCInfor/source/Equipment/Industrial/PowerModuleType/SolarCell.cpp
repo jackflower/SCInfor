@@ -1,4 +1,4 @@
-//  ______________________________________
+ï»¿//  ______________________________________
 // | SolarCell.cpp - class implementation |
 // | Jack Flower - July 2014              |
 // |______________________________________|
@@ -20,7 +20,7 @@ namespace equipment
 {
 	RTTI_IMPL(SolarCell, PowerModule);
 
-	//Chroniony konstruktor domyœlny
+	//Chroniony konstruktor domyÅ›lny
 	SolarCell::SolarCell(const std::wstring& uniqueId)
 	:
 		PowerModule(uniqueId),//konstruktor klasy bazowej
@@ -34,10 +34,10 @@ namespace equipment
 	{
 	}
 
-	//Chroniony konstruktor kopiuj¹cy
+	//Chroniony konstruktor kopiujÄ…cy
 	SolarCell::SolarCell(const SolarCell & SolarCellCopy)
 	:
-		PowerModule(SolarCellCopy),//konstruktor kopiuj¹cy klasy bazowej
+		PowerModule(SolarCellCopy),//konstruktor kopiujÄ…cy klasy bazowej
 		m_solarcell_name(SolarCellCopy.m_solarcell_name),
 		m_energy_duration(SolarCellCopy.m_energy_duration),
 		m_rotation_speed(SolarCellCopy.m_rotation_speed),
@@ -48,7 +48,7 @@ namespace equipment
 	{
 	}
 
-	//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - uÅ¼ywany wyÅ‚Ä…cznie przez CPhysicalManager
 	SolarCell::~SolarCell(void)
 	{
 		//PowerModule
@@ -67,43 +67,43 @@ namespace equipment
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca nazwê fotoogniwa
+	//Metoda zwraca nazwÄ™ fotoogniwa
 	const std::string SolarCell::getSolarCellName() const
 	{
 		return m_solarcell_name;
 	}
 
-	//Metoda ustawia nazwê fotoogniwa
+	//Metoda ustawia nazwÄ™ fotoogniwa
 	void SolarCell::setSolarCellName(const std::string& solarcell_name)
 	{
 		m_solarcell_name = solarcell_name;
 	}
 
-	//Metoda zwraca czas, co jaki nastêpujê proces do³¹dowywania energii
+	//Metoda zwraca czas, co jaki nastÄ™pujÄ™ proces doÅ‚Ä…dowywania energii
 	const float SolarCell::getEnergyDuration() const
 	{
 		return m_energy_duration;
 	}
 
-	//Metoda ustawia czas, co jaki nastêpujê proces do³¹dowywania energii
+	//Metoda ustawia czas, co jaki nastÄ™pujÄ™ proces doÅ‚Ä…dowywania energii
 	void SolarCell::setEnergyDuration(float energy_duration)
 	{
 		m_energy_duration = energy_duration;
 	}
 
-	//Metoda zwraca prêdkoœæ obrotu
+	//Metoda zwraca prÄ™dkoÅ›Ä‡ obrotu
 	const float SolarCell::getRotationSpeed() const
 	{
 		return m_rotation_speed;
 	}
 
-	//Metoda ustawia prêdkoœæ obrotu
+	//Metoda ustawia prÄ™dkoÅ›Ä‡ obrotu
 	void SolarCell::setRotationSpeed(float rotation_speed)
 	{
 		m_rotation_speed = rotation_speed;
 	}
 
-	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
+	//Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu
 	void SolarCell::updateAnimations(float dt)
 	{
 		switch(m_solarcell_state)
@@ -149,12 +149,12 @@ namespace equipment
 		}
 	}
 
-	//Wirtualna metoda aktualizuj¹ca obiekt
+	//Wirtualna metoda aktualizujÄ…ca obiekt
 	void SolarCell::update(float dt)
 	{
 		CPhysical::UpdateShadow(dt);//aktualizacja shadow engine
 
-		//jeœli urz¹dzenie jest w³¹czone
+		//jeÅ›li urzÄ…dzenie jest wÅ‚Ä…czone
 		if(m_unit_controller.getState())
 		{
 			updateSolarCellState(dt);
@@ -168,17 +168,17 @@ namespace equipment
 	//prywatna metoda aktualizuje stan obiektu
 	void SolarCell::updateSolarCellState(float dt)
 	{
-		//proces przebiega - fotoogniwo gromadzi energiê
+		//proces przebiega - fotoogniwo gromadzi energiÄ™
 		if(m_stored_energy < m_energy_capacitor)
 		{
 			if(gWeather.getTemperature() > 0)
-				m_solarcell_state = SOLARCELL_UPDATE_ENERGY; //aktywacja ³adowania fotoogniwa
+				m_solarcell_state = SOLARCELL_UPDATE_ENERGY; //aktywacja Å‚adowania fotoogniwa
 			else
 				m_solarcell_state = SOLARCELL_DEFAULT; //default machine state
 
 			if(m_solarcell_state == SOLARCELL_UPDATE_ENERGY)
 			{
-				//³adowanie fotoogniwa i aktualizacja obrotu wzglêdem Ÿród³a energii (solar)
+				//Å‚adowanie fotoogniwa i aktualizacja obrotu wzglÄ™dem ÅºrÃ³dÅ‚a energii (solar)
 				updateRotation(dt);
 					
 				//zliczam czas
@@ -188,10 +188,10 @@ namespace equipment
 					//aktualizacja energii
 					m_stored_energy += m_power * maths::Abs(gWeather.getSolarEnergyFactor());
 
-					if(m_stored_energy > m_energy_capacitor)//kalibracja do wartoœci oczekiwanej
+					if(m_stored_energy > m_energy_capacitor)//kalibracja do wartoÅ›ci oczekiwanej
 						m_stored_energy = m_energy_capacitor;
 
-					m_calculated_energy_duration = 0.0f;//zerujê czas
+					m_calculated_energy_duration = 0.0f;//zerujÄ™ czas
 					//std::cout << "temperature:    " << gWeather.getTemperature() << " stored_energy: " << m_current_stored_energy << std::endl;
 				}
 			}
@@ -200,23 +200,23 @@ namespace equipment
 			m_solarcell_state = SOLARCELL_DEFAULT;//default machine state
 	}
 
-	//prywatna metoda p³ynnie obracaj¹ca fotoogniwo w kierunku Ÿród³a energii
+	//prywatna metoda pÅ‚ynnie obracajÄ…ca fotoogniwo w kierunku ÅºrÃ³dÅ‚a energii
 	void SolarCell::updateRotation(float dt)
 	{
 		//2014-08-08
-		//bardzo Ÿle napisany kod - zaj¹æ siê tym w innym czasie...
-		//k¹t obrotu obiektu jest mniejszy od k¹ta Ÿród³a termicznego
+		//bardzo Åºle napisany kod - zajÄ…Ä‡ siÄ™ tym w innym czasie...
+		//kÄ…t obrotu obiektu jest mniejszy od kÄ…ta ÅºrÃ³dÅ‚a termicznego
 		if(GetRotationHead() < (gWeather.getAngleSun() - CALIBRATION_FACTOR_ANGLE))
 		{
 			SetRotationHead(GetRotationHead() + m_rotation_speed * dt);
 			if(GetRotationHead() <= (gWeather.getAngleSun()- CALIBRATION_FACTOR_ANGLE))
-				return;//wyjœcie, jeœli warunek spe³niony
+				return;//wyjÅ›cie, jeÅ›li warunek speÅ‚niony
 		}
 		else
 		{
 			SetRotationHead(GetRotationHead() - m_rotation_speed * dt);
 			if(GetRotationHead() >= (gWeather.getAngleSun() - CALIBRATION_FACTOR_ANGLE))
-				return;//wyjœcie, jeœli warunek spe³niony
+				return;//wyjÅ›cie, jeÅ›li warunek speÅ‚niony
 		}
 		//old code:
 		//SetRotationHead(gWeather.getAngleSun()- CALIBRATION_FACTOR_ANGLE);

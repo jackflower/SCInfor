@@ -1,4 +1,4 @@
-//  _____________________________________________________
+﻿//  _____________________________________________________
 // | ESolarCellState.h - enumeration of states solarcell |
 // | Jack Flower - July 2014                             |
 // |_____________________________________________________|
@@ -10,7 +10,7 @@
 namespace logic
 {
 	///
-	///Wyliczenie stan�w dla obiektu SolarCell
+	///Wyliczenie stanów dla obiektu SolarCell
 	///
 	enum ESolarCellState
 	{

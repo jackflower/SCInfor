@@ -1,4 +1,4 @@
-//  _________________________________________________
+﻿//  _________________________________________________
 // | ETurbineState.h - enumeration of states turbine |
 // | Jack Flower - July 2014                         |
 // |_________________________________________________|
@@ -10,7 +10,7 @@
 namespace logic
 {
 	///
-	///Wyliczenie stan�w dla obiektu WindTurbine
+	///Wyliczenie stanów dla obiektu WindTurbine
 	///
 	enum ETurbineState
 	{
