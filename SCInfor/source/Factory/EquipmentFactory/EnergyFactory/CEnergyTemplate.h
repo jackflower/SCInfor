@@ -10,7 +10,7 @@
 #include "EnergyTankFactory/CEnergyTankTemplate.h"
 #include "BatteryFactory/CBatteryTemplate.h"
 #include "../../../Equipment/Energy/Energy.h"
-#include "../../../Equipment/EquipmentData/CEquipmentEnergyTankData.h"
+#include "../../../Equipment/EquipmentData/EquipmentEnergyTankData.h"
 #include "../../../Equipment/Energy/Battery/Battery.h"
 #include "../../../Equipment/EquipmentData/EquipmentBatteryData.h"
 
@@ -192,7 +192,7 @@ namespace factory
 	private:
 
 		std::string					m_templ_energy_name;				//nazwa akumulatora energii (niklowy, kadmowy, lityczny, atomowy...etc)
-		CEquipmentEnergyTankData	m_templ_energytank_data;			//opakowanie funkcjonalnoúci zbiornika paliwa
+		EquipmentEnergyTankData	m_templ_energytank_data;			//opakowanie funkcjonalnoúci zbiornika paliwa
 		CEnergyTankTemplate*		p_templ_energy_tank;				//wskaünik na dane wzorca akumulatora energii
 		EquipmentBatteryData		m_templ_battery_data;				//opakowanie funkcjonalnoúci baterii
 		CBatteryTemplate*			p_templ_battery;					//wskaünik na dane wzorca baterii

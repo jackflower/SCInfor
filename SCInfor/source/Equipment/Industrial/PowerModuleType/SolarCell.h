@@ -1,13 +1,13 @@
-//  _______________________________________
-// | CSolarCell.h - class definition       |
-// | Jack Flower - July 2014               |
-// |_______________________________________|
+//  ______________________________________
+// | SolarCell.h - class definition       |
+// | Jack Flower - July 2014              |
+// |______________________________________|
 //
 
 #ifndef H_SOLAR_CELL_JACK
 #define H_SOLAR_CELL_JACK
 
-#include "../PowerModule/CPowerModule.h"
+#include "../PowerModule/PowerModule.h"
 #include "ESolarCellState.h"
 
 namespace equipment
@@ -15,7 +15,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje fotoogniwo
 	///
-	class CSolarCell : public CPowerModule
+	class SolarCell : public PowerModule
 	{
 		RTTI_DECL;
 
@@ -24,45 +24,47 @@ namespace equipment
 		///
 		friend class CPhysicalManager;
 		
-		//Aby uzyskaæ obiekt CSolarCell, nale¿y wywo³aæ CPhysicalManager::CreateSolarCell();
+		//Aby uzyskaæ obiekt SolarCell, nale¿y wywo³aæ CPhysicalManager::CreateSolarCell();
 
 	protected:
 
 		///
 		///Chroniony konstruktor domyœlny
 		///
-		CSolarCell(const std::wstring& uniqueId);
+		///@param uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///
+		SolarCell(const std::wstring & uniqueId);
 
 		///
 		///Chroniony konstruktor kopiuj¹cy
 		///
-		///@param CSolarCellCopy - obiekt klasy CSolarCell
+		///@param SolarCellCopy - obiekt klasy SolarCell
 		///
-		CSolarCell(const CSolarCell &CSolarCellCopy);
+		SolarCell(const SolarCell & SolarCellCopy);
 
 		///
 		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
 		///
-		virtual ~CSolarCell(void);
+		virtual ~SolarCell(void);
 
 	public:
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca nazwê fotoogniwa
 		///
-		const std::string GetSolarCellName() const;
+		const std::string getSolarCellName() const;
 
 		///
 		///Metoda ustawia nazwê fotoogniwa
 		///
-		///@param &solarcell_name - nazwa turbiny sta³a referencja na std::string
+		///@param solarcell_name - nazwa turbiny sta³a referencja na std::string
 		///
-		void SetSolarCellName(const std::string& solarcell_name);
+		void setSolarCellName(const std::string & solarcell_name);
 
 		///
 		///Metoda zwraca czas, co jaki nastêpujê proces do³¹dowywania energii
@@ -104,14 +106,14 @@ namespace equipment
 
 	private:
 		
-		std::string			m_solarcell_name;				//nazwa fotoogniwa
-		float				m_energy_duration;				//czas, co jaki nastêpuje proces ³adowania fotoogniwa
-		float				m_rotation_speed;				//prêdkoœæ obrotu obiektu
-		ESolarCellState		m_solarcell_state;				//wyliczenie stanów logicznych fotoogniwa (maszyna stanów)
+		std::string m_solarcell_name; //nazwa fotoogniwa
+		float m_energy_duration; //czas, co jaki nastêpuje proces ³adowania fotoogniwa
+		float m_rotation_speed; //prêdkoœæ obrotu obiektu
+		ESolarCellState m_solarcell_state; //wyliczenie stanów logicznych fotoogniwa (maszyna stanów)
 
-		float				m_damage_duration;				//obliczany czas trwania stanu uszkodzenia
-		float				m_death_duration;				//obliczany czas trwania stanu death (tylko serwis, wymiana)
-		float				m_calculated_energy_duration;	//obliczany czas, co jaki nastêpuje proces ³adowania fotoogniwa
+		float m_damage_duration; //obliczany czas trwania stanu uszkodzenia
+		float m_death_duration; //obliczany czas trwania stanu death (tylko serwis, wymiana)
+		float m_calculated_energy_duration;	//obliczany czas, co jaki nastêpuje proces ³adowania fotoogniwa
 
 		//prywatna metoda aktualizuje stan obiektu
 		void updateSolarCellState(float dt);

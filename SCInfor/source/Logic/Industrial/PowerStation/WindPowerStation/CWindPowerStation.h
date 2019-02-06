@@ -9,7 +9,7 @@
 
 #include "../CPowerStation.h"
 #include "../EWindPowerStationState.h"
-#include "../../../../Equipment/Industrial/PowerModuleType/CWindTurbine.h"
+#include "../../../../Equipment/Industrial/PowerModuleType/WindTurbine.h"
 #include "../../../../Equipment/Industrial/PowerStationData/CWindTurbineData.h"
 #include "../../../../RTTI/RTTI.h"
 
@@ -121,16 +121,16 @@ namespace logic
 			void setUseWindTurbine(const bool use_windturbine);
 
 			///
-			///Metoda zwraca wskaünik na obiekt klasy CWindTurbine
+			///Metoda zwraca wskaünik na obiekt klasy WindTurbine
 			///
-			CWindTurbine* getWindTurbine();
+			WindTurbine* getWindTurbine();
 		
 			///
-			///Metoda ustawia wskaünik na obiekt klasy CWindTurbine
+			///Metoda ustawia wskaünik na obiekt klasy WindTurbine
 			///
-			///@param *windturbine - wskaünik na obiekt klasy CWindTurbine
+			///@param *windturbine - wskaünik na obiekt klasy WindTurbine
 			///
-			void setWindTurbine(CWindTurbine* windturbine);
+			void setWindTurbine(WindTurbine* windturbine);
 			
 			///
 			///Metoda zwraca flagÍ, czy korpus siÍ obraca (HEAD)

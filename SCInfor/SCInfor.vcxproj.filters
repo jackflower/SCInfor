@@ -387,30 +387,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEnergyData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEnergyTankData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentEngineData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentFuelTankData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\EquipmentData\CEquipmentGunData.cpp">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Industrial\PowerModule\CPowerModule.cpp">
-      <Filter>source\Equipment\Industrial\PowerModule</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Industrial\PowerModuleType\CSolarCell.cpp">
-      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Industrial\PowerModuleType\CWindTurbine.cpp">
-      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\Industrial\PowerStationData\CWindTurbineData.cpp">
       <Filter>source\Equipment\Industrial\PowerStationData</Filter>
     </ClCompile>
@@ -996,6 +972,30 @@
     <ClCompile Include="source\Equipment\EquipmentData\EquipmentCommunicationData.cpp">
       <Filter>source\Equipment\EquipmentData</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentEnergyData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentEnergyTankData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentEngineData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentFuelTankData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\EquipmentData\EquipmentGunData.cpp">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Industrial\PowerModule\PowerModule.cpp">
+      <Filter>source\Equipment\Industrial\PowerModule</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Industrial\PowerModuleType\SolarCell.cpp">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Industrial\PowerModuleType\WindTurbine.cpp">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1017,30 +1017,6 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Engine\FuelTank\EFuelTankState.h">
       <Filter>source\Equipment\Engine\FuelTank</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEnergyData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEnergyTankData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentEngineData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentFuelTankData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\EquipmentData\CEquipmentGunData.h">
-      <Filter>source\Equipment\EquipmentData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Industrial\PowerModule\CPowerModule.h">
-      <Filter>source\Equipment\Industrial\PowerModule</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\CSolarCell.h">
-      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\CWindTurbine.h">
-      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Industrial\PowerModuleType\ESolarCellState.h">
       <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
@@ -1749,6 +1725,30 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\EquipmentData\EquipmentCommunicationData.h">
       <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentEnergyData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentEnergyTankData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentEngineData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentFuelTankData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\EquipmentData\EquipmentGunData.h">
+      <Filter>source\Equipment\EquipmentData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerModule\PowerModule.h">
+      <Filter>source\Equipment\Industrial\PowerModule</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\SolarCell.h">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Industrial\PowerModuleType\WindTurbine.h">
+      <Filter>source\Equipment\Industrial\PowerModuleType</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

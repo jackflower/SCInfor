@@ -10,7 +10,7 @@
 #include "EEngineState.h"
 #include "../../Logic/Actor/CActor.h"
 #include "../../RTTI/RTTI.h"
-#include "../EquipmentData/CEquipmentFuelTankData.h"
+#include "../EquipmentData/EquipmentFuelTankData.h"
 
 using namespace logic;
 
@@ -97,14 +97,14 @@ namespace equipment
 		///
 		///Metoda zwraca referencję na opakowanie funkcjonalności zbiornika paliwa
 		///
-		CEquipmentFuelTankData & getEquipmentFuelTankData();
+		EquipmentFuelTankData & getEquipmentFuelTankData();
 
 		///
 		///Metoda ustawia referencję na opakowanie funkcjonalności zbiornika paliwa
 		///
-		///@param fueltank_data - referencja na obiekt klasy CEquipmentFuelTankData
+		///@param fueltank_data - referencja na obiekt klasy EquipmentFuelTankData
 		///
-		void setEquipmentFuelTankData(CEquipmentFuelTankData & fueltank_data);
+		void setEquipmentFuelTankData(EquipmentFuelTankData & fueltank_data);
 
 		///
 		///Metoda zwraca referencję na opakowanie danych dla transformacji
@@ -242,7 +242,7 @@ namespace equipment
 	private:
 
 		std::string m_engine_name; //nazwa silnika (spalinowy, elektryczny, atomowy, biologiczny...etc)
-		CEquipmentFuelTankData m_fueltank_data; //opakowanie funkcjonalności zbiornika paliwa
+		EquipmentFuelTankData m_fueltank_data; //opakowanie funkcjonalności zbiornika paliwa
 		float m_percentage_reserve_fuel; //procentowa wartość paliwa - komunikato rezerwie (default 10% - ctor)
 		float m_fuel_consumption; //zużycie paliwa gdy obiekt się nie przemieszcza (aktualizowane co sekundę)
 		float m_fuel_consumption_move; //zużycie paliwa gdy obiekt się przemieszcza - związane z prędkością obiektu

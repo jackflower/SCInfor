@@ -1,7 +1,7 @@
-//  _________________________________________________
-// | CEquipmentEngineData.h - class definition       |
-// | Jack Flower - May 2016                          |
-// |_________________________________________________|
+//  ________________________________________________
+// | EquipmentEngineData.h - class definition       |
+// | Jack Flower - May 2016                         |
+// |________________________________________________|
 //
 
 #ifndef H_EQUIPMENT_ENGINE_DATA_JACK
@@ -24,7 +24,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem - silnik
 	///
-	class CEquipmentEngineData : public EquipmentData
+	class EquipmentEngineData : public EquipmentData
 	{
 		RTTI_DECL;
 
@@ -33,40 +33,40 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CEquipmentEngineData();
+		EquipmentEngineData();
 
 		///
 		///Konstruktor kopiujπcy
 		///
-		///@param & CEquipmentEngineDataCopy - sta≥a referencja na obiekt klasy CEquipmentEngineData
+		///@param EquipmentEngineDataCopy - sta≥a referencja na obiekt klasy EquipmentEngineData
 		///
-		CEquipmentEngineData(const CEquipmentEngineData & CEquipmentEngineDataCopy);
+		EquipmentEngineData(const EquipmentEngineData & EquipmentEngineDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEquipmentEngineData();
+		virtual ~EquipmentEngineData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca wskaünik na obiekt klasy Engine
 		///
-		Engine* getEngine();
+		Engine *getEngine();
 
 		///
 		///Metoda ustawia wskaünik na obiekt klasy Engine
 		///
 		///@param *engine - wskaünik na obiekt klasy Engine
 		///
-		void setEngine(Engine* engine);
+		void setEngine(Engine *engine);
 
 	private:
 
-		Engine*	p_engine;	//wskaünik na klasÍ Engine - silnik
+		Engine *p_engine; //wskaünik na klasÍ Engine - silnik
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_ENGINE_DATA_JACK

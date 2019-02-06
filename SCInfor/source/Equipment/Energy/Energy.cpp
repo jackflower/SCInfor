@@ -215,13 +215,13 @@ namespace equipment
 	}
 
 	//Metoda zwraca referencję na opakowanie funkcjonalności akumulatora
-	CEquipmentEnergyTankData & Energy::getEquipmentEnergyTankData()
+	EquipmentEnergyTankData & Energy::getEquipmentEnergyTankData()
 	{
 		return m_energytank_data;
 	}
 
 	//Metoda ustawia referencję na opakowanie funkcjonalności akumulatora
-	void Energy::setEquipmentEnergyTankData(CEquipmentEnergyTankData & energytank_data)
+	void Energy::setEquipmentEnergyTankData(EquipmentEnergyTankData & energytank_data)
 	{
 		m_energytank_data = energytank_data;
 	}

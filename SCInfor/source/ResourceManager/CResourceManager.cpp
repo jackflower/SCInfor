@@ -438,8 +438,8 @@ namespace resource
 		//		- CAirconditioningTemplate				->tworzy->	CAirconditioning
 		//		- CThermalInsulationTemplate			->tworzy->	CThermalInsulation
 		//		- CVentilatorTemplate					->tworzy->	CVentilator
-		//		- CWindTurbineTemplate					->tworzy->	CWindTurbine
-		//		- CSolarCellTemplate					->tworzy->	CSolarCell
+		//		- CWindTurbineTemplate					->tworzy->	WindTurbine
+		//		- CSolarCellTemplate					->tworzy->	SolarCell
 		//		- CWindPowerStationTemplate				->tworzy->	CWindPowerStation
 		//		- CWindPowerStationMultipledTemplate	->tworzy->	CWindPowerStationMultipled
 		//		- CGroundWorkTemplate					->tworzy->	CGroundWork

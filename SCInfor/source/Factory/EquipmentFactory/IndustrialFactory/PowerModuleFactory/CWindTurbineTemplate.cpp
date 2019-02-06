@@ -79,23 +79,23 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CWindTurbine
-	CWindTurbine* CWindTurbineTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy WindTurbine
+	WindTurbine* CWindTurbineTemplate::Create(std::wstring id)
 	{
-		CWindTurbine* turbine = gPhysicalManager.CreateWindTurbine(id);
+		WindTurbine* turbine = gPhysicalManager.CreateWindTurbine(id);
 		Fill(turbine);
 		return turbine;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CWindTurbineTemplate::Fill(CWindTurbine *p_turbine)
+	void CWindTurbineTemplate::Fill(WindTurbine *p_turbine)
 	{
 		if(p_turbine)
 		{
 			CActorTemplate::Fill(p_turbine);
 
 			//przekazanie danych...
-			p_turbine->SetTurbineName(m_templ_turbine_name);
+			p_turbine->setTurbineName(m_templ_turbine_name);
 			p_turbine->setSpeedRotor(m_templ_speed_rotor);
 			p_turbine->setSpeedTransmission(m_templ_speed_transmission);
 			p_turbine->setEnergyCapacitor(m_templ_energy_capacitor);

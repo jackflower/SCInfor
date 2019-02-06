@@ -75,23 +75,23 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CSolarCell
-	CSolarCell* CSolarCellTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy SolarCell
+	SolarCell* CSolarCellTemplate::Create(std::wstring id)
 	{
-		CSolarCell* solarcell = gPhysicalManager.CreateSolarCell(id);
+		SolarCell* solarcell = gPhysicalManager.CreateSolarCell(id);
 		Fill(solarcell);
 		return solarcell;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CSolarCellTemplate::Fill(CSolarCell *p_solarcell)
+	void CSolarCellTemplate::Fill(SolarCell *p_solarcell)
 	{
 		if(p_solarcell)
 		{
 			CActorTemplate::Fill(p_solarcell);
 
 			//przekazanie danych...
-			p_solarcell->SetSolarCellName(m_templ_solarcell_name);
+			p_solarcell->setSolarCellName(m_templ_solarcell_name);
 			p_solarcell->setEnergyCapacitor(m_templ_stored_energy);
 			p_solarcell->setPower(m_templ_power);
 			p_solarcell->setEnergyDuration(m_templ_energy_duration);

@@ -1,7 +1,7 @@
-//  ___________________________________________________
-// | CEquipmentFuelTankData.h - class definition       |
-// | Jack Flower - May 2016                            |
-// |___________________________________________________|
+//  __________________________________________________
+// | EquipmentFuelTankData.h - class definition       |
+// | Jack Flower - May 2016                           |
+// |__________________________________________________|
 //
 
 #ifndef H_EQUIPMENT_FUELTANK_DATA_JACK
@@ -15,7 +15,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem - zbiornik paliwa
 	///
-	class CEquipmentFuelTankData : public EquipmentData
+	class EquipmentFuelTankData : public EquipmentData
 	{
 		RTTI_DECL;
 	
@@ -24,40 +24,40 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CEquipmentFuelTankData();
+		EquipmentFuelTankData();
 
 		///
 		///Konstruktor kopiujacy
 		///
-		///@param & CEquipmentFuelTankDataaCopy - sta≥a referencja na obiekt klasy CEquipmentFuelTankData
+		///@param EquipmentFuelTankDataaCopy - sta≥a referencja na obiekt klasy EquipmentFuelTankData
 		///
-		CEquipmentFuelTankData(const CEquipmentFuelTankData & CEquipmentFuelTankDataCopy);
+		EquipmentFuelTankData(const EquipmentFuelTankData & CEquipmentFuelTankDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEquipmentFuelTankData();
+		virtual ~EquipmentFuelTankData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca wskaünik na obiekt klasy FuelTank
 		///
-		FuelTank* getFuelTank();
+		FuelTank *getFuelTank();
 
 		///
 		///Metoda ustawia wskaünik na obiekt klasy FuelTank
 		///
 		///@param *fueltank - wskaünik na obiekt klasy FuelTank
 		///
-		void setFuelTank(FuelTank* fueltank);
+		void setFuelTank(FuelTank *fueltank);
 
 	private:
 
-		FuelTank*	p_fueltank;	//wskaünik na klasÍ FuelTank - zbiornik paliwa
+		FuelTank *p_fueltank; //wskaünik na klasÍ FuelTank - zbiornik paliwa
 
 	};
 }//namespace equipmentdata

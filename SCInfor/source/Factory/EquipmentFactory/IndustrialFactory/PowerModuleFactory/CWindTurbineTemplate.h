@@ -8,7 +8,7 @@
 #define H_WIND_TURBINE_TEMPLATE_JACK
 
 #include "../../../CActorTemplate.h"
-#include "../../../../Equipment/Industrial/PowerModuleType/CWindTurbine.h"
+#include "../../../../Equipment/Industrial/PowerModuleType/WindTurbine.h"
 
 namespace factory
 {
@@ -56,18 +56,18 @@ namespace factory
 		bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CWindTurbine
+		///Metoda tworzy obiekt klasy WindTurbine
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CWindTurbine* Create(std::wstring id = L"");
+		WindTurbine* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_turbine - wskaünik na obiekt klasy CWindTurbine
+		///@param *p_turbine - wskaünik na obiekt klasy WindTurbine
 		///
-		virtual void Fill(CWindTurbine *p_turbine);
+		virtual void Fill(WindTurbine *p_turbine);
 
 	private:
 

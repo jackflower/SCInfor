@@ -1,10 +1,10 @@
-//  _________________________________________
-// | CWindTurbine.cpp - class implementation |
-// | Jack Flower - July 2014                 |
-// |_________________________________________|
+//  ________________________________________
+// | WindTurbine.cpp - class implementation |
+// | Jack Flower - July 2014                |
+// |________________________________________|
 //
 
-#include "CWindTurbine.h"
+#include "WindTurbine.h"
 #include "../../../Weather/CWeather.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../Rendering/Animations/CAnimation.h"
@@ -18,22 +18,22 @@ using namespace rendering::drawable;
 
 namespace equipment
 {
-	RTTI_IMPL(CWindTurbine, CPowerModule);
+	RTTI_IMPL(WindTurbine, PowerModule);
 
 	//Chroniony konstruktor domyœlny
-	CWindTurbine::CWindTurbine(const std::wstring& uniqueId)
+	WindTurbine::WindTurbine(const std::wstring & uniqueId)
 	:
-		CPowerModule						(uniqueId),//konstruktor klasy bazowej
-		m_turbine_name						(),
-		m_speed_rotor						(0.0f),
-		m_speed_transmission				(1.0f),
-		m_percentage_activation				(0.0f),
-		m_turbine_state						(TURBINE_DEFAULT),
-		m_cargo_open_duration				(0.0f),
-		m_cargo_close_duration				(0.0f),
-		m_energy_full_duration				(0.0f),
-		m_calculated_speed_rotor			(0.0f),
-		m_calculated_energy_full_duration	(0.0f)
+		PowerModule(uniqueId),//konstruktor klasy bazowej
+		m_turbine_name(),
+		m_speed_rotor(0.0f),
+		m_speed_transmission(1.0f),
+		m_percentage_activation(0.0f),
+		m_turbine_state(TURBINE_DEFAULT),
+		m_cargo_open_duration(0.0f),
+		m_cargo_close_duration(0.0f),
+		m_energy_full_duration(0.0f),
+		m_calculated_speed_rotor(0.0f),
+		m_calculated_energy_full_duration(0.0f)
 	{
 		SetZIndexBody(Z_PHYSICAL_SHADOW_WIND_TURBINE_BODY);
 		SetZIndexShadowBody(Z_PHYSICAL_WIND_TURBINE_BODY);
@@ -42,109 +42,112 @@ namespace equipment
 	}
 
 	//Chroniony konstruktor kopiuj¹cy
-	CWindTurbine::CWindTurbine(const CWindTurbine &CWindTurbineCopy)
+	WindTurbine::WindTurbine(const WindTurbine & WindTurbineCopy)
 	:
-		CPowerModule						(CWindTurbineCopy),//konstruktor kopiuj¹cy klasy bazowej
-		m_turbine_name						(CWindTurbineCopy.m_turbine_name),
-		m_speed_rotor						(CWindTurbineCopy.m_speed_rotor),
-		m_speed_transmission				(CWindTurbineCopy.m_speed_transmission),
-		m_percentage_activation				(CWindTurbineCopy.m_percentage_activation),
-		m_turbine_state						(CWindTurbineCopy.m_turbine_state),
-		m_cargo_open_duration				(CWindTurbineCopy.m_cargo_open_duration),
-		m_cargo_close_duration				(CWindTurbineCopy.m_cargo_close_duration),
-		m_energy_full_duration				(CWindTurbineCopy.m_energy_full_duration),
-		m_calculated_speed_rotor			(CWindTurbineCopy.m_calculated_speed_rotor),
-		m_calculated_energy_full_duration	(CWindTurbineCopy.m_calculated_energy_full_duration)
+		PowerModule(WindTurbineCopy),//konstruktor kopiuj¹cy klasy bazowej
+		m_turbine_name(WindTurbineCopy.m_turbine_name),
+		m_speed_rotor(WindTurbineCopy.m_speed_rotor),
+		m_speed_transmission(WindTurbineCopy.m_speed_transmission),
+		m_percentage_activation(WindTurbineCopy.m_percentage_activation),
+		m_turbine_state(WindTurbineCopy.m_turbine_state),
+		m_cargo_open_duration(WindTurbineCopy.m_cargo_open_duration),
+		m_cargo_close_duration(WindTurbineCopy.m_cargo_close_duration),
+		m_energy_full_duration(WindTurbineCopy.m_energy_full_duration),
+		m_calculated_speed_rotor(WindTurbineCopy.m_calculated_speed_rotor),
+		m_calculated_energy_full_duration (WindTurbineCopy.m_calculated_energy_full_duration)
 	{
+		SetZIndexBody(Z_PHYSICAL_SHADOW_WIND_TURBINE_BODY);
+		SetZIndexShadowBody(Z_PHYSICAL_WIND_TURBINE_BODY);
+		SetZIndexHead(Z_PHYSICAL_SHADOW_WIND_TURBINE_HEAD);
+		SetZIndexShadowHead(Z_PHYSICAL_WIND_TURBINE_HEAD);
 	}
 
 	//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
-	CWindTurbine::~CWindTurbine(void)
+	WindTurbine::~WindTurbine(void)
 	{
-		//CPowerModule						not edit
-		m_turbine_name						= "";
-		m_speed_rotor						= 0.0f;
-		m_speed_transmission				= 0.0f;
-		m_percentage_activation				= 0.0f;
-		m_turbine_state						= TURBINE_DEFAULT;
-		m_cargo_open_duration				= 0.0f;
-		m_cargo_close_duration				= 0.0f;
-		m_energy_full_duration				= 0.0f;
-		m_calculated_speed_rotor			= 0.0f;
-		m_calculated_energy_full_duration	= 0.0f;
+		//PowerModule
+		m_turbine_name = "";
+		m_speed_rotor = 0.0f;
+		m_speed_transmission = 0.0f;
+		m_percentage_activation = 0.0f;
+		m_turbine_state = TURBINE_DEFAULT;
+		m_cargo_open_duration = 0.0f;
+		m_cargo_close_duration = 0.0f;
+		m_energy_full_duration = 0.0f;
+		m_calculated_speed_rotor = 0.0f;
+		m_calculated_energy_full_duration = 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CWindTurbine::GetType() const
+	const std::string WindTurbine::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
 	//Metoda zwraca nazwê turbiny
-	const std::string CWindTurbine::GetTurbineName() const
+	const std::string WindTurbine::getTurbineName() const
 	{
 		return m_turbine_name;
 	}
 
 	//Metoda ustawia nazwê turbiny
-	void CWindTurbine::SetTurbineName(const std::string& turbine_name)
+	void WindTurbine::setTurbineName(const std::string& turbine_name)
 	{
 		m_turbine_name = turbine_name;
 	}
 
 	//Metoda zwraca prêdkoœæ wirowania turbiny
-	const float CWindTurbine::getSpeedRotor() const
+	const float WindTurbine::getSpeedRotor() const
 	{
 		return m_speed_rotor;
 	}
 
 	//Metoda ustawia prêdkoœæ wirowania turbiny
-	void CWindTurbine::setSpeedRotor(float speed_rotor)
+	void WindTurbine::setSpeedRotor(float speed_rotor)
 	{
 		m_speed_rotor = speed_rotor;
 	}
 
 	//Metoda zwraca prze³o¿enie prêdkoœci obrotowej
-	const float CWindTurbine::getSpeedTransmission() const
+	const float WindTurbine::getSpeedTransmission() const
 	{
 		return m_speed_transmission;
 	}
 
 	//Metoda ustawia prze³o¿enie prêdkoœci obrotowej
-	void CWindTurbine::setSpeedTransmission(float speed_transmission)
+	void WindTurbine::setSpeedTransmission(float speed_transmission)
 	{
 		if(speed_transmission <= 0) return;
 		m_speed_transmission = speed_transmission;
 	}
 
 	//Metoda zwraca procentowy wspó³czynnik aktywacji turbiny
-	const float CWindTurbine::getPercentageActivation() const
+	const float WindTurbine::getPercentageActivation() const
 	{
 		return m_percentage_activation;
 	}
 
 	//Metoda ustawia procentowy wspó³czynnik aktywacji turbiny
-	void CWindTurbine::setPercentageActivation(float percentage_activation)
+	void WindTurbine::setPercentageActivation(float percentage_activation)
 	{
 		m_percentage_activation = percentage_activation;
 	}
 
 	//Metoda zwraca czas trwania stanu, po zgromadzeniu pe³nej energii
-	const float CWindTurbine::getEnergyFuelDuration() const
+	const float WindTurbine::getEnergyFuelDuration() const
 	{
 		return m_energy_full_duration;
 	}
 
 	//Metoda ustawia czas trwania stanu, po zgromadzeniu pe³nej energii
-	void CWindTurbine::setEnergyFuelDuration(float energy_full_duration)
+	void WindTurbine::setEnergyFuelDuration(float energy_full_duration)
 	{
 		m_energy_full_duration = energy_full_duration;
 	}
 
 	//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-	void CWindTurbine::updateAnimations(float dt)
+	void WindTurbine::updateAnimations(float dt)
 	{
-
 		switch(m_turbine_state)
 		{
 		case TURBINE_DEFAULT:
@@ -230,7 +233,7 @@ namespace equipment
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CWindTurbine::update(float dt)
+	void WindTurbine::update(float dt)
 	{
 		CPhysical::UpdateShadow(dt);	//aktualizacja shadow engine
 
@@ -243,7 +246,7 @@ namespace equipment
 	}
 
 	//prywatna metoda aktualizuje stan obiektu
-	void CWindTurbine::updateTurbineState(float dt)
+	void WindTurbine::updateTurbineState(float dt)
 	{
 		//proces przebiega - turbina gromadzi energiê
 		if(m_stored_energy <= m_energy_capacitor)

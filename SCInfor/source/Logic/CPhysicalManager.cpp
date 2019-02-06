@@ -29,8 +29,8 @@
 #include "../Equipment/Weapon/Ammo/CAmmo.h"
 #include "../Equipment/Weapon/Gun/CGun.h"
 #include "../Equipment/Lightingequipment/CLightingEquipment.h"
-#include "../Equipment/Industrial/PowerModuleType/CWindTurbine.h"
-#include "../Equipment/Industrial/PowerModuleType/CSolarCell.h"
+#include "../Equipment/Industrial/PowerModuleType/WindTurbine.h"
+#include "../Equipment/Industrial/PowerModuleType/SolarCell.h"
 #include "Industrial/PowerStation//CPowerStation.h"
 #include "Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
 #include "Industrial/PowerStation/WindPowerStation/CWindPowerStationMultipled.h"
@@ -255,18 +255,18 @@ namespace logic
 	}
 
 	//Metoda tworzy obiekt klasy CGun i zwraca wskaünik na ten obiekt
-	CWindTurbine *CPhysicalManager::CreateWindTurbine(const std::wstring &uniqueId)
+	WindTurbine *CPhysicalManager::CreateWindTurbine(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CWindTurbine created\n");
-		return Create<CWindTurbine>(uniqueId);
+		fprintf(stderr, "WindTurbine created\n");
+		return Create<WindTurbine>(uniqueId);
 	}
 
 
-	//Metoda tworzy obiekt klasy CSolarCell i zwraca wskaünik na ten obiekt
-	CSolarCell *CPhysicalManager::CreateSolarCell(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy SolarCell i zwraca wskaünik na ten obiekt
+	SolarCell *CPhysicalManager::CreateSolarCell(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CSolarCell created\n");
-		return Create<CSolarCell>(uniqueId);
+		fprintf(stderr, "SolarCell created\n");
+		return Create<SolarCell>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CPowerStation i zwraca wskaünik na ten obiekt

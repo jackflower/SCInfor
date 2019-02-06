@@ -131,14 +131,14 @@ namespace logic
 			m_windturbine_data.setUseEquipment(use_windturbine);
 		}
 
-		//Metoda zwraca wskaünik na obiekt klasy CWindTurbine
-		CWindTurbine* CWindPowerStation::getWindTurbine()
+		//Metoda zwraca wskaünik na obiekt klasy WindTurbine
+		WindTurbine* CWindPowerStation::getWindTurbine()
 		{
 			return m_windturbine_data.getTurbine();
 		}
 		
-		//Metoda ustawia wskaünik na obiekt klasy CWindTurbine
-		void CWindPowerStation::setWindTurbine(CWindTurbine* windturbine)
+		//Metoda ustawia wskaünik na obiekt klasy WindTurbine
+		void CWindPowerStation::setWindTurbine(WindTurbine* windturbine)
 		{
 			m_windturbine_data.setTurbine(windturbine);
 		}

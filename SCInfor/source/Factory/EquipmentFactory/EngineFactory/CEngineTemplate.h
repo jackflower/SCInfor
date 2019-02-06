@@ -9,7 +9,7 @@
 
 #include "../../../Equipment/Engine/Engine.h"
 #include "FuelTankFactory/CFuelTankTemplate.h"
-#include "../../../Equipment/EquipmentData/CEquipmentFuelTankData.h"
+#include "../../../Equipment/EquipmentData/EquipmentFuelTankData.h"
 
 namespace factory
 {
@@ -168,7 +168,7 @@ namespace factory
 	private:
 
 		std::string				m_templ_engine_name;				//nazwa silnika (spalinowy, elektryczny, atomowy, biologiczny...etc)
-		CEquipmentFuelTankData	m_templ_fueltank_data;				//opakowanie funkcjonalnoœci zbiornika paliwa
+		EquipmentFuelTankData	m_templ_fueltank_data;				//opakowanie funkcjonalnoœci zbiornika paliwa
 		CFuelTankTemplate*		p_templ_fuel_tank;					//wskaŸnik na dane wzorca zbiornika paliwa
 		float					m_templ_percentage_reserve_fuel;	//procentowa wartoœæ paliwa, przy której nastêpuje komunikat informacyjny o rezerwie paliwa (default 10% - konstruktor)
 		float					m_templ_fuel_consumption;			//zu¿ycie paliwa gdy obiekt siê nie przemieszcza (aktualizowane co sekundê)

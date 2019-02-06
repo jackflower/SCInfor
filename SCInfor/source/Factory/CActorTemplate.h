@@ -105,11 +105,11 @@ namespace factory
 		CAnimSet*						p_templ_animations;				//wskaünik na zestaw animacji CActor
 		std::vector<CAnimSet*>			m_templ_available_animations;	//wektor wskaünikÛw na zestawy dostÍpnych animacji dla CActor
 		CActorTechnicalData				m_templ_technical_data;			//opakowanie fizyki
-		CEquipmentEngineData			m_templ_engine_data;			//opakowanie funkcjonalnoúci silnika
-		CEquipmentEnergyData			m_templ_energy_data;			//opakowanie funkcjonalnoúci energii
+		EquipmentEngineData			m_templ_engine_data;			//opakowanie funkcjonalnoúci silnika
+		EquipmentEnergyData			m_templ_energy_data;			//opakowanie funkcjonalnoúci energii
 		EquipmentAirconditioningData	m_templ_airconditioning_data;	//opakowanie funkcjonalnoúci klimatyzacji
 		EquipmentVentilatorData		m_templ_ventilator_data;		//opakowanie funkcjonalnoúci wentylatora
-		CEquipmentGunData				m_templ_gun_data;				//opakowanie funkcjonalnoúci dzia≥o
+		EquipmentGunData				m_templ_gun_data;				//opakowanie funkcjonalnoúci dzia≥o
 		CEngineTemplate*				p_templ_engine;					//dane wzorca obiektu Engine
 		CEnergyTemplate*				p_templ_energy;					//dane wzorca obiektu Energy
 		CAirconditioningTemplate*		p_templ_airconditioning;		//wskaünik na obiekt CAirconditioning z logikπ zarzπdzania modu≥em klimatyzatora

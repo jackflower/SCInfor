@@ -5,7 +5,7 @@
 //
 
 #include "CWindTurbineData.h"
-#include "../PowerModuleType/CWindTurbine.h"
+#include "../PowerModuleType/WindTurbine.h"
 #include "../../../Logic/CPhysicalManager.h"
 
 namespace equipmentpowerstationdata
@@ -43,14 +43,14 @@ namespace equipmentpowerstationdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CWindTurbine
-	CWindTurbine* CWindTurbineData::getTurbine()
+	//Metoda zwraca wskaünik na obiekt klasy WindTurbine
+	WindTurbine* CWindTurbineData::getTurbine()
 	{
 		return p_turbine;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CWindTurbine
-	void CWindTurbineData::setTurbine(CWindTurbine* turbine)
+	//Metoda ustawia wskaünik na obiekt klasy WindTurbine
+	void CWindTurbineData::setTurbine(WindTurbine* turbine)
 	{
 		p_turbine = turbine;
 	}

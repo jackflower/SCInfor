@@ -59,7 +59,7 @@ namespace logic
 			
 			//
 			//[	w pliku graficznym jest elektrownia, która posiada	]
-			//cztery (to siê jeszcze zobaczy)modu³y CSolarCell, które ustawiaj¹ siê automatyczne
+			//cztery (to siê jeszcze zobaczy)modu³y SolarCell, które ustawiaj¹ siê automatyczne
 			//w kierunku Ÿród³a energii solarnej
 			//zatem: nie bêdzie to wektor, a cztery, rêcznie (byæ mo¿e jednak jakaœ tablica)
 			//zarz¹dzane manualne.

@@ -131,13 +131,13 @@ namespace equipment
 	}
 
 	//Metoda zwraca referencję na opakowanie funkcjonalności zbiornika paliwa
-	CEquipmentFuelTankData & Engine::getEquipmentFuelTankData()
+	EquipmentFuelTankData & Engine::getEquipmentFuelTankData()
 	{
 		return m_fueltank_data;
 	}
 
 	//Metoda ustawia referencję na opakowanie funkcjonalności zbiornika paliwa
-	void Engine::setEquipmentFuelTankData(CEquipmentFuelTankData & fueltank_data)
+	void Engine::setEquipmentFuelTankData(EquipmentFuelTankData & fueltank_data)
 	{
 		m_fueltank_data = fueltank_data;
 	}

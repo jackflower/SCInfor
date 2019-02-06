@@ -14,7 +14,7 @@
 ///
 namespace equipment
 {
-	class CWindTurbine;
+	class WindTurbine;
 }
 
 using namespace equipment;
@@ -54,20 +54,20 @@ namespace equipmentpowerstationdata
 		const std::string GetType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CWindTurbine
+		///Metoda zwraca wskaünik na obiekt klasy WindTurbine
 		///
-		CWindTurbine* getTurbine();
+		WindTurbine* getTurbine();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CWindTurbine
+		///Metoda ustawia wskaünik na obiekt klasy WindTurbine
 		///
-		///@param *turbine - wskaünik na obiekt klasy CWindTurbine
+		///@param *turbine - wskaünik na obiekt klasy WindTurbine
 		///
-		void setTurbine(CWindTurbine* turbine);
+		void setTurbine(WindTurbine* turbine);
 
 	private:
 
-		CWindTurbine*	p_turbine;	//wskaünik na klasÍ CWindTurbine - turbina
+		WindTurbine*	p_turbine;	//wskaünik na klasÍ WindTurbine - turbina
 	};
 }//namespace equipmentpowerstationdata
 #endif//H_WIND_TURBINE_DATA_JACK

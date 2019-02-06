@@ -10,11 +10,11 @@
 #include "ActorStateData/CActorStateData.h"
 #include "../Physical/CPhysical.h"
 #include "../Physics/CActorTechnicalData.h"
-#include "../../Equipment/EquipmentData/CEquipmentEngineData.h"
-#include "../../Equipment/EquipmentData/CEquipmentEnergyData.h"
+#include "../../Equipment/EquipmentData/EquipmentEngineData.h"
+#include "../../Equipment/EquipmentData/EquipmentEnergyData.h"
 #include "../../Equipment/EquipmentData/EquipmentAirconditioningData.h"
 #include "../../Equipment/EquipmentData/EquipmentVentilatorData.h"
-#include "../../Equipment/EquipmentData/CEquipmentGunData.h"
+#include "../../Equipment/EquipmentData/EquipmentGunData.h"
 
 using namespace physics;
 using namespace physics::technical;
@@ -442,11 +442,11 @@ namespace logic
 
 		CAnimSet*						p_anim_set;				//wskaŸnik na obiekt klasy CAnimSet (zestaw animacji)
 		CActorTechnicalData				m_technical_data;		//opakowanie fizyki
-		CEquipmentEngineData			m_engine_data;			//opakowanie funkcjonalnoœci silnika
-		CEquipmentEnergyData			m_energy_data;			//opakowanie funkcjonalnoœci energii
+		EquipmentEngineData			m_engine_data;			//opakowanie funkcjonalnoœci silnika
+		EquipmentEnergyData			m_energy_data;			//opakowanie funkcjonalnoœci energii
 		EquipmentAirconditioningData	m_airconditiong_data;	//opakowanie funkcjonalnoœci klimatyzatora
 		EquipmentVentilatorData		m_ventilator_data;		//opakowanie funkcjonalnoœci wentylatora
-		CEquipmentGunData				m_gun_data;				//opakowanie funkcjonalnoœci dzia³a
+		EquipmentGunData				m_gun_data;				//opakowanie funkcjonalnoœci dzia³a
 		CActorStateData					m_state_data;			//opakowanie wyliczenia stanów
 		CActorController*				p_actor_controller;		//obiekt klasy CActorController - funkcjonalnoœæ sterowania
 

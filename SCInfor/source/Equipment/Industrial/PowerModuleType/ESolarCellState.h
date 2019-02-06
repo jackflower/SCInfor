@@ -10,7 +10,7 @@
 namespace logic
 {
 	///
-	///Wyliczenie stanów dla obiektu CSolarCell
+	///Wyliczenie stanów dla obiektu SolarCell
 	///
 	enum ESolarCellState
 	{

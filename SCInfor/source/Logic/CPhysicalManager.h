@@ -64,8 +64,8 @@ namespace equipment
 	class CAirconditioning;
 	class CThermalInsulation;
 	class CVentilator;
-	class CWindTurbine;
-	class CSolarCell;
+	class WindTurbine;
+	class SolarCell;
 	class CLightingEquipment;
 
 	namespace weapon
@@ -275,18 +275,18 @@ namespace logic
 		CGun *CreateGun(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CWindTurbine i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy WindTurbine i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CWindTurbine *CreateWindTurbine(const std::wstring &uniqueId = L"");
+		WindTurbine *CreateWindTurbine(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CSolarCell i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy SolarCell i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CSolarCell *CreateSolarCell(const std::wstring &uniqueId = L"");
+		SolarCell *CreateSolarCell(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CPowerStation i zwraca wskaünik na ten obiekt

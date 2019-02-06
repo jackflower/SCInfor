@@ -26,7 +26,7 @@ using namespace equipment::battery;
 namespace equipmentdata
 {
 	///
-	///Klasa reprezentuje funkcjonalność obiektu będącego wyposażaniem - wentylator
+	///Klasa reprezentuje funkcjonalność obiektu będącego wyposażaniem - bateria
 	///
 	class EquipmentBatteryData : public EquipmentData
 	{

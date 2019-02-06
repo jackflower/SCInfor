@@ -1,14 +1,14 @@
-//  _________________________________________
-// | CWindTurbine.h - class definition       |
-// | Jack Flower - July 2014                 |
-// |_________________________________________|
+//  ________________________________________
+// | WindTurbine.h - class definition       |
+// | Jack Flower - July 2014                |
+// |________________________________________|
 //
 
 
 #ifndef H_WIND_TURBINE_JACK
 #define H_WIND_TURBINE_JACK
 
-#include "../PowerModule/CPowerModule.h"
+#include "../PowerModule/PowerModule.h"
 #include "ETurbineState.h"
 
 namespace equipment
@@ -16,7 +16,7 @@ namespace equipment
 	///
 	///Klasa reprezentuej funkcjonalnoœc turbiny
 	///
-	class CWindTurbine : public CPowerModule
+	class WindTurbine : public PowerModule
 	{
 		RTTI_DECL;
 
@@ -25,45 +25,47 @@ namespace equipment
 		///
 		friend class CPhysicalManager;
 		
-		//Aby uzyskaæ obiekt CWindTurbine, nale¿y wywo³aæ CPhysicalManager::CreateWindTurbine();
+		//Aby uzyskaæ obiekt WindTurbine, nale¿y wywo³aæ CPhysicalManager::CreateWindTurbine();
 
 	protected:
 
 		///
 		///Chroniony konstruktor domyœlny
 		///
-		CWindTurbine(const std::wstring& uniqueId);
+		///@param uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///
+		WindTurbine(const std::wstring & uniqueId);
 
 		///
 		///Chroniony konstruktor kopiuj¹cy
 		///
-		///@param CWindTurbineCopy - obiekt klasy CWindTurbine
+		///@param WindTurbineCopy - obiekt klasy WindTurbine
 		///
-		CWindTurbine(const CWindTurbine &CWindTurbineCopy);
+		WindTurbine(const WindTurbine & WindTurbineCopy);
 
 		///
 		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
 		///
-		virtual ~CWindTurbine(void);
+		virtual ~WindTurbine(void);
 
 	public:
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca nazwê turbiny
 		///
-		const std::string GetTurbineName() const;
+		const std::string getTurbineName() const;
 
 		///
 		///Metoda ustawia nazwê turbiny
 		///
-		///@param &turbine_name - nazwa turbiny sta³a referencja na std::string
+		///@param turbine_name - nazwa turbiny sta³a referencja na std::string
 		///
-		void SetTurbineName(const std::string& turbine_name);
+		void setTurbineName(const std::string & turbine_name);
 
 		///
 		///Metoda zwraca prêdkoœæ wirowania turbiny
@@ -129,17 +131,17 @@ namespace equipment
 
 	private:
 
-		std::string		m_turbine_name;						//nazwa turbiny
-		float			m_speed_rotor;						//prêdkoœæ wirowania turbiny
-		float			m_speed_transmission;				//przek³adnia - prze³o¿enie prêdkoœci obrotowej
-		float			m_percentage_activation;			//procentowy wspó³czynnik aktywacji turbiny
-		float			m_energy_full_duration;				//czas trwania stanu, po zgromadzeniu pe³nej energii
-		ETurbineState	m_turbine_state;					//wyliczenie stanów logicznych turbiny (maszyna stanów)
+		std::string m_turbine_name; //nazwa turbiny
+		float m_speed_rotor; //prêdkoœæ wirowania turbiny
+		float m_speed_transmission; //przek³adnia - prze³o¿enie prêdkoœci obrotowej
+		float m_percentage_activation; //procentowy wspó³czynnik aktywacji turbiny
+		float m_energy_full_duration; //czas trwania stanu, po zgromadzeniu pe³nej energii
+		ETurbineState m_turbine_state; //wyliczenie stanów logicznych turbiny (maszyna stanów)
 
-		float			m_cargo_open_duration;				//czas trwania otwierania luku cargo
-		float			m_cargo_close_duration;				//czas trwania zamykania luku cargo
-		float			m_calculated_speed_rotor;			//obliczana prêdkoœæ wirowania ³opat turbiny
-		float			m_calculated_energy_full_duration;	//obliczany czas trwania stanu, po zgromadzeniu pe³nej energii
+		float m_cargo_open_duration; //czas trwania otwierania luku cargo
+		float m_cargo_close_duration; //czas trwania zamykania luku cargo
+		float m_calculated_speed_rotor; //obliczana prêdkoœæ wirowania ³opat turbiny
+		float m_calculated_energy_full_duration; //obliczany czas trwania stanu, po zgromadzeniu pe³nej energii
 
 		//prywatna metoda aktualizuje stan obiektu
 		void updateTurbineState(float dt);

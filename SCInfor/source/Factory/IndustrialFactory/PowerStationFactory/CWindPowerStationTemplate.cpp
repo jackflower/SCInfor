@@ -88,7 +88,7 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CWindTurbine
+	//Metoda tworzy obiekt klasy WindTurbine
 	CWindPowerStation* CWindPowerStationTemplate::Create(std::wstring id)
 	{
 		CWindPowerStation* windpower_station = gPhysicalManager.CreateWindPowerStation(id);

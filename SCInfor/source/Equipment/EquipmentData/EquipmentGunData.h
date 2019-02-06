@@ -1,7 +1,7 @@
-//  ______________________________________________
-// | CEquipmentGunData.h - class definition       |
-// | Jack Flower - May 2016                       |
-// |______________________________________________|
+//  _____________________________________________
+// | EquipmentGunData.h - class definition       |
+// | Jack Flower - May 2016                      |
+// |_____________________________________________|
 //
 
 #ifndef H_EQUIPMENT_GUN_DATA_JACK
@@ -27,7 +27,7 @@ namespace equipmentdata
 	///
 	///Klasa reprezentuje funkcjonalnoúÊ obiektu bÍdπcego wyposaøaniem - dzia≥o
 	///
-	class CEquipmentGunData : public EquipmentData
+	class EquipmentGunData : public EquipmentData
 	{
 		RTTI_DECL;
 
@@ -36,40 +36,40 @@ namespace equipmentdata
 		///
 		///Konstruktor
 		///
-		CEquipmentGunData();
+		EquipmentGunData();
 
 		///
 		///Konstruktor kopiujπcy
 		///
-		///@param & CEquipmentGunDataCopy - sta≥a referencja na obiekt klasy CEquipmentGunData
+		///@param EquipmentGunDataCopy - sta≥a referencja na obiekt klasy EquipmentGunData
 		///
-		CEquipmentGunData(const CEquipmentGunData & CEquipmentGunDataCopy);
+		EquipmentGunData(const EquipmentGunData & EquipmentGunDataCopy);
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CEquipmentGunData();
+		virtual ~EquipmentGunData();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca wskaünik na obiekt klasy CGun
 		///
-		CGun* getGun();
+		CGun *getGun();
 
 		///
 		///Metoda ustawia wskaünik na obiekt klasy CGun
 		///
 		///@param *gun - wskaünik na obiekt klasy CGun
 		///
-		void setGun(CGun* gun);
+		void setGun(CGun *gun);
 
 	private:
 
-		CGun*	p_gun;	//wskaünik na klasÍ CGun - dzia≥o
+		CGun *p_gun; //wskaünik na klasÍ CGun - dzia≥o
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_GUN_DATA_JACK

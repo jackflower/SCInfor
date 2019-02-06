@@ -9,7 +9,7 @@
 
 #include "EEnergyState.h"
 #include "Battery/Battery.h"
-#include "../EquipmentData/CEquipmentEnergyTankData.h"
+#include "../EquipmentData/EquipmentEnergyTankData.h"
 #include "../EquipmentData/EquipmentBatteryData.h"
 #include "../../Logic/Actor/CActor.h"
 #include "../../RTTI/RTTI.h"
@@ -172,14 +172,14 @@ namespace equipment
 		///
 		///Metoda zwraca referencję na opakowanie funkcjonalności akumulatora
 		///
-		CEquipmentEnergyTankData & getEquipmentEnergyTankData();
+		EquipmentEnergyTankData & getEquipmentEnergyTankData();
 
 		///
 		///Metoda ustawia referencję na opakowanie funkcjonalności akumulatora
 		///
-		///@param energytank_data - referencja na obiekt klasy CEquipmentEnergyTankData
+		///@param energytank_data - referencja na obiekt klasy EquipmentEnergyTankData
 		///
-		void setEquipmentEnergyTankData(CEquipmentEnergyTankData & energytank_data);
+		void setEquipmentEnergyTankData(EquipmentEnergyTankData & energytank_data);
 
 		///
 		///Metoda zwraca referencję na opakowanie danych dla transformacji
@@ -268,7 +268,7 @@ namespace equipment
 	private:
 
 		std::string m_energy_name; //nazwa mechanizmu zarządzania energią <map>//potem usunąć, bo nie będzie ładowania danych ze struktur...
-		CEquipmentEnergyTankData m_energytank_data; //opakowanie funkcjonalności akumulatora
+		EquipmentEnergyTankData m_energytank_data; //opakowanie funkcjonalności akumulatora
 		float m_percentage_reserve_energy; //procentowa wartość energii, przy której następuje komunikat informacyjny o niskim poziomie energii (default 10% - konstruktor)
 		float m_energy_time_delayed; //czas opóźnienia komunikatu o braku energii - jako dana wejściowa dla sf::Randomizer
 		bool m_energy_empty_message; //flaga, czy obiekt może wysyłać komunikaty o braku energii

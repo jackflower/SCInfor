@@ -8,7 +8,7 @@
 #define H_SOLAR_CELL_TEMPLATE_JACK
 
 #include "../../../CActorTemplate.h"
-#include "../../../../Equipment/Industrial/PowerModuleType/CSolarCell.h"
+#include "../../../../Equipment/Industrial/PowerModuleType/SolarCell.h"
 
 namespace factory
 {
@@ -62,14 +62,14 @@ namespace factory
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CSolarCell* Create(std::wstring id = L"");
+		SolarCell* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_solarcell - wskaünik na obiekt klasy CSolarCell
+		///@param *p_solarcell - wskaünik na obiekt klasy SolarCell
 		///
-		virtual void Fill(CSolarCell *p_solarcell);
+		virtual void Fill(SolarCell *p_solarcell);
 
 	private:
 

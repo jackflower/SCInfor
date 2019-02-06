@@ -1,7 +1,7 @@
-//  _________________________________________
-// | CPowerModule.h - class definition       |
-// | Jack Flower - July 2014                 |
-// |_________________________________________|
+//  ________________________________________
+// | PowerModule.h - class definition       |
+// | Jack Flower - July 2014                |
+// |________________________________________|
 //
 
 #ifndef H_POWER_MODULE_JACK
@@ -17,7 +17,7 @@ namespace equipment
 	///
 	///Klasa bazowa dla modu³ów wytwarzania, gromadzenia i przetwarzania energii
 	///
-	class CPowerModule : public CActor
+	class PowerModule : public CActor
 	{
 		RTTI_DECL;
 
@@ -26,31 +26,33 @@ namespace equipment
 		///
 		friend class CPhysicalManager;
 		
-		//Aby uzyskaæ obiekt CPowerModule, nale¿y wywo³aæ CPhysicalManager::CreatePowerModule();
+		//Aby uzyskaæ obiekt PowerModule, nale¿y wywo³aæ CPhysicalManager::CreatePowerModule();
 
 		///
 		///Chroniony konstruktor domyœlny
 		///
-		CPowerModule(const std::wstring& uniqueId);
+		///@param uniqueId - unikalny identyfikator obiektu - sta³a referncja na obiekt klasy std::wstring
+		///
+		PowerModule(const std::wstring & uniqueId);
 
 		///
 		///Chroniony konstruktor kopiuj¹cy
 		///
-		///@param CPowerModuleCopy - obiekt klasy CPowerModule
+		///@param PowerModuleCopy - obiekt klasy PowerModule
 		///
-		CPowerModule(const CPowerModule &CPowerModuleCopy);
+		PowerModule(const PowerModule & PowerModuleCopy);
 
 		///
 		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
 		///
-		virtual ~CPowerModule(void);
+		virtual ~PowerModule(void);
 
 	public:
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Metoda zwraca iloœæ energii, któr¹ mo¿na zgromadziæ
@@ -90,10 +92,10 @@ namespace equipment
 
 	protected:
 
-		float		m_energy_capacitor;	//energia, która mo¿e zostaæ zgromadzona
-		float		m_power;			//moc
-		float		m_stored_energy;	//zgromadzona energia
-		Switch		m_unit_controller;	//w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
+		float m_energy_capacitor; //energia, która mo¿e zostaæ zgromadzona
+		float m_power; //moc
+		float m_stored_energy; //zgromadzona energia
+		Switch m_unit_controller; //w³¹cznik, sterownik, modu³ zarz¹dzania, starter, stacyjka
 
 	private:
 	};
