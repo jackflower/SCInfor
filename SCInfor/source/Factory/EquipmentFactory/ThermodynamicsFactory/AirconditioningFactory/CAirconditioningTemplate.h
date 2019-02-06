@@ -9,7 +9,7 @@
 
 #include "../../../CActorTemplate.h"
 #include "../ThermalInsulationFactory/CThermalInsulationTemplate.h"
-#include "../../../../Equipment/Thermodynamics/Airconditioning/CAirconditioning.h"
+#include "../../../../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
 #include "../../../../Equipment/EquipmentData/ThermalInsulationData.h"
 
 using namespace equipmentdata;
@@ -60,18 +60,18 @@ namespace factory
 		bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CAirconditioning
+		///Metoda tworzy obiekt klasy Airconditioning
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CAirconditioning* Create(std::wstring id = L"");
+		Airconditioning* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_airconditioning - wskaünik na obiekt klasy CAirconditioning
+		///@param *p_airconditioning - wskaünik na obiekt klasy Airconditioning
 		///
-		virtual void Fill(CAirconditioning *p_airconditioning);
+		virtual void Fill(Airconditioning *p_airconditioning);
 
 	private:
 

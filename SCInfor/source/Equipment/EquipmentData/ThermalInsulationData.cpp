@@ -5,7 +5,7 @@
 //
 
 #include "ThermalInsulationData.h"
-#include "../Thermodynamics//ThermalInsulation/CThermalInsulation.h"
+#include "../Thermodynamics//ThermalInsulation/ThermalInsulation.h"
 #include "../../Logic/CPhysicalManager.h"
 
 namespace equipmentdata
@@ -43,14 +43,14 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CThermalInsulation
-	CThermalInsulation* ThermalInsulationData::getThermalInsulation()
+	//Metoda zwraca wskaźnik na obiekt klasy ThermalInsulation
+	ThermalInsulation* ThermalInsulationData::getThermalInsulation()
 	{
 		return p_thermalinsulation;
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CThermalInsulation
-	void ThermalInsulationData::setThermalInsulation(CThermalInsulation* thermalinsulation)
+	//Metoda ustawia wskaźnik na obiekt klasy ThermalInsulation
+	void ThermalInsulationData::setThermalInsulation(ThermalInsulation* thermalinsulation)
 	{
 		p_thermalinsulation = thermalinsulation;
 	}

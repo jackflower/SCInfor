@@ -1,4 +1,4 @@
-//  _________________________________________________________________
+﻿//  _________________________________________________________________
 // | EAirconditioningState.h - enumeration of states airconditioning |
 // | Jack Flower - May 2016                                          |
 // |_________________________________________________________________|
@@ -10,7 +10,7 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stan�w dla obiektu CAirconditioning
+	///Wyliczenie stanów dla obiektu Airconditioning
 	///
 	enum EAirconditioningState
 	{

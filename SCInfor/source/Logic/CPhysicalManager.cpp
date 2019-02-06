@@ -23,8 +23,8 @@
 #include "../Equipment/Energy/EnergyTank/EnergyTank.h"
 #include "../Equipment/Energy/Battery/Battery.h"
 #include "../Equipment/Energy/Battery/SolarBattery.h"
-#include "../Equipment/Thermodynamics/Airconditioning/CAirconditioning.h"
-#include "../Equipment/Thermodynamics/ThermalInsulation/CThermalInsulation.h"
+#include "../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
+#include "../Equipment/Thermodynamics/ThermalInsulation/ThermalInsulation.h"
 #include "../Equipment/Thermodynamics/Ventilator/CVentilator.h"
 #include "../Equipment/Weapon/Ammo/CAmmo.h"
 #include "../Equipment/Weapon/Gun/CGun.h"
@@ -219,18 +219,18 @@ namespace logic
 		return Create<SolarBattery>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CAirconditioning i zwraca wskaünik na ten obiekt
-	CAirconditioning *CPhysicalManager::CreateAirconditioning(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Airconditioning i zwraca wskaünik na ten obiekt
+	Airconditioning *CPhysicalManager::CreateAirconditioning(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CAirconditioning created\n");
-		return Create<CAirconditioning>(uniqueId);
+		fprintf(stderr, "Airconditioning created\n");
+		return Create<Airconditioning>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CThermalInsulation i zwraca wskaünik na ten obiekt
-	CThermalInsulation *CPhysicalManager::CreateThermalInsulation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy ThermalInsulation i zwraca wskaünik na ten obiekt
+	ThermalInsulation *CPhysicalManager::CreateThermalInsulation(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CThermalInsulation created\n");
-		return Create<CThermalInsulation>(uniqueId);
+		fprintf(stderr, "ThermalInsulation created\n");
+		return Create<ThermalInsulation>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CVentilator i zwraca wskaünik na ten obiekt

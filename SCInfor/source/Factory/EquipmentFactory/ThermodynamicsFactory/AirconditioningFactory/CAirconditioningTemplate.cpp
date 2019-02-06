@@ -96,7 +96,7 @@ namespace factory
 			//nazwa pliku z konfiguracj¹ thermalinsulation
 			std::string thermalinsulation_filename_tmp = xml.GetString(node, "thermalinsulation_filename");
 		
-			//emitery dla obiektu klasy CThermalInsulation
+			//emitery dla obiektu klasy ThermalInsulation
 			m_templ_thermalinsulation_data.setEmiter(xml.GetFloat(node, "thermalinsulation_emiter_x"), xml.GetFloat(node, "thermalinsulation_emiter_y"));
 
 			if(m_templ_thermalinsulation_data.getUseEquipment())
@@ -107,16 +107,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CAirconditioning
-	CAirconditioning* CAirconditioningTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy Airconditioning
+	Airconditioning* CAirconditioningTemplate::Create(std::wstring id)
 	{
-		CAirconditioning* airconditioning = gPhysicalManager.CreateAirconditioning(id);
+		Airconditioning* airconditioning = gPhysicalManager.CreateAirconditioning(id);
 		Fill(airconditioning);
 		return airconditioning;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CAirconditioningTemplate::Fill(CAirconditioning *p_airconditioning)
+	void CAirconditioningTemplate::Fill(Airconditioning *p_airconditioning)
 	{
 		if(p_airconditioning)
 		{
@@ -154,7 +154,7 @@ namespace factory
 			);
 
 			//przekazanie skonfigurowanych danych...
-			p_airconditioning->SetAirconditioningName(m_templ_airconditioning_name);
+			p_airconditioning->setAirconditioningName(m_templ_airconditioning_name);
 			p_airconditioning->setTemperature(m_templ_temperature);
 			p_airconditioning->setTemperatureSet(m_templ_temperature_set);
 			p_airconditioning->setTemperatureCold(m_templ_temperature_range.first);
@@ -167,14 +167,14 @@ namespace factory
 			//jeœli obiekt posiada termoizolator
 			if(m_templ_thermalinsulation_data.getUseEquipment())
 			{
-				//emitery dla obiektu klasy CThermalInsulation
+				//emitery dla obiektu klasy ThermalInsulation
 				p_airconditioning->setThermalInsulationTransformed(m_templ_thermalinsulation_data.getTransformed());
 
 				if(p_airconditioning)
 				{
 					//pobieramy sk³adow¹ thermalinsulation i wzorzec wype³nia wskaŸnik danymi
 					p_airconditioning->setThermalInsulation(p_templ_thermal_insulation->Create(L""));//nazwa z xml'a
-					//przekazanie wskaŸnikowi na klasê CAirconditioning informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê Airconditioning informacji o wzorcu
 					p_airconditioning->getThermalInsulation()->SetTemplate(p_templ_thermal_insulation);
 					//decorator
 					p_airconditioning->getThermalInsulation()->setSmoothing(true);

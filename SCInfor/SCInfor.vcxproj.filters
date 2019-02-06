@@ -387,12 +387,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\Thermodynamics\Airconditioning\CAirconditioning.cpp">
-      <Filter>source\Equipment\Thermodynamics\Airconditioning</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Thermodynamics\ThermalInsulation\CThermalInsulation.cpp">
-      <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.cpp">
       <Filter>source\Equipment\Thermodynamics\Ventilator</Filter>
     </ClCompile>
@@ -996,6 +990,12 @@
     <ClCompile Include="source\Equipment\Lightingequipment\LightingEquipment.cpp">
       <Filter>source\Equipment\Lightingequipment</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\Thermodynamics\Airconditioning\Airconditioning.cpp">
+      <Filter>source\Equipment\Thermodynamics\Airconditioning</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Thermodynamics\ThermalInsulation\ThermalInsulation.cpp">
+      <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1027,14 +1027,8 @@
     <ClInclude Include="source\Equipment\Lightingequipment\ELightingEquipmentState.h">
       <Filter>source\Equipment\Lightingequipment</Filter>
     </ClInclude>
-    <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\CAirconditioning.h">
-      <Filter>source\Equipment\Thermodynamics\Airconditioning</Filter>
-    </ClInclude>
     <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\EAirconditioningState.h">
       <Filter>source\Equipment\Thermodynamics\Airconditioning</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\CThermalInsulation.h">
-      <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\EThermalInsulationState.h">
       <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
@@ -1749,6 +1743,12 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Lightingequipment\LightingEquipment.h">
       <Filter>source\Equipment\Lightingequipment</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\Airconditioning.h">
+      <Filter>source\Equipment\Thermodynamics\Airconditioning</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\ThermalInsulation.h">
+      <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

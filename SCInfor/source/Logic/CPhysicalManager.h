@@ -61,8 +61,8 @@ namespace equipment
 	class Energy;
 	class EnergyTank;
 	class FuelBar;
-	class CAirconditioning;
-	class CThermalInsulation;
+	class Airconditioning;
+	class ThermalInsulation;
 	class CVentilator;
 	class WindTurbine;
 	class SolarCell;
@@ -240,18 +240,18 @@ namespace logic
 		SolarBattery *CreateSolarBattery(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CAirconditioning i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Airconditioning i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CAirconditioning *CreateAirconditioning(const std::wstring &uniqueId = L"");
+		Airconditioning *CreateAirconditioning(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CThermalInsulation i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy ThermalInsulation i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CThermalInsulation *CreateThermalInsulation(const std::wstring &uniqueId = L"");
+		ThermalInsulation *CreateThermalInsulation(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CVentilator i zwraca wskaünik na ten obiekt

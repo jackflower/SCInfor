@@ -12,7 +12,7 @@
 #include "../../Rendering/Animations/CNameAnimPairTranslator.h"
 #include "../../Equipment/Engine/Engine.h"
 #include "../../Equipment/Energy/Energy.h"
-#include "../../Equipment/Thermodynamics/Airconditioning/CAirconditioning.h"
+#include "../../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
 #include "../../Equipment/Thermodynamics/Ventilator/CVentilator.h"
 #include "../../Equipment/Weapon/Gun/CGun.h"
 #include "../../Utilities/Utilities/Utilities.h"
@@ -312,14 +312,14 @@ namespace logic
 		m_energy_data.setEnergy(energy);
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CAirconditioning
-	CAirconditioning* CActor::GetAirconditioning()
+	//Metoda zwraca wskaünik na obiekt klasy Airconditioning
+	Airconditioning* CActor::GetAirconditioning()
 	{
 		return m_airconditiong_data.getAirconditioning();
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CAirconditioning
-	void CActor::SetAirconditioning(CAirconditioning* airconditioning)
+	//Metoda ustawia wskaünik na obiekt klasy Airconditioning
+	void CActor::SetAirconditioning(Airconditioning* airconditioning)
 	{
 		m_airconditiong_data.setAirconditioning(airconditioning);
 	}
@@ -487,7 +487,7 @@ namespace logic
 		m_energy_data.Transform(this, m_energy_data.getEnergy());
 	}
 
-	//metoda aktualizuje funkcjonalnoúÊ CAirconditioning
+	//metoda aktualizuje funkcjonalnoúÊ Airconditioning
 	void CActor::updateAirconditioning(float dt)
 	{
 		if (m_airconditiong_data.getAirconditioning())//modu≥ klimatyzatora

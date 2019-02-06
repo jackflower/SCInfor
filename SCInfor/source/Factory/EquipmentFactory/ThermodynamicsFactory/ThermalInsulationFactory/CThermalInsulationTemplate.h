@@ -8,8 +8,8 @@
 #define H_THERMAL_INSULATION_TEMPLATE_JACK
 
 #include "../../../CActorTemplate.h"
-#include "../../../../Equipment/Thermodynamics/Airconditioning/CAirconditioning.h"
-#include "../../../../Equipment/Thermodynamics/ThermalInsulation/CThermalInsulation.h"
+#include "../../../../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
+#include "../../../../Equipment/Thermodynamics/ThermalInsulation/ThermalInsulation.h"
 
 namespace factory
 {
@@ -57,18 +57,18 @@ namespace factory
 		bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CThermalInsulation
+		///Metoda tworzy obiekt klasy ThermalInsulation
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CThermalInsulation* Create(std::wstring id = L"");
+		ThermalInsulation* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_thermalinsulation - wskaünik na obiekt klasy CThermalInsulation
+		///@param *p_thermalinsulation - wskaünik na obiekt klasy ThermalInsulation
 		///
-		virtual void Fill(CThermalInsulation *p_thermalinsulation);
+		virtual void Fill(ThermalInsulation *p_thermalinsulation);
 
 
 	private:

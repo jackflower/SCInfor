@@ -112,7 +112,7 @@ namespace factory
 		EquipmentGunData				m_templ_gun_data;				//opakowanie funkcjonalnoúci dzia≥o
 		CEngineTemplate*				p_templ_engine;					//dane wzorca obiektu Engine
 		CEnergyTemplate*				p_templ_energy;					//dane wzorca obiektu Energy
-		CAirconditioningTemplate*		p_templ_airconditioning;		//wskaünik na obiekt CAirconditioning z logikπ zarzπdzania modu≥em klimatyzatora
+		CAirconditioningTemplate*		p_templ_airconditioning;		//wskaünik na obiekt Airconditioning z logikπ zarzπdzania modu≥em klimatyzatora
 		CVentilatorTemplate*			p_templ_ventilator;				//wskaünik na obiekt CVentilatorTemplate z logikπ zarzπdzania modu≥em wentylatora
 		CGunTemplate*					p_templ_gun;					//wskaünik na obiekt CGunTemplate z logikπ zarzπdzania dzia≥em
 		

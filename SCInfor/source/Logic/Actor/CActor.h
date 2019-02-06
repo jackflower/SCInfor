@@ -42,7 +42,7 @@ namespace equipment
 {
 	class Engine;
 	class Energy;
-	class CAirconditioning;
+	class Airconditioning;
 	class CVentilator;
 	namespace weapon
 	{
@@ -336,16 +336,16 @@ namespace logic
 		void SetEnergy(Energy* energy);
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CAirconditioning
+		///Metoda zwraca wskaünik na obiekt klasy Airconditioning
 		///
-		CAirconditioning* GetAirconditioning();
+		Airconditioning* GetAirconditioning();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CAirconditioning
+		///Metoda ustawia wskaünik na obiekt klasy Airconditioning
 		///
-		///@param *airconditioning - wskaünik na obiekt klasy CAirconditioning
+		///@param *airconditioning - wskaünik na obiekt klasy Airconditioning
 		///
-		void SetAirconditioning(CAirconditioning* airconditioning);
+		void SetAirconditioning(Airconditioning* airconditioning);
 
 		///
 		///Metoda zwraca wskaünik na obiekt klasy CVentilator
@@ -462,7 +462,7 @@ namespace logic
 		//metoda aktualizuje funkcjonalnoúÊ Energy
 		void updateEnergy(float dt);
 		
-		//metoda aktualizuje funkcjonalnoúÊ CAirconditioning
+		//metoda aktualizuje funkcjonalnoúÊ Airconditioning
 		void updateAirconditioning(float dt);
 
 		//metoda aktualizuje funkcjonalnoúÊ CVentilator

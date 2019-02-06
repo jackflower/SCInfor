@@ -5,7 +5,7 @@
 //
 
 #include "EquipmentAirconditioningData.h"
-#include "../Thermodynamics//Airconditioning/CAirconditioning.h"
+#include "../Thermodynamics//Airconditioning/Airconditioning.h"
 #include "../../Logic/CPhysicalManager.h"
 
 namespace equipmentdata
@@ -44,13 +44,13 @@ namespace equipmentdata
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy Engine
-	CAirconditioning* EquipmentAirconditioningData::getAirconditioning()
+	Airconditioning* EquipmentAirconditioningData::getAirconditioning()
 	{
 		return p_airconditiong;
 	}
 
 	//Metoda ustawia wskaźnik na obiekt klasy Engine
-	void EquipmentAirconditioningData::setAirconditioning(CAirconditioning* airconditiong)
+	void EquipmentAirconditioningData::setAirconditioning(Airconditioning* airconditiong)
 	{
 		p_airconditiong = airconditiong;
 	}

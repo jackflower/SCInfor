@@ -435,8 +435,8 @@ namespace resource
 		//		- CEnergyTemplate						->tworzy->	Energy
 		//		- CBatteryTemplate						->tworzy->	Battery
 		//		- CSolarBatteryTemplate					->tworzy->	SolarBattery
-		//		- CAirconditioningTemplate				->tworzy->	CAirconditioning
-		//		- CThermalInsulationTemplate			->tworzy->	CThermalInsulation
+		//		- CAirconditioningTemplate				->tworzy->	Airconditioning
+		//		- CThermalInsulationTemplate			->tworzy->	ThermalInsulation
 		//		- CVentilatorTemplate					->tworzy->	CVentilator
 		//		- CWindTurbineTemplate					->tworzy->	WindTurbine
 		//		- CSolarCellTemplate					->tworzy->	SolarCell

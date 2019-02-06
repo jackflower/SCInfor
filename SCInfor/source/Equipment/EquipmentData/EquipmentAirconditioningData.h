@@ -14,7 +14,7 @@
 ///
 namespace equipment
 {
-	class CAirconditioning;
+	class Airconditioning;
 }
 
 using namespace equipment;
@@ -53,20 +53,20 @@ namespace equipmentdata
 		const std::string getType() const;
 		
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CAirconditioning
+		///Metoda zwraca wskaźnik na obiekt klasy Airconditioning
 		///
-		CAirconditioning* getAirconditioning();
+		Airconditioning* getAirconditioning();
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CAirconditioning
+		///Metoda ustawia wskaźnik na obiekt klasy Airconditioning
 		///
-		///@param *airconditiong - wskaźnik na obiekt klasy CAirconditioning
+		///@param *airconditiong - wskaźnik na obiekt klasy Airconditioning
 		///
-		void setAirconditioning(CAirconditioning* airconditiong);
+		void setAirconditioning(Airconditioning* airconditiong);
 
 	private:
 
-		CAirconditioning*	p_airconditiong;	//wskaźnik na klasę Airconditioning - klimatyzator
+		Airconditioning*	p_airconditiong;	//wskaźnik na klasę Airconditioning - klimatyzator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_AIRCONDITIONING_DATA_JACK

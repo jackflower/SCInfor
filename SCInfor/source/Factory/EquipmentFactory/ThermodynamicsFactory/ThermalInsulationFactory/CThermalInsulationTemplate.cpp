@@ -75,16 +75,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CThermalInsulation
-	CThermalInsulation* CThermalInsulationTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy ThermalInsulation
+	ThermalInsulation* CThermalInsulationTemplate::Create(std::wstring id)
 	{
-		CThermalInsulation* thermalinsulation = gPhysicalManager.CreateThermalInsulation(id);
+		ThermalInsulation* thermalinsulation = gPhysicalManager.CreateThermalInsulation(id);
 		Fill(thermalinsulation);
 		return thermalinsulation;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CThermalInsulationTemplate::Fill(CThermalInsulation *p_thermalinsulation)
+	void CThermalInsulationTemplate::Fill(ThermalInsulation *p_thermalinsulation)
 	{
 		if(p_thermalinsulation)
 		{
@@ -111,7 +111,7 @@ namespace factory
 				m_templ_thermal_protection_consume = (gWeather.getUpdateTime() * m_templ_thermal_protection)/gWeather.getDayDuration();
 
 			//przekazanie skonfigurowanych danych...
-			p_thermalinsulation->SetThermalInsulationName(m_templ_thermalinsulation_name);
+			p_thermalinsulation->setThermalInsulationName(m_templ_thermalinsulation_name);
 			p_thermalinsulation->setTemperatureAmbient(m_templ_temperature_ambient);
 			p_thermalinsulation->setThermalProtection(m_templ_thermal_protection);
 			p_thermalinsulation->setThermalProtectionFactor(m_templ_thermal_protection_factor);

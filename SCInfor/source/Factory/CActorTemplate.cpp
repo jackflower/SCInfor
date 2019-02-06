@@ -193,7 +193,7 @@ namespace factory
 			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u klimatyzatora
 			std::string airconditioning_filename_tmp = xml.GetString(node, "airconditioning_filename");
 			
-			//emitery dla obiektu klasy CAirconditioning (dopisaæ w xml'u)
+			//emitery dla obiektu klasy Airconditioning (dopisaæ w xml'u)
 			m_templ_airconditioning_data.setEmiter(xml.GetFloat(node, "airconditioning_emiter_x"), xml.GetFloat(node, "airconditioning_emiter_y"));
 			
 			if(m_templ_airconditioning_data.getUseEquipment())
@@ -337,14 +337,14 @@ namespace factory
 			//jeœli obiekt posiada modu³ klimatyzatora
 			if(m_templ_airconditioning_data.getUseEquipment())
 			{
-				//emitery dla obiektu klasy CAirconditioning
+				//emitery dla obiektu klasy Airconditioning
 				actor->setAirconditioningTransformed(m_templ_airconditioning_data.getTransformed());
 
 				if(p_templ_airconditioning)
 				{
 					//pobieramy sk³adow¹ modu³ klimatyzatora i wzorzec wype³nia wskaŸnik danymi
 					actor->SetAirconditioning(p_templ_airconditioning->Create(L""));
-					//przekazanie wskaŸnikowi na klasê CAirconditioning informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê Airconditioning informacji o wzorcu
 					actor->GetAirconditioning()->SetTemplate(p_templ_airconditioning);
 					//decorator
 					actor->GetAirconditioning()->setSmoothing(true);

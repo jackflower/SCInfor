@@ -14,7 +14,7 @@
 ///
 namespace equipment
 {
-	class CThermalInsulation;
+	class ThermalInsulation;
 }
 
 using namespace equipment;
@@ -53,20 +53,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CThermalInsulation
+		///Metoda zwraca wskaźnik na obiekt klasy ThermalInsulation
 		///
-		CThermalInsulation* getThermalInsulation();
+		ThermalInsulation* getThermalInsulation();
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CThermalInsulation
+		///Metoda ustawia wskaźnik na obiekt klasy ThermalInsulation
 		///
-		///@param *thermalinsulation - wskaźnik na obiekt klasy CThermalInsulation
+		///@param *thermalinsulation - wskaźnik na obiekt klasy ThermalInsulation
 		///
-		void setThermalInsulation(CThermalInsulation* thermalinsulation);
+		void setThermalInsulation(ThermalInsulation* thermalinsulation);
 
 	private:
 
-		CThermalInsulation*	p_thermalinsulation;	//wskaźnik na klasę CThermalInsulation - termoizolator
+		ThermalInsulation*	p_thermalinsulation;	//wskaźnik na klasę ThermalInsulation - termoizolator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_THERMALINSULATION_DATA_JACK

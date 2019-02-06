@@ -1,4 +1,4 @@
-//  _____________________________________________________________________
+ï»¿//  _____________________________________________________________________
 // | EThermalInsulationState.h - enumeration of states thermalinsulation |
 // | Jack Flower - May 2016                                              |
 // |_____________________________________________________________________|
@@ -10,14 +10,14 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stanów dla obiektu CAirconditioning
+	///Wyliczenie stanÃ³w dla obiektu Airconditioning
 	///
 	enum EThermalInsulationState
 	{
 		THERMALINSULATION_DEFAULT	= 0,	//termoizolator funkcjonuje
-		THERMALINSULATION_DAMAGE	= 1,	//z racji faktu, ¿e jest to urz¹dzenie
-											//machaniczne, stan damage, nale¿y traktowaæ
-											//jako stan wy³¹czenia
+		THERMALINSULATION_DAMAGE	= 1,	//z racji faktu, Å¼e jest to urzÄ…dzenie
+											//machaniczne, stan damage, naleÅ¼y traktowaÄ‡
+											//jako stan wyÅ‚Ä…czenia
 	};
 }//namespace equipment
 #endif//H_E_THERMALINSULATION_STATE_JACK

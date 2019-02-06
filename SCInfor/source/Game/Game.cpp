@@ -53,9 +53,9 @@
 #include "../Factory/EquipmentFactory/CommunicationFactory/CCommunicationTemplate.h"
 #include "../Logic/Communication/CCommunication.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/CAirconditioningTemplate.h"
-#include "../Equipment/Thermodynamics/Airconditioning/CAirconditioning.h"
+#include "../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/ThermalInsulationFactory/CThermalInsulationTemplate.h"
-#include "../Equipment/Thermodynamics/ThermalInsulation/CThermalInsulation.h"
+#include "../Equipment/Thermodynamics/ThermalInsulation/ThermalInsulation.h"
 
 
 using namespace logic;
