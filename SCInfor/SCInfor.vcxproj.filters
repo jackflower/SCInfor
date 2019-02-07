@@ -387,18 +387,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\Weapon\Ammunition\CMagazineAmmunition.cpp">
-      <Filter>source\Equipment\Weapon\Ammunition</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Weapon\CCaliber.cpp">
-      <Filter>source\Equipment\Weapon</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Weapon\Gun\LockWeapon\CLockWeapon.cpp">
-      <Filter>source\Equipment\Weapon\Gun\LockWeapon</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Weapon\Gun\CGun.cpp">
-      <Filter>source\Equipment\Weapon\Gun</Filter>
-    </ClCompile>
     <ClCompile Include="source\Factory\CActorTemplate.cpp">
       <Filter>source\Factory</Filter>
     </ClCompile>
@@ -996,6 +984,18 @@
     <ClCompile Include="source\Equipment\Weapon\Ammo\Ammo.cpp">
       <Filter>source\Equipment\Weapon\Ammo</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\Ammunition\MagazineAmmunition.cpp">
+      <Filter>source\Equipment\Weapon\Ammunition</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\Caliber.cpp">
+      <Filter>source\Equipment\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\Gun\LockWeapon\LockWeapon.cpp">
+      <Filter>source\Equipment\Weapon\Gun\LockWeapon</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\Gun\Gun.cpp">
+      <Filter>source\Equipment\Weapon\Gun</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1042,23 +1042,11 @@
     <ClInclude Include="source\Equipment\Weapon\Ammo\EAmmoState.h">
       <Filter>source\Equipment\Weapon\Ammo</Filter>
     </ClInclude>
-    <ClInclude Include="source\Equipment\Weapon\Ammunition\CMagazineAmmunition.h">
-      <Filter>source\Equipment\Weapon\Ammunition</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Weapon\CCaliber.h">
-      <Filter>source\Equipment\Weapon</Filter>
-    </ClInclude>
     <ClInclude Include="source\Equipment\Weapon\ECaliber.h">
       <Filter>source\Equipment\Weapon</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Weapon\EGunState.h">
       <Filter>source\Equipment\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Weapon\Gun\LockWeapon\CLockWeapon.h">
-      <Filter>source\Equipment\Weapon\Gun\LockWeapon</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Weapon\Gun\CGun.h">
-      <Filter>source\Equipment\Weapon\Gun</Filter>
     </ClInclude>
     <ClInclude Include="source\Factory\CActorTemplate.h">
       <Filter>source\Factory</Filter>
@@ -1749,6 +1737,18 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Weapon\Ammo\Ammo.h">
       <Filter>source\Equipment\Weapon\Ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Ammunition\MagazineAmmunition.h">
+      <Filter>source\Equipment\Weapon\Ammunition</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Caliber.h">
+      <Filter>source\Equipment\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Gun\LockWeapon\LockWeapon.h">
+      <Filter>source\Equipment\Weapon\Gun\LockWeapon</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Gun\Gun.h">
+      <Filter>source\Equipment\Weapon\Gun</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -452,7 +452,7 @@ namespace resource
 		//		- CCommunicationTemplate				->tworzy->	CCommunication
 		//		- CSlotsRateTemplate					->tworzy->	CSlotsRate
 		//		- CAmmoTemplate							->tworzy->	Ammo
-		//		- CGunTemplate							->tworzy->	CGun
+		//		- CGunTemplate							->tworzy->	Gun
 
 		//Poza tym mo¿emy za³adowaæ do pamiêci, czyli do naszego CResourceManager
 		//wzorce na obiekty ca³ego levelu.

@@ -228,11 +228,11 @@ namespace logic
 
 		
 		//poni¿ej - czeka mnie bardzo czasoch³onna analiza...
-		//zabra³em to z klasy CGun
+		//zabra³em to z klasy Gun
 		float			m_bullet_speed;				//prêdkoœæ pocisku - przenieœæ do CBullet (to pocisk posiada wiedzê, jaki jest "szybki")
 
 //
-//		float			m_range;							//zasiêg strza³u pobierany od w³aœciciela dzia³a (CRobot-CGun)
+//		float			m_range;							//zasiêg strza³u pobierany od w³aœciciela dzia³a (CRobot-Gun)
 //		sf::Vector2f	m_initial;							//po³o¿enie pocz¹tkowe pocisku
 //	[ok]		sf::Vector2f	m_target;							//po³o¿enie celu, do którego pod¹¿a pocisk
 //	[ok]		float			m_speed;							//prêdkoœæ pocisku

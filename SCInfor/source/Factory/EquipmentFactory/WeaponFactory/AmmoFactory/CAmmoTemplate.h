@@ -71,7 +71,7 @@ namespace factory
 
 	private:
 
-		CCaliber		m_templ_caliber;					//kaliber aminicji
+		Caliber		m_templ_caliber;					//kaliber aminicji
 		EAmmoState		m_templ_ammo_state;					//wyliczenie stanów magazynka z amunicj¹	
 		int				m_templ_ammo;						//iloœæ amunicji w magazynku
 		int				m_templ_ammo_capacity;				//pojemnoœæ magazynka na amunicjê

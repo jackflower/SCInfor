@@ -14,7 +14,7 @@
 #include "../../Equipment/Energy/Energy.h"
 #include "../../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
 #include "../../Equipment/Thermodynamics/Ventilator/Ventilator.h"
-#include "../../Equipment/Weapon/Gun/CGun.h"
+#include "../../Equipment/Weapon/Gun/Gun.h"
 #include "../../Utilities/Utilities/Utilities.h"
 #include "../../Game/Game.h"
 #include "../../Weather/CWeather.h"
@@ -336,15 +336,15 @@ namespace logic
 		m_ventilator_data.setVentilator(ventilator);
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CGun
-	CGun* CActor::GetGun()
+	//Metoda zwraca wskaünik na obiekt klasy Gun
+	Gun* CActor::GetGun()
 	{
 		return m_gun_data.getGun();
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CGun
+	//Metoda ustawia wskaünik na obiekt klasy Gun
 	///
-	void CActor::SetGun(CGun* gun)
+	void CActor::SetGun(Gun* gun)
 	{
 		m_gun_data.setGun(gun);
 	}
@@ -519,7 +519,7 @@ namespace logic
 		m_ventilator_data.Transform(this, m_ventilator_data.getVentilator());
 	}
 
-	//metoda aktualizuje funkcjonalnoúÊ CGun
+	//metoda aktualizuje funkcjonalnoúÊ Gun
 	void CActor::updateGun(float dt)
 	{
 		//logic...

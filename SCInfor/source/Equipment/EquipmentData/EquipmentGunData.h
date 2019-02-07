@@ -16,7 +16,7 @@ namespace equipment
 {
 	namespace weapon
 	{
-		class CGun;
+		class Gun;
 	}
 }
 
@@ -56,20 +56,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CGun
+		///Metoda zwraca wskaünik na obiekt klasy Gun
 		///
-		CGun *getGun();
+		Gun *getGun();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CGun
+		///Metoda ustawia wskaünik na obiekt klasy Gun
 		///
-		///@param *gun - wskaünik na obiekt klasy CGun
+		///@param *gun - wskaünik na obiekt klasy Gun
 		///
-		void setGun(CGun *gun);
+		void setGun(Gun *gun);
 
 	private:
 
-		CGun *p_gun; //wskaünik na klasÍ CGun - dzia≥o
+		Gun *p_gun; //wskaünik na klasÍ Gun - dzia≥o
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_GUN_DATA_JACK

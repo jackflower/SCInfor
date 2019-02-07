@@ -114,16 +114,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CGun
-	CGun* CGunTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy Gun
+	Gun* CGunTemplate::Create(std::wstring id)
 	{
-		CGun* gun = gPhysicalManager.CreateGun(id);
+		Gun* gun = gPhysicalManager.CreateGun(id);
 		Fill(gun);
 		return gun;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CGunTemplate::Fill(CGun *p_gun)
+	void CGunTemplate::Fill(Gun *p_gun)
 	{
 		if(p_gun)
 		{
@@ -131,14 +131,14 @@ namespace factory
 			
 			//pola tej klasy wzorca
 			p_gun->setAmmoTransformed(m_templ_ammo_data.getTransformed());
-			p_gun->SetTimeAmmoLoadDelay(m_templ_time_ammo_load_delay);
-			p_gun->SetTimeShot(m_templ_time_shot);
-			p_gun->SetRangeShot(m_templ_range_shot);
-			p_gun->SetBulletSpeed(m_templ_bullet_speed);
-			p_gun->SetBarrelCount(m_templ_barrel_count);
-			p_gun->SetTargetAltitude(m_templ_target_altitude);
-			p_gun->SetExplosionEmiter(m_templ_explosion_emiter);
-			p_gun->SetAmmoTimeDelayed(m_templ_ammo_time_delayed);
+			p_gun->setTimeAmmoLoadDelay(m_templ_time_ammo_load_delay);
+			p_gun->setTimeShot(m_templ_time_shot);
+			p_gun->setRangeShot(m_templ_range_shot);
+			p_gun->setBulletSpeed(m_templ_bullet_speed);
+			p_gun->setBarrelCount(m_templ_barrel_count);
+			p_gun->setTargetAltitude(m_templ_target_altitude);
+			p_gun->setExplosionEmiter(m_templ_explosion_emiter);
+			p_gun->setAmmoTimeDelayed(m_templ_ammo_time_delayed);
 			p_gun->setLimitAmountDamage(m_templ_limit_amount_damage);
 			//damage
 			p_gun->setDamage(m_templ_damage);

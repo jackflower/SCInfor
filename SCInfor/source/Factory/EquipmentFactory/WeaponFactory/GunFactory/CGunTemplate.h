@@ -8,7 +8,7 @@
 #define H_GUN_TEMPLATE_JACK
 
 #include "../../../../Equipment/EquipmentData/EquipmentAmmoData.h"
-#include "../../../../Equipment/Weapon/Gun/CGun.h"
+#include "../../../../Equipment/Weapon/Gun/Gun.h"
 #include "../AmmoFactory/CAmmoTemplate.h"
 
 using namespace equipment;
@@ -59,18 +59,18 @@ namespace factory
 		bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CGun
+		///Metoda tworzy obiekt klasy Gun
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CGun* Create(std::wstring id = L"");
+		Gun* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *p_ammo - wskaŸnik na obiekt klasy Ammo
 		///
-		virtual void Fill(CGun *p_gun);
+		virtual void Fill(Gun *p_gun);
 
 	private:
 
@@ -85,7 +85,7 @@ namespace factory
 		sf::Vector2f	 	m_templ_explosion_emiter;		//po³o¿enia emitera eksplozji wystrza³u wzglêdem lufy
 		float				m_templ_ammo_time_delayed;		//czas opóŸnienia komunikatu uzupe³nienia amunicji - jako dana wejœciowa dla sf::Randomizer
 		unsigned			m_templ_limit_amount_damage;	//licznik uszkodzeñ, po którym nastêpuje stan serwisowy
-		CLockWeapon			m_templ_damage;					//generator uszkodzeñ - do zainicjowania danymi tworzonego obiektu
+		LockWeapon			m_templ_damage;					//generator uszkodzeñ - do zainicjowania danymi tworzonego obiektu
 	};
 }//namespace factory
 #endif//H_GUN_TEMPLATE_JACK

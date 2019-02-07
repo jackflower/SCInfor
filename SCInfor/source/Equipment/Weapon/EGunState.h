@@ -1,5 +1,5 @@
-//  ______________________________________________
-// | EGunState.h - wyliczenie kalibrów uzbrojenia |
+ï»¿//  ______________________________________________
+// | EGunState.h - wyliczenie kalibrÃ³w uzbrojenia |
 // | Jack Flower - March 2016                     |
 // |______________________________________________|
 //
@@ -12,15 +12,15 @@ namespace equipment
 	namespace weapon
 	{
 		///
-		///Wyliczenie stanów dla obiektów CGun
+		///Wyliczenie stanÃ³w dla obiektÃ³w Gun
 		///
 		enum EGunState
 		{
 			GUN_DEFAULT			= 0,	//stan default
-			GUN_SHOOT			= 1,	//stan trwania procesu wystrza³u
-			GUN_AMMO_LOADING	= 2,	//stan ³adowania aminucji (prze³adowanie)
-			GUN_AMMO_EMPTY		= 3,	//pusty magazynek - nie ma czym strzelaæ
-			GUN_DAMAGE			= 4,	//uszkodzenie (np. zaciêcie dzia³a)
+			GUN_SHOOT			= 1,	//stan trwania procesu wystrzaÅ‚u
+			GUN_AMMO_LOADING	= 2,	//stan Å‚adowania aminucji (przeÅ‚adowanie)
+			GUN_AMMO_EMPTY		= 3,	//pusty magazynek - nie ma czym strzelaÄ‡
+			GUN_DAMAGE			= 4,	//uszkodzenie (np. zaciÄ™cie dziaÅ‚a)
 			GUN_SERVICE			= 5,	//stan serwisowy - wymaga interwencji
 			GUN_DEATH			= 6		//death - proces destrukcji obiektu (wreck)
 		};

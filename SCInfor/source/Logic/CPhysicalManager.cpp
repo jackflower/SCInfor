@@ -27,7 +27,7 @@
 #include "../Equipment/Thermodynamics/ThermalInsulation/ThermalInsulation.h"
 #include "../Equipment/Thermodynamics/Ventilator/Ventilator.h"
 #include "../Equipment/Weapon/Ammo/Ammo.h"
-#include "../Equipment/Weapon/Gun/CGun.h"
+#include "../Equipment/Weapon/Gun/Gun.h"
 #include "../Equipment/Lightingequipment/LightingEquipment.h"
 #include "../Equipment/Industrial/PowerModuleType/WindTurbine.h"
 #include "../Equipment/Industrial/PowerModuleType/SolarCell.h"
@@ -247,14 +247,14 @@ namespace logic
 		return Create<Ammo>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CGun i zwraca wskaünik na ten obiekt
-	CGun *CPhysicalManager::CreateGun(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Gun i zwraca wskaünik na ten obiekt
+	Gun *CPhysicalManager::CreateGun(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CGun created\n");
-		return Create<CGun>(uniqueId);
+		fprintf(stderr, "Gun created\n");
+		return Create<Gun>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CGun i zwraca wskaünik na ten obiekt
+	//Metoda tworzy obiekt klasy Gun i zwraca wskaünik na ten obiekt
 	WindTurbine *CPhysicalManager::CreateWindTurbine(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "WindTurbine created\n");

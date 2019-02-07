@@ -1,7 +1,7 @@
-//  _____________________________________
-// | CCaliber.h - class definition       |
-// | Jack Flower - March 2016            |
-// |_____________________________________|
+ï»¿//  ____________________________________
+// | Caliber.h - class definition       |
+// | Jack Flower - March 2016           |
+// |____________________________________|
 //
 
 #ifndef H_CALIBER_JACK
@@ -17,36 +17,36 @@ namespace equipment
 		///
 		///Klasa reprezentuje opakowanie informacji o kalibrze uzbrojenia
 		///
-		class CCaliber
+		class Caliber
 		{
 		public:
 
 			///
 			///Konstruktor
 			///
-			CCaliber();
+			Caliber();
 
 			///
-			///Konstruktor kopiuj¹cy
+			///Konstruktor kopiujÄ…cy
 			///
-			///@param CCaliberCopy - obiekt klasy CCaliber
+			///@param CaliberCopy - obiekt klasy Caliber
 			///
-			CCaliber(const CCaliber& CCaliberCopy);
+			Caliber(const Caliber & CaliberCopy);
 
 			///
 			///Destruktor
 			///
-			~CCaliber();
+			~Caliber();
 
 			///
-			///Metoda zwraca nazwê kalibru
+			///Metoda zwraca nazwÄ™ kalibru
 			///
 			const std::string & getName() const;
 
 			///
-			///Metoda ustawia nazwê kalibru
+			///Metoda ustawia nazwÄ™ kalibru
 			///
-			///@param & name - sta³a referencja na obiekt klasy std::string
+			///@param & name - staÅ‚a referencja na obiekt klasy std::string
 			///
 			void setName(const std::string & name);
 
@@ -64,22 +64,22 @@ namespace equipment
 			void setCaliber(const float caliber);
 
 			///
-			///Metoda zwraca sta³¹ referencjê na wyliczenie ECaliber
+			///Metoda zwraca staÅ‚Ä… referencjÄ™ na wyliczenie ECaliber
 			///
 			const ECaliber & getCaliberType() const;
 
 			///
-			///Metoda ustawia referencjê na wyliczenie ECaliber
+			///Metoda ustawia referencjÄ™ na wyliczenie ECaliber
 			///
-			///@param & caliber - sta³a referencja na wyliczenie ECaliber
+			///@param & caliber - staÅ‚a referencja na wyliczenie ECaliber
 			///
 			void setCaliberType(const ECaliber & caliber);
 
 		private:
 
-			std::string		m_name;		//nazwa kalibru np. Caliber 44
-			float			m_caliber;	//kaliber urzbrojenia
-			ECaliber		e_caliber;	//typ kalibru
+			std::string m_name; //nazwa kalibru np. Caliber 44
+			float m_caliber; //kaliber urzbrojenia
+			ECaliber e_caliber;	//typ kalibru
 		};
 	}//namespace weapon
 }//namespace equipment

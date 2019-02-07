@@ -8,7 +8,7 @@
 #define H_AMMO_JACK
 
 #include "../../../Logic/Actor/CActor.h"
-#include "../CCaliber.h"
+#include "../Caliber.h"
 #include "EAmmoState.h"
 
 using namespace logic;
@@ -188,9 +188,12 @@ namespace equipment
 			///
 			virtual void update(float dt);
 
+			///to do...
+			//uzupełnić i zaprojektować interface
+
 		private:
 
-			CCaliber m_caliber; //kaliber aminicji
+			Caliber m_caliber; //kaliber aminicji
 			EAmmoState m_ammo_state; //wyliczenie stanów magazynka z amunicją	
 			int m_ammo; //ilość amunicji w magazynku
 			int m_ammo_capacity; //pojemność magazynka na amunicję

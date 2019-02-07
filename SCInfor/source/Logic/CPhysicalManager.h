@@ -71,7 +71,7 @@ namespace equipment
 	namespace weapon
 	{
 		class Ammo;
-		class CGun;
+		class Gun;
 	}
 
 	namespace battery
@@ -268,11 +268,11 @@ namespace logic
 		Ammo *CreateAmmo(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CGun i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Gun i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CGun *CreateGun(const std::wstring &uniqueId = L"");
+		Gun *CreateGun(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy WindTurbine i zwraca wskaünik na ten obiekt

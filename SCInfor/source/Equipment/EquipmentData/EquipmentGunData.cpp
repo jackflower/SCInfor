@@ -5,7 +5,7 @@
 //
 
 #include "EquipmentGunData.h"
-#include "../Weapon/Gun/CGun.h"
+#include "../Weapon/Gun/Gun.h"
 #include "../../Logic/CPhysicalManager.h"
 
 namespace equipmentdata
@@ -43,14 +43,14 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CGun
-	CGun *EquipmentGunData::getGun()
+	//Metoda zwraca wskaünik na obiekt klasy Gun
+	Gun *EquipmentGunData::getGun()
 	{
 		return p_gun;
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CGun
-	void EquipmentGunData::setGun(CGun *gun)
+	//Metoda ustawia wskaünik na obiekt klasy Gun
+	void EquipmentGunData::setGun(Gun *gun)
 	{
 		p_gun = gun;
 	}

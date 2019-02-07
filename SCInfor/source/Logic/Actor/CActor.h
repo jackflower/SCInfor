@@ -46,7 +46,7 @@ namespace equipment
 	class Ventilator;
 	namespace weapon
 	{
-		class CGun;
+		class Gun;
 	}
 }
 
@@ -360,16 +360,16 @@ namespace logic
 		void SetVentilator(Ventilator* ventilator);
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CGun
+		///Metoda zwraca wskaünik na obiekt klasy Gun
 		///
-		CGun* GetGun();
+		Gun* GetGun();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CGun
+		///Metoda ustawia wskaünik na obiekt klasy Gun
 		///
-		///@param *gun - wskaünik na obiekt klasy CGun
+		///@param *gun - wskaünik na obiekt klasy Gun
 		///
-		void SetGun(CGun* gun);
+		void SetGun(Gun* gun);
 
 		///
 		///Wirtualna metoda aktualizuje animacje w zaleønoúci od stanu logiki obiektu (move, attack, death, etc...)
@@ -468,7 +468,7 @@ namespace logic
 		//metoda aktualizuje funkcjonalnoúÊ Ventilator
 		void updateVentilator(float dt);
 
-		//metoda aktualizuje funkcjonalnoúÊ CGun
+		//metoda aktualizuje funkcjonalnoúÊ Gun
 		void updateGun(float dt);
 
 		//metoda aktualizuje temperaturÍ (wnÍtrze lub organizm)

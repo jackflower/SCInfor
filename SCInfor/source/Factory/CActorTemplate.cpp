@@ -223,7 +223,7 @@ namespace factory
 			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u wentylatora
 			std::string gun_filename_tmp = xml.GetString(node, "gun_filename");
 
-			//emitery dla obiektu klasy CGun (dopisaæ w xml'u)
+			//emitery dla obiektu klasy Gun (dopisaæ w xml'u)
 			m_templ_gun_data.setEmiter(xml.GetFloat(node, "gun_emiter_x"), xml.GetFloat(node, "gun_emiter_y"));
 
 			if (m_templ_gun_data.getUseEquipment())
@@ -371,14 +371,14 @@ namespace factory
 			//jeœli obiekt posiada dzia³o
 			if (m_templ_gun_data.getUseEquipment())
 			{
-				//emitery dla obiektu klasy CGun
+				//emitery dla obiektu klasy Gun
 				actor->setGunTransformed(m_templ_gun_data.getTransformed());
 
 				if (p_templ_gun)
 				{
 					//pobieramy sk³adow¹ modu³ wentylatora i wzorzec wype³nia wskaŸnik danymi
 					actor->SetGun(p_templ_gun->Create(L""));
-					//przekazanie wskaŸnikowi na klasê CGun informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê Gun informacji o wzorcu
 					actor->GetGun()->SetTemplate(p_templ_gun);
 					//decorator
 					actor->GetGun()->setSmoothing(true);
