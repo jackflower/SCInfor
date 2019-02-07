@@ -77,23 +77,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CPhysicalInfoTemplate::Drop()
+	void CPhysicalInfoTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CPhysicalInfoTemplate::Load(const std::string &name)
+	bool CPhysicalInfoTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CPhysicalInfoTemplate::Load(CXml &xml)
+	bool CPhysicalInfoTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CPhysical
-		if (!CPhysicalTemplate::Load(xml)) return false;
+		if (!CPhysicalTemplate::load(xml)) return false;
 
 		//odczytanie danych animacji - owner(this) body part
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "unit_animation"))
@@ -137,19 +137,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CPhysicalInfo
-	CPhysicalInfo* CPhysicalInfoTemplate::Create(std::wstring id)
+	CPhysicalInfo* CPhysicalInfoTemplate::create(std::wstring id)
 	{
 		CPhysicalInfo* physical_info = gPhysicalManager.CreatePhysicalInfo(id);
-		Fill(physical_info);
+		fill(physical_info);
 		return physical_info;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CPhysicalInfoTemplate::Fill(CPhysicalInfo *p_physical_info)
+	void CPhysicalInfoTemplate::fill(CPhysicalInfo *p_physical_info)
 	{
 		if(p_physical_info)
 		{
-			CPhysicalTemplate::Fill(p_physical_info);
+			CPhysicalTemplate::fill(p_physical_info);
 			//sk³adowe tej klasy			
 			p_physical_info->SetPhysicalInfoName(m_templ_physical_info_name);
 			p_physical_info->SetZIndexRectangle(m_templ_z_index_rectangle);

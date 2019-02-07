@@ -64,9 +64,9 @@ namespace mapengine
 	}
 
 	//Metoda tworzy obiekt mapy
-	void CMapObjectDescriptor::Create()
+	void CMapObjectDescriptor::create()
 	{
-		CPhysical *phys = p_templ->Create(stringutils::ConvertToWString(m_name));
+		CPhysical *phys = p_templ->create(stringutils::ConvertToWString(m_name));
 		if (phys != 0)
 		{
 			phys->SetPosition(sf::Vector2f(m_x_position, m_y_position));

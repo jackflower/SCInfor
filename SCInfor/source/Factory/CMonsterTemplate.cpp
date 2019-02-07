@@ -23,27 +23,27 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CMonsterTemplate::Drop()
+	void CMonsterTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CMonsterTemplate::Load(const std::string &name)
+	bool CMonsterTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CMonsterTemplate::Load(CXml &xml)
+	bool CMonsterTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy xml zawiera informacjê, ¿e jest potwór
 		if (xml.GetString(xml.GetRootNode(), "type") != "monster")
 			return false;
 
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej
-		if (!CActorTemplate::Load(xml))
+		if (!CActorTemplate::load(xml))
 			return false;
 
 		//gdyby w klasie CMonster by³y jakieœ pola
@@ -55,10 +55,10 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CMonster
-	CMonster* CMonsterTemplate::Create(std::wstring id)
+	CMonster* CMonsterTemplate::create(std::wstring id)
 	{
 		CMonster* monster = gPhysicalManager.CreateMonster(id);
-		Fill(monster);
+		fill(monster);
 
 		//gdyby w klasie CMonster by³y jakieœ pola
 		//to tutaj, nele¿a³oby te pola przekazaæ z fabryki do potwora,
@@ -68,9 +68,9 @@ namespace factory
 	}
 
 	//Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CMonster
-	void CMonsterTemplate::Fill(CMonster *monster)
+	void CMonsterTemplate::fill(CMonster *monster)
 	{
-		CActorTemplate::Fill(monster);
+		CActorTemplate::fill(monster);
 		//ewentualnie reszta
 	}
 

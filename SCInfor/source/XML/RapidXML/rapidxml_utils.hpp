@@ -40,7 +40,7 @@ namespace rapidxml
             size_t size = stream.tellg();
             stream.seekg(0);   
             
-            // Load data and add terminating 0
+            // load data and add terminating 0
             m_data.resize(size + 1);
             stream.read(&m_data.front(), static_cast<streamsize>(size));
             m_data[size] = 0;
@@ -52,7 +52,7 @@ namespace rapidxml
         {
             using namespace std;
 
-            // Load data and add terminating 0
+            // load data and add terminating 0
             stream.unsetf(ios::skipws);
             m_data.assign(istreambuf_iterator<Ch>(stream), istreambuf_iterator<Ch>());
             if (stream.fail() || stream.bad())

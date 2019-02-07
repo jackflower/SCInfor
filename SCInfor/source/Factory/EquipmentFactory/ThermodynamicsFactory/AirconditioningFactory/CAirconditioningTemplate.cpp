@@ -56,23 +56,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CAirconditioningTemplate::Drop()
+	void CAirconditioningTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CAirconditioningTemplate::Load(const std::string &name)
+	bool CAirconditioningTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CAirconditioningTemplate::Load(CXml &xml)
+	bool CAirconditioningTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CActor
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//dane modu³u klimatyzatora
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "airconditioning_config"))
@@ -108,19 +108,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy Airconditioning
-	Airconditioning* CAirconditioningTemplate::Create(std::wstring id)
+	Airconditioning* CAirconditioningTemplate::create(std::wstring id)
 	{
 		Airconditioning* airconditioning = gPhysicalManager.CreateAirconditioning(id);
-		Fill(airconditioning);
+		fill(airconditioning);
 		return airconditioning;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CAirconditioningTemplate::Fill(Airconditioning *p_airconditioning)
+	void CAirconditioningTemplate::fill(Airconditioning *p_airconditioning)
 	{
 		if(p_airconditioning)
 		{
-			CActorTemplate::Fill(p_airconditioning);
+			CActorTemplate::fill(p_airconditioning);
 
 			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
 			if (p_templ_animations)
@@ -173,7 +173,7 @@ namespace factory
 				if(p_airconditioning)
 				{
 					//pobieramy sk³adow¹ thermalinsulation i wzorzec wype³nia wskaŸnik danymi
-					p_airconditioning->setThermalInsulation(p_templ_thermal_insulation->Create(L""));//nazwa z xml'a
+					p_airconditioning->setThermalInsulation(p_templ_thermal_insulation->create(L""));//nazwa z xml'a
 					//przekazanie wskaŸnikowi na klasê Airconditioning informacji o wzorcu
 					p_airconditioning->getThermalInsulation()->SetTemplate(p_templ_thermal_insulation);
 					//decorator

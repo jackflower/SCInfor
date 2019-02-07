@@ -44,12 +44,12 @@ namespace resource
 		///
 		///@param &file_name - sta³a referencja na nazwê pliku
 		///
-		bool Load(const std::string &file_name);
+		bool load(const std::string &file_name);
 
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób
 		///
-		void Drop();
+		void drop();
 
 	};
 }//namespace resource

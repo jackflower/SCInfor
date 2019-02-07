@@ -1,10 +1,10 @@
-//  ___________________________________________
-// | CCommunication.cpp - class implementation |
-// | Jack Flower - July 2015                   |
-// |___________________________________________|
+ï»¿//  __________________________________________________
+// | CommunicationTemplate.cpp - class implementation |
+// | Jack Flower - July 2015                          |
+// |__________________________________________________|
 //
 
-#include "CCommunicationTemplate.h"
+#include "CommunicationTemplate.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 
@@ -12,55 +12,55 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CCommunicationTemplate, CActorTemplate);
+	RTTI_IMPL(CommunicationTemplate, CActorTemplate);
 
 	//Konstruktor
-	CCommunicationTemplate::CCommunicationTemplate()
+	CommunicationTemplate::CommunicationTemplate()
 	:
-		CActorTemplate				(),//konstruktor klasy bazowej
-		m_templ_communication_name	(),
-		m_templ_range				(0.0f),
-		m_templ_reset_duration		(0.0f),
-		m_templ_login				(),
-		m_templ_password			()
+		CActorTemplate(),//konstruktor klasy bazowej
+		m_templ_communication_name(),
+		m_templ_range(0.0f),
+		m_templ_reset_duration(0.0f),
+		m_templ_login(),
+		m_templ_password()
 	{
 	}
 
 	//Destruktor wirtualny
-	CCommunicationTemplate::~CCommunicationTemplate()
+	CommunicationTemplate::~CommunicationTemplate()
 	{
-		//CActorTemplate	not edit
-		m_templ_communication_name	= "";
-		m_templ_range				= 0.0f;
-		m_templ_reset_duration		= 0.0f;
-		m_templ_login				= "";
-		m_templ_password			= "";
+		//CActorTemplate
+		m_templ_communication_name = "";
+		m_templ_range = 0.0f;
+		m_templ_reset_duration = 0.0f;
+		m_templ_login = "";
+		m_templ_password = "";
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CCommunicationTemplate::GetType() const
+	const std::string CommunicationTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CCommunicationTemplate::Drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b - implementacje w klasach pochodnych
+	void CommunicationTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CCommunicationTemplate::Load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool CommunicationTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CCommunicationTemplate::Load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml
+	bool CommunicationTemplate::load(CXml &xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::Load(xml)) return false;
+		//sprawdzamy, czy moÅ¼na zaÅ‚adowaÄ‡ dane z klasy bazowej CActorTemplate
+		if (!CActorTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "communication_config"))
@@ -72,26 +72,26 @@ namespace factory
 			m_templ_password = xml.GetString(node, "password");
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy CPowerStation
-	CCommunication* CCommunicationTemplate::Create(std::wstring id)
+	CCommunication* CommunicationTemplate::create(std::wstring id)
 	{
-		CCommunication* communication = gPhysicalManager.CreateCommunication(id);
-		Fill(communication);
+		CCommunication *communication = gPhysicalManager.CreateCommunication(id);
+		fill(communication);
 		return communication;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CCommunicationTemplate::Fill(CCommunication *p_communication)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void CommunicationTemplate::fill(CCommunication *p_communication)
 	{
 		if(p_communication)
 		{
-			CActorTemplate::Fill(p_communication);
+			CActorTemplate::fill(p_communication);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_communication->SetAnimSet(p_templ_animations);

@@ -32,23 +32,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CSlotsRateTemplate::Drop()
+	void CSlotsRateTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CSlotsRateTemplate::Load(const std::string &name)
+	bool CSlotsRateTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CSlotsRateTemplate::Load(CXml &xml)
+	bool CSlotsRateTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//dane obiektu
 
@@ -57,19 +57,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CSlotsRate
-	CSlotsRate* CSlotsRateTemplate::Create(std::wstring id)
+	CSlotsRate* CSlotsRateTemplate::create(std::wstring id)
 	{
 		CSlotsRate* slots_rate = gPhysicalManager.CreateSlotsRate(id);
-		Fill(slots_rate);
+		fill(slots_rate);
 		return slots_rate;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CSlotsRateTemplate::Fill(CSlotsRate *p_slots_rate)
+	void CSlotsRateTemplate::fill(CSlotsRate *p_slots_rate)
 	{
 		if (p_slots_rate)
 		{
-			CActorTemplate::Fill(p_slots_rate);
+			CActorTemplate::fill(p_slots_rate);
 
 			//przekazanie danych
 

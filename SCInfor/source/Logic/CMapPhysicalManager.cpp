@@ -49,14 +49,14 @@ namespace logic
 	CMapPhysical* CMapPhysicalManager::CreateMapPhysical(const std::wstring& unique_id)
 	{
 		fprintf(stderr, "CMapPhysical created\n");
-		return Create<CMapPhysical>(unique_id);
+		return create<CMapPhysical>(unique_id);
 	}
 
 	//Metoda tworzy obiekt klasy CGroundWork i zwraca wskaŸnik na ten obiekt
 	CGroundWork* CMapPhysicalManager::CreateGroundWork(const std::wstring& unique_id)
 	{
 		fprintf(stderr, "CGroundWork created\n");
-		return Create<CGroundWork>(unique_id);
+		return create<CGroundWork>(unique_id);
 	}
 
 	//Metoda usuwa obiekt klasy CMapPhysical z kontenera
@@ -138,7 +138,7 @@ namespace logic
 
 	////Szablon metody tworzenia obiektów
 	template<class T>
-	T* CMapPhysicalManager::Create(const std::wstring &uniqueId)
+	T* CMapPhysicalManager::create(const std::wstring &uniqueId)
 	{
 		std::wstring new_unique_id = uniqueId;
 		if (uniqueId != L"")
@@ -147,7 +147,7 @@ namespace logic
 
 			if (m_named_mapphysicals.find(new_unique_id) != m_named_mapphysicals.end())
 			{
-				fprintf(stderr, "CMapPhysicalManager::Create<T> - %ls key already in m_named_mapphysicals map", new_unique_id.c_str());
+				fprintf(stderr, "CMapPhysicalManager::create<T> - %ls key already in m_named_mapphysicals map", new_unique_id.c_str());
 				return NULL;
 			}
 

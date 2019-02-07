@@ -30,7 +30,7 @@ namespace resource
 	}
 
 	//Wirtualna metoda ³aduj¹ca zasób - implementacja
-	bool CTexture::Load(const std::string &file_name)
+	bool CTexture::load(const std::string &file_name)
 	{
 		if (loadFromFile(file_name))//jeœli dane zosta³y za³adowane
 			return true;			//zwracamy flagê true (ok)
@@ -38,7 +38,7 @@ namespace resource
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CTexture::Drop()
+	void CTexture::drop()
 	{
 		delete this;
 	}

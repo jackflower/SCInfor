@@ -40,23 +40,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CRelayStationTemplate::Drop()
+	void CRelayStationTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CRelayStationTemplate::Load(const std::string &name)
+	bool CRelayStationTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CRelayStationTemplate::Load(CXml &xml)
+	bool CRelayStationTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "relay_station_config"))
@@ -73,7 +73,7 @@ namespace factory
 			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u komunikacji
 			std::string communication_filename_tmp = xml.GetString(node, "communication_filename");
 			if(m_templ_use_communication)
-				p_templ_communication = (CCommunicationTemplate*)gResourceManager.GetPhysicalTemplate(communication_filename_tmp);
+				p_templ_communication = (CommunicationTemplate*)gResourceManager.GetPhysicalTemplate(communication_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
@@ -81,19 +81,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CRelayStation
-	CRelayStation* CRelayStationTemplate::Create(std::wstring id)
+	CRelayStation* CRelayStationTemplate::create(std::wstring id)
 	{
 		CRelayStation* relay_station = gPhysicalManager.CreateRelayStation(id);
-		Fill(relay_station);
+		fill(relay_station);
 		return relay_station;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CRelayStationTemplate::Fill(CRelayStation *p_relay_station)
+	void CRelayStationTemplate::fill(CRelayStation *p_relay_station)
 	{
 		if(p_relay_station)
 		{
-			CActorTemplate::Fill(p_relay_station);
+			CActorTemplate::fill(p_relay_station);
 
 			//przekazanie danych...
 			p_relay_station->setRelayStationName(m_templ_relay_station_name);
@@ -119,7 +119,7 @@ namespace factory
 				if(p_templ_communication)
 				{
 					//pobieramy sk³adow¹ modu³ komunikacji i wzorzec wype³nia wskaŸnik danymi
-					p_relay_station->SetCommunication(p_templ_communication->Create(L""));
+					p_relay_station->SetCommunication(p_templ_communication->create(L""));
 					//przekazanie wskaŸnikowi na klasê CCommunication informacji o wzorcu
 					p_relay_station->GetCommunication()->SetTemplate(p_templ_communication);
 				}

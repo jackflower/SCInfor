@@ -1,14 +1,14 @@
-//  ____________________________________________
-// | CEnergyTemplate.h - class definition       |
-// | Jack Flower - May 2014                     |
-// |____________________________________________|
+ï»¿//  ___________________________________________
+// | EnergyTemplate.h - class definition       |
+// | Jack Flower - May 2014                    |
+// |___________________________________________|
 //
 
 #ifndef H_ENERGY_TEMPLATE_JACK
 #define H_ENERGY_TEMPLATE_JACK
 
-#include "EnergyTankFactory/CEnergyTankTemplate.h"
-#include "BatteryFactory/CBatteryTemplate.h"
+#include "EnergyTankFactory/EnergyTankTemplate.h"
+#include "BatteryFactory/BatteryTemplate.h"
 #include "../../../Equipment/Energy/Energy.h"
 #include "../../../Equipment/EquipmentData/EquipmentEnergyTankData.h"
 #include "../../../Equipment/Energy/Battery/Battery.h"
@@ -21,7 +21,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec energii - akumulator
 	///
-	class CEnergyTemplate : public CActorTemplate
+	class EnergyTemplate : public CActorTemplate
 	{
 		RTTI_DECL;
 
@@ -30,50 +30,50 @@ namespace factory
 		///
 		///Konstruktor
 		///
-		CEnergyTemplate(void);
+		EnergyTemplate();
 
 		///
 		///Destruktor
 		///
-		~CEnergyTemplate(void);
+		~EnergyTemplate();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
-		///Wirtualna metoda zwalniaj¹ca zasób
+		///Wirtualna metoda zwalniajÄ…ca zasÃ³b
 		///
-		void Drop();
+		void drop();
 
 		///
-		///Wirtualna metoda ³aduj¹ca dane
+		///Wirtualna metoda Å‚adujÄ…ca dane
 		///
-		///@param &name - sta³a referencja na std::string
+		///@param name - staÅ‚a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string & name);
 
 		///
-		///Wirtualna metoda ³aduj¹ca dane z xml
+		///Wirtualna metoda Å‚adujÄ…ca dane z xml
 		///
-		///@param &xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy CXml
 		///
-		virtual bool Load(CXml &xml);
+		virtual bool load(CXml & xml);
 
 		///
 		///Metoda tworzy obiekt klasy Energy
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		Energy* Create(std::wstring id = L"");
+		Energy *create(std::wstring id = L"");
 
 		///
-		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
+		///Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_energy - wskaŸnik na obiekt klasy Energy
+		///@param *p_energy - wskaÅºnik na obiekt klasy Energy
 		///
-		virtual void Fill(Energy *p_energy);
+		virtual void fill(Energy *p_energy);
 
 
 		//metody  p o m o c n i c z e
@@ -147,12 +147,12 @@ namespace factory
 			m_templ_energy_rotation_speed = templ_energy_rotation_speed;
 		}
 
-		inline CBatteryTemplate *getTemplateBattery()
+		inline BatteryTemplate *getTemplateBattery()
 		{
 			return p_templ_battery;
 		}
 
-		inline void setTemplateBattery(CBatteryTemplate * battery)
+		inline void setTemplateBattery(BatteryTemplate * battery)
 		{
 			p_templ_battery = battery;
 		}
@@ -191,19 +191,19 @@ namespace factory
 
 	private:
 
-		std::string					m_templ_energy_name;				//nazwa akumulatora energii (niklowy, kadmowy, lityczny, atomowy...etc)
-		EquipmentEnergyTankData	m_templ_energytank_data;			//opakowanie funkcjonalnoœci zbiornika paliwa
-		CEnergyTankTemplate*		p_templ_energy_tank;				//wskaŸnik na dane wzorca akumulatora energii
-		EquipmentBatteryData		m_templ_battery_data;				//opakowanie funkcjonalnoœci baterii
-		CBatteryTemplate*			p_templ_battery;					//wskaŸnik na dane wzorca baterii
-		float						m_templ_percentage_reserve_energy;	//procentowa wartoœæ energii, przy której nastêpuje komunikat informacyjny o rezerwie, wyczerpaniu energii
-		float						m_templ_energy_time_delayed;		//czas opóŸnienia komunikatu o wyczerpaniu energii
-		bool						m_templ_energy_empty_message;		//flaga, czy obiekt mo¿e wysy³aæ komunikaty o wyczerpaniu energii
-		float						m_templ_energy_regeneration;		//wartoœæ samoregeneracji energii (obiekt regeneruje energiê - odpoczywa)
-		float						m_templ_regeneration_time;			//czêstotliwoœæ regeneracji procesu
-		float						m_templ_energy_rotation_speed;		//prêdkoœæ wirowania wskaŸnika energii w akumulatorze
-		float						m_templ_critical_duration;			//czas trwania stanu krytycznego
-		float						m_templ_damage_duration;			//czas trwania stanu uszkodzenia
+		std::string m_templ_energy_name; //nazwa akumulatora energii (niklowy, kadmowy, lityczny, atomowy...etc)
+		EquipmentEnergyTankData	m_templ_energytank_data; //opakowanie funkcjonalnoÅ›ci zbiornika paliwa
+		EnergyTankTemplate *p_templ_energy_tank; //wskaÅºnik na dane wzorca akumulatora energii
+		EquipmentBatteryData m_templ_battery_data; //opakowanie funkcjonalnoÅ›ci baterii
+		BatteryTemplate *p_templ_battery; //wskaÅºnik na dane wzorca baterii
+		float m_templ_percentage_reserve_energy; //procentowa wartoÅ›Ä‡ energii, przy ktÃ³rej nastÄ™puje komunikat informacyjny o rezerwie, wyczerpaniu energii
+		float m_templ_energy_time_delayed; //czas opÃ³Åºnienia komunikatu o wyczerpaniu energii
+		bool m_templ_energy_empty_message; //flaga, czy obiekt moÅ¼e wysyÅ‚aÄ‡ komunikaty o wyczerpaniu energii
+		float m_templ_energy_regeneration; //wartoÅ›Ä‡ samoregeneracji energii (obiekt regeneruje energiÄ™ - odpoczywa)
+		float m_templ_regeneration_time; //czÄ™stotliwoÅ›Ä‡ regeneracji procesu
+		float m_templ_energy_rotation_speed; //prÄ™dkoÅ›Ä‡ wirowania wskaÅºnika energii w akumulatorze
+		float m_templ_critical_duration; //czas trwania stanu krytycznego
+		float m_templ_damage_duration; //czas trwania stanu uszkodzenia
 	};
 }
 #endif//H_ENERGY_TEMPLATE_JACK

@@ -41,28 +41,28 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 		///
 		///Metoda tworzy obiekt klasy CFlora
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CFlora* Create(std::wstring id = L"");
+		CFlora* create(std::wstring id = L"");
 
 	private:
 
@@ -71,7 +71,7 @@ namespace factory
 		///
 		///@param *flora - wskaŸnik na obiekt klasy CFlora
 		///
-		virtual void Fill(CFlora *flora);
+		virtual void fill(CFlora *flora);
 
 		//gdy w klasie CFlora byd¹ dodawane pola
 		//to tutaj, w klasie jej fabryki,

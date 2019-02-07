@@ -42,23 +42,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CThermalInsulationTemplate::Drop()
+	void CThermalInsulationTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CThermalInsulationTemplate::Load(const std::string &name)
+	bool CThermalInsulationTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml ³aduje wspólne cechy CActor
-	bool CThermalInsulationTemplate::Load(CXml &xml)
+	bool CThermalInsulationTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CActor
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//dane termoizolatora
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "thermalinsulation_config"))
@@ -76,19 +76,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy ThermalInsulation
-	ThermalInsulation* CThermalInsulationTemplate::Create(std::wstring id)
+	ThermalInsulation* CThermalInsulationTemplate::create(std::wstring id)
 	{
 		ThermalInsulation* thermalinsulation = gPhysicalManager.CreateThermalInsulation(id);
-		Fill(thermalinsulation);
+		fill(thermalinsulation);
 		return thermalinsulation;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CThermalInsulationTemplate::Fill(ThermalInsulation *p_thermalinsulation)
+	void CThermalInsulationTemplate::fill(ThermalInsulation *p_thermalinsulation)
 	{
 		if(p_thermalinsulation)
 		{
-			CActorTemplate::Fill(p_thermalinsulation);
+			CActorTemplate::fill(p_thermalinsulation);
 
 			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
 			if (p_templ_animations)

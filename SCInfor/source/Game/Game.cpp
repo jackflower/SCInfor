@@ -50,7 +50,7 @@
 #include "../Map/Ground/CGround.h"
 #include "../Equipment/Weapon/Ammo/Ammo.h"
 #include "../Equipment/Weapon/Gun/Gun.h"
-#include "../Factory/EquipmentFactory/CommunicationFactory/CCommunicationTemplate.h"
+#include "../Factory/EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
 #include "../Logic/Communication/CCommunication.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/CAirconditioningTemplate.h"
 #include "../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
@@ -375,7 +375,7 @@ void game::Game::gameTest()
 
 	//p h y s i c a l - obiekt testowy - mam być tylko jeden tej klasy (respawn używa innych)
 	CPhysicalTemplate *p_enemy_factory = gResourceManager.GetPhysicalTemplate(file_name);
-	CPhysical *p_enemy = p_enemy_factory->Create(L"ID_Enemy");
+	CPhysical *p_enemy = p_enemy_factory->create(L"ID_Enemy");
 	if (p_enemy)
 	{
 		p_enemy->SetPosition(300, 100);
@@ -395,14 +395,14 @@ void game::Game::gameTest()
 
 	//for (int i = 0; i < 5; i++)
 	//{
-	//	CPhysical *p_object = p_enemy_factory->Create(L"ID_Object");
+	//	CPhysical *p_object = p_enemy_factory->create(L"ID_Object");
 	//	p_object->SetPosition((i * 64)+200, 520);
 	//	p_object->setSmoothing(true);
 	//}
 
 	//CPresentation
 	//CPresentationTemplate *demo = gResourceManager.GetPresentationTemplate("data/xml_data/information/presentation.xml");
-	//CPresentation *prezes = demo->Create(L"Pitek");
+	//CPresentation *prezes = demo->create(L"Pitek");
 	//prezes->setPosition(420, 420);
 
 }

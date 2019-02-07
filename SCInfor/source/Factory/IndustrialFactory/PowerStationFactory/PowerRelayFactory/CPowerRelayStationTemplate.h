@@ -10,7 +10,7 @@
 #include "CRelayStationTemplate.h"
 #include "../../../../Logic/Energetics/PowerRelay/CPowerRelayStation.h"
 #include "CSlotsRateTemplate.h"
-#include "../../../../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/CBatteryTemplate.h"
+#include "../../../../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/BatteryTemplate.h"
 
 namespace factory
 {
@@ -41,35 +41,35 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniajπca zasÛb - implementacje w klasach pochodnych
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ≥adujπca dane
 		///
 		///@param &name - sta≥a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ≥adujπca dane z xml ≥aduje wspÛlne cechy CActor
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 		///
 		///Metoda tworzy obiekt klasy CPowerRelayStation
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CPowerRelayStation* Create(std::wstring id = L"");
+		CPowerRelayStation* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
 		///@param *p_power_relay_station - wskaünik na obiekt klasy CPowerRelayStation
 		///
-		virtual void Fill(CPowerRelayStation *p_power_relay_station);
+		virtual void fill(CPowerRelayStation *p_power_relay_station);
 
 
 		//metody  p o m o c n i c z e
@@ -158,14 +158,14 @@ namespace factory
 			p_templ_slot_rate = templ_slot_rate;
 		}
 
-		//Metoda zwraca wskaünik na obiekt klasy CBatteryTemplate
-		inline CBatteryTemplate* getTemplateBattery()
+		//Metoda zwraca wskaünik na obiekt klasy BatteryTemplate
+		inline BatteryTemplate* getTemplateBattery()
 		{
 			return p_templ_battery;
 		}
 
-		//Metoda ustawia wskaünik na obiekt klasy CBatteryTemplate
-		inline void setTemplateBattery(CBatteryTemplate* templ_battery)
+		//Metoda ustawia wskaünik na obiekt klasy BatteryTemplate
+		inline void setTemplateBattery(BatteryTemplate* templ_battery)
 		{
 			p_templ_battery = templ_battery;
 		}
@@ -215,7 +215,7 @@ namespace factory
 		float						m_templ_state_time;				//czas trwania stanu - wizualizacja aktywnoúci
 		float						m_templ_rotation_speed;			//prÍdkoúÊ i kierunek obracania siÍ mudu≥u
 		CSlotsRateTemplate*			p_templ_slot_rate;				//wskaünik na obiekt klasy CSlotsRateTemplate (wzorzec modu≥u wskaünika przekaünika (sloty))
-		CBatteryTemplate*			p_templ_battery;				//wskaünik na obiekt klasy CBatteryTemplate (wzorzec baterii)
+		BatteryTemplate*			p_templ_battery;				//wskaünik na obiekt klasy BatteryTemplate (wzorzec baterii)
 		bool						m_templ_use_battery;			//flaga, czy obiekt posiada bateriÍ
 		float						m_templ_time_to_start;			//po tym czasie obiekt wchodzi do stanu obs≥ugi elektrowni
 		float						m_templ_duration_disconnect;	//czas trwania procesu disconnect

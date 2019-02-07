@@ -45,14 +45,14 @@ namespace infologic
 	CInformation* CInfoManager::CreateInformation(const std::wstring& unique_id)
 	{
 		fprintf(stderr, "CInformation created\n");
-		return Create<CInformation>(unique_id);
+		return create<CInformation>(unique_id);
 	}
 
 	//Metoda tworzy obiekt klasy CPresentation i zwraca wskaŸnik na ten obiekt
 	CPresentation* CInfoManager::CreatePresentation(const std::wstring& unique_id)
 	{
 		fprintf(stderr, "CPresentation created\n");
-		return Create<CPresentation>(unique_id);
+		return create<CPresentation>(unique_id);
 	}
 
 	//Metoda usuwa obiekt klasy IInformation z kontenera
@@ -125,7 +125,7 @@ namespace infologic
 
 	//Szablon metody tworzenia obiektów
 	template<class T>
-	T* CInfoManager::Create(const std::wstring &uniqueId)
+	T* CInfoManager::create(const std::wstring &uniqueId)
 	{
 		std::wstring new_unique_id = uniqueId;
 		if (uniqueId != L"")
@@ -134,7 +134,7 @@ namespace infologic
 
 			if (m_named_map_information.find(new_unique_id) != m_named_map_information.end())
 			{
-				fprintf(stderr, "CInfoManager::Create<T> - %ls key already in m_named_map_information map", new_unique_id.c_str());
+				fprintf(stderr, "CInfoManager::create<T> - %ls key already in m_named_map_information map", new_unique_id.c_str());
 				return NULL;
 			}
 

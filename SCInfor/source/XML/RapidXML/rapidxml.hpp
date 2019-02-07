@@ -1751,7 +1751,7 @@ namespace rapidxml
                 return 0;
             }
 
-            // Create declaration
+            // create declaration
             xml_node<Ch> *declaration = this->allocate_node(node_declaration);
 
             // Skip whitespace before attributes or ?>
@@ -1797,7 +1797,7 @@ namespace rapidxml
                 ++text;
             }
 
-            // Create comment node
+            // create comment node
             xml_node<Ch> *comment = this->allocate_node(node_comment);
             comment->value(value, text - value);
             
@@ -1856,7 +1856,7 @@ namespace rapidxml
             // If DOCTYPE nodes enabled
             if (Flags & parse_doctype_node)
             {
-                // Create a new doctype node
+                // create a new doctype node
                 xml_node<Ch> *doctype = this->allocate_node(node_doctype);
                 doctype->value(value, text - value);
                 
@@ -1882,7 +1882,7 @@ namespace rapidxml
             // If creation of PI nodes is enabled
             if (Flags & parse_pi_nodes)
             {
-                // Create pi node
+                // create pi node
                 xml_node<Ch> *pi = this->allocate_node(node_pi);
 
                 // Extract PI target name
@@ -1968,7 +1968,7 @@ namespace rapidxml
             }
             
             // If characters are still left between end and value (this test is only necessary if normalization is enabled)
-            // Create new data node
+            // create new data node
             if (!(Flags & parse_no_data_nodes))
             {
                 xml_node<Ch> *data = this->allocate_node(node_data);
@@ -2020,7 +2020,7 @@ namespace rapidxml
                 ++text;
             }
 
-            // Create new cdata node
+            // create new cdata node
             xml_node<Ch> *cdata = this->allocate_node(node_cdata);
             cdata->value(value, text - value);
 
@@ -2036,7 +2036,7 @@ namespace rapidxml
         template<int Flags>
         xml_node<Ch> *parse_element(Ch *&text)
         {
-            // Create element node
+            // create element node
             xml_node<Ch> *element = this->allocate_node(node_element);
 
             // Extract element name
@@ -2246,7 +2246,7 @@ namespace rapidxml
                 if (text == name)
                     RAPIDXML_PARSE_ERROR("expected attribute name", name);
 
-                // Create new attribute
+                // create new attribute
                 xml_attribute<Ch> *attribute = this->allocate_attribute();
                 attribute->name(name, text - name);
                 node->append_attribute(attribute);

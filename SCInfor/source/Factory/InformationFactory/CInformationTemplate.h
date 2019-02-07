@@ -46,21 +46,21 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób
 		///
-		virtual void Drop();
+		virtual void drop();
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		virtual bool Load(CXml &xml);
+		virtual bool load(CXml &xml);
 
 		///
 		///Wirtualna metoda tworzenie obiektów pochodnych klasy CInformation
@@ -69,14 +69,14 @@ namespace factory
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		virtual CInformation* Create(std::wstring id = L"");// = 0 ;
+		virtual CInformation* create(std::wstring id = L"");// = 0 ;
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *information - wskaŸnik na obiekt klasy CInformation
 		///
-		virtual void Fill(CInformation *information);
+		virtual void fill(CInformation *information);
 
 		///
 		///Metoda zwraca nazwê pliku zasobu

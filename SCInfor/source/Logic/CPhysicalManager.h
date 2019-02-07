@@ -409,7 +409,7 @@ namespace logic
 		//
 		//Szablon metody tworzenia obiektów
 		//
-		template<class T> T* Create(const std::wstring &uniqueId);
+		template<class T> T* create(const std::wstring &uniqueId);
 	    
 		std::map<std::wstring, CPhysical*>	m_named_physicals;	//kontener <map> na nazwane obiekty klasy CPhysical
 		std::vector<CPhysical*>				m_physicals;		//kontener <vector> na wskaŸniki na obiekty klasy CPhysical

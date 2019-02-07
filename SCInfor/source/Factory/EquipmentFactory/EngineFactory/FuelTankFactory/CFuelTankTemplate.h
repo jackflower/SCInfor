@@ -47,35 +47,35 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		virtual bool Load(CXml &xml);
+		virtual bool load(CXml &xml);
 
 		///
 		///Metoda tworzy obiekt klasy FuelTank
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		FuelTank* Create(std::wstring id = L"");
+		FuelTank* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *p_fueltank - wskaŸnik na obiekt klasy FuelTank
 		///
-		virtual void Fill(FuelTank *p_fueltank);
+		virtual void fill(FuelTank *p_fueltank);
 
 
 		//metody  p o m o c n i c z e

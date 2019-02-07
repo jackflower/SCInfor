@@ -28,23 +28,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CWindPowerStationMultipledTemplate::Drop()
+	void CWindPowerStationMultipledTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane
-	bool CWindPowerStationMultipledTemplate::Load(const std::string &name)
+	bool CWindPowerStationMultipledTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane
-	bool CWindPowerStationMultipledTemplate::Load(CXml &xml)
+	bool CWindPowerStationMultipledTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CWindPowerStationTemplate
-		if (!CWindPowerStationTemplate::Load(xml)) return false;
+		if (!CWindPowerStationTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "Alabama"))
@@ -72,20 +72,20 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CWindPowerStationMultipled
-	CWindPowerStationMultipled* CWindPowerStationMultipledTemplate::Create(std::wstring id)
+	CWindPowerStationMultipled* CWindPowerStationMultipledTemplate::create(std::wstring id)
 	{
 		//CWindPowerStationMultipled* windpower_station_multipled = gPhysicalManager.XXX(id);
-		//Fill(windpower_station);
+		//fill(windpower_station);
 		//return windpower_station;
 		return NULL;//atrapa...
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CWindPowerStationMultipledTemplate::Fill(CWindPowerStationMultipled *p_windpower_station_multipled)
+	void CWindPowerStationMultipledTemplate::fill(CWindPowerStationMultipled *p_windpower_station_multipled)
 	{
 		if (p_windpower_station_multipled)
 		{
-			CWindPowerStationTemplate::Fill(p_windpower_station_multipled);
+			CWindPowerStationTemplate::fill(p_windpower_station_multipled);
 
 			//for(kontener)
 			//templ_windturbines.push_back(...)
@@ -102,7 +102,7 @@ namespace factory
 				//if (p_templ_windturbine)
 				//{
 					//inicjujemy wskaŸnik na sk³adow¹ - wskaŸnik na obiekt wzorzeca dla klasy CWindTurbineTemplate
-				//	p_windpower_station->setWindTurbine(p_templ_windturbine->Create(L""));
+				//	p_windpower_station->setWindTurbine(p_templ_windturbine->create(L""));
 					//przekazanie wskaŸnikowi na klasê CWindPowerStation informacji o wzorcu obiektu
 				//	p_windpower_station->getWindTurbine()->SetTemplate(p_templ_windturbine);
 				//}

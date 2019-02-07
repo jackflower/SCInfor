@@ -41,28 +41,28 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 		///
 		///Metoda tworzy obiekt klasy CEnemy
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CEnemy* Create(std::wstring id = L"");
+		CEnemy* create(std::wstring id = L"");
 
 	protected:
 
@@ -71,7 +71,7 @@ namespace factory
 		///
 		///@param *enemy - wskaŸnik na obiekt klasy CEnemy
 		///
-		virtual void Fill(CEnemy *enemy);
+		virtual void fill(CEnemy *enemy);
 
 
 	private:

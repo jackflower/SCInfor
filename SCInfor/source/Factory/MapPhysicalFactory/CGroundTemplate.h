@@ -46,35 +46,35 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		virtual bool Load(CXml &xml);
+		virtual bool load(CXml &xml);
 
 		///
 		///Metoda tworzy obiekt klasy CGroundWork
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CGround* Create(std::wstring id = L"");
+		CGround* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *ground - wskaŸnik na obiekt klasy CGround
 		///
-		virtual void Fill(CGround *ground);
+		virtual void fill(CGround *ground);
 
 		///
 		///Metoda zwraca wspó³czynnik tarcia

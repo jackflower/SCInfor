@@ -56,23 +56,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CEngineTemplate::Drop()
+	void CEngineTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane
-	bool CEngineTemplate::Load(const std::string &name)
+	bool CEngineTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CEngineTemplate::Load(CXml &xml)
+	bool CEngineTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//³adowanie wartoœci konfiguracji engine
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "engine_config"))
@@ -106,19 +106,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy Engine
-	Engine* CEngineTemplate::Create(std::wstring id)
+	Engine* CEngineTemplate::create(std::wstring id)
 	{
 		Engine* engine = gPhysicalManager.CreateEngine(id);
-		Fill(engine);
+		fill(engine);
 		return engine;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CEngineTemplate::Fill(Engine *p_engine)
+	void CEngineTemplate::fill(Engine *p_engine)
 	{
 		if(p_engine)
 		{
-			CActorTemplate::Fill(p_engine);
+			CActorTemplate::fill(p_engine);
 
 			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
 			if (p_templ_animations)
@@ -153,7 +153,7 @@ namespace factory
 				if(p_engine)
 				{
 					//pobieramy sk³adow¹ fueltank i wzorzec wype³nia wskaŸnik danymi
-					p_engine->setFuelTank(p_templ_fuel_tank->Create(L""));
+					p_engine->setFuelTank(p_templ_fuel_tank->create(L""));
 					//przekazanie wskaŸnikowi na klasê FuelTank informacji o wzorcu
 					p_engine->getFuelTank()->SetTemplate(p_templ_fuel_tank);
 					//decorator

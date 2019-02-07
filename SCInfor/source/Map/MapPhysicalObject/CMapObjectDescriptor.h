@@ -55,7 +55,7 @@ namespace mapengine
 		///
 		///Metoda tworzy obiekt mapy
 		///
-		void Create();
+		void create();
 
 		///
 		///Metoda zwraca nazwê znacznika obiektu na mapie

@@ -52,7 +52,7 @@ namespace charsettools
 	//Metoda inicjuje zbiór znaków
 	void CCharSetManager::InitializeValidChars(const std::string & char_set_name)
 	{
-		if(!Load(char_set_name))
+		if(!load(char_set_name))
 			fprintf(stderr, "CCharSet::InitializeValidChars(CCharSet::InitializeValidChars)%s\n", char_set_name.c_str());
 	}
 
@@ -87,14 +87,14 @@ namespace charsettools
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CCharSetManager::Load(const std::string &name)
+	bool CCharSetManager::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Metoda ³aduj¹ca dane z xml
-	bool CCharSetManager::Load(CXml &xml)
+	bool CCharSetManager::load(CXml &xml)
 	{
 		std::string string_tmp;//odczytany z xml'a string (dwa bajty definiuj¹ce znak)
 

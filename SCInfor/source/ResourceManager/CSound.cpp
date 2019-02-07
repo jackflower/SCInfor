@@ -30,7 +30,7 @@ namespace resource
 	}
 		
 	//Wirtualna metoda ³aduj¹ca zasób - implementacja
-	bool CSound::Load(const std::string &file_name)
+	bool CSound::load(const std::string &file_name)
 	{
 		if (loadFromFile(file_name))//jeœli dane zosta³y za³adowane
 			return true;			//zwracamy flagê true (ok)
@@ -38,7 +38,7 @@ namespace resource
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CSound::Drop()
+	void CSound::drop()
 	{
 		delete this;
 	}

@@ -78,20 +78,20 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CMapPhysicalTemplate::Drop()
+	void CMapPhysicalTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CMapPhysicalTemplate::Load(const std::string &name)
+	bool CMapPhysicalTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CMapPhysicalTemplate::Load(CXml &xml)
+	bool CMapPhysicalTemplate::load(CXml &xml)
 	{
 		//nazwa pliku xml
 		m_templ_filename = xml.GetFilename();
@@ -125,15 +125,15 @@ namespace factory
 	}
 
 	//Wirtualna metoda tworzenie obiektów pochodnych klasy CMapPhysical
-	CMapPhysical* CMapPhysicalTemplate::Create(std::wstring id)
+	CMapPhysical* CMapPhysicalTemplate::create(std::wstring id)
 	{
 		CMapPhysical* mapphysical = gMapPhysicalManager.CreateMapPhysical(id);
-		Fill(mapphysical);
+		fill(mapphysical);
 		return mapphysical;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CMapPhysicalTemplate::Fill(CMapPhysical *mapphysical)
+	void CMapPhysicalTemplate::fill(CMapPhysical *mapphysical)
 	{
 		if(mapphysical)
 		{

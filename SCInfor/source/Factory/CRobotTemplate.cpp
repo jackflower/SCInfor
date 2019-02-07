@@ -34,23 +34,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CRobotTemplate::Drop()
+	void CRobotTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CRobotTemplate::Load(const std::string &name)
+	bool CRobotTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CRobotTemplate::Load(CXml &xml)
+	bool CRobotTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CActorTemplate
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//dane opakowania mechanizmu zarz¹dzania czasem stanów strategicznych obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "strategy_duration_data"))
@@ -66,19 +66,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CRobot
-	CRobot* CRobotTemplate::Create(std::wstring id)
+	CRobot* CRobotTemplate::create(std::wstring id)
 	{
 		CRobot* robot = gPhysicalManager.CreateRobot(id);
-		Fill(robot);
+		fill(robot);
 		return robot;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CRobot
-	void CRobotTemplate::Fill(CRobot *robot)
+	void CRobotTemplate::fill(CRobot *robot)
 	{
 		if (robot)
 		{
-			CActorTemplate::Fill(robot);
+			CActorTemplate::fill(robot);
 
 			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
 			if (p_templ_animations)

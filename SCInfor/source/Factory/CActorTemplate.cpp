@@ -7,13 +7,13 @@
 #include <SFML/Graphics.hpp>
 #include "CActorTemplate.h"
 #include "CPhysicalInfoTemplate.h"
-#include "EquipmentFactory/EnergyFactory/CEnergyTemplate.h"
+#include "EquipmentFactory/EnergyFactory/EnergyTemplate.h"
 #include "EquipmentFactory/EngineFactory/CEngineTemplate.h"
 #include "EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/CAirconditioningTemplate.h"
 #include "EquipmentFactory/ThermodynamicsFactory/VentilatorFactory/CVentilatorTemplate.h"
 #include "EquipmentFactory/WeaponFactory/GunFactory/CGunTemplate.h"
 #include "EquipmentFactory/IndustrialFactory/PowerModuleFactory/CWindTurbineTemplate.h"
-#include "EquipmentFactory/EngineFactory/FuelBarFactory/CFuelBarTemplate.h"
+#include "EquipmentFactory/EngineFactory/FuelBarFactory/FuelBarTemplate.h"
 #include "../Logic/Actor/CActor.h"
 #include "../XML/CXml.h"
 #include "../Rendering/Animations/CAnimSet.h"
@@ -79,23 +79,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CActorTemplate::Drop()
+	void CActorTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CActorTemplate::Load(const std::string &name)
+	bool CActorTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CActorTemplate::Load(CXml &xml)
+	bool CActorTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CPhysical
-		if (!CPhysicalTemplate::Load(xml)) return false;
+		if (!CPhysicalTemplate::load(xml)) return false;
 
 		//dane techniczne obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "technical_data"))
@@ -182,7 +182,7 @@ namespace factory
 			m_templ_energy_data.setEmiter(xml.GetFloat(node, "energy_emiter_x"), xml.GetFloat(node, "energy_emiter_y"));
 			
 			if(m_templ_energy_data.getUseEquipment())
-				p_templ_energy = (CEnergyTemplate*)gResourceManager.GetPhysicalTemplate(energy_filename_tmp);
+				p_templ_energy = (EnergyTemplate*)gResourceManager.GetPhysicalTemplate(energy_filename_tmp);
 		}
 
 		//³adowanie modu³u klimatyzatora
@@ -235,19 +235,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CActor
-	CActor* CActorTemplate::Create(std::wstring id)
+	CActor* CActorTemplate::create(std::wstring id)
 	{
 		CActor* actor = gPhysicalManager.CreateActor(id);
-		Fill(actor);
+		fill(actor);
 		return actor;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CActor
-	void CActorTemplate::Fill(CActor *actor)
+	void CActorTemplate::fill(CActor *actor)
 	{
 		if(actor)
 		{
-			CPhysicalTemplate::Fill(actor);
+			CPhysicalTemplate::fill(actor);
 
 			//dane techniczne obiektu
 			actor->setMass(m_templ_technical_data.getMass());
@@ -291,9 +291,9 @@ namespace factory
 					std::wstring engine_genre = p_templ_engine->GetGenre();
 
 					//pobieramy sk³adow¹ engine i wzorzec wype³nia wskaŸnik danymi
-					actor->SetEngine(p_templ_engine->Create(L""));
+					actor->SetEngine(p_templ_engine->create(L""));
 					//
-					//actor->SetEngine(p_templ_engine->Create(engine_genre));
+					//actor->SetEngine(p_templ_engine->create(engine_genre));
 					//
 					//przekazanie wskaŸnikowi na klasê Engine informacji o wzorcu
 					actor->GetEngine()->SetTemplate(p_templ_engine);
@@ -311,7 +311,7 @@ namespace factory
 					//blokada...
 					///
 					//pobieramy sk³adow¹ physical_info i wzorzec wype³nia wskaŸnik danymi
-					//actor->SetPhysicalInfo(p_templ_physical_info->Create(L""));
+					//actor->SetPhysicalInfo(p_templ_physical_info->create(L""));
 					//przekazanie wskaŸnikowi na klasê CPhysicalInfo informacji o wzorcu
 					//actor->GetPhysicalInfo()->SetTemplate(p_templ_physical_info);
 				}
@@ -326,7 +326,7 @@ namespace factory
 				if(p_templ_energy)
 				{
 					//pobieramy sk³adow¹ energy i wzorzec wype³nia wskaŸnik danymi
-					actor->SetEnergy(p_templ_energy->Create(L""));
+					actor->SetEnergy(p_templ_energy->create(L""));
 					//przekazanie wskaŸnikowi na klasê Energy informacji o wzorcu
 					actor->GetEnergy()->SetTemplate(p_templ_energy);
 					//decorator
@@ -343,7 +343,7 @@ namespace factory
 				if(p_templ_airconditioning)
 				{
 					//pobieramy sk³adow¹ modu³ klimatyzatora i wzorzec wype³nia wskaŸnik danymi
-					actor->SetAirconditioning(p_templ_airconditioning->Create(L""));
+					actor->SetAirconditioning(p_templ_airconditioning->create(L""));
 					//przekazanie wskaŸnikowi na klasê Airconditioning informacji o wzorcu
 					actor->GetAirconditioning()->SetTemplate(p_templ_airconditioning);
 					//decorator
@@ -360,7 +360,7 @@ namespace factory
 				if(p_templ_ventilator)
 				{
 					//pobieramy sk³adow¹ modu³ wentylatora i wzorzec wype³nia wskaŸnik danymi
-					actor->SetVentilator(p_templ_ventilator->Create(L""));
+					actor->SetVentilator(p_templ_ventilator->create(L""));
 					//przekazanie wskaŸnikowi na klasê Ventilator informacji o wzorcu
 					actor->GetVentilator()->SetTemplate(p_templ_ventilator);
 					//decorator
@@ -377,7 +377,7 @@ namespace factory
 				if (p_templ_gun)
 				{
 					//pobieramy sk³adow¹ modu³ wentylatora i wzorzec wype³nia wskaŸnik danymi
-					actor->SetGun(p_templ_gun->Create(L""));
+					actor->SetGun(p_templ_gun->create(L""));
 					//przekazanie wskaŸnikowi na klasê Gun informacji o wzorcu
 					actor->GetGun()->SetTemplate(p_templ_gun);
 					//decorator

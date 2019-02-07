@@ -16,7 +16,7 @@
 ///
 namespace factory
 {
-	class CCommunicationTemplate;
+	class CommunicationTemplate;
 }
 
 namespace factory
@@ -48,35 +48,35 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml ³aduje wspólne cechy CActor
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 		///
 		///Metoda tworzy obiekt klasy CPowerStation
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CPowerStation* Create(std::wstring id = L"");
+		CPowerStation* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *p_power_station - wskaŸnik na obiekt klasy CPowerStation
 		///
-		virtual void Fill(CPowerStation *p_power_station);
+		virtual void fill(CPowerStation *p_power_station);
 
 	private:
 
@@ -84,7 +84,7 @@ namespace factory
 		float						m_templ_energy_capacitor;		//iloœæ energii do zmagazynowania - pojemnoœæ (kondensator)
 		unsigned					m_templ_amount_power_modules;	//iloœæ modu³ów zasilajacych (turbin, przetworników, etc...)
 		EquipmentCommunicationData mm_templ_communication_data;	//opakowanie funkcjonalnoœci modu³u komunikacyjnego
-		CCommunicationTemplate*		p_templ_communication;			//wskaŸnik na obiekt klasy CCommunicationTemplate (wzorzsec modu³u komunikacji)
+		CommunicationTemplate*		p_templ_communication;			//wskaŸnik na obiekt klasy CommunicationTemplate (wzorzsec modu³u komunikacji)
 	};
 }//namespace factory
 #endif//H_POWER_STATION_TEMPLATE_JACK

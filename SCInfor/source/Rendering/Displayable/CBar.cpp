@@ -95,14 +95,14 @@ namespace displayable
 
 
 	////Metoda ³aduj¹ca dane
-	//bool CBar::Load(const std::string &name)
+	//bool CBar::load(const std::string &name)
 	//{
 	//	CXml xml(name, "root" );
-	//	return Load(xml);
+	//	return load(xml);
 	//}
 
 	/////Metoda ³aduj¹ca dane z xml
-	//bool CBar::Load(CXml &xml)
+	//bool CBar::load(CXml &xml)
 	//{
 	//	//typ obiektu
 	//	if (xml_node<> *node = xml.GetRootNode())

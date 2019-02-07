@@ -42,7 +42,7 @@ namespace mapengine
 		///
 		///Metoda tworzy obiekt mapy
 		///
-		void Create();
+		void create();
 
 		///
 		///Metoda zwraca flagê, czy dany obiekt mam byæ wczytywany, czy pomijany w przypadku wczytywania mapy

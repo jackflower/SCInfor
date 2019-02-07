@@ -30,27 +30,27 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CEnemyTemplate::Drop()
+	void CEnemyTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CEnemyTemplate::Load(const std::string &name)
+	bool CEnemyTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CEnemyTemplate::Load(CXml &xml)
+	bool CEnemyTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy xml zawiera informacjê, ¿e jest enemy
 		if (xml.GetString(xml.GetRootNode(), "type") != "enemy")
 			return false;
 
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej
-		if (!CActorTemplate::Load(xml))
+		if (!CActorTemplate::load(xml))
 			return false;
 
 		//reszta, gdyby klasa CEnemy (jej wzorzec CEnemyTemplate)
@@ -60,7 +60,7 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CEnemy
-	CEnemy* CEnemyTemplate::Create(std::wstring id)
+	CEnemy* CEnemyTemplate::create(std::wstring id)
 	{
 
 		//CEnemy* enemy = gPhysicalManager.CreateEnemy(id);
@@ -68,7 +68,7 @@ namespace factory
 		//TEN KOD - uzupe³niæ w  f a b r y k a c h !
 		//	enemy->SetCategory(PHYSICAL_MONSTER);
 		//TEN KOD - uzupe³niæ w  f a b r y k a c h !
-		//	Fill(enemy,random);
+		//	fill(enemy,random);
 		//	if ( mAi.size() > 0 )
 		//	{
 		//		std::wstring aiScheme = mAi[ gRand.Rnd( 0, static_cast<unsigned>(mAi.size()) ) ];
@@ -78,14 +78,14 @@ namespace factory
 		//return enemy;
 	
 		CEnemy* enemy = gPhysicalManager.CreateEnemy(id);
-		Fill(enemy);
+		fill(enemy);
 		return enemy;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CEnemy
-	void CEnemyTemplate::Fill(CEnemy *enemy)
+	void CEnemyTemplate::fill(CEnemy *enemy)
 	{
-		CActorTemplate::Fill(enemy);
+		CActorTemplate::fill(enemy);
 		//ewentualnie reszta
 	}
 

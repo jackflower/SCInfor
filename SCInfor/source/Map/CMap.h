@@ -76,7 +76,7 @@ namespace mapengine
 		///
 		///Wirtualna metoda zwalniajπca zasÛb - implementacje w klasach pochodnych
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda rozmieszcza na mapie obiekty wczytane z pliku
@@ -90,14 +90,14 @@ namespace mapengine
 		///
 		///@param &filename - sta≥a referencja na std::string
 		///
-		bool Load(const std::string &filename);
+		bool load(const std::string &filename);
 
 		///
 		///Wirtualna metoda ≥adujπca dane z xml
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 		///
 		///Metoda usuwa z wektora wskaüniki na obiekty klasy CMapTileType i dane pod tymi wskaünikami

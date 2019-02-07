@@ -52,21 +52,21 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 		///
 		///Wirtualna metoda tworzenie obiektów pochodnych klasy CPhysical
@@ -75,7 +75,7 @@ namespace factory
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CBullet* Create(std::wstring id = L"");
+		CBullet* create(std::wstring id = L"");
 
 	protected:
 
@@ -84,7 +84,7 @@ namespace factory
 		///
 		///@param *bullet - wskaŸnik na obiekt klasy CBullet
 		///
-		virtual void Fill(CBullet *bullet);
+		virtual void fill(CBullet *bullet);
 
 	private:
 

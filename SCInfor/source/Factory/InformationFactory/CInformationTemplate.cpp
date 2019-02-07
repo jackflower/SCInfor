@@ -53,20 +53,20 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CInformationTemplate::Drop()
+	void CInformationTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CInformationTemplate::Load(const std::string &name)
+	bool CInformationTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CInformationTemplate::Load(CXml &xml)
+	bool CInformationTemplate::load(CXml &xml)
 	{
 		//nazwa pliku xml
 		m_templ_filename = xml.GetFilename();
@@ -93,15 +93,15 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CActor
-	CInformation* CInformationTemplate::Create(std::wstring id)
+	CInformation* CInformationTemplate::create(std::wstring id)
 	{
 		CInformation* information = gInfoManager.CreateInformation(id);
-		Fill(information);
+		fill(information);
 		return information;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CInformationTemplate::Fill(CInformation *information)
+	void CInformationTemplate::fill(CInformation *information)
 	{
 		//ustawienie kompletnego wzorca
 		information->SetTemplate(this);

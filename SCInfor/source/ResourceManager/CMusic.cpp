@@ -30,7 +30,7 @@ namespace resource
 	}
 
 	//Wirtualna metoda ³aduj¹ca zasób - implementacja
-	bool CMusic::Load(const std::string &file_name)
+	bool CMusic::load(const std::string &file_name)
 	{
 		if (openFromFile(file_name))//jeœli dane zosta³y za³adowane
 			return true;			//zwracamy flagê true (ok)
@@ -38,7 +38,7 @@ namespace resource
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CMusic::Drop()
+	void CMusic::drop()
 	{
 		delete this;
 	}

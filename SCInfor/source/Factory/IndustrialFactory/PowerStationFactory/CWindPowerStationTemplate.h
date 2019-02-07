@@ -41,35 +41,35 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 		///
 		///Metoda tworzy obiekt klasy CWindPowerStation
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CWindPowerStation* Create(std::wstring id = L"");
+		CWindPowerStation* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *p_windpower_station - wskaŸnik na obiekt klasy CWindPowerStation
 		///
-		virtual void Fill(CWindPowerStation *p_windpower_station);
+		virtual void fill(CWindPowerStation *p_windpower_station);
 
 
 		//metody  p o m o c n i c z e

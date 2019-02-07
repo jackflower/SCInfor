@@ -79,14 +79,14 @@ namespace factory
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CPhysicalTemplate::Load(const std::string &name)
+	bool CPhysicalTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CPhysicalTemplate::Load(CXml &xml)
+	bool CPhysicalTemplate::load(CXml &xml)
 	{
 		//nazwa pliku xml
 		m_templ_filename = xml.GetFilename();
@@ -180,7 +180,7 @@ namespace factory
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CPhysicalTemplate::Fill(CPhysical *physical)
+	void CPhysicalTemplate::fill(CPhysical *physical)
 	{
 		//ustawienie kompletnego wzorca
 		physical->SetTemplate(this);

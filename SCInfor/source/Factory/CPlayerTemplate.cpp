@@ -32,27 +32,27 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CPlayerTemplate::Drop()
+	void CPlayerTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CPlayerTemplate::Load(const std::string &name)
+	bool CPlayerTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CPlayerTemplate::Load(CXml &xml)
+	bool CPlayerTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy xml zawiera informacjê, ¿e jest player
 		if (xml.GetString(xml.GetRootNode(), "type") != "player")
 			return false;
 
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej
-		if (!CActorTemplate::Load(xml))
+		if (!CActorTemplate::load(xml))
 			return false;
 
 		//reszta, gdyby klasa CPlayer (jej wzorzec CPlayerTemplate)
@@ -62,10 +62,10 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CPlayer
-	CPlayer* CPlayerTemplate::Create(std::wstring id)
+	CPlayer* CPlayerTemplate::create(std::wstring id)
 	{
 		CPlayer* player = gPhysicalManager.CreatePlayer(id);
-		Fill(player);
+		fill(player);
 		//gdyby by³y jakieœ pola do przekazania, nale¿y to uczyniæ...
 		return player;
 	}

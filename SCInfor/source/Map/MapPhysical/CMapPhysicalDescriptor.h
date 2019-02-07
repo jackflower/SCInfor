@@ -56,7 +56,7 @@ namespace mapengine
 		///
 		///Metoda tworzy obiekt mapy
 		///
-		void Create();
+		void create();
 
 		///
 		///Metoda zwraca wskaünik na wzorzec fabryczny obiektu

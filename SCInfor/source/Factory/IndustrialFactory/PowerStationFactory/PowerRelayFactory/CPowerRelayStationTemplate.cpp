@@ -59,23 +59,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CPowerRelayStationTemplate::Drop()
+	void CPowerRelayStationTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CPowerRelayStationTemplate::Load(const std::string &name)
+	bool CPowerRelayStationTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CPowerRelayStationTemplate::Load(CXml &xml)
+	bool CPowerRelayStationTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CRelayStationTemplate
-		if (!CRelayStationTemplate::Load(xml)) return false;
+		if (!CRelayStationTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "power_relay_station_config"))
@@ -108,7 +108,7 @@ namespace factory
 			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u prezentacji stanu slotów
 			std::string battery_filename_tmp = xml.GetString(node, "battery_filename");
 			if (m_templ_use_battery)
-				p_templ_battery = (CBatteryTemplate*)gResourceManager.GetPhysicalTemplate(battery_filename_tmp);
+				p_templ_battery = (BatteryTemplate*)gResourceManager.GetPhysicalTemplate(battery_filename_tmp);
 		}
 
 
@@ -117,19 +117,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CPowerRelayStation
-	CPowerRelayStation* CPowerRelayStationTemplate::Create(std::wstring id)
+	CPowerRelayStation* CPowerRelayStationTemplate::create(std::wstring id)
 	{
 		CPowerRelayStation* power_relay_station = gPhysicalManager.CreatePowerRelayStation(id);
-		Fill(power_relay_station);
+		fill(power_relay_station);
 		return power_relay_station;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CPowerRelayStationTemplate::Fill(CPowerRelayStation *p_power_relay_station)
+	void CPowerRelayStationTemplate::fill(CPowerRelayStation *p_power_relay_station)
 	{
 		if(p_power_relay_station)
 		{
-			CRelayStationTemplate::Fill(p_power_relay_station);
+			CRelayStationTemplate::fill(p_power_relay_station);
 
 			//dane obiektu
 			p_power_relay_station->setUseSlotsRate(m_templ_use_slots_rate);
@@ -163,7 +163,7 @@ namespace factory
 				if (p_templ_slot_rate)
 				{
 					//pobieramy sk³adow¹ modu³ prezentacji stanu slotów i wzorzec wype³nia wskaŸnik danymi
-					p_power_relay_station->setSlotsRate(p_templ_slot_rate->Create(L""));
+					p_power_relay_station->setSlotsRate(p_templ_slot_rate->create(L""));
 					//przekazanie wskaŸnikowi na klasê CPowerRelayStation informacji o wzorcu
 					p_power_relay_station->getSlotsRate()->SetTemplate(p_templ_slot_rate);
 				}
@@ -174,10 +174,10 @@ namespace factory
 				if (p_templ_battery)
 				{
 					//pobieramy sk³adow¹  wzorca baterii i wzorzec wype³niam wskaŸnik danymi
-					p_power_relay_station->setBattery(p_templ_battery->Create(L""));
+					p_power_relay_station->setBattery(p_templ_battery->create(L""));
 					//przekazanie wskaŸnikowi na klasê CPowerRelayStation informacji o wzorcu
 					p_power_relay_station->getBattery()->SetTemplate(p_templ_battery);
-					//decorator (ten kod bêdzie na poziomie CBatteryTemplate)
+					//decorator (ten kod bêdzie na poziomie BatteryTemplate)
 					p_power_relay_station->getBattery()->setSmoothing(true);
 				}
 			

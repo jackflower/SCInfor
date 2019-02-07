@@ -63,23 +63,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CGunTemplate::Drop()
+	void CGunTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CGunTemplate::Load(const std::string &name)
+	bool CGunTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml ³aduje wspólne cechy CActor
-	bool CGunTemplate::Load(CXml &xml)
+	bool CGunTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CActor
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//³adowanie modu³u prezentacji magazynka z amunicj¹
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "gun_data"))
@@ -115,19 +115,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy Gun
-	Gun* CGunTemplate::Create(std::wstring id)
+	Gun* CGunTemplate::create(std::wstring id)
 	{
 		Gun* gun = gPhysicalManager.CreateGun(id);
-		Fill(gun);
+		fill(gun);
 		return gun;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CGunTemplate::Fill(Gun *p_gun)
+	void CGunTemplate::fill(Gun *p_gun)
 	{
 		if(p_gun)
 		{
-			CActorTemplate::Fill(p_gun);
+			CActorTemplate::fill(p_gun);
 			
 			//pola tej klasy wzorca
 			p_gun->setAmmoTransformed(m_templ_ammo_data.getTransformed());
@@ -166,7 +166,7 @@ namespace factory
 				if (p_gun)
 				{
 					//pobieramy sk³adow¹ ammo i wzorzec wype³nia wskaŸnik danymi
-					p_gun->setAmmo(p_templ_ammo->Create(L""));
+					p_gun->setAmmo(p_templ_ammo->create(L""));
 					//przekazanie wskaŸnikowi na klasê Ammo informacji o wzorcu
 					p_gun->getAmmo()->SetTemplate(p_templ_ammo);
 					//decorator

@@ -45,12 +45,12 @@ namespace resource
 		///
 		///@param &file_name - sta³a referencja na nazwê pliku
 		///
-		virtual bool Load(const std::string &file_name) = 0;
+		virtual bool load(const std::string &file_name) = 0;
 
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
 		///
-		virtual void Drop() = 0;
+		virtual void drop() = 0;
 
 	};
 }//namespace resource

@@ -163,7 +163,7 @@ namespace logic
 		////sk³adaæ kategorie wed³ug zbiorów, grupowaæ, etc...
 		////2016 - czerwiec
 		////dodaæ do kodu fabryk, wywo³anie metody ustawiajacej kategoriê
-		////danego obiektu (metoda Fill(Typ *pointer)
+		////danego obiektu (metoda fill(Typ *pointer)
 		//std::vector<CPhysical*>				power;
 		//std::vector<CPhysical*>::iterator	it_power;
 		//for (unsigned int i = 0; i < physicals.size(); ++i)

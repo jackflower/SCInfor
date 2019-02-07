@@ -80,7 +80,7 @@ namespace rapidxml
             return out;
         }
 
-        // Fill given output iterator with repetitions of the same character
+        // fill given output iterator with repetitions of the same character
         template<class OutIt, class Ch>
         inline OutIt fill_chars(OutIt out, int n, Ch ch)
         {

@@ -40,35 +40,35 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml ³aduje wspólne cechy CActor
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 		///
 		///Metoda tworzy obiekt klasy ThermalInsulation
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		ThermalInsulation* Create(std::wstring id = L"");
+		ThermalInsulation* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *p_thermalinsulation - wskaŸnik na obiekt klasy ThermalInsulation
 		///
-		virtual void Fill(ThermalInsulation *p_thermalinsulation);
+		virtual void fill(ThermalInsulation *p_thermalinsulation);
 
 
 	private:

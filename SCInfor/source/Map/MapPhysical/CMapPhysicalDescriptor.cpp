@@ -69,9 +69,9 @@ namespace mapengine
 	}
 
 	//Metoda tworzy obiekt mapy
-	void CMapPhysicalDescriptor::Create()
+	void CMapPhysicalDescriptor::create()
 	{
-		CMapPhysical *mapphys = p_template->Create(stringutils::ConvertToWString(m_name));
+		CMapPhysical *mapphys = p_template->create(stringutils::ConvertToWString(m_name));
 		if (mapphys != 0)
 		{
 			mapphys->SetTemplate(p_template);

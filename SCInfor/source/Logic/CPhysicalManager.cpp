@@ -83,7 +83,7 @@ namespace logic
 
 	//Szablon metody tworzenia obiektÛw
 	template<class T>
-	T* CPhysicalManager::Create(const std::wstring &uniqueId)
+	T* CPhysicalManager::create(const std::wstring &uniqueId)
 	{
 		std::wstring new_unique_id = uniqueId;
 		if (uniqueId != L"")
@@ -92,7 +92,7 @@ namespace logic
 
 			if (m_named_physicals.find(new_unique_id) != m_named_physicals.end())
 			{
-				fprintf(stderr, "PhysicalsManager::Create<T> - %ls key already in m_named_physicals map", new_unique_id.c_str());
+				fprintf(stderr, "PhysicalsManager::create<T> - %ls key already in m_named_physicals map", new_unique_id.c_str());
 				return NULL;
 			}
 
@@ -111,154 +111,154 @@ namespace logic
 	CPhysical *CPhysicalManager::CreatePhysical(const std::wstring& unique_id)
 	{
 		fprintf(stderr, "CPhysical created\n");
-		return Create<CPhysical>(unique_id);
+		return create<CPhysical>(unique_id);
 	}
 
 	//Metoda tworzy obiekt klasy CActor i zwraca wskaünik na ten obiekt
 	CActor *CPhysicalManager::CreateActor(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CActor created\n");
-		return Create<CActor>(uniqueId);
+		return create<CActor>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CRobot i zwraca wskaünik na ten obiekt
 	CRobot *CPhysicalManager::CreateRobot(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CRobot created\n");
-		return Create<CRobot>(uniqueId);
+		return create<CRobot>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CEnemy i zwraca wskaünik na ten obiekt
 	CEnemy *CPhysicalManager::CreateEnemy(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CEnemy created\n");
-		return Create<CEnemy>(uniqueId);
+		return create<CEnemy>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CPlayer i zwraca wskaünik na ten obiekt
 	CPlayer *CPhysicalManager::CreatePlayer(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CPlayer created\n");
-		return Create<CPlayer>(uniqueId);
+		return create<CPlayer>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CBullet i zwraca wskaünik na ten obiekt
 	CBullet *CPhysicalManager::CreateBullet(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CBullet created\n");
-		return Create<CBullet>(uniqueId);
+		return create<CBullet>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Engine i zwraca wskaünik na ten obiekt
 	Engine *CPhysicalManager::CreateEngine(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "Engine created\n");
-		return Create<Engine>(uniqueId);
+		return create<Engine>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy FuelTank i zwraca wskaünik na ten obiekt
 	FuelTank *CPhysicalManager::CreateFuelTank(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "FuelTank created\n");
-		return Create<FuelTank>(uniqueId);
+		return create<FuelTank>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Energy i zwraca wskaünik na ten obiekt
 	Energy *CPhysicalManager::CreateEnergy(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "Energy created\n");
-		return Create<Energy>(uniqueId);
+		return create<Energy>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy EnergyTank i zwraca wskaünik na ten obiekt
 	EnergyTank *CPhysicalManager::CreateEnergyTank(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "EnergyTank created\n");
-		return Create<EnergyTank>(uniqueId);
+		return create<EnergyTank>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CMonster i zwraca wskaünik na ten obiekt
 	CMonster *CPhysicalManager::CreateMonster(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CMonster created\n");
-		return Create<CMonster>(uniqueId);
+		return create<CMonster>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CFlora i zwraca wskaünik na ten obiekt
 	CFlora *CPhysicalManager::CreateFlora(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CFlora created\n");
-		return Create<CFlora>(uniqueId);
+		return create<CFlora>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy FuelBar i zwraca wskaünik na ten obiekt
 	FuelBar *CPhysicalManager::CreateFuelBar(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "FuelBar created\n");
-		return Create<FuelBar>(uniqueId);
+		return create<FuelBar>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CPhysicalInfo i zwraca wskaünik na ten obiekt
 	CPhysicalInfo *CPhysicalManager::CreatePhysicalInfo(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CPhysicalInfo created\n");
-		return Create<CPhysicalInfo>(uniqueId);
+		return create<CPhysicalInfo>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Battery i zwraca wskaünik na ten obiekt
 	Battery *CPhysicalManager::CreateBattery(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "Battery created\n");
-		return Create<Battery>(uniqueId);
+		return create<Battery>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy SolarBattery i zwraca wskaünik na ten obiekt
 	SolarBattery *CPhysicalManager::CreateSolarBattery(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CBatteCSolarBatteryry created\n");
-		return Create<SolarBattery>(uniqueId);
+		return create<SolarBattery>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Airconditioning i zwraca wskaünik na ten obiekt
 	Airconditioning *CPhysicalManager::CreateAirconditioning(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "Airconditioning created\n");
-		return Create<Airconditioning>(uniqueId);
+		return create<Airconditioning>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy ThermalInsulation i zwraca wskaünik na ten obiekt
 	ThermalInsulation *CPhysicalManager::CreateThermalInsulation(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "ThermalInsulation created\n");
-		return Create<ThermalInsulation>(uniqueId);
+		return create<ThermalInsulation>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Ventilator i zwraca wskaünik na ten obiekt
 	Ventilator *CPhysicalManager::CreateVentilator(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "Ventilator created\n");
-		return Create<Ventilator>(uniqueId);
+		return create<Ventilator>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Ammo i zwraca wskaünik na ten obiekt
 	Ammo *CPhysicalManager::CreateAmmo(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "Ammo created\n");
-		return Create<Ammo>(uniqueId);
+		return create<Ammo>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Gun i zwraca wskaünik na ten obiekt
 	Gun *CPhysicalManager::CreateGun(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "Gun created\n");
-		return Create<Gun>(uniqueId);
+		return create<Gun>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Gun i zwraca wskaünik na ten obiekt
 	WindTurbine *CPhysicalManager::CreateWindTurbine(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "WindTurbine created\n");
-		return Create<WindTurbine>(uniqueId);
+		return create<WindTurbine>(uniqueId);
 	}
 
 
@@ -266,70 +266,70 @@ namespace logic
 	SolarCell *CPhysicalManager::CreateSolarCell(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "SolarCell created\n");
-		return Create<SolarCell>(uniqueId);
+		return create<SolarCell>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CPowerStation i zwraca wskaünik na ten obiekt
 	CPowerStation *CPhysicalManager::CreatePowerStation(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CPowerStation created\n");
-		return Create<CPowerStation>(uniqueId);
+		return create<CPowerStation>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CWindPowerStation i zwraca wskaünik na ten obiekt
 	CWindPowerStation *CPhysicalManager::CreateWindPowerStation(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CWindPowerStation created\n");
-		return Create<CWindPowerStation>(uniqueId);
+		return create<CWindPowerStation>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CWindPowerStationMultipled i zwraca wskaünik na ten obiekt
 	CWindPowerStationMultipled *CPhysicalManager::CreateWindPowerStationMultipled(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CWindPowerStationMultipled created\n");
-		return Create<CWindPowerStationMultipled>(uniqueId);
+		return create<CWindPowerStationMultipled>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CRelayStation i zwraca wskaünik na ten obiekt
 	CRelayStation *CPhysicalManager::CreateRelayStation(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CRelayStation created\n");
-		return Create<CRelayStation>(uniqueId);
+		return create<CRelayStation>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CPowerRelayStation i zwraca wskaünik na ten obiekt
 	CPowerRelayStation *CPhysicalManager::CreatePowerRelayStation(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CPowerRelayStation created\n");
-		return Create<CPowerRelayStation>(uniqueId);
+		return create<CPowerRelayStation>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CSlotsRate i zwraca wskaünik na ten obiekt
 	CSlotsRate* CPhysicalManager::CreateSlotsRate(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CSlotsRate created\n");
-		return Create<CSlotsRate>(uniqueId);
+		return create<CSlotsRate>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CCommunication i zwraca wskaünik na ten obiekt
 	CCommunication *CPhysicalManager::CreateCommunication(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CCommunication created\n");
-		return Create<CCommunication>(uniqueId);
+		return create<CCommunication>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy LightingEquipment i zwraca wskaünik na ten obiekt
 	LightingEquipment *CPhysicalManager::CreateLightingEquipment(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "LightingEquipment created\n");
-		return Create<LightingEquipment>(uniqueId);
+		return create<LightingEquipment>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CGround i zwraca wskaünik na ten obiekt
 	CGround *CPhysicalManager::CreateGround(const std::wstring &uniqueId)
 	{
 		fprintf(stderr, "CGround created\n");
-		return Create<CGround>(uniqueId);
+		return create<CGround>(uniqueId);
 	}
 	
 	//Metoda usuwa obiekt klasy CPhysical z kontenera

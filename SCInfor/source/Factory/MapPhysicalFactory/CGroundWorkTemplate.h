@@ -48,21 +48,21 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		virtual bool Load(CXml &xml);
+		virtual bool load(CXml &xml);
 
 	protected:
 
@@ -71,14 +71,14 @@ namespace factory
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CGroundWork* Create(std::wstring id = L"");
+		CGroundWork* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *groundwork - wskaŸnik na obiekt klasy CGroundWork
 		///
-		virtual void Fill(CGroundWork *groundwork);
+		virtual void fill(CGroundWork *groundwork);
 
 		///
 		///Metoda zwraca wspó³czynnik tarcia

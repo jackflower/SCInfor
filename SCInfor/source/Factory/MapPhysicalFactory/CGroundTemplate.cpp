@@ -35,23 +35,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CGroundTemplate::Drop()
+	void CGroundTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CGroundTemplate::Load(const std::string &name)
+	bool CGroundTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CGroundTemplate::Load(CXml &xml)
+	bool CGroundTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CPhysical
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 		
 		//dane dla fizyki pod³o¿a
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "ground_physics_config"))
@@ -66,17 +66,17 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CGroundWork
-	CGround* CGroundTemplate::Create(const std::wstring id)
+	CGround* CGroundTemplate::create(const std::wstring id)
 	{
 		CGround* ground = gPhysicalManager.CreateGround(id);
-		Fill(ground);
+		fill(ground);
 		return ground;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CGroundTemplate::Fill(CGround *ground)
+	void CGroundTemplate::fill(CGround *ground)
 	{
-		CActorTemplate::Fill(ground);
+		CActorTemplate::fill(ground);
 		
 		//chaos...lepiej to zaprojektowaæ...
 		float flaga = gRandom.Rndf();

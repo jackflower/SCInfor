@@ -99,17 +99,17 @@ namespace weather
 	}
 
 	//Metoda ³aduj¹ca dane pogodowe z mapy œwiata
-	bool CWeather::Load(const std::string &name)
+	bool CWeather::load(const std::string &name)
 	{
 		fprintf(stderr, "weather configuration data %s loaded...\n", name.c_str());
 		m_climate_file_name = name;	//zapamiêtujê nazwê pliku wraz ze œcie¿k¹ dostêpu,
 									//z którego zosta³a za³adowana konfiguracja pogody
 		CXml xml(name, "weather");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Metoda ³aduj¹ca dane xml pogodowe z mapy œwiata
-	bool CWeather::Load(CXml &xml)
+	bool CWeather::load(CXml &xml)
 	{
 		//dane konfiguracyjen zjawisk pogodowych
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "weather_configuration"))

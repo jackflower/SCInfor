@@ -40,23 +40,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CVentilatorTemplate::Drop()
+	void CVentilatorTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CVentilatorTemplate::Load(const std::string &name)
+	bool CVentilatorTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml ³aduje wspólne cechy CActor
-	bool CVentilatorTemplate::Load(CXml &xml)
+	bool CVentilatorTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CActor
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//dane wentylatora
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "ventilator_config"))
@@ -73,19 +73,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy Ventilator
-	Ventilator* CVentilatorTemplate::Create(std::wstring id)
+	Ventilator* CVentilatorTemplate::create(std::wstring id)
 	{
 		Ventilator* ventilator = gPhysicalManager.CreateVentilator(id);
-		Fill(ventilator);
+		fill(ventilator);
 		return ventilator;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CVentilatorTemplate::Fill(Ventilator *p_ventilator)
+	void CVentilatorTemplate::fill(Ventilator *p_ventilator)
 	{
 		if(p_ventilator)
 		{
-			CActorTemplate::Fill(p_ventilator);
+			CActorTemplate::fill(p_ventilator);
 	
 			//przekazanie danych...
 			p_ventilator->setVentilatorName(m_templ_ventilator_name);

@@ -414,26 +414,8 @@
     <ClCompile Include="source\Factory\CRobotTemplate.cpp">
       <Filter>source\Factory</Filter>
     </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\CommunicationFactory\CCommunicationTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\CommunicationFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\CEnergyTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\EnergyFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CBatteryTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CSolarBatteryTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory\CEnergyTankTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory</Filter>
-    </ClCompile>
     <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\CEngineTemplate.cpp">
       <Filter>source\Factory\EquipmentFactory\EngineFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\CFuelBarTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory</Filter>
     </ClCompile>
     <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\CFuelTankTemplate.cpp">
       <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory</Filter>
@@ -996,6 +978,24 @@
     <ClCompile Include="source\Equipment\Weapon\Gun\Gun.cpp">
       <Filter>source\Equipment\Weapon\Gun</Filter>
     </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\CommunicationFactory\CommunicationTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\CommunicationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\BatteryTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\SolarBatteryTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory\EnergyTankTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\FuelBarTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1075,26 +1075,8 @@
     <ClInclude Include="source\Factory\CRobotTemplate.h">
       <Filter>source\Factory</Filter>
     </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\CommunicationFactory\CCommunicationTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\CommunicationFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\CEnergyTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\EnergyFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CBatteryTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\CSolarBatteryTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory\CEnergyTankTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory</Filter>
-    </ClInclude>
     <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\CEngineTemplate.h">
       <Filter>source\Factory\EquipmentFactory\EngineFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\CFuelBarTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory</Filter>
     </ClInclude>
     <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\CFuelTankTemplate.h">
       <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory</Filter>
@@ -1749,6 +1731,24 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Weapon\Gun\Gun.h">
       <Filter>source\Equipment\Weapon\Gun</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\CommunicationFactory\CommunicationTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\CommunicationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\BatteryTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory\SolarBatteryTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\BatteryFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory\EnergyTankTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory\EnergyTankFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EnergyFactory\EnergyTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EnergyFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\FuelBarTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

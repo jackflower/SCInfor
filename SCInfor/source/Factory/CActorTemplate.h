@@ -46,7 +46,7 @@ namespace rendering
 namespace factory
 {
 	class CEngineTemplate;
-	class CEnergyTemplate;
+	class EnergyTemplate;
 	class CAirconditioningTemplate;
 	class CVentilatorTemplate;
 	class CGunTemplate;
@@ -84,21 +84,21 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniajπca zasÛb - implementacje w klasach pochodnych
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ≥adujπca dane
 		///
 		///@param &name - sta≥a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ≥adujπca dane z xml
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 			
 	protected:
 
@@ -111,7 +111,7 @@ namespace factory
 		EquipmentVentilatorData		m_templ_ventilator_data;		//opakowanie funkcjonalnoúci wentylatora
 		EquipmentGunData				m_templ_gun_data;				//opakowanie funkcjonalnoúci dzia≥o
 		CEngineTemplate*				p_templ_engine;					//dane wzorca obiektu Engine
-		CEnergyTemplate*				p_templ_energy;					//dane wzorca obiektu Energy
+		EnergyTemplate*				p_templ_energy;					//dane wzorca obiektu Energy
 		CAirconditioningTemplate*		p_templ_airconditioning;		//wskaünik na obiekt Airconditioning z logikπ zarzπdzania modu≥em klimatyzatora
 		CVentilatorTemplate*			p_templ_ventilator;				//wskaünik na obiekt CVentilatorTemplate z logikπ zarzπdzania modu≥em wentylatora
 		CGunTemplate*					p_templ_gun;					//wskaünik na obiekt CGunTemplate z logikπ zarzπdzania dzia≥em
@@ -126,14 +126,14 @@ namespace factory
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CActor* Create(std::wstring id = L"");
+		CActor* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca danymi obiekt klasy CActor
 		///
 		///@param *actor - wskaünik na obiekt klasy CActor
 		///
-		virtual void Fill(CActor *actor);
+		virtual void fill(CActor *actor);
 
 	public:
 

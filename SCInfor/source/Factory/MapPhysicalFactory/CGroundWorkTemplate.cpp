@@ -42,23 +42,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CGroundWorkTemplate::Drop()
+	void CGroundWorkTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CGroundWorkTemplate::Load(const std::string &name)
+	bool CGroundWorkTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CGroundWorkTemplate::Load(CXml &xml)
+	bool CGroundWorkTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CMapPhysicalTemplate
-		if (!CMapPhysicalTemplate::Load(xml)) return false;
+		if (!CMapPhysicalTemplate::load(xml)) return false;
 
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "groundwork_config"))
 		{
@@ -72,17 +72,17 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CGroundWork
-	CGroundWork* CGroundWorkTemplate::Create(const std::wstring id)
+	CGroundWork* CGroundWorkTemplate::create(const std::wstring id)
 	{
 		CGroundWork* groundwork = gMapPhysicalManager.CreateGroundWork(id);
-		Fill(groundwork);
+		fill(groundwork);
 		return groundwork;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CGroundWorkTemplate::Fill(CGroundWork *groundwork)
+	void CGroundWorkTemplate::fill(CGroundWork *groundwork)
 	{
-		CMapPhysicalTemplate::Fill(groundwork);
+		CMapPhysicalTemplate::fill(groundwork);
 		
 		float flaga = gRandom.Rndf();
 

@@ -124,7 +124,7 @@ namespace infologic
 		//
 		//Szablon metody tworzenia obiektów
 		//
-		template<class T> T* Create(const std::wstring &uniqueId);
+		template<class T> T* create(const std::wstring &uniqueId);
 	    
 		std::map<std::wstring, IInformation*>	m_named_map_information;	//kontener <map> na nazwane obiekty klasy IInformation
 		std::vector<IInformation*>				m_map_information;			//kontener <vector> na wskaŸniki na obiekty klasy IInformation

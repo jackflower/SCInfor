@@ -34,22 +34,22 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CBulletTemplate::Drop()
+	void CBulletTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CBulletTemplate::Load(const std::string &name)
+	bool CBulletTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CBulletTemplate::Load(CXml &xml)
+	bool CBulletTemplate::load(CXml &xml)
 	{
-		if (!CPhysicalTemplate::Load(xml)) return false;
+		if (!CPhysicalTemplate::load(xml)) return false;
 
 		//sprawdzamy, czy xml zawiera informacjê, ¿e jest to bullet
 		if (xml.GetString(xml.GetRootNode(), "type") != "bullet")
@@ -81,17 +81,17 @@ namespace factory
 	}
 
 	//Wirtualna metoda tworzenie obiektów pochodnych klasy CPhysical
-	CBullet* CBulletTemplate::Create(std::wstring id)
+	CBullet* CBulletTemplate::create(std::wstring id)
 	{
 		CBullet* bullet = gPhysicalManager.CreateBullet();
 
-		Fill(bullet);
+		fill(bullet);
 		
 		//gdyby by³y jakieœ pola do przekazania, nale¿y to uczyniæ...
-		//ale w Fill(...)
+		//ale w fill(...)
 
 
-		//this->Fill(
+		//this->fill(
 
 		//float random =	gRand.Rndf( 0.0f, 1.0f );
 		//float scale =	Lerp( mMinScale,	mMaxScale,	random );
@@ -128,7 +128,7 @@ namespace factory
 	//implementacja metod  p r o t e c e t e d:
 
 	//Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CBullet
-	void CBulletTemplate::Fill(CBullet *bullet)
+	void CBulletTemplate::fill(CBullet *bullet)
 	{
 		bullet->SetTemplate(this);
 		//to do...

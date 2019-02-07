@@ -92,9 +92,9 @@ namespace mapengine
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CMap::Drop()
+	void CMap::drop()
 	{
-		fprintf(stderr, "CMap::Drop()\n");
+		fprintf(stderr, "CMap::drop()\n");
 		
 		size_t tileCount = p_fields->size();
 		for(size_t i = 0; i < tileCount; i++)
@@ -119,21 +119,21 @@ namespace mapengine
         for (unsigned int i = 0; i < m_map_object_descriptors.size(); i++)
         {
             if (load_complete_map)
-                m_map_object_descriptors[i]->Create();
+                m_map_object_descriptors[i]->create();
         }
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CMap::Load(const std::string &filename)
+	bool CMap::load(const std::string &filename)
 	{
 		fprintf(stderr, "map %s loaded...\n", filename.c_str());
 		//wszystkie pliki xml z mapami - maj¹ nag³ówek root <map>
 		CXml xml(filename, "map" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CMap::Load(CXml &xml)
+	bool CMap::load(CXml &xml)
 	{
 		m_map_filename = xml.GetFilename();				//nazwa pliku xml mapy
 		p_fields = new std::vector<CTile*>();			//inicjujemy wskaŸnik na wektor wskaŸników do obiektów klasy CTile - kafli
@@ -176,7 +176,7 @@ namespace mapengine
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "weather_data"))
 		{
 			std::string filename = xml.GetString(node, "weather_data_filename"); 
-			gWeather.Load(filename);
+			gWeather.load(filename);
 			//po za³adowaniu pogody, przekazujê flagê do mapy, czy na danej mapie jest wiatr...
 			m_use_wind = gWeather.getUseWind();
 		}

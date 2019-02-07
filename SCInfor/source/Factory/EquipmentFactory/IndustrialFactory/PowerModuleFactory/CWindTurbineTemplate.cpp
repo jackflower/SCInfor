@@ -45,23 +45,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CWindTurbineTemplate::Drop()
+	void CWindTurbineTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CWindTurbineTemplate::Load(const std::string &name)
+	bool CWindTurbineTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CWindTurbineTemplate::Load(CXml &xml)
+	bool CWindTurbineTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//³adowanie wartoœci konfiguracji dla turbiny
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "turbine_config"))
@@ -80,19 +80,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy WindTurbine
-	WindTurbine* CWindTurbineTemplate::Create(std::wstring id)
+	WindTurbine* CWindTurbineTemplate::create(std::wstring id)
 	{
 		WindTurbine* turbine = gPhysicalManager.CreateWindTurbine(id);
-		Fill(turbine);
+		fill(turbine);
 		return turbine;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CWindTurbineTemplate::Fill(WindTurbine *p_turbine)
+	void CWindTurbineTemplate::fill(WindTurbine *p_turbine)
 	{
 		if(p_turbine)
 		{
-			CActorTemplate::Fill(p_turbine);
+			CActorTemplate::fill(p_turbine);
 
 			//przekazanie danych...
 			p_turbine->setTurbineName(m_templ_turbine_name);

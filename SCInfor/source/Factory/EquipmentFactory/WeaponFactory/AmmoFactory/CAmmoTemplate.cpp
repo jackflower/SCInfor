@@ -44,23 +44,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CAmmoTemplate::Drop()
+	void CAmmoTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CAmmoTemplate::Load(const std::string &name)
+	bool CAmmoTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml ³aduje wspólne cechy CActor
-	bool CAmmoTemplate::Load(CXml &xml)
+	bool CAmmoTemplate::load(CXml &xml)
 	{
 		//³adowanie danych klasy bazowej CActor
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//dane amunicji
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "ammo_data"))
@@ -81,19 +81,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy Ammo
-	Ammo* CAmmoTemplate::Create(std::wstring id)
+	Ammo* CAmmoTemplate::create(std::wstring id)
 	{
 		Ammo* ammo = gPhysicalManager.CreateAmmo(id);
-		Fill(ammo);
+		fill(ammo);
 		return ammo;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CAmmoTemplate::Fill(Ammo *p_ammo)
+	void CAmmoTemplate::fill(Ammo *p_ammo)
 	{
 		if(p_ammo)
 		{
-			CActorTemplate::Fill(p_ammo);
+			CActorTemplate::fill(p_ammo);
 
 			p_ammo->setAmmoCapacity(m_templ_ammo_capacity);	//k o n i e c z n i e  najpierw pojemnoœæ
 			p_ammo->setAmmo(m_templ_ammo);					//bo ta metoda waliduje...

@@ -1,10 +1,10 @@
-//  ____________________________________________
-// | CEnergyTemplate.cpp - class implementation |
-// | Jack Flower - May 2014                     |
-// |____________________________________________|
+ï»¿//  ___________________________________________
+// | EnergyTemplate.cpp - class implementation |
+// | Jack Flower - May 2014                    |
+// |___________________________________________|
 //
 
-#include "CEnergyTemplate.h"
+#include "EnergyTemplate.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 
@@ -12,73 +12,73 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CEnergyTemplate, CActorTemplate);
+	RTTI_IMPL(EnergyTemplate, CActorTemplate);
 
 	//Konstruktor
-	CEnergyTemplate::CEnergyTemplate(void)
+	EnergyTemplate::EnergyTemplate()
 	:
-		CActorTemplate						(),//konstruktor klasy bazowej
-		m_templ_energy_name					(""),
-		m_templ_energytank_data				(),
-		p_templ_energy_tank					(NULL),
-		m_templ_battery_data				(),
-		p_templ_battery						(NULL),
-		m_templ_percentage_reserve_energy	(0.0f),
-		m_templ_energy_time_delayed			(0.0f),
-		m_templ_energy_empty_message		(false),
-		m_templ_energy_regeneration			(0.0f),
-		m_templ_regeneration_time			(0.0f),
-		m_templ_energy_rotation_speed		(0.0f),
-		m_templ_critical_duration			(0.0f),
-		m_templ_damage_duration				(0.0f)
+		CActorTemplate(),//konstruktor klasy bazowej
+		m_templ_energy_name(""),
+		m_templ_energytank_data(),
+		p_templ_energy_tank(NULL),
+		m_templ_battery_data(),
+		p_templ_battery(NULL),
+		m_templ_percentage_reserve_energy(0.0f),
+		m_templ_energy_time_delayed(0.0f),
+		m_templ_energy_empty_message(false),
+		m_templ_energy_regeneration(0.0f),
+		m_templ_regeneration_time(0.0f),
+		m_templ_energy_rotation_speed(0.0f),
+		m_templ_critical_duration(0.0f),
+		m_templ_damage_duration(0.0f)
 	{
 	}
 
 	//Destruktor
-	CEnergyTemplate::~CEnergyTemplate(void)
+	EnergyTemplate::~EnergyTemplate()
 	{
-		//CActorTemplate					not edit
-		m_templ_energy_name					= "";
-		//m_templ_energytank_data			not edit
-		p_templ_energy_tank					= NULL;
-		//m_templ_battery_data				not edit
-		p_templ_battery						= NULL;
-		m_templ_percentage_reserve_energy	= 0.0f;
-		m_templ_energy_time_delayed			= 0.0f;
-		m_templ_energy_empty_message		= false;
-		m_templ_energy_regeneration			= 0.0f;
-		m_templ_regeneration_time			= 0.0f;
-		m_templ_energy_rotation_speed		= 0.0f;
-		m_templ_critical_duration			= 0.0f;
-		m_templ_damage_duration				= 0.0f;
+		//CActorTemplate
+		m_templ_energy_name = "";
+		//m_templ_energytank_data
+		p_templ_energy_tank = NULL;
+		//m_templ_battery_data
+		p_templ_battery = NULL;
+		m_templ_percentage_reserve_energy = 0.0f;
+		m_templ_energy_time_delayed = 0.0f;
+		m_templ_energy_empty_message = false;
+		m_templ_energy_regeneration = 0.0f;
+		m_templ_regeneration_time = 0.0f;
+		m_templ_energy_rotation_speed = 0.0f;
+		m_templ_critical_duration = 0.0f;
+		m_templ_damage_duration = 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CEnergyTemplate::GetType() const
+	const std::string EnergyTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób
-	void CEnergyTemplate::Drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b
+	void EnergyTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane
-	bool CEnergyTemplate::Load(const std::string &name)
+	//Wirtualna metoda Å‚adujÄ…ca dane
+	bool EnergyTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CEnergyTemplate::Load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml
+	bool EnergyTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::Load(xml)) return false;
+		//sprawdzamy, czy moÅ¼na zaÅ‚adowaÄ‡ dane z klasy bazowej CActorTemplate
+		if (!CActorTemplate::load(xml)) return false;
 
-		//³adowanie wartoœci konfiguracji energy
+		//Å‚adowanie wartoÅ›ci konfiguracji energy
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "energy_config"))
 		{
 			m_templ_energy_name = xml.GetString(node, "energy_name");
@@ -92,58 +92,58 @@ namespace factory
 			m_templ_damage_duration = xml.GetFloat(node, "damage_duration");
 		}
 
-		//³adowanie nazwy pliku z konfiguracj¹ zbiornika paliwa
+		//Å‚adowanie nazwy pliku z konfiguracjÄ… zbiornika paliwa
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "energy_tank_config"))
 		{
 			//flaga, czy obiekt posiada akumulator energii
 			m_templ_energytank_data.setUseEquipment(xml.GetBool(node, "use_energytank"));
 
-			//nazwa pliku z konfiguracj¹ fueltank
+			//nazwa pliku z konfiguracjÄ… fueltank
 			std::string energytank_filename_tmp = xml.GetString(node, "energy_tank_filename");
 			
 			//emitery dla obiektu klasy EnergyTank
 			m_templ_energytank_data.setEmiter(xml.GetFloat(node, "energytank_emiter_x"), xml.GetFloat(node, "energytank_emiter_y"));
 
 			if(m_templ_energytank_data.getUseEquipment())
-				p_templ_energy_tank = (CEnergyTankTemplate*)gResourceManager.GetPhysicalTemplate(energytank_filename_tmp);
+				p_templ_energy_tank = (EnergyTankTemplate*)gResourceManager.GetPhysicalTemplate(energytank_filename_tmp);
 		}
 
-		//³adowanie konfiguracji battery
+		//Å‚adowanie konfiguracji battery
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "battery_config"))
 		{
-			//flaga, czy obiekt posiada bateriê
-			m_templ_battery_data.setUseEquipment(xml.GetBool(node, "use_battery"));//dopisaæ do xml'a
+			//flaga, czy obiekt posiada bateriÄ™
+			m_templ_battery_data.setUseEquipment(xml.GetBool(node, "use_battery"));//dopisaÄ‡ do xml'a
 
-			//nazwa pliku z konfiguracj¹ battery
+			//nazwa pliku z konfiguracjÄ… battery
 			std::string battery_filename_tmp = xml.GetString(node, "battery_filename");
 
-			//emitery dla obiektu klasy Battery (dopisaæ do pliku xml)
+			//emitery dla obiektu klasy Battery (dopisaÄ‡ do pliku xml)
 			m_templ_battery_data.setEmiter(xml.GetFloat(node, "battery_emiter_x"), xml.GetFloat(node, "battery_emiter_y"));
 
 			if(m_templ_battery_data.getUseEquipment())
-				p_templ_battery = (CBatteryTemplate*)gResourceManager.GetPhysicalTemplate(battery_filename_tmp);
+				p_templ_battery = (BatteryTemplate*)gResourceManager.GetPhysicalTemplate(battery_filename_tmp);
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy Engine
-	Energy* CEnergyTemplate::Create(std::wstring id)
+	Energy *EnergyTemplate::create(std::wstring id)
 	{
-		Energy* energy = gPhysicalManager.CreateEnergy(id);
-		Fill(energy);
+		Energy *energy = gPhysicalManager.CreateEnergy(id);
+		fill(energy);
 		return energy;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CEnergyTemplate::Fill(Energy *p_energy)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void EnergyTemplate::fill(Energy *p_energy)
 	{
 		if(p_energy)
 		{
-			CActorTemplate::Fill(p_energy);
+			CActorTemplate::fill(p_energy);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_energy->SetAnimSet(p_templ_animations);
@@ -172,28 +172,28 @@ namespace factory
 			p_energy->setCriticalDuration(m_templ_critical_duration);
 			p_energy->setDamageDuration(m_templ_damage_duration);
 
-			//jeœli obiekt posiada energytank (akumulator energii)
+			//jeÅ›li obiekt posiada energytank (akumulator energii)
 			if (m_templ_energytank_data.getUseEquipment())
 			{
 				if(p_energy)
 				{
-					//pobieramy sk³adow¹ fueltank i wzorzec wype³nia wskaŸnik danymi
-					p_energy->setEnergyTank(p_templ_energy_tank->Create(L""));
-					//przekazanie wskaŸnikowi na klasê EnergyTank informacji o wzorcu
+					//pobieramy skÅ‚adowÄ… fueltank i wzorzec wypeÅ‚nia wskaÅºnik danymi
+					p_energy->setEnergyTank(p_templ_energy_tank->create(L""));
+					//przekazanie wskaÅºnikowi na klasÄ™ EnergyTank informacji o wzorcu
 					p_energy->getEnergyTank()->SetTemplate(p_templ_energy_tank);
 					//decorator
 					p_energy->getEnergyTank()->setSmoothing(true);
 				}
 			}
 
-			//jeœli obiekt posiada bateriê
+			//jeÅ›li obiekt posiada bateriÄ™
 			if(m_templ_battery_data.getUseEquipment())
 			{
 				if(p_energy)
 				{
-					//pobieramy sk³adow¹ battery i wzorzec wype³nia wskaŸnik danymi
-					p_energy->setBattery(p_templ_battery->Create(L""));
-					//przekazanie wskaŸnikowi na klasê Battery informacji o wzorcu
+					//pobieramy skÅ‚adowÄ… battery i wzorzec wypeÅ‚nia wskaÅºnik danymi
+					p_energy->setBattery(p_templ_battery->create(L""));
+					//przekazanie wskaÅºnikowi na klasÄ™ Battery informacji o wzorcu
 					p_energy->getBattery()->SetTemplate(p_templ_battery);
 					//decorator
 					p_energy->getBattery()->setSmoothing(true);

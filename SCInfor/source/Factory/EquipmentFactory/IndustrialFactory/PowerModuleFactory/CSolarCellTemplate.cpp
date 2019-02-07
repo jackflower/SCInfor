@@ -43,23 +43,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CSolarCellTemplate::Drop()
+	void CSolarCellTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CSolarCellTemplate::Load(const std::string &name)
+	bool CSolarCellTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CSolarCellTemplate::Load(CXml &xml)
+	bool CSolarCellTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//³adowanie wartoœci konfiguracji dla turbiny
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "solarcell_config"))
@@ -76,19 +76,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy SolarCell
-	SolarCell* CSolarCellTemplate::Create(std::wstring id)
+	SolarCell* CSolarCellTemplate::create(std::wstring id)
 	{
 		SolarCell* solarcell = gPhysicalManager.CreateSolarCell(id);
-		Fill(solarcell);
+		fill(solarcell);
 		return solarcell;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CSolarCellTemplate::Fill(SolarCell *p_solarcell)
+	void CSolarCellTemplate::fill(SolarCell *p_solarcell)
 	{
 		if(p_solarcell)
 		{
-			CActorTemplate::Fill(p_solarcell);
+			CActorTemplate::fill(p_solarcell);
 
 			//przekazanie danych...
 			p_solarcell->setSolarCellName(m_templ_solarcell_name);

@@ -126,13 +126,13 @@ namespace weather
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 		///
 		///Metoda ³aduj¹ca dane xml pogodowe z mapy œwiata
 		///
 		///@param &xml - sta³a referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 		///
 		///Wirtualna metoda aktualizuje obiekty w kontenerze

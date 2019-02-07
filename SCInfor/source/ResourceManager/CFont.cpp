@@ -30,7 +30,7 @@ namespace resource
 	}
 
 	//Wirtualna metoda ³aduj¹ca zasób - implementacja
-	bool CFont::Load(const std::string &file_name)
+	bool CFont::load(const std::string &file_name)
 	{
 		if (loadFromFile(file_name))//jeœli dane zosta³y za³adowane
 			return true;			//zwracamy flagê true (ok)
@@ -38,7 +38,7 @@ namespace resource
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CFont::Drop()
+	void CFont::drop()
 	{
 		delete this;
 	}

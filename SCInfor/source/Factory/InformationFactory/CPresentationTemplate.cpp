@@ -58,20 +58,20 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CPresentationTemplate::Drop()
+	void CPresentationTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CPresentationTemplate::Load(const std::string &name)
+	bool CPresentationTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CPresentationTemplate::Load(CXml &xml)
+	bool CPresentationTemplate::load(CXml &xml)
 	{
 		//nazwa pliku xml
 		m_templ_filename = xml.GetFilename();
@@ -103,15 +103,15 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CActor
-	CPresentation* CPresentationTemplate::Create(std::wstring id)
+	CPresentation* CPresentationTemplate::create(std::wstring id)
 	{
 		CPresentation* presentation = gInfoManager.CreatePresentation(id);
-		Fill(presentation);
+		fill(presentation);
 		return presentation;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CPresentationTemplate::Fill(CPresentation *presentation)
+	void CPresentationTemplate::fill(CPresentation *presentation)
 	{
 		//ustawienie kompletnego wzorca
 		presentation->SetTemplate(this);

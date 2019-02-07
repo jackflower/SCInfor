@@ -158,7 +158,7 @@ namespace game
 	//Metoda ładująca dane
 	bool GameProperties::load(const std::string &name)
 	{
-		std::cout << "GameProperties::Load ...game properties loading..." << std::endl;
+		std::cout << "GameProperties::load ...game properties loading..." << std::endl;
 		CXml xml(name, "root" );
 		return load(xml);
 	}
@@ -181,7 +181,7 @@ namespace game
 			if(m_time_step <=0.f)
 				m_time_step = 0.025f;//gdyby coś się nie powiodło...
 		}
-		std::cout << "GameProperties::Load ...game properties loaded..." << std::endl;
+		std::cout << "GameProperties::load ...game properties loaded..." << std::endl;
 		return true;
 	}
 

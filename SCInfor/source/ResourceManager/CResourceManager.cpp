@@ -29,11 +29,11 @@
 #include "../Factory/MapPhysicalFactory/CGroundTemplate.h"
 #include "../Factory/EquipmentFactory/EngineFactory/CEngineTemplate.h"
 #include "../Factory/EquipmentFactory/EngineFactory/FuelTankFactory/CFuelTankTemplate.h"
-#include "../Factory/EquipmentFactory/EngineFactory/FuelBarFactory/CFuelBarTemplate.h"
-#include "../Factory/EquipmentFactory/EnergyFactory/CEnergyTemplate.h"
-#include "../Factory/EquipmentFactory/EnergyFactory/EnergyTankFactory/CEnergyTankTemplate.h"
-#include "../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/CBatteryTemplate.h"
-#include "../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/CSolarBatteryTemplate.h"
+#include "../Factory/EquipmentFactory/EngineFactory/FuelBarFactory/FuelBarTemplate.h"
+#include "../Factory/EquipmentFactory/EnergyFactory/EnergyTemplate.h"
+#include "../Factory/EquipmentFactory/EnergyFactory/EnergyTankFactory/EnergyTankTemplate.h"
+#include "../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/BatteryTemplate.h"
+#include "../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/SolarBatteryTemplate.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/CAirconditioningTemplate.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/ThermalInsulationFactory/CThermalInsulationTemplate.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/VentilatorFactory/CVentilatorTemplate.h"
@@ -42,7 +42,7 @@
 #include "../Factory/IndustrialFactory/PowerStationFactory/CWindPowerStationTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/CWindPowerStationMultipledTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/CPowerRelayStationTemplate.h"
-#include "../Factory/EquipmentFactory/CommunicationFactory/CCommunicationTemplate.h"
+#include "../Factory/EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/CSlotsRateTemplate.h"
 #include "../Factory/EquipmentFactory/WeaponFactory/AmmoFactory/CAmmoTemplate.h"
 #include "../Factory/EquipmentFactory/WeaponFactory/GunFactory/CGunTemplate.h"
@@ -303,7 +303,7 @@ namespace resource
 		if(m_resources.count(handle) > 0)							//jeœli w kontenerze s¹ obiekty
 		{
 			if(m_resources[handle] != NULL)							//jeœli pod wskazanym uchwytem s¹ dane
-				m_resources[handle]->Drop();						//niszczymy je (to co jest pod iteratorem)
+				m_resources[handle]->drop();						//niszczymy je (to co jest pod iteratorem)
 			m_resources.erase(handle);								//i usuwamy z kontenera ten wspis
 		}
 	}
@@ -314,7 +314,7 @@ namespace resource
 		while(m_resources.size())						//dopóki w kontenerze s¹ obiekty przeszukujemy kontener
 		{
 			if(m_resources.begin()->second)				//jeœli pod pierwszym elementen s¹ dane
-				m_resources.begin()->second->Drop();	//niszczymy je (to co jest pod iteratorem)
+				m_resources.begin()->second->drop();	//niszczymy je (to co jest pod iteratorem)
 			m_resources.erase(m_resources.begin());		//i usuwamy z kontenera ten wspis
 														//ponownie ustawiaj¹c siê na pierwszy element kontenera
 		}
@@ -370,10 +370,10 @@ namespace resource
 														//a ta ma tylko wirtualny interface.
 														//Zatem w klasach potomnych trzeba zaimplemntowaæ
 														//jako osobne metody:
-														// virtual bool Load(const std::string &file_name) = 0;
-														// virtual void Drop() = 0;
+														// virtual bool load(const std::string &file_name) = 0;
+														// virtual void drop() = 0;
 
-		if(resource->Load(name))						//próbujemy za³adowaæ dane
+		if(resource->load(name))						//próbujemy za³adowaæ dane
 		{
 			m_resources[handle] = resource;				//jeœli to siê powiedzie, wstawiamy do kontenera 
 														//wskaŸnik na zasób (value), pod klucz (key)
@@ -385,7 +385,7 @@ namespace resource
 		}
 		else											//jeœli za³adowanie siê nie powiod³o
 		{
-			resource->Drop();							//niszczymy zasób /patrz cia³o metody Drop()/
+			resource->drop();							//niszczymy zasób /patrz cia³o metody drop()/
 			return InvalidResourceHandle;				//zwracamy zero...
 		}
 	}
@@ -430,11 +430,11 @@ namespace resource
 		//		- CBulletTemplate						->tworzy->	CBullet
 		//		- CMonsterTemplate						->tworzy->	CMonster
 		//		- CFuelTankTemplate						->tworzy->	FuelTank
-		//		- CEnergyTankTemplate					->tworzy->	EnergyTank
-		//		- CFuelBarTemplate						->tworzy->	FuelBar
-		//		- CEnergyTemplate						->tworzy->	Energy
-		//		- CBatteryTemplate						->tworzy->	Battery
-		//		- CSolarBatteryTemplate					->tworzy->	SolarBattery
+		//		- EnergyTankTemplate					->tworzy->	EnergyTank
+		//		- FuelBarTemplate						->tworzy->	FuelBar
+		//		- EnergyTemplate						->tworzy->	Energy
+		//		- BatteryTemplate						->tworzy->	Battery
+		//		- SolarBatteryTemplate					->tworzy->	SolarBattery
 		//		- CAirconditioningTemplate				->tworzy->	Airconditioning
 		//		- CThermalInsulationTemplate			->tworzy->	ThermalInsulation
 		//		- CVentilatorTemplate					->tworzy->	Ventilator
@@ -449,7 +449,7 @@ namespace resource
 		//		- CMapPhysicalTemplate					->tworzy->	CMapPhysical
 		//		- CInformationTemplate					->tworzy->	CInformation
 		//		- CPowerRelayStationTemplate			->tworzy->	CPowerRelayStation
-		//		- CCommunicationTemplate				->tworzy->	CCommunication
+		//		- CommunicationTemplate				->tworzy->	CCommunication
 		//		- CSlotsRateTemplate					->tworzy->	CSlotsRate
 		//		- CAmmoTemplate							->tworzy->	Ammo
 		//		- CGunTemplate							->tworzy->	Gun
@@ -478,19 +478,19 @@ namespace resource
 		else if(type == "fueltank")
 			resource = new CFuelTankTemplate();
 		else if(type == "fuelbar")
-			resource = new CFuelBarTemplate();
+			resource = new FuelBarTemplate();
 		else if(type == "energy")
-			resource = new CEnergyTemplate();
+			resource = new EnergyTemplate();
 		else if(type == "battery")
-			resource = new CBatteryTemplate();
+			resource = new BatteryTemplate();
 		else if(type == "solarbattery")
-			resource = new CSolarBatteryTemplate();
+			resource = new SolarBatteryTemplate();
 		else if(type == "physicalinfo")
 			resource = new CPhysicalInfoTemplate();
 		else if(type == "energy")
-			resource = new CEnergyTemplate();
+			resource = new EnergyTemplate();
 		else if(type == "energytank")
-			resource = new CEnergyTankTemplate();
+			resource = new EnergyTankTemplate();
 		else if(type == "monster")
 			resource = new CMonsterTemplate();
 		else if(type == "flora")
@@ -520,7 +520,7 @@ namespace resource
 		else if(type == "relaystation")
 			resource = new CPowerRelayStationTemplate();
 		else if (type == "communication")
-			resource = new CCommunicationTemplate();
+			resource = new CommunicationTemplate();
 		else if (type == "slotsrate")
 			resource = new CSlotsRateTemplate();
 		else if (type == "ground")
@@ -534,7 +534,7 @@ namespace resource
 		else
 			return InvalidResourceHandle;
 
-		if(resource->Load(name))						//próbujemy za³adowaæ dane
+		if(resource->load(name))						//próbujemy za³adowaæ dane
 		{
 			m_resources[handle] = resource;				//jeœli to siê powiedzie, wstawiamy do kontenera 
 														//wskaŸnik na zasób w zale¿noœci
@@ -547,7 +547,7 @@ namespace resource
 		{
 			fprintf(stderr,"ERROR: Resource %s not found\n", name.c_str());
 			m_errors_occured++;							//ksiêgujemy iloœæ b³êdów
-			resource->Drop();							//niszczymy zasób /patrz cia³o metody Drop()/
+			resource->drop();							//niszczymy zasób /patrz cia³o metody drop()/
 			return InvalidResourceHandle;				//zwracamy zero...
 		}
 	}

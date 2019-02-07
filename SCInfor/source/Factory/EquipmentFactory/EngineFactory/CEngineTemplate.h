@@ -40,35 +40,35 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		virtual bool Load(CXml &xml);
+		virtual bool load(CXml &xml);
 
 		///
 		///Metoda tworzy obiekt klasy Engine
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		Engine* Create(std::wstring id = L"");
+		Engine* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *p_engine - wskaŸnik na obiekt klasy Engine
 		///
-		virtual void Fill(Engine *p_engine);
+		virtual void fill(Engine *p_engine);
 
 
 		//metody  p o m o c n i c z e

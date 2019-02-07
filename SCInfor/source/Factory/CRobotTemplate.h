@@ -41,21 +41,21 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
 		///
-		void Drop();
+		void drop();
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		bool Load(CXml &xml);
+		bool load(CXml &xml);
 
 	protected:
 
@@ -64,14 +64,14 @@ namespace factory
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CRobot* Create(std::wstring id = L"");
+		CRobot* create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CRobot
 		///
 		///@param *robot - wskaŸnik na obiekt klasy CRobot
 		///
-		virtual void Fill(CRobot *robot);
+		virtual void fill(CRobot *robot);
 
 	private:
 

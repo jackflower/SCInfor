@@ -68,7 +68,7 @@ namespace mapengine
 	}
 
 	//Metoda tworzy obiekt mapy
-	void CDoodahDescriptor::Create()
+	void CDoodahDescriptor::create()
 	{
 		//tworzymy obiekt klasy CDisplayable
 		CDisplayable* p_displayable = gDrawableManager.CreateDisplayable(m_zindex);

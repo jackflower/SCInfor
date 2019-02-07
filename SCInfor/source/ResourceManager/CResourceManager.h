@@ -33,10 +33,10 @@ namespace factory
 	class CMonsterTemplate;
 	class CFloraTemplate;
 	class CFuelTankTemplate;
-	class CEnergyTankTemplate;
-	class CFuelBarTemplate;
-	class CBatteryTemplate;
-	class CSolarBatteryTemplate;
+	class EnergyTankTemplate;
+	class FuelBarTemplate;
+	class BatteryTemplate;
+	class SolarBatteryTemplate;
 	class CAirconditioningTemplate;
 	class CThermalInsulationTemplate;
 	class CVentilatorTemplate;
@@ -50,7 +50,7 @@ namespace factory
 	class CInformationTemplate;
 	class CPresentationTemplate;
 	class CPowerRelayStationTemplate;
-	class CCommunicationTemplate;
+	class CommunicationTemplate;
 	class CSlotsRateTemplate;
 	class CGroundTemplate;
 	class CAmmoTemplate;
@@ -116,9 +116,9 @@ namespace resource
 		///
 		///Metoda ładuje zasób CTexture
 		///
-		///@param &name - stała referencja na nazwę zasobu
+		///@param name - stała referencja na nazwę zasobu
 		///
-		ResourceHandle LoadTexture(const std::string& name);
+		ResourceHandle LoadTexture(const std::string & name);
 
 		///
 		///Metoda ładuje zasób CMusic

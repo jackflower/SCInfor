@@ -69,21 +69,21 @@ namespace factory
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób
 		///
-		void Drop() = 0;
+		void drop() = 0;
 
 		///
 		///Metoda ³aduj¹ca dane
 		///
 		///@param &name - sta³a referencja na std::string
 		///
-		bool Load(const std::string &name);
+		bool load(const std::string &name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
 		///
 		///@param &xml - referencja na obiekt klasy CXml
 		///
-		virtual bool Load(CXml &xml);
+		virtual bool load(CXml &xml);
 
 		///
 		///Wirtualna metoda tworzenie obiektów pochodnych klasy CPhysical
@@ -92,14 +92,14 @@ namespace factory
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		virtual CPhysical* Create(std::wstring id = L"") = 0 ;
+		virtual CPhysical* create(std::wstring id = L"") = 0 ;
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
 		///
 		///@param *physical - wskaŸnik na obiekt klasy CPhysical
 		///
-		virtual void Fill(CPhysical *physical);
+		virtual void fill(CPhysical *physical);
 
 		///
 		///Metoda zwraca nazwê pliku zasobu

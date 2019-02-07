@@ -27,27 +27,27 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób
-	void CFloraTemplate::Drop()
+	void CFloraTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CFloraTemplate::Load(const std::string &name)
+	bool CFloraTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CFloraTemplate::Load(CXml &xml)
+	bool CFloraTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy xml zawiera informacjê, ¿e jest to jakaœ roœlinnoœæ
 		if (xml.GetString(xml.GetRootNode(), "type") != "flora")
 			return false;
 
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej
-		if (!CActorTemplate::Load(xml))
+		if (!CActorTemplate::load(xml))
 			return false;
 
 		//gdy w klasie CFlora byd¹ dodawane pola
@@ -65,17 +65,17 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CFlora
-	CFlora* CFloraTemplate::Create(std::wstring id)
+	CFlora* CFloraTemplate::create(std::wstring id)
 	{
 		CFlora* flora = gPhysicalManager.CreateFlora(id);
-		Fill(flora);
+		fill(flora);
 		return flora;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CFlora
-	void CFloraTemplate::Fill(CFlora *flora)
+	void CFloraTemplate::fill(CFlora *flora)
 	{
-		CActorTemplate::Fill(flora);
+		CActorTemplate::fill(flora);
 		//ewentualnie reszta
 		if(flora)
 		{

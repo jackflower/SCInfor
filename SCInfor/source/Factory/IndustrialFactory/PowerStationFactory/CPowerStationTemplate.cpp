@@ -7,7 +7,7 @@
 #include "CPowerStationTemplate.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
-#include "../../EquipmentFactory/CommunicationFactory/CCommunicationTemplate.h"
+#include "../../EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
 
 using namespace resource;
 
@@ -43,23 +43,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CPowerStationTemplate::Drop()
+	void CPowerStationTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Metoda ³aduj¹ca dane
-	bool CPowerStationTemplate::Load(const std::string &name)
+	bool CPowerStationTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CPowerStationTemplate::Load(CXml &xml)
+	bool CPowerStationTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::Load(xml)) return false;
+		if (!CActorTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "power_station_config"))
@@ -82,7 +82,7 @@ namespace factory
 			mm_templ_communication_data.setEmiter(xml.GetFloat(node, "communication_emiter_x"), xml.GetFloat(node, "communication_emiter_y"));
 
 			if(mm_templ_communication_data.getUseEquipment())
-				p_templ_communication = (CCommunicationTemplate*)gResourceManager.GetPhysicalTemplate(communication_filename_tmp);
+				p_templ_communication = (CommunicationTemplate*)gResourceManager.GetPhysicalTemplate(communication_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
@@ -90,19 +90,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CPowerStation
-	CPowerStation* CPowerStationTemplate::Create(std::wstring id)
+	CPowerStation* CPowerStationTemplate::create(std::wstring id)
 	{
 		CPowerStation* power_station = gPhysicalManager.CreatePowerStation(id);
-		Fill(power_station);
+		fill(power_station);
 		return power_station;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CPowerStationTemplate::Fill(CPowerStation *p_power_station)
+	void CPowerStationTemplate::fill(CPowerStation *p_power_station)
 	{
 		if(p_power_station)
 		{
-			CActorTemplate::Fill(p_power_station);
+			CActorTemplate::fill(p_power_station);
 
 			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
 			if (p_templ_animations)
@@ -133,7 +133,7 @@ namespace factory
 				if(p_templ_communication)
 				{
 					//pobieramy sk³adow¹ modu³ komunikacji i wzorzec wype³nia wskaŸnik danymi
-					p_power_station->SetCommunication(p_templ_communication->Create(L""));
+					p_power_station->SetCommunication(p_templ_communication->create(L""));
 					//przekazanie wskaŸnikowi na klasê CCommunication informacji o wzorcu
 					p_power_station->GetCommunication()->SetTemplate(p_templ_communication);
 					//decorate

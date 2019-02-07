@@ -45,23 +45,23 @@ namespace factory
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CWindPowerStationTemplate::Drop()
+	void CWindPowerStationTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane
-	bool CWindPowerStationTemplate::Load(const std::string &name)
+	bool CWindPowerStationTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
-		return Load(xml);
+		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane
-	bool CWindPowerStationTemplate::Load(CXml &xml)
+	bool CWindPowerStationTemplate::load(CXml &xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CPowerStationTemplate
-		if (!CPowerStationTemplate::Load(xml)) return false;
+		if (!CPowerStationTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "windpower_station_config"))
@@ -89,19 +89,19 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy WindTurbine
-	CWindPowerStation* CWindPowerStationTemplate::Create(std::wstring id)
+	CWindPowerStation* CWindPowerStationTemplate::create(std::wstring id)
 	{
 		CWindPowerStation* windpower_station = gPhysicalManager.CreateWindPowerStation(id);
-		Fill(windpower_station);
+		fill(windpower_station);
 		return windpower_station;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CWindPowerStationTemplate::Fill(CWindPowerStation *p_windpower_station)
+	void CWindPowerStationTemplate::fill(CWindPowerStation *p_windpower_station)
 	{
 		if(p_windpower_station)
 		{
-			CPowerStationTemplate::Fill(p_windpower_station);
+			CPowerStationTemplate::fill(p_windpower_station);
 			
 			//kategoria
 			p_windpower_station->SetCategory(PHYSICAL_WINDPOWERSTATION);
@@ -123,7 +123,7 @@ namespace factory
 					std::wstring name_child = p_templ_windturbine->GetGenre();
 
 					//inicjujemy wskaŸnik na sk³adow¹ - wskaŸnik na obiekt wzorzeca dla klasy CWindTurbineTemplate
-					p_windpower_station->setWindTurbine(p_templ_windturbine->Create(L""));
+					p_windpower_station->setWindTurbine(p_templ_windturbine->create(L""));
 					//przekazanie wskaŸnikowi na klasê CWindPowerStation informacji o wzorcu obiektu
 					p_windpower_station->getWindTurbine()->SetTemplate(p_templ_windturbine);
 					//decorate
