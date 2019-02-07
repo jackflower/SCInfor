@@ -1,10 +1,10 @@
-//  _____________________________________________________
-// | CAirconditioningTemplate.cpp - class implementation |
-// | Jack Flower June 2014                               |
-// |_____________________________________________________|
+ï»¿//  ____________________________________________________
+// | AirconditioningTemplate.cpp - class implementation |
+// | Jack Flower June 2014                              |
+// |____________________________________________________|
 //
 
-#include "CAirconditioningTemplate.h"
+#include "AirconditioningTemplate.h"
 #include "../../../../Weather/CWeather.h"
 #include "../../../../Utilities/Random/CRandom.h"
 #include "../../../../ResourceManager/CResourceManager.h"
@@ -15,66 +15,66 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CAirconditioningTemplate, CActorTemplate);
+	RTTI_IMPL(AirconditioningTemplate, CActorTemplate);
 
 	//Konstruktor
-	CAirconditioningTemplate::CAirconditioningTemplate()
+	AirconditioningTemplate::AirconditioningTemplate()
 	:
-		CActorTemplate						(),//konstruktor klasy bazowej
-		m_templ_airconditioning_name		(""),
-		m_templ_temperature					(0.0f),
-		m_templ_temperature_set				(0.0f),
-		m_templ_temperature_range			(0.0f, 0.0f),
-		m_templ_temperature_increment		(0.0f),
-		m_templ_energy_consumption			(0.0f),
-		m_templ_fuel_consumption			(0.0f),
-		m_templ_thermalinsulation_data		(),
-		p_templ_thermal_insulation			(NULL)
+		CActorTemplate(),//konstruktor klasy bazowej
+		m_templ_airconditioning_name(""),
+		m_templ_temperature(0.0f),
+		m_templ_temperature_set(0.0f),
+		m_templ_temperature_range(0.0f, 0.0f),
+		m_templ_temperature_increment(0.0f),
+		m_templ_energy_consumption(0.0f),
+		m_templ_fuel_consumption(0.0f),
+		m_templ_thermalinsulation_data(),
+		p_templ_thermal_insulation(NULL)
 	{
 	}
 
 	//Destruktor wirtualny
-	CAirconditioningTemplate::~CAirconditioningTemplate()
+	AirconditioningTemplate::~AirconditioningTemplate()
 	{
-		//CActorTemplate					not edit
-		m_templ_airconditioning_name		= "";
-		m_templ_temperature					= 0.0f;
-		m_templ_temperature_set				= 0.0f;
-		m_templ_temperature_range.first		= 0.0f;
-		m_templ_temperature_range.second	= 0.0f;
-		m_templ_temperature_increment		= 0.0f;
-		m_templ_energy_consumption			= 0.0f;
-		m_templ_fuel_consumption			= 0.0f;
-		//m_templ_thermalinsulation_data	not edit
-		p_templ_thermal_insulation			= NULL;
+		//CActorTemplate
+		m_templ_airconditioning_name = "";
+		m_templ_temperature = 0.0f;
+		m_templ_temperature_set = 0.0f;
+		m_templ_temperature_range.first = 0.0f;
+		m_templ_temperature_range.second = 0.0f;
+		m_templ_temperature_increment = 0.0f;
+		m_templ_energy_consumption = 0.0f;
+		m_templ_fuel_consumption = 0.0f;
+		//m_templ_thermalinsulation_data
+		p_templ_thermal_insulation = NULL;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CAirconditioningTemplate::GetType() const
+	const std::string AirconditioningTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób
-	void CAirconditioningTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b
+	void AirconditioningTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CAirconditioningTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool AirconditioningTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CAirconditioningTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml
+	bool AirconditioningTemplate::load(CXml & xml)
 	{
-		//³adowanie danych klasy bazowej CActor
+		//Å‚adowanie danych klasy bazowej CActor
 		if (!CActorTemplate::load(xml)) return false;
 
-		//dane modu³u klimatyzatora
+		//dane moduÅ‚u klimatyzatora
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "airconditioning_config"))
 		{
 			m_templ_airconditioning_name = xml.GetString(node, "airconditioning_name");
@@ -87,42 +87,42 @@ namespace factory
 			m_templ_fuel_consumption = xml.GetFloat(node, "fuel_consumption");
 		}
 
-		//³adowanie nazwy pliku z konfiguracj¹ termoizolatora
+		//Å‚adowanie nazwy pliku z konfiguracjÄ… termoizolatora
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "thermalinsulation_config"))
 		{
-			//flaga, czy obiekt posiada modu³ termoizolatora
-			m_templ_thermalinsulation_data.setUseEquipment(xml.GetBool(node, "use_thermal_insulation"));//dopisaæ do xml'a
+			//flaga, czy obiekt posiada moduÅ‚ termoizolatora
+			m_templ_thermalinsulation_data.setUseEquipment(xml.GetBool(node, "use_thermal_insulation"));//dopisaÄ‡ do xml'a
 
-			//nazwa pliku z konfiguracj¹ thermalinsulation
+			//nazwa pliku z konfiguracjÄ… thermalinsulation
 			std::string thermalinsulation_filename_tmp = xml.GetString(node, "thermalinsulation_filename");
 		
 			//emitery dla obiektu klasy ThermalInsulation
 			m_templ_thermalinsulation_data.setEmiter(xml.GetFloat(node, "thermalinsulation_emiter_x"), xml.GetFloat(node, "thermalinsulation_emiter_y"));
 
 			if(m_templ_thermalinsulation_data.getUseEquipment())
-				p_templ_thermal_insulation = (CThermalInsulationTemplate*)gResourceManager.GetPhysicalTemplate(thermalinsulation_filename_tmp);
+				p_templ_thermal_insulation = (ThermalInsulationTemplate*)gResourceManager.GetPhysicalTemplate(thermalinsulation_filename_tmp);
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy Airconditioning
-	Airconditioning* CAirconditioningTemplate::create(std::wstring id)
+	Airconditioning* AirconditioningTemplate::create(std::wstring id)
 	{
-		Airconditioning* airconditioning = gPhysicalManager.CreateAirconditioning(id);
+		Airconditioning * airconditioning = gPhysicalManager.CreateAirconditioning(id);
 		fill(airconditioning);
 		return airconditioning;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CAirconditioningTemplate::fill(Airconditioning *p_airconditioning)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void AirconditioningTemplate::fill(Airconditioning *p_airconditioning)
 	{
 		if(p_airconditioning)
 		{
 			CActorTemplate::fill(p_airconditioning);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_airconditioning->SetAnimSet(p_templ_animations);
@@ -136,16 +136,16 @@ namespace factory
 					p_airconditioning->SetAnimationHead(p_templ_animations->GetAirconditioningHeadDefaultAnim());
 			}
 
-			//Metoda ³¹dujaca dane ³aduje poni¿sze wartoœci z xml'a,
-			//tylko ze wzglêdu na zgodnoœæ pól w tej klasie z polami obiektu, który buduje.
+			//Metoda Å‚Ä…dujaca dane Å‚aduje poniÅ¼sze wartoÅ›ci z xml'a,
+			//tylko ze wzglÄ™du na zgodnoÅ›Ä‡ pÃ³l w tej klasie z polami obiektu, ktÃ³ry buduje.
 			//
-			//Na pocz¹tku klimatyzator jako urz¹dzenie - obiekt - posiada temperaturê otoczenia,
-			//na podstawie której oraz jej przeliczania, stara siê doprowadziæ do temperaturê
-			//do wartoœci ustalonej - oczekiwanej, aby oddaæ j¹ obiektowe, który jest
-			//jego w³aœcicielem.
+			//Na poczÄ…tku klimatyzator jako urzÄ…dzenie - obiekt - posiada temperaturÄ™ otoczenia,
+			//na podstawie ktÃ³rej oraz jej przeliczania, stara siÄ™ doprowadziÄ‡ do temperaturÄ™
+			//do wartoÅ›ci ustalonej - oczekiwanej, aby oddaÄ‡ jÄ… obiektowe, ktÃ³ry jest
+			//jego wÅ‚aÅ›cicielem.
 			m_templ_temperature = gWeather.getTemperature();
 			
-			//temperatura ustawiona na urz¹dzeniu (klimatyzator) [ losowana z zakresu ]
+			//temperatura ustawiona na urzÄ…dzeniu (klimatyzator) [ losowana z zakresu ]
 			//losowanie...
 			m_templ_temperature_set = gRandom.Rndf
 			(
@@ -164,7 +164,7 @@ namespace factory
 			p_airconditioning->setFuelConsumption(m_templ_fuel_consumption);
 			p_airconditioning->setUseThermalInsulation(m_templ_thermalinsulation_data.getUseEquipment());
 
-			//jeœli obiekt posiada termoizolator
+			//jeÅ›li obiekt posiada termoizolator
 			if(m_templ_thermalinsulation_data.getUseEquipment())
 			{
 				//emitery dla obiektu klasy ThermalInsulation
@@ -172,9 +172,9 @@ namespace factory
 
 				if(p_airconditioning)
 				{
-					//pobieramy sk³adow¹ thermalinsulation i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… thermalinsulation i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					p_airconditioning->setThermalInsulation(p_templ_thermal_insulation->create(L""));//nazwa z xml'a
-					//przekazanie wskaŸnikowi na klasê Airconditioning informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ Airconditioning informacji o wzorcu
 					p_airconditioning->getThermalInsulation()->SetTemplate(p_templ_thermal_insulation);
 					//decorator
 					p_airconditioning->getThermalInsulation()->setSmoothing(true);

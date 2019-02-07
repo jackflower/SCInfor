@@ -1,69 +1,69 @@
-//  _________________________________________________
-// | CWindTurbineTemplate.cpp - class implementation |
-// | Jack Flower - July 2014                         |
-// |_________________________________________________|
+ï»¿//  ________________________________________________
+// | WindTurbineTemplate.cpp - class implementation |
+// | Jack Flower - July 2014                        |
+// |________________________________________________|
 //
 
-#include "CWindTurbineTemplate.h"
+#include "WindTurbineTemplate.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CWindTurbineTemplate, CActorTemplate);
+	RTTI_IMPL(WindTurbineTemplate, CActorTemplate);
 
 	//Konstruktor
-	CWindTurbineTemplate::CWindTurbineTemplate(void)
+	WindTurbineTemplate::WindTurbineTemplate()
 	:
-		CActorTemplate					(),	//konstruktor klasy bazowej
-		m_templ_turbine_name			(),
-		m_templ_speed_rotor				(0.0f),
-		m_templ_speed_transmission		(1.0f),
-		m_templ_energy_capacitor		(0.0f),
-		m_templ_power					(0.0f),
-		m_templ_energy_full_duration	(0.0f)
+		CActorTemplate(),	//konstruktor klasy bazowej
+		m_templ_turbine_name(),
+		m_templ_speed_rotor(0.0f),
+		m_templ_speed_transmission(1.0f),
+		m_templ_energy_capacitor(0.0f),
+		m_templ_power(0.0f),
+		m_templ_energy_full_duration(0.0f)
 	{
 	}
 
 	//Destruktor wirtualny
-	CWindTurbineTemplate::~CWindTurbineTemplate(void)
+	WindTurbineTemplate::~WindTurbineTemplate()
 	{
-		//CActorTemplate				not edit
-		m_templ_turbine_name			= "";
-		m_templ_speed_rotor				= 0.0f;
-		m_templ_speed_transmission		= 0.0f;
-		m_templ_energy_capacitor		= 0.0f;
-		m_templ_power					= 0.0f;
-		m_templ_energy_full_duration	= 0.0f;
+		//CActorTemplate
+		m_templ_turbine_name = "";
+		m_templ_speed_rotor = 0.0f;
+		m_templ_speed_transmission = 0.0f;
+		m_templ_energy_capacitor = 0.0f;
+		m_templ_power = 0.0f;
+		m_templ_energy_full_duration = 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CWindTurbineTemplate::GetType() const
+	const std::string WindTurbineTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CWindTurbineTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b - implementacje w klasach pochodnych
+	void WindTurbineTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CWindTurbineTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool WindTurbineTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CWindTurbineTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml wywoÅ‚ywana przez implementacje klas potomnych
+	bool WindTurbineTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
+		//sprawdzamy, czy moÅ¼na zaÅ‚adowaÄ‡ dane z klasy bazowej CActorTemplate
 		if (!CActorTemplate::load(xml)) return false;
 
-		//³adowanie wartoœci konfiguracji dla turbiny
+		//Å‚adowanie wartoÅ›ci konfiguracji dla turbiny
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "turbine_config"))
 		{
 			m_templ_turbine_name = xml.GetString(node, "turbine_name");
@@ -75,20 +75,20 @@ namespace factory
 			m_templ_energy_full_duration = xml.GetFloat(node, "energy_full_duration");
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy WindTurbine
-	WindTurbine* CWindTurbineTemplate::create(std::wstring id)
+	WindTurbine *WindTurbineTemplate::create(std::wstring id)
 	{
 		WindTurbine* turbine = gPhysicalManager.CreateWindTurbine(id);
 		fill(turbine);
 		return turbine;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CWindTurbineTemplate::fill(WindTurbine *p_turbine)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void WindTurbineTemplate::fill(WindTurbine *p_turbine)
 	{
 		if(p_turbine)
 		{
@@ -103,7 +103,7 @@ namespace factory
 			p_turbine->setPercentageActivation(m_templ_percentage_activation);
 			p_turbine->setEnergyFuelDuration(m_templ_energy_full_duration);
 			
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_turbine->SetAnimSet(p_templ_animations);

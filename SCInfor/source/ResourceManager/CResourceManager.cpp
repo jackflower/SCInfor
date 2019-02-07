@@ -27,18 +27,18 @@
 #include "../Factory/MapPhysicalFactory/CMapPhysicalTemplate.h"
 #include "../Factory/MapPhysicalFactory/CGroundWorkTemplate.h"
 #include "../Factory/MapPhysicalFactory/CGroundTemplate.h"
-#include "../Factory/EquipmentFactory/EngineFactory/CEngineTemplate.h"
-#include "../Factory/EquipmentFactory/EngineFactory/FuelTankFactory/CFuelTankTemplate.h"
+#include "../Factory/EquipmentFactory/EngineFactory/EngineTemplate.h"
+#include "../Factory/EquipmentFactory/EngineFactory/FuelTankFactory/FuelTankTemplate.h"
 #include "../Factory/EquipmentFactory/EngineFactory/FuelBarFactory/FuelBarTemplate.h"
 #include "../Factory/EquipmentFactory/EnergyFactory/EnergyTemplate.h"
 #include "../Factory/EquipmentFactory/EnergyFactory/EnergyTankFactory/EnergyTankTemplate.h"
 #include "../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/BatteryTemplate.h"
 #include "../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/SolarBatteryTemplate.h"
-#include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/CAirconditioningTemplate.h"
-#include "../Factory/EquipmentFactory/ThermodynamicsFactory/ThermalInsulationFactory/CThermalInsulationTemplate.h"
+#include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
+#include "../Factory/EquipmentFactory/ThermodynamicsFactory/ThermalInsulationFactory/ThermalInsulationTemplate.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/VentilatorFactory/CVentilatorTemplate.h"
-#include "../Factory/EquipmentFactory/IndustrialFactory/PowerModuleFactory/CWindTurbineTemplate.h"
-#include "../Factory/EquipmentFactory/IndustrialFactory/PowerModuleFactory/CSolarCellTemplate.h"
+#include "../Factory/EquipmentFactory/IndustrialFactory/PowerModuleFactory/WindTurbineTemplate.h"
+#include "../Factory/EquipmentFactory/IndustrialFactory/PowerModuleFactory/SolarCellTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/CWindPowerStationTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/CWindPowerStationMultipledTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/CPowerRelayStationTemplate.h"
@@ -429,17 +429,17 @@ namespace resource
 		//		- CPlayerTemplate						->tworzy->	CPlayer
 		//		- CBulletTemplate						->tworzy->	CBullet
 		//		- CMonsterTemplate						->tworzy->	CMonster
-		//		- CFuelTankTemplate						->tworzy->	FuelTank
+		//		- FuelTankTemplate						->tworzy->	FuelTank
 		//		- EnergyTankTemplate					->tworzy->	EnergyTank
 		//		- FuelBarTemplate						->tworzy->	FuelBar
 		//		- EnergyTemplate						->tworzy->	Energy
 		//		- BatteryTemplate						->tworzy->	Battery
 		//		- SolarBatteryTemplate					->tworzy->	SolarBattery
-		//		- CAirconditioningTemplate				->tworzy->	Airconditioning
-		//		- CThermalInsulationTemplate			->tworzy->	ThermalInsulation
+		//		- AirconditioningTemplate				->tworzy->	Airconditioning
+		//		- ThermalInsulationTemplate			->tworzy->	ThermalInsulation
 		//		- CVentilatorTemplate					->tworzy->	Ventilator
-		//		- CWindTurbineTemplate					->tworzy->	WindTurbine
-		//		- CSolarCellTemplate					->tworzy->	SolarCell
+		//		- WindTurbineTemplate					->tworzy->	WindTurbine
+		//		- SolarCellTemplate					->tworzy->	SolarCell
 		//		- CWindPowerStationTemplate				->tworzy->	CWindPowerStation
 		//		- CWindPowerStationMultipledTemplate	->tworzy->	CWindPowerStationMultipled
 		//		- CGroundWorkTemplate					->tworzy->	CGroundWork
@@ -474,9 +474,9 @@ namespace resource
 		else if(type == "bullet")
 			resource = new CBulletTemplate();
 		else if(type == "engine")
-			resource = new CEngineTemplate();
+			resource = new EngineTemplate();
 		else if(type == "fueltank")
-			resource = new CFuelTankTemplate();
+			resource = new FuelTankTemplate();
 		else if(type == "fuelbar")
 			resource = new FuelBarTemplate();
 		else if(type == "energy")
@@ -496,15 +496,15 @@ namespace resource
 		else if(type == "flora")
 			resource = new CFloraTemplate();
 		else if(type == "airconditioning")
-			resource = new CAirconditioningTemplate();
+			resource = new AirconditioningTemplate();
 		else if(type == "thermalinsulation")
-			resource = new CThermalInsulationTemplate();
+			resource = new ThermalInsulationTemplate();
 		else if(type == "ventilator")
 			resource = new CVentilatorTemplate();
 		else if(type == "windturbine")
-			resource = new CWindTurbineTemplate();
+			resource = new WindTurbineTemplate();
 		else if(type == "solarcell")
-			resource = new CSolarCellTemplate();
+			resource = new SolarCellTemplate();
 		else if(type == "powerstation")
 			resource = new CWindPowerStationTemplate();
 		else if (type == "powerstationmultipled")

@@ -1,67 +1,67 @@
-//  _______________________________________________
-// | CSolarCellTemplate.cpp - class implementation |
-// | Jack Flower - August 2014                     |
-// |_______________________________________________|
+ï»¿//  ______________________________________________
+// | SolarCellTemplate.cpp - class implementation |
+// | Jack Flower - August 2014                    |
+// |______________________________________________|
 //
 
-#include "CSolarCellTemplate.h"
+#include "SolarCellTemplate.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CSolarCellTemplate, CActorTemplate);
+	RTTI_IMPL(SolarCellTemplate, CActorTemplate);
 
 	//Konstruktor
-	CSolarCellTemplate::CSolarCellTemplate(void)
+	SolarCellTemplate::SolarCellTemplate()
 	:
-		CActorTemplate					(),	//konstruktor klasy bazowej
-		m_templ_solarcell_name			(),
-		m_templ_stored_energy			(0.0f),
-		m_templ_power					(0.0f),
-		m_templ_energy_duration			(0.0f),
-		m_templ_rotation_speed			(0.0f)
+		CActorTemplate(),	//konstruktor klasy bazowej
+		m_templ_solarcell_name(),
+		m_templ_stored_energy(0.0f),
+		m_templ_power(0.0f),
+		m_templ_energy_duration(0.0f),
+		m_templ_rotation_speed(0.0f)
 	{
 	}
 
 	//Destruktor wirtualny
-	CSolarCellTemplate::~CSolarCellTemplate(void)
+	SolarCellTemplate::~SolarCellTemplate()
 	{
-		//CActorTemplate				not edit
-		m_templ_solarcell_name			= "";
-		m_templ_stored_energy			= 0.0f;
-		m_templ_power					= 0.0f;
-		m_templ_energy_duration			= 0.0f;
-		m_templ_rotation_speed			= 0.0f;
+		//CActorTemplate
+		m_templ_solarcell_name = "";
+		m_templ_stored_energy = 0.0f;
+		m_templ_power = 0.0f;
+		m_templ_energy_duration = 0.0f;
+		m_templ_rotation_speed = 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CSolarCellTemplate::GetType() const
+	const std::string SolarCellTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CSolarCellTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b - implementacje w klasach pochodnych
+	void SolarCellTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CSolarCellTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool SolarCellTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CSolarCellTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml wywoÅ‚ywana przez implementacje klas potomnych
+	bool SolarCellTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
+		//sprawdzamy, czy moÅ¼na zaÅ‚adowaÄ‡ dane z klasy bazowej CActorTemplate
 		if (!CActorTemplate::load(xml)) return false;
 
-		//³adowanie wartoœci konfiguracji dla turbiny
+		//Å‚adowanie wartoÅ›ci konfiguracji dla turbiny
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "solarcell_config"))
 		{
 			m_templ_solarcell_name = xml.GetString(node, "solarcell_name");
@@ -71,20 +71,20 @@ namespace factory
 			m_templ_rotation_speed = xml.GetFloat(node, "rotation_speed");
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy SolarCell
-	SolarCell* CSolarCellTemplate::create(std::wstring id)
+	SolarCell* SolarCellTemplate::create(std::wstring id)
 	{
-		SolarCell* solarcell = gPhysicalManager.CreateSolarCell(id);
+		SolarCell *solarcell = gPhysicalManager.CreateSolarCell(id);
 		fill(solarcell);
 		return solarcell;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CSolarCellTemplate::fill(SolarCell *p_solarcell)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void SolarCellTemplate::fill(SolarCell *p_solarcell)
 	{
 		if(p_solarcell)
 		{
@@ -97,7 +97,7 @@ namespace factory
 			p_solarcell->setEnergyDuration(m_templ_energy_duration);
 			p_solarcell->setRotationSpeed(m_templ_rotation_speed);
 			
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_solarcell->SetAnimSet(p_templ_animations);

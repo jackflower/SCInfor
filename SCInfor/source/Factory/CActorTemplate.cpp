@@ -8,11 +8,11 @@
 #include "CActorTemplate.h"
 #include "CPhysicalInfoTemplate.h"
 #include "EquipmentFactory/EnergyFactory/EnergyTemplate.h"
-#include "EquipmentFactory/EngineFactory/CEngineTemplate.h"
-#include "EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/CAirconditioningTemplate.h"
+#include "EquipmentFactory/EngineFactory/EngineTemplate.h"
+#include "EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
 #include "EquipmentFactory/ThermodynamicsFactory/VentilatorFactory/CVentilatorTemplate.h"
 #include "EquipmentFactory/WeaponFactory/GunFactory/CGunTemplate.h"
-#include "EquipmentFactory/IndustrialFactory/PowerModuleFactory/CWindTurbineTemplate.h"
+#include "EquipmentFactory/IndustrialFactory/PowerModuleFactory/WindTurbineTemplate.h"
 #include "EquipmentFactory/EngineFactory/FuelBarFactory/FuelBarTemplate.h"
 #include "../Logic/Actor/CActor.h"
 #include "../XML/CXml.h"
@@ -155,7 +155,7 @@ namespace factory
 			m_templ_engine_data.setEmiter(xml.GetFloat(node, "engine_emiter_x"), xml.GetFloat(node, "engine_emiter_y"));
 
 			if(m_templ_engine_data.getUseEquipment())
-				p_templ_engine = (CEngineTemplate*)gResourceManager.GetPhysicalTemplate(engine_filename_tmp);
+				p_templ_engine = (EngineTemplate*)gResourceManager.GetPhysicalTemplate(engine_filename_tmp);
 		}
 
 		//³adowanie nazwy pliku z konfiguracj¹ physical_info 
@@ -197,7 +197,7 @@ namespace factory
 			m_templ_airconditioning_data.setEmiter(xml.GetFloat(node, "airconditioning_emiter_x"), xml.GetFloat(node, "airconditioning_emiter_y"));
 			
 			if(m_templ_airconditioning_data.getUseEquipment())
-				p_templ_airconditioning = (CAirconditioningTemplate*)gResourceManager.GetPhysicalTemplate(airconditioning_filename_tmp);
+				p_templ_airconditioning = (AirconditioningTemplate*)gResourceManager.GetPhysicalTemplate(airconditioning_filename_tmp);
 		}
 
 		//³adowanie modu³u wentylatora

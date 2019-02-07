@@ -414,24 +414,6 @@
     <ClCompile Include="source\Factory\CRobotTemplate.cpp">
       <Filter>source\Factory</Filter>
     </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\CEngineTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\EngineFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\CFuelTankTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CSolarCellTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CWindTurbineTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\CAirconditioningTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\CThermalInsulationTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory</Filter>
-    </ClCompile>
     <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.cpp">
       <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory</Filter>
     </ClCompile>
@@ -996,6 +978,24 @@
     <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\FuelBarTemplate.cpp">
       <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory</Filter>
     </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\FuelTankTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\EngineFactory\EngineTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\SolarCellTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\WindTurbineTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\AirconditioningTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\ThermalInsulationTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1074,24 +1074,6 @@
     </ClInclude>
     <ClInclude Include="source\Factory\CRobotTemplate.h">
       <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\CEngineTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\EngineFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\CFuelTankTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CSolarCellTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\CWindTurbineTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\CAirconditioningTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\CThermalInsulationTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory</Filter>
     </ClInclude>
     <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.h">
       <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory</Filter>
@@ -1749,6 +1731,24 @@
     </ClInclude>
     <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory\FuelBarTemplate.h">
       <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelBarFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory\FuelTankTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory\FuelTankFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\EngineFactory\EngineTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\EngineFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\SolarCellTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\WindTurbineTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\AirconditioningTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\ThermalInsulationTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

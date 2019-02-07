@@ -34,7 +34,7 @@
 #include "../Map/CMapManager.h"
 #include "../Equipment/Lightingequipment/ELightingEquipmentState.h"
 #include "../Universe/CUniverse.h"
-#include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/CAirconditioningTemplate.h"
+#include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/CWindPowerStationTemplate.h"
 #include "../Factory/MapPhysicalFactory/CMapPhysicalTemplate.h"
 #include "../Factory/MapPhysicalFactory/CGroundWorkTemplate.h"
@@ -52,9 +52,9 @@
 #include "../Equipment/Weapon/Gun/Gun.h"
 #include "../Factory/EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
 #include "../Logic/Communication/CCommunication.h"
-#include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/CAirconditioningTemplate.h"
+#include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
 #include "../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
-#include "../Factory/EquipmentFactory/ThermodynamicsFactory/ThermalInsulationFactory/CThermalInsulationTemplate.h"
+#include "../Factory/EquipmentFactory/ThermodynamicsFactory/ThermalInsulationFactory/ThermalInsulationTemplate.h"
 #include "../Equipment/Thermodynamics/ThermalInsulation/ThermalInsulation.h"
 
 

@@ -64,7 +64,7 @@ namespace factory
 			//std::string windturbine_filename_tmp = xml.GetString(node, "windturbine_filename");
 
 			//if (m_templ_use_windturbine)
-			//	p_templ_windturbine = (CWindTurbineTemplate*)gResourceManager.GetPhysicalTemplate(windturbine_filename_tmp);
+			//	p_templ_windturbine = (WindTurbineTemplate*)gResourceManager.GetPhysicalTemplate(windturbine_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
@@ -101,7 +101,7 @@ namespace factory
 			//{
 				//if (p_templ_windturbine)
 				//{
-					//inicjujemy wskaŸnik na sk³adow¹ - wskaŸnik na obiekt wzorzeca dla klasy CWindTurbineTemplate
+					//inicjujemy wskaŸnik na sk³adow¹ - wskaŸnik na obiekt wzorzeca dla klasy WindTurbineTemplate
 				//	p_windpower_station->setWindTurbine(p_templ_windturbine->create(L""));
 					//przekazanie wskaŸnikowi na klasê CWindPowerStation informacji o wzorcu obiektu
 				//	p_windpower_station->getWindTurbine()->SetTemplate(p_templ_windturbine);

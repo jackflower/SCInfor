@@ -1,10 +1,10 @@
-//  ______________________________________________
-// | CFuelTankTemplate.cpp - class implementation |
-// | Jack Flower - November 2013                  |
-// |______________________________________________|
+ï»¿//  _____________________________________________
+// | FuelTankTemplate.cpp - class implementation |
+// | Jack Flower - November 2013                 |
+// |_____________________________________________|
 //
 
-#include "CFuelTankTemplate.h"
+#include "FuelTankTemplate.h"
 #include "../../../../Logic/CPhysicalManager.h"
 #include "../../../../Logic/Actor/CActor.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
@@ -15,53 +15,53 @@ using namespace logic;
 
 namespace factory
 {
-	RTTI_IMPL(CFuelTankTemplate, CActorTemplate);
+	RTTI_IMPL(FuelTankTemplate, CActorTemplate);
 
 	//Konstruktor
-	CFuelTankTemplate::CFuelTankTemplate(void)
+	FuelTankTemplate::FuelTankTemplate()
 	:
-		CActorTemplate				(),//konstruktor klasy bazowej
-		m_templ_fuel_tank_name		(""),
-		m_templ_fuel_tank_capacity	(0.0f),
-		m_templ_fuel				(0.0f)
+		CActorTemplate(),//konstruktor klasy bazowej
+		m_templ_fuel_tank_name(""),
+		m_templ_fuel_tank_capacity(0.0f),
+		m_templ_fuel(0.0f)
 	{
 	}
 
 	//Destruktor
-	CFuelTankTemplate::~CFuelTankTemplate(void)
+	FuelTankTemplate::~FuelTankTemplate()
 	{
-		//CActorTemplate			not edit
-		m_templ_fuel_tank_name		= "";
-		m_templ_fuel_tank_capacity	= 0.0f;
-		m_templ_fuel				= 0.0f;
+		//CActorTemplate
+		m_templ_fuel_tank_name = "";
+		m_templ_fuel_tank_capacity = 0.0f;
+		m_templ_fuel = 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CFuelTankTemplate::GetType() const
+	const std::string FuelTankTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób
-	void CFuelTankTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b
+	void FuelTankTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane
-	bool CFuelTankTemplate::load(const std::string &name)
+	//Wirtualna metoda Å‚adujÄ…ca dane
+	bool FuelTankTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CFuelTankTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml wywoÅ‚ywana przez implementacje klas potomnych
+	bool FuelTankTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
+		//sprawdzamy, czy moÅ¼na zaÅ‚adowaÄ‡ dane z klasy bazowej CActorTemplate
 		if (!CActorTemplate::load(xml)) return false;
 
-		//³adowanie wartoœci konfiguracji zbiornika paliwa
+		//Å‚adowanie wartoÅ›ci konfiguracji zbiornika paliwa
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "fueltank_config"))
 		{
 			m_templ_fuel_tank_name = xml.GetString(node, "fuel_tank_name");
@@ -69,26 +69,26 @@ namespace factory
 			m_templ_fuel = xml.GetFloat(node, "fuel");
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy FuelTank
-	FuelTank* CFuelTankTemplate::create(std::wstring id)
+	FuelTank* FuelTankTemplate::create(std::wstring id)
 	{
 		FuelTank* fueltank = gPhysicalManager.CreateFuelTank(id);
 		fill(fueltank);
 		return fueltank;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CFuelTankTemplate::fill(FuelTank *p_fueltank)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void FuelTankTemplate::fill(FuelTank *p_fueltank)
 	{
 		if(p_fueltank)
 		{
 			CActorTemplate::fill(p_fueltank);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_fueltank->SetAnimSet(p_templ_animations);  

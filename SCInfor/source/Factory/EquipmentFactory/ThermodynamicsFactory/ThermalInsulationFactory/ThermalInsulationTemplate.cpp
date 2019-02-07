@@ -1,10 +1,10 @@
-//  _______________________________________________________
-// | CThermalInsulationTemplate.cpp - class implementation |
-// | Jack Flower June 2014                                 |
-// |_______________________________________________________|
+ï»¿//  ______________________________________________________
+// | ThermalInsulationTemplate.cpp - class implementation |
+// | Jack Flower June 2014                                |
+// |______________________________________________________|
 //
 
-#include "CThermalInsulationTemplate.h"
+#include "ThermalInsulationTemplate.h"
 #include "../../../../Weather/CWeather.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 
@@ -12,52 +12,54 @@ using namespace weather;
 
 namespace factory
 {
-	RTTI_IMPL(CThermalInsulationTemplate, CActorTemplate);
+	RTTI_IMPL(ThermalInsulationTemplate, CActorTemplate);
 
-	CThermalInsulationTemplate::CThermalInsulationTemplate()
+	ThermalInsulationTemplate::ThermalInsulationTemplate()
 	:
-		m_templ_thermalinsulation_name		(""),
-		m_templ_temperature_ambient			(0.0f),
-		m_templ_thermal_protection			(0.0f),
-		m_templ_thermal_protection_factor	(0.0f),
-		m_templ_thermal_protection_consume	(0.0f),
-		m_templ_thermal_protection_duration	(0.0f)
+		CActorTemplate(),//konstruktor klasy bazowej
+		m_templ_thermalinsulation_name(""),
+		m_templ_temperature_ambient(0.0f),
+		m_templ_thermal_protection(0.0f),
+		m_templ_thermal_protection_factor(0.0f),
+		m_templ_thermal_protection_consume(0.0f),
+		m_templ_thermal_protection_duration(0.0f)
 	{
 	}
 
-	CThermalInsulationTemplate::~CThermalInsulationTemplate()
+	ThermalInsulationTemplate::~ThermalInsulationTemplate()
 	{
-		m_templ_thermalinsulation_name		= "";
-		m_templ_temperature_ambient			= 0.0f;
-		m_templ_thermal_protection			= 0.0f;
-		m_templ_thermal_protection_factor	= 0.0f;
-		m_templ_thermal_protection_consume	= 0.0f;
-		m_templ_thermal_protection_duration	= 0.0f;
+		//CActorTemplate
+		m_templ_thermalinsulation_name = "";
+		m_templ_temperature_ambient = 0.0f;
+		m_templ_thermal_protection = 0.0f;
+		m_templ_thermal_protection_factor = 0.0f;
+		m_templ_thermal_protection_consume = 0.0f;
+		m_templ_thermal_protection_duration = 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CThermalInsulationTemplate::GetType() const
+	const std::string ThermalInsulationTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób
-	void CThermalInsulationTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b
+	void ThermalInsulationTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CThermalInsulationTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool ThermalInsulationTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml ³aduje wspólne cechy CActor
-	bool CThermalInsulationTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml Å‚aduje wspÃ³lne cechy CActor
+	bool ThermalInsulationTemplate::load(CXml & xml)
 	{
-		//³adowanie danych klasy bazowej CActor
+		//Å‚adowanie danych klasy bazowej CActor
 		if (!CActorTemplate::load(xml)) return false;
 
 		//dane termoizolatora
@@ -71,26 +73,26 @@ namespace factory
 			m_templ_thermal_protection_duration = xml.GetFloat(node, "thermal_protection_duration");
 		}
 		
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy ThermalInsulation
-	ThermalInsulation* CThermalInsulationTemplate::create(std::wstring id)
+	ThermalInsulation *ThermalInsulationTemplate::create(std::wstring id)
 	{
 		ThermalInsulation* thermalinsulation = gPhysicalManager.CreateThermalInsulation(id);
 		fill(thermalinsulation);
 		return thermalinsulation;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CThermalInsulationTemplate::fill(ThermalInsulation *p_thermalinsulation)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void ThermalInsulationTemplate::fill(ThermalInsulation *p_thermalinsulation)
 	{
 		if(p_thermalinsulation)
 		{
 			CActorTemplate::fill(p_thermalinsulation);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_thermalinsulation->SetAnimSet(p_templ_animations);
@@ -105,8 +107,8 @@ namespace factory
 			}
 
 
-			//obliczam wartoœæ zu¿ycia ochrony termicznej w jednostce czasu (na sekundê) znaj¹c czas trwania doby
-			//termoizolacja zu¿yje siê w ci¹gu doby...
+			//obliczam wartoÅ›Ä‡ zuÅ¼ycia ochrony termicznej w jednostce czasu (na sekundÄ™) znajÄ…c czas trwania doby
+			//termoizolacja zuÅ¼yje siÄ™ w ciÄ…gu doby...
 			if(gWeather.getDayDuration() != 0)
 				m_templ_thermal_protection_consume = (gWeather.getUpdateTime() * m_templ_thermal_protection)/gWeather.getDayDuration();
 

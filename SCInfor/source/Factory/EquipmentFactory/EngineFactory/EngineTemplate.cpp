@@ -1,10 +1,10 @@
-//  ______________________________________________
-// | CEngineTemplate.cpp - class implementation   |
-// | Jack Flower - December 2013                  |
-// |______________________________________________|
+ï»¿//  _____________________________________________
+// | EngineTemplate.cpp - class implementation   |
+// | Jack Flower - December 2013                 |
+// |_____________________________________________|
 //
 
-#include "CEngineTemplate.h"
+#include "EngineTemplate.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 
@@ -12,69 +12,69 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CEngineTemplate, CActorTemplate);
+	RTTI_IMPL(EngineTemplate, CActorTemplate);
 
 	//Konstruktor
-	CEngineTemplate::CEngineTemplate(void)
+	EngineTemplate::EngineTemplate()
 	:
-		CActorTemplate							(),//konstruktor klasy bazowej
-		m_templ_engine_name						(),
-		m_templ_fueltank_data					(),
-		p_templ_fuel_tank						(NULL),
-		m_templ_percentage_reserve_fuel			(0.0f),
-		m_templ_fuel_consumption				(0.0f),
-		m_templ_fuel_consumption_move			(0.0f),
-		m_templ_tank_time_delayed				(0.0f),
-		m_templ_fuel_empty_message				(false),
-		m_templ_engine_run						(false),
-		m_templ_engine_rotation_speed			(0.0f),
-		m_templ_regeneration_time				(0.0f)
+		CActorTemplate(),//konstruktor klasy bazowej
+		m_templ_engine_name(),
+		m_templ_fueltank_data(),
+		p_templ_fuel_tank(NULL),
+		m_templ_percentage_reserve_fuel(0.0f),
+		m_templ_fuel_consumption(0.0f),
+		m_templ_fuel_consumption_move(0.0f),
+		m_templ_tank_time_delayed(0.0f),
+		m_templ_fuel_empty_message(false),
+		m_templ_engine_run(false),
+		m_templ_engine_rotation_speed(0.0f),
+		m_templ_regeneration_time(0.0f)
 	{
 	}
 
 	//Destruktor
-	CEngineTemplate::~CEngineTemplate(void)
+	EngineTemplate::~EngineTemplate()
 	{
-		//CActorTemplate						not edit
-		m_templ_engine_name						= "";
-		//m_templ_fueltank_data					not edit
-		p_templ_fuel_tank						= NULL;
-		m_templ_percentage_reserve_fuel			= 0.0f;
-		m_templ_fuel_consumption				= 0.0f;
-		m_templ_fuel_consumption_move			= 0.0f;
-		m_templ_tank_time_delayed				= 0.0f;
-		m_templ_fuel_empty_message				= false;
-		m_templ_engine_run						= false;
-		m_templ_engine_rotation_speed			= 0.0f;
-		m_templ_regeneration_time				= 0.0f;
+		//CActorTemplate
+		m_templ_engine_name = "";
+		//m_templ_fueltank_data
+		p_templ_fuel_tank = NULL;
+		m_templ_percentage_reserve_fuel = 0.0f;
+		m_templ_fuel_consumption = 0.0f;
+		m_templ_fuel_consumption_move = 0.0f;
+		m_templ_tank_time_delayed = 0.0f;
+		m_templ_fuel_empty_message = false;
+		m_templ_engine_run = false;
+		m_templ_engine_rotation_speed = 0.0f;
+		m_templ_regeneration_time = 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CEngineTemplate::GetType() const
+	const std::string EngineTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób
-	void CEngineTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b
+	void EngineTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane
-	bool CEngineTemplate::load(const std::string &name)
+	//Wirtualna metoda Å‚adujÄ…ca dane
+	bool EngineTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root");
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CEngineTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml
+	bool EngineTemplate::load(CXml &xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
+		//sprawdzamy, czy moÅ¼na zaÅ‚adowaÄ‡ dane z klasy bazowej CActorTemplate
 		if (!CActorTemplate::load(xml)) return false;
 
-		//³adowanie wartoœci konfiguracji engine
+		//Å‚adowanie wartoÅ›ci konfiguracji engine
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "engine_config"))
 		{
 			m_templ_engine_name = xml.GetString(node, "engine_name");
@@ -89,38 +89,38 @@ namespace factory
 			m_templ_engine_rotation_speed = xml.GetFloat(node, "engine_rotation_speed");
 		}
 
-		//³adowanie nazwy pliku z konfiguracj¹ zbiornika paliwa
+		//Å‚adowanie nazwy pliku z konfiguracjÄ… zbiornika paliwa
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "engine_fueltank_config"))
 		{
-			//nazwa pliku z konfiguracj¹ fueltank
+			//nazwa pliku z konfiguracjÄ… fueltank
 			std::string fueltank_filename_tmp = xml.GetString(node, "fueltank_filename");
 			//emitery dla obiektu klasy FuelTank
 			m_templ_fueltank_data.setEmiter(xml.GetFloat(node, "fuel_tank_emiter_x"), xml.GetFloat(node, "fuel_tank_emiter_y"));
 
 			if(m_templ_fueltank_data.getUseEquipment())
-				p_templ_fuel_tank = (CFuelTankTemplate*)gResourceManager.GetPhysicalTemplate(fueltank_filename_tmp);
+				p_templ_fuel_tank = (FuelTankTemplate*)gResourceManager.GetPhysicalTemplate(fueltank_filename_tmp);
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy Engine
-	Engine* CEngineTemplate::create(std::wstring id)
+	Engine *EngineTemplate::create(std::wstring id)
 	{
-		Engine* engine = gPhysicalManager.CreateEngine(id);
+		Engine *engine = gPhysicalManager.CreateEngine(id);
 		fill(engine);
 		return engine;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CEngineTemplate::fill(Engine *p_engine)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void EngineTemplate::fill(Engine *p_engine)
 	{
 		if(p_engine)
 		{
 			CActorTemplate::fill(p_engine);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_engine->SetAnimSet(p_templ_animations);
@@ -147,14 +147,14 @@ namespace factory
 			p_engine->setEngineRegenerationTime(m_templ_regeneration_time);
 			p_engine->setEngineRotationSpeed(m_templ_engine_rotation_speed);
 
-			//jeœli obiekt posiada fueltank (zbiornika paliwa)
+			//jeÅ›li obiekt posiada fueltank (zbiornika paliwa)
 			if (m_templ_fueltank_data.getUseEquipment())
 			{
 				if(p_engine)
 				{
-					//pobieramy sk³adow¹ fueltank i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… fueltank i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					p_engine->setFuelTank(p_templ_fuel_tank->create(L""));
-					//przekazanie wskaŸnikowi na klasê FuelTank informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ FuelTank informacji o wzorcu
 					p_engine->getFuelTank()->SetTemplate(p_templ_fuel_tank);
 					//decorator
 					p_engine->getFuelTank()->setSmoothing(true);

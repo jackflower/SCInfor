@@ -47,7 +47,7 @@ namespace factory
 		///
 		///Wirtualna metoda ładująca dane
 		///
-		///@param &name - stała referencja na std::string
+		///@param name - stała referencja na std::string
 		///
 		bool load(const std::string & name);
 

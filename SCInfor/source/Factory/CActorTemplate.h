@@ -45,12 +45,12 @@ namespace rendering
 ///
 namespace factory
 {
-	class CEngineTemplate;
+	class EngineTemplate;
 	class EnergyTemplate;
-	class CAirconditioningTemplate;
+	class AirconditioningTemplate;
 	class CVentilatorTemplate;
 	class CGunTemplate;
-	class CWindTurbineTemplate;
+	class WindTurbineTemplate;
 	class CWindPowerStationTemplate;
 	class CPhysicalInfoTemplate;
 }
@@ -110,9 +110,9 @@ namespace factory
 		EquipmentAirconditioningData	m_templ_airconditioning_data;	//opakowanie funkcjonalnoúci klimatyzacji
 		EquipmentVentilatorData		m_templ_ventilator_data;		//opakowanie funkcjonalnoúci wentylatora
 		EquipmentGunData				m_templ_gun_data;				//opakowanie funkcjonalnoúci dzia≥o
-		CEngineTemplate*				p_templ_engine;					//dane wzorca obiektu Engine
+		EngineTemplate*				p_templ_engine;					//dane wzorca obiektu Engine
 		EnergyTemplate*				p_templ_energy;					//dane wzorca obiektu Energy
-		CAirconditioningTemplate*		p_templ_airconditioning;		//wskaünik na obiekt Airconditioning z logikπ zarzπdzania modu≥em klimatyzatora
+		AirconditioningTemplate*		p_templ_airconditioning;		//wskaünik na obiekt Airconditioning z logikπ zarzπdzania modu≥em klimatyzatora
 		CVentilatorTemplate*			p_templ_ventilator;				//wskaünik na obiekt CVentilatorTemplate z logikπ zarzπdzania modu≥em wentylatora
 		CGunTemplate*					p_templ_gun;					//wskaünik na obiekt CGunTemplate z logikπ zarzπdzania dzia≥em
 		

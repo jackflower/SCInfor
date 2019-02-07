@@ -8,7 +8,7 @@
 #define H_WIND_POWER_STATION_TEMPLATE_JACK
 
 #include "../../../Logic/Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
-#include "../../EquipmentFactory/IndustrialFactory/PowerModuleFactory/CWindTurbineTemplate.h"
+#include "../../EquipmentFactory/IndustrialFactory/PowerModuleFactory/WindTurbineTemplate.h"
 #include "CPowerStationTemplate.h"
 
 
@@ -111,7 +111,7 @@ namespace factory
 		float					m_templ_portion_energy;				//porcja energii, któr¹ bêdê móg³ zabieraæ z turbiny
 		bool					m_templ_use_rotation_head;			//flaga okreœla, czy korpus siê obraca (HEAD)
 		float					m_templ_speed_rotation_head;		//prêdkoœæ obrotu korpusu (HEAD)
-		CWindTurbineTemplate*	p_templ_windturbine;				//wskaŸnik na obiekt klasy CWindTurbineTemplate - wzorzec WindTurbine
+		WindTurbineTemplate*	p_templ_windturbine;				//wskaŸnik na obiekt klasy WindTurbineTemplate - wzorzec WindTurbine
 	};
 }//namespace factory
 #endif//H_WIND_POWER_STATION_TEMPLATE_JACK
