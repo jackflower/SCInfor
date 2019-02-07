@@ -25,8 +25,8 @@
 #include "../Equipment/Energy/Battery/SolarBattery.h"
 #include "../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
 #include "../Equipment/Thermodynamics/ThermalInsulation/ThermalInsulation.h"
-#include "../Equipment/Thermodynamics/Ventilator/CVentilator.h"
-#include "../Equipment/Weapon/Ammo/CAmmo.h"
+#include "../Equipment/Thermodynamics/Ventilator/Ventilator.h"
+#include "../Equipment/Weapon/Ammo/Ammo.h"
 #include "../Equipment/Weapon/Gun/CGun.h"
 #include "../Equipment/Lightingequipment/LightingEquipment.h"
 #include "../Equipment/Industrial/PowerModuleType/WindTurbine.h"
@@ -233,18 +233,18 @@ namespace logic
 		return Create<ThermalInsulation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CVentilator i zwraca wskaünik na ten obiekt
-	CVentilator *CPhysicalManager::CreateVentilator(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Ventilator i zwraca wskaünik na ten obiekt
+	Ventilator *CPhysicalManager::CreateVentilator(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CVentilator created\n");
-		return Create<CVentilator>(uniqueId);
+		fprintf(stderr, "Ventilator created\n");
+		return Create<Ventilator>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CAmmo i zwraca wskaünik na ten obiekt
-	CAmmo *CPhysicalManager::CreateAmmo(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Ammo i zwraca wskaünik na ten obiekt
+	Ammo *CPhysicalManager::CreateAmmo(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CAmmo created\n");
-		return Create<CAmmo>(uniqueId);
+		fprintf(stderr, "Ammo created\n");
+		return Create<Ammo>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CGun i zwraca wskaünik na ten obiekt

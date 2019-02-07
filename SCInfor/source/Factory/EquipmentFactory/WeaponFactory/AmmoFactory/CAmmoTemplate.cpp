@@ -80,16 +80,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CAmmo
-	CAmmo* CAmmoTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy Ammo
+	Ammo* CAmmoTemplate::Create(std::wstring id)
 	{
-		CAmmo* ammo = gPhysicalManager.CreateAmmo(id);
+		Ammo* ammo = gPhysicalManager.CreateAmmo(id);
 		Fill(ammo);
 		return ammo;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CAmmoTemplate::Fill(CAmmo *p_ammo)
+	void CAmmoTemplate::Fill(Ammo *p_ammo)
 	{
 		if(p_ammo)
 		{

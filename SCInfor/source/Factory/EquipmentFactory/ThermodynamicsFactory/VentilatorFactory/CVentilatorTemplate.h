@@ -8,7 +8,7 @@
 #define H_VENTILATOR_TEMPLATE_JACK
 
 #include "../../../CActorTemplate.h"
-#include "../../../../Equipment/Thermodynamics/Ventilator/CVentilator.h"
+#include "../../../../Equipment/Thermodynamics/Ventilator/Ventilator.h"
 
 namespace factory
 {
@@ -56,20 +56,20 @@ namespace factory
 		bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CVentilator
+		///Metoda tworzy obiekt klasy Ventilator
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CVentilator* Create(std::wstring id = L"");
+		Ventilator* Create(std::wstring id = L"");
 
 	protected:
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_ventilator - wskaünik na obiekt klasy CVentilator
+		///@param *p_ventilator - wskaünik na obiekt klasy Ventilator
 		///
-		virtual void Fill(CVentilator *p_ventilator);
+		virtual void Fill(Ventilator *p_ventilator);
 
 	private:
 

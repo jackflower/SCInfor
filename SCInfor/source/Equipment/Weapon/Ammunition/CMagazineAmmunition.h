@@ -70,7 +70,7 @@ namespace equipment
 			float			m_percentage_reserve_ammunition;	//procentowa wartoœæ amunicji w magazynku - komunikat o rezerwie (default 10% - konstruktor)
 			BulletVector	m_bullets;							//wektor (tablica) wskaŸników na pociski
 
-			//pobraæ metody (interface - opakowania) z klasy CAmmo)
+			//pobraæ metody (interface - opakowania) z klasy Ammo)
 			//2014-06-20
 		};
 	}//namespace weapon

@@ -5,7 +5,7 @@
 //
 
 #include "EquipmentAmmoData.h"
-#include "../Weapon/Ammo/CAmmo.h"
+#include "../Weapon/Ammo/Ammo.h"
 #include "../../Logic/CPhysicalManager.h"
 
 namespace equipmentdata
@@ -43,14 +43,14 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CAmmo
-	CAmmo* EquipmentAmmoData::getAmmo()
+	//Metoda zwraca wskaźnik na obiekt klasy Ammo
+	Ammo* EquipmentAmmoData::getAmmo()
 	{
 		return p_ammo;
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CAmmo
-	void EquipmentAmmoData::setAmmo(CAmmo* ammo)
+	//Metoda ustawia wskaźnik na obiekt klasy Ammo
+	void EquipmentAmmoData::setAmmo(Ammo* ammo)
 	{
 		p_ammo = ammo;
 	}

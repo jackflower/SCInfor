@@ -43,7 +43,7 @@ namespace equipment
 	class Engine;
 	class Energy;
 	class Airconditioning;
-	class CVentilator;
+	class Ventilator;
 	namespace weapon
 	{
 		class CGun;
@@ -348,16 +348,16 @@ namespace logic
 		void SetAirconditioning(Airconditioning* airconditioning);
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CVentilator
+		///Metoda zwraca wskaünik na obiekt klasy Ventilator
 		///
-		CVentilator* GetVentilator();
+		Ventilator* GetVentilator();
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CVentilator
+		///Metoda ustawia wskaünik na obiekt klasy Ventilator
 		///
-		///@param *ventilator - wskaünik na obiekt klasy CVentilator
+		///@param *ventilator - wskaünik na obiekt klasy Ventilator
 		///
-		void SetVentilator(CVentilator* ventilator);
+		void SetVentilator(Ventilator* ventilator);
 
 		///
 		///Metoda zwraca wskaünik na obiekt klasy CGun
@@ -465,7 +465,7 @@ namespace logic
 		//metoda aktualizuje funkcjonalnoúÊ Airconditioning
 		void updateAirconditioning(float dt);
 
-		//metoda aktualizuje funkcjonalnoúÊ CVentilator
+		//metoda aktualizuje funkcjonalnoúÊ Ventilator
 		void updateVentilator(float dt);
 
 		//metoda aktualizuje funkcjonalnoúÊ CGun

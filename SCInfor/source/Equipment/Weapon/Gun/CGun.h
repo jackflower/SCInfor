@@ -11,7 +11,7 @@
 #include "LockWeapon/CLockWeapon.h"
 #include "../../EquipmentData/EquipmentAmmoData.h"
 #include <SFML/System/Vector2.hpp>
-#include "../Ammo/CAmmo.h"
+#include "../Ammo/Ammo.h"
 #include "../EGunState.h"
 
 using namespace logic;
@@ -67,16 +67,16 @@ namespace equipment
 			std::string GetType();
 			
 			///
-			///Metoda zwraca wskaünik obiekt klasy CAmmo
+			///Metoda zwraca wskaünik obiekt klasy Ammo
 			///
-			CAmmo *getAmmo();
+			Ammo *getAmmo();
 
 			///
-			///Metoda ustawia wskaünik obiekt klasy CAmmo
+			///Metoda ustawia wskaünik obiekt klasy Ammo
 			///
-			///@param *ammo - wskaünik obiekt klasy CAmmo
+			///@param *ammo - wskaünik obiekt klasy Ammo
 			///
-			void setAmmo(CAmmo * ammo);
+			void setAmmo(Ammo * ammo);
 
 			///
 			///Metoda zwraca flagÍ, czy obiekt posiada magazynek na amunicjÍ (amunicjÍ)

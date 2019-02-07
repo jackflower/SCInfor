@@ -116,14 +116,14 @@ namespace equipment
 			return rtti.GetNameClass();
 		}
 
-		//Metoda zwraca wskaünik obiekt klasy CAmmo
-		CAmmo *CGun::getAmmo()
+		//Metoda zwraca wskaünik obiekt klasy Ammo
+		Ammo *CGun::getAmmo()
 		{
 			return m_ammo_data.getAmmo();
 		}
 
-		//Metoda ustawia wskaünik obiekt klasy CAmmo
-		void CGun::setAmmo(CAmmo * ammo)
+		//Metoda ustawia wskaünik obiekt klasy Ammo
+		void CGun::setAmmo(Ammo * ammo)
 		{
 			m_ammo_data.setAmmo(ammo);
 		}

@@ -16,7 +16,7 @@ namespace equipment
 {
 	namespace weapon
 	{
-		class CAmmo;
+		class Ammo;
 	}
 }
 
@@ -56,20 +56,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CAmmo
+		///Metoda zwraca wskaźnik na obiekt klasy Ammo
 		///
-		CAmmo* getAmmo();
+		Ammo* getAmmo();
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CAmmo
+		///Metoda ustawia wskaźnik na obiekt klasy Ammo
 		///
-		///@param *ammo - wskaźnik na obiekt klasy CAmmo
+		///@param *ammo - wskaźnik na obiekt klasy Ammo
 		///
-		void setAmmo(CAmmo * ammo);
+		void setAmmo(Ammo * ammo);
 
 	private:
 
-		CAmmo *p_ammo;	//wskaźnik na klasę CAmmo - amunicja
+		Ammo *p_ammo;	//wskaźnik na klasę Ammo - amunicja
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_AMMO_DATA_JACK

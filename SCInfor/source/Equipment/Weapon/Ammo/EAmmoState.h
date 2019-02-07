@@ -1,5 +1,5 @@
-//  _______________________________________________________
-// | EAmmoState.h - wyliczenie stanów magazynka z amunicj¹ |
+ï»¿//  _______________________________________________________
+// | EAmmoState.h - wyliczenie stanÃ³w magazynka z amunicjÄ… |
 // | Jack Flower - April 2016                              |
 // |_______________________________________________________|
 //
@@ -12,7 +12,7 @@ namespace equipment
 	namespace weapon
 	{
 		///
-		///Wyliczenie stanów dla obiektów CAmmo
+		///Wyliczenie stanÃ³w dla obiektÃ³w Ammo
 		///
 		enum EAmmoState
 		{

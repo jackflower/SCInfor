@@ -1,4 +1,4 @@
-//  _______________________________________________________
+ï»¿//  _______________________________________________________
 // | EVentilatorState.h - enumeration of states ventilator |
 // | Jack Flower - May 2016                                              |
 // |_____________________________________________________________________|
@@ -10,12 +10,12 @@
 namespace equipment
 {
 	///
-	///Wyliczenie stanów dla obiektu CVentilator
+	///Wyliczenie stanÃ³w dla obiektu Ventilator
 	///
 	enum EVentilatorState
 	{
-		VENTILATOR_DEFAULT = 0,	//urz¹dzenie jest w³¹czone - wentylator funkcjonuje
-		VENTILATOR_DAMAGE = 1,	//urz¹dzenie jest w³¹czone - wentylator stan damage
+		VENTILATOR_DEFAULT = 0,	//urzÄ…dzenie jest wÅ‚Ä…czone - wentylator funkcjonuje
+		VENTILATOR_DAMAGE = 1,	//urzÄ…dzenie jest wÅ‚Ä…czone - wentylator stan damage
 	};
 }//namespace equipment
 #endif//H_E_VENTILATOR_STATE_JACK

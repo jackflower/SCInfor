@@ -68,7 +68,7 @@ namespace factory
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_ammo - wskaünik na obiekt klasy CAmmo
+		///@param *p_ammo - wskaünik na obiekt klasy Ammo
 		///
 		virtual void Fill(CGun *p_gun);
 

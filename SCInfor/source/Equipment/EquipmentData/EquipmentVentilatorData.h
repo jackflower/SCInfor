@@ -14,7 +14,7 @@
 ///
 namespace equipment
 {
-	class CVentilator;
+	class Ventilator;
 }
 
 using namespace equipment;
@@ -53,20 +53,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CVentilator
+		///Metoda zwraca wskaźnik na obiekt klasy Ventilator
 		///
-		CVentilator* getVentilator();
+		Ventilator* getVentilator();
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CVentilator
+		///Metoda ustawia wskaźnik na obiekt klasy Ventilator
 		///
-		///@param *ventilator - wskaźnik na obiekt klasy CVentilator
+		///@param *ventilator - wskaźnik na obiekt klasy Ventilator
 		///
-		void setVentilator(CVentilator * ventilator);
+		void setVentilator(Ventilator * ventilator);
 
 	private:
 
-		CVentilator *p_ventilator;	//wskaźnik na klasę CVentilator - wentylator
+		Ventilator *p_ventilator;	//wskaźnik na klasę Ventilator - wentylator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_VENTILATOR_DATA_JACK

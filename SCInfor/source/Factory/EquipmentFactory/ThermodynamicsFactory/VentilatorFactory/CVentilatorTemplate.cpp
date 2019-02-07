@@ -72,23 +72,23 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CVentilator
-	CVentilator* CVentilatorTemplate::Create(std::wstring id)
+	//Metoda tworzy obiekt klasy Ventilator
+	Ventilator* CVentilatorTemplate::Create(std::wstring id)
 	{
-		CVentilator* ventilator = gPhysicalManager.CreateVentilator(id);
+		Ventilator* ventilator = gPhysicalManager.CreateVentilator(id);
 		Fill(ventilator);
 		return ventilator;
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CVentilatorTemplate::Fill(CVentilator *p_ventilator)
+	void CVentilatorTemplate::Fill(Ventilator *p_ventilator)
 	{
 		if(p_ventilator)
 		{
 			CActorTemplate::Fill(p_ventilator);
 	
 			//przekazanie danych...
-			p_ventilator->SetVentilatorName(m_templ_ventilator_name);
+			p_ventilator->setVentilatorName(m_templ_ventilator_name);
 			p_ventilator->setPerformance(m_templ_performance);
 			p_ventilator->setPerformanceFactor(m_templ_performance_factor);
 			p_ventilator->setEnergyConsumption(m_templ_energy_consumption);

@@ -8,7 +8,7 @@
 #define H_AMMO_TEMPLATE_JACK
 
 #include "../../../CActorTemplate.h"
-#include "../../../../Equipment/Weapon/Ammo/CAmmo.h"
+#include "../../../../Equipment/Weapon/Ammo/Ammo.h"
 
 namespace factory
 {
@@ -56,18 +56,18 @@ namespace factory
 		bool Load(CXml &xml);
 
 		///
-		///Metoda tworzy obiekt klasy CAmmo
+		///Metoda tworzy obiekt klasy Ammo
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CAmmo* Create(std::wstring id = L"");
+		Ammo* Create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_ammo - wskaünik na obiekt klasy CAmmo
+		///@param *p_ammo - wskaünik na obiekt klasy Ammo
 		///
-		virtual void Fill(CAmmo *p_ammo);
+		virtual void Fill(Ammo *p_ammo);
 
 	private:
 

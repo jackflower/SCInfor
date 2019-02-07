@@ -63,14 +63,14 @@ namespace equipment
 	class FuelBar;
 	class Airconditioning;
 	class ThermalInsulation;
-	class CVentilator;
+	class Ventilator;
 	class WindTurbine;
 	class SolarCell;
 	class LightingEquipment;
 
 	namespace weapon
 	{
-		class CAmmo;
+		class Ammo;
 		class CGun;
 	}
 
@@ -254,18 +254,18 @@ namespace logic
 		ThermalInsulation *CreateThermalInsulation(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CVentilator i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Ventilator i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CVentilator *CreateVentilator(const std::wstring &uniqueId = L"");
+		Ventilator *CreateVentilator(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CAmmo i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Ammo i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CAmmo *CreateAmmo(const std::wstring &uniqueId = L"");
+		Ammo *CreateAmmo(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CGun i zwraca wskaünik na ten obiekt

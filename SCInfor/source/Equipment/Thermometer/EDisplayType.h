@@ -1,4 +1,4 @@
-//  ________________________________________________________________________________
+Ôªø//  ________________________________________________________________________________
 // | EDisplayTypes.h - enumeration of displayable information and presentation data |
 // | Jack Flower - April 2015                                                       |
 // |________________________________________________________________________________|
@@ -8,12 +8,12 @@
 #define H_E_DISPLAY_TYPE_JACK
 
 ///
-///wyliczenie typÛw wyúwietlania, prezentacji temperatury
+///wyliczenie typ√≥w wy≈õwietlania, prezentacji temperatury
 ///
 enum EDisplayType
 {
-	PROGRESS_BAR,		//wskaünik liniowy
-	DISK_INDICATOR,		//wskaünik zegarowy
-	DIGITAL_DISPLAY		//wskaünik cyfrowy - wartoúÊ liczbowa
+	PROGRESS_BAR,		//wska≈∫nik liniowy
+	DISK_INDICATOR,		//wska≈∫nik zegarowy
+	DIGITAL_DISPLAY		//wska≈∫nik cyfrowy - warto≈õƒá liczbowa
 };
 #endif//H_E_DISPLAY_TYPE_JACK

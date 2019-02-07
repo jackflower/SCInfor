@@ -70,7 +70,7 @@ namespace equipmentdata
 
 	private:
 
-		Battery *p_battery;	//wskaźnik na klasę CVentilator - wentylator
+		Battery *p_battery;	//wskaźnik na klasę Ventilator - wentylator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_BATTERY_DATA_JACK

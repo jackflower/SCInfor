@@ -13,7 +13,7 @@
 #include "../../Equipment/Engine/Engine.h"
 #include "../../Equipment/Energy/Energy.h"
 #include "../../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
-#include "../../Equipment/Thermodynamics/Ventilator/CVentilator.h"
+#include "../../Equipment/Thermodynamics/Ventilator/Ventilator.h"
 #include "../../Equipment/Weapon/Gun/CGun.h"
 #include "../../Utilities/Utilities/Utilities.h"
 #include "../../Game/Game.h"
@@ -324,14 +324,14 @@ namespace logic
 		m_airconditiong_data.setAirconditioning(airconditioning);
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy CVentilator
-	CVentilator* CActor::GetVentilator()
+	//Metoda zwraca wskaünik na obiekt klasy Ventilator
+	Ventilator* CActor::GetVentilator()
 	{
 		return m_ventilator_data.getVentilator();
 	}
 
-	//Metoda ustawia wskaünik na obiekt klasy CVentilator
-	void CActor::SetVentilator(CVentilator* ventilator)
+	//Metoda ustawia wskaünik na obiekt klasy Ventilator
+	void CActor::SetVentilator(Ventilator* ventilator)
 	{
 		m_ventilator_data.setVentilator(ventilator);
 	}
@@ -503,7 +503,7 @@ namespace logic
 		m_airconditiong_data.Transform(this, m_airconditiong_data.getAirconditioning());
 	}
 
-	//metoda aktualizuje funkcjonalnoúÊ CVentilator
+	//metoda aktualizuje funkcjonalnoúÊ Ventilator
 	void CActor::updateVentilator(float dt)
 	{
 		if(m_ventilator_data.getVentilator())//mudu≥ klimatyzatora

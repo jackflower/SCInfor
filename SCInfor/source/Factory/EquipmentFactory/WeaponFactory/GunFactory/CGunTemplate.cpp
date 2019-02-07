@@ -89,7 +89,7 @@ namespace factory
 			m_templ_ammo_data.setUseEquipment(xml.GetBool(node, "use_ammo"));
 			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ ammo
 			std::string ammo_filename_tmp = xml.GetString(node, "ammo_filename");
-			//emitery dla obiektu klasy CAmmo
+			//emitery dla obiektu klasy Ammo
 			m_templ_ammo_data.setEmiter(xml.GetFloat(node, "ammo_emiter_x"), xml.GetFloat(node, "ammo_emiter_y"));
 
 			if (m_templ_ammo_data.getUseEquipment())
@@ -167,7 +167,7 @@ namespace factory
 				{
 					//pobieramy sk³adow¹ ammo i wzorzec wype³nia wskaŸnik danymi
 					p_gun->setAmmo(p_templ_ammo->Create(L""));
-					//przekazanie wskaŸnikowi na klasê CAmmo informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê Ammo informacji o wzorcu
 					p_gun->getAmmo()->SetTemplate(p_templ_ammo);
 					//decorator
 					p_gun->getAmmo()->setSmoothing(true);

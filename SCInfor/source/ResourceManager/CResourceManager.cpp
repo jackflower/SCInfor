@@ -437,7 +437,7 @@ namespace resource
 		//		- CSolarBatteryTemplate					->tworzy->	SolarBattery
 		//		- CAirconditioningTemplate				->tworzy->	Airconditioning
 		//		- CThermalInsulationTemplate			->tworzy->	ThermalInsulation
-		//		- CVentilatorTemplate					->tworzy->	CVentilator
+		//		- CVentilatorTemplate					->tworzy->	Ventilator
 		//		- CWindTurbineTemplate					->tworzy->	WindTurbine
 		//		- CSolarCellTemplate					->tworzy->	SolarCell
 		//		- CWindPowerStationTemplate				->tworzy->	CWindPowerStation
@@ -451,7 +451,7 @@ namespace resource
 		//		- CPowerRelayStationTemplate			->tworzy->	CPowerRelayStation
 		//		- CCommunicationTemplate				->tworzy->	CCommunication
 		//		- CSlotsRateTemplate					->tworzy->	CSlotsRate
-		//		- CAmmoTemplate							->tworzy->	CAmmo
+		//		- CAmmoTemplate							->tworzy->	Ammo
 		//		- CGunTemplate							->tworzy->	CGun
 
 		//Poza tym mo¿emy za³adowaæ do pamiêci, czyli do naszego CResourceManager

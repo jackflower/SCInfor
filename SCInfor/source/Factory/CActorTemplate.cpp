@@ -208,7 +208,7 @@ namespace factory
 			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u wentylatora
 			std::string ventilator_filename_tmp = xml.GetString(node, "ventilator_filename");
 
-			//emitery dla obiektu klasy CVentilator (dopisaæ w xml'u)
+			//emitery dla obiektu klasy Ventilator (dopisaæ w xml'u)
 			m_templ_ventilator_data.setEmiter(xml.GetFloat(node, "ventilator_emiter_x"), xml.GetFloat(node, "ventilator_emiter_y"));
 
 			if(m_templ_ventilator_data.getUseEquipment())
@@ -354,14 +354,14 @@ namespace factory
 			//jeœli obiekt posiada modu³ wentylatora
 			if(m_templ_ventilator_data.getUseEquipment())
 			{
-				//emitery dla obiektu klasy CVentilator
+				//emitery dla obiektu klasy Ventilator
 				actor->setVentilatorTransformed(m_templ_ventilator_data.getTransformed());
 
 				if(p_templ_ventilator)
 				{
 					//pobieramy sk³adow¹ modu³ wentylatora i wzorzec wype³nia wskaŸnik danymi
 					actor->SetVentilator(p_templ_ventilator->Create(L""));
-					//przekazanie wskaŸnikowi na klasê CVentilator informacji o wzorcu
+					//przekazanie wskaŸnikowi na klasê Ventilator informacji o wzorcu
 					actor->GetVentilator()->SetTemplate(p_templ_ventilator);
 					//decorator
 					actor->GetVentilator()->setSmoothing(true);

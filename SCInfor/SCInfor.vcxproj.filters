@@ -387,15 +387,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.cpp">
-      <Filter>source\Equipment\Thermodynamics\Ventilator</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Thermometer\CThermometer.cpp">
-      <Filter>source\Equipment\Thermometer</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Equipment\Weapon\Ammo\CAmmo.cpp">
-      <Filter>source\Equipment\Weapon\Ammo</Filter>
-    </ClCompile>
     <ClCompile Include="source\Equipment\Weapon\Ammunition\CMagazineAmmunition.cpp">
       <Filter>source\Equipment\Weapon\Ammunition</Filter>
     </ClCompile>
@@ -996,6 +987,15 @@
     <ClCompile Include="source\Equipment\Thermodynamics\ThermalInsulation\ThermalInsulation.cpp">
       <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
     </ClCompile>
+    <ClCompile Include="source\Equipment\Thermodynamics\Ventilator\Ventilator.cpp">
+      <Filter>source\Equipment\Thermodynamics\Ventilator</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Thermometer\Thermometer.cpp">
+      <Filter>source\Equipment\Thermometer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Equipment\Weapon\Ammo\Ammo.cpp">
+      <Filter>source\Equipment\Weapon\Ammo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1036,17 +1036,8 @@
     <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\EVentilatorState.h">
       <Filter>source\Equipment\Thermodynamics\Ventilator</Filter>
     </ClInclude>
-    <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.h">
-      <Filter>source\Equipment\Thermodynamics\Ventilator</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Thermometer\CThermometer.h">
-      <Filter>source\Equipment\Thermometer</Filter>
-    </ClInclude>
     <ClInclude Include="source\Equipment\Thermometer\EDisplayType.h">
       <Filter>source\Equipment\Thermometer</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Equipment\Weapon\Ammo\CAmmo.h">
-      <Filter>source\Equipment\Weapon\Ammo</Filter>
     </ClInclude>
     <ClInclude Include="source\Equipment\Weapon\Ammo\EAmmoState.h">
       <Filter>source\Equipment\Weapon\Ammo</Filter>
@@ -1749,6 +1740,15 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\ThermalInsulation.h">
       <Filter>source\Equipment\Thermodynamics\ThermalInsulation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\Ventilator.h">
+      <Filter>source\Equipment\Thermodynamics\Ventilator</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Thermometer\Thermometer.h">
+      <Filter>source\Equipment\Thermometer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Equipment\Weapon\Ammo\Ammo.h">
+      <Filter>source\Equipment\Weapon\Ammo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

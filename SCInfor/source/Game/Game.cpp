@@ -48,7 +48,7 @@
 #include "../Logic/CPhysicalManager.h"
 #include "../Information/CInformation.h"
 #include "../Map/Ground/CGround.h"
-#include "../Equipment/Weapon/Ammo/CAmmo.h"
+#include "../Equipment/Weapon/Ammo/Ammo.h"
 #include "../Equipment/Weapon/Gun/CGun.h"
 #include "../Factory/EquipmentFactory/CommunicationFactory/CCommunicationTemplate.h"
 #include "../Logic/Communication/CCommunication.h"

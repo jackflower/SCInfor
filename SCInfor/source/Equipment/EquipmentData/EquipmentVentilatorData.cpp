@@ -5,7 +5,7 @@
 //
 
 #include "EquipmentVentilatorData.h"
-#include "../Thermodynamics/Ventilator/CVentilator.h"
+#include "../Thermodynamics/Ventilator/Ventilator.h"
 #include "../../Logic/CPhysicalManager.h"
 
 namespace equipmentdata
@@ -43,14 +43,14 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CVentilator
-	CVentilator* EquipmentVentilatorData::getVentilator()
+	//Metoda zwraca wskaźnik na obiekt klasy Ventilator
+	Ventilator* EquipmentVentilatorData::getVentilator()
 	{
 		return p_ventilator;
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CVentilator
-	void EquipmentVentilatorData::setVentilator(CVentilator * ventilator)
+	//Metoda ustawia wskaźnik na obiekt klasy Ventilator
+	void EquipmentVentilatorData::setVentilator(Ventilator * ventilator)
 	{
 		p_ventilator = ventilator;
 	}

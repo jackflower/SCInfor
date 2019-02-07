@@ -163,9 +163,9 @@
     <ClCompile Include="source\Equipment\Lightingequipment\LightingEquipment.cpp" />
     <ClCompile Include="source\Equipment\Thermodynamics\Airconditioning\Airconditioning.cpp" />
     <ClCompile Include="source\Equipment\Thermodynamics\ThermalInsulation\ThermalInsulation.cpp" />
-    <ClCompile Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.cpp" />
-    <ClCompile Include="source\Equipment\Thermometer\CThermometer.cpp" />
-    <ClCompile Include="source\Equipment\Weapon\Ammo\CAmmo.cpp" />
+    <ClCompile Include="source\Equipment\Thermodynamics\Ventilator\Ventilator.cpp" />
+    <ClCompile Include="source\Equipment\Thermometer\Thermometer.cpp" />
+    <ClCompile Include="source\Equipment\Weapon\Ammo\Ammo.cpp" />
     <ClCompile Include="source\Equipment\Weapon\Ammunition\CMagazineAmmunition.cpp" />
     <ClCompile Include="source\Equipment\Weapon\CCaliber.cpp" />
     <ClCompile Include="source\Equipment\Weapon\Gun\CGun.cpp" />
@@ -382,11 +382,11 @@
     <ClInclude Include="source\Equipment\Thermodynamics\Airconditioning\EAirconditioningState.h" />
     <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\ThermalInsulation.h" />
     <ClInclude Include="source\Equipment\Thermodynamics\ThermalInsulation\EThermalInsulationState.h" />
-    <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\CVentilator.h" />
+    <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\Ventilator.h" />
     <ClInclude Include="source\Equipment\Thermodynamics\Ventilator\EVentilatorState.h" />
-    <ClInclude Include="source\Equipment\Thermometer\CThermometer.h" />
+    <ClInclude Include="source\Equipment\Thermometer\Thermometer.h" />
     <ClInclude Include="source\Equipment\Thermometer\EDisplayType.h" />
-    <ClInclude Include="source\Equipment\Weapon\Ammo\CAmmo.h" />
+    <ClInclude Include="source\Equipment\Weapon\Ammo\Ammo.h" />
     <ClInclude Include="source\Equipment\Weapon\Ammo\EAmmoState.h" />
     <ClInclude Include="source\Equipment\Weapon\Ammunition\CMagazineAmmunition.h" />
     <ClInclude Include="source\Equipment\Weapon\CCaliber.h" />
