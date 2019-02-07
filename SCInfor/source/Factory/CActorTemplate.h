@@ -48,8 +48,8 @@ namespace factory
 	class EngineTemplate;
 	class EnergyTemplate;
 	class AirconditioningTemplate;
-	class CVentilatorTemplate;
-	class CGunTemplate;
+	class VentilatorTemplate;
+	class GunTemplate;
 	class WindTurbineTemplate;
 	class CWindPowerStationTemplate;
 	class CPhysicalInfoTemplate;
@@ -113,8 +113,8 @@ namespace factory
 		EngineTemplate*				p_templ_engine;					//dane wzorca obiektu Engine
 		EnergyTemplate*				p_templ_energy;					//dane wzorca obiektu Energy
 		AirconditioningTemplate*		p_templ_airconditioning;		//wskaünik na obiekt Airconditioning z logikπ zarzπdzania modu≥em klimatyzatora
-		CVentilatorTemplate*			p_templ_ventilator;				//wskaünik na obiekt CVentilatorTemplate z logikπ zarzπdzania modu≥em wentylatora
-		CGunTemplate*					p_templ_gun;					//wskaünik na obiekt CGunTemplate z logikπ zarzπdzania dzia≥em
+		VentilatorTemplate*			p_templ_ventilator;				//wskaünik na obiekt VentilatorTemplate z logikπ zarzπdzania modu≥em wentylatora
+		GunTemplate*					p_templ_gun;					//wskaünik na obiekt GunTemplate z logikπ zarzπdzania dzia≥em
 		
 		bool							m_templ_use_physical_info;		//flaga, czy obiekt posiada wskaünik energii i paliwa
 		CPhysicalInfoTemplate*			p_templ_physical_info;			//dane wzorca obiekty CPhysicalInfoTemplate

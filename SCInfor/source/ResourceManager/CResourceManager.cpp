@@ -36,7 +36,7 @@
 #include "../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/SolarBatteryTemplate.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/ThermalInsulationFactory/ThermalInsulationTemplate.h"
-#include "../Factory/EquipmentFactory/ThermodynamicsFactory/VentilatorFactory/CVentilatorTemplate.h"
+#include "../Factory/EquipmentFactory/ThermodynamicsFactory/VentilatorFactory/VentilatorTemplate.h"
 #include "../Factory/EquipmentFactory/IndustrialFactory/PowerModuleFactory/WindTurbineTemplate.h"
 #include "../Factory/EquipmentFactory/IndustrialFactory/PowerModuleFactory/SolarCellTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/CWindPowerStationTemplate.h"
@@ -44,8 +44,8 @@
 #include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/CPowerRelayStationTemplate.h"
 #include "../Factory/EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/CSlotsRateTemplate.h"
-#include "../Factory/EquipmentFactory/WeaponFactory/AmmoFactory/CAmmoTemplate.h"
-#include "../Factory/EquipmentFactory/WeaponFactory/GunFactory/CGunTemplate.h"
+#include "../Factory/EquipmentFactory/WeaponFactory/AmmoFactory/AmmoTemplate.h"
+#include "../Factory/EquipmentFactory/WeaponFactory/GunFactory/GunTemplate.h"
 #include "../Map/CMap.h"
 #include "../Map/Ground/CGround.h"
 
@@ -437,7 +437,7 @@ namespace resource
 		//		- SolarBatteryTemplate					->tworzy->	SolarBattery
 		//		- AirconditioningTemplate				->tworzy->	Airconditioning
 		//		- ThermalInsulationTemplate			->tworzy->	ThermalInsulation
-		//		- CVentilatorTemplate					->tworzy->	Ventilator
+		//		- VentilatorTemplate					->tworzy->	Ventilator
 		//		- WindTurbineTemplate					->tworzy->	WindTurbine
 		//		- SolarCellTemplate					->tworzy->	SolarCell
 		//		- CWindPowerStationTemplate				->tworzy->	CWindPowerStation
@@ -451,8 +451,8 @@ namespace resource
 		//		- CPowerRelayStationTemplate			->tworzy->	CPowerRelayStation
 		//		- CommunicationTemplate				->tworzy->	CCommunication
 		//		- CSlotsRateTemplate					->tworzy->	CSlotsRate
-		//		- CAmmoTemplate							->tworzy->	Ammo
-		//		- CGunTemplate							->tworzy->	Gun
+		//		- AmmoTemplate							->tworzy->	Ammo
+		//		- GunTemplate							->tworzy->	Gun
 
 		//Poza tym mo¿emy za³adowaæ do pamiêci, czyli do naszego CResourceManager
 		//wzorce na obiekty ca³ego levelu.
@@ -500,7 +500,7 @@ namespace resource
 		else if(type == "thermalinsulation")
 			resource = new ThermalInsulationTemplate();
 		else if(type == "ventilator")
-			resource = new CVentilatorTemplate();
+			resource = new VentilatorTemplate();
 		else if(type == "windturbine")
 			resource = new WindTurbineTemplate();
 		else if(type == "solarcell")
@@ -526,9 +526,9 @@ namespace resource
 		else if (type == "ground")
 			resource = new CGroundTemplate();
 		else if (type == "ammo")
-			resource = new CAmmoTemplate();
+			resource = new AmmoTemplate();
 		else if (type == "gun")
-			resource = new CGunTemplate();
+			resource = new GunTemplate();
 		else if (type == "robot")
 			resource = new CRobotTemplate();
 		else

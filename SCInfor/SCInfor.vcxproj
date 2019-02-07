@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory\MagazineAmmunitionTemplate.cpp" />
     <ClCompile Include="source\Equipment\Switch.cpp" />
     <ClCompile Include="source\Equipment\Energy\Battery\Battery.cpp" />
     <ClCompile Include="source\Equipment\Energy\Battery\SolarBattery.cpp" />
@@ -191,9 +192,9 @@
     <ClCompile Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\WindTurbineTemplate.cpp" />
     <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\AirconditioningTemplate.cpp" />
     <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\ThermalInsulationTemplate.cpp" />
-    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.cpp" />
-    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\CAmmoTemplate.cpp" />
-    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\CGunTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\VentilatorTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\AmmoTemplate.cpp" />
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\GunTemplate.cpp" />
     <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CPowerStationTemplate.cpp" />
     <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationMultipledTemplate.cpp" />
     <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationTemplate.cpp" />
@@ -344,6 +345,7 @@
     <Text Include="notes\notes.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory\MagazineAmmunitionTemplate.h" />
     <ClInclude Include="source\Equipment\Switch.h" />
     <ClInclude Include="source\Equipment\Energy\Battery\Battery.h" />
     <ClInclude Include="source\Equipment\Energy\Battery\SolarBattery.h" />
@@ -415,9 +417,9 @@
     <ClInclude Include="source\Factory\EquipmentFactory\IndustrialFactory\PowerModuleFactory\WindTurbineTemplate.h" />
     <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\AirconditioningFactory\AirconditioningTemplate.h" />
     <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\ThermalInsulationTemplate.h" />
-    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.h" />
-    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\CAmmoTemplate.h" />
-    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\CGunTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\VentilatorTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\AmmoTemplate.h" />
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\GunTemplate.h" />
     <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CPowerStationTemplate.h" />
     <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationMultipledTemplate.h" />
     <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationTemplate.h" />

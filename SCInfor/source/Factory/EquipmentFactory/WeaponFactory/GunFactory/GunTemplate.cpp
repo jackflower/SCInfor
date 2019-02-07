@@ -1,10 +1,10 @@
-//  _________________________________________
-// | CGunTemplate.cpp - class implementation |
-// | Jack Flower June 2014.                  |
-// |_________________________________________|
+ï»¿//  ________________________________________
+// | GunTemplate.cpp - class implementation |
+// | Jack Flower June 2014.                 |
+// |________________________________________|
 //
 
-#include "CGunTemplate.h"
+#include "GunTemplate.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 #include "../../../../Rendering/Displayable/CDisplayable.h"
@@ -16,84 +16,84 @@ using namespace rendering::animation;
 namespace factory
 {
 
-	RTTI_IMPL(CGunTemplate, CActorTemplate);
+	RTTI_IMPL(GunTemplate, CActorTemplate);
 
 	//Konstruktor
-	CGunTemplate::CGunTemplate(void)
+	GunTemplate::GunTemplate(void)
 	:
-		CActorTemplate						(),//konstruktor klasy bazowej
-		m_templ_ammo_data					(),
-		p_templ_ammo						(NULL),
-		m_templ_time_ammo_load_delay		(0.0f),
-		m_templ_time_shot					(0.0f),
-		m_templ_range_shot					(0.0f),
-		m_templ_bullet_speed				(0.0f),
-		m_templ_barrel_count				(0),
-		m_templ_target_altitude				(0.0f),
-		m_templ_explosion_emiter			(0.0f, 0.0f),
-		m_templ_ammo_time_delayed			(0.0f),
-		m_templ_limit_amount_damage			(0),
-		m_templ_damage						()
+		CActorTemplate(),//konstruktor klasy bazowej
+		m_templ_ammo_data(),
+		p_templ_ammo(NULL),
+		m_templ_time_ammo_load_delay(0.0f),
+		m_templ_time_shot(0.0f),
+		m_templ_range_shot(0.0f),
+		m_templ_bullet_speed(0.0f),
+		m_templ_barrel_count(0),
+		m_templ_target_altitude(0.0f),
+		m_templ_explosion_emiter(0.0f, 0.0f),
+		m_templ_ammo_time_delayed(0.0f),
+		m_templ_limit_amount_damage(0),
+		m_templ_damage()
 	{
 	}
 
 	//Destruktor wirtualny
-	CGunTemplate::~CGunTemplate(void)
+	GunTemplate::~GunTemplate(void)
 	{
-		//CActorTemplate					not edit
-		//m_templ_ammo_data					not edit
-		p_templ_ammo						= NULL;
-		m_templ_time_ammo_load_delay		= 0.0f;
-		m_templ_time_shot					= 0.0f;
-		m_templ_range_shot					= 0.0f;
-		m_templ_bullet_speed				= 0.0f;
-		m_templ_barrel_count				= 0;
-		m_templ_target_altitude				= 0.0f;
-		m_templ_explosion_emiter.x			= 0.0f;
-		m_templ_explosion_emiter.y			= 0.0f;
-		m_templ_ammo_time_delayed			= 0.0f;
-		m_templ_limit_amount_damage			= 0;
-		//m_templ_damage					not edit
+		//CActorTemplate
+		//m_templ_ammo_data
+		p_templ_ammo = NULL;
+		m_templ_time_ammo_load_delay = 0.0f;
+		m_templ_time_shot = 0.0f;
+		m_templ_range_shot = 0.0f;
+		m_templ_bullet_speed = 0.0f;
+		m_templ_barrel_count = 0;
+		m_templ_target_altitude = 0.0f;
+		m_templ_explosion_emiter.x = 0.0f;
+		m_templ_explosion_emiter.y = 0.0f;
+		m_templ_ammo_time_delayed = 0.0f;
+		m_templ_limit_amount_damage = 0;
+		//m_templ_damage
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CGunTemplate::GetType() const
+	const std::string GunTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób
-	void CGunTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b
+	void GunTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CGunTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool GunTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml ³aduje wspólne cechy CActor
-	bool CGunTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml Å‚aduje wspÃ³lne cechy CActor
+	bool GunTemplate::load(CXml & xml)
 	{
-		//³adowanie danych klasy bazowej CActor
+		//Å‚adowanie danych klasy bazowej CActor
 		if (!CActorTemplate::load(xml)) return false;
 
-		//³adowanie modu³u prezentacji magazynka z amunicj¹
+		//Å‚adowanie moduÅ‚u prezentacji magazynka z amunicjÄ…
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "gun_data"))
 		{
-			//flaga, czy obiekt posiada magazynek z amunicj¹
+			//flaga, czy obiekt posiada magazynek z amunicjÄ…
 			//m_templ_use_ammo = xml.GetBool(node, "use_ammo");
 			m_templ_ammo_data.setUseEquipment(xml.GetBool(node, "use_ammo"));
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ ammo
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… ammo
 			std::string ammo_filename_tmp = xml.GetString(node, "ammo_filename");
 			//emitery dla obiektu klasy Ammo
 			m_templ_ammo_data.setEmiter(xml.GetFloat(node, "ammo_emiter_x"), xml.GetFloat(node, "ammo_emiter_y"));
 
 			if (m_templ_ammo_data.getUseEquipment())
-				p_templ_ammo = (CAmmoTemplate*)gResourceManager.GetPhysicalTemplate(ammo_filename_tmp);
+				p_templ_ammo = (AmmoTemplate*)gResourceManager.GetPhysicalTemplate(ammo_filename_tmp);
 	
 			m_templ_time_ammo_load_delay = xml.GetFloat(node, "time_ammo_load_delay");
 			m_templ_time_shot = xml.GetFloat(node, "time_shot");
@@ -110,20 +110,20 @@ namespace factory
 			m_templ_damage.setDurationDamage(xml.GetFloat(node, "duration_damage"));
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy Gun
-	Gun* CGunTemplate::create(std::wstring id)
+	Gun *GunTemplate::create(std::wstring id)
 	{
-		Gun* gun = gPhysicalManager.CreateGun(id);
+		Gun *gun = gPhysicalManager.CreateGun(id);
 		fill(gun);
 		return gun;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CGunTemplate::fill(Gun *p_gun)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void GunTemplate::fill(Gun *p_gun)
 	{
 		if(p_gun)
 		{
@@ -146,7 +146,7 @@ namespace factory
 			//decorate	
 			p_gun->setSmoothing(true);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_gun)
 			{
 				p_gun->SetAnimSet(p_templ_animations);
@@ -160,14 +160,14 @@ namespace factory
 					p_gun->SetAnimationHead(p_templ_animations->GetGunHeadDefaultAnim());
 			}
 
-			//jeœli obiekt posiada ammo (magazynek z amunicj¹)
+			//jeÅ›li obiekt posiada ammo (magazynek z amunicjÄ…)
 			if (m_templ_ammo_data.getUseEquipment())
 			{
 				if (p_gun)
 				{
-					//pobieramy sk³adow¹ ammo i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… ammo i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					p_gun->setAmmo(p_templ_ammo->create(L""));
-					//przekazanie wskaŸnikowi na klasê Ammo informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ Ammo informacji o wzorcu
 					p_gun->getAmmo()->SetTemplate(p_templ_ammo);
 					//decorator
 					p_gun->getAmmo()->setSmoothing(true);

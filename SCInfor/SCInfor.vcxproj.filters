@@ -382,6 +382,9 @@
     <Filter Include="source\Factory\MapPhysicalFactory">
       <UniqueIdentifier>{4422b8b5-4cc8-4d67-91b6-1a1370bf3b08}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory">
+      <UniqueIdentifier>{61fc957f-bf65-41cd-bc46-141f87ce510c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -413,15 +416,6 @@
     </ClCompile>
     <ClCompile Include="source\Factory\CRobotTemplate.cpp">
       <Filter>source\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\CAmmoTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\CGunTemplate.cpp">
-      <Filter>source\Factory\EquipmentFactory\WeaponFactory\GunFactory</Filter>
     </ClCompile>
     <ClCompile Include="source\Information\CInfoManager.cpp">
       <Filter>source\Information</Filter>
@@ -996,6 +990,18 @@
     <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\ThermalInsulationTemplate.cpp">
       <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory</Filter>
     </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\VentilatorTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\AmmoTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\GunTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\GunFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory\MagazineAmmunitionTemplate.cpp">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1074,15 +1080,6 @@
     </ClInclude>
     <ClInclude Include="source\Factory\CRobotTemplate.h">
       <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\CVentilatorTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\CAmmoTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\CGunTemplate.h">
-      <Filter>source\Factory\EquipmentFactory\WeaponFactory\GunFactory</Filter>
     </ClInclude>
     <ClInclude Include="source\Game\Listener\IFrameListener.h">
       <Filter>source\Game\Listener</Filter>
@@ -1749,6 +1746,18 @@
     </ClInclude>
     <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory\ThermalInsulationTemplate.h">
       <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\ThermalInsulationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory\VentilatorTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\ThermodynamicsFactory\VentilatorFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory\AmmoTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmoFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\GunFactory\GunTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\GunFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory\MagazineAmmunitionTemplate.h">
+      <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

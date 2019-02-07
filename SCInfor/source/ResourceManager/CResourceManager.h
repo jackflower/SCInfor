@@ -39,7 +39,7 @@ namespace factory
 	class SolarBatteryTemplate;
 	class AirconditioningTemplate;
 	class ThermalInsulationTemplate;
-	class CVentilatorTemplate;
+	class VentilatorTemplate;
 	class WindTurbineTemplate;
 	class SolarCellTemplate;
 	class CWindPowerStationTemplate;
@@ -53,8 +53,8 @@ namespace factory
 	class CommunicationTemplate;
 	class CSlotsRateTemplate;
 	class CGroundTemplate;
-	class CAmmoTemplate;
-	class CGunTemplate;
+	class AmmoTemplate;
+	class GunTemplate;
 };
 
 ///

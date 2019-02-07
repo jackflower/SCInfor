@@ -10,8 +10,8 @@
 #include "EquipmentFactory/EnergyFactory/EnergyTemplate.h"
 #include "EquipmentFactory/EngineFactory/EngineTemplate.h"
 #include "EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
-#include "EquipmentFactory/ThermodynamicsFactory/VentilatorFactory/CVentilatorTemplate.h"
-#include "EquipmentFactory/WeaponFactory/GunFactory/CGunTemplate.h"
+#include "EquipmentFactory/ThermodynamicsFactory/VentilatorFactory/VentilatorTemplate.h"
+#include "EquipmentFactory/WeaponFactory/GunFactory/GunTemplate.h"
 #include "EquipmentFactory/IndustrialFactory/PowerModuleFactory/WindTurbineTemplate.h"
 #include "EquipmentFactory/EngineFactory/FuelBarFactory/FuelBarTemplate.h"
 #include "../Logic/Actor/CActor.h"
@@ -212,7 +212,7 @@ namespace factory
 			m_templ_ventilator_data.setEmiter(xml.GetFloat(node, "ventilator_emiter_x"), xml.GetFloat(node, "ventilator_emiter_y"));
 
 			if(m_templ_ventilator_data.getUseEquipment())
-				p_templ_ventilator = (CVentilatorTemplate*)gResourceManager.GetPhysicalTemplate(ventilator_filename_tmp);
+				p_templ_ventilator = (VentilatorTemplate*)gResourceManager.GetPhysicalTemplate(ventilator_filename_tmp);
 		}
 
 		//³adowanie modu³u dzia³a (dopisaæ w xml'u)...
@@ -227,7 +227,7 @@ namespace factory
 			m_templ_gun_data.setEmiter(xml.GetFloat(node, "gun_emiter_x"), xml.GetFloat(node, "gun_emiter_y"));
 
 			if (m_templ_gun_data.getUseEquipment())
-				p_templ_gun = (CGunTemplate*)gResourceManager.GetPhysicalTemplate(gun_filename_tmp);
+				p_templ_gun = (GunTemplate*)gResourceManager.GetPhysicalTemplate(gun_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
