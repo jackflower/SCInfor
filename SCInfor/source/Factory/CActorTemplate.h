@@ -51,7 +51,7 @@ namespace factory
 	class VentilatorTemplate;
 	class GunTemplate;
 	class WindTurbineTemplate;
-	class CWindPowerStationTemplate;
+	class WindPowerStationTemplate;
 	class CPhysicalInfoTemplate;
 }
 

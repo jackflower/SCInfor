@@ -810,24 +810,6 @@
     <ClCompile Include="source\Logic\Physics\CPhysicsData.cpp">
       <Filter>source\Logic\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CPowerStationTemplate.cpp">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationMultipledTemplate.cpp">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationTemplate.cpp">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CPowerRelayStationTemplate.cpp">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CRelayStationTemplate.cpp">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CSlotsRateTemplate.cpp">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
-    </ClCompile>
     <ClCompile Include="source\Factory\InformationFactory\CInformationTemplate.cpp">
       <Filter>source\Factory\InformationFactory</Filter>
     </ClCompile>
@@ -1001,6 +983,24 @@
     </ClCompile>
     <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory\MagazineAmmunitionTemplate.cpp">
       <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\PowerRelayStationTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\RelayStationTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\SlotsRateTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerStationTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\WindPowerStationMultipledTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\WindPowerStationTemplate.cpp">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1567,24 +1567,6 @@
     <ClInclude Include="source\Logic\Physics\CPhysicsData.h">
       <Filter>source\Logic\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CPowerStationTemplate.h">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationMultipledTemplate.h">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\CWindPowerStationTemplate.h">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CPowerRelayStationTemplate.h">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CRelayStationTemplate.h">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\CSlotsRateTemplate.h">
-      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
-    </ClInclude>
     <ClInclude Include="source\Factory\InformationFactory\CInformationTemplate.h">
       <Filter>source\Factory\InformationFactory</Filter>
     </ClInclude>
@@ -1758,6 +1740,24 @@
     </ClInclude>
     <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory\MagazineAmmunitionTemplate.h">
       <Filter>source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\PowerRelayStationTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\RelayStationTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory\SlotsRateTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory\PowerRelayFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\PowerStationTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\WindPowerStationMultipledTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\WindPowerStationTemplate.h">
+      <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

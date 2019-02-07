@@ -1,67 +1,67 @@
-//  ______________________________________________________
-// | CWindPowerStationTemplate.cpp - class implementation |
-// | Jack Flower - August 2014                            |
-// |______________________________________________________|
+ï»¿//  _____________________________________________________
+// | WindPowerStationTemplate.cpp - class implementation |
+// | Jack Flower - August 2014                           |
+// |_____________________________________________________|
 //
 
-#include "CWindPowerStationTemplate.h"
+#include "WindPowerStationTemplate.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CWindPowerStationTemplate, CPowerStationTemplate);
+	RTTI_IMPL(WindPowerStationTemplate, PowerStationTemplate);
 
 	//Konstruktor
-	CWindPowerStationTemplate::CWindPowerStationTemplate(void)
+	WindPowerStationTemplate::WindPowerStationTemplate()
 	:
-		CPowerStationTemplate				(),//konstruktor klasy bazowej
-		m_templ_energy_condensation_time	(0.0f),
-		m_templ_use_windturbine				(false),
-		m_templ_portion_energy				(0.0f),
-		m_templ_use_rotation_head			(false),
-		m_templ_speed_rotation_head			(0.0f),
-		p_templ_windturbine					(NULL)
+		PowerStationTemplate(),//konstruktor klasy bazowej
+		m_templ_energy_condensation_time(0.0f),
+		m_templ_use_windturbine(false),
+		m_templ_portion_energy(0.0f),
+		m_templ_use_rotation_head(false),
+		m_templ_speed_rotation_head(0.0f),
+		p_templ_windturbine(NULL)
 	{
 	}
 
 	//Destruktor wirtualny
-	CWindPowerStationTemplate::~CWindPowerStationTemplate(void)
+	WindPowerStationTemplate::~WindPowerStationTemplate()
 	{
-		//CPowerStationTemplate				not edit
-		m_templ_energy_condensation_time	= 0.0f;
-		m_templ_use_windturbine				= false;
-		m_templ_portion_energy				= 0.0f;
-		m_templ_use_rotation_head			= false;
-		m_templ_speed_rotation_head			= 0.0f;
-		p_templ_windturbine					= NULL;
+		//PowerStationTemplate
+		m_templ_energy_condensation_time = 0.0f;
+		m_templ_use_windturbine = false;
+		m_templ_portion_energy = 0.0f;
+		m_templ_use_rotation_head = false;
+		m_templ_speed_rotation_head = 0.0f;
+		p_templ_windturbine = NULL;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CWindPowerStationTemplate::GetType() const
+	const std::string WindPowerStationTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CWindPowerStationTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b - implementacje w klasach pochodnych
+	void WindPowerStationTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane
-	bool CWindPowerStationTemplate::load(const std::string &name)
+	//Wirtualna metoda Å‚adujÄ…ca dane
+	bool WindPowerStationTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane
-	bool CWindPowerStationTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane
+	bool WindPowerStationTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CPowerStationTemplate
-		if (!CPowerStationTemplate::load(xml)) return false;
+		//sprawdzamy, czy moÅ¼na zaÅ‚adowaÄ‡ dane z klasy bazowej PowerStationTemplate
+		if (!PowerStationTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "windpower_station_config"))
@@ -72,36 +72,36 @@ namespace factory
 			m_templ_speed_rotation_head = xml.GetFloat(node, "speed_rotation_head");
 		}
 
-		//nazwa pliku z konfiguracj¹ turbiny wiatrowej
+		//nazwa pliku z konfiguracjÄ… turbiny wiatrowej
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "windturbine_data"))
 		{
-			//flaga, czy obiekt posiada turbinê wiatrow¹
+			//flaga, czy obiekt posiada turbinÄ™ wiatrowÄ…
 			m_templ_use_windturbine = xml.GetBool(node, "use_windturbine");
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ turbiny wiatrowej
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… turbiny wiatrowej
 			std::string windturbine_filename_tmp = xml.GetString(node, "windturbine_filename");
 			
 			if(m_templ_use_windturbine)
 				p_templ_windturbine = (WindTurbineTemplate*)gResourceManager.GetPhysicalTemplate(windturbine_filename_tmp);
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy WindTurbine
-	CWindPowerStation* CWindPowerStationTemplate::create(std::wstring id)
+	CWindPowerStation* WindPowerStationTemplate::create(std::wstring id)
 	{
 		CWindPowerStation* windpower_station = gPhysicalManager.CreateWindPowerStation(id);
 		fill(windpower_station);
 		return windpower_station;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CWindPowerStationTemplate::fill(CWindPowerStation *p_windpower_station)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void WindPowerStationTemplate::fill(CWindPowerStation *p_windpower_station)
 	{
 		if(p_windpower_station)
 		{
-			CPowerStationTemplate::fill(p_windpower_station);
+			PowerStationTemplate::fill(p_windpower_station);
 			
 			//kategoria
 			p_windpower_station->SetCategory(PHYSICAL_WINDPOWERSTATION);
@@ -113,18 +113,18 @@ namespace factory
 			p_windpower_station->setUseRotationHead(m_templ_use_rotation_head);
 			p_windpower_station->setSpeedRotationHead(m_templ_speed_rotation_head);
 
-			//jeœli obiekt posiada turbinê
+			//jeÅ›li obiekt posiada turbinÄ™
 			if(m_templ_use_windturbine)
 			{
 				if(p_templ_windturbine)
 				{
-					//wstêpna przymiarka do nadawania unique_id
+					//wstÄ™pna przymiarka do nadawania unique_id
 					std::wstring name_parent = this->GetGenre();
 					std::wstring name_child = p_templ_windturbine->GetGenre();
 
-					//inicjujemy wskaŸnik na sk³adow¹ - wskaŸnik na obiekt wzorzeca dla klasy WindTurbineTemplate
+					//inicjujemy wskaÅºnik na skÅ‚adowÄ… - wskaÅºnik na obiekt wzorzeca dla klasy WindTurbineTemplate
 					p_windpower_station->setWindTurbine(p_templ_windturbine->create(L""));
-					//przekazanie wskaŸnikowi na klasê CWindPowerStation informacji o wzorcu obiektu
+					//przekazanie wskaÅºnikowi na klasÄ™ CWindPowerStation informacji o wzorcu obiektu
 					p_windpower_station->getWindTurbine()->SetTemplate(p_templ_windturbine);
 					//decorate
 					p_windpower_station->getWindTurbine()->setSmoothing(true);

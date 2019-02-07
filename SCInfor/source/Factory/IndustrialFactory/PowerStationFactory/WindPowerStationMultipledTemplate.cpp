@@ -1,50 +1,53 @@
-//  _______________________________________________________________
-// | CWindPowerStationMultipledTemplate.cpp - class implementation |
-// | Jack Flower - April 2016                                      |
-// |_______________________________________________________________|
+//  ______________________________________________________________
+// | WindPowerStationMultipledTemplate.cpp - class implementation |
+// | Jack Flower - April 2016                                     |
+// |______________________________________________________________|
 //
 
-#include "CWindPowerStationMultipledTemplate.h"
+#include "WindPowerStationMultipledTemplate.h"
 #include "../../../Logic/Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
 
 namespace factory
 {
-	RTTI_IMPL(CWindPowerStationMultipledTemplate, CPowerStationTemplate);
+	RTTI_IMPL(WindPowerStationMultipledTemplate, PowerStationTemplate);
 
 	//Konstruktor
-	CWindPowerStationMultipledTemplate::CWindPowerStationMultipledTemplate()
+	WindPowerStationMultipledTemplate::WindPowerStationMultipledTemplate()
+	:
+		WindPowerStationTemplate()//konstruktor klasy bazowej
 	{
 	}
 
 	//Destruktor wirtualny
-	CWindPowerStationMultipledTemplate::~CWindPowerStationMultipledTemplate()
+	WindPowerStationMultipledTemplate::~WindPowerStationMultipledTemplate()
 	{
+		//WindPowerStationTemplate
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CWindPowerStationMultipledTemplate::GetType() const
+	const std::string WindPowerStationMultipledTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CWindPowerStationMultipledTemplate::drop()
+	void WindPowerStationMultipledTemplate::drop()
 	{
 		delete this;
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane
-	bool CWindPowerStationMultipledTemplate::load(const std::string &name)
+	bool WindPowerStationMultipledTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane
-	bool CWindPowerStationMultipledTemplate::load(CXml &xml)
+	bool WindPowerStationMultipledTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CWindPowerStationTemplate
-		if (!CWindPowerStationTemplate::load(xml)) return false;
+		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej WindPowerStationTemplate
+		if (!WindPowerStationTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "Alabama"))
@@ -72,7 +75,7 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CWindPowerStationMultipled
-	CWindPowerStationMultipled* CWindPowerStationMultipledTemplate::create(std::wstring id)
+	CWindPowerStationMultipled* WindPowerStationMultipledTemplate::create(std::wstring id)
 	{
 		//CWindPowerStationMultipled* windpower_station_multipled = gPhysicalManager.XXX(id);
 		//fill(windpower_station);
@@ -81,11 +84,11 @@ namespace factory
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CWindPowerStationMultipledTemplate::fill(CWindPowerStationMultipled *p_windpower_station_multipled)
+	void WindPowerStationMultipledTemplate::fill(CWindPowerStationMultipled *p_windpower_station_multipled)
 	{
 		if (p_windpower_station_multipled)
 		{
-			CWindPowerStationTemplate::fill(p_windpower_station_multipled);
+			WindPowerStationTemplate::fill(p_windpower_station_multipled);
 
 			//for(kontener)
 			//templ_windturbines.push_back(...)

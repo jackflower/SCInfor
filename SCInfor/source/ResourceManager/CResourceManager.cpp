@@ -39,11 +39,11 @@
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/VentilatorFactory/VentilatorTemplate.h"
 #include "../Factory/EquipmentFactory/IndustrialFactory/PowerModuleFactory/WindTurbineTemplate.h"
 #include "../Factory/EquipmentFactory/IndustrialFactory/PowerModuleFactory/SolarCellTemplate.h"
-#include "../Factory/IndustrialFactory/PowerStationFactory/CWindPowerStationTemplate.h"
-#include "../Factory/IndustrialFactory/PowerStationFactory/CWindPowerStationMultipledTemplate.h"
-#include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/CPowerRelayStationTemplate.h"
+#include "../Factory/IndustrialFactory/PowerStationFactory/WindPowerStationTemplate.h"
+#include "../Factory/IndustrialFactory/PowerStationFactory/WindPowerStationMultipledTemplate.h"
+#include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/PowerRelayStationTemplate.h"
 #include "../Factory/EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
-#include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/CSlotsRateTemplate.h"
+#include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/SlotsRateTemplate.h"
 #include "../Factory/EquipmentFactory/WeaponFactory/AmmoFactory/AmmoTemplate.h"
 #include "../Factory/EquipmentFactory/WeaponFactory/GunFactory/GunTemplate.h"
 #include "../Map/CMap.h"
@@ -209,10 +209,10 @@ namespace resource
 		return (CPresentationTemplate*)GetResource<CPresentationTemplate>(name);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CPowerRelayStationTemplate
-	CPowerRelayStationTemplate* CResourceManager::GetPowerRelayStationTemplate(const std::string& name)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy PowerRelayStationTemplate
+	PowerRelayStationTemplate* CResourceManager::GetPowerRelayStationTemplate(const std::string& name)
 	{
-		return (CPowerRelayStationTemplate*)GetResource<CPowerRelayStationTemplate>(name);
+		return (PowerRelayStationTemplate*)GetResource<PowerRelayStationTemplate>(name);
 	}
 
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CTexture
@@ -281,10 +281,10 @@ namespace resource
 		return (CPresentationTemplate*)GetResource<CPresentationTemplate>(handle);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CPowerRelayStationTemplate
-	CPowerRelayStationTemplate* CResourceManager::GetPowerRelayStationTemplate(ResourceHandle handle)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy PowerRelayStationTemplate
+	PowerRelayStationTemplate* CResourceManager::GetPowerRelayStationTemplate(ResourceHandle handle)
 	{
-		return (CPowerRelayStationTemplate*)GetResource<CPowerRelayStationTemplate>(handle);
+		return (PowerRelayStationTemplate*)GetResource<PowerRelayStationTemplate>(handle);
 	}
 
 	//Metoda ksiêguje zarejstrowane nazwy za³adowanych zasobów
@@ -440,17 +440,17 @@ namespace resource
 		//		- VentilatorTemplate					->tworzy->	Ventilator
 		//		- WindTurbineTemplate					->tworzy->	WindTurbine
 		//		- SolarCellTemplate					->tworzy->	SolarCell
-		//		- CWindPowerStationTemplate				->tworzy->	CWindPowerStation
-		//		- CWindPowerStationMultipledTemplate	->tworzy->	CWindPowerStationMultipled
+		//		- WindPowerStationTemplate				->tworzy->	CWindPowerStation
+		//		- WindPowerStationMultipledTemplate	->tworzy->	CWindPowerStationMultipled
 		//		- CGroundWorkTemplate					->tworzy->	CGroundWork
 
 		//		- CGroundTemplate						->tworzy->	CGround
 
 		//		- CMapPhysicalTemplate					->tworzy->	CMapPhysical
 		//		- CInformationTemplate					->tworzy->	CInformation
-		//		- CPowerRelayStationTemplate			->tworzy->	CPowerRelayStation
+		//		- PowerRelayStationTemplate			->tworzy->	CPowerRelayStation
 		//		- CommunicationTemplate				->tworzy->	CCommunication
-		//		- CSlotsRateTemplate					->tworzy->	CSlotsRate
+		//		- SlotsRateTemplate					->tworzy->	CSlotsRate
 		//		- AmmoTemplate							->tworzy->	Ammo
 		//		- GunTemplate							->tworzy->	Gun
 
@@ -506,9 +506,9 @@ namespace resource
 		else if(type == "solarcell")
 			resource = new SolarCellTemplate();
 		else if(type == "powerstation")
-			resource = new CWindPowerStationTemplate();
+			resource = new WindPowerStationTemplate();
 		else if (type == "powerstationmultipled")
-			resource = new CWindPowerStationMultipledTemplate();
+			resource = new WindPowerStationMultipledTemplate();
 		else if(type == "mapphysical")
 			resource = new CMapPhysicalTemplate();
 		else if(type == "groundwork")
@@ -518,11 +518,11 @@ namespace resource
 		else if(type == "presentation")
 			resource = new CPresentationTemplate();
 		else if(type == "relaystation")
-			resource = new CPowerRelayStationTemplate();
+			resource = new PowerRelayStationTemplate();
 		else if (type == "communication")
 			resource = new CommunicationTemplate();
 		else if (type == "slotsrate")
-			resource = new CSlotsRateTemplate();
+			resource = new SlotsRateTemplate();
 		else if (type == "ground")
 			resource = new CGroundTemplate();
 		else if (type == "ammo")

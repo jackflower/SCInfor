@@ -1,10 +1,10 @@
-//  ______________________________________________________
-// | CPowerRelayStationTemplate.cpp - class implementaion |
-// | Jack Flower - July 2015                              |
-// |______________________________________________________|
+Ôªø//  _____________________________________________________
+// | PowerRelayStationTemplate.cpp - class implementaion |
+// | Jack Flower - July 2015                             |
+// |_____________________________________________________|
 //
 
-#include "CPowerRelayStationTemplate.h"
+#include "PowerRelayStationTemplate.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 #include "../../../../Utilities/Random/CRandom.h"
@@ -13,69 +13,69 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CPowerRelayStationTemplate, CRelayStationTemplate);
+	RTTI_IMPL(PowerRelayStationTemplate, RelayStationTemplate);
 
 	//Konstruktor
-	CPowerRelayStationTemplate::CPowerRelayStationTemplate()
+	PowerRelayStationTemplate::PowerRelayStationTemplate()
 	:
-		CRelayStationTemplate				(),//konstruktor klasy bazowej
-		m_templ_use_slots_rate				(false),
-		m_templ_powerstations_capacity		(0),
-		m_templ_state_time_range			(0.0f, 0.0f),
-		m_templ_rotation_speed_range		(0.0f, 0.0f),
-		m_templ_state_time					(0.0f),
-		m_templ_rotation_speed				(0.0f),
-		p_templ_slot_rate					(NULL),
-		p_templ_battery						(NULL),
-		m_templ_use_battery					(false),
-		m_templ_time_to_start				(0.0f),
-		m_templ_duration_disconnect			(0.0f)
+		RelayStationTemplate(),//konstruktor klasy bazowej
+		m_templ_use_slots_rate(false),
+		m_templ_powerstations_capacity(0),
+		m_templ_state_time_range(0.0f, 0.0f),
+		m_templ_rotation_speed_range(0.0f, 0.0f),
+		m_templ_state_time(0.0f),
+		m_templ_rotation_speed(0.0f),
+		p_templ_slot_rate(NULL),
+		p_templ_battery(NULL),
+		m_templ_use_battery(false),
+		m_templ_time_to_start(0.0f),
+		m_templ_duration_disconnect(0.0f)
 	{
 	}
 
 	//Destruktor wirtualny
-	CPowerRelayStationTemplate::~CPowerRelayStationTemplate()
+	PowerRelayStationTemplate::~PowerRelayStationTemplate()
 	{
-		//CRelayStationTemplate				not edit
-		m_templ_use_slots_rate				= false;
-		m_templ_powerstations_capacity		= 0;
-		m_templ_state_time_range.first		= 0.0f;
-		m_templ_state_time_range.second		= 0.0f;
-		m_templ_rotation_speed_range.first	= 0.0f;
+		//RelayStationTemplate
+		m_templ_use_slots_rate = false;
+		m_templ_powerstations_capacity = 0;
+		m_templ_state_time_range.first = 0.0f;
+		m_templ_state_time_range.second = 0.0f;
+		m_templ_rotation_speed_range.first = 0.0f;
 		m_templ_rotation_speed_range.second	= 0.0f;
-		m_templ_state_time					= 0.0f;
-		m_templ_rotation_speed				= 0.0f;
-		p_templ_slot_rate					= NULL;
-		p_templ_battery						= NULL;
-		m_templ_use_battery					= false;
-		m_templ_time_to_start				= 0.0f;
-		m_templ_duration_disconnect			= 0.0f;
+		m_templ_state_time = 0.0f;
+		m_templ_rotation_speed = 0.0f;
+		p_templ_slot_rate = NULL;
+		p_templ_battery = NULL;
+		m_templ_use_battery = false;
+		m_templ_time_to_start = 0.0f;
+		m_templ_duration_disconnect = 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CPowerRelayStationTemplate::GetType() const
+	const std::string PowerRelayStationTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniajπca zasÛb - implementacje w klasach pochodnych
-	void CPowerRelayStationTemplate::drop()
+	//Wirtualna metoda zwalniajƒÖca zas√≥b - implementacje w klasach pochodnych
+	void PowerRelayStationTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ≥adujπca dane
-	bool CPowerRelayStationTemplate::load(const std::string &name)
+	//Metoda ≈ÇadujƒÖca dane
+	bool PowerRelayStationTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ≥adujπca dane z xml wywo≥ywana przez implementacje klas potomnych
-	bool CPowerRelayStationTemplate::load(CXml &xml)
+	//Wirtualna metoda ≈ÇadujƒÖca dane z xml wywo≈Çywana przez implementacje klas potomnych
+	bool PowerRelayStationTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy moøna za≥adowaÊ dane z klasy bazowej CRelayStationTemplate
-		if (!CRelayStationTemplate::load(xml)) return false;
+		//sprawdzamy, czy mo≈ºna za≈Çadowaƒá dane z klasy bazowej RelayStationTemplate
+		if (!RelayStationTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "power_relay_station_config"))
@@ -89,47 +89,47 @@ namespace factory
 			m_templ_duration_disconnect = xml.GetFloat(node, "duration_disconnect");
 		}
 
-		//≥adowanie modu≥u prezentacji slotÛw przekaünika
+		//≈Çadowanie modu≈Çu prezentacji slot√≥w przeka≈∫nika
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "slots_rate_data"))
 		{
-			//flaga, czy obiekt posiada modu≥ prezentacji stanu slotÛw
+			//flaga, czy obiekt posiada modu≈Ç prezentacji stanu slot√≥w
 			m_templ_use_slots_rate = xml.GetBool(node, "use_slots_rate");
-			//zapisujÍ do zmiennej nazwÍ pliku z konfiguracjπ modu≥u prezentacji stanu slotÛw
+			//zapisujƒô do zmiennej nazwƒô pliku z konfiguracjƒÖ modu≈Çu prezentacji stanu slot√≥w
 			std::string slots_rate_filename_tmp = xml.GetString(node, "slots_rate_filename");
 			if (m_templ_use_slots_rate)
-				p_templ_slot_rate = (CSlotsRateTemplate*)gResourceManager.GetPhysicalTemplate(slots_rate_filename_tmp);
+				p_templ_slot_rate = (SlotsRateTemplate*)gResourceManager.GetPhysicalTemplate(slots_rate_filename_tmp);
 		}
 
-		//≥adowanie modu≥u baterii slotÛw przekaünika
+		//≈Çadowanie modu≈Çu baterii slot√≥w przeka≈∫nika
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "battery_data"))
 		{
-			//flaga, czy obiekt posiada modu≥ prezentacji stanu slotÛw
+			//flaga, czy obiekt posiada modu≈Ç prezentacji stanu slot√≥w
 			m_templ_use_battery = xml.GetBool(node, "use_battery");
-			//zapisujÍ do zmiennej nazwÍ pliku z konfiguracjπ modu≥u prezentacji stanu slotÛw
+			//zapisujƒô do zmiennej nazwƒô pliku z konfiguracjƒÖ modu≈Çu prezentacji stanu slot√≥w
 			std::string battery_filename_tmp = xml.GetString(node, "battery_filename");
 			if (m_templ_use_battery)
 				p_templ_battery = (BatteryTemplate*)gResourceManager.GetPhysicalTemplate(battery_filename_tmp);
 		}
 
 
-		//wszystkie podklasy sprawdzajπ, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajƒÖ, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy CPowerRelayStation
-	CPowerRelayStation* CPowerRelayStationTemplate::create(std::wstring id)
+	CPowerRelayStation *PowerRelayStationTemplate::create(std::wstring id)
 	{
-		CPowerRelayStation* power_relay_station = gPhysicalManager.CreatePowerRelayStation(id);
+		CPowerRelayStation *power_relay_station = gPhysicalManager.CreatePowerRelayStation(id);
 		fill(power_relay_station);
 		return power_relay_station;
 	}
 
-	//Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
-	void CPowerRelayStationTemplate::fill(CPowerRelayStation *p_power_relay_station)
+	//Wirtualna metoda wype≈ÇniajƒÖca wskazany obiekt danymi tej klasy
+	void PowerRelayStationTemplate::fill(CPowerRelayStation *p_power_relay_station)
 	{
 		if(p_power_relay_station)
 		{
-			CRelayStationTemplate::fill(p_power_relay_station);
+			RelayStationTemplate::fill(p_power_relay_station);
 
 			//dane obiektu
 			p_power_relay_station->setUseSlotsRate(m_templ_use_slots_rate);
@@ -138,14 +138,14 @@ namespace factory
 			p_power_relay_station->setRotationSpeedRange(m_templ_rotation_speed_range);
 			//losowanie czasu trwania stanu
 			m_templ_state_time = gRandom.GetSingleton().Rndf(m_templ_state_time_range.first, m_templ_state_time_range.second);
-			//losowanie prÍdkoúci i kierunku rotacji
+			//losowanie prƒôdko≈õci i kierunku rotacji
 			m_templ_rotation_speed = gRandom.GetSingleton().Rndf(m_templ_rotation_speed_range.first, m_templ_rotation_speed_range.second);
 			p_power_relay_station->setStateTime(m_templ_state_time);
 			p_power_relay_station->setRotationSpeed(m_templ_rotation_speed);
 			p_power_relay_station->setTimeToStart(m_templ_time_to_start);
 			p_power_relay_station->setDurationDisconnect(m_templ_duration_disconnect);
 
-			//przekazanie zestawu animacji do obiektu, ktÛry jest wype≥niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, kt√≥ry jest wype≈Çniany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_power_relay_station->SetAnimSet(p_templ_animations);
@@ -157,27 +157,27 @@ namespace factory
 					p_power_relay_station->SetAnimationHead(p_templ_animations->GetPowerRelayStationHeadDefaultAnim());
 			}
 			
-			//jeúli obiekt posiada modu≥ prezentacji stanu slotÛw
+			//je≈õli obiekt posiada modu≈Ç prezentacji stanu slot√≥w
 			if (m_templ_use_slots_rate)
 			{
 				if (p_templ_slot_rate)
 				{
-					//pobieramy sk≥adowπ modu≥ prezentacji stanu slotÛw i wzorzec wype≥nia wskaünik danymi
+					//pobieramy sk≈ÇadowƒÖ modu≈Ç prezentacji stanu slot√≥w i wzorzec wype≈Çnia wska≈∫nik danymi
 					p_power_relay_station->setSlotsRate(p_templ_slot_rate->create(L""));
-					//przekazanie wskaünikowi na klasÍ CPowerRelayStation informacji o wzorcu
+					//przekazanie wska≈∫nikowi na klasƒô CPowerRelayStation informacji o wzorcu
 					p_power_relay_station->getSlotsRate()->SetTemplate(p_templ_slot_rate);
 				}
 			}
 
-			//jeúli obiekt posiada bateriÍ
+			//je≈õli obiekt posiada bateriƒô
 			if(m_templ_use_battery)
 				if (p_templ_battery)
 				{
-					//pobieramy sk≥adowπ  wzorca baterii i wzorzec wype≥niam wskaünik danymi
+					//pobieramy sk≈ÇadowƒÖ  wzorca baterii i wzorzec wype≈Çniam wska≈∫nik danymi
 					p_power_relay_station->setBattery(p_templ_battery->create(L""));
-					//przekazanie wskaünikowi na klasÍ CPowerRelayStation informacji o wzorcu
+					//przekazanie wska≈∫nikowi na klasƒô CPowerRelayStation informacji o wzorcu
 					p_power_relay_station->getBattery()->SetTemplate(p_templ_battery);
-					//decorator (ten kod bÍdzie na poziomie BatteryTemplate)
+					//decorator (ten kod bƒôdzie na poziomie BatteryTemplate)
 					p_power_relay_station->getBattery()->setSmoothing(true);
 				}
 			
@@ -186,3 +186,4 @@ namespace factory
 		}
 	}
 }//namespace factory
+

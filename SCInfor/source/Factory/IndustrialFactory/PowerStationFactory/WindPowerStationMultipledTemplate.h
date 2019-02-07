@@ -1,13 +1,13 @@
-//  _______________________________________________________________
-// | CWindPowerStationMultipledTemplate.h - class definition       |
-// | Jack Flower - April 2016                                      |
-// |_______________________________________________________________|
+//  ______________________________________________________________
+// | WindPowerStationMultipledTemplate.h - class definition       |
+// | Jack Flower - April 2016                                     |
+// |______________________________________________________________|
 //
 
 #ifndef H_WIND_POWER_STATION_MULTIPLED_TEMPLATE_JACK
 #define H_WIND_POWER_STATION_MULTIPLED_TEMPLATE_JACK
 
-#include "CWindPowerStationTemplate.h"
+#include "WindPowerStationTemplate.h"
 #include "../../../Logic/Industrial/PowerStation/WindPowerStation/CWindPowerStationMultipled.h"
 
 namespace factory
@@ -15,7 +15,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec elektrowni wiatrowej z wieloma turbinami
 	///
-	class CWindPowerStationMultipledTemplate : public CWindPowerStationTemplate
+	class WindPowerStationMultipledTemplate : public WindPowerStationTemplate
 	{
 		RTTI_DECL;
 
@@ -24,17 +24,17 @@ namespace factory
 		///
 		///Konstruktor
 		///
-		CWindPowerStationMultipledTemplate();
+		WindPowerStationMultipledTemplate();
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CWindPowerStationMultipledTemplate();
+		virtual ~WindPowerStationMultipledTemplate();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
 		///Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
@@ -44,23 +44,23 @@ namespace factory
 		///
 		///Wirtualna metoda ³aduj¹ca dane
 		///
-		///@param &name - sta³a referencja na std::string
+		///@param name - sta³a referencja na std::string
 		///
-		bool load(const std::string &name);
+		bool load(const std::string & name);
 
 		///
 		///Wirtualna metoda ³aduj¹ca dane
 		///
-		///@param &xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy CXml
 		///
-		bool load(CXml &xml);
+		bool load(CXml & xml);
 
 		///
 		///Metoda tworzy obiekt klasy CWindPowerStationMultipled
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CWindPowerStationMultipled* create(std::wstring id = L"");
+		CWindPowerStationMultipled *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy

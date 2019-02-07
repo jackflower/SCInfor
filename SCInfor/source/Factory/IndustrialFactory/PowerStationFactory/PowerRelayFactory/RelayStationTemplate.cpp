@@ -1,10 +1,10 @@
-//  _________________________________________________
-// | CRelayStationTemplate.cpp - class implementaion |
-// | Jack Flower - July 2015                         |
-// |_________________________________________________|
+ï»¿//  ________________________________________________
+// | RelayStationTemplate.cpp - class implementaion |
+// | Jack Flower - July 2015                        |
+// |________________________________________________|
 //
 
-#include "CRelayStationTemplate.h"
+#include "RelayStationTemplate.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 
@@ -12,50 +12,50 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CRelayStationTemplate, CActorTemplate);
+	RTTI_IMPL(RelayStationTemplate, CActorTemplate);
 
 	//Konstruktor
-	CRelayStationTemplate::CRelayStationTemplate()
+	RelayStationTemplate::RelayStationTemplate()
 	:
-		CActorTemplate				(),//konstruktor klasy bazowej
-		m_templ_relay_station_name	(),
-		m_templ_use_communication	(false),
-		p_templ_communication		(NULL)
+		CActorTemplate(),//konstruktor klasy bazowej
+		m_templ_relay_station_name(),
+		m_templ_use_communication(false),
+		p_templ_communication(NULL)
 	{
 	}
 
 	//Destruktor wirtualny
-	CRelayStationTemplate::~CRelayStationTemplate()
+	RelayStationTemplate::~RelayStationTemplate()
 	{
-		//CActorTemplate			not edit
-		m_templ_relay_station_name	= "";
-		m_templ_use_communication	= false;
-		p_templ_communication		= NULL;
+		//CActorTemplate
+		m_templ_relay_station_name = "";
+		m_templ_use_communication = false;
+		p_templ_communication = NULL;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CRelayStationTemplate::GetType() const
+	const std::string RelayStationTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CRelayStationTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b - implementacje w klasach pochodnych
+	void RelayStationTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CRelayStationTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool RelayStationTemplate::load(const std::string &name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CRelayStationTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml wywoÅ‚ywana przez implementacje klas potomnych
+	bool RelayStationTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
+		//sprawdzamy, czy moÅ¼na zaÅ‚adowaÄ‡ dane z klasy bazowej CActorTemplate
 		if (!CActorTemplate::load(xml)) return false;
 
 		//dane obiektu
@@ -65,31 +65,31 @@ namespace factory
 			m_templ_use_communication = xml.GetBool(node, "use_communication");
 		}
 
-		//³adowanie modu³u komunikacyjnego
+		//Å‚adowanie moduÅ‚u komunikacyjnego
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "communication_data"))
 		{
-			//flaga, czy obiekt posiada modu³ komunikacyjny
+			//flaga, czy obiekt posiada moduÅ‚ komunikacyjny
 			m_templ_use_communication = xml.GetBool(node, "use_communication");
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u komunikacji
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… moduÅ‚u komunikacji
 			std::string communication_filename_tmp = xml.GetString(node, "communication_filename");
 			if(m_templ_use_communication)
 				p_templ_communication = (CommunicationTemplate*)gResourceManager.GetPhysicalTemplate(communication_filename_tmp);
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy CRelayStation
-	CRelayStation* CRelayStationTemplate::create(std::wstring id)
+	CRelayStation *RelayStationTemplate::create(std::wstring id)
 	{
-		CRelayStation* relay_station = gPhysicalManager.CreateRelayStation(id);
+		CRelayStation *relay_station = gPhysicalManager.CreateRelayStation(id);
 		fill(relay_station);
 		return relay_station;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CRelayStationTemplate::fill(CRelayStation *p_relay_station)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void RelayStationTemplate::fill(CRelayStation *p_relay_station)
 	{
 		if(p_relay_station)
 		{
@@ -99,7 +99,7 @@ namespace factory
 			p_relay_station->setRelayStationName(m_templ_relay_station_name);
 			p_relay_station->setUseCommunication(m_templ_use_communication);
 				
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_relay_station->SetAnimSet(p_templ_animations);
@@ -113,14 +113,14 @@ namespace factory
 					p_relay_station->SetAnimationHead(p_templ_animations->GetPowerRelayStationHeadDefaultAnim());
 			}
 
-			//jeœli obiekt posiada modu³ do komunikacji
+			//jeÅ›li obiekt posiada moduÅ‚ do komunikacji
 			if(m_templ_use_communication)
 			{
 				if(p_templ_communication)
 				{
-					//pobieramy sk³adow¹ modu³ komunikacji i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… moduÅ‚ komunikacji i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					p_relay_station->SetCommunication(p_templ_communication->create(L""));
-					//przekazanie wskaŸnikowi na klasê CCommunication informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ CCommunication informacji o wzorcu
 					p_relay_station->GetCommunication()->SetTemplate(p_templ_communication);
 				}
 			}
@@ -130,3 +130,4 @@ namespace factory
 		}
 	}
 }//namespace factory
+

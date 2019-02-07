@@ -42,16 +42,16 @@ namespace factory
 	class VentilatorTemplate;
 	class WindTurbineTemplate;
 	class SolarCellTemplate;
-	class CWindPowerStationTemplate;
-	class CWindPowerStationMultipledTemplate;
+	class WindPowerStationTemplate;
+	class WindPowerStationMultipledTemplate;
 	class CMapPhysicalTemplate;
 	class CGroundWorkTemplate;
 	class CPhysicalInfoTemplate;
 	class CInformationTemplate;
 	class CPresentationTemplate;
-	class CPowerRelayStationTemplate;
+	class PowerRelayStationTemplate;
 	class CommunicationTemplate;
-	class CSlotsRateTemplate;
+	class SlotsRateTemplate;
 	class CGroundTemplate;
 	class AmmoTemplate;
 	class GunTemplate;
@@ -263,11 +263,11 @@ namespace resource
 		CPresentationTemplate* GetPresentationTemplate(const std::string& name);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CPowerRelayStationTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy PowerRelayStationTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CPowerRelayStationTemplate* GetPowerRelayStationTemplate(const std::string& name);
+		PowerRelayStationTemplate* GetPowerRelayStationTemplate(const std::string& name);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy CTexture
@@ -347,11 +347,11 @@ namespace resource
 		CPresentationTemplate* GetPresentationTemplate(ResourceHandle handle);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CPowerRelayStationTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy PowerRelayStationTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CPowerRelayStationTemplate* GetPowerRelayStationTemplate(ResourceHandle handle);
+		PowerRelayStationTemplate* GetPowerRelayStationTemplate(ResourceHandle handle);
 
 		///
 		///Metoda księguje zarejstrowane nazwy załadowanych zasobów

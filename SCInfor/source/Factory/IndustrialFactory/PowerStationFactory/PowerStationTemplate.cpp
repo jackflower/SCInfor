@@ -1,10 +1,10 @@
-//  __________________________________________________
-// | CPowerStationTemplate.cpp - class implementation |
-// | Jack Flower - May 2015                           |
-// |__________________________________________________|
+ï»¿//  _________________________________________________
+// | PowerStationTemplate.cpp - class implementation |
+// | Jack Flower - May 2015                          |
+// |_________________________________________________|
 //
 
-#include "CPowerStationTemplate.h"
+#include "PowerStationTemplate.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 #include "../../EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
@@ -13,52 +13,52 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CPowerStationTemplate, CActorTemplate);
+	RTTI_IMPL(PowerStationTemplate, CActorTemplate);
 
 	//Konstruktor
-	CPowerStationTemplate::CPowerStationTemplate()
+	PowerStationTemplate::PowerStationTemplate()
 	:
-		CActorTemplate					(),//konstruktor klasy bazowej
-		m_templ_power_station_name		(),
-		m_templ_energy_capacitor		(0.0f),
-		m_templ_amount_power_modules	(0),
-		p_templ_communication			(NULL)
+		CActorTemplate(),//konstruktor klasy bazowej
+		m_templ_power_station_name(),
+		m_templ_energy_capacitor(0.0f),
+		m_templ_amount_power_modules(0),
+		p_templ_communication(NULL)
 	{
 	}
 
 	//Destruktor wirtualny
-	CPowerStationTemplate::~CPowerStationTemplate()
+	PowerStationTemplate::~PowerStationTemplate()
 	{
-		//CActorTemplate				not edit
-		m_templ_power_station_name		= "";
-		m_templ_energy_capacitor		= 0.0f;
-		m_templ_amount_power_modules	= 0;
-		p_templ_communication			= NULL;
+		//CActorTemplate
+		m_templ_power_station_name = "";
+		m_templ_energy_capacitor = 0.0f;
+		m_templ_amount_power_modules = 0;
+		p_templ_communication = NULL;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CPowerStationTemplate::GetType() const
+	const std::string PowerStationTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CPowerStationTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b - implementacje w klasach pochodnych
+	void PowerStationTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CPowerStationTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool PowerStationTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CPowerStationTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml wywoÅ‚ywana przez implementacje klas potomnych
+	bool PowerStationTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej CActorTemplate
+		//sprawdzamy, czy moÅ¼na zaÅ‚adowaÄ‡ dane z klasy bazowej CActorTemplate
 		if (!CActorTemplate::load(xml)) return false;
 
 		//dane obiektu
@@ -69,13 +69,13 @@ namespace factory
 			m_templ_amount_power_modules = xml.GetInt(node, "amount_power_modules");
 		}
 
-		//³adowanie modu³u komunikacyjnego
+		//Å‚adowanie moduÅ‚u komunikacyjnego
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "communication_data"))
 		{
-			//flaga, czy obiekt posiada modu³ komunikacyjny
+			//flaga, czy obiekt posiada moduÅ‚ komunikacyjny
 			mm_templ_communication_data.setUseEquipment(xml.GetBool(node, "use_communication"));
 
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u komunikacji
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… moduÅ‚u komunikacji
 			std::string communication_filename_tmp = xml.GetString(node, "communication_filename");
 			
 			//emitery dla obiektu klasy CCommunication
@@ -85,26 +85,26 @@ namespace factory
 				p_templ_communication = (CommunicationTemplate*)gResourceManager.GetPhysicalTemplate(communication_filename_tmp);
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy CPowerStation
-	CPowerStation* CPowerStationTemplate::create(std::wstring id)
+	CPowerStation *PowerStationTemplate::create(std::wstring id)
 	{
-		CPowerStation* power_station = gPhysicalManager.CreatePowerStation(id);
+		CPowerStation *power_station = gPhysicalManager.CreatePowerStation(id);
 		fill(power_station);
 		return power_station;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CPowerStationTemplate::fill(CPowerStation *p_power_station)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void PowerStationTemplate::fill(CPowerStation *p_power_station)
 	{
 		if(p_power_station)
 		{
 			CActorTemplate::fill(p_power_station);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				p_power_station->SetAnimSet(p_templ_animations);
@@ -127,14 +127,14 @@ namespace factory
 			p_power_station->setAmountPowerModules(m_templ_amount_power_modules);
 			p_power_station->setUseCommunication(mm_templ_communication_data.getUseEquipment());
 
-			//jeœli obiekt posiada modu³ do komunikacji
+			//jeÅ›li obiekt posiada moduÅ‚ do komunikacji
 			if(mm_templ_communication_data.getUseEquipment())
 			{
 				if(p_templ_communication)
 				{
-					//pobieramy sk³adow¹ modu³ komunikacji i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… moduÅ‚ komunikacji i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					p_power_station->SetCommunication(p_templ_communication->create(L""));
-					//przekazanie wskaŸnikowi na klasê CCommunication informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ CCommunication informacji o wzorcu
 					p_power_station->GetCommunication()->SetTemplate(p_templ_communication);
 					//decorate
 					p_power_station->GetCommunication()->setSmoothing(true);
