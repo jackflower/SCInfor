@@ -1,7 +1,7 @@
-//  __________________________________________________
-// | CInformationTemplate.h - class definition        |
-// | Jack Flower - April 2015                         |
-// |__________________________________________________|
+ï»¿//  _________________________________________________
+// | InformationTemplate.h - class definition        |
+// | Jack Flower - April 2015                        |
+// |_________________________________________________|
 //
 
 #ifndef H_PRESENTATION_TEMPLATE_JACK
@@ -22,7 +22,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec dla obiektu klasy CPresentation
 	///
-	class CPresentationTemplate : public IResource
+	class PresentationTemplate : public IResource
 	{
 		RTTI_DECL;
 
@@ -31,71 +31,71 @@ namespace factory
 		///
 		///Konstruktor
 		///
-		CPresentationTemplate();
+		PresentationTemplate();
 
 		///
 		///Destruktor wirtualny
 		///
-		virtual ~CPresentationTemplate();
+		virtual ~PresentationTemplate();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/
 		///
-		const std::string GetType() const;
+		const std::string getType() const;
 
 		///
-		///Wirtualna metoda zwalniaj¹ca zasób
+		///Wirtualna metoda zwalniajÄ…ca zasÃ³b
 		///
 		virtual void drop();
 
 		///
-		///Metoda ³aduj¹ca dane
+		///Metoda Å‚adujÄ…ca dane
 		///
-		///@param &name - sta³a referencja na std::string
+		///@param name - staÅ‚a referencja na std::string
 		///
-		bool load(const std::string &name);
+		bool load(const std::string & name);
 
 		///
-		///Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
+		///Wirtualna metoda Å‚adujÄ…ca dane z xml wywoÅ‚ywana przez implementacje klas potomnych
 		///
-		///@param &xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy CXml
 		///
-		virtual bool load(CXml &xml);
+		virtual bool load(CXml & xml);
 
 		///
-		///Wirtualna metoda tworzenie obiektów pochodnych klasy CPresentation
+		///Wirtualna metoda tworzenie obiektÃ³w pochodnych klasy CPresentation
 		///
-		///implementowana przez w pe³ni konkretne podklasy
+		///implementowana przez w peÅ‚ni konkretne podklasy
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		virtual CPresentation* create(std::wstring id = L"");
+		virtual CPresentation *create(std::wstring id = L"");
 
 		///
-		///Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
+		///Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
 		///
-		///@param *information - wskaŸnik na obiekt klasy CInformation
+		///@param *information - wskaÅºnik na obiekt klasy CInformation
 		///
 		virtual void fill(CPresentation *presentation);
 
 		///
-		///Metoda zwraca nazwê pliku zasobu
+		///Metoda zwraca nazwÄ™ pliku zasobu
 		///
-		inline const std::string& GetFilename() const
+		inline const std::string & getFilename() const
 		{
 			return m_templ_filename;
 		}
 
 		///
-		///Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+		///Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie ktÃ³rego CResourceManager tworzy zasÃ³b
 		///
-		inline const std::string& GetTypeName() const
+		inline const std::string & getTypeName() const
 		{
 			return m_templ_type;
 		}
 
 		///
-		///Metoda zwraca referencjê na obiekt klasy sf::Transformable
+		///Metoda zwraca referencjÄ™ na obiekt klasy sf::Transformable
 		///
 		inline const sf::Transformable getTransformable() const
 		{
@@ -103,9 +103,9 @@ namespace factory
 		}
 		
 		///
-		///Metoda ustawia referencjê na obiekt klasy sf::Transformable
+		///Metoda ustawia referencjÄ™ na obiekt klasy sf::Transformable
 		///
-		///@param & templ_tranformable - sta³a referencja na obiekt klasy sf::Transformable
+		///@param templ_tranformable - staÅ‚a referencja na obiekt klasy sf::Transformable
 		///
 		inline void setTransformable(const sf::Transformable & templ_tranformable)
 		{
@@ -113,7 +113,7 @@ namespace factory
 		}
 
 		///
-		///Metoda zaraca sta³¹ referencjê na obiekt klasy sf::Color - front
+		///Metoda zaraca staÅ‚Ä… referencjÄ™ na obiekt klasy sf::Color - front
 		///
 		inline const sf::Color & getColorFront() const
 		{
@@ -124,7 +124,7 @@ namespace factory
 		///Metoda ustawia kolor obiektu - front
 		///
 		///
-		///@param &color_front - sta³a referencja na obiekt klasy sf::Color
+		///@param color_front - staÅ‚a referencja na obiekt klasy sf::Color
 		///
 		inline void setColorFront(const sf::Color & color_front)
 		{
@@ -132,7 +132,7 @@ namespace factory
 		}
 
 		///
-		///Metoda zaraca sta³¹ referencjê na obiekt klasy sf::Color - back
+		///Metoda zaraca staÅ‚Ä… referencjÄ™ na obiekt klasy sf::Color - back
 		///
 		inline const sf::Color & getColorBack() const
 		{
@@ -142,7 +142,7 @@ namespace factory
 		///
 		///Metoda ustawia kolor obiektu - back
 		///
-		///@param & color_back - sta³a referencja na obiekt klasy sf::Color
+		///@param color_back - staÅ‚a referencja na obiekt klasy sf::Color
 		///
 		inline void setColorBack(const sf::Color & color_back)
 		{
@@ -168,7 +168,7 @@ namespace factory
 		}
 
 		///
-		///Metoda zwraca ³añcuch znaków
+		///Metoda zwraca Å‚aÅ„cuch znakÃ³w
 		///
 		inline const std::string & getString() const
 		{
@@ -176,9 +176,9 @@ namespace factory
 		}
 
 		///
-		///Metoda ustawia ³añcuch znaków
+		///Metoda ustawia Å‚aÅ„cuch znakÃ³w
 		///
-		///@param & string - sta³a referencja na obiekt klasy std::string
+		///@param string - staÅ‚a referencja na obiekt klasy std::string
 		///
 		inline void setString(const std::string & string)
 		{
@@ -186,7 +186,7 @@ namespace factory
 		}
 
 		///
-		///Metoda zwraca ³añcuch znaków
+		///Metoda zwraca Å‚aÅ„cuch znakÃ³w
 		///
 		inline const std::wstring & getWString() const
 		{
@@ -194,9 +194,9 @@ namespace factory
 		}
 
 		///
-		///Metoda ustawia ³añcuch znaków
+		///Metoda ustawia Å‚aÅ„cuch znakÃ³w
 		///
-		///@param & string - sta³a referencja na obiekt klasy sf::String
+		///@param string - staÅ‚a referencja na obiekt klasy sf::String
 		///
 		inline void setWString(const std::wstring & string)
 		{
@@ -204,7 +204,7 @@ namespace factory
 		}
 
 		///
-		///Metoda zaraca flagê, czy obiekt posiada efekt 3D znaków
+		///Metoda zaraca flagÄ™, czy obiekt posiada efekt 3D znakÃ³w
 		///
 		inline const bool getUseUnder() const
 		{
@@ -212,9 +212,9 @@ namespace factory
 		}
 
 		///
-		///Metoda ustawia flagê, czy obiekt posiada efekt 3D znaków
+		///Metoda ustawia flagÄ™, czy obiekt posiada efekt 3D znakÃ³w
 		///
-		///@param use_under - flaga okreœla, czy obiekt posiada efekt 3D
+		///@param use_under - flaga okreÅ›la, czy obiekt posiada efekt 3D
 		///
 		inline void setUseUnder(const bool use_under)
 		{
@@ -232,7 +232,7 @@ namespace factory
 		///
 		///Metoda ustawia wektor dla efektu 3D
 		///
-		///@param &templ_offset - sta³a referencja na obiekt klasy sf::Vector2f
+		///@param templ_offset - staÅ‚a referencja na obiekt klasy sf::Vector2f
 		///
 		inline void setOffset(const sf::Vector2f & templ_offset)
 		{
@@ -240,7 +240,7 @@ namespace factory
 		}
 
 		///
-		///Metoda zwraca nazwê czcionki
+		///Metoda zwraca nazwÄ™ czcionki
 		///
 		inline const std::string & getFontName() const
 		{
@@ -248,9 +248,9 @@ namespace factory
 		}
 
 		///
-		///Metoda ustawia nazwê czcionki
+		///Metoda ustawia nazwÄ™ czcionki
 		///
-		///@param &templ_offset - sta³a referencja na obiekt klasy std::string
+		///@param templ_offset - staÅ‚a referencja na obiekt klasy std::string
 		///
 		inline void setFontName(const std::string & font_name)
 		{
@@ -259,17 +259,17 @@ namespace factory
 
 	protected:
 
-		std::string			m_templ_filename;		//nazwa pliku xml
-		std::string			m_templ_type;			//typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
-		sf::Transformable	m_templ_tranformable;	//opakowanie danych do transformacji geometrycznej
-		std::string			m_templ_font_name;		//nazwa czcionki
-		sf::Color			m_templ_color_front;	//kolor front
-		sf::Color			m_templ_color_back;		//kolor back
-		unsigned			m_templ_font_size;		//rozmiar czcionki	(front and back)
-		std::string			m_templ_string;			//³añcych znaków	(front = back)
-		std::wstring		m_templ_wide_string;	//³añcych znaków	(front = back) - UTF-8 (bez BOM)
-		bool				m_templ_use_under;		//flaga okreœla, czy obiekt posiada efekt 3D
-		sf::Vector2f		m_templ_offset;			//wektor dla efektu 3D
+		std::string m_templ_filename; //nazwa pliku xml
+		std::string m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie ktÃ³rego CResourceManager tworzy zasÃ³b
+		sf::Transformable m_templ_tranformable;	//opakowanie danych do transformacji geometrycznej
+		std::string m_templ_font_name; //nazwa czcionki
+		sf::Color m_templ_color_front; //kolor front
+		sf::Color m_templ_color_back; //kolor back
+		unsigned m_templ_font_size; //rozmiar czcionki	(front and back)
+		std::string m_templ_string; //Å‚aÅ„cych znakÃ³w	(front = back)
+		std::wstring m_templ_wide_string; //Å‚aÅ„cych znakÃ³w	(front = back) - UTF-8 (bez BOM)
+		bool m_templ_use_under; //flaga okreÅ›la, czy obiekt posiada efekt 3D
+		sf::Vector2f m_templ_offset; //wektor dla efektu 3D
 
 	private:
 	};

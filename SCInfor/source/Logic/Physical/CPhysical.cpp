@@ -10,7 +10,7 @@
 #include "../../Rendering/Drawable/CDrawableManager.h"
 #include "../../Rendering/Animations/CAnimation.h"
 #include "../../Rendering/Animations/CAnimationState.h"
-#include "../../Factory/CPhysicalTemplate.h"
+#include "../../Factory/PhysicalTemplate.h"
 #include "../../Utilities/Utilities/Utilities.h"
 #include <math.h>
 

@@ -16,12 +16,12 @@ using namespace rendering::animation;
 namespace factory
 {
 
-	RTTI_IMPL(GunTemplate, CActorTemplate);
+	RTTI_IMPL(GunTemplate, ActorTemplate);
 
 	//Konstruktor
 	GunTemplate::GunTemplate(void)
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_ammo_data(),
 		p_templ_ammo(NULL),
 		m_templ_time_ammo_load_delay(0.0f),
@@ -40,7 +40,7 @@ namespace factory
 	//Destruktor wirtualny
 	GunTemplate::~GunTemplate(void)
 	{
-		//CActorTemplate
+		//ActorTemplate
 		//m_templ_ammo_data
 		p_templ_ammo = NULL;
 		m_templ_time_ammo_load_delay = 0.0f;
@@ -79,7 +79,7 @@ namespace factory
 	bool GunTemplate::load(CXml & xml)
 	{
 		//ładowanie danych klasy bazowej CActor
-		if (!CActorTemplate::load(xml)) return false;
+		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie modułu prezentacji magazynka z amunicją
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "gun_data"))
@@ -127,7 +127,7 @@ namespace factory
 	{
 		if(p_gun)
 		{
-			CActorTemplate::fill(p_gun);
+			ActorTemplate::fill(p_gun);
 			
 			//pola tej klasy wzorca
 			p_gun->setAmmoTransformed(m_templ_ammo_data.getTransformed());

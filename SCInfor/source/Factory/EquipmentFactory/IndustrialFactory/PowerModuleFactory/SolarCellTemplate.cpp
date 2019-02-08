@@ -11,12 +11,12 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(SolarCellTemplate, CActorTemplate);
+	RTTI_IMPL(SolarCellTemplate, ActorTemplate);
 
 	//Konstruktor
 	SolarCellTemplate::SolarCellTemplate()
 	:
-		CActorTemplate(),	//konstruktor klasy bazowej
+		ActorTemplate(),	//konstruktor klasy bazowej
 		m_templ_solarcell_name(),
 		m_templ_stored_energy(0.0f),
 		m_templ_power(0.0f),
@@ -28,7 +28,7 @@ namespace factory
 	//Destruktor wirtualny
 	SolarCellTemplate::~SolarCellTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_solarcell_name = "";
 		m_templ_stored_energy = 0.0f;
 		m_templ_power = 0.0f;
@@ -58,8 +58,8 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
 	bool SolarCellTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy można załadować dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::load(xml)) return false;
+		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
+		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji dla turbiny
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "solarcell_config"))
@@ -88,7 +88,7 @@ namespace factory
 	{
 		if(p_solarcell)
 		{
-			CActorTemplate::fill(p_solarcell);
+			ActorTemplate::fill(p_solarcell);
 
 			//przekazanie danych...
 			p_solarcell->setSolarCellName(m_templ_solarcell_name);

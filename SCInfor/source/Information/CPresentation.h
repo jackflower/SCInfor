@@ -12,7 +12,7 @@
 
 namespace factory
 {
-	class CPresentationTemplate;
+	class PresentationTemplate;
 }
 
 using namespace rendering::displayable;
@@ -280,16 +280,16 @@ namespace information
 			void setOffset(float x, float y);
 
 			///
-			///Metoda zwraca wskaünik na obiekt klasy CPresentationTemplate
+			///Metoda zwraca wskaünik na obiekt klasy PresentationTemplate
 			///
-			inline CPresentationTemplate *GetTemplate() const { return p_template; }
+			inline PresentationTemplate *GetTemplate() const { return p_template; }
 
 			///
-			///Metoda ustawia wskaünik na obiekt klasy CPresentationTemplate
+			///Metoda ustawia wskaünik na obiekt klasy PresentationTemplate
 			///
-			///@param *p_template - wskaünik na obiekt klasy CPresentationTemplate
+			///@param *p_template - wskaünik na obiekt klasy PresentationTemplate
 			///
-			inline void SetTemplate(CPresentationTemplate* p_template_param) { p_template = p_template_param; }
+			inline void SetTemplate(PresentationTemplate* p_template_param) { p_template = p_template_param; }
 
 			///
 			///Wirtualna metoda aktualizujπca obiekt
@@ -310,7 +310,7 @@ namespace information
 			sf::String				m_string;					//≥aÒcych znakÛw	(front = back)
 			bool					m_use_under;				//flaga okreúla, czy obiekt posiada efekt 3D
 			sf::Vector2f			m_offset;					//wektor dla efektu 3D
-			CPresentationTemplate*	p_template;				//wskaünik na wzorzec
+			PresentationTemplate*	p_template;				//wskaünik na wzorzec
 
 			//prywatna metoda sprawdza, czy trzeba utworzyÊ obiekt klasy CHudStaticText
 			void checkHudStaticTextFront();

@@ -8,12 +8,12 @@
 
 namespace factory
 {
-	RTTI_IMPL(VentilatorTemplate, CActorTemplate);
+	RTTI_IMPL(VentilatorTemplate, ActorTemplate);
 
 	//Konstruktor
 	VentilatorTemplate::VentilatorTemplate()
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_ventilator_name(""),
 		m_templ_performance(0.0f),
 		m_templ_performance_factor(0.0f),
@@ -25,7 +25,7 @@ namespace factory
 	//Destruktor wirtualny
 	VentilatorTemplate::~VentilatorTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_ventilator_name = "";
 		m_templ_performance = 0.0f;
 		m_templ_performance_factor = 0.0f;
@@ -56,7 +56,7 @@ namespace factory
 	bool VentilatorTemplate::load(CXml & xml)
 	{
 		//ładowanie danych klasy bazowej CActor
-		if (!CActorTemplate::load(xml)) return false;
+		if (!ActorTemplate::load(xml)) return false;
 
 		//dane wentylatora
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "ventilator_config"))
@@ -85,7 +85,7 @@ namespace factory
 	{
 		if(p_ventilator)
 		{
-			CActorTemplate::fill(p_ventilator);
+			ActorTemplate::fill(p_ventilator);
 	
 			//przekazanie danych...
 			p_ventilator->setVentilatorName(m_templ_ventilator_name);

@@ -8,14 +8,14 @@
 #define H_MAP_OBJECT_DESCRIPTOR_JACK
 
 #include <string>
-#include "../../Factory/CPhysicalTemplate.h"
+#include "../../Factory/PhysicalTemplate.h"
 
 namespace factory
 {
 	///
 	///Forward declaration
 	///
-	class CPhysicalTemplate;
+	class PhysicalTemplate;
 }
 
 namespace mapengine
@@ -84,14 +84,14 @@ namespace mapengine
 		///
 		///Metoda zwraca wskaünik na wzorzec produkcyjny
 		///
-		CPhysicalTemplate* GetTemplate() const;
+		PhysicalTemplate* GetTemplate() const;
 
 		///
 		///Metoda ustawia wskaünik na wzorzec produkcyjny
 		///
 		///@param *template_param - wskaünik na wzorzec produkcyjny
 		///
-		void SetTemplate(CPhysicalTemplate* template_param);
+		void SetTemplate(PhysicalTemplate* template_param);
 
 		///
 		///Metoda zwraca pozycjÍ obietu - sk≥adowa X (plik xml operuje body)
@@ -159,7 +159,7 @@ namespace mapengine
 
 		std::string			m_code;				//nazwa obiektu fabrycznego (template) w pliku xml
         std::string			m_name;				//nazwa, ktÛrπ nadajemy obiektowi
-        CPhysicalTemplate*	p_templ;			//wskaünik na wzorzec produkcyjny
+        PhysicalTemplate*	p_templ;			//wskaünik na wzorzec produkcyjny
         float				m_x_position;		//sk≥adowa pozycji x na mapie
         float				m_y_position;		//sk≥adowa pozycji y na mapie
 		float				m_rotation_body;	//wartoúÊ obrotu poczπtkowego body

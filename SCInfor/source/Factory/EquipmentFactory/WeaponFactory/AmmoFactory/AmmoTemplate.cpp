@@ -10,12 +10,12 @@
 namespace factory
 {
 
-	RTTI_IMPL(AmmoTemplate, CActorTemplate);
+	RTTI_IMPL(AmmoTemplate, ActorTemplate);
 
 	//Konstruktor
 	AmmoTemplate::AmmoTemplate(void)
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_caliber(),
 		m_templ_ammo_state(EAmmoState::AMMO_DEFAULT),
 		m_templ_ammo(0),
@@ -28,7 +28,7 @@ namespace factory
 	//Destruktor wirtualny
 	AmmoTemplate::~AmmoTemplate(void)
 	{
-		//CActorTemplate
+		//ActorTemplate
 		//m_templ_caliber
 		m_templ_ammo_state = EAmmoState::AMMO_DEFAULT;
 		m_templ_ammo = 0;
@@ -60,7 +60,7 @@ namespace factory
 	bool AmmoTemplate::load(CXml & xml)
 	{
 		//ładowanie danych klasy bazowej CActor
-		if (!CActorTemplate::load(xml)) return false;
+		if (!ActorTemplate::load(xml)) return false;
 
 		//dane amunicji
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "ammo_data"))
@@ -93,7 +93,7 @@ namespace factory
 	{
 		if(p_ammo)
 		{
-			CActorTemplate::fill(p_ammo);
+			ActorTemplate::fill(p_ammo);
 
 			p_ammo->setAmmoCapacity(m_templ_ammo_capacity);	//k o n i e c z n i e  najpierw pojemność
 			p_ammo->setAmmo(m_templ_ammo); //bo ta metoda waliduje...

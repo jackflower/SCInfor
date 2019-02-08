@@ -11,12 +11,12 @@
 
 namespace logic
 {
-	RTTI_IMPL(CBullet, CPhysical);
+	RTTI_IMPL(CBullet, CActor);
 
 	//Chroniony konstruktor domyœlny
 	CBullet::CBullet(const std::wstring &uniqueId)
 	:
-		CPhysical				(uniqueId),//konstruktor klasy bazowej
+		CActor				(uniqueId),//konstruktor klasy bazowej
 		m_speed					(0.0f),
 		m_distance				(0.0f),
 		m_half_distance			(0.0f),
@@ -31,7 +31,7 @@ namespace logic
 	//Chroniony konstruktor kopiuj¹cy
 	CBullet::CBullet(const CBullet &CBulletCopy)
 	:
-		CPhysical				(CBulletCopy),//konstruktor kopiuj¹cy klasy bazowej
+		CActor(CBulletCopy),//konstruktor kopiuj¹cy klasy bazowej
 		m_speed					(CBulletCopy.m_speed),
 		m_distance				(CBulletCopy.m_distance),
 		m_half_distance			(CBulletCopy.m_half_distance),
@@ -193,6 +193,12 @@ namespace logic
 	void CBullet::SetBulletSpeed(float bullet_speed)
 	{
 		m_bullet_speed = bullet_speed;
+	}
+
+	//Metoda tworzy eksplozjê - wymaga implementacji
+	void CBullet::Explode()
+	{
+		// to do
 	}
 
 	//Wirtualna metoda aktualizuj¹ca obiekt

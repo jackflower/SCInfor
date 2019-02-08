@@ -12,12 +12,12 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(RelayStationTemplate, CActorTemplate);
+	RTTI_IMPL(RelayStationTemplate, ActorTemplate);
 
 	//Konstruktor
 	RelayStationTemplate::RelayStationTemplate()
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_relay_station_name(),
 		m_templ_use_communication(false),
 		p_templ_communication(NULL)
@@ -27,7 +27,7 @@ namespace factory
 	//Destruktor wirtualny
 	RelayStationTemplate::~RelayStationTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_relay_station_name = "";
 		m_templ_use_communication = false;
 		p_templ_communication = NULL;
@@ -55,8 +55,8 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
 	bool RelayStationTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy można załadować dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::load(xml)) return false;
+		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
+		if (!ActorTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "relay_station_config"))
@@ -93,7 +93,7 @@ namespace factory
 	{
 		if(p_relay_station)
 		{
-			CActorTemplate::fill(p_relay_station);
+			ActorTemplate::fill(p_relay_station);
 
 			//przekazanie danych...
 			p_relay_station->setRelayStationName(m_templ_relay_station_name);

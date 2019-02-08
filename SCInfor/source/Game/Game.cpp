@@ -18,7 +18,7 @@
 #include "../Rendering/Displayable/CHudStaticText.h"
 #include "../Universe/CUniverse.h"
 #include "../Weather/CWeather.h"
-#include "../Factory/CPhysicalTemplate.h"
+#include "../Factory/PhysicalTemplate.h"
 #include "../Logic/CLogic.h"
 #include "../Map/CMap.h"
 #include "../Utilities/Random/CRandom.h"
@@ -36,10 +36,10 @@
 #include "../Universe/CUniverse.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/WindPowerStationTemplate.h"
-#include "../Factory/MapPhysicalFactory/CMapPhysicalTemplate.h"
-#include "../Factory/MapPhysicalFactory/CGroundWorkTemplate.h"
-#include "../Factory/InformationFactory/CInformationTemplate.h"
-#include "../Factory/InformationFactory/CPresentationTemplate.h"
+#include "../Factory/MapPhysicalFactory/MapPhysicalTemplate.h"
+#include "../Factory/MapPhysicalFactory/GroundWorkTemplate.h"
+#include "../Factory/InformationFactory/InformationTemplate.h"
+#include "../Factory/InformationFactory/PresentationTemplate.h"
 #include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/PowerRelayStationTemplate.h"
 #include "../Logic/CMapPhysicalManager.h"
 #include "../Map/MapPhysical/CMapPhysical.h"
@@ -374,7 +374,7 @@ void game::Game::gameTest()
 
 
 	//p h y s i c a l - obiekt testowy - mam być tylko jeden tej klasy (respawn używa innych)
-	CPhysicalTemplate *p_enemy_factory = gResourceManager.GetPhysicalTemplate(file_name);
+	PhysicalTemplate *p_enemy_factory = gResourceManager.GetPhysicalTemplate(file_name);
 	CPhysical *p_enemy = p_enemy_factory->create(L"ID_Enemy");
 	if (p_enemy)
 	{
@@ -401,7 +401,7 @@ void game::Game::gameTest()
 	//}
 
 	//CPresentation
-	//CPresentationTemplate *demo = gResourceManager.GetPresentationTemplate("data/xml_data/information/presentation.xml");
+	//PresentationTemplate *demo = gResourceManager.GetPresentationTemplate("data/xml_data/information/presentation.xml");
 	//CPresentation *prezes = demo->create(L"Pitek");
 	//prezes->setPosition(420, 420);
 

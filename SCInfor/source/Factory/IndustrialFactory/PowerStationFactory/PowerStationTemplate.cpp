@@ -13,12 +13,12 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(PowerStationTemplate, CActorTemplate);
+	RTTI_IMPL(PowerStationTemplate, ActorTemplate);
 
 	//Konstruktor
 	PowerStationTemplate::PowerStationTemplate()
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_power_station_name(),
 		m_templ_energy_capacitor(0.0f),
 		m_templ_amount_power_modules(0),
@@ -29,7 +29,7 @@ namespace factory
 	//Destruktor wirtualny
 	PowerStationTemplate::~PowerStationTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_power_station_name = "";
 		m_templ_energy_capacitor = 0.0f;
 		m_templ_amount_power_modules = 0;
@@ -58,8 +58,8 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
 	bool PowerStationTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy można załadować dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::load(xml)) return false;
+		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
+		if (!ActorTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "power_station_config"))
@@ -102,7 +102,7 @@ namespace factory
 	{
 		if(p_power_station)
 		{
-			CActorTemplate::fill(p_power_station);
+			ActorTemplate::fill(p_power_station);
 
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)

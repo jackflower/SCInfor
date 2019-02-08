@@ -9,7 +9,7 @@
 
 #include <string>
 #include "../../RTTI/RTTI.h"
-#include "../../Factory/MapPhysicalFactory/CMapPhysicalTemplate.h"
+#include "../../Factory/MapPhysicalFactory/MapPhysicalTemplate.h"
 
 namespace mapengine
 {
@@ -59,21 +59,21 @@ namespace mapengine
 		void SetCode(const std::string & code);
 
 		///
-		///Metoda zwraca wskaünik na wzorzec fabryczny - obiekt klasy CMapPhysicalTemplate
+		///Metoda zwraca wskaünik na wzorzec fabryczny - obiekt klasy MapPhysicalTemplate
 		///
-		CMapPhysicalTemplate* GetTemplate();
+		MapPhysicalTemplate* GetTemplate();
 		
 		///
-		///Metoda ustawia wskaünik na wzorzec fabryczny - obiekt klasy CMapPhysicalTemplate
+		///Metoda ustawia wskaünik na wzorzec fabryczny - obiekt klasy MapPhysicalTemplate
 		///
-		///@param *template_param - wskaünik na obiekt klasy CMapPhysicalTemplate
+		///@param *template_param - wskaünik na obiekt klasy MapPhysicalTemplate
 		///
-		void SetTemplate(CMapPhysicalTemplate* template_param);
+		void SetTemplate(MapPhysicalTemplate* template_param);
 
 	private:
 
 		std::string				m_code;		//unikalna nazwa obiektu wzorca nadawana w pliku xml
-		CMapPhysicalTemplate*	p_template;	//wskaünik na wzorzec danych
+		MapPhysicalTemplate*	p_template;	//wskaünik na wzorzec danych
 
 	};
 }//namespace mapengine

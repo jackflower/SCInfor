@@ -30,7 +30,7 @@ namespace infologic
 
 namespace factory
 {
-	class CInformationTemplate;
+	class InformationTemplate;
 }
 
 using namespace infologic;
@@ -87,16 +87,16 @@ namespace information
 		void MarkForDelete();
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CInformationTemplate
+		///Metoda zwraca wskaünik na obiekt klasy InformationTemplate
 		///
-		inline CInformationTemplate *GetTemplate() const { return p_template; }
+		inline InformationTemplate *GetTemplate() const { return p_template; }
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CInformationTemplate
+		///Metoda ustawia wskaünik na obiekt klasy InformationTemplate
 		///
-		///@param *p_template - wskaünik na obiekt klasy CInformationTemplate
+		///@param *p_template - wskaünik na obiekt klasy InformationTemplate
 		///
-		inline void SetTemplate(CInformationTemplate* p_template_param) { p_template = p_template_param; }
+		inline void SetTemplate(InformationTemplate* p_template_param) { p_template = p_template_param; }
 
 		///
 		///Metoda zwraca nazwÍ tekstury - digit
@@ -453,7 +453,7 @@ namespace information
 		CDisplayable*			p_mask_displayable;		//wskaünik na graficznπ reprezentacjÍ obiektu - maska
 		std::string				m_texture_digit_name;	//nazwa tekstury - digit
 		std::string				m_texture_mask_name;	//nazwa tekstury - mask
-		CInformationTemplate*	p_template;				//wskaünik na wzorzec
+		InformationTemplate*	p_template;				//wskaünik na wzorzec
 		sf::Transformable		m_tranformable_digit;	//opakowanie danych do transforamcji geometrycznej - digit
 		sf::Transformable		m_tranformable_mask;	//opakowanie danych do transforamcji geometrycznej - mask
 

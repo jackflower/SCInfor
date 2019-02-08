@@ -10,19 +10,19 @@
 
 namespace factory
 {
-	RTTI_IMPL(SlotsRateTemplate, CActorTemplate);
+	RTTI_IMPL(SlotsRateTemplate, ActorTemplate);
 
 	//Konstruktor
 	SlotsRateTemplate::SlotsRateTemplate()
 	:
-		CActorTemplate()//konstruktor klasy bazowej
+		ActorTemplate()//konstruktor klasy bazowej
 	{
 	}
 
 	//Destruktor wirtualny
 	SlotsRateTemplate::~SlotsRateTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -47,8 +47,8 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
 	bool SlotsRateTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy można załadować dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::load(xml)) return false;
+		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
+		if (!ActorTemplate::load(xml)) return false;
 
 		//dane obiektu
 
@@ -69,7 +69,7 @@ namespace factory
 	{
 		if (p_slots_rate)
 		{
-			CActorTemplate::fill(p_slots_rate);
+			ActorTemplate::fill(p_slots_rate);
 
 			//przekazanie danych
 

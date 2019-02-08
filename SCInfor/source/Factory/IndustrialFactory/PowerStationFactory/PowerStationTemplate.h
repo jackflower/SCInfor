@@ -7,7 +7,7 @@
 #ifndef H_POWER_STATION_TEMPLATE_JACK
 #define H_POWER_STATION_TEMPLATE_JACK
 
-#include "../../CActorTemplate.h"
+#include "../../ActorTemplate.h"
 #include "../../../Logic/Industrial/PowerStation/CPowerStation.h"
 #include "../../../Equipment/EquipmentData/EquipmentCommunicationData.h"
 
@@ -24,7 +24,7 @@ namespace factory
 	///
 	///Klasa reprezentuje prawzorzec wszystkich elektrowni
 	///
-	class PowerStationTemplate : public CActorTemplate
+	class PowerStationTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

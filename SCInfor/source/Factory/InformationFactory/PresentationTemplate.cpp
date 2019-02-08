@@ -1,10 +1,10 @@
-//  __________________________________________________
-// | CPresentationTemplate.cpp - class implementation |
-// | Jack Flower - April 2015                         |
-// |__________________________________________________|
+ï»¿//  _________________________________________________
+// | PresentationTemplate.cpp - class implementation |
+// | Jack Flower - April 2015                        |
+// |_________________________________________________|
 //
 
-#include "CPresentationTemplate.h"
+#include "PresentationTemplate.h"
 #include "../../Information/CInfoManager.h"
 #include "../../Utilities/StringUtils/StringUtils.h"
 #include "../../Utilities/CharsetTools/CCharSetManager.h"
@@ -13,65 +13,65 @@ using namespace charsettools;
 
 namespace factory
 {
-	RTTI_IMPL(CPresentationTemplate, IResource);
+	RTTI_IMPL(PresentationTemplate, IResource);
 	
 	//Konstruktor
-	CPresentationTemplate::CPresentationTemplate(void)
+	PresentationTemplate::PresentationTemplate(void)
 	:
-		IResource				(),//konstruktor klasy bazowej
-		m_templ_filename		(""),
-		m_templ_type			(""),
-		m_templ_tranformable	(),
-		m_templ_font_name		(""),
-		m_templ_color_front		(),
-		m_templ_color_back		(),
-		m_templ_font_size		(1),
-		m_templ_string			(""),
-		m_templ_wide_string		(),
-		m_templ_use_under		(false),
-		m_templ_offset			(0.0f, 0.0f)
+		IResource(),//konstruktor klasy bazowej
+		m_templ_filename(""),
+		m_templ_type(""),
+		m_templ_tranformable(),
+		m_templ_font_name(""),
+		m_templ_color_front(),
+		m_templ_color_back(),
+		m_templ_font_size(1),
+		m_templ_string(""),
+		m_templ_wide_string(),
+		m_templ_use_under(false),
+		m_templ_offset(0.0f, 0.0f)
 	{
 	}
 
 	//Destruktor wirtualny
-	CPresentationTemplate::~CPresentationTemplate(void)
+	PresentationTemplate::~PresentationTemplate(void)
 	{
-		//IResource				not edit
-		m_templ_filename		= "";
-		m_templ_type			= "";
-		//m_templ_tranformable	not edit
-		m_templ_font_name		= "";
-		//m_templ_color_front	not edit
-		//m_templ_color_back	not edit
-		m_templ_font_size		= 0;
-		m_templ_string			= "";
-		m_templ_wide_string		= L"";
-		m_templ_use_under		= false;
-		m_templ_offset.x		= 0.0f;
-		m_templ_offset.y		= 0.0f;
+		//IResource
+		m_templ_filename = "";
+		m_templ_type = "";
+		//m_templ_tranformable
+		m_templ_font_name = "";
+		//m_templ_color_front 
+		//m_templ_color_back
+		m_templ_font_size = 0;
+		m_templ_string = "";
+		m_templ_wide_string = L"";
+		m_templ_use_under = false;
+		m_templ_offset.x = 0.0f;
+		m_templ_offset.y = 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CPresentationTemplate::GetType() const
+	const std::string PresentationTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób
-	void CPresentationTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b
+	void PresentationTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CPresentationTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool PresentationTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root");
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CPresentationTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml wywoÅ‚ywana przez implementacje klas potomnych
+	bool PresentationTemplate::load(CXml & xml)
 	{
 		//nazwa pliku xml
 		m_templ_filename = xml.GetFilename();
@@ -98,20 +98,20 @@ namespace factory
 			m_templ_offset.x = xml.GetFloat(node, "offset_x");
 			m_templ_offset.y = xml.GetFloat(node, "offset_y");
 		}
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy CActor
-	CPresentation* CPresentationTemplate::create(std::wstring id)
+	CPresentation *PresentationTemplate::create(std::wstring id)
 	{
 		CPresentation* presentation = gInfoManager.CreatePresentation(id);
 		fill(presentation);
 		return presentation;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CPresentationTemplate::fill(CPresentation *presentation)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void PresentationTemplate::fill(CPresentation *presentation)
 	{
 		//ustawienie kompletnego wzorca
 		presentation->SetTemplate(this);

@@ -10,7 +10,7 @@
 #include "../../Rendering/Drawable/Layers.h"
 #include "../../Rendering/Animations/CAnimation.h"
 #include "../../Rendering/Animations/CAnimationState.h"
-#include "../../Factory/MapPhysicalFactory/CMapPhysicalTemplate.h"
+#include "../../Factory/MapPhysicalFactory/MapPhysicalTemplate.h"
 #include "../Ground/PhysicsGround/CPhysicsGround.h"
 
 

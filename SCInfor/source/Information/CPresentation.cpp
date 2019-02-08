@@ -6,7 +6,7 @@
 
 #include "CPresentation.h"
 #include "../Rendering/Drawable/CDrawableManager.h"
-#include "../Factory/InformationFactory/CPresentationTemplate.h"
+#include "../Factory/InformationFactory/PresentationTemplate.h"
 
 namespace information
 {

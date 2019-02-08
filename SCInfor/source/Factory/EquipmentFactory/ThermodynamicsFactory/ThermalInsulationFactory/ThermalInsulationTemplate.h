@@ -7,7 +7,7 @@
 #ifndef H_THERMAL_INSULATION_TEMPLATE_JACK
 #define H_THERMAL_INSULATION_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 #include "../../../../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
 #include "../../../../Equipment/Thermodynamics/ThermalInsulation/ThermalInsulation.h"
 
@@ -16,7 +16,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec termoizolatora
 	///
-	class ThermalInsulationTemplate : public CActorTemplate
+	class ThermalInsulationTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

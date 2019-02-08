@@ -12,12 +12,12 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(EngineTemplate, CActorTemplate);
+	RTTI_IMPL(EngineTemplate, ActorTemplate);
 
 	//Konstruktor
 	EngineTemplate::EngineTemplate()
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_engine_name(),
 		m_templ_fueltank_data(),
 		p_templ_fuel_tank(NULL),
@@ -35,7 +35,7 @@ namespace factory
 	//Destruktor
 	EngineTemplate::~EngineTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_engine_name = "";
 		//m_templ_fueltank_data
 		p_templ_fuel_tank = NULL;
@@ -71,8 +71,8 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml
 	bool EngineTemplate::load(CXml &xml)
 	{
-		//sprawdzamy, czy można załadować dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::load(xml)) return false;
+		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
+		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji engine
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "engine_config"))
@@ -118,7 +118,7 @@ namespace factory
 	{
 		if(p_engine)
 		{
-			CActorTemplate::fill(p_engine);
+			ActorTemplate::fill(p_engine);
 
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)

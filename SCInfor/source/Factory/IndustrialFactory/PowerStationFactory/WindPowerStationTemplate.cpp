@@ -119,8 +119,8 @@ namespace factory
 				if(p_templ_windturbine)
 				{
 					//wstępna przymiarka do nadawania unique_id
-					std::wstring name_parent = this->GetGenre();
-					std::wstring name_child = p_templ_windturbine->GetGenre();
+					std::wstring name_parent = this->getGenre();
+					std::wstring name_child = p_templ_windturbine->getGenre();
 
 					//inicjujemy wskaźnik na składową - wskaźnik na obiekt wzorzeca dla klasy WindTurbineTemplate
 					p_windpower_station->setWindTurbine(p_templ_windturbine->create(L""));

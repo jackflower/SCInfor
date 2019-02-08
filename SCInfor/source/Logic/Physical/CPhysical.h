@@ -19,7 +19,7 @@
 ///
 namespace factory
 {
-	class CPhysicalTemplate;
+	class PhysicalTemplate;
 }
 
 using namespace resource;
@@ -887,16 +887,16 @@ namespace logic
 		const void SetIncrease(float increase) const;
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CPhysicalTemplate
+		///Metoda zwraca wskaünik na obiekt klasy PhysicalTemplate
 		///
-		inline CPhysicalTemplate *GetTemplate() const { return p_template; }
+		inline PhysicalTemplate *GetTemplate() const { return p_template; }
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CPhysicalTemplate
+		///Metoda ustawia wskaünik na obiekt klasy PhysicalTemplate
 		///
-		///@param *p_template - wskaünik na obiekt klasy CPhysicalTemplate
+		///@param *p_template - wskaünik na obiekt klasy PhysicalTemplate
 		///
-		inline void SetTemplate(CPhysicalTemplate* p_template_param) { p_template = p_template_param; }
+		inline void SetTemplate(PhysicalTemplate* p_template_param) { p_template = p_template_param; }
 
 		///
 		///Metoda zwraca opakowanie informacji o kolidowaniu
@@ -920,7 +920,7 @@ namespace logic
 		sf::Vector2f		m_rect_size;				//wektor przechowujπcy rozmiar obszaru prostokπtnego
 		sf::Vector2f		m_rect_size_body;			//wektor przechowujπcy rozmiar obszaru prostokπtnego - body (wykorzystywany do tworzenia syntetykÛw)
 		sf::Vector2f		m_rect_size_head;			//wektor przechowujπcy rozmiar obszaru prostokπtnego - head (wykorzystywany do tworzenia syntetykÛw)
-		CPhysicalTemplate*	p_template;					//wskaünik na obiekt klasy CPhysicalTemplate
+		PhysicalTemplate*	p_template;					//wskaünik na obiekt klasy PhysicalTemplate
 		bool				m_ready_for_destruction;	//flaga ustawia obiekty gotowe do destrukcji
 		CPartCollisionData	m_part_collision_data;		//opakowanie informacji o kolidowaniu
 		float				m_new_anim_speed;			//wyliczony wspÛ≥czynnik prÍdkoúci odtwarzania animacji

@@ -1,58 +1,59 @@
-//  ___________________________________________
-// | CRobotTemplate.cpp - class implementation |
-// | Jack Flower - June 2016                   |
-// |___________________________________________|
+ï»¿//  __________________________________________
+// | RobotTemplate.cpp - class implementation |
+// | Jack Flower - June 2016                  |
+// |__________________________________________|
 //
 
-#include "CRobotTemplate.h"
+#include "RobotTemplate.h"
 #include "../Rendering/Animations/CAnimSet.h"
 
 //using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CRobotTemplate, CActorTemplate);
+	RTTI_IMPL(RobotTemplate, ActorTemplate);
 
 	//Konstruktor
-	CRobotTemplate::CRobotTemplate()
+	RobotTemplate::RobotTemplate()
 	:
-		CActorTemplate				(),//konstruktor klasy bazowej
-		m_templ_strategy_duration	()
+		ActorTemplate(),//konstruktor klasy bazowej
+		m_templ_strategy_duration()
 	{
 	}
 
 	//Destruktor wirtualny
-	CRobotTemplate::~CRobotTemplate()
+	RobotTemplate::~RobotTemplate()
 	{
-		//m_templ_strategy_duration	not edit
+		//~ActorTemplate()
+		//m_templ_strategy_duration
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CRobotTemplate::GetType() const
+	const std::string RobotTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CRobotTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b - implementacje w klasach pochodnych
+	void RobotTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CRobotTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool RobotTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root");
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CRobotTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml
+	bool RobotTemplate::load(CXml & xml)
 	{
-		//³adowanie danych klasy bazowej CActorTemplate
-		if (!CActorTemplate::load(xml)) return false;
+		//Å‚adowanie danych klasy bazowej ActorTemplate
+		if (!ActorTemplate::load(xml)) return false;
 
-		//dane opakowania mechanizmu zarz¹dzania czasem stanów strategicznych obiektu
+		//dane opakowania mechanizmu zarzÄ…dzania czasem stanÃ³w strategicznych obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "strategy_duration_data"))
 		{
 			m_templ_strategy_duration.setTimeAttackPrepare(xml.GetFloat(node, "time_attack_prepare"));
@@ -61,26 +62,26 @@ namespace factory
 			m_templ_strategy_duration.setTimeDefenseTerminate(xml.GetFloat(node, "time_defense_terminate"));
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy CRobot
-	CRobot* CRobotTemplate::create(std::wstring id)
+	CRobot *RobotTemplate::create(std::wstring id)
 	{
-		CRobot* robot = gPhysicalManager.CreateRobot(id);
+		CRobot *robot = gPhysicalManager.CreateRobot(id);
 		fill(robot);
 		return robot;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CRobot
-	void CRobotTemplate::fill(CRobot *robot)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca danymi obiekt klasy CRobot
+	void RobotTemplate::fill(CRobot *robot)
 	{
 		if (robot)
 		{
-			CActorTemplate::fill(robot);
+			ActorTemplate::fill(robot);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				robot->SetAnimSet(p_templ_animations);

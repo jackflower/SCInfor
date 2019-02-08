@@ -7,7 +7,7 @@
 #ifndef H_SOLAR_CELL_TEMPLATE_JACK
 #define H_SOLAR_CELL_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 #include "../../../../Equipment/Industrial/PowerModuleType/SolarCell.h"
 
 namespace factory
@@ -15,7 +15,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec fotoogniwa
 	///
-	class SolarCellTemplate : public CActorTemplate
+	class SolarCellTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

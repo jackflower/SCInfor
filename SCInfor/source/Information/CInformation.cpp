@@ -6,7 +6,7 @@
 
 #include "CInformation.h"
 #include "../Rendering/Drawable/CDrawableManager.h"
-#include "../Factory/InformationFactory/CInformationTemplate.h"
+#include "../Factory/InformationFactory/InformationTemplate.h"
 
 namespace information
 {

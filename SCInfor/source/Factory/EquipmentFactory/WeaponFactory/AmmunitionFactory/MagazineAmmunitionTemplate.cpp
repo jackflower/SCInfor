@@ -10,19 +10,19 @@
 namespace factory
 {
 
-	RTTI_IMPL(MagazineAmmunitionTemplate, CActorTemplate);
+	RTTI_IMPL(MagazineAmmunitionTemplate, ActorTemplate);
 
 	//Konstruktor domyślny
 	MagazineAmmunitionTemplate::MagazineAmmunitionTemplate()
 	:
-		CActorTemplate()//konstruktor klasy bazowej
+		ActorTemplate()//konstruktor klasy bazowej
 	{
 	}
 
 	//Destruktor wirtualny
 	MagazineAmmunitionTemplate::~MagazineAmmunitionTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 	}
 }//namespace factory
 

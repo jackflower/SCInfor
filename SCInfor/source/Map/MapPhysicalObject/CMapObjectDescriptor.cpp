@@ -5,7 +5,7 @@
 //
 
 #include "CMapObjectDescriptor.h"
-#include "../../Factory/CPhysicalTemplate.h"
+#include "../../Factory/PhysicalTemplate.h"
 #include "../../Utilities/StringUtils/StringUtils.h"
 
 namespace mapengine
@@ -102,13 +102,13 @@ namespace mapengine
 
 
 	//Metoda zwraca wskaünik na wzorzec produkcyjny
-	CPhysicalTemplate* CMapObjectDescriptor::GetTemplate() const
+	PhysicalTemplate* CMapObjectDescriptor::GetTemplate() const
 	{
 		return p_templ;
 	}
 
 	//Metoda ustawia wskaünik na wzorzec produkcyjny
-	void CMapObjectDescriptor::SetTemplate(CPhysicalTemplate* template_param)
+	void CMapObjectDescriptor::SetTemplate(PhysicalTemplate* template_param)
 	{
 		p_templ = template_param;
 	}

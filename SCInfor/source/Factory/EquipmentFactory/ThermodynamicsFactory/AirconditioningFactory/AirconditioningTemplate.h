@@ -7,7 +7,7 @@
 #ifndef H_AIRCONDITIONING_TEMPLATE_JACK
 #define H_AIRCONDITIONING_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 #include "../ThermalInsulationFactory/ThermalInsulationTemplate.h"
 #include "../../../../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
 #include "../../../../Equipment/EquipmentData/ThermalInsulationData.h"
@@ -19,7 +19,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec modułu klimatyzatora
 	///
-	class AirconditioningTemplate : public CActorTemplate
+	class AirconditioningTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

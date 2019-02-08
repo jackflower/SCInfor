@@ -8,7 +8,7 @@
 #define H_ENERGY_TANK_TEMPLATE_JACK
 
 #include "../../../../ResourceManager/IResource.h"
-#include "../../../../Factory/CActorTemplate.h"
+#include "../../../../Factory/ActorTemplate.h"
 #include "../../../../XML/CXml.h"
 #include "../../../../RTTI/RTTI.h"
 #include "../../../../Equipment/Energy/EnergyTank/EnergyTank.h"
@@ -23,7 +23,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec akumulatora energii
 	///
-	class EnergyTankTemplate : public CActorTemplate
+	class EnergyTankTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

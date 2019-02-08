@@ -25,13 +25,13 @@ namespace xml
 ///
 namespace factory
 {
-	class CPhysicalTemplate;
-	class CActorTemplate;
-	class CRobotTemplate;
-	class CEnemyTemplate;
-	class CPlayerTemplate;
-	class CMonsterTemplate;
-	class CFloraTemplate;
+	class PhysicalTemplate;
+	class ActorTemplate;
+	class RobotTemplate;
+	class EnemyTemplate;
+	class PlayerTemplate;
+	class MonsterTemplate;
+	class FloraTemplate;
 	class FuelTankTemplate;
 	class EnergyTankTemplate;
 	class FuelBarTemplate;
@@ -44,15 +44,15 @@ namespace factory
 	class SolarCellTemplate;
 	class WindPowerStationTemplate;
 	class WindPowerStationMultipledTemplate;
-	class CMapPhysicalTemplate;
-	class CGroundWorkTemplate;
-	class CPhysicalInfoTemplate;
-	class CInformationTemplate;
-	class CPresentationTemplate;
+	class MapPhysicalTemplate;
+	class GroundWorkTemplate;
+	class PhysicalInfoTemplate;
+	class InformationTemplate;
+	class PresentationTemplate;
 	class PowerRelayStationTemplate;
 	class CommunicationTemplate;
 	class SlotsRateTemplate;
-	class CGroundTemplate;
+	class GroundTemplate;
 	class AmmoTemplate;
 	class GunTemplate;
 };
@@ -142,14 +142,14 @@ namespace resource
 		ResourceHandle LoadFont(const std::string& name);
 
 		///
-		///Metoda ładuje zasób CPhysicalTemplate
+		///Metoda ładuje zasób PhysicalTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
 		ResourceHandle LoadPhysicalTemplate(const std::string& name);
 
 		///
-		///Metoda ładuje zasób CMapPhysicalTemplate
+		///Metoda ładuje zasób MapPhysicalTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
@@ -163,21 +163,21 @@ namespace resource
 		ResourceHandle LoadMap(const std::string& name);
 
 		///
-		///Metoda ładuje zasób CGroundWorkTemplate
+		///Metoda ładuje zasób GroundWorkTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
 		ResourceHandle LoadGroundWorkTemplate(const std::string& name);
 
 		///
-		///Metoda ładuje zasób CInformationTemplate
+		///Metoda ładuje zasób InformationTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
 		ResourceHandle LoadInformationTemplate(const std::string& name);
 
 		///
-		///Metoda ładuje zasób CPresentationTemplate
+		///Metoda ładuje zasób PresentationTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
@@ -214,18 +214,18 @@ namespace resource
 		CFont* GetFont(const std::string& name);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CPhysicalTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy PhysicalTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CPhysicalTemplate* GetPhysicalTemplate(const std::string& name);
+		PhysicalTemplate* GetPhysicalTemplate(const std::string& name);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CMapPhysicalTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy MapPhysicalTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CMapPhysicalTemplate* GetMapPhysicalTemplate(const std::string& name);
+		MapPhysicalTemplate* GetMapPhysicalTemplate(const std::string& name);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy CMap
@@ -239,28 +239,28 @@ namespace resource
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CGroundTemplate* GetGround(const std::string& name);
+		GroundTemplate* GetGround(const std::string& name);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CGroundWorkTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy GroundWorkTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CGroundWorkTemplate* GetGroundWorkTemplate(const std::string& name);
+		GroundWorkTemplate* GetGroundWorkTemplate(const std::string& name);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CInformationTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy InformationTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CInformationTemplate* GetInformationTemplate(const std::string& name);
+		InformationTemplate* GetInformationTemplate(const std::string& name);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy GetPresentationTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CPresentationTemplate* GetPresentationTemplate(const std::string& name);
+		PresentationTemplate* GetPresentationTemplate(const std::string& name);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy PowerRelayStationTemplate
@@ -298,18 +298,18 @@ namespace resource
 		CFont* GetFont(ResourceHandle handle);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CPhysicalTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy PhysicalTemplate
 		///
 		///@param &handle - uchwyt zasobu
 		///
-		CPhysicalTemplate* GetPhysicalTemplate(ResourceHandle handle);
+		PhysicalTemplate* GetPhysicalTemplate(ResourceHandle handle);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy CmapPhysicalTemplate
 		///
 		///@param &handle - uchwyt zasobu
 		///
-		CMapPhysicalTemplate* GetMapPhysicalTemplate(ResourceHandle handle);
+		MapPhysicalTemplate* GetMapPhysicalTemplate(ResourceHandle handle);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy CMap
@@ -319,32 +319,32 @@ namespace resource
 		CMap* GetMap(ResourceHandle handle);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CGroundTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy GroundTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CGroundTemplate* GetGroundTemplate(ResourceHandle handle);
+		GroundTemplate* GetGroundTemplate(ResourceHandle handle);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CGroundWorkTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy GroundWorkTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CGroundWorkTemplate* GetGroundWorkTemplate(ResourceHandle handle);
+		GroundWorkTemplate* GetGroundWorkTemplate(ResourceHandle handle);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CInformationTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy InformationTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CInformationTemplate* GetInformationTemplate(ResourceHandle handle);
+		InformationTemplate* GetInformationTemplate(ResourceHandle handle);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CPresentationTemplate
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy PresentationTemplate
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CPresentationTemplate* GetPresentationTemplate(ResourceHandle handle);
+		PresentationTemplate* GetPresentationTemplate(ResourceHandle handle);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy PowerRelayStationTemplate
@@ -416,14 +416,14 @@ namespace resource
 		///
 		///@param &name - stała referencja na zasób std::string
 		///
-		template <> ResourceHandle LoadResource<CPhysicalTemplate>(const std::string& name);
+		template <> ResourceHandle LoadResource<PhysicalTemplate>(const std::string& name);
 
 		///
 		///Szablon prywatnej metody ładujące zasoby (wzorce danych dla obiektów gry)
 		///
 		///@param &name - stała referencja na zasób std::string
 		///
-		template <> ResourceHandle LoadResource<CMapPhysicalTemplate>(const std::string& name);
+		template <> ResourceHandle LoadResource<MapPhysicalTemplate>(const std::string& name);
 
 		///
 		///Metoda parsuje i zwraca uchwyt zasobu

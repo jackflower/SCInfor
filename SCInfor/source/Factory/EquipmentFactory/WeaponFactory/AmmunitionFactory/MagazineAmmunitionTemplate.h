@@ -7,14 +7,14 @@
 #ifndef H_MAGAZINE_AMMUNITION_TEMPLATE_JACK
 #define H_MAGAZINE_AMMUNITION_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 
 namespace factory
 {
 	///
 	///Klasa reprezentuje wzorzec magazynka amunicji
 	///
-	class MagazineAmmunitionTemplate : public CActorTemplate
+	class MagazineAmmunitionTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

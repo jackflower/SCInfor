@@ -26,7 +26,7 @@ namespace rendering
 
 namespace factory
 {
-	class CMapPhysicalTemplate;
+	class MapPhysicalTemplate;
 }
 namespace logic
 {
@@ -311,16 +311,16 @@ namespace mapengine
 		void setSmooth(bool smooth);
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CMapPhysicalTemplate
+		///Metoda zwraca wskaünik na obiekt klasy MapPhysicalTemplate
 		///
-		inline CMapPhysicalTemplate *GetTemplate() const { return p_template; }
+		inline MapPhysicalTemplate *GetTemplate() const { return p_template; }
 
 		///
-		///Metoda ustawia wskaünik na obiekt klasy CMapPhysicalTemplate
+		///Metoda ustawia wskaünik na obiekt klasy MapPhysicalTemplate
 		///
-		///@param *p_template - wskaünik na obiekt klasy CMapPhysicalTemplate
+		///@param *p_template - wskaünik na obiekt klasy MapPhysicalTemplate
 		///
-		inline void SetTemplate(CMapPhysicalTemplate* p_template_param) { p_template = p_template_param; }
+		inline void SetTemplate(MapPhysicalTemplate* p_template_param) { p_template = p_template_param; }
 
 		///
 		///Metoda zwraca wskaünik na obiekt klasy CDisplayable
@@ -345,7 +345,7 @@ namespace mapengine
 		float					m_rotation;					//wartoúÊ obrotu obiektu
 		sf::Vector2f			m_size;						//wektor wielkoúci obiektu (niezaleønie od rozmiaru tekstury)
 		std::string				m_displayable_type;			//typ graficznej reprezentacji obiektu
-		CMapPhysicalTemplate*	p_template;					//wskaünik na wzorzec - obiekt klasy CMapPhysical jak i teø pochodne tej klasy
+		MapPhysicalTemplate*	p_template;					//wskaünik na wzorzec - obiekt klasy CMapPhysical jak i teø pochodne tej klasy
 		CTexture*				p_synthetic_texture;		//wskaünik na obiekt klasy CTexture - wykorzytywany przy tworzeniu syntetycznej tekstury
 		sf::Image*				p_synthetic_image;			//wskaünik na obiekt klasy sf::Image - wykorzytywany przy tworzeniu syntetycznego obrazu
 		bool					m_smooth;					//flaga okreúlajπca filtr wyg≥adzajπcy teksturÍ

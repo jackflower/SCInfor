@@ -12,12 +12,12 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(CommunicationTemplate, CActorTemplate);
+	RTTI_IMPL(CommunicationTemplate, ActorTemplate);
 
 	//Konstruktor
 	CommunicationTemplate::CommunicationTemplate()
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_communication_name(),
 		m_templ_range(0.0f),
 		m_templ_reset_duration(0.0f),
@@ -29,7 +29,7 @@ namespace factory
 	//Destruktor wirtualny
 	CommunicationTemplate::~CommunicationTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_communication_name = "";
 		m_templ_range = 0.0f;
 		m_templ_reset_duration = 0.0f;
@@ -59,8 +59,8 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml
 	bool CommunicationTemplate::load(CXml &xml)
 	{
-		//sprawdzamy, czy można załadować dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::load(xml)) return false;
+		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
+		if (!ActorTemplate::load(xml)) return false;
 
 		//dane obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "communication_config"))
@@ -89,7 +89,7 @@ namespace factory
 	{
 		if(p_communication)
 		{
-			CActorTemplate::fill(p_communication);
+			ActorTemplate::fill(p_communication);
 
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)

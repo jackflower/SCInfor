@@ -1,72 +1,72 @@
-//  _________________________________________________
-// | CInformationTemplate.cpp - class implementation |
-// | Jack Flower - April 2015                        |
-// |_________________________________________________|
+ï»¿//  ________________________________________________
+// | InformationTemplate.cpp - class implementation |
+// | Jack Flower - April 2015                       |
+// |________________________________________________|
 //
 
-#include "CInformationTemplate.h"
+#include "InformationTemplate.h"
 #include "../../Information/CInfoManager.h"
 #include "../../Information/CInformation.h"
 #include "../../Utilities/StringUtils/StringUtils.h"
 
 using namespace infologic;
 
-template<> CInformationTemplate* CSingleton<CInformationTemplate>::m_singleton = 0;
+template<> InformationTemplate* CSingleton<InformationTemplate>::m_singleton = 0;
 
 namespace factory
 {
-	RTTI_IMPL(CInformationTemplate, IResource);
+	RTTI_IMPL(InformationTemplate, IResource);
 
 	//Konstruktor
-	CInformationTemplate::CInformationTemplate(void)
+	InformationTemplate::InformationTemplate()
 	:
-		IResource						(),//konstruktor klasy bazowej
-		m_templ_filename				(""),
-		m_templ_type					(""),
-		p_templ_digit_displayable		(NULL),
-		p_templ_mask_displayable		(NULL),
-		m_templ_texture_digit_name		(""),
-		m_templ_texture_mask_name		(""),
-		m_templ_tranformable_digit		(),
-		m_templ_tranformable_mask		()
+		IResource(),//konstruktor klasy bazowej
+		m_templ_filename(""),
+		m_templ_type(""),
+		p_templ_digit_displayable(NULL),
+		p_templ_mask_displayable(NULL),
+		m_templ_texture_digit_name(""),
+		m_templ_texture_mask_name(""),
+		m_templ_tranformable_digit(),
+		m_templ_tranformable_mask()
 	{
 	}
 
 	//Destruktor
-	CInformationTemplate::~CInformationTemplate(void)
+	InformationTemplate::~InformationTemplate()
 	{
-		//IResource						not edit
-		m_templ_filename				= "";
-		m_templ_type					= "";
-		p_templ_digit_displayable		= NULL;
-		p_templ_mask_displayable		= NULL;
-		m_templ_texture_digit_name		= "";
-		m_templ_texture_mask_name		= "";
+		//IResource
+		m_templ_filename = "";
+		m_templ_type = "";
+		p_templ_digit_displayable = NULL;
+		p_templ_mask_displayable = NULL;
+		m_templ_texture_digit_name = "";
+		m_templ_texture_mask_name = "";
 		//m_templ_tranformable_digit	not edit
 		//m_templ_tranformable_mask		not edit
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CInformationTemplate::GetType() const
+	const std::string InformationTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób
-	void CInformationTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b
+	void InformationTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CInformationTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool InformationTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root");
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CInformationTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml wywoÅ‚ywana przez implementacje klas potomnych
+	bool InformationTemplate::load(CXml & xml)
 	{
 		//nazwa pliku xml
 		m_templ_filename = xml.GetFilename();
@@ -88,29 +88,29 @@ namespace factory
 			m_templ_tranformable_digit.setScale(xml.GetFloat(node, "scale_digit_x"),xml.GetFloat(node, "scale_digit_y"));
 			m_templ_tranformable_mask.setScale(xml.GetFloat(node, "scale_mask_x"),xml.GetFloat(node, "scale_mask_y"));
 		}
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy CActor
-	CInformation* CInformationTemplate::create(std::wstring id)
+	CInformation* InformationTemplate::create(std::wstring id)
 	{
 		CInformation* information = gInfoManager.CreateInformation(id);
 		fill(information);
 		return information;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CInformationTemplate::fill(CInformation *information)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void InformationTemplate::fill(CInformation *information)
 	{
 		//ustawienie kompletnego wzorca
 		information->SetTemplate(this);
 
-		//próba przekazania tekstur
+		//prÃ³ba przekazania tekstur
 		information->SetTextureDigit(m_templ_texture_digit_name);
 		information->SetTextureMask(m_templ_texture_mask_name);
 
-		//próba przekazania danych transformacji geometrycznych
+		//prÃ³ba przekazania danych transformacji geometrycznych
 		information->setTransformableDigit(m_templ_tranformable_digit);
 		information->setTransformableMask(m_templ_tranformable_mask);
 	}

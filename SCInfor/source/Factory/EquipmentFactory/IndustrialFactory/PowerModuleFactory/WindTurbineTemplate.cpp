@@ -11,12 +11,12 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(WindTurbineTemplate, CActorTemplate);
+	RTTI_IMPL(WindTurbineTemplate, ActorTemplate);
 
 	//Konstruktor
 	WindTurbineTemplate::WindTurbineTemplate()
 	:
-		CActorTemplate(),	//konstruktor klasy bazowej
+		ActorTemplate(),	//konstruktor klasy bazowej
 		m_templ_turbine_name(),
 		m_templ_speed_rotor(0.0f),
 		m_templ_speed_transmission(1.0f),
@@ -29,7 +29,7 @@ namespace factory
 	//Destruktor wirtualny
 	WindTurbineTemplate::~WindTurbineTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_turbine_name = "";
 		m_templ_speed_rotor = 0.0f;
 		m_templ_speed_transmission = 0.0f;
@@ -60,8 +60,8 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
 	bool WindTurbineTemplate::load(CXml & xml)
 	{
-		//sprawdzamy, czy można załadować dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::load(xml)) return false;
+		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
+		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji dla turbiny
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "turbine_config"))
@@ -92,7 +92,7 @@ namespace factory
 	{
 		if(p_turbine)
 		{
-			CActorTemplate::fill(p_turbine);
+			ActorTemplate::fill(p_turbine);
 
 			//przekazanie danych...
 			p_turbine->setTurbineName(m_templ_turbine_name);

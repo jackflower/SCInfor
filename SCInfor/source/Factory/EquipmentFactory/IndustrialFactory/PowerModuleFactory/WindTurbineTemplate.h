@@ -7,7 +7,7 @@
 #ifndef H_WIND_TURBINE_TEMPLATE_JACK
 #define H_WIND_TURBINE_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 #include "../../../../Equipment/Industrial/PowerModuleType/WindTurbine.h"
 
 namespace factory
@@ -15,7 +15,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec turbiny
 	///
-	class WindTurbineTemplate : public CActorTemplate
+	class WindTurbineTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

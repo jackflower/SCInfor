@@ -51,14 +51,14 @@ namespace mapengine
 		m_code = code;
 	}
 
-	//Metoda zwraca wskaünik na wzorzec fabryczny - obiekt klasy CMapPhysicalTemplate
-	CMapPhysicalTemplate* CMapPhysicalType::GetTemplate()
+	//Metoda zwraca wskaünik na wzorzec fabryczny - obiekt klasy MapPhysicalTemplate
+	MapPhysicalTemplate* CMapPhysicalType::GetTemplate()
 	{
 		return p_template;
 	}
 		
-	//Metoda ustawia wskaünik na wzorzec fabryczny - obiekt klasy CMapPhysicalTemplate
-	void CMapPhysicalType::SetTemplate(CMapPhysicalTemplate* template_param)
+	//Metoda ustawia wskaünik na wzorzec fabryczny - obiekt klasy MapPhysicalTemplate
+	void CMapPhysicalType::SetTemplate(MapPhysicalTemplate* template_param)
 	{
 		p_template = template_param;
 	}

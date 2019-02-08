@@ -7,7 +7,7 @@
 #ifndef H_SLOTS_RATE_TEMPLATE_JACK
 #define H_SLOTS_RATE_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 #include "../../../../Logic/Energetics/PowerRelay/CSlotsRate.h"
 
 namespace factory
@@ -15,7 +15,7 @@ namespace factory
 	///
 	///Klasa reprezentuje prawzorzec wskaźnika przekaźnika (sloty)
 	///
-	class SlotsRateTemplate : public CActorTemplate
+	class SlotsRateTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

@@ -1,92 +1,83 @@
-//  ______________________________________________
-// | CPhysicalTemplate.cpp - class implementation |
-// | Jack Flower - November 2012                  |
-// |______________________________________________|
+ï»¿//  _____________________________________________
+// | PhysicalTemplate.cpp - class implementation |
+// | Jack Flower - November 2012                 |
+// |_____________________________________________|
 //
 
-#include "CPhysicalTemplate.h"
-#include "../ResourceManager/CResourceManager.h"
-#include "../XML/CXml.h"
-#include "../Utilities/StringUtils/StringUtils.h"
-#include "../Rendering/Displayable/CDisplayable.h"
-#include "../Rendering/Animations/CAnimationState.h"
-
-using namespace rapidxml;
-using namespace rendering::animation;
-
+#include "PhysicalTemplate.h"
 
 namespace factory
 {
-	RTTI_IMPL(CPhysicalTemplate, IResource);
+	RTTI_IMPL(PhysicalTemplate, IResource);
 
 	//Konstruktor
-	CPhysicalTemplate::CPhysicalTemplate(void)
+	PhysicalTemplate::PhysicalTemplate()
 	:
-		IResource						(),//konstruktor klasy bazowej
-		m_templ_filename				(),
-		m_templ_type					(),
-		m_templ_genre					(),
-		m_templ_circle_radius			(0.0f),
-		m_templ_rect_size				(1.0f, 1.0f),
-		m_templ_rect_size_body			(1.0f, 1.0f),
-		m_templ_rect_size_head			(1.0f, 1.0f),
-		m_templ_texture_body			(),
-		m_templ_texture_head			(),
-		m_templ_altitude				(1.0f),
-		m_templ_use_displayable_body	(false),
-		m_templ_use_shadow_body			(false),
-		m_templ_use_displayable_head	(false),
-		m_templ_use_shadow_head			(false),
-		m_templ_color_body				(sf::Color()),
-		m_templ_color_head				(sf::Color()),
-		m_templ_scale_body				(1.0f),
-		m_templ_scale_head				(1.0f),
-		m_templ_part_collision_data		()
+		IResource(),//konstruktor klasy bazowej
+		m_templ_filename(),
+		m_templ_type(),
+		m_templ_genre(),
+		m_templ_circle_radius(0.0f),
+		m_templ_rect_size(1.0f, 1.0f),
+		m_templ_rect_size_body(1.0f, 1.0f),
+		m_templ_rect_size_head(1.0f, 1.0f),
+		m_templ_texture_body(),
+		m_templ_texture_head(),
+		m_templ_altitude(1.0f),
+		m_templ_use_displayable_body(false),
+		m_templ_use_shadow_body(false),
+		m_templ_use_displayable_head(false),
+		m_templ_use_shadow_head(false),
+		m_templ_color_body(sf::Color()),
+		m_templ_color_head(sf::Color()),
+		m_templ_scale_body(1.0f),
+		m_templ_scale_head(1.0f),
+		m_templ_part_collision_data()
 	{
 	}
 
 	//Destruktor
-	CPhysicalTemplate::~CPhysicalTemplate(void)
+	PhysicalTemplate::~PhysicalTemplate()
 	{
-		//IResource						not edit
-		m_templ_filename				= "";
-		m_templ_type					= "";
-		m_templ_genre					= L"";
-		m_templ_circle_radius			= 0.0f;
-		//m_templ_rect_size				not edit
-		m_templ_rect_size_body.x		= 0.0;
-		m_templ_rect_size_body.y		= 0.0;
-		m_templ_rect_size_head.x		= 0.0;
-		m_templ_rect_size_head.y		= 0.0;
-		m_templ_texture_body			= "";
-		m_templ_texture_head			= "";
-		m_templ_altitude				= 0.0f;
-		m_templ_use_displayable_body	= false;
-		m_templ_use_shadow_body			= false;
-		m_templ_use_displayable_head	= false;
-		m_templ_use_shadow_head			= false;
-		//m_templ_color_body			not edit
-		//m_templ_color_head			not edit
-		m_templ_scale_body				= 0.0f;
-		m_templ_scale_head				= 0.0f;
-		//m_templ_part_collision_data	not edit
+		//~IResource()
+		m_templ_filename = "";
+		m_templ_type = "";
+		m_templ_genre = L"";
+		m_templ_circle_radius = 0.0f;
+		//m_templ_rect_size
+		m_templ_rect_size_body.x = 0.0;
+		m_templ_rect_size_body.y = 0.0;
+		m_templ_rect_size_head.x = 0.0;
+		m_templ_rect_size_head.y = 0.0;
+		m_templ_texture_body = "";
+		m_templ_texture_head = "";
+		m_templ_altitude = 0.0f;
+		m_templ_use_displayable_body = false;
+		m_templ_use_shadow_body = false;
+		m_templ_use_displayable_head = false;
+		m_templ_use_shadow_head = false;
+		//m_templ_color_body
+		//m_templ_color_head
+		m_templ_scale_body = 0.0f;
+		m_templ_scale_head = 0.0f;
+		//m_templ_part_collision_data
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CPhysicalTemplate::GetType() const
+	const std::string PhysicalTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CPhysicalTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool PhysicalTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root");
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml wywo³ywana przez implementacje klas potomnych
-	bool CPhysicalTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml wywoÅ‚ywana przez implementacje klas potomnych
+	bool PhysicalTemplate::load(CXml & xml)
 	{
 		//nazwa pliku xml
 		m_templ_filename = xml.GetFilename();
@@ -105,14 +96,14 @@ namespace factory
 			m_templ_circle_radius = xml.GetFloat(node, "circle_radius");
 		}
 
-		//wektor przechowuj¹cy rozmiar obszaru prostok¹tnego
+		//wektor przechowujÄ…cy rozmiar obszaru prostokÄ…tnego
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "rect_size"))
 		{
 			m_templ_rect_size.x = xml.GetFloat(node, "rect_size_x");
 			m_templ_rect_size.y = xml.GetFloat(node, "rect_size_y");
 		}
 
-		//wektor przechowuj¹cy rozmiar obszaru prostok¹tnego
+		//wektor przechowujÄ…cy rozmiar obszaru prostokÄ…tnego
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "rect_size"))
 		{
 			//body
@@ -130,13 +121,13 @@ namespace factory
 			m_templ_scale_head = xml.GetFloat(node, "scale_head");
 		}
 
-		//wartoœæ pu³apu obiektu wzglêdem pod³o¿a
+		//wartoÅ›Ä‡ puÅ‚apu obiektu wzglÄ™dem podÅ‚oÅ¼a
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "altitude"))
 		{
 			m_templ_altitude = xml.GetFloat(node, "altitude");
 		}
 
-		//pola konfiguracyjne - potrzebne przy podejmowaniu decyzji - wygl¹d obiektu
+		//pola konfiguracyjne - potrzebne przy podejmowaniu decyzji - wyglÄ…d obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "physical_config"))
 		{
 			m_templ_use_displayable_body = xml.GetBool(node, "use_displayable_body");
@@ -159,14 +150,14 @@ namespace factory
 			m_templ_color_head.a = xml.GetInt(node, "color_head_a");
 		}
 
-		//³adowanie danych reprezentacji graficznej - obrazy statyczne
+		//Å‚adowanie danych reprezentacji graficznej - obrazy statyczne
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "static_image"))
 		{
 			m_templ_texture_body = xml.GetString(node, "image_name_body");
 			m_templ_texture_head = xml.GetString(node, "image_name_head");
 		}
 
-		//konfiguraja danych o kolidowaniu poszczególnych czêœci, z których sk³ada siê obiekt
+		//konfiguraja danych o kolidowaniu poszczegÃ³lnych czÄ™Å›ci, z ktÃ³rych skÅ‚ada siÄ™ obiekt
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "colliding_config"))
 		{
 			m_templ_part_collision_data.setCollidingBody(xml.GetBool(node, "colliding_body"));
@@ -175,12 +166,12 @@ namespace factory
 			m_templ_part_collision_data.setCollidingHeadShadow(xml.GetBool(node, "colliding_head_shadow"));
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void CPhysicalTemplate::fill(CPhysical *physical)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca wskazany obiekt danymi tej klasy
+	void PhysicalTemplate::fill(CPhysical *physical)
 	{
 		//ustawienie kompletnego wzorca
 		physical->SetTemplate(this);
@@ -206,20 +197,20 @@ namespace factory
 		//head scale
 		physical->SetScaleHead(m_templ_scale_head, m_templ_scale_head);
 
-		//altitude - pu³ap obiektu wzglêdem pod³o¿a
+		//altitude - puÅ‚ap obiektu wzglÄ™dem podÅ‚oÅ¼a
 		physical->SetAltitude(m_templ_altitude);
 
-		//konfiguracja obiektu - body, head, wygl¹d, cieñ, etc...
+		//konfiguracja obiektu - body, head, wyglÄ…d, cieÅ„, etc...
 		physical->SetUseDisplayableBody(m_templ_use_displayable_body);
 		physical->SetUseShadowBody(m_templ_use_shadow_body);
 		physical->SetUseDisplayableHead(m_templ_use_displayable_head);
 		physical->SetUseShadowHead(m_templ_use_shadow_head);
 
-		//konfiguracja koloru (szczególnie tektury syntetyczne)
+		//konfiguracja koloru (szczegÃ³lnie tektury syntetyczne)
 		physical->SetColorBody(m_templ_color_body);
 		physical->SetColorHead(m_templ_color_head);
 
-		//konfiguraja danych o kolidowaniu poszczególnych czêœci, z których sk³ada siê obiekt
+		//konfiguraja danych o kolidowaniu poszczegÃ³lnych czÄ™Å›ci, z ktÃ³rych skÅ‚ada siÄ™ obiekt
 		physical->getPartCollisionData().setCollidingBody(m_templ_part_collision_data.getCollidingBody());
 		physical->getPartCollisionData().setCollidingBodyShadow(m_templ_part_collision_data.getCollidingBodyShadow());
 		physical->getPartCollisionData().setCollidingHead(m_templ_part_collision_data.getCollidingHead());

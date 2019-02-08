@@ -1,10 +1,10 @@
-//  ____________________________________________
-// | CBulletTemplate.cpp - class implementation |
-// | Jack Flower - November 2012                |
-// |____________________________________________|
+ï»¿//  ___________________________________________
+// | BulletTemplate.cpp - class implementation |
+// | Jack Flower - November 2012               |
+// |___________________________________________|
 //
 
-#include "CBulletTemplate.h"
+#include "BulletTemplate.h"
 #include "../XML/CXml.h"
 #include "../Rendering/Displayable/CDisplayable.h"
 #include "../Rendering/Animations/CAnimationManager.h"
@@ -15,48 +15,52 @@ using namespace rapidxml;
 
 namespace factory
 {
-	RTTI_IMPL(CBulletTemplate, CPhysicalTemplate);
+	RTTI_IMPL(BulletTemplate, ActorTemplate);
 
 	//Konstruktor
-	CBulletTemplate::CBulletTemplate()
+	BulletTemplate::BulletTemplate()
+	:
+		ActorTemplate()//konstruktor klasy bazowej
 	{
 	}
 
 	//Destruktor
-	CBulletTemplate::~CBulletTemplate()
+	BulletTemplate::~BulletTemplate()
 	{
+		//~ActorTemplate
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CBulletTemplate::GetType() const
+	const std::string BulletTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób
-	void CBulletTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b
+	void BulletTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CBulletTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool BulletTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root");
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CBulletTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml
+	bool BulletTemplate::load(CXml & xml)
 	{
-		if (!CPhysicalTemplate::load(xml)) return false;
+		//if (!PhysicalTemplate::load(xml)) return false;
+		if (!ActorTemplate::load(xml)) return false;
 
-		//sprawdzamy, czy xml zawiera informacjê, ¿e jest to bullet
+		//sprawdzamy, czy xml zawiera informacjÄ™, Å¼e jest to bullet
 		if (xml.GetString(xml.GetRootNode(), "type") != "bullet")
 			return false;
 
 		//plik xml pocisku przypomina plik physical'a
-		//ewentualne ³adowanie danych generycznych pocisku...
+		//ewentualne Å‚adowanie danych generycznych pocisku...
 
 
 		//if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "zabawa z pociskiem..."))
@@ -80,14 +84,14 @@ namespace factory
 		return true;
 	}
 
-	//Wirtualna metoda tworzenie obiektów pochodnych klasy CPhysical
-	CBullet* CBulletTemplate::create(std::wstring id)
+	//Wirtualna metoda tworzenie obiektÃ³w pochodnych klasy CPhysical
+	CBullet *BulletTemplate::create(std::wstring id)
 	{
-		CBullet* bullet = gPhysicalManager.CreateBullet();
+		CBullet *bullet = gPhysicalManager.CreateBullet();
 
 		fill(bullet);
 		
-		//gdyby by³y jakieœ pola do przekazania, nale¿y to uczyniæ...
+		//gdyby byÅ‚y jakieÅ› pola do przekazania, naleÅ¼y to uczyniÄ‡...
 		//ale w fill(...)
 
 
@@ -98,7 +102,7 @@ namespace factory
 		//float radius =	Lerp( mMinRadius,	mMaxRadius,	random );
 
 		//bullet->SetCategory(PHYSICAL_BULLET);
-		//bullet->SetBoundingCircle(radius);// atrapa, coœ muszê mieæ.../
+		//bullet->SetBoundingCircle(radius);// atrapa, coÅ› muszÄ™ mieÄ‡.../
 		//this->m_templ_circle_radius
 		//m_templ_animation_name_body
 		//this->m_templ_animation_name_body...
@@ -118,8 +122,8 @@ namespace factory
 		//	bullet->GetDisplayable()->SetScale( scale, scale );
 
 		/* TODO:
-		*  przypisywanie efektów cz¹steczkowych do pocisku
-		*  ( czekam na system cz¹steczek z predefiniowanymi efektami identyfikowanymi po nazwie - stringu )
+		*  przypisywanie efektÃ³w czÄ…steczkowych do pocisku
+		*  ( czekam na system czÄ…steczek z predefiniowanymi efektami identyfikowanymi po nazwie - stringu )
 		*/
 
 		return bullet;
@@ -127,10 +131,16 @@ namespace factory
 
 	//implementacja metod  p r o t e c e t e d:
 
-	//Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CBullet
-	void CBulletTemplate::fill(CBullet *bullet)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca danymi obiekt klasy CBullet
+	void BulletTemplate::fill(CBullet *bullet)
 	{
 		bullet->SetTemplate(this);
+		
+		//Friday, February 8, 2019
+		//ten kod jest prawdopodobnie poporawny
+		//jak bÄ™dÄ… pocisku, to siÄ™ przetestuje...
+		ActorTemplate::fill(bullet);
+		
 		//to do...
 	}
 }//namespace factory

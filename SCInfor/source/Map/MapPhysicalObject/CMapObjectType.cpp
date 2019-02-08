@@ -52,13 +52,13 @@ namespace mapengine
 	}
 
 	//Metoda zwraca wskaünik na wzorzec danych
-	CPhysicalTemplate* CMapObjectType::GetTemplate() const
+	PhysicalTemplate* CMapObjectType::GetTemplate() const
 	{
 		return p_template;
 	}
 
 	//Metoda ustawia wskaünik na wzorzec danych
-	void CMapObjectType::SetTemplate(CPhysicalTemplate* template_param)
+	void CMapObjectType::SetTemplate(PhysicalTemplate* template_param)
 	{
 		p_template = template_param;
 	}

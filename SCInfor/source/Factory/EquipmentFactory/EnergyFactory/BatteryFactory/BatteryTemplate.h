@@ -7,7 +7,7 @@
 #ifndef H_BATTERY_TEMPLATE_JACK
 #define H_BATTERY_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 #include "../../../../Equipment/Energy/Battery/Battery.h"
 
 using namespace equipment::battery;
@@ -17,7 +17,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec baterii
 	///
-	class BatteryTemplate : public CActorTemplate
+	class BatteryTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

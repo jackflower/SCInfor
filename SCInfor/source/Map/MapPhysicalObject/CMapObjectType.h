@@ -8,7 +8,7 @@
 #define H_MAP_OBJECT_TYPE_JACK
 
 #include <string>
-#include "../../Factory/CPhysicalTemplate.h"
+#include "../../Factory/PhysicalTemplate.h"
 #include "../../RTTI/RTTI.h"
 
 namespace mapengine
@@ -59,19 +59,19 @@ namespace mapengine
 		///
 		///Metoda zwraca wskaünik na wzorzec danych
 		///
-		CPhysicalTemplate* GetTemplate() const;
+		PhysicalTemplate* GetTemplate() const;
 
 		///
 		///Metoda ustawia wskaünik na wzorzec danych
 		///
 		///@param *template_param - wskaünik na wzorzec danych
 		///
-		void SetTemplate(CPhysicalTemplate* template_param);
+		void SetTemplate(PhysicalTemplate* template_param);
 
 	private:
 
 		std::string			m_code;		//unikalna nazwa obiektu wzorca nadawana w pliku xml
-		CPhysicalTemplate*	p_template;	//wskaünik na wzorzec danych
+		PhysicalTemplate*	p_template;	//wskaünik na wzorzec danych
 	};
 } //namespace mapengine
 #endif //H_MAP_OBJECT_TYPE_JACK

@@ -7,7 +7,7 @@
 #ifndef H_COMMUNICATION_TEMPLATE_JACK
 #define H_COMMUNICATION_TEMPLATE_JACK
 
-#include "../../CActorTemplate.h"
+#include "../../ActorTemplate.h"
 #include "../../../Logic/Communication/CCommunication.h"
 
 using namespace logic::communication;
@@ -17,7 +17,7 @@ namespace factory
 	///
 	///Klasa reprezentuje prawzorzec wszystkich modułów odpowiedzialnych za komunikację
 	///
-	class CommunicationTemplate : public CActorTemplate
+	class CommunicationTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

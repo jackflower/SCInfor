@@ -18,7 +18,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec magazynka na amunicję
 	///
-	class GunTemplate : public CActorTemplate
+	class GunTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

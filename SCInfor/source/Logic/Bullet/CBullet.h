@@ -17,7 +17,7 @@ namespace logic
 	///
 	///Klasa reprezentuje funkcjonalnoœæ pocisku
 	///
-	class CBullet : public CPhysical
+	class CBullet : public CActor//CPhysical
 	{
 		RTTI_DECL;
 
@@ -33,14 +33,14 @@ namespace logic
 		///
 		///Chroniony konstruktor domyœlny
 		///
-		CBullet(const std::wstring& uniqueId);
+		CBullet(const std::wstring & uniqueId);
 
 		///
 		///Chroniony konstruktor kopiuj¹cy
 		///
 		///@param CBulletCopy - parametr - obiekt klasy CBullet
 		///
-		CBullet(const CBullet &CBulletCopy);
+		CBullet(const CBullet & CBulletCopy);
 
 		///
 		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
@@ -190,6 +190,8 @@ namespace logic
 		void SetBulletSpeed(float bullet_speed);
 
 		///
+		///Metoda tworzy eksplozjê - wymaga implementacji
+		///
 		void Explode();
 
 		///
@@ -205,8 +207,6 @@ namespace logic
 		void Test();
 
 		//uporz¹dkowac kolejnosæ metod:
-
-
 
 
 	protected:
@@ -225,6 +225,7 @@ namespace logic
 		float			m_caliber;				//kaliber pocisku		[potrzebne]
 		float			m_bullet_weight;		//waga jednego pocisku	[nie - bo to ju¿ odziedziczone]
 		//zmiana, dziedziczymy po CActor (nie mam wagi i innych bajerów)...
+		//2019-02-08 mia³em razcjê, w³aœnie powy¿sze wprowadzi³em w ¿ycie...
 
 		
 		//poni¿ej - czeka mnie bardzo czasoch³onna analiza...

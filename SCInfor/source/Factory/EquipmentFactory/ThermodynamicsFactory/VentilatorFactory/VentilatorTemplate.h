@@ -7,7 +7,7 @@
 #ifndef H_VENTILATOR_TEMPLATE_JACK
 #define H_VENTILATOR_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 #include "../../../../Equipment/Thermodynamics/Ventilator/Ventilator.h"
 
 namespace factory
@@ -15,7 +15,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec wentylatora
 	///
-	class VentilatorTemplate : public CActorTemplate
+	class VentilatorTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

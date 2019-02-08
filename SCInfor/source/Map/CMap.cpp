@@ -446,7 +446,7 @@ namespace mapengine
 					<< "\t<objtype code = \""
 					<< m_map_object_types[i]->GetCode()
 					<< "\" file = \""
-					<< m_map_object_types[i]->GetTemplate()->GetFilename()
+					<< m_map_object_types[i]->GetTemplate()->getFilename()
 					<< "\"/>\n";
             else
                 fprintf(stderr, "ERROR: null objtype template pointer @ CMap::Serialize!\n");

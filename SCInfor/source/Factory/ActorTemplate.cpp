@@ -1,12 +1,12 @@
-//  ___________________________________________
-// | CActorTemplate.cpp - class implementation |
-// | Jack Flower - February 2013               |
-// |___________________________________________|
+ï»¿//  __________________________________________
+// | ActorTemplate.cpp - class implementation |
+// | Jack Flower - February 2013              |
+// |__________________________________________|
 //
 
 #include <SFML/Graphics.hpp>
-#include "CActorTemplate.h"
-#include "CPhysicalInfoTemplate.h"
+#include "ActorTemplate.h"
+#include "PhysicalInfoTemplate.h"
 #include "EquipmentFactory/EnergyFactory/EnergyTemplate.h"
 #include "EquipmentFactory/EngineFactory/EngineTemplate.h"
 #include "EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
@@ -28,74 +28,74 @@ using namespace weather;
 
 namespace factory
 {
-	RTTI_IMPL(CActorTemplate, CPhysicalTemplate);
+	RTTI_IMPL(ActorTemplate, PhysicalTemplate);
 
 	//Konstruktor
-	CActorTemplate::CActorTemplate()
+	ActorTemplate::ActorTemplate()
 	:
-		CPhysicalTemplate				(),//konstruktor klasy bazowej
-		p_templ_animations				(NULL),
-		m_templ_available_animations	(),
-		m_templ_technical_data			(),
-		m_templ_engine_data				(),
-		m_templ_energy_data				(),
-		m_templ_airconditioning_data	(),
-		m_templ_ventilator_data			(),
-		m_templ_gun_data				(),
-		p_templ_engine					(NULL),
-		p_templ_energy					(NULL),
-		p_templ_airconditioning			(NULL),
-		p_templ_ventilator				(NULL),
-		p_templ_gun						(NULL),
-		m_templ_use_physical_info		(false),
-		p_templ_physical_info			(NULL)
+		PhysicalTemplate(),//konstruktor klasy bazowej
+		p_templ_animations(NULL),
+		m_templ_available_animations(),
+		m_templ_technical_data(),
+		m_templ_engine_data(),
+		m_templ_energy_data(),
+		m_templ_airconditioning_data(),
+		m_templ_ventilator_data(),
+		m_templ_gun_data(),
+		p_templ_engine(NULL),
+		p_templ_energy(NULL),
+		p_templ_airconditioning(NULL),
+		p_templ_ventilator(NULL),
+		p_templ_gun(NULL),
+		m_templ_use_physical_info(false),
+		p_templ_physical_info(NULL)
 	{
 	}
 
 	//Destruktor wirtualny
-	CActorTemplate::~CActorTemplate()
+	ActorTemplate::~ActorTemplate()
 	{
-		p_templ_animations				= NULL;
-		//m_templ_available_animations	not edit
-		//m_templ_technical_data		not edit
-		//m_templ_engine_data			not edit
-		//m_templ_energy_data			not edit
-		//m_templ_airconditioning_data	not edit
-		//m_templ_ventilator_data		not edit
-		//m_templ_gun_data				not edit
-		p_templ_engine					= NULL;
-		p_templ_energy					= NULL;
-		p_templ_airconditioning			= NULL;
-		p_templ_ventilator				= NULL;
-		p_templ_gun						= NULL;
-		m_templ_use_physical_info		= false;
-		p_templ_physical_info			= NULL;
+		p_templ_animations = NULL;
+		//m_templ_available_animations
+		//m_templ_technical_data
+		//m_templ_engine_data
+		//m_templ_energy_data
+		//m_templ_airconditioning_data
+		//m_templ_ventilator_data
+		//m_templ_gun_data
+		p_templ_engine = NULL;
+		p_templ_energy = NULL;
+		p_templ_airconditioning = NULL;
+		p_templ_ventilator = NULL;
+		p_templ_gun = NULL;
+		m_templ_use_physical_info = false;
+		p_templ_physical_info = NULL;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CActorTemplate::GetType() const
+	const std::string ActorTemplate::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CActorTemplate::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b - implementacje w klasach pochodnych
+	void ActorTemplate::drop()
 	{
 		delete this;
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CActorTemplate::load(const std::string &name)
+	//Metoda Å‚adujÄ…ca dane
+	bool ActorTemplate::load(const std::string & name)
 	{
 		CXml xml(name, "root" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CActorTemplate::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml
+	bool ActorTemplate::load(CXml & xml)
 	{
-		//³adowanie danych klasy bazowej CPhysical
-		if (!CPhysicalTemplate::load(xml)) return false;
+		//Å‚adowanie danych klasy bazowej CPhysical
+		if (!PhysicalTemplate::load(xml)) return false;
 
 		//dane techniczne obiektu
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "technical_data"))
@@ -107,15 +107,15 @@ namespace factory
 			m_templ_technical_data.setIsMove(m_templ_technical_data.getIsMove());
 		}
 
-		//³adowanie danych - obraz statyczny - reprezentacja graficzna
+		//Å‚adowanie danych - obraz statyczny - reprezentacja graficzna
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "static_image"))
 		{
-			//zaœlepka...
+			//zaÅ›lepka...
 			//std::string image_body_name = xml.GetString(node, "image_name_body");
 			//std::string image_head_name = xml.GetString(node, "image_name_head");
 		}
 
-		//³adowanie zestawów animacji
+		//Å‚adowanie zestawÃ³w animacji
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "animset"))
 		{
 			for (xml_node<>* node = xml.GetChild(xml.GetRootNode(), "animset"); node; node = xml.GetSibling(node,"animset"))
@@ -128,27 +128,25 @@ namespace factory
 		}
 		else
 		{
-			CAnimSet * animations = new CAnimSet();
+			CAnimSet *animations = new CAnimSet();
 			animations->Parse(xml);
 			m_templ_available_animations.push_back(animations);
 		}
 
-		//jeœli zestaw animacji liczy wiêcej, ni¿ jedn¹ animacjê
+		//jeÅ›li zestaw animacji liczy wiÄ™cej, niÅ¼ jednÄ… animacjÄ™
 		if (m_templ_available_animations.size() > 0)
-			//ustawiam siê w zestawie na pierwsz¹ pod zerowym indeksem
+			//ustawiam siÄ™ w zestawie na pierwszÄ… pod zerowym indeksem
 			p_templ_animations = m_templ_available_animations[0];
 		else
 			p_templ_animations = NULL;
 
 
-		//³adowanie nazwy pliku z konfiguracj¹ engine
+		//Å‚adowanie nazwy pliku z konfiguracjÄ… engine
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "engine_data"))
 		{
-			
-
 			//flaga, czy obiekt posiada silnik
 			m_templ_engine_data.setUseEquipment(xml.GetBool(node, "use_engine"));
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ engine
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… engine
 			std::string engine_filename_tmp = xml.GetString(node, "engine_filename");
 			
 			//emitery dla obiektu klasy Engine
@@ -158,24 +156,24 @@ namespace factory
 				p_templ_engine = (EngineTemplate*)gResourceManager.GetPhysicalTemplate(engine_filename_tmp);
 		}
 
-		//³adowanie nazwy pliku z konfiguracj¹ physical_info 
+		//Å‚adowanie nazwy pliku z konfiguracjÄ… physical_info 
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "physical_info_data"))
 		{
 			//flaga, czy obiekt posiada physical_info
 			m_templ_use_physical_info = xml.GetBool(node, "use_physical_info");
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ physical_info
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… physical_info
 			std::string physical_info_filename_tmp = xml.GetString(node, "physical_info_filename");
 
 			if(m_templ_use_physical_info)
-				p_templ_physical_info = (CPhysicalInfoTemplate*)gResourceManager.GetPhysicalTemplate(physical_info_filename_tmp);
+				p_templ_physical_info = (PhysicalInfoTemplate*)gResourceManager.GetPhysicalTemplate(physical_info_filename_tmp);
 		}
 
-		//³adowanie nazwy pliku z konfiguracj¹ energy
+		//Å‚adowanie nazwy pliku z konfiguracjÄ… energy
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "energy_data"))
 		{
-			//flaga, czy obiekt posiada modu³ energii
+			//flaga, czy obiekt posiada moduÅ‚ energii
 			m_templ_energy_data.setUseEquipment(xml.GetBool(node, "use_energy"));
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ energy
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… energy
 			std::string energy_filename_tmp = xml.GetString(node, "energy_filename");
 			
 			//emitery dla obiektu klasy Energy
@@ -185,69 +183,69 @@ namespace factory
 				p_templ_energy = (EnergyTemplate*)gResourceManager.GetPhysicalTemplate(energy_filename_tmp);
 		}
 
-		//³adowanie modu³u klimatyzatora
+		//Å‚adowanie moduÅ‚u klimatyzatora
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "airconditioning_data"))
 		{
-			//flaga, czy obiekt posiada modu³ klimatyzatora
+			//flaga, czy obiekt posiada moduÅ‚ klimatyzatora
 			m_templ_airconditioning_data.setUseEquipment(xml.GetBool(node, "use_airconditioning"));
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u klimatyzatora
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… moduÅ‚u klimatyzatora
 			std::string airconditioning_filename_tmp = xml.GetString(node, "airconditioning_filename");
 			
-			//emitery dla obiektu klasy Airconditioning (dopisaæ w xml'u)
+			//emitery dla obiektu klasy Airconditioning (dopisaÄ‡ w xml'u)
 			m_templ_airconditioning_data.setEmiter(xml.GetFloat(node, "airconditioning_emiter_x"), xml.GetFloat(node, "airconditioning_emiter_y"));
 			
 			if(m_templ_airconditioning_data.getUseEquipment())
 				p_templ_airconditioning = (AirconditioningTemplate*)gResourceManager.GetPhysicalTemplate(airconditioning_filename_tmp);
 		}
 
-		//³adowanie modu³u wentylatora
+		//Å‚adowanie moduÅ‚u wentylatora
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "ventilator_data"))
 		{
-			//flaga, czy obiekt posiada modu³ wentylatora
+			//flaga, czy obiekt posiada moduÅ‚ wentylatora
 			m_templ_ventilator_data.setUseEquipment(xml.GetBool(node, "use_ventilator"));
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u wentylatora
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… moduÅ‚u wentylatora
 			std::string ventilator_filename_tmp = xml.GetString(node, "ventilator_filename");
 
-			//emitery dla obiektu klasy Ventilator (dopisaæ w xml'u)
+			//emitery dla obiektu klasy Ventilator (dopisaÄ‡ w xml'u)
 			m_templ_ventilator_data.setEmiter(xml.GetFloat(node, "ventilator_emiter_x"), xml.GetFloat(node, "ventilator_emiter_y"));
 
 			if(m_templ_ventilator_data.getUseEquipment())
 				p_templ_ventilator = (VentilatorTemplate*)gResourceManager.GetPhysicalTemplate(ventilator_filename_tmp);
 		}
 
-		//³adowanie modu³u dzia³a (dopisaæ w xml'u)...
+		//Å‚adowanie moduÅ‚u dziaÅ‚a (dopisaÄ‡ w xml'u)...
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "gun_data"))
 		{
-			//flaga, czy obiekt posiada modu³ wentylatora
+			//flaga, czy obiekt posiada moduÅ‚ wentylatora
 			m_templ_gun_data.setUseEquipment(xml.GetBool(node, "use_gun"));
-			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ modu³u wentylatora
+			//zapisujÄ™ do zmiennej nazwÄ™ pliku z konfiguracjÄ… moduÅ‚u wentylatora
 			std::string gun_filename_tmp = xml.GetString(node, "gun_filename");
 
-			//emitery dla obiektu klasy Gun (dopisaæ w xml'u)
+			//emitery dla obiektu klasy Gun (dopisaÄ‡ w xml'u)
 			m_templ_gun_data.setEmiter(xml.GetFloat(node, "gun_emiter_x"), xml.GetFloat(node, "gun_emiter_y"));
 
 			if (m_templ_gun_data.getUseEquipment())
 				p_templ_gun = (GunTemplate*)gResourceManager.GetPhysicalTemplate(gun_filename_tmp);
 		}
 
-		//wszystkie podklasy sprawdzaj¹, czy xml jest poprawny
+		//wszystkie podklasy sprawdzajÄ…, czy xml jest poprawny
 		return true;
 	}
 
 	//Metoda tworzy obiekt klasy CActor
-	CActor* CActorTemplate::create(std::wstring id)
+	CActor *ActorTemplate::create(std::wstring id)
 	{
-		CActor* actor = gPhysicalManager.CreateActor(id);
+		CActor *actor = gPhysicalManager.CreateActor(id);
 		fill(actor);
 		return actor;
 	}
 
-	//Wirtualna metoda wype³niaj¹ca danymi obiekt klasy CActor
-	void CActorTemplate::fill(CActor *actor)
+	//Wirtualna metoda wypeÅ‚niajÄ…ca danymi obiekt klasy CActor
+	void ActorTemplate::fill(CActor *actor)
 	{
 		if(actor)
 		{
-			CPhysicalTemplate::fill(actor);
+			PhysicalTemplate::fill(actor);
 
 			//dane techniczne obiektu
 			actor->setMass(m_templ_technical_data.getMass());
@@ -261,10 +259,10 @@ namespace factory
 			actor->SetUseWentilator(m_templ_ventilator_data.getUseEquipment());
 			actor->SetUseGun(m_templ_gun_data.getUseEquipment());
 
-			//chyba info nie bêdzie u¿ywane w aktorze (ekwipunek zamiast tego)
+			//chyba info nie bÄ™dzie uÅ¼ywane w aktorze (ekwipunek zamiast tego)
 			//actor->SetUsePhysicalInfo(m_templ_use_physical_info);
 
-			//przekazanie zestawu animacji do obiektu, który jest wype³niany danymi wzorca
+			//przekazanie zestawu animacji do obiektu, ktÃ³ry jest wypeÅ‚niany danymi wzorca
 			if (p_templ_animations)
 			{
 				actor->SetAnimSet(p_templ_animations);
@@ -278,7 +276,7 @@ namespace factory
 					actor->SetAnimationHead(p_templ_animations->GetDefaultAnimHead());
 			}
 
-			//jeœli obiekt posiada silnik engine
+			//jeÅ›li obiekt posiada silnik engine
 			if (m_templ_engine_data.getUseEquipment())
 			{
 				//emitery dla obiektu klasy Engine
@@ -287,22 +285,22 @@ namespace factory
 				if(p_templ_engine)
 				{
 					//:key 20160601
-					//pobieramy nazwê silnika spod dereferencji wskaŸnika
-					std::wstring engine_genre = p_templ_engine->GetGenre();
+					//pobieramy nazwÄ™ silnika spod dereferencji wskaÅºnika
+					std::wstring engine_genre = p_templ_engine->getGenre();
 
-					//pobieramy sk³adow¹ engine i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… engine i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					actor->SetEngine(p_templ_engine->create(L""));
 					//
 					//actor->SetEngine(p_templ_engine->create(engine_genre));
 					//
-					//przekazanie wskaŸnikowi na klasê Engine informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ Engine informacji o wzorcu
 					actor->GetEngine()->SetTemplate(p_templ_engine);
 					//decorator
 					actor->GetEngine()->setSmoothing(true);
 				}
 			}
 			
-			//jeœli obiekt posiada informacjê o stanie obiektu (energia-¿ycie), (paliwo/tlen)
+			//jeÅ›li obiekt posiada informacjÄ™ o stanie obiektu (energia-Å¼ycie), (paliwo/tlen)
 			if(m_templ_use_physical_info)
 			{
 				if(p_templ_physical_info)
@@ -310,14 +308,14 @@ namespace factory
 					//
 					//blokada...
 					///
-					//pobieramy sk³adow¹ physical_info i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… physical_info i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					//actor->SetPhysicalInfo(p_templ_physical_info->create(L""));
-					//przekazanie wskaŸnikowi na klasê CPhysicalInfo informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ CPhysicalInfo informacji o wzorcu
 					//actor->GetPhysicalInfo()->SetTemplate(p_templ_physical_info);
 				}
 			}
 
-			//jeœli obiekt posiada energiê (akumulator) energy
+			//jeÅ›li obiekt posiada energiÄ™ (akumulator) energy
 			if(m_templ_energy_data.getUseEquipment())
 			{
 				//emitery dla obiektu klasy Energy
@@ -325,16 +323,16 @@ namespace factory
 
 				if(p_templ_energy)
 				{
-					//pobieramy sk³adow¹ energy i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… energy i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					actor->SetEnergy(p_templ_energy->create(L""));
-					//przekazanie wskaŸnikowi na klasê Energy informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ Energy informacji o wzorcu
 					actor->GetEnergy()->SetTemplate(p_templ_energy);
 					//decorator
 					actor->GetEnergy()->setSmoothing(true);
 				}
 			}
 			
-			//jeœli obiekt posiada modu³ klimatyzatora
+			//jeÅ›li obiekt posiada moduÅ‚ klimatyzatora
 			if(m_templ_airconditioning_data.getUseEquipment())
 			{
 				//emitery dla obiektu klasy Airconditioning
@@ -342,16 +340,16 @@ namespace factory
 
 				if(p_templ_airconditioning)
 				{
-					//pobieramy sk³adow¹ modu³ klimatyzatora i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… moduÅ‚ klimatyzatora i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					actor->SetAirconditioning(p_templ_airconditioning->create(L""));
-					//przekazanie wskaŸnikowi na klasê Airconditioning informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ Airconditioning informacji o wzorcu
 					actor->GetAirconditioning()->SetTemplate(p_templ_airconditioning);
 					//decorator
 					actor->GetAirconditioning()->setSmoothing(true);
 				}
 			}
 
-			//jeœli obiekt posiada modu³ wentylatora
+			//jeÅ›li obiekt posiada moduÅ‚ wentylatora
 			if(m_templ_ventilator_data.getUseEquipment())
 			{
 				//emitery dla obiektu klasy Ventilator
@@ -359,16 +357,16 @@ namespace factory
 
 				if(p_templ_ventilator)
 				{
-					//pobieramy sk³adow¹ modu³ wentylatora i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… moduÅ‚ wentylatora i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					actor->SetVentilator(p_templ_ventilator->create(L""));
-					//przekazanie wskaŸnikowi na klasê Ventilator informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ Ventilator informacji o wzorcu
 					actor->GetVentilator()->SetTemplate(p_templ_ventilator);
 					//decorator
 					actor->GetVentilator()->setSmoothing(true);
 				}
 			}
 
-			//jeœli obiekt posiada dzia³o
+			//jeÅ›li obiekt posiada dziaÅ‚o
 			if (m_templ_gun_data.getUseEquipment())
 			{
 				//emitery dla obiektu klasy Gun
@@ -376,9 +374,9 @@ namespace factory
 
 				if (p_templ_gun)
 				{
-					//pobieramy sk³adow¹ modu³ wentylatora i wzorzec wype³nia wskaŸnik danymi
+					//pobieramy skÅ‚adowÄ… moduÅ‚ wentylatora i wzorzec wypeÅ‚nia wskaÅºnik danymi
 					actor->SetGun(p_templ_gun->create(L""));
-					//przekazanie wskaŸnikowi na klasê Gun informacji o wzorcu
+					//przekazanie wskaÅºnikowi na klasÄ™ Gun informacji o wzorcu
 					actor->GetGun()->SetTemplate(p_templ_gun);
 					//decorator
 					actor->GetGun()->setSmoothing(true);

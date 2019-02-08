@@ -15,12 +15,12 @@ using namespace logic;
 
 namespace factory
 {
-	RTTI_IMPL(EnergyTankTemplate, CActorTemplate);
+	RTTI_IMPL(EnergyTankTemplate, ActorTemplate);
 
 	//Konstruktor
 	EnergyTankTemplate::EnergyTankTemplate()
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_energy_tank_name(""),
 		m_templ_energy_tank_capacity(0.0f),
 		m_templ_energy(0.0f),
@@ -31,7 +31,7 @@ namespace factory
 	//Destruktor
 	EnergyTankTemplate::~EnergyTankTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_energy_tank_name = "";
 		m_templ_energy_tank_capacity = 0.0f;
 		m_templ_energy = 0.0f;
@@ -60,8 +60,8 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml
 	bool EnergyTankTemplate::load(CXml &xml)
 	{
-		//sprawdzamy, czy można załadować dane z klasy bazowej CActorTemplate
-		if (!CActorTemplate::load(xml)) return false;
+		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
+		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji akumulatora energii
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "energytank_config"))
@@ -89,7 +89,7 @@ namespace factory
 	{
 		if(p_energytank)
 		{
-			CActorTemplate::fill(p_energytank);
+			ActorTemplate::fill(p_energytank);
 
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)

@@ -9,12 +9,12 @@
 
 namespace factory
 {
-	RTTI_IMPL(BatteryTemplate, CActorTemplate);
+	RTTI_IMPL(BatteryTemplate, ActorTemplate);
 
 	//Konstruktor
 	BatteryTemplate::BatteryTemplate()
 	:
-		CActorTemplate (),//konstruktor klasy bazowej
+		ActorTemplate (),//konstruktor klasy bazowej
 		m_templ_battery_name (""),
 		m_templ_capacity (0.0f),
 		m_templ_factory_capacity (0.0f),
@@ -26,7 +26,7 @@ namespace factory
 	//Destruktor
 	BatteryTemplate::~BatteryTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_battery_name = "";
 		m_templ_capacity = 0.0f;
 		m_templ_factory_capacity = 0.0f;
@@ -57,7 +57,7 @@ namespace factory
 	bool BatteryTemplate::load(CXml &xml)
 	{
 		//ładowanie danych klasy bazowej CActor
-		if (!CActorTemplate::load(xml)) return false;
+		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie konfiguracji battery
 		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "battery_config"))
@@ -84,7 +84,7 @@ namespace factory
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 	void BatteryTemplate::fill(Battery *p_battery)
 	{
-		CActorTemplate::fill(p_battery);
+		ActorTemplate::fill(p_battery);
 		
 		if(p_battery)
 		{

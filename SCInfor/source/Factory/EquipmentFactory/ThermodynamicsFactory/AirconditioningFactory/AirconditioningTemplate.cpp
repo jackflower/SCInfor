@@ -15,12 +15,12 @@ using namespace resource;
 
 namespace factory
 {
-	RTTI_IMPL(AirconditioningTemplate, CActorTemplate);
+	RTTI_IMPL(AirconditioningTemplate, ActorTemplate);
 
 	//Konstruktor
 	AirconditioningTemplate::AirconditioningTemplate()
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_airconditioning_name(""),
 		m_templ_temperature(0.0f),
 		m_templ_temperature_set(0.0f),
@@ -36,7 +36,7 @@ namespace factory
 	//Destruktor wirtualny
 	AirconditioningTemplate::~AirconditioningTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_airconditioning_name = "";
 		m_templ_temperature = 0.0f;
 		m_templ_temperature_set = 0.0f;
@@ -72,7 +72,7 @@ namespace factory
 	bool AirconditioningTemplate::load(CXml & xml)
 	{
 		//ładowanie danych klasy bazowej CActor
-		if (!CActorTemplate::load(xml)) return false;
+		if (!ActorTemplate::load(xml)) return false;
 
 		//dane modułu klimatyzatora
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "airconditioning_config"))
@@ -120,7 +120,7 @@ namespace factory
 	{
 		if(p_airconditioning)
 		{
-			CActorTemplate::fill(p_airconditioning);
+			ActorTemplate::fill(p_airconditioning);
 
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)

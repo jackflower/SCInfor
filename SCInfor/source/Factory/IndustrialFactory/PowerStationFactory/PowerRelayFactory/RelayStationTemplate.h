@@ -7,7 +7,7 @@
 #ifndef H_RELAY_STATION_TEMPLATE_JACK
 #define H_RELAY_STATION_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 #include "../../../../Logic/Energetics/PowerRelay/CRelayStation.h"
 #include "../../../EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
 
@@ -16,7 +16,7 @@ namespace factory
 	///
 	///Klasa reprezentuje prawzorzec wszystkich przekaźników elektrowni
 	///
-	class RelayStationTemplate : public CActorTemplate
+	class RelayStationTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

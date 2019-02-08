@@ -21,7 +21,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec energii - akumulator
 	///
-	class EnergyTemplate : public CActorTemplate
+	class EnergyTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

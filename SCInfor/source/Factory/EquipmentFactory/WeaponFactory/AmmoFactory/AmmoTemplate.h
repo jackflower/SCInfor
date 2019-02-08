@@ -7,7 +7,7 @@
 #ifndef H_AMMO_TEMPLATE_JACK
 #define H_AMMO_TEMPLATE_JACK
 
-#include "../../../CActorTemplate.h"
+#include "../../../ActorTemplate.h"
 #include "../../../../Equipment/Weapon/Ammo/Ammo.h"
 
 namespace factory
@@ -15,7 +15,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec magazynka na amunicję
 	///
-	class AmmoTemplate : public CActorTemplate
+	class AmmoTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 

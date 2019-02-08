@@ -8,7 +8,7 @@
 #define H_FUEL_BAR_TEMPLATE_JACK
 
 #include "../../../../ResourceManager/IResource.h"
-#include "../../../../Factory/CActorTemplate.h"
+#include "../../../../Factory/ActorTemplate.h"
 #include "../../../../XML/CXml.h"
 #include "../../../../RTTI/RTTI.h"
 #include "../../../../Equipment/Engine/FuelBar/FuelBar.h"

@@ -11,22 +11,22 @@
 #include "CSound.h"
 #include "CFont.h"
 #include "../XML/CXml.h"
-#include "../Factory/CPhysicalTemplate.h"
-#include "../Factory/CActorTemplate.h"
-#include "../Factory/CRobotTemplate.h"
-#include "../Factory/CEnemyTemplate.h"
-#include "../Factory/CPlayerTemplate.h"
-#include "../Factory/CBulletTemplate.h"
-#include "../Factory/CMonsterTemplate.h"
-#include "../Factory/CFloraTemplate.h"
-#include "../Factory/CPhysicalInfoTemplate.h"
-#include "../Factory/InformationFactory/CInformationTemplate.h"
-#include "../Factory/InformationFactory/CPresentationTemplate.h"
+#include "../Factory/PhysicalTemplate.h"
+#include "../Factory/ActorTemplate.h"
+#include "../Factory/RobotTemplate.h"
+#include "../Factory/EnemyTemplate.h"
+#include "../Factory/PlayerTemplate.h"
+#include "../Factory/BulletTemplate.h"
+#include "../Factory/MonsterTemplate.h"
+#include "../Factory/FloraTemplate.h"
+#include "../Factory/PhysicalInfoTemplate.h"
+#include "../Factory/InformationFactory/InformationTemplate.h"
+#include "../Factory/InformationFactory/PresentationTemplate.h"
 //#include "../Factory/InformationFactory/CCounterTemplate.h"
 //#include "../Factory/InformationFactory/CDigitalCounterTemplate.h"
-#include "../Factory/MapPhysicalFactory/CMapPhysicalTemplate.h"
-#include "../Factory/MapPhysicalFactory/CGroundWorkTemplate.h"
-#include "../Factory/MapPhysicalFactory/CGroundTemplate.h"
+#include "../Factory/MapPhysicalFactory/MapPhysicalTemplate.h"
+#include "../Factory/MapPhysicalFactory/GroundWorkTemplate.h"
+#include "../Factory/MapPhysicalFactory/GroundTemplate.h"
 #include "../Factory/EquipmentFactory/EngineFactory/EngineTemplate.h"
 #include "../Factory/EquipmentFactory/EngineFactory/FuelTankFactory/FuelTankTemplate.h"
 #include "../Factory/EquipmentFactory/EngineFactory/FuelBarFactory/FuelBarTemplate.h"
@@ -99,18 +99,18 @@ namespace resource
 		return LoadResource<CFont>(name);
 	}
 
-	//Metoda ³aduje zasób CPhysicalTemplate
+	//Metoda ³aduje zasób PhysicalTemplate
 	ResourceHandle CResourceManager::LoadPhysicalTemplate(const std::string& name)
 	{
 		fprintf(stderr, "CResourceManager::LoadPhysicalTemplate() %s\n", name.c_str());
-		return LoadResource<CPhysicalTemplate>(name);
+		return LoadResource<PhysicalTemplate>(name);
 	}
 
-	//Metoda ³aduje zasób CMapPhysicalTemplate
+	//Metoda ³aduje zasób MapPhysicalTemplate
 	ResourceHandle CResourceManager::LoadMapPhysicalTemplate(const std::string& name)
 	{
 		fprintf(stderr, "CResourceManager::LoadMapPhysicalTemplate() %s\n", name.c_str());
-		return LoadResource<CMapPhysicalTemplate>(name);
+		return LoadResource<MapPhysicalTemplate>(name);
 	}
 
 	//Metoda ³aduje zasób CMap
@@ -120,25 +120,25 @@ namespace resource
 		return LoadResource<CMap>(name);
 	}
 
-	//Metoda ³aduje zasób CGroundWorkTemplate
+	//Metoda ³aduje zasób GroundWorkTemplate
 	ResourceHandle CResourceManager::LoadGroundWorkTemplate(const std::string& name)
 	{
 		fprintf(stderr, "CResourceManager::LoadGroundWorkTemplate() %s\n", name.c_str());
-		return LoadResource<CGroundWorkTemplate>(name);
+		return LoadResource<GroundWorkTemplate>(name);
 	}
 
-	//Metoda ³aduje zasób CInformationTemplate
+	//Metoda ³aduje zasób InformationTemplate
 	ResourceHandle CResourceManager::LoadInformationTemplate(const std::string& name)
 	{
 		fprintf(stderr, "CResourceManager::LoadInformationTemplate() %s\n", name.c_str());
-		return LoadResource<CInformationTemplate>(name);
+		return LoadResource<InformationTemplate>(name);
 	}
 
-	//Metoda ³aduje zasób CPresentationTemplate
+	//Metoda ³aduje zasób PresentationTemplate
 	ResourceHandle CResourceManager::LoadPresentationTemplate(const std::string& name)
 	{
 		fprintf(stderr, "CResourceManager::LoadPresentationTemplate() %s\n", name.c_str());
-		return LoadResource<CPresentationTemplate>(name);
+		return LoadResource<PresentationTemplate>(name);
 	}
 
 	//Metody  z w r a c a j ¹ c e  zasoby - implementacja
@@ -167,16 +167,16 @@ namespace resource
 		return (CFont*)GetResource<CFont>(name);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CPhysicalTemplate
-	CPhysicalTemplate* CResourceManager::GetPhysicalTemplate(const std::string& name)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy PhysicalTemplate
+	PhysicalTemplate* CResourceManager::GetPhysicalTemplate(const std::string& name)
 	{
-		return (CPhysicalTemplate*)GetResource<CPhysicalTemplate>(name);
+		return (PhysicalTemplate*)GetResource<PhysicalTemplate>(name);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CMapPhysicalTemplate
-	CMapPhysicalTemplate* CResourceManager::GetMapPhysicalTemplate(const std::string& name)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy MapPhysicalTemplate
+	MapPhysicalTemplate* CResourceManager::GetMapPhysicalTemplate(const std::string& name)
 	{
-		return (CMapPhysicalTemplate*)GetResource<CMapPhysicalTemplate>(name);
+		return (MapPhysicalTemplate*)GetResource<MapPhysicalTemplate>(name);
 	}
 
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CMap
@@ -186,27 +186,27 @@ namespace resource
 	}
 
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CGround
-	CGroundTemplate* CResourceManager::GetGround(const std::string& name)
+	GroundTemplate* CResourceManager::GetGround(const std::string& name)
 	{
-		return (CGroundTemplate*)GetResource<CGroundTemplate>(name);
+		return (GroundTemplate*)GetResource<GroundTemplate>(name);
 	}
 	
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CGroundWorkTemplate
-	CGroundWorkTemplate* CResourceManager::GetGroundWorkTemplate(const std::string& name)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy GroundWorkTemplate
+	GroundWorkTemplate* CResourceManager::GetGroundWorkTemplate(const std::string& name)
 	{
-		return (CGroundWorkTemplate*)GetResource<CGroundWorkTemplate>(name);
+		return (GroundWorkTemplate*)GetResource<GroundWorkTemplate>(name);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CInformationTemplate
-	CInformationTemplate* CResourceManager::GetInformationTemplate(const std::string& name)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy InformationTemplate
+	InformationTemplate* CResourceManager::GetInformationTemplate(const std::string& name)
 	{
-		return (CInformationTemplate*)GetResource<CInformationTemplate>(name);
+		return (InformationTemplate*)GetResource<InformationTemplate>(name);
 	}
 
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy GetPresentationTemplate
-	CPresentationTemplate* CResourceManager::GetPresentationTemplate(const std::string& name)
+	PresentationTemplate* CResourceManager::GetPresentationTemplate(const std::string& name)
 	{
-		return (CPresentationTemplate*)GetResource<CPresentationTemplate>(name);
+		return (PresentationTemplate*)GetResource<PresentationTemplate>(name);
 	}
 
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy PowerRelayStationTemplate
@@ -239,16 +239,16 @@ namespace resource
 		return (CFont*)GetResource<CFont>(handle);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CPhysicalTemplate
-	CPhysicalTemplate* CResourceManager::GetPhysicalTemplate(ResourceHandle handle)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy PhysicalTemplate
+	PhysicalTemplate* CResourceManager::GetPhysicalTemplate(ResourceHandle handle)
 	{
-		return (CPhysicalTemplate*)GetResource<CPhysicalTemplate>(handle);
+		return (PhysicalTemplate*)GetResource<PhysicalTemplate>(handle);
 	}
 
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CmapPhysicalTemplate
-	CMapPhysicalTemplate* CResourceManager::GetMapPhysicalTemplate(ResourceHandle handle)
+	MapPhysicalTemplate* CResourceManager::GetMapPhysicalTemplate(ResourceHandle handle)
 	{
-		return (CMapPhysicalTemplate*)GetResource<CMapPhysicalTemplate>(handle);
+		return (MapPhysicalTemplate*)GetResource<MapPhysicalTemplate>(handle);
 	}
 	
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CMap
@@ -257,28 +257,28 @@ namespace resource
 		return (CMap*)GetResource<CMap>(handle);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CGroundTemplate
-	CGroundTemplate* CResourceManager::GetGroundTemplate(ResourceHandle handle)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy GroundTemplate
+	GroundTemplate* CResourceManager::GetGroundTemplate(ResourceHandle handle)
 	{
-		return (CGroundTemplate*)GetResource<CGroundTemplate>(handle);
+		return (GroundTemplate*)GetResource<GroundTemplate>(handle);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CGroundWorkTemplate
-	CGroundWorkTemplate* CResourceManager::GetGroundWorkTemplate(ResourceHandle handle)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy GroundWorkTemplate
+	GroundWorkTemplate* CResourceManager::GetGroundWorkTemplate(ResourceHandle handle)
 	{
-		return (CGroundWorkTemplate*)GetResource<CGroundWorkTemplate>(handle);
+		return (GroundWorkTemplate*)GetResource<GroundWorkTemplate>(handle);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CInformationTemplate
-	CInformationTemplate* CResourceManager::GetInformationTemplate(ResourceHandle handle)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy InformationTemplate
+	InformationTemplate* CResourceManager::GetInformationTemplate(ResourceHandle handle)
 	{
-		return (CInformationTemplate*)GetResource<CInformationTemplate>(handle);
+		return (InformationTemplate*)GetResource<InformationTemplate>(handle);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CPresentationTemplate
-	CPresentationTemplate* CResourceManager::GetPresentationTemplate(ResourceHandle handle)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy PresentationTemplate
+	PresentationTemplate* CResourceManager::GetPresentationTemplate(ResourceHandle handle)
 	{
-		return (CPresentationTemplate*)GetResource<CPresentationTemplate>(handle);
+		return (PresentationTemplate*)GetResource<PresentationTemplate>(handle);
 	}
 
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy PowerRelayStationTemplate
@@ -391,13 +391,13 @@ namespace resource
 	}
 
 	//Szablon prywatnej metody ³aduj¹ce zasoby (wzorce danych dla obiektów gry)
-	template <> ResourceHandle CResourceManager::LoadResource<CPhysicalTemplate>(const std::string& name)
+	template <> ResourceHandle CResourceManager::LoadResource<PhysicalTemplate>(const std::string& name)
 	{
 		return ParseHandle(name);
 	}
 
 	//Szablon prywatnej metody ³aduj¹ce zasoby (wzorce danych dla obiektów gry)
-	template <> ResourceHandle CResourceManager::LoadResource<CMapPhysicalTemplate>(const std::string& name)
+	template <> ResourceHandle CResourceManager::LoadResource<MapPhysicalTemplate>(const std::string& name)
 	{
 		return ParseHandle(name);
 	}
@@ -422,13 +422,13 @@ namespace resource
 
 		//Fabryki tworz¹ ze wzorców obiekty poni¿szych klas:
 		//
-		//		- CPhysicalTemplate						->tworzy->	CPhysical
-		//		- CActorTemplate						->tworzy->	CActor
+		//		- PhysicalTemplate						->tworzy->	CPhysical
+		//		- ActorTemplate						->tworzy->	CActor
 		//		- CRoborTemplate						->tworzy->	CRobot
-		//		- CEnemyTemplate						->tworzy->	CEnemy
-		//		- CPlayerTemplate						->tworzy->	CPlayer
-		//		- CBulletTemplate						->tworzy->	CBullet
-		//		- CMonsterTemplate						->tworzy->	CMonster
+		//		- EnemyTemplate						->tworzy->	CEnemy
+		//		- PlayerTemplate						->tworzy->	CPlayer
+		//		- BulletTemplate						->tworzy->	CBullet
+		//		- MonsterTemplate						->tworzy->	CMonster
 		//		- FuelTankTemplate						->tworzy->	FuelTank
 		//		- EnergyTankTemplate					->tworzy->	EnergyTank
 		//		- FuelBarTemplate						->tworzy->	FuelBar
@@ -442,12 +442,12 @@ namespace resource
 		//		- SolarCellTemplate					->tworzy->	SolarCell
 		//		- WindPowerStationTemplate				->tworzy->	CWindPowerStation
 		//		- WindPowerStationMultipledTemplate	->tworzy->	CWindPowerStationMultipled
-		//		- CGroundWorkTemplate					->tworzy->	CGroundWork
+		//		- GroundWorkTemplate					->tworzy->	CGroundWork
 
-		//		- CGroundTemplate						->tworzy->	CGround
+		//		- GroundTemplate						->tworzy->	CGround
 
-		//		- CMapPhysicalTemplate					->tworzy->	CMapPhysical
-		//		- CInformationTemplate					->tworzy->	CInformation
+		//		- MapPhysicalTemplate					->tworzy->	CMapPhysical
+		//		- InformationTemplate					->tworzy->	CInformation
 		//		- PowerRelayStationTemplate			->tworzy->	CPowerRelayStation
 		//		- CommunicationTemplate				->tworzy->	CCommunication
 		//		- SlotsRateTemplate					->tworzy->	CSlotsRate
@@ -468,11 +468,11 @@ namespace resource
 		
 		//p a r s o w a n i e
 		if (type == "enemy")
-			resource = new CEnemyTemplate();
+			resource = new EnemyTemplate();
 		else if(type == "player")
-			resource = new CPlayerTemplate();
+			resource = new PlayerTemplate();
 		else if(type == "bullet")
-			resource = new CBulletTemplate();
+			resource = new BulletTemplate();
 		else if(type == "engine")
 			resource = new EngineTemplate();
 		else if(type == "fueltank")
@@ -486,15 +486,15 @@ namespace resource
 		else if(type == "solarbattery")
 			resource = new SolarBatteryTemplate();
 		else if(type == "physicalinfo")
-			resource = new CPhysicalInfoTemplate();
+			resource = new PhysicalInfoTemplate();
 		else if(type == "energy")
 			resource = new EnergyTemplate();
 		else if(type == "energytank")
 			resource = new EnergyTankTemplate();
 		else if(type == "monster")
-			resource = new CMonsterTemplate();
+			resource = new MonsterTemplate();
 		else if(type == "flora")
-			resource = new CFloraTemplate();
+			resource = new FloraTemplate();
 		else if(type == "airconditioning")
 			resource = new AirconditioningTemplate();
 		else if(type == "thermalinsulation")
@@ -510,13 +510,13 @@ namespace resource
 		else if (type == "powerstationmultipled")
 			resource = new WindPowerStationMultipledTemplate();
 		else if(type == "mapphysical")
-			resource = new CMapPhysicalTemplate();
+			resource = new MapPhysicalTemplate();
 		else if(type == "groundwork")
-			resource = new CGroundWorkTemplate();
+			resource = new GroundWorkTemplate();
 		else if(type == "information")
-			resource = new CInformationTemplate();
+			resource = new InformationTemplate();
 		else if(type == "presentation")
-			resource = new CPresentationTemplate();
+			resource = new PresentationTemplate();
 		else if(type == "relaystation")
 			resource = new PowerRelayStationTemplate();
 		else if (type == "communication")
@@ -524,13 +524,13 @@ namespace resource
 		else if (type == "slotsrate")
 			resource = new SlotsRateTemplate();
 		else if (type == "ground")
-			resource = new CGroundTemplate();
+			resource = new GroundTemplate();
 		else if (type == "ammo")
 			resource = new AmmoTemplate();
 		else if (type == "gun")
 			resource = new GunTemplate();
 		else if (type == "robot")
-			resource = new CRobotTemplate();
+			resource = new RobotTemplate();
 		else
 			return InvalidResourceHandle;
 

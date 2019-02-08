@@ -390,33 +390,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Factory\CActorTemplate.cpp">
-      <Filter>source\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\CBulletTemplate.cpp">
-      <Filter>source\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\CEnemyTemplate.cpp">
-      <Filter>source\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\CFloraTemplate.cpp">
-      <Filter>source\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\CMonsterTemplate.cpp">
-      <Filter>source\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\CPhysicalInfoTemplate.cpp">
-      <Filter>source\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\CPhysicalTemplate.cpp">
-      <Filter>source\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\CPlayerTemplate.cpp">
-      <Filter>source\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\CRobotTemplate.cpp">
-      <Filter>source\Factory</Filter>
-    </ClCompile>
     <ClCompile Include="source\Information\CInfoManager.cpp">
       <Filter>source\Information</Filter>
     </ClCompile>
@@ -810,21 +783,6 @@
     <ClCompile Include="source\Logic\Physics\CPhysicsData.cpp">
       <Filter>source\Logic\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="source\Factory\InformationFactory\CInformationTemplate.cpp">
-      <Filter>source\Factory\InformationFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\InformationFactory\CPresentationTemplate.cpp">
-      <Filter>source\Factory\InformationFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\MapPhysicalFactory\CGroundTemplate.cpp">
-      <Filter>source\Factory\MapPhysicalFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\MapPhysicalFactory\CGroundWorkTemplate.cpp">
-      <Filter>source\Factory\MapPhysicalFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Factory\MapPhysicalFactory\CMapPhysicalTemplate.cpp">
-      <Filter>source\Factory\MapPhysicalFactory</Filter>
-    </ClCompile>
     <ClCompile Include="source\Game\Game.cpp">
       <Filter>source\Game</Filter>
     </ClCompile>
@@ -1002,6 +960,48 @@
     <ClCompile Include="source\Factory\IndustrialFactory\PowerStationFactory\WindPowerStationTemplate.cpp">
       <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
     </ClCompile>
+    <ClCompile Include="source\Factory\InformationFactory\InformationTemplate.cpp">
+      <Filter>source\Factory\InformationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\InformationFactory\PresentationTemplate.cpp">
+      <Filter>source\Factory\InformationFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\MapPhysicalFactory\GroundTemplate.cpp">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\MapPhysicalFactory\GroundWorkTemplate.cpp">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\MapPhysicalFactory\MapPhysicalTemplate.cpp">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\ActorTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\BulletTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\EnemyTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\FloraTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\MonsterTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\PhysicalInfoTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\PhysicalTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\PlayerTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Factory\RobotTemplate.cpp">
+      <Filter>source\Factory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1053,33 +1053,6 @@
     </ClInclude>
     <ClInclude Include="source\Equipment\Weapon\EGunState.h">
       <Filter>source\Equipment\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\CActorTemplate.h">
-      <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\CBulletTemplate.h">
-      <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\CEnemyTemplate.h">
-      <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\CFloraTemplate.h">
-      <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\CMonsterTemplate.h">
-      <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\CPhysicalInfoTemplate.h">
-      <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\CPhysicalTemplate.h">
-      <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\CPlayerTemplate.h">
-      <Filter>source\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\CRobotTemplate.h">
-      <Filter>source\Factory</Filter>
     </ClInclude>
     <ClInclude Include="source\Game\Listener\IFrameListener.h">
       <Filter>source\Game\Listener</Filter>
@@ -1567,21 +1540,6 @@
     <ClInclude Include="source\Logic\Physics\CPhysicsData.h">
       <Filter>source\Logic\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="source\Factory\InformationFactory\CInformationTemplate.h">
-      <Filter>source\Factory\InformationFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\InformationFactory\CPresentationTemplate.h">
-      <Filter>source\Factory\InformationFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\MapPhysicalFactory\CGroundTemplate.h">
-      <Filter>source\Factory\MapPhysicalFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\MapPhysicalFactory\CGroundWorkTemplate.h">
-      <Filter>source\Factory\MapPhysicalFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Factory\MapPhysicalFactory\CMapPhysicalTemplate.h">
-      <Filter>source\Factory\MapPhysicalFactory</Filter>
-    </ClInclude>
     <ClInclude Include="source\Game\Game.h">
       <Filter>source\Game</Filter>
     </ClInclude>
@@ -1758,6 +1716,48 @@
     </ClInclude>
     <ClInclude Include="source\Factory\IndustrialFactory\PowerStationFactory\WindPowerStationTemplate.h">
       <Filter>source\Factory\IndustrialFactory\PowerStationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\InformationFactory\InformationTemplate.h">
+      <Filter>source\Factory\InformationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\InformationFactory\PresentationTemplate.h">
+      <Filter>source\Factory\InformationFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\MapPhysicalFactory\GroundTemplate.h">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\MapPhysicalFactory\GroundWorkTemplate.h">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\MapPhysicalFactory\MapPhysicalTemplate.h">
+      <Filter>source\Factory\MapPhysicalFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\ActorTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\BulletTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\EnemyTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\FloraTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\MonsterTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\PhysicalInfoTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\PhysicalTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\PlayerTemplate.h">
+      <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Factory\RobotTemplate.h">
+      <Filter>source\Factory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

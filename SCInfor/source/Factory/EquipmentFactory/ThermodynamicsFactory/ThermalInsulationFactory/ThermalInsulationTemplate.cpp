@@ -12,11 +12,11 @@ using namespace weather;
 
 namespace factory
 {
-	RTTI_IMPL(ThermalInsulationTemplate, CActorTemplate);
+	RTTI_IMPL(ThermalInsulationTemplate, ActorTemplate);
 
 	ThermalInsulationTemplate::ThermalInsulationTemplate()
 	:
-		CActorTemplate(),//konstruktor klasy bazowej
+		ActorTemplate(),//konstruktor klasy bazowej
 		m_templ_thermalinsulation_name(""),
 		m_templ_temperature_ambient(0.0f),
 		m_templ_thermal_protection(0.0f),
@@ -28,7 +28,7 @@ namespace factory
 
 	ThermalInsulationTemplate::~ThermalInsulationTemplate()
 	{
-		//CActorTemplate
+		//ActorTemplate
 		m_templ_thermalinsulation_name = "";
 		m_templ_temperature_ambient = 0.0f;
 		m_templ_thermal_protection = 0.0f;
@@ -60,7 +60,7 @@ namespace factory
 	bool ThermalInsulationTemplate::load(CXml & xml)
 	{
 		//ładowanie danych klasy bazowej CActor
-		if (!CActorTemplate::load(xml)) return false;
+		if (!ActorTemplate::load(xml)) return false;
 
 		//dane termoizolatora
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "thermalinsulation_config"))
@@ -90,7 +90,7 @@ namespace factory
 	{
 		if(p_thermalinsulation)
 		{
-			CActorTemplate::fill(p_thermalinsulation);
+			ActorTemplate::fill(p_thermalinsulation);
 
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)

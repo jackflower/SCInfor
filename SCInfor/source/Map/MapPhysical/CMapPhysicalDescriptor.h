@@ -7,14 +7,14 @@
 #ifndef H_MAP_PHYSICAL_DESCRIPTOR_JACK
 #define H_MAP_PHYSICAL_DESCRIPTOR_JACK
 
-#include "../../Factory/CPhysicalTemplate.h"
+#include "../../Factory/PhysicalTemplate.h"
 
 namespace factory
 {
 	///
 	///Forward declaration
 	///
-	class CMapPhysicalTemplate;
+	class MapPhysicalTemplate;
 }
 
 using namespace factory;
@@ -61,14 +61,14 @@ namespace mapengine
 		///
 		///Metoda zwraca wskaünik na wzorzec fabryczny obiektu
 		///
-		CMapPhysicalTemplate* GetTemplate() const;
+		MapPhysicalTemplate* GetTemplate() const;
 
 		///
 		///Metoda ustawia wskaünik na wzorzec fabryczny obiektu
 		///
 		///@param * template_param - wskaünik na wzorzec
 		///
-		void SetTemplate(CMapPhysicalTemplate* template_param);
+		void SetTemplate(MapPhysicalTemplate* template_param);
 
 		///
 		///Metoda zwraca unikalny identyfikator (nadawany w CMapPhysicalManager)
@@ -214,7 +214,7 @@ namespace mapengine
 
 	private:
 
-		CMapPhysicalTemplate*	p_template;		//wskaünik na wzorzec - obiekt klasy CMapPhysical jak i teø pochodne tej klasy
+		MapPhysicalTemplate*	p_template;		//wskaünik na wzorzec - obiekt klasy CMapPhysical jak i teø pochodne tej klasy
 		int						m_unique_id;	//unikalny identyfikator (nadawany w CMapPhysicalManager)
 		std::string				m_code;			//nazwa kodu dla typu pod≥oøa (nazwa w tablicy 2D - zapisanej w pliku xml)
 		std::string				m_name;			//nazwa w≥asna obiektu, ktÛrπ nadajemy obiektowi na poziomie wpisu w pliku xml

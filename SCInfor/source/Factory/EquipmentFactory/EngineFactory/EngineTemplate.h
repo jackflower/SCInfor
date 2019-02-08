@@ -16,7 +16,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec silnika
 	///
-	class EngineTemplate : public CActorTemplate
+	class EngineTemplate : public ActorTemplate
 	{
 		RTTI_DECL;
 
