@@ -148,7 +148,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)
 			{
-				p_power_relay_station->SetAnimSet(p_templ_animations);
+				p_power_relay_station->setAnimSet(p_templ_animations);
 				//body
 				if (p_templ_animations->GetPowerRelayStationBodyDefaultAnim()!= NULL)
 					p_power_relay_station->SetAnimationBody(p_templ_animations->GetPowerRelayStationBodyDefaultAnim());

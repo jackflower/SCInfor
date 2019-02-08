@@ -5,7 +5,7 @@
 //
 
 #include "CTransformation.h"
-#include "../../Logic/Actor/CActor.h"
+#include "../../Logic/Actor/Actor.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../Utilities/Utilities.h"
 
@@ -102,7 +102,7 @@ namespace transformation
 	}
 
 	//Metoda dokonuje transformacji skali, pozycji, obrotu
-	void CTransformation::Transform(CActor * p_parent, CActor * p_child)
+	void CTransformation::Transform(Actor * p_parent, Actor * p_child)
 	{
 		//transformacja opiera siê na zainicjowanych wskaŸnikach
 		//obiektów drawowalnych, zatem trzeba sprawdziæ ten warunek

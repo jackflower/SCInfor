@@ -10,7 +10,7 @@
 #include "EEnergyTankState.h"
 #include "../../Switch.h"
 #include "../../../RTTI/RTTI.h"
-#include "../../../Logic/Actor/CActor.h"
+#include "../../../Logic/Actor/Actor.h"
 
 using namespace logic;
 
@@ -19,7 +19,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje akumulator energii /życia/
 	///
-	class EnergyTank : public CActor
+	class EnergyTank : public Actor
 	{
 		RTTI_DECL;
 

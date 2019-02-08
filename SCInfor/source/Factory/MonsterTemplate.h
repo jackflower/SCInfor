@@ -78,7 +78,7 @@ namespace factory
 		//to tutaj, w klasie jej fabryki,
 		//należałoby utworzyć takie same pola,
 		//aby fabryka była kompletna i mogła uzbroić potwora
-		//w te pola, które są w jej klasie bazowej CActor
+		//w te pola, które są w jej klasie bazowej Actor
 		//i jej własne - tylko pola należące do tej klasy (potwora)
 
 	};

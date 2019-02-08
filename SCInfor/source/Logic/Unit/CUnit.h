@@ -7,7 +7,7 @@
 #ifndef H_UNIT_JACK
 #define H_UNIT_JACK
 
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 #include "CStrategyController.h"
 
 namespace logic
@@ -17,7 +17,7 @@ namespace logic
 		///
 		///Klasa reprezetuje obiekt gry
 		///
-		class CUnit : public CActor
+		class CUnit : public Actor
 		{
 			RTTI_DECL;
 		

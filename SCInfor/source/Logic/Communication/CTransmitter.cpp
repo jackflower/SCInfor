@@ -10,26 +10,26 @@ namespace logic
 {
 	namespace communication
 	{
-		RTTI_IMPL(CTransmitter, CActor);
+		RTTI_IMPL(CTransmitter, Actor);
 
 		//Chroniony konstruktor domyœlny
 		CTransmitter::CTransmitter(const std::wstring& uniqueId)
 		:
-			CActor(uniqueId)//konstruktor klasy bazowej
+			Actor(uniqueId)//konstruktor klasy bazowej
 		{
 		}
 			
 		//Chroniony konstruktor kopiuj¹cy
 		CTransmitter::CTransmitter(const CTransmitter &CTransmitterCopy)
 		:
-			CActor (CTransmitterCopy)//konstruktor kopiujacy klasy bazowej
+			Actor (CTransmitterCopy)//konstruktor kopiujacy klasy bazowej
 		{
 		}
 
 		//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
 		CTransmitter::~CTransmitter()
 		{
-			//CActor				not edit
+			//Actor				not edit
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

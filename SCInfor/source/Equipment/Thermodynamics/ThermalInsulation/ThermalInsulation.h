@@ -8,7 +8,7 @@
 #define H_THERMAL_INSULATION_JACK
 
 #include "EThermalInsulationState.h"
-#include "../../../Logic/Actor/CActor.h"
+#include "../../../Logic/Actor/Actor.h"
 #include "../../Switch.h"
 
 using namespace logic;
@@ -18,7 +18,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje funkcjonalność termoizolatora
 	///
-	class ThermalInsulation : public CActor
+	class ThermalInsulation : public Actor
 	{
 		RTTI_DECL;
 

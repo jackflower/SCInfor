@@ -9,7 +9,7 @@
 
 #include <SFML/System/Vector2.hpp>
 #include <vector>
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 #include "../EEnemyState.h"
 #include "../EEnemyAttitude.h"
 #include "../../Utilities/Memory/CSafePtr.h"
@@ -43,9 +43,9 @@ namespace artificialintelligence
 		~CActorAIData();
 
 		///
-		///Metoda zwraca wskaŸnik na obiekt klasy CActor, do którego podpiêta jest AI
+		///Metoda zwraca wskaŸnik na obiekt klasy Actor, do którego podpiêta jest AI
 		///
-		CActor *GetActor();
+		Actor *GetActor();
 
 		void MoveTo(const sf::Vector2f coord, float tolerance = 0.0f);
 		void TurnTowards(int newRot);
@@ -122,12 +122,12 @@ namespace artificialintelligence
 		}	
 		
 		//zamiana na *
-		//inline void SetCombatTarget(Memory::CSafePtr<CActor> tgt){
+		//inline void SetCombatTarget(Memory::CSafePtr<Actor> tgt){
 		//	mCombatTarget = tgt;
 		//}
 
 		//zamiana na *
-		//inline Memory::CSafePtr<CActor> GetCombatTarget(){
+		//inline Memory::CSafePtr<Actor> GetCombatTarget(){
 		//	return mCombatTarget;
 		//}
 
@@ -163,8 +163,8 @@ namespace artificialintelligence
 		
 
 		//poni¿se wymaga analizy...
-		//CActor* mCombatTarget;
-		CSafePtr<CActor> mCombatTarget;
+		//Actor* mCombatTarget;
+		CSafePtr<Actor> mCombatTarget;
 
 		
 

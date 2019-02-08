@@ -22,7 +22,7 @@
 namespace logic
 {
 	class CPhysical;
-	class CActor;
+	class Actor;
 	class CEnemy;
 	class CPlayer;
 	class CBullet;
@@ -135,11 +135,11 @@ namespace logic
 		CPhysical* CreatePhysical(const std::wstring& unique_id = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CActor i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Actor i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CActor *CreateActor(const std::wstring &uniqueId = L"");
+		Actor *CreateActor(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CRobot i zwraca wskaünik na ten obiekt

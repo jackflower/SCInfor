@@ -5,8 +5,8 @@
 //
 
 #include "InformationTemplate.h"
-#include "../../Information/CInfoManager.h"
-#include "../../Information/CInformation.h"
+#include "../../Information/InfoManager.h"
+#include "../../Information/Information.h"
 #include "../../Utilities/StringUtils/StringUtils.h"
 
 using namespace infologic;
@@ -92,23 +92,23 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CActor
-	CInformation* InformationTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy Actor
+	Information* InformationTemplate::create(std::wstring id)
 	{
-		CInformation* information = gInfoManager.CreateInformation(id);
+		Information* information = gInfoManager.createInformation(id);
 		fill(information);
 		return information;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void InformationTemplate::fill(CInformation *information)
+	void InformationTemplate::fill(Information *information)
 	{
 		//ustawienie kompletnego wzorca
-		information->SetTemplate(this);
+		information->setTemplate(this);
 
 		//próba przekazania tekstur
-		information->SetTextureDigit(m_templ_texture_digit_name);
-		information->SetTextureMask(m_templ_texture_mask_name);
+		information->setTextureDigit(m_templ_texture_digit_name);
+		information->setTextureMask(m_templ_texture_mask_name);
 
 		//próba przekazania danych transformacji geometrycznych
 		information->setTransformableDigit(m_templ_tranformable_digit);

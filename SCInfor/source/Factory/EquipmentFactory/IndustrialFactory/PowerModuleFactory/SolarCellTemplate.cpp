@@ -100,7 +100,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)
 			{
-				p_solarcell->SetAnimSet(p_templ_animations);
+				p_solarcell->setAnimSet(p_templ_animations);
 
 				//body
 				if (p_templ_animations->GetSolarCellBodyDefaultAnim()!= NULL)

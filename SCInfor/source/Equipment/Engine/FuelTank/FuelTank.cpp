@@ -13,12 +13,12 @@ using namespace rendering::drawable;
 
 namespace equipment
 {
-	RTTI_IMPL(FuelTank, CActor)
+	RTTI_IMPL(FuelTank, Actor)
 
 	//Chroniony konstruktor domyślny
 	FuelTank::FuelTank(const std::wstring & uniqueId)
 	:
-		CActor(uniqueId),//konstruktor klasy bazowej
+		Actor(uniqueId),//konstruktor klasy bazowej
 		m_fuel_tank_name(),
 		m_fuel_tank_capacity(0.0f),
 		m_fuel(0.0f),
@@ -34,7 +34,7 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	FuelTank::FuelTank(const FuelTank & FuelTankCopy)
 	:
-		CActor(FuelTankCopy),//konstruktor kopiujący klasy bazowej
+		Actor(FuelTankCopy),//konstruktor kopiujący klasy bazowej
 		m_fuel_tank_name(FuelTankCopy.m_fuel_tank_name),
 		m_fuel_tank_capacity(FuelTankCopy.m_fuel_tank_capacity),
 		m_fuel(FuelTankCopy.m_fuel),
@@ -46,7 +46,7 @@ namespace equipment
 	//Destruktor wirtualny
 	FuelTank::~FuelTank(void)
 	{
-		//CActor
+		//Actor
 		m_fuel_tank_name = "";
 		m_fuel_tank_capacity = 0.0f;
 		m_fuel = 0.0f;

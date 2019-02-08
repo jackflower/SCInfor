@@ -1,10 +1,10 @@
-//  __________________________________________
-// | CPresentation.cpp - class implementation |
-// | Jack Flower - April 2015                 |
-// |__________________________________________|
+ï»¿//  _________________________________________
+// | Presentation.cpp - class implementation |
+// | Jack Flower - April 2015                |
+// |_________________________________________|
 //
 
-#include "CPresentation.h"
+#include "Presentation.h"
 #include "../Rendering/Drawable/CDrawableManager.h"
 #include "../Factory/InformationFactory/PresentationTemplate.h"
 
@@ -12,73 +12,74 @@ namespace information
 {
 	namespace presentation
 	{
-		RTTI_IMPL(CPresentation, IInformation);
+		RTTI_IMPL(Presentation, BaseInformation);
 
-		//Chroniony konstruktor domyœlny - u¿ywany wy³¹cznie przez CInfoManager
-		CPresentation::CPresentation(const std::wstring& uniqueId)
+		//Chroniony konstruktor domyÅ›lny - uÅ¼ywany wyÅ‚Ä…cznie przez InfoManager
+		Presentation::Presentation(const std::wstring & uniqueId)
 		:
-			IInformation			(uniqueId),//konstruktor klasy bazowej
-			p_hud_static_text_front	(NULL),
-			p_hud_static_text_back	(NULL),
-			m_tranformable			(),
-			m_font_name				(""),
-			m_color_front			(),
-			m_color_back			(),
-			m_font_size				(1),
-			m_string				(""),
-			m_use_under				(true),
-			m_offset				(0.0f, 0.0f),
-			p_template				(NULL)
+			BaseInformation(uniqueId),//konstruktor klasy bazowej
+			p_hud_static_text_front(NULL),
+			p_hud_static_text_back(NULL),
+			m_tranformable(),
+			m_font_name(""),
+			m_color_front(),
+			m_color_back(),
+			m_font_size(1),
+			m_string(""),
+			m_use_under(true),
+			m_offset(0.0f, 0.0f),
+			p_template(NULL)
 		{
 		}
 
-		//Chroniony konstruktor kopiuj¹cy
-		CPresentation::CPresentation(const CPresentation &CPresentationCopy)
+		//Chroniony konstruktor kopiujÄ…cy
+		Presentation::Presentation(const Presentation & PresentationCopy)
 		:
-			IInformation			(CPresentationCopy),//konstruktor kopiuj¹cy klasy bazowej
-			p_hud_static_text_front	(CPresentationCopy.p_hud_static_text_front),
-			p_hud_static_text_back	(CPresentationCopy.p_hud_static_text_back),
-			m_tranformable			(CPresentationCopy.m_tranformable),
-			m_font_name				(CPresentationCopy.m_font_name),
-			m_color_front			(CPresentationCopy.m_color_front),
-			m_color_back			(CPresentationCopy.m_color_back),
-			m_font_size				(CPresentationCopy.m_font_size),
-			m_string				(CPresentationCopy.m_string),
-			m_use_under				(CPresentationCopy.m_use_under),
-			m_offset				(CPresentationCopy.m_offset),
-			p_template				(CPresentationCopy.p_template)
+			BaseInformation(PresentationCopy),//konstruktor kopiujÄ…cy klasy bazowej
+			p_hud_static_text_front(PresentationCopy.p_hud_static_text_front),
+			p_hud_static_text_back(PresentationCopy.p_hud_static_text_back),
+			m_tranformable(PresentationCopy.m_tranformable),
+			m_font_name(PresentationCopy.m_font_name),
+			m_color_front(PresentationCopy.m_color_front),
+			m_color_back(PresentationCopy.m_color_back),
+			m_font_size(PresentationCopy.m_font_size),
+			m_string(PresentationCopy.m_string),
+			m_use_under(PresentationCopy.m_use_under),
+			m_offset(PresentationCopy.m_offset),
+			p_template(PresentationCopy.p_template)
 		{
 		}
 
-		//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CInfoManager
-		CPresentation::~CPresentation(void)
+		//Chroniony destruktor wirtualny - uÅ¼ywany wyÅ‚Ä…cznie przez InfoManager
+		Presentation::~Presentation(void)
 		{
+			//~BaseInformation()
 			if (p_hud_static_text_front != NULL)
 				gDrawableManager.DestroyDrawable(p_hud_static_text_front);
 
 			if (p_hud_static_text_back != NULL)
 				gDrawableManager.DestroyDrawable(p_hud_static_text_back);
 
-			//sf::Transformable		not edit
-			m_font_name				= "";
-			//sf::Color				not edit
-			//sf::Color				not edit
-			//unsigned				not edit
-			m_string				= "";
-			m_use_under				= false;
-			m_offset.x				= 0.0f;
-			m_offset.y				= 0.0f;
-			p_template				= NULL;
+			//m_tranformable
+			m_font_name = "";
+			//m_color_front
+			//m_color_back
+			//m_font_size
+			m_string = "";
+			m_use_under = false;
+			m_offset.x = 0.0f;
+			m_offset.y = 0.0f;
+			p_template = NULL;
 		}
 		
 		//Metoda zwraca kolor
-		const sf::Color& CPresentation::getColorFront() const
+		const sf::Color & Presentation::getColorFront() const
 		{
 			return m_color_front;
 		}
 
 		//Metoda ustawia kolor - front
-		void CPresentation::setColorFront(const sf::Color& color_front)
+		void Presentation::setColorFront(const sf::Color & color_front)
 		{
 			m_color_front = color_front;
 			
@@ -88,7 +89,7 @@ namespace information
 		}
 
 		//Metoda ustawia kolor - front
-		void CPresentation::setColorFront(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha)
+		void Presentation::setColorFront(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha)
 		{
 			m_color_front.r = red;
 			m_color_front.g = green;
@@ -101,13 +102,13 @@ namespace information
 		}
 
 		//Metoda zwraca kolor - back
-		const sf::Color& CPresentation::getColorBack() const
+		const sf::Color & Presentation::getColorBack() const
 		{
 			return m_color_back;
 		}
 
 		//Metoda ustawia kolor - back
-		void CPresentation::setColorBack(const sf::Color& color_back)
+		void Presentation::setColorBack(const sf::Color & color_back)
 		{
 			m_color_back = color_back;
 
@@ -120,7 +121,7 @@ namespace information
 		}
 
 		//Metoda ustawia kolor - back
-		void CPresentation::setColorBack(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha)
+		void Presentation::setColorBack(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha)
 		{
 			m_color_back.r = red;
 			m_color_back.g = green;
@@ -135,8 +136,8 @@ namespace information
 			}
 		}
 
-		//Metoda ustawia czcionkê graficzn¹ tekstu dla obiektu klasy sf::String
-		void CPresentation::SetFont(const std::string& font)
+		//Metoda ustawia czcionkÄ™ graficznÄ… tekstu dla obiektu klasy sf::String
+		void Presentation::setFont(const std::string & font)
 		{
 			m_font_name = font;
 
@@ -147,19 +148,19 @@ namespace information
 			if(m_use_under)									//czy obiekt ma efekt 3D
 			{
 				checkHudStaticTextBack();					//sprawdzam czy mam obiekt drawable
-				if(p_hud_static_text_back)					//jeœli wskaŸnik zosta³ zainicjowany
-					p_hud_static_text_back->SetFont(font);	//ustawiam czcionkê
+				if(p_hud_static_text_back)					//jeÅ›li wskaÅºnik zostaÅ‚ zainicjowany
+					p_hud_static_text_back->SetFont(font);	//ustawiam czcionkÄ™
 			}
 		}
 
 		//Metoda zwraca rozmiar czcionki graficznej tekstu
-		const unsigned CPresentation::GetFontSize() const
+		const unsigned Presentation::GetFontSize() const
 		{
 			return m_font_size;
 		}
 
-		//Metoda ustawia czcionkê graficzn¹ tekstu dla obiektu klasy sf::String
-		void CPresentation::SetFont(const std::string &font, unsigned int size)
+		//Metoda ustawia czcionkÄ™ graficznÄ… tekstu dla obiektu klasy sf::String
+		void Presentation::setFont(const std::string & font, unsigned int size)
 		{
 			m_font_name = font;
 			m_font_size = size;
@@ -183,7 +184,7 @@ namespace information
 		}
 
 		//Metoda ustawia rozmiar czcionki graficznej tekstu
-		void CPresentation::SetFontSize(unsigned int size)
+		void Presentation::setFontSize(unsigned int size)
 		{
 			m_font_size = size;
 
@@ -199,14 +200,14 @@ namespace information
 			}
 		}
 
-		//Metoda zwraca ³añcuch znaków
-		const sf::String & CPresentation::GetString() const
+		//Metoda zwraca Å‚aÅ„cuch znakÃ³w
+		const sf::String & Presentation::getString() const
 		{
 			return m_string;
 		}
 
-		//Metoda ustawia ³añcuch znaków
-		void CPresentation::SetString(const sf::String & string)
+		//Metoda ustawia Å‚aÅ„cuch znakÃ³w
+		void Presentation::setString(const sf::String & string)
 		{
 			m_string = string;
 
@@ -222,14 +223,14 @@ namespace information
 			}
 		}
 
-		//Metoda zwraca pozycjê obiektu
-		const sf::Vector2f & CPresentation::getPosition() const
+		//Metoda zwraca pozycjÄ™ obiektu
+		const sf::Vector2f & Presentation::getPosition() const
 		{
 			return m_tranformable.getPosition();
 		}
 
-		//Metoda ustawia pozycjê obiektu
-		void CPresentation::setPosition(const sf::Vector2f &position)
+		//Metoda ustawia pozycjÄ™ obiektu
+		void Presentation::setPosition(const sf::Vector2f &position)
 		{
 			m_tranformable.setPosition(position);
 			if(p_hud_static_text_front)
@@ -243,8 +244,8 @@ namespace information
 			}
 		}
 
-		//Metoda ustawia pozycjê obiektu
-		void CPresentation::setPosition(float x, float y)
+		//Metoda ustawia pozycjÄ™ obiektu
+		void Presentation::setPosition(float x, float y)
 		{
 			m_tranformable.setPosition(x, y);
 			if(p_hud_static_text_front)
@@ -258,14 +259,14 @@ namespace information
 			}
 		}
 
-		//Metoda zwraca obrót obiektu
-		float CPresentation::getRotation() const
+		//Metoda zwraca obrÃ³t obiektu
+		float Presentation::getRotation() const
 		{
 			return m_tranformable.getRotation();
 		}
 
-		//Metoda ustawia obrót obiektu
-		void CPresentation::setRotation(float angle)
+		//Metoda ustawia obrÃ³t obiektu
+		void Presentation::setRotation(float angle)
 		{
 			m_tranformable.setRotation(angle);
 			if(p_hud_static_text_front)
@@ -279,8 +280,8 @@ namespace information
 			}
 		}
 		
-		//Metoda obraca obiekt zadany k¹t
-		void CPresentation::rotate(float angle)
+		//Metoda obraca obiekt zadany kÄ…t
+		void Presentation::rotate(float angle)
 		{
 			m_tranformable.rotate(angle);
 			if(p_hud_static_text_front)
@@ -295,13 +296,13 @@ namespace information
 		}
 
 		//Metoda zwraca wektor skali obiektu
-		const sf::Vector2f& CPresentation::getScale() const
+		const sf::Vector2f & Presentation::getScale() const
 		{
 			return m_tranformable.getScale();
 		}
 
-		//Metoda ustawia skalê obiektu
-		void CPresentation::setScale(const sf::Vector2f& factors)
+		//Metoda ustawia skalÄ™ obiektu
+		void Presentation::setScale(const sf::Vector2f & factors)
 		{
 			m_tranformable.setScale(factors);
 			if(p_hud_static_text_front)
@@ -315,8 +316,8 @@ namespace information
 			}
 		}
 
-		//Metoda ustawia skalê obiektu
-		void CPresentation::setScale(float factorX, float factorY)
+		//Metoda ustawia skalÄ™ obiektu
+		void Presentation::setScale(float factorX, float factorY)
 		{
 			m_tranformable.setScale(factorX, factorY);
 			if(p_hud_static_text_front)
@@ -331,7 +332,7 @@ namespace information
 		}
 	
 		//Metoda skaluje obiekt
-		void CPresentation::scale(const sf::Vector2f& factor)
+		void Presentation::scale(const sf::Vector2f & factor)
 		{
 			m_tranformable.scale(factor);
 			if(p_hud_static_text_front)
@@ -346,7 +347,7 @@ namespace information
 		}
 
 		//Metoda skaluje obiekt
-		void CPresentation::scale(float factorX, float factorY)
+		void Presentation::scale(float factorX, float factorY)
 		{
 			m_tranformable.scale(factorX, factorY);
 			if(p_hud_static_text_front)
@@ -361,13 +362,13 @@ namespace information
 		}
 
 		//Metoda zwraca origin obiektu
-		const sf::Vector2f& CPresentation::getOrigin() const
+		const sf::Vector2f & Presentation::getOrigin() const
 		{
 			return m_tranformable.getOrigin();
 		}
 
 		//Metoda ustawia origin obiektu
-		void CPresentation::setOrigin(const sf::Vector2f& origin)
+		void Presentation::setOrigin(const sf::Vector2f & origin)
 		{
 			m_tranformable.setOrigin(origin);
 			if(p_hud_static_text_front)
@@ -382,7 +383,7 @@ namespace information
 		}
 
 		//Metoda ustawia origin obiektu
-		void CPresentation::setOrigin(float x, float y)
+		void Presentation::setOrigin(float x, float y)
 		{
 			m_tranformable.setOrigin(x, y);
 			if(p_hud_static_text_front)
@@ -396,39 +397,39 @@ namespace information
 			}
 		}
 
-		//Metoda zwraca flagê, czy obiekt posiada efekt 3D
-		const bool CPresentation::getUseUnder() const
+		//Metoda zwraca flagÄ™, czy obiekt posiada efekt 3D
+		const bool Presentation::getUseUnder() const
 		{
 			return m_use_under;
 		}
 
-		//Metoda ustawia flagê, czy obiekt posiada efekt 3D
-		void CPresentation::setUseUnder(bool use_under)
+		//Metoda ustawia flagÄ™, czy obiekt posiada efekt 3D
+		void Presentation::setUseUnder(bool use_under)
 		{
 			m_use_under = use_under;
 		}
 
 		//Metoda zwraca wektor efektu 3D
-		const sf::Vector2f &CPresentation::getOffset() const
+		const sf::Vector2f & Presentation::getOffset() const
 		{
 			return m_offset;
 		}
 
 		//Metoda ustawia wektor efektu 3D
-		void CPresentation::setOffset(const sf::Vector2f &offset)
+		void Presentation::setOffset(const sf::Vector2f & offset)
 		{
 			m_offset = offset;
 		}
 
 		//Metoda ustawia wektor efektu 3D
-		void CPresentation::setOffset(float x, float y)
+		void Presentation::setOffset(float x, float y)
 		{
 			m_offset.x = x;
 			m_offset.y = y;
 		}
 
-		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CPresentation::update(float dt)
+		//Wirtualna metoda aktualizujÄ…ca obiekt
+		void Presentation::update(float dt)
 		{
 			//
 		}
@@ -436,15 +437,15 @@ namespace information
 
 		//implementajca metod private:
 
-		//prywatna metoda sprawdza, czy trzeba utworzyæ obiekt klasy CHudStaticText
-		void CPresentation::checkHudStaticTextFront()
+		//prywatna metoda sprawdza, czy trzeba utworzyÄ‡ obiekt klasy CHudStaticText
+		void Presentation::checkHudStaticTextFront()
 		{
 			if (!p_hud_static_text_front)
 				p_hud_static_text_front = gDrawableManager.CreateHudStaticText(Z_INFORMATION_FRONT);
 		}
 
-		//prywatna metoda sprawdza, czy trzeba utworzyæ obiekt klasy CHudStaticText
-		void CPresentation::checkHudStaticTextBack()
+		//prywatna metoda sprawdza, czy trzeba utworzyÄ‡ obiekt klasy CHudStaticText
+		void Presentation::checkHudStaticTextBack()
 		{
 			if (!p_hud_static_text_back)
 				p_hud_static_text_back = gDrawableManager.CreateHudStaticText(Z_INFORMATION_BACK);

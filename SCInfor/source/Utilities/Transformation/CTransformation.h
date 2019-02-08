@@ -15,7 +15,7 @@
 ///
 namespace logic
 {
-	class CActor;
+	class Actor;
 }
 
 using namespace logic;
@@ -111,11 +111,11 @@ namespace transformation
 		///
 		///Metoda dokonuje transformacji skali, pozycji, obrotu
 		///
-		///@param * p_parent - wskaünik na obiekt klasy CActor
+		///@param * p_parent - wskaünik na obiekt klasy Actor
 		///
-		////@param * p_child - wskaünik na obiekt klasy CActor
+		////@param * p_child - wskaünik na obiekt klasy Actor
 		///
-		void Transform(CActor * p_parent, CActor * p_child);
+		void Transform(Actor * p_parent, Actor * p_child);
 
 	private:
 

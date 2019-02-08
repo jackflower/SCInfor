@@ -1,5 +1,5 @@
-//  ___________________________________________________________
-// | EActorMoveState.h - wyliczenie typów stanów ruchu obiektu |
+ï»¿//  ___________________________________________________________
+// | EActorMoveState.h - wyliczenie typÃ³w stanÃ³w ruchu obiektu |
 // | Jack Flower - April 2015                                  |
 // |___________________________________________________________|
 //
@@ -9,13 +9,13 @@
 #define H_E_ACTOR_MOVE_STATE_JACK
 
 ///
-///Wyliczenie stanów ruchu obiektu
+///Wyliczenie stanÃ³w ruchu obiektu
 ///
 enum EActorMoveState
 {
-	MOVE_STATE_STANDING,	//obiekt nie porusza siê, stoi
-	MOVE_STATE_WALKING,		//obiekt porusza siê, idzie, spaceruje, jest w ruchu
-	MOVE_STATE_TURNING,		//obiekt obraca siê, wykonuje obrót
-	MOVE_STATE_STRAFING		//obiekt ostrzeliwuje siê, trwa wymiana ognia...
+	MOVE_STATE_STANDING,	//obiekt nie porusza siÄ™, stoi
+	MOVE_STATE_WALKING,		//obiekt porusza siÄ™, idzie, spaceruje, jest w ruchu
+	MOVE_STATE_TURNING,		//obiekt obraca siÄ™, wykonuje obrÃ³t
+	MOVE_STATE_STRAFING		//obiekt ostrzeliwuje siÄ™, trwa wymiana ognia...
 };
 #endif//H_E_ACTOR_MOVE_STATE_JACK

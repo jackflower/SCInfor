@@ -10,14 +10,14 @@
 #define H_BULLET_JACK
 
 #include "../Physical/CPhysical.h"
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 
 namespace logic
 {
 	///
 	///Klasa reprezentuje funkcjonalnoœæ pocisku
 	///
-	class CBullet : public CActor//CPhysical
+	class CBullet : public Actor//CPhysical
 	{
 		RTTI_DECL;
 
@@ -224,7 +224,7 @@ namespace logic
 		float			m_road;					//przebyta droga
 		float			m_caliber;				//kaliber pocisku		[potrzebne]
 		float			m_bullet_weight;		//waga jednego pocisku	[nie - bo to ju¿ odziedziczone]
-		//zmiana, dziedziczymy po CActor (nie mam wagi i innych bajerów)...
+		//zmiana, dziedziczymy po Actor (nie mam wagi i innych bajerów)...
 		//2019-02-08 mia³em razcjê, w³aœnie powy¿sze wprowadzi³em w ¿ycie...
 
 		

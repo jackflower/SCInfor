@@ -11,12 +11,12 @@ namespace equipment
 {
 	namespace battery
 	{
-		RTTI_IMPL(Battery, CActor);
+		RTTI_IMPL(Battery, Actor);
 
 		//Konstruktor domyślny chroniony
 		Battery::Battery(const std::wstring& uniqueId)
 		:
-			CActor							(uniqueId),//konstruktor klasy bazowej
+			Actor							(uniqueId),//konstruktor klasy bazowej
 			m_battery_name					(""),
 			m_capacity						(0.0f),
 			m_particle_energy				(0.0f),
@@ -32,7 +32,7 @@ namespace equipment
 		//Konstruktor kopiujący chroniony
 		Battery::Battery(const Battery& CBatteryCopy)
 		:
-			CActor							(CBatteryCopy),//konstruktor kopiujący klasy bazowej
+			Actor							(CBatteryCopy),//konstruktor kopiujący klasy bazowej
 			m_battery_name					(CBatteryCopy.m_battery_name),
 			m_capacity						(CBatteryCopy.m_capacity),
 			m_particle_energy				(CBatteryCopy.m_particle_energy),
@@ -48,7 +48,7 @@ namespace equipment
 		//Destruktor chroniony
 		Battery::~Battery()
 		{
-			//CActor						not edit
+			//Actor						not edit
 			m_battery_name					= "";
 			m_capacity						= 0.0f;
 			m_particle_energy				= 0.0f;

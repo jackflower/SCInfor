@@ -106,7 +106,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)
 			{
-				p_turbine->SetAnimSet(p_templ_animations);
+				p_turbine->setAnimSet(p_templ_animations);
 
 				//body
 				if (p_templ_animations->GetWindTurbineBodyDefaultAnim()!= NULL)

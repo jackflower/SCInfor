@@ -56,7 +56,7 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml
 	bool BatteryTemplate::load(CXml &xml)
 	{
-		//ładowanie danych klasy bazowej CActor
+		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie konfiguracji battery

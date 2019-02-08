@@ -16,12 +16,12 @@ namespace logic
 {
 	namespace energetics
 	{
-		RTTI_IMPL(CRelayStation, CActor);
+		RTTI_IMPL(CRelayStation, Actor);
 	
 		//Chroniony konstruktor domyœlny
 		CRelayStation::CRelayStation(const std::wstring& uniqueId)
 		:
-			CActor						(uniqueId),//konstruktor klasy bazowej
+			Actor						(uniqueId),//konstruktor klasy bazowej
 			m_relay_station_name		(),
 			m_unit_controller			(true),//urz¹dzenie w³¹czone
 			m_use_communication			(false),
@@ -32,7 +32,7 @@ namespace logic
 		//Chroniony konstruktor kopiuj¹cy
 		CRelayStation::CRelayStation(const CRelayStation &CRelayStationCopy)
 		:
-			CActor						(CRelayStationCopy),//konstruktor kopiujacy klasy bazowej
+			Actor						(CRelayStationCopy),//konstruktor kopiujacy klasy bazowej
 			m_relay_station_name		(CRelayStationCopy.m_relay_station_name),
 			m_unit_controller			(CRelayStationCopy.m_unit_controller),
 			m_use_communication			(CRelayStationCopy.m_use_communication),
@@ -43,7 +43,7 @@ namespace logic
 		//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
 		CRelayStation::~CRelayStation()
 		{
-			//CActor					not edit
+			//Actor					not edit
 			m_relay_station_name		= "";
 			//m_unit_controller			not edit
 			m_use_communication			= false;

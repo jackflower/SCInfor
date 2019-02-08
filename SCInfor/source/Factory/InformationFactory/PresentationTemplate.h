@@ -8,7 +8,7 @@
 #define H_PRESENTATION_TEMPLATE_JACK
 
 #include "../../ResourceManager/IResource.h"
-#include "../../Information/CPresentation.h"
+#include "../../Information/Presentation.h"
 #include "../../XML/CXml.h"
 #include "../../RTTI/RTTI.h"
 #include <string>
@@ -20,7 +20,7 @@ using namespace information::presentation;
 namespace factory
 {
 	///
-	///Klasa reprezentuje wzorzec dla obiektu klasy CPresentation
+	///Klasa reprezentuje wzorzec dla obiektu klasy Presentation
 	///
 	class PresentationTemplate : public IResource
 	{
@@ -63,20 +63,20 @@ namespace factory
 		virtual bool load(CXml & xml);
 
 		///
-		///Wirtualna metoda tworzenie obiektów pochodnych klasy CPresentation
+		///Wirtualna metoda tworzenie obiektów pochodnych klasy Presentation
 		///
 		///implementowana przez w pełni konkretne podklasy
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		virtual CPresentation *create(std::wstring id = L"");
+		virtual Presentation *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *information - wskaźnik na obiekt klasy CInformation
+		///@param *information - wskaźnik na obiekt klasy Information
 		///
-		virtual void fill(CPresentation *presentation);
+		virtual void fill(Presentation *presentation);
 
 		///
 		///Metoda zwraca nazwę pliku zasobu

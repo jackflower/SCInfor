@@ -8,7 +8,7 @@
 #define H_ENGINE_JACK
 
 #include "EEngineState.h"
-#include "../../Logic/Actor/CActor.h"
+#include "../../Logic/Actor/Actor.h"
 #include "../../RTTI/RTTI.h"
 #include "../EquipmentData/EquipmentFuelTankData.h"
 
@@ -19,7 +19,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje abstrakcyjny silnik napędzajacy dowolny obiekt
 	///
-	class Engine : public CActor
+	class Engine : public Actor
 	{
 		RTTI_DECL;
 			

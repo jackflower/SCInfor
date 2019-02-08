@@ -8,7 +8,7 @@
 #define H_ENEMY_JACK
 
 #include <string>
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 
 ///
 ///Forward declaration
@@ -31,7 +31,7 @@ namespace logic
 	///
 	///Klasa reprezentuje wroga
 	///
-	class CEnemy: public CActor 
+	class CEnemy: public Actor 
 	{
 		RTTI_DECL;
 
@@ -78,7 +78,7 @@ namespace logic
 		///
 		///Wirtualan metoda zabija obiekt klasy CEnemy i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
 		///
-		virtual void Kill();
+		virtual void kill();
 
 	protected:
 	private:

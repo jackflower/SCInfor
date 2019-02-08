@@ -7,7 +7,7 @@
 #ifndef H_AMMO_JACK
 #define H_AMMO_JACK
 
-#include "../../../Logic/Actor/CActor.h"
+#include "../../../Logic/Actor/Actor.h"
 #include "../Caliber.h"
 #include "EAmmoState.h"
 
@@ -20,7 +20,7 @@ namespace equipment
 		///
 		///Klasa reprezentuje magazynek na amunicję
 		///
-		class Ammo : public CActor
+		class Ammo : public Actor
 		{
 			RTTI_DECL;
 

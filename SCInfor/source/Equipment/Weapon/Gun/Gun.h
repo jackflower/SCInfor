@@ -7,7 +7,7 @@
 #ifndef H_GUN_JACK
 #define H_GUN_JACK
 
-#include "../../../Logic/Actor/CActor.h"
+#include "../../../Logic/Actor/Actor.h"
 #include "LockWeapon/LockWeapon.h"
 #include "../../EquipmentData/EquipmentAmmoData.h"
 #include <SFML/System/Vector2.hpp>
@@ -27,7 +27,7 @@ namespace equipment
 		///
 		///Klasa reprezentuje logikę strzelającego działa
 		///
-		class Gun : public CActor
+		class Gun : public Actor
 		{
 			RTTI_DECL;
 		

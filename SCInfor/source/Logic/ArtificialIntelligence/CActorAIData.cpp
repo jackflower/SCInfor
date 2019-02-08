@@ -21,7 +21,7 @@ namespace artificialintelligence
 		//mWaypoint(sf::Vector2f(0.0f,0.0f)),
 		m_waypoint_tolerance(0.0f),
 		m_target_direction(0),
-		mCombatTarget(CSafePtr<CActor>::NullPtr()),
+		mCombatTarget(CSafePtr<Actor>::NullPtr()),
 		//mCombatTarget(NULL),
 		m_moving_time(0.0f),
 		//mMovementScheme(NULL),
@@ -38,7 +38,7 @@ namespace artificialintelligence
 	{
 	}
 
-	CActor *CActorAIData::GetActor()
+	Actor *CActorAIData::GetActor()
 	{
 		return p_AI->GetActor();
 	}

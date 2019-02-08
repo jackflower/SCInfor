@@ -8,7 +8,7 @@
 #define H_INFORMATION_TEMPLATE_JACK
 
 #include "../../ResourceManager/IResource.h"
-#include "../../Information/CInformation.h"
+#include "../../Information/Information.h"
 #include "../../XML/CXml.h"
 #include "../../RTTI/RTTI.h"
 #include <string>
@@ -63,20 +63,20 @@ namespace factory
 		virtual bool load(CXml & xml);
 
 		///
-		///Wirtualna metoda tworzenie obiektów pochodnych klasy CInformation
+		///Wirtualna metoda tworzenie obiektów pochodnych klasy Information
 		///
 		///implementowana przez w pełni konkretne podklasy
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		virtual CInformation *create(std::wstring id = L"");
+		virtual Information *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *information - wskaźnik na obiekt klasy CInformation
+		///@param *information - wskaźnik na obiekt klasy Information
 		///
-		virtual void fill(CInformation *information);
+		virtual void fill(Information *information);
 
 		///
 		///Metoda zwraca nazwę pliku zasobu

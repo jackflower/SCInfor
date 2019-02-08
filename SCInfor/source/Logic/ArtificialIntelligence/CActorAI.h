@@ -11,7 +11,7 @@
 #include <vector>
 #include "../EEnemyState.h"
 #include "../EEnemyAttitude.h"
-#include "../Actor/CActorController.h"
+#include "../Actor/ActorController.h"
 #include "CActorAIData.h"
 
 ///
@@ -29,7 +29,7 @@ namespace artificialintelligence
 	///
 	///Klasa reprezentuje rozszerzenie opakowania informacji AI
 	///
-	class CActorAI : public CActorController
+	class CActorAI : public ActorController
 	{
 		RTTI_DECL;
 
@@ -38,9 +38,9 @@ namespace artificialintelligence
 		///
 		///Konstruktor
 		///
-		///@param *actor - wskaünik na obiekt klasy CActor
+		///@param *actor - wskaünik na obiekt klasy Actor
 		///
-		CActorAI(CActor *actor);
+		CActorAI(Actor *actor);
 
 		///
 		///Destruktor wirtualny
@@ -65,11 +65,11 @@ namespace artificialintelligence
 		void SetScheme(CAIScheme *scheme, float duration = 1.0f);
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CActor,
+		///Metoda zwraca wskaünik na obiekt klasy Actor,
 		///do ktÛrego naleøy ten kod AI
-		///pole jest w klasie bazowej - CActorController
+		///pole jest w klasie bazowej - ActorController
 		///
-		inline CActor *GetActor()
+		inline Actor *GetActor()
 		{
 			return p_actor;
 		}

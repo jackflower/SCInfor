@@ -895,7 +895,7 @@ namespace logic
 	}
 
 	//Wirtualna metoda zaznacza obiekty do destrukcji
-	void CPhysical::Kill()
+	void CPhysical::kill()
 	{
 		MarkForDelete();
 	}

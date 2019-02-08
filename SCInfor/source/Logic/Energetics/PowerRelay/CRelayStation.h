@@ -7,7 +7,7 @@
 #ifndef H_RELAY_STATION_JACK
 #define H_RELAY_STATION_JACK
 
-#include "../../Actor/CActor.h"
+#include "../../Actor/Actor.h"
 #include "../../Industrial/PowerStation/CPowerStation.h"
 #include "../../Communication/CCommunication.h"
 
@@ -21,7 +21,7 @@ namespace logic
 		///
 		///Klasa bazowa reprezentuje abstrakcyjny przekaünik
 		///
-		class CRelayStation : public CActor
+		class CRelayStation : public Actor
 		{
 			RTTI_DECL;
 

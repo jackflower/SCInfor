@@ -25,12 +25,12 @@
 
 namespace artificialintelligence
 {
-	RTTI_IMPL(CActorAI, CActorController);
+	RTTI_IMPL(CActorAI, ActorController);
 
 	//Konstruktor
-	CActorAI::CActorAI(CActor *actor)
+	CActorAI::CActorAI(Actor *actor)
 	:
-		CActorController		(actor),	//konstruktor klasy bazowej
+		ActorController		(actor),	//konstruktor klasy bazowej
 		//m_data				(this),		//ostrze¿enie zbyt wczesnego wi¹zania *)
 		m_data					(NULL),
 		m_turning_sharpness		(0.0f),
@@ -43,7 +43,7 @@ namespace artificialintelligence
 	//Destruktor wirtualny
 	CActorAI::~CActorAI()
 	{
-		//CActorController		not edit
+		//ActorController		not edit
 		//m_data				not edit
 		m_turning_sharpness		= 0.0f;
 		p_scheme				= NULL;
@@ -118,11 +118,11 @@ namespace artificialintelligence
 	void CActorAI::update(float dt)
 	{
 		/*
-		CActorController::update(dt);
+		ActorController::update(dt);
 
 		m_data.update(dt);
 
-		if ( GetActor()->GetSpawnState() != CActor::ssAlive )	return;
+		if ( GetActor()->GetSpawnState() != Actor::ssAlive )	return;
 		if ( p_scheme )											p_scheme->UpdateAI(&m_data, dt);
 
 		// TODO: Dodac rozne zachowania w zaleznosci od nastawienia do gracza

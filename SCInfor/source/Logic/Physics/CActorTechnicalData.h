@@ -16,7 +16,7 @@ namespace physics
 	namespace technical
 	{
 		///
-		///klasa reprezentuje opakowanie fizyki dla klasy CActor
+		///klasa reprezentuje opakowanie fizyki dla klasy Actor
 		///
 		class CActorTechnicalData : public CPhysicsData
 		{

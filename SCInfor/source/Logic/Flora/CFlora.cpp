@@ -16,7 +16,7 @@ namespace logic
 	//Chroniony konstruktor domyœlny
 	CFlora::CFlora(const std::wstring& uniqueId)
 	:
-		CActor					(uniqueId),//konstruktor klasy bazowej
+		Actor					(uniqueId),//konstruktor klasy bazowej
 		m_rotation_speed_body	(0.0f),
 		m_rotation_speed_head	(0.0f)
 	{

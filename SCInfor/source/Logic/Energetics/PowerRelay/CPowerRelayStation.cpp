@@ -65,7 +65,7 @@ namespace logic
 		//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
 		CPowerRelayStation::~CPowerRelayStation()
 		{
-			//CActor						not edit
+			//Actor						not edit
 			m_powerrelaystation_state		= POWER_RELAY_STATION_DEFAULT;
 			//m_slotsrate_date				not edit
 			m_powerstations_capacity		= 0;

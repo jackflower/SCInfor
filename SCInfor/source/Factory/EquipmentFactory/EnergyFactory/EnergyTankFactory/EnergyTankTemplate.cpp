@@ -6,7 +6,7 @@
 
 #include "EnergyTankTemplate.h"
 #include "../../../../Logic/CPhysicalManager.h"
-#include "../../../../Logic/Actor/CActor.h"
+#include "../../../../Logic/Actor/Actor.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 
 using namespace rendering::animation;
@@ -94,7 +94,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)
 			{
-				p_energytank->SetAnimSet(p_templ_animations);  
+				p_energytank->setAnimSet(p_templ_animations);  
 				
 				//body
 				if (p_templ_animations->GetEnergyTankBodyDefaultAnim()!= NULL)

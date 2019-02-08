@@ -14,12 +14,12 @@ namespace logic
 {
 	namespace powerstation
 	{
-		RTTI_IMPL(CPowerStation, CActor);
+		RTTI_IMPL(CPowerStation, Actor);
 
 		//Chroniony konstruktor domyœlny
 		CPowerStation::CPowerStation(const std::wstring& uniqueId)
 		:
-			CActor					(uniqueId),	//konstruktor klasy bazowej
+			Actor					(uniqueId),	//konstruktor klasy bazowej
 			m_stored_energy			(0.0f),
 			m_energy_capacitor		(0.0f),
 			m_amount_power_modules	(0),
@@ -42,7 +42,7 @@ namespace logic
 		//Chroniony konstruktor kopiuj¹cy
 		CPowerStation::CPowerStation(const CPowerStation &CPowerStationCopy)
 		:
-			CActor					(CPowerStationCopy),//konstruktor kopiujacy klasy bazowej
+			Actor					(CPowerStationCopy),//konstruktor kopiujacy klasy bazowej
 			m_stored_energy			(CPowerStationCopy.m_stored_energy),
 			m_energy_capacitor		(CPowerStationCopy.m_energy_capacitor),
 			m_amount_power_modules	(CPowerStationCopy.m_amount_power_modules),
@@ -54,7 +54,7 @@ namespace logic
 		//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
 		CPowerStation::~CPowerStation(void)
 		{
-			//CActor				not edit
+			//Actor				not edit
 			m_stored_energy			= 0.0f;
 			m_energy_capacitor		= 0;
 			m_amount_power_modules	= 0;

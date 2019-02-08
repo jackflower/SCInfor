@@ -94,7 +94,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)
 			{
-				p_communication->SetAnimSet(p_templ_animations);
+				p_communication->setAnimSet(p_templ_animations);
 
 				//body
 				if (p_templ_animations->GetCommunicationBodyDefaultAnim() != NULL)

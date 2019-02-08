@@ -13,12 +13,12 @@ namespace equipment
 	namespace weapon
 	{
 
-		RTTI_IMPL(MagazineAmmunition, CActor);
+		RTTI_IMPL(MagazineAmmunition, Actor);
 
 		//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
 		MagazineAmmunition::MagazineAmmunition(const std::wstring & uniqueId)
 		:
-			CActor(uniqueId),//konstruktor klasy bazowej
+			Actor(uniqueId),//konstruktor klasy bazowej
 			m_ammunition_name(),
 			m_ammunition_capacity(0),
 			m_magazine_ammunition_caliber(),
@@ -31,7 +31,7 @@ namespace equipment
 		//Chroniony konstruktor kopiujący
 		MagazineAmmunition::MagazineAmmunition(const MagazineAmmunition& MagazineAmmunitionCopy)
 		:
-			CActor(MagazineAmmunitionCopy),//konstruktor kopiujący klasy bazowej
+			Actor(MagazineAmmunitionCopy),//konstruktor kopiujący klasy bazowej
 			m_ammunition_name(MagazineAmmunitionCopy.m_ammunition_name),
 			m_ammunition_capacity(MagazineAmmunitionCopy.m_ammunition_capacity),
 			m_magazine_ammunition_caliber(MagazineAmmunitionCopy.m_magazine_ammunition_caliber),
@@ -43,7 +43,7 @@ namespace equipment
 
 		MagazineAmmunition::~MagazineAmmunition()
 		{
-			//CActor
+			//Actor
 			m_ammunition_name = "";
 			m_ammunition_capacity = 0;
 			//m_magazine_ammunition_caliber

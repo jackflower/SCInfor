@@ -9,7 +9,7 @@
 #include "CPhysicalManager.h"
 #include "Physical/CPhysical.h"
 #include "Physical/PhysicalInfo/CPhysicalInfo.h"
-#include "Actor/CActor.h"
+#include "Actor/Actor.h"
 #include "Enemy/CEnemy.h"
 #include "Player/CPlayer.h"
 #include "Bullet/CBullet.h"
@@ -114,11 +114,11 @@ namespace logic
 		return create<CPhysical>(unique_id);
 	}
 
-	//Metoda tworzy obiekt klasy CActor i zwraca wskaünik na ten obiekt
-	CActor *CPhysicalManager::CreateActor(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Actor i zwraca wskaünik na ten obiekt
+	Actor *CPhysicalManager::CreateActor(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CActor created\n");
-		return create<CActor>(uniqueId);
+		fprintf(stderr, "Actor created\n");
+		return create<Actor>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CRobot i zwraca wskaünik na ten obiekt

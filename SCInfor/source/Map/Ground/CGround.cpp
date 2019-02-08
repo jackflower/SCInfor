@@ -11,12 +11,12 @@ using namespace stringutils;
 
 namespace mapengine
 {
-	RTTI_IMPL(CGround, CActor);
+	RTTI_IMPL(CGround, Actor);
 
 	//Konstruktor
 	CGround::CGround(const std::wstring& uniqueId)
 	:
-		CActor				(uniqueId),	//konstruktor klasy bazowej
+		Actor				(uniqueId),	//konstruktor klasy bazowej
 		m_physicsground		()
 	{
 	}
@@ -24,7 +24,7 @@ namespace mapengine
 	//Konstruktor kopiuj¹cy
 	CGround::CGround(const CGround & CGroundCopy)
 	:
-		CActor				(CGroundCopy),	//konstruktor kopiuj¹cy klasy bazowej
+		Actor				(CGroundCopy),	//konstruktor kopiuj¹cy klasy bazowej
 		m_physicsground		(CGroundCopy.m_physicsground)
 	{
 	}
@@ -32,7 +32,7 @@ namespace mapengine
 	//Destruktor
 	CGround::~CGround()
 	{
-		//CActor			not edit
+		//Actor			not edit
 		//m_physicsground	not edit
 	}
 

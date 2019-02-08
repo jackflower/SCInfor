@@ -58,7 +58,7 @@ namespace factory
 		bool load(const std::string & name);
 
 		///
-		///Wirtualna metoda ładująca dane z xml ładuje wspólne cechy CActor
+		///Wirtualna metoda ładująca dane z xml ładuje wspólne cechy Actor
 		///
 		///@param xml - referencja na obiekt klasy CXml
 		///

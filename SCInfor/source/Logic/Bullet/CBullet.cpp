@@ -11,12 +11,12 @@
 
 namespace logic
 {
-	RTTI_IMPL(CBullet, CActor);
+	RTTI_IMPL(CBullet, Actor);
 
 	//Chroniony konstruktor domyœlny
 	CBullet::CBullet(const std::wstring &uniqueId)
 	:
-		CActor				(uniqueId),//konstruktor klasy bazowej
+		Actor				(uniqueId),//konstruktor klasy bazowej
 		m_speed					(0.0f),
 		m_distance				(0.0f),
 		m_half_distance			(0.0f),
@@ -31,7 +31,7 @@ namespace logic
 	//Chroniony konstruktor kopiuj¹cy
 	CBullet::CBullet(const CBullet &CBulletCopy)
 	:
-		CActor(CBulletCopy),//konstruktor kopiuj¹cy klasy bazowej
+		Actor(CBulletCopy),//konstruktor kopiuj¹cy klasy bazowej
 		m_speed					(CBulletCopy.m_speed),
 		m_distance				(CBulletCopy.m_distance),
 		m_half_distance			(CBulletCopy.m_half_distance),
@@ -205,7 +205,7 @@ namespace logic
 	void CBullet::update(float dt)
 	{
 		CPhysical::update(dt);
-		//this->Kill();
+		//this->kill();
 		//this->MarkForDelete();
 		//potrzebujê klasy CDetector...
 	}

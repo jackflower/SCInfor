@@ -8,12 +8,12 @@
 
 namespace equipment
 {
-	RTTI_IMPL(PowerModule, CActor);
+	RTTI_IMPL(PowerModule, Actor);
 		
 	//Chroniony konstruktor domyślny
 	PowerModule::PowerModule(const std::wstring & uniqueId)
 	:
-		CActor(uniqueId),//konstruktor klasy bazowej
+		Actor(uniqueId),//konstruktor klasy bazowej
 		m_energy_capacitor(0.0f),
 		m_power(0.0f),
 		m_stored_energy(0.0f),
@@ -24,7 +24,7 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	PowerModule::PowerModule(const PowerModule & PowerModuleCopy)
 	:
-		CActor(PowerModuleCopy),//konstruktor kopiujący klasy bazowej
+		Actor(PowerModuleCopy),//konstruktor kopiujący klasy bazowej
 		m_energy_capacitor(PowerModuleCopy.m_energy_capacitor),
 		m_power(PowerModuleCopy.m_power),
 		m_stored_energy(PowerModuleCopy.m_stored_energy),
@@ -35,7 +35,7 @@ namespace equipment
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
 	PowerModule::~PowerModule(void)
 	{
-		//CActor
+		//Actor
 		m_energy_capacitor = 0.0f;
 		m_power = 0.0f;
 		m_stored_energy = 0.0f;

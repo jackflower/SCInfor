@@ -14,12 +14,12 @@ using namespace weather;
 
 namespace equipment
 {
-	RTTI_IMPL(ThermalInsulation, CActor);
+	RTTI_IMPL(ThermalInsulation, Actor);
 
 	//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
 	ThermalInsulation::ThermalInsulation(const std::wstring & uniqueId)
 	:
-		CActor(uniqueId),//konstruktor klasy bazowej
+		Actor(uniqueId),//konstruktor klasy bazowej
 		m_temperature_ambient(0.0f),
 		m_thermal_protection(0.0f),
 		m_thermal_protection_factor(0.0f),
@@ -35,7 +35,7 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	ThermalInsulation::ThermalInsulation(const ThermalInsulation & CThermalInsulationCopy)
 	:
-		CActor(CThermalInsulationCopy),
+		Actor(CThermalInsulationCopy),
 		m_temperature_ambient(CThermalInsulationCopy.m_temperature_ambient),
 		m_thermal_protection(CThermalInsulationCopy.m_thermal_protection),
 		m_thermal_protection_factor(CThermalInsulationCopy.m_thermal_protection_factor),
@@ -51,7 +51,7 @@ namespace equipment
 	//Destruktor
 	ThermalInsulation::~ThermalInsulation()
 	{
-		//CActor
+		//Actor
 		m_temperature_ambient = 0.0f;
 		m_thermal_protection = 0.0f;
 		m_thermal_protection_factor = 0.0f;

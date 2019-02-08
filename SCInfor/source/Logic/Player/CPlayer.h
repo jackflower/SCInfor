@@ -10,7 +10,7 @@
 #define H_PLAYER_JACK
 
 #include <string>
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 
 ///
 ///Forward declaration
@@ -23,7 +23,7 @@ namespace logic
 	///
 	///Klasa reprezentuje gracza
 	///
-	class CPlayer: public CActor 
+	class CPlayer: public Actor 
 	{
 		RTTI_DECL;
 
@@ -70,7 +70,7 @@ namespace logic
 		///
 		///Wirtualan metoda zabija obiekt klasy CPlayer i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
 		///
-		virtual void Kill();
+		virtual void kill();
 
 	private:
 

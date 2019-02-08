@@ -7,7 +7,7 @@
 #ifndef H_POWER_MODULE_JACK
 #define H_POWER_MODULE_JACK
 
-#include "../../../Logic/Actor/CActor.h"
+#include "../../../Logic/Actor/Actor.h"
 #include "../../Switch.h"
 
 using namespace logic;
@@ -17,7 +17,7 @@ namespace equipment
 	///
 	///Klasa bazowa dla modułów wytwarzania, gromadzenia i przetwarzania energii
 	///
-	class PowerModule : public CActor
+	class PowerModule : public Actor
 	{
 		RTTI_DECL;
 

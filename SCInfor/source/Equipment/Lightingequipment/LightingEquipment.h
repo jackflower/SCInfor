@@ -8,7 +8,7 @@
 #ifndef H_LIGHTING_EQUIPMENT_JACK
 #define H_LIGHTING_EQUIPMENT_JACK
 
-#include "../../Logic/Actor/CActor.h"
+#include "../../Logic/Actor/Actor.h"
 #include "../../RTTI/RTTI.h"
 #include "../Switch.h"
 #include "ELightingEquipmentState.h"
@@ -20,7 +20,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje wyposażenie - oświetlenie
 	///
-	class LightingEquipment : public CActor
+	class LightingEquipment : public Actor
 	{
 		RTTI_DECL;
 

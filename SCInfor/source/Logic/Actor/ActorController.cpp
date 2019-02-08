@@ -1,11 +1,11 @@
-//  ___________________________________________
-// | CActorController.h - class implementation |
-// | Jack Flower April 2015                    |
-// |___________________________________________|
+ï»¿//  __________________________________________
+// | ActorController.h - class implementation |
+// | Jack Flower April 2015                   |
+// |__________________________________________|
 //
 
-#include "CActorController.h"
-#include "CActor.h"
+#include "ActorController.h"
+#include "Actor.h"
 #include "../../Utilities/Translation/Directions.h"
 #include "../../Utilities/MathFunctions/MathFunctions.h"
 #include <cmath>
@@ -16,66 +16,72 @@ using namespace translation;
 namespace logic
 {
 
-	RTTI_IMPL_NOPARENT(CActorController);
+	RTTI_IMPL_NOPARENT(ActorController);
 	
 	//Konstruktor
-	CActorController::CActorController(CActor *actor)
+	ActorController::ActorController(Actor *actor)
 	:
-		p_actor		(actor),
-		m_strafe	(0),
-		m_move		(0),
-		m_true_rot	(0.0f)
+		p_actor	(actor),
+		m_strafe(0),
+		m_move(0),
+		m_true_rot(0.0f)
 	{
 	}
 
 	//Destruktor wirtualny
-	CActorController::~CActorController()
+	ActorController::~ActorController()
 	{
-		p_actor		= NULL;
-		m_strafe	= 0;
-		m_move		= 0;
-		m_true_rot	= 0.0f;
+		p_actor = NULL;
+		m_strafe = 0;
+		m_move = 0;
+		m_true_rot = 0.0f;
 	}
 
-	//Metoda ustawia stan i prêdkoœæ obiekty
-	void CActorController::SetSpeed(float speed)
+	//Metoda zwraca typ obiektu /RTTI/
+	const std::string ActorController::getType() const
+	{
+		return rtti.GetNameClass();
+	}
+
+	//Metoda ustawia stan i prÄ™dkoÅ›Ä‡ obiekty
+	void ActorController::setSpeed(float speed)
 	{
 		if (p_actor->getSpawnState() == SPAWN_STATE_ALIVE)
 		{
-			//uwzglêdniam strafe
+			//uwzglÄ™dniam strafe
 			sf::Vector2f dir = RotationToVector((float)p_actor->GetRotationBody());//body
 			sf::Vector2f move;
 
-			//jeœli aktor strzela, ostrzeliwuje siê...
+			//jeÅ›li aktor strzela, ostrzeliwuje siÄ™...
 			if (m_strafe != 0)
 			{
 				move += VectorRightOf(dir) * (float) m_strafe;
-				//stan - obiekt ostrzeliwuje siê, trwa wymiana ognia...
+				//stan - obiekt ostrzeliwuje siÄ™, trwa wymiana ognia...
 				p_actor->setMoveState(MOVE_STATE_STRAFING);
 			}
 
-			//jeœli aktor siê porusza...
+			//jeÅ›li aktor siÄ™ porusza...
 			if(m_move != 0)
 			{
 				move += dir * (float) m_move;
-				//stan - obiekt porusza siê, idzie, spaceruje, jest w ruchu
+				//stan - obiekt porusza siÄ™, idzie, spaceruje, jest w ruchu
 				p_actor->setMoveState(MOVE_STATE_WALKING);
 			}
 
-			//jeœli obiekt siê nie porusza i siê nie ostrzeliwuje (iddle....)
+			//jeÅ›li obiekt siÄ™ nie porusza i siÄ™ nie ostrzeliwuje (iddle....)
 			if ((m_move == 0) && (m_strafe == 0))
 				return;
 
 			move = Normalize(move);//normalizacja wektora
 
-			p_actor->SetVelocity(move * speed);//ustawienie prêdkoœci
+			p_actor->SetVelocity(move * speed);//ustawienie prÄ™dkoÅ›ci
 		}
 	}
 
-	//Metoda ustawia stan i wykonuje obrót
-	void CActorController::TurnBy(float rotation)
+	//Metoda ustawia stan i wykonuje obrÃ³t
+	void ActorController::turnBy(float rotation)
 	{
-		//jeœli aktor ¿yje...
+		//jeÅ›li aktor Å¼yje...
 	    if (p_actor->getSpawnState() == SPAWN_STATE_ALIVE)
 		{
 	        m_true_rot += rotation;
@@ -87,46 +93,48 @@ namespace logic
 	    }
 	}
 
-	//Wirtualan metoda aktualizuj¹ca obiekt
-	void CActorController::update(float dt)
+
+
+	//Metoda zwraca wartoÅ›Ä‡ obrotu obiektu
+	const float ActorController::getTrueRot() const
 	{
-		//przed zejœciem z tego œwiata, obiekt siê zatrzymuje...
-	    if (p_actor->getSpawnState() != SPAWN_STATE_ALIVE)
+		return m_true_rot;
+	}
+
+	//Metoda ustawia wartoÅ›Ä‡ obrotu obiektu
+	void ActorController::setTrueRot(float true_rotation)
+	{
+		m_true_rot = true_rotation;
+	}
+
+	//Metoda ustawia kierunek ruchu
+	void ActorController::setMove(int move)
+	{
+		m_move = move;
+	}
+
+	//Wirtualan metoda aktualizujÄ…ca obiekt
+	void ActorController::update(float dt)
+	{
+		//przed zejÅ›ciem z tego Å›wiata, obiekt siÄ™ zatrzymuje...
+		if (p_actor->getSpawnState() != SPAWN_STATE_ALIVE)
 		{
-	        p_actor->SetVelocity(sf::Vector2f(0.0f,0.0f));
-	    }
+			p_actor->SetVelocity(sf::Vector2f(0.0f, 0.0f));
+		}
 
 		p_actor->setMoveState(MOVE_STATE_STANDING);
 		m_move = 0;
 		m_strafe = 0;
 	}
 
-	//Metoda zwraca wartoœæ obrotu obiektu
-	const float CActorController::GetTrueRot() const
-	{
-		return m_true_rot;
-	}
-
-	//Metoda ustawia wartoœæ obrotu obiektu
-	void CActorController::SetTrueRot(float true_rotation)
-	{
-		m_true_rot = true_rotation;
-	}
-
-	//Metoda ustawia kierunek ruchu
-	void CActorController::SetMove(int move)
-	{
-		m_move = move;
-	}
-
 	//Metoda ustawia stan i wykonuje strafe
-	void CActorController::SetStrafe(int strafe)
+	void ActorController::setStrafe(int strafe)
 	{
 		m_strafe = strafe;
 	}
 
 	/*
-	void CActorController::GotDamageFrom(float dmg, EffectSourcePtr source)
+	void ActorController::GotDamageFrom(float dmg, EffectSourcePtr source)
 	{
 		if (source != EffectSourcePtr(NULL))
 		{

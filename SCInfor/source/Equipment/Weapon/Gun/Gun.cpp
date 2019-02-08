@@ -22,12 +22,12 @@ namespace equipment
 {
 	namespace weapon
 	{
-		RTTI_IMPL(Gun, CActor);
+		RTTI_IMPL(Gun, Actor);
 
 		//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
 		Gun::Gun(const std::wstring & uniqueId)
 		:
-			CActor(uniqueId),//konstruktor klasy bazowej
+			Actor(uniqueId),//konstruktor klasy bazowej
 			m_ammo_data(),
 			m_ammo_loading(false),
 			m_time_ammo_load_delay(0.f),
@@ -56,7 +56,7 @@ namespace equipment
 		//Chroniony konstruktor kopiujący
 		Gun::Gun(const Gun& CGunCopy)
 		:
-			CActor(CGunCopy),//konstruktor kopiujący klasy bazowej
+			Actor(CGunCopy),//konstruktor kopiujący klasy bazowej
 			m_ammo_data(CGunCopy.m_ammo_data),
 			m_ammo_loading(CGunCopy.m_ammo_loading),
 			m_time_ammo_load_delay(CGunCopy.m_time_ammo_load_delay),
@@ -85,7 +85,7 @@ namespace equipment
 		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
 		Gun::~Gun(void)
 		{
-			//CActor
+			//Actor
 			//m_ammo_data
 			m_ammo_loading = false;
 			m_time_ammo_load_delay = 0.0f;

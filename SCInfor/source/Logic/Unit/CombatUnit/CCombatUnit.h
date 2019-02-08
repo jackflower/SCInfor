@@ -52,9 +52,9 @@ namespace logic
 			//virtual void updateAnimations(float dt);
 
 			/////
-			/////Wirtualan metoda zabija obiekt klasy CActor i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
+			/////Wirtualan metoda zabija obiekt klasy Actor i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
 			/////
-			//virtual void Kill();
+			//virtual void kill();
 
 			///
 			///Wirtualna metoda aktualizuj¹ca obiekt

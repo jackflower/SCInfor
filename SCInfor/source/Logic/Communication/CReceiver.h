@@ -7,7 +7,7 @@
 #ifndef H_RECIVER_JACK
 #define H_RECIVER_JACK
 
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 #include "../../Equipment/Switch.h"
 #include "CCommunication.h"
 
@@ -18,7 +18,7 @@ namespace logic
 		///
 		///Klasa bazowa reprezentuj¹ca odbiornik
 		///
-		class CReceiver : public CActor
+		class CReceiver : public Actor
 		{
 			RTTI_DECL;
 

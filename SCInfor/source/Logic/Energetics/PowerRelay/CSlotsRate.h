@@ -7,7 +7,7 @@
 #ifndef H_SLOTS_RATE_JACK
 #define H_SLOTS_RATE_JACK
 
-#include "../../Actor/CActor.h"
+#include "../../Actor/Actor.h"
 
 namespace logic
 {
@@ -16,7 +16,7 @@ namespace logic
 		///
 		///Klasa reprezentuje wskaünik przekaünika
 		///
-		class CSlotsRate : public CActor
+		class CSlotsRate : public Actor
 		{
 			RTTI_DECL;
 

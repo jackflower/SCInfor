@@ -75,10 +75,10 @@ namespace factory
 		return load(xml);
 	}
 
-	//Wirtualna metoda ładująca dane z xml ładuje wspólne cechy CActor
+	//Wirtualna metoda ładująca dane z xml ładuje wspólne cechy Actor
 	bool GunTemplate::load(CXml & xml)
 	{
-		//ładowanie danych klasy bazowej CActor
+		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie modułu prezentacji magazynka z amunicją
@@ -149,7 +149,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_gun)
 			{
-				p_gun->SetAnimSet(p_templ_animations);
+				p_gun->setAnimSet(p_templ_animations);
 
 				//body
 				if (p_templ_animations->GetGunBodyDefaultAnim() != NULL)

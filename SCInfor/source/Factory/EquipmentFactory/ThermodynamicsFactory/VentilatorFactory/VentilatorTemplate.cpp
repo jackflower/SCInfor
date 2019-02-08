@@ -52,10 +52,10 @@ namespace factory
 		return load(xml);
 	}
 
-	//Wirtualna metoda ładująca dane z xml ładuje wspólne cechy CActor
+	//Wirtualna metoda ładująca dane z xml ładuje wspólne cechy Actor
 	bool VentilatorTemplate::load(CXml & xml)
 	{
-		//ładowanie danych klasy bazowej CActor
+		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane wentylatora

@@ -14,12 +14,12 @@ namespace logic
 {
 	namespace energetics
 	{
-		RTTI_IMPL(CSlotsRate, CActor);
+		RTTI_IMPL(CSlotsRate, Actor);
 
 		//Chroniony konstruktor domyœlny
 		CSlotsRate::CSlotsRate(const std::wstring& uniqueId)
 		:
-			CActor				(uniqueId),//konstruktor klasy bazowej
+			Actor				(uniqueId),//konstruktor klasy bazowej
 			m_slot_counter		(0)
 		{
 		}
@@ -27,14 +27,14 @@ namespace logic
 		//Chroniony konstruktor kopiuj¹cy
 		CSlotsRate::CSlotsRate(const CSlotsRate &CSlotsRateCopy)
 		:
-			CActor				(CSlotsRateCopy),//konstruktor kopiujacy klasy bazowej
+			Actor				(CSlotsRateCopy),//konstruktor kopiujacy klasy bazowej
 			m_slot_counter		(CSlotsRateCopy.m_slot_counter)
 		{
 		}
 
 		CSlotsRate::~CSlotsRate()
 		{
-			//CActor			not edit
+			//Actor			not edit
 			m_slot_counter		= 0;
 		}
 

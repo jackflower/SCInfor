@@ -8,7 +8,7 @@
 #define H_FUEL_TANK_JACK
 
 #include "../../../RTTI/RTTI.h"
-#include "../../../Logic/Actor/CActor.h"
+#include "../../../Logic/Actor/Actor.h"
 #include "EFuelTankState.h"
 #include "../../Switch.h"
 
@@ -19,7 +19,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje zbiornik paliwa
 	///
-	class FuelTank : public CActor
+	class FuelTank : public Actor
 	{
 		RTTI_DECL;
 

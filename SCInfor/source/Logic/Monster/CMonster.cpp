@@ -23,7 +23,7 @@ namespace logic
 	//Chroniony konstruktor domyœlny
 	CMonster::CMonster(const std::wstring& uniqueId)
 		:
-		CActor(uniqueId),//konstruktor klasy bazowej
+		Actor(uniqueId),//konstruktor klasy bazowej
 		m_time_do_death(0.0f)
 	{
 	}
@@ -38,9 +38,9 @@ namespace logic
 	void CMonster::update(float dt)
 	{
 		CPhysical::update(dt);
-		CActor::updateComponents(dt);
+		Actor::updateComponents(dt);
 
-		////////na razie testy..., bo w CActor bêdzie ju¿ opakowana metoda...
+		////////na razie testy..., bo w Actor bêdzie ju¿ opakowana metoda...
 		//////if (p_physical_info)
 		//////	p_physical_info->SetPosition(this->GetPosition());
 
@@ -69,7 +69,7 @@ namespace logic
 		//{
 		//	m_time_do_death = m_time_do_death + 0.01f;//kumulujê...
 		//	if(m_time_do_death > p_animation_body->TotalLength())
-		//		Kill();
+		//		kill();
 		//}
 
 		//

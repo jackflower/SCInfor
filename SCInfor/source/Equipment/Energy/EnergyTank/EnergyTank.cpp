@@ -13,12 +13,12 @@ using namespace rendering::drawable;
 
 namespace equipment
 {
-	RTTI_IMPL(EnergyTank, CActor)
+	RTTI_IMPL(EnergyTank, Actor)
 
 	//Chroniony konstruktor domyślny
 	EnergyTank::EnergyTank(const std::wstring & uniqueId)
 	:							
-		CActor(uniqueId),
+		Actor(uniqueId),
 		m_energy_tank_name(),
 		m_energy_tank_capacity(0.0f),	
 		m_energy(0.0f),
@@ -35,7 +35,7 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	EnergyTank::EnergyTank(const EnergyTank & EnergyTankCopy)
 	:
-		CActor(EnergyTankCopy),//kostruktor kopiujący klasy bazowej
+		Actor(EnergyTankCopy),//kostruktor kopiujący klasy bazowej
 		m_energy_tank_name(EnergyTankCopy.m_energy_tank_name),
 		m_energy_tank_capacity(EnergyTankCopy.m_energy_tank_capacity),
 		m_energy(EnergyTankCopy.m_energy),
@@ -48,7 +48,7 @@ namespace equipment
 	//Destruktor wirtualny
 	EnergyTank::~EnergyTank(void)
 	{
-		//CActor
+		//Actor
 		m_energy_tank_name = "";
 		m_energy_tank_capacity = 0.0f;
 		m_energy = 0.0f;

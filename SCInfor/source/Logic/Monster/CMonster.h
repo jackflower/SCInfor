@@ -9,14 +9,14 @@
 #ifndef H_MONSTER_JACK
 #define H_MONSTER_JACK
 
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 
 namespace logic
 {
 	///
 	///Klasa reprezentuje potwora
 	///
-	class CMonster : public CActor
+	class CMonster : public Actor
 	{
 
 		///

@@ -16,12 +16,12 @@ using namespace rendering::displayable;
 
 namespace equipment
 {
-	RTTI_IMPL(LightingEquipment, CActor)
+	RTTI_IMPL(LightingEquipment, Actor)
 
 	//Chroniony konstruktor domyślny
 	LightingEquipment::LightingEquipment(const std::wstring & uniqueId)
 	:
-		CActor(uniqueId),//konstruktor klasy bazowej
+		Actor(uniqueId),//konstruktor klasy bazowej
 		m_unit_controller(true),//urządzenie włączone
 		m_energy_consumption(0.0f),
 		m_lighting_equipment_state(LIGHTING_EQUIPMENT_DEFAULT)
@@ -35,7 +35,7 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	LightingEquipment::LightingEquipment(const LightingEquipment & LightingEquipmentCopy)
 	:
-		CActor(LightingEquipmentCopy),//konstruktor kopiujący klasy bazowej
+		Actor(LightingEquipmentCopy),//konstruktor kopiujący klasy bazowej
 		m_unit_controller(LightingEquipmentCopy.m_unit_controller),//urządzenie włączone
 		m_energy_consumption(LightingEquipmentCopy.m_energy_consumption),
 		m_lighting_equipment_state(LightingEquipmentCopy.m_lighting_equipment_state)
@@ -49,7 +49,7 @@ namespace equipment
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
 	LightingEquipment::~LightingEquipment(void)
 	{
-		//CActor
+		//Actor
 		//m_unit_controller
 		m_energy_consumption = 0.0f;
 		m_lighting_equipment_state = LIGHTING_EQUIPMENT_DEFAULT;

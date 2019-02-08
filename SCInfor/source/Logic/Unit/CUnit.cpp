@@ -10,11 +10,11 @@ namespace logic
 {
 	namespace unit
 	{
-		RTTI_IMPL(CUnit, CActor);
+		RTTI_IMPL(CUnit, Actor);
 
 		CUnit::CUnit(const std::wstring& uniqueId)
 		:
-			CActor					(uniqueId),//chroniony konstruktor klasy bazowej
+			Actor					(uniqueId),//chroniony konstruktor klasy bazowej
 			m_strategy_controller	()
 		{
 		}
@@ -22,7 +22,7 @@ namespace logic
 		//Chroniony konstruktor kopiuj¹cy
 		CUnit::CUnit(const CUnit & CUnitCopy)
 		:
-			CActor					(CUnitCopy),	//chroniony konstruktor kopiuj¹cy klasy bazowej
+			Actor					(CUnitCopy),	//chroniony konstruktor kopiuj¹cy klasy bazowej
 			m_strategy_controller	(CUnitCopy.m_strategy_controller)
 		{
 		}
@@ -42,7 +42,7 @@ namespace logic
 		//Wirtualna metoda aktualizuj¹ca obiekt
 		void CUnit::update(float dt)
 		{
-			CActor::update(dt);
+			Actor::update(dt);
 		}
 
 	}//namespace unit

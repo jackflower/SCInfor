@@ -7,7 +7,7 @@
 #ifndef H_POWER_STATION_JACK
 #define H_POWER_STATION_JACK
 
-#include "../../Actor/CActor.h"
+#include "../../Actor/Actor.h"
 #include "../../../Equipment/Switch.h"
 #include "../../Communication/CCommunication.h"
 #include "../../../Equipment/EquipmentData/EquipmentCommunicationData.h"
@@ -21,7 +21,7 @@ namespace logic
 		///
 		///Klasa bazowa reprezentuje funkcjonalnoœæ wszystkich rodzajów elektrowni
 		///
-		class CPowerStation : public CActor
+		class CPowerStation : public Actor
 		{
 			RTTI_DECL;
 

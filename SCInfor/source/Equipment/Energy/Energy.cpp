@@ -17,12 +17,12 @@ using namespace weather;
 namespace equipment
 {
 
-	RTTI_IMPL(Energy, CActor);
+	RTTI_IMPL(Energy, Actor);
 
 	//Konstruktor
 	Energy::Energy(const std::wstring & uniqueId)
 	:
-		CActor(uniqueId),//konstruktor klasy bazowej
+		Actor(uniqueId),//konstruktor klasy bazowej
 		m_energy_name(),
 		m_energytank_data(),
 		m_percentage_reserve_energy(0.1f),
@@ -53,7 +53,7 @@ namespace equipment
 	//Konstruktor kopiujący
 	Energy::Energy(const Energy & EnergyCopy)
 	:
-		CActor(EnergyCopy),//konstruktor kopiujący klasy bazowej
+		Actor(EnergyCopy),//konstruktor kopiujący klasy bazowej
 		m_energy_name(EnergyCopy.m_energy_name),
 		m_energytank_data(EnergyCopy.m_energytank_data),
 		m_percentage_reserve_energy(EnergyCopy.m_percentage_reserve_energy),
@@ -79,7 +79,7 @@ namespace equipment
 	//Destruktor
 	Energy::~Energy(void)
 	{
-		//CActor
+		//Actor
 		m_energy_name = "";
 		//m_energytank_data
 		m_percentage_reserve_energy = 0.0f;
@@ -372,7 +372,7 @@ namespace equipment
 				m_energy_rotor_speed = m_energy_rotation_speed * m_energy_percentage_energy;
 
 				//prędkość rotacji wirnika alternatora zależy od energii akumulatora i stanu obiektu
-				if(m_energytank_data.getEnergyTank()->GetEnergy() && m_energy_state != ENERGY_DEATH)
+				if(m_energytank_data.getEnergyTank()->getEnergy() && m_energy_state != ENERGY_DEATH)
 					RotateHead(m_energy_rotor_speed * dt);
 				
 				//regeneracja - energii w akumulatorze jest mniej niż wynosi pojemność akumulatora

@@ -94,11 +94,11 @@ namespace equipmentdata
 		///
 		///Metoda dokonuje transformacji skali, pozycji, obrotu
 		///
-		///@param * p_parent - wskaźnik na obiekt klasy CActor
+		///@param * p_parent - wskaźnik na obiekt klasy Actor
 		///
-		////@param * p_child - wskaźnik na obiekt klasy CActor
+		////@param * p_child - wskaźnik na obiekt klasy Actor
 		///
-		void Transform(CActor * p_parent, CActor * p_child);
+		void Transform(Actor * p_parent, Actor * p_child);
 
 	protected:
 

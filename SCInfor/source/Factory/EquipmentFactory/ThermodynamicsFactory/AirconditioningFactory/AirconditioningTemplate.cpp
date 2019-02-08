@@ -71,7 +71,7 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml
 	bool AirconditioningTemplate::load(CXml & xml)
 	{
-		//ładowanie danych klasy bazowej CActor
+		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane modułu klimatyzatora
@@ -125,7 +125,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)
 			{
-				p_airconditioning->SetAnimSet(p_templ_animations);
+				p_airconditioning->setAnimSet(p_templ_animations);
 
 				//body
 				if (p_templ_animations->GetAirconditioningBodyDefaultAnim() != NULL)

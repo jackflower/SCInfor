@@ -7,7 +7,7 @@
 #ifndef H_COMMUNICATION_JACK
 #define H_COMMUNICATION_JACK
 
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 #include "../../Equipment/Switch.h"
 #include "ECommunicationState.h"
 #include "CLogin.h"
@@ -20,7 +20,7 @@ namespace logic
 		///
 		///Klasa bazowa reprezentuje funkcjonalnoœæ ogólnie pojêtej ³¹cznoœci
 		///
-		class CCommunication : public CActor
+		class CCommunication : public Actor
 		{
 			RTTI_DECL;
 

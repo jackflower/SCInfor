@@ -15,12 +15,12 @@ namespace logic
 {
 	namespace communication
 	{
-		RTTI_IMPL(CCommunication, CActor);
+		RTTI_IMPL(CCommunication, Actor);
 
 		//Chroniony konstruktor domyœlny
 		CCommunication::CCommunication(const std::wstring& uniqueId)
 		:
-			CActor					(uniqueId),	//konstruktor klasy bazowej
+			Actor					(uniqueId),	//konstruktor klasy bazowej
 			m_communication_name	(),
 			m_unit_controller		(true),//urz¹dzenie w³¹czone
 			e_communication_state	(COMMUNICATION_DEFAULT),
@@ -36,7 +36,7 @@ namespace logic
 		//Chroniony konstruktor kopiuj¹cy
 		CCommunication::CCommunication(const CCommunication &CCommunicationCopy)
 		:
-			CActor					(CCommunicationCopy),//konstruktor kopiujacy klasy bazowej
+			Actor					(CCommunicationCopy),//konstruktor kopiujacy klasy bazowej
 			m_communication_name	(CCommunicationCopy.m_communication_name),
 			m_unit_controller		(CCommunicationCopy.m_unit_controller),
 			e_communication_state	(CCommunicationCopy.e_communication_state),
@@ -52,7 +52,7 @@ namespace logic
 		//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
 		CCommunication::~CCommunication(void)
 		{
-			//CActor				not edit
+			//Actor				not edit
 			m_communication_name	= "";
 			//m_unit_controller		not edit
 			e_communication_state	= COMMUNICATION_DEFAULT;

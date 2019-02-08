@@ -9,7 +9,7 @@
 #define H_BATTERY_JACK
 
 #include "../../../RTTI/RTTI.h"
-#include "../../../Logic/Actor/CActor.h"
+#include "../../../Logic/Actor/Actor.h"
 #include "../../Switch.h"
 #include "EBatteryState.h"
 
@@ -22,7 +22,7 @@ namespace equipment
 		///
 		///Klasa reprezentruje baterię (skumulowana energia)
 		///
-		class Battery : public CActor
+		class Battery : public Actor
 		{
 			RTTI_DECL;
 

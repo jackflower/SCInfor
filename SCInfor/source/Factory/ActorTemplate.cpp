@@ -14,7 +14,7 @@
 #include "EquipmentFactory/WeaponFactory/GunFactory/GunTemplate.h"
 #include "EquipmentFactory/IndustrialFactory/PowerModuleFactory/WindTurbineTemplate.h"
 #include "EquipmentFactory/EngineFactory/FuelBarFactory/FuelBarTemplate.h"
-#include "../Logic/Actor/CActor.h"
+#include "../Logic/Actor/Actor.h"
 #include "../XML/CXml.h"
 #include "../Rendering/Animations/CAnimSet.h"
 #include "../ResourceManager/CResourceManager.h"
@@ -232,16 +232,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CActor
-	CActor *ActorTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy Actor
+	Actor *ActorTemplate::create(std::wstring id)
 	{
-		CActor *actor = gPhysicalManager.CreateActor(id);
+		Actor *actor = gPhysicalManager.CreateActor(id);
 		fill(actor);
 		return actor;
 	}
 
-	//Wirtualna metoda wypełniająca danymi obiekt klasy CActor
-	void ActorTemplate::fill(CActor *actor)
+	//Wirtualna metoda wypełniająca danymi obiekt klasy Actor
+	void ActorTemplate::fill(Actor *actor)
 	{
 		if(actor)
 		{
@@ -253,11 +253,11 @@ namespace factory
 			actor->setSpeed(m_templ_technical_data.getSpeed());
 			actor->setIsMovabled(m_templ_technical_data.getIsMovabled());
 			actor->setIsMove(m_templ_technical_data.getIsMove());
-			actor->SetUseEngine(m_templ_engine_data.getUseEquipment());
-			actor->SetUseEnergy(m_templ_energy_data.getUseEquipment());
-			actor->SetUseAirconditioning(m_templ_airconditioning_data.getUseEquipment());
-			actor->SetUseWentilator(m_templ_ventilator_data.getUseEquipment());
-			actor->SetUseGun(m_templ_gun_data.getUseEquipment());
+			actor->setUseEngine(m_templ_engine_data.getUseEquipment());
+			actor->setUseEnergy(m_templ_energy_data.getUseEquipment());
+			actor->setUseAirconditioning(m_templ_airconditioning_data.getUseEquipment());
+			actor->setUseWentilator(m_templ_ventilator_data.getUseEquipment());
+			actor->setUseGun(m_templ_gun_data.getUseEquipment());
 
 			//chyba info nie będzie używane w aktorze (ekwipunek zamiast tego)
 			//actor->SetUsePhysicalInfo(m_templ_use_physical_info);
@@ -265,7 +265,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)
 			{
-				actor->SetAnimSet(p_templ_animations);
+				actor->setAnimSet(p_templ_animations);
 				
 				//body
 				if (p_templ_animations->GetDefaultAnimBody()!= NULL)
@@ -289,14 +289,14 @@ namespace factory
 					std::wstring engine_genre = p_templ_engine->getGenre();
 
 					//pobieramy składową engine i wzorzec wypełnia wskaźnik danymi
-					actor->SetEngine(p_templ_engine->create(L""));
+					actor->setEngine(p_templ_engine->create(L""));
 					//
 					//actor->SetEngine(p_templ_engine->create(engine_genre));
 					//
 					//przekazanie wskaźnikowi na klasę Engine informacji o wzorcu
-					actor->GetEngine()->SetTemplate(p_templ_engine);
+					actor->getEngine()->SetTemplate(p_templ_engine);
 					//decorator
-					actor->GetEngine()->setSmoothing(true);
+					actor->getEngine()->setSmoothing(true);
 				}
 			}
 			
@@ -324,11 +324,11 @@ namespace factory
 				if(p_templ_energy)
 				{
 					//pobieramy składową energy i wzorzec wypełnia wskaźnik danymi
-					actor->SetEnergy(p_templ_energy->create(L""));
+					actor->setEnergy(p_templ_energy->create(L""));
 					//przekazanie wskaźnikowi na klasę Energy informacji o wzorcu
-					actor->GetEnergy()->SetTemplate(p_templ_energy);
+					actor->getEnergy()->SetTemplate(p_templ_energy);
 					//decorator
-					actor->GetEnergy()->setSmoothing(true);
+					actor->getEnergy()->setSmoothing(true);
 				}
 			}
 			
@@ -341,11 +341,11 @@ namespace factory
 				if(p_templ_airconditioning)
 				{
 					//pobieramy składową moduł klimatyzatora i wzorzec wypełnia wskaźnik danymi
-					actor->SetAirconditioning(p_templ_airconditioning->create(L""));
+					actor->setAirconditioning(p_templ_airconditioning->create(L""));
 					//przekazanie wskaźnikowi na klasę Airconditioning informacji o wzorcu
-					actor->GetAirconditioning()->SetTemplate(p_templ_airconditioning);
+					actor->getAirconditioning()->SetTemplate(p_templ_airconditioning);
 					//decorator
-					actor->GetAirconditioning()->setSmoothing(true);
+					actor->getAirconditioning()->setSmoothing(true);
 				}
 			}
 
@@ -358,11 +358,11 @@ namespace factory
 				if(p_templ_ventilator)
 				{
 					//pobieramy składową moduł wentylatora i wzorzec wypełnia wskaźnik danymi
-					actor->SetVentilator(p_templ_ventilator->create(L""));
+					actor->setVentilator(p_templ_ventilator->create(L""));
 					//przekazanie wskaźnikowi na klasę Ventilator informacji o wzorcu
-					actor->GetVentilator()->SetTemplate(p_templ_ventilator);
+					actor->getVentilator()->SetTemplate(p_templ_ventilator);
 					//decorator
-					actor->GetVentilator()->setSmoothing(true);
+					actor->getVentilator()->setSmoothing(true);
 				}
 			}
 
@@ -375,11 +375,11 @@ namespace factory
 				if (p_templ_gun)
 				{
 					//pobieramy składową moduł wentylatora i wzorzec wypełnia wskaźnik danymi
-					actor->SetGun(p_templ_gun->create(L""));
+					actor->setGun(p_templ_gun->create(L""));
 					//przekazanie wskaźnikowi na klasę Gun informacji o wzorcu
-					actor->GetGun()->SetTemplate(p_templ_gun);
+					actor->getGun()->SetTemplate(p_templ_gun);
 					//decorator
-					actor->GetGun()->setSmoothing(true);
+					actor->getGun()->setSmoothing(true);
 				}
 			}
 		}

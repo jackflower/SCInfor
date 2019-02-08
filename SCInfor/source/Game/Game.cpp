@@ -43,10 +43,10 @@
 #include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/PowerRelayStationTemplate.h"
 #include "../Logic/CMapPhysicalManager.h"
 #include "../Map/MapPhysical/CMapPhysical.h"
-#include "../Logic/Actor/CActorController.h"
+#include "../Logic/Actor/ActorController.h"
 #include "../Logic/Energetics/PowerRelay/CPowerRelayStation.h"
 #include "../Logic/CPhysicalManager.h"
-#include "../Information/CInformation.h"
+#include "../Information/BaseInformation.h"
 #include "../Map/Ground/CGround.h"
 #include "../Equipment/Weapon/Ammo/Ammo.h"
 #include "../Equipment/Weapon/Gun/Gun.h"
@@ -400,9 +400,9 @@ void game::Game::gameTest()
 	//	p_object->setSmoothing(true);
 	//}
 
-	//CPresentation
+	//Presentation
 	//PresentationTemplate *demo = gResourceManager.GetPresentationTemplate("data/xml_data/information/presentation.xml");
-	//CPresentation *prezes = demo->create(L"Pitek");
+	//Presentation *prezes = demo->create(L"Pitek");
 	//prezes->setPosition(420, 420);
 
 }

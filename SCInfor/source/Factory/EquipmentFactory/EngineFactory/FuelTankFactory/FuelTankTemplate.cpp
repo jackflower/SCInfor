@@ -6,7 +6,7 @@
 
 #include "FuelTankTemplate.h"
 #include "../../../../Logic/CPhysicalManager.h"
-#include "../../../../Logic/Actor/CActor.h"
+#include "../../../../Logic/Actor/Actor.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 
 using namespace rendering::animation;
@@ -91,7 +91,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)
 			{
-				p_fueltank->SetAnimSet(p_templ_animations);  
+				p_fueltank->setAnimSet(p_templ_animations);  
 				
 				//body
 				if (p_templ_animations->GetFuelBodyDefaultAnim()!= NULL)

@@ -76,10 +76,10 @@ namespace mapengine
 
 namespace information
 {
-	class CInformation;
+	class Information;
 	namespace presentation
 	{
-		class CPresentation;
+		class Presentation;
 	}
 }
 

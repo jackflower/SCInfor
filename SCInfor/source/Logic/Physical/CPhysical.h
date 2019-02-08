@@ -775,7 +775,7 @@ namespace logic
 		///
 		///Wirtualna metoda zaznacza obiekty do destrukcji
 		///
-		virtual void Kill();
+		virtual void kill();
 
 		///
 		///Metoda zwraca flagê, czy obiekt jest gotowy do usuniecia

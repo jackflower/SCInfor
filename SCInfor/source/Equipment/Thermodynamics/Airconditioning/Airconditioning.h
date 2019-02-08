@@ -11,7 +11,7 @@
 #include "../ThermalInsulation/ThermalInsulation.h"
 #include "../../EquipmentData/ThermalInsulationData.h"
 #include "../../Switch.h"
-#include "../../../Logic/Actor/CActor.h"
+#include "../../../Logic/Actor/Actor.h"
 
 using namespace logic;
 
@@ -20,7 +20,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje funkcjnalność klimatyzacji - klimatyzatora
 	///
-	class Airconditioning : public CActor
+	class Airconditioning : public Actor
 	{
 		RTTI_DECL;
 

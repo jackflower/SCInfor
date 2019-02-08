@@ -14,19 +14,19 @@ using namespace game;
 
 namespace logic
 {
-	RTTI_IMPL(CEnemy, CActor);
+	RTTI_IMPL(CEnemy, Actor);
 
 	//Chroniony konstruktor domyœlny
 	CEnemy::CEnemy(const std::wstring &uniqueId) 
 	:	
-		CActor					(uniqueId)//konstruktor klasy bazowej
+		Actor					(uniqueId)//konstruktor klasy bazowej
 	{
 	}
 
 	//Chroniony konstruktor kopiuj¹cy
 	CEnemy::CEnemy(const CEnemy &CEnemyCopy)
 	:
-		CActor					(CEnemyCopy)//konstruktor kopiuj¹cy klasy bazowej
+		Actor					(CEnemyCopy)//konstruktor kopiuj¹cy klasy bazowej
 	{
 	}
 
@@ -44,7 +44,7 @@ namespace logic
 	//Wirtualna metoda aktualizuj¹ca obiekt
 	void CEnemy::update(float dt)
 	{
-		CActor::update(dt);
+		Actor::update(dt);
 
 		//2014-05-12
 		//waste - testy pogl¹dowe....
@@ -78,9 +78,9 @@ namespace logic
 	}
 
 	//Wirtualan metoda zabija obiekt klasy CEnemy i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
-	void CEnemy::Kill() 
+	void CEnemy::kill() 
 	{
-		CActor::Kill();
+		Actor::kill();
 		//to do...
 	}
 }//namespace logic

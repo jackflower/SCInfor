@@ -15,12 +15,12 @@ using namespace rendering::displayable;
 
 namespace equipment
 {
-	RTTI_IMPL(Airconditioning, CActor);
+	RTTI_IMPL(Airconditioning, Actor);
 	
 	//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
 	Airconditioning::Airconditioning(const std::wstring & uniqueId)
 	:
-		CActor(uniqueId),//konstruktor klasy bazowej
+		Actor(uniqueId),//konstruktor klasy bazowej
 		m_temperature(0.0f),
 		m_temperature_set(0.0f),
 		m_temperature_range(0.0f, 0.0f),
@@ -37,7 +37,7 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	Airconditioning::Airconditioning(const Airconditioning & AirconditioningCopy)
 	:
-		CActor(AirconditioningCopy),//konstruktor kopiujący klasy bazowej
+		Actor(AirconditioningCopy),//konstruktor kopiujący klasy bazowej
 		m_temperature(AirconditioningCopy.m_temperature),
 		m_temperature_set(AirconditioningCopy.m_temperature_set),
 		m_temperature_range(AirconditioningCopy.m_temperature_range),
@@ -54,7 +54,7 @@ namespace equipment
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
 	Airconditioning::~Airconditioning(void)
 	{
-		//CActor
+		//Actor
 		m_temperature = 0.0f;
 		m_temperature_set = 0.0f;
 		m_temperature_range.first = 0.0f;

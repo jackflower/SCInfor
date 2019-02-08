@@ -76,7 +76,7 @@ namespace factory
 			//przekazanie zestawu animacji do obiektu, który jest wypełniany danymi wzorca
 			if (p_templ_animations)
 			{
-				p_slots_rate->SetAnimSet(p_templ_animations);
+				p_slots_rate->setAnimSet(p_templ_animations);
 
 				//body
 				if (p_templ_animations->GetSlotsRateBody_0_Anim() != NULL)

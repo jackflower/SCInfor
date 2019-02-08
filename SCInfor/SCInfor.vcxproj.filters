@@ -390,27 +390,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Information\CInfoManager.cpp">
-      <Filter>source\Information</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Information\CInformation.cpp">
-      <Filter>source\Information</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Information\CPresentation.cpp">
-      <Filter>source\Information</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Information\IInformation.cpp">
-      <Filter>source\Information</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Actor\ActorStateData\CActorStateData.cpp">
-      <Filter>source\Logic\Actor\ActorStateData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Actor\CActor.cpp">
-      <Filter>source\Logic\Actor</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Actor\CActorController.cpp">
-      <Filter>source\Logic\Actor</Filter>
-    </ClCompile>
     <ClCompile Include="source\Logic\ArtificialIntelligence\CActorAI.cpp">
       <Filter>source\Logic\ArtificialIntelligence</Filter>
     </ClCompile>
@@ -1002,6 +981,27 @@
     <ClCompile Include="source\Factory\RobotTemplate.cpp">
       <Filter>source\Factory</Filter>
     </ClCompile>
+    <ClCompile Include="source\Information\InfoManager.cpp">
+      <Filter>source\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Information\BaseInformation.cpp">
+      <Filter>source\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Information\Information.cpp">
+      <Filter>source\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Information\Presentation.cpp">
+      <Filter>source\Information</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Actor\ActorStateData\ActorStateData.cpp">
+      <Filter>source\Logic\Actor\ActorStateData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Actor\ActorController.cpp">
+      <Filter>source\Logic\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Actor\Actor.cpp">
+      <Filter>source\Logic\Actor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1062,27 +1062,6 @@
     </ClInclude>
     <ClInclude Include="source\Game\Listener\IMouseListener.h">
       <Filter>source\Game\Listener</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Information\CInfoManager.h">
-      <Filter>source\Information</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Information\CInformation.h">
-      <Filter>source\Information</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Information\CPresentation.h">
-      <Filter>source\Information</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Information\IInformation.h">
-      <Filter>source\Information</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Actor\ActorStateData\CActorStateData.h">
-      <Filter>source\Logic\Actor\ActorStateData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Actor\CActor.h">
-      <Filter>source\Logic\Actor</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Actor\CActorController.h">
-      <Filter>source\Logic\Actor</Filter>
     </ClInclude>
     <ClInclude Include="source\Logic\Actor\EActorBasicState.h">
       <Filter>source\Logic\Actor</Filter>
@@ -1758,6 +1737,27 @@
     </ClInclude>
     <ClInclude Include="source\Factory\RobotTemplate.h">
       <Filter>source\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Information\InfoManager.h">
+      <Filter>source\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Information\BaseInformation.h">
+      <Filter>source\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Information\Information.h">
+      <Filter>source\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Information\Presentation.h">
+      <Filter>source\Information</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Actor\ActorStateData\ActorStateData.h">
+      <Filter>source\Logic\Actor\ActorStateData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Actor\ActorController.h">
+      <Filter>source\Logic\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Actor\Actor.h">
+      <Filter>source\Logic\Actor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

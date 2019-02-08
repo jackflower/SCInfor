@@ -176,8 +176,8 @@ namespace logic
 			}
 		}
 
-		//Wirtualan metoda zabija obiekt klasy CActor i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
-		void CRobot::Kill()
+		//Wirtualan metoda zabija obiekt klasy Actor i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
+		void CRobot::kill()
 		{
 			//to do...
 		}
@@ -186,12 +186,12 @@ namespace logic
 		void CRobot::update(float dt)
 		{
 			//CPhysical::update(dt);
-			//CActor::update(dt);
+			//Actor::update(dt);
 
 			updateState(dt);
 			updateAnimations(dt);
 			CPhysical::UpdateShadow(dt);
-			CActor::updateComponents(dt);
+			Actor::updateComponents(dt);
 		}
 
 		void CRobot::updateState(float dt)

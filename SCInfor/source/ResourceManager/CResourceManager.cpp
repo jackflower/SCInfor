@@ -423,7 +423,7 @@ namespace resource
 		//Fabryki tworz¹ ze wzorców obiekty poni¿szych klas:
 		//
 		//		- PhysicalTemplate						->tworzy->	CPhysical
-		//		- ActorTemplate						->tworzy->	CActor
+		//		- ActorTemplate						->tworzy->	Actor
 		//		- CRoborTemplate						->tworzy->	CRobot
 		//		- EnemyTemplate						->tworzy->	CEnemy
 		//		- PlayerTemplate						->tworzy->	CPlayer
@@ -447,7 +447,7 @@ namespace resource
 		//		- GroundTemplate						->tworzy->	CGround
 
 		//		- MapPhysicalTemplate					->tworzy->	CMapPhysical
-		//		- InformationTemplate					->tworzy->	CInformation
+		//		- InformationTemplate					->tworzy->	Information
 		//		- PowerRelayStationTemplate			->tworzy->	CPowerRelayStation
 		//		- CommunicationTemplate				->tworzy->	CCommunication
 		//		- SlotsRateTemplate					->tworzy->	CSlotsRate

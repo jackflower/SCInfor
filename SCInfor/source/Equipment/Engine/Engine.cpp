@@ -17,12 +17,12 @@ using namespace rendering::displayable;
 
 namespace equipment
 {
-	RTTI_IMPL(Engine, CActor)
+	RTTI_IMPL(Engine, Actor)
 
 	//Chroniony konstruktor domyślny
 	Engine::Engine(const std::wstring & uniqueId)
 	:
-		CActor(uniqueId),//konstruktor klasy bazowej
+		Actor(uniqueId),//konstruktor klasy bazowej
 		m_engine_name(),
 		m_fueltank_data(),
 		m_percentage_reserve_fuel(0.1f),
@@ -48,7 +48,7 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	Engine::Engine(const Engine & EngineCopy)
 	:
-		CActor(EngineCopy),//konstruktor kopiujący klasy bazowej
+		Actor(EngineCopy),//konstruktor kopiujący klasy bazowej
 		m_engine_name(EngineCopy.m_engine_name),
 		m_fueltank_data(EngineCopy.m_fueltank_data),
 		m_percentage_reserve_fuel(EngineCopy.m_percentage_reserve_fuel),
@@ -70,7 +70,7 @@ namespace equipment
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
 	Engine::~Engine(void)
 	{
-		//CActor
+		//Actor
 		m_engine_name = "";
 		//m_fueltank_data
 		m_percentage_reserve_fuel = 0.0f;

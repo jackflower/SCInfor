@@ -8,7 +8,7 @@
 
 #include <vector>
 #include "../Caliber.h"
-#include "../../../Logic/Actor/CActor.h"
+#include "../../../Logic/Actor/Actor.h"
 #include "../../../RTTI/RTTI.h"
 
 ///
@@ -28,7 +28,7 @@ namespace equipment
 		///
 		///Klasa reprezentuje magazynek amunicji
 		///
-		class MagazineAmmunition : public CActor
+		class MagazineAmmunition : public Actor
 		{
 			RTTI_DECL;
 

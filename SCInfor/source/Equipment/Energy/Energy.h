@@ -11,7 +11,7 @@
 #include "Battery/Battery.h"
 #include "../EquipmentData/EquipmentEnergyTankData.h"
 #include "../EquipmentData/EquipmentBatteryData.h"
-#include "../../Logic/Actor/CActor.h"
+#include "../../Logic/Actor/Actor.h"
 #include "../../RTTI/RTTI.h"
 
 using namespace equipment::battery;
@@ -22,7 +22,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje mechanizm zarządzania energią
 	///
-	class Energy : public CActor
+	class Energy : public Actor
 	{
 		RTTI_DECL;
 

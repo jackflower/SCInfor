@@ -11,7 +11,7 @@
 #include "EPowerRelayStationState.h"
 #include "CSlotsRate.h"
 #include "../RelayStationData/CSlotsRateData.h"
-#include "../../Actor/CActor.h"
+#include "../../Actor/Actor.h"
 #include "../../Industrial/PowerStation/CPowerStation.h"
 #include "../../Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
 #include "../../Communication/CCommunication.h"

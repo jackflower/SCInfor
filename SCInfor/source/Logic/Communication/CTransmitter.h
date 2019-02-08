@@ -7,7 +7,7 @@
 #ifndef H_TRANSMITTER_JACK
 #define H_TRANSMITTER_JACK
 
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 #include "../../Equipment/Switch.h"
 #include "CCommunication.h"
 
@@ -18,7 +18,7 @@ namespace logic
 		///
 		///Klasa bazowa reprezentuj¹ca nadajnik
 		///
-		class CTransmitter : public CActor
+		class CTransmitter : public Actor
 		{
 
 			RTTI_DECL;

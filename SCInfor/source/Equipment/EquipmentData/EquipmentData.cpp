@@ -82,7 +82,7 @@ namespace equipmentdata
 	}
 
 	//Metoda dokonuje transformacji skali, pozycji, obrotu
-	void EquipmentData::Transform(CActor * p_parent, CActor * p_child)
+	void EquipmentData::Transform(Actor * p_parent, Actor * p_child)
 	{
 		m_transformation.Transform(p_parent, p_child);
 	}

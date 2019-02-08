@@ -8,7 +8,7 @@
 #define H_GROUND_JACK
 
 #include "../../Logic/CPhysicalManager.h"
-#include "../../Logic/Actor/CActor.h"
+#include "../../Logic/Actor/Actor.h"
 #include "PhysicsGround/CPhysicsGround.h"
 
 using namespace logic;
@@ -18,7 +18,7 @@ namespace mapengine
 {
 	///Klasa reprezentuje rodzaj pod³o¿a (grunt), po którym przemieszczaj¹ siê obiekty
 	///
-	class CGround : public CActor
+	class CGround : public Actor
 	{
 		RTTI_DECL;
 

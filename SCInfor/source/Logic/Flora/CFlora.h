@@ -7,14 +7,14 @@
 #ifndef H_FLORA_JACK
 #define H_FLORA_JACK
 
-#include "../Actor/CActor.h"
+#include "../Actor/Actor.h"
 
 namespace logic
 {
 	///
 	///Klasa reprezentuje obiekty - roœlinnoœæ (drzewa, krzewy, etc...)
 	///
-	class CFlora : public CActor
+	class CFlora : public Actor
 	{
 
 		///

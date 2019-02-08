@@ -5,7 +5,7 @@
 //
 
 #include "PresentationTemplate.h"
-#include "../../Information/CInfoManager.h"
+#include "../../Information/InfoManager.h"
 #include "../../Utilities/StringUtils/StringUtils.h"
 #include "../../Utilities/CharsetTools/CCharSetManager.h"
 
@@ -102,26 +102,26 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CActor
-	CPresentation *PresentationTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy Actor
+	Presentation *PresentationTemplate::create(std::wstring id)
 	{
-		CPresentation* presentation = gInfoManager.CreatePresentation(id);
+		Presentation* presentation = gInfoManager.createPresentation(id);
 		fill(presentation);
 		return presentation;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void PresentationTemplate::fill(CPresentation *presentation)
+	void PresentationTemplate::fill(Presentation *presentation)
 	{
 		//ustawienie kompletnego wzorca
-		presentation->SetTemplate(this);
+		presentation->setTemplate(this);
 		presentation->setUseUnder(m_templ_use_under);
-		presentation->SetFont(m_templ_font_name);
+		presentation->setFont(m_templ_font_name);
 		presentation->setColorFront(m_templ_color_front);
 		presentation->setColorBack(m_templ_color_back);
-		presentation->SetFontSize(m_templ_font_size);
+		presentation->setFontSize(m_templ_font_size);
 		m_templ_wide_string = gCharSetManager.ReinterpretFromUTF8(m_templ_string);
-		presentation->SetString(m_templ_wide_string);
+		presentation->setString(m_templ_wide_string);
 		presentation->setOffset(m_templ_offset);
 	}
 }//namespace factory

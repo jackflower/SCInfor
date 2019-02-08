@@ -1,5 +1,5 @@
-//  ____________________________________________________________
-// | EActorSpawnState.h - wyliczenie typów stanów ruchu obiektu |
+ï»¿//  ____________________________________________________________
+// | EActorSpawnState.h - wyliczenie typÃ³w stanÃ³w ruchu obiektu |
 // | Jack Flower - April 2015                                   |
 // |____________________________________________________________|
 //
@@ -9,13 +9,13 @@
 #define H_E_ACTOR_SPAWN_STATE_JACK
 
 ///
-///Wyliczenie stanów behawioralnych obiektu (procesy ¿yciowe, trwanie)
+///Wyliczenie stanÃ³w behawioralnych obiektu (procesy Å¼yciowe, trwanie)
 ///
 enum EActorSpawnState
 {
-	SPAWN_STATE_SPAWNING,	//obiekt siê dopiero rodzi, odradza
-	SPAWN_STATE_ALIVE,		//obiekt jest ¿ywy
-	SPAWN_STATE_ASLEEP,		//obiekt jest we œnie (og³uszony, nieprzytmny, zahipnotyzowany)
-	SPAWN_STATE_DYING		//obiekt w trakcie umierania (œmierci)
+	SPAWN_STATE_SPAWNING,	//obiekt siÄ™ dopiero rodzi, odradza
+	SPAWN_STATE_ALIVE,		//obiekt jest Å¼ywy
+	SPAWN_STATE_ASLEEP,		//obiekt jest we Å›nie (ogÅ‚uszony, nieprzytmny, zahipnotyzowany)
+	SPAWN_STATE_DYING		//obiekt w trakcie umierania (Å›mierci)
 };
 #endif//H_E_ACTOR_SPAWN_STATE_JACK

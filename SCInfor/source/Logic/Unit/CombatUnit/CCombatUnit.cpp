@@ -41,15 +41,15 @@ namespace logic
 		//{
 		//}
 
-		////Wirtualan metoda zabija obiekt klasy CActor i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
-		//void CCombatUnit::Kill()
+		////Wirtualan metoda zabija obiekt klasy Actor i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
+		//void CCombatUnit::kill()
 		//{
 		//}
 
 		//Wirtualna metoda aktualizuj¹ca obiekt
 		void CCombatUnit::update(float dt)
 		{
-			CActor::update(dt);
+			Actor::update(dt);
 		}
 
 	}//namespace unit

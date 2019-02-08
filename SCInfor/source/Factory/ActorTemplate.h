@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include "PhysicalTemplate.h"
-#include "../Logic/Actor/CActor.h"
+#include "../Logic/Actor/Actor.h"
 
 
 ///
@@ -25,7 +25,7 @@ namespace xml
 ///
 namespace logic
 {
-	class CActor;
+	class Actor;
 }
 
 ///
@@ -101,8 +101,8 @@ namespace factory
 			
 	protected:
 
-		CAnimSet *p_templ_animations; //wskaźnik na zestaw animacji CActor
-		std::vector<CAnimSet*> m_templ_available_animations; //wektor wskaźników na zestawy dostępnych animacji dla CActor
+		CAnimSet *p_templ_animations; //wskaźnik na zestaw animacji Actor
+		std::vector<CAnimSet*> m_templ_available_animations; //wektor wskaźników na zestawy dostępnych animacji dla Actor
 		CActorTechnicalData m_templ_technical_data; //opakowanie fizyki
 		EquipmentEngineData m_templ_engine_data; //opakowanie funkcjonalności silnika
 		EquipmentEnergyData m_templ_energy_data; //opakowanie funkcjonalności energii
@@ -120,18 +120,18 @@ namespace factory
 	protected:
 
 		///
-		///Metoda tworzy obiekt klasy CActor
+		///Metoda tworzy obiekt klasy Actor
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CActor *create(std::wstring id = L"");
+		Actor *create(std::wstring id = L"");
 
 		///
-		///Wirtualna metoda wypełniająca danymi obiekt klasy CActor
+		///Wirtualna metoda wypełniająca danymi obiekt klasy Actor
 		///
-		///@param *actor - wskaźnik na obiekt klasy CActor
+		///@param *actor - wskaźnik na obiekt klasy Actor
 		///
-		virtual void fill(CActor *actor);
+		virtual void fill(Actor *actor);
 
 	public:
 

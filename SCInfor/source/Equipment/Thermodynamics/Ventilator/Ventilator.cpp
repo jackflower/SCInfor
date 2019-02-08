@@ -21,7 +21,7 @@ namespace equipment
 	////Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
 	Ventilator::Ventilator(const std::wstring& uniqueId)
 	:
-		CActor (uniqueId),//konstruktor klasy bazowej
+		Actor (uniqueId),//konstruktor klasy bazowej
 		m_ventilator_name (""),
 		m_performance (0.0f),
 		m_performance_factor (0.0f),
@@ -36,7 +36,7 @@ namespace equipment
 	//Konstruktor kopiujący
 	Ventilator::Ventilator(const Ventilator & VentilatorCopy)
 	:
-		CActor (VentilatorCopy),//konstruktor kopiujący klasy bazowej
+		Actor (VentilatorCopy),//konstruktor kopiujący klasy bazowej
 		m_ventilator_name (VentilatorCopy.m_ventilator_name),
 		m_performance (VentilatorCopy.m_performance),
 		m_performance_factor (VentilatorCopy.m_performance_factor),
@@ -51,7 +51,7 @@ namespace equipment
 	//Destruktor
 	Ventilator::~Ventilator()
 	{
-		//CActor
+		//Actor
 		m_ventilator_name = "";
 		m_performance = 0.0f;
 		m_performance_factor = 0.0f;
