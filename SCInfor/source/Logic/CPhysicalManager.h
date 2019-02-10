@@ -23,7 +23,7 @@ namespace logic
 {
 	class CPhysical;
 	class Actor;
-	class CEnemy;
+	class Enemy;
 	class CPlayer;
 	class Bullet;
 	class CMonster;
@@ -41,9 +41,9 @@ namespace logic
 	}
 	namespace energetics
 	{
-		class CRelayStation;
-		class CPowerRelayStation;
-		class CSlotsRate;
+		class RelayStation;
+		class PowerRelayStation;
+		class SlotsRate;
 	}
 	namespace communication
 	{
@@ -149,11 +149,11 @@ namespace logic
 		CRobot *CreateRobot(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CEnemy i zwraca wskaŸnik na ten obiekt
+		///Metoda tworzy obiekt klasy Enemy i zwraca wskaŸnik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta³a referencja na obiekt klasy std::wstring
 		///
-		CEnemy *CreateEnemy(const std::wstring &uniqueId = L"");
+		Enemy *CreateEnemy(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy CPlayer i zwraca wskaŸnik na ten obiekt
@@ -310,25 +310,25 @@ namespace logic
 		CWindPowerStationMultipled *CreateWindPowerStationMultipled(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CRelayStation i zwraca wskaŸnik na ten obiekt
+		///Metoda tworzy obiekt klasy RelayStation i zwraca wskaŸnik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta³a referencja na obiekt klasy std::wstring
 		///
-		CRelayStation *CreateRelayStation(const std::wstring &uniqueId = L"");
+		RelayStation *CreateRelayStation(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CPowerRelayStation i zwraca wskaŸnik na ten obiekt
+		///Metoda tworzy obiekt klasy PowerRelayStation i zwraca wskaŸnik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta³a referencja na obiekt klasy std::wstring
 		///
-		CPowerRelayStation *CreatePowerRelayStation(const std::wstring &uniqueId = L"");
+		PowerRelayStation *CreatePowerRelayStation(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CSlotsRate i zwraca wskaŸnik na ten obiekt
+		///Metoda tworzy obiekt klasy SlotsRate i zwraca wskaŸnik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta³a referencja na obiekt klasy std::wstring
 		///
-		CSlotsRate* CreateSlotsRate(const std::wstring &uniqueId = L"");
+		SlotsRate* CreateSlotsRate(const std::wstring &uniqueId = L"");
 		
 		///
 		///Metoda tworzy obiekt klasy Communication i zwraca wskaŸnik na ten obiekt

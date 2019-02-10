@@ -1,10 +1,10 @@
-//  ___________________________________
-// | CEnemy.cpp - class implememtation |
-// | Jack Flower - March 2014          |
-// |___________________________________|
+Ôªø//  __________________________________
+// | Enemy.cpp - class implememtation |
+// | Jack Flower - March 2014         |
+// |__________________________________|
 //
 
-#include "CEnemy.h"
+#include "Enemy.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Game/Game.h"
 
@@ -14,49 +14,49 @@ using namespace game;
 
 namespace logic
 {
-	RTTI_IMPL(CEnemy, Actor);
+	RTTI_IMPL(Enemy, Actor);
 
-	//Chroniony konstruktor domyúlny
-	CEnemy::CEnemy(const std::wstring &uniqueId) 
+	//Chroniony konstruktor domy≈õlny
+	Enemy::Enemy(const std::wstring & uniqueId) 
 	:	
-		Actor					(uniqueId)//konstruktor klasy bazowej
+		Actor(uniqueId)//konstruktor klasy bazowej
 	{
 	}
 
-	//Chroniony konstruktor kopiujπcy
-	CEnemy::CEnemy(const CEnemy &CEnemyCopy)
+	//Chroniony konstruktor kopiujƒÖcy
+	Enemy::Enemy(const Enemy & EnemyCopy)
 	:
-		Actor					(CEnemyCopy)//konstruktor kopiujπcy klasy bazowej
+		Actor(EnemyCopy)//konstruktor kopiujƒÖcy klasy bazowej
 	{
 	}
 
-	//Chroniony destruktor wirtualny - uøywany wy≥πcznie przez CPhysicalManager
-	CEnemy::~CEnemy(void) 
+	//Chroniony destruktor wirtualny - u≈ºywany wy≈ÇƒÖcznie przez CPhysicalManager
+	Enemy::~Enemy(void) 
 	{
+		//~Actor()
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CEnemy::GetType() const
+	const std::string Enemy::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda aktualizujπca obiekt
-	void CEnemy::update(float dt)
+	//Wirtualna metoda aktualizujƒÖca obiekt
+	void Enemy::update(float dt)
 	{
 		Actor::update(dt);
 
 		//2014-05-12
-		//waste - testy poglπdowe....
+		//waste - testy poglƒÖdowe....
 		sf::Vector2i position = sf::Mouse::getPosition(*gGame.getRenderWindow());
-		//zamiana koordynatÛw na wspÛ≥rzÍdne úwiata uøywajπcego kamery
+		//zamiana koordynat√≥w na wsp√≥≈Çrzƒôdne ≈õwiata u≈ºywajƒÖcego kamery
 		position.x = (int)gGame.getRenderWindow()->mapPixelToCoords(position).x;
 		position.y = (int)gGame.getRenderWindow()->mapPixelToCoords(position).y;
 
-		//uwaga: Gdyby coú nie dzia≥a≥o, to jako drugi parament - kamera...
+		//uwaga: Gdyby co≈õ nie dzia≈Ça≈Ço, to jako drugi parament - kamera...
 		//Adventure:
 		//sf::Vector2f worldPos = m_render_window.mapPixelToCoords(position, m_camera);
-
 
 		//if(m_player.getGlobalBounds().contains((float)pixelPos.x, (float)pixelPos.y))
 		//if(GetDisplayableBody()->getGlobalBounds().contains((float)position.x, (float)position.y))
@@ -70,16 +70,17 @@ namespace logic
 			position.y >= GetPosition().y - GetDisplayableBody()->getLocalBounds().height * GetDisplayableBody()->getScale().y * 0.5f &&
 			position.y <= GetPosition().y + GetDisplayableBody()->getLocalBounds().height * GetDisplayableBody()->getScale().y * 0.5f)
 		{
-			//RotateHead(0.62f);	//brakuje wrappera w tej klasie dla metody void RotateHead(float angle) - equipment
-			//RotateBody(-0.62f);	//brakuje wrappera w tej klasie dla metody void RotateBody(float angle) - equipment
+			//RotateHead(0.62f);	//2019-02-10 (jest) brakuje wrappera w tej klasie dla metody void RotateHead(float angle) - equipment
+			//RotateBody(-0.62f);	//2019-02-10 (jest) brakuje wrappera w tej klasie dla metody void RotateBody(float angle) - equipment
 			SetRotationHead(this->GetRotationHead() + 0.62f);
 			SetRotationBody(this->GetRotationBody() - 0.62f);
 		}
 	}
 
-	//Wirtualan metoda zabija obiekt klasy CEnemy i wywo≥uje odpowiednie czynnoúci z tym zwiπzane
-	void CEnemy::kill() 
+	//Wirtualan metoda zabija obiekt klasy Enemy i wywo≈Çuje odpowiednie czynno≈õci z tym zwiƒÖzane
+	void Enemy::kill() 
 	{
+		//implementacja zachowania obiektu przed wywo≈Çaniem jego destrukcji...
 		Actor::kill();
 		//to do...
 	}

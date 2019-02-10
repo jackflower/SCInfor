@@ -8,7 +8,7 @@
 #define H_POWER_RELAY_STATION_TEMPLATE_JACK
 
 #include "RelayStationTemplate.h"
-#include "../../../../Logic/Energetics/PowerRelay/CPowerRelayStation.h"
+#include "../../../../Logic/Energetics/PowerRelay/PowerRelayStation.h"
 #include "SlotsRateTemplate.h"
 #include "../../../../Factory/EquipmentFactory/EnergyFactory/BatteryFactory/BatteryTemplate.h"
 
@@ -58,18 +58,18 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CPowerRelayStation
+		///Metoda tworzy obiekt klasy PowerRelayStation
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CPowerRelayStation *create(std::wstring id = L"");
+		PowerRelayStation *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_power_relay_station - wskaźnik na obiekt klasy CPowerRelayStation
+		///@param *p_power_relay_station - wskaźnik na obiekt klasy PowerRelayStation
 		///
-		virtual void fill(CPowerRelayStation *p_power_relay_station);
+		virtual void fill(PowerRelayStation *p_power_relay_station);
 
 
 		//metody  p o m o c n i c z e

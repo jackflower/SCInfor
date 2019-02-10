@@ -1,10 +1,10 @@
-//  _______________________________________
-// | CSlotsRate.cpp - class implementation |
-// | Jack Flower - January 2016            |
-// |_______________________________________|
+ï»¿//  ______________________________________
+// | SlotsRate.cpp - class implementation |
+// | Jack Flower - January 2016           |
+// |______________________________________|
 //
 
-#include "CSlotsRate.h"
+#include "SlotsRate.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../Rendering/Animations/CAnimation.h"
 #include "../../../Rendering/Animations/CAnimationState.h"
@@ -14,50 +14,50 @@ namespace logic
 {
 	namespace energetics
 	{
-		RTTI_IMPL(CSlotsRate, Actor);
+		RTTI_IMPL(SlotsRate, Actor);
 
-		//Chroniony konstruktor domyœlny
-		CSlotsRate::CSlotsRate(const std::wstring& uniqueId)
+		//Chroniony konstruktor domyÅ›lny
+		SlotsRate::SlotsRate(const std::wstring & uniqueId)
 		:
-			Actor				(uniqueId),//konstruktor klasy bazowej
-			m_slot_counter		(0)
+			Actor(uniqueId),//konstruktor klasy bazowej
+			m_slot_counter(0)
 		{
 		}
 
-		//Chroniony konstruktor kopiuj¹cy
-		CSlotsRate::CSlotsRate(const CSlotsRate &CSlotsRateCopy)
+		//Chroniony konstruktor kopiujÄ…cy
+		SlotsRate::SlotsRate(const SlotsRate & SlotsRateCopy)
 		:
-			Actor				(CSlotsRateCopy),//konstruktor kopiujacy klasy bazowej
-			m_slot_counter		(CSlotsRateCopy.m_slot_counter)
+			Actor(SlotsRateCopy),//konstruktor kopiujacy klasy bazowej
+			m_slot_counter(SlotsRateCopy.m_slot_counter)
 		{
 		}
 
-		CSlotsRate::~CSlotsRate()
+		SlotsRate::~SlotsRate()
 		{
-			//Actor			not edit
-			m_slot_counter		= 0;
+			//~Actor()
+			m_slot_counter = 0;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/
-		const std::string CSlotsRate::GetType() const
+		const std::string SlotsRate::getType() const
 		{
 			return rtti.GetNameClass();
 		}
 
-		//Metoda zwraca iloœæ zajêtych slotów
-		const int CSlotsRate::getSlotCounter() const
+		//Metoda zwraca iloÅ›Ä‡ zajÄ™tych slotÃ³w
+		const int SlotsRate::getSlotCounter() const
 		{
 			return m_slot_counter;
 		}
 
-		//Metoda ustawia iloœæ zajêtych slotów
-		void CSlotsRate::setSlotCounter(const int slot_counter)
+		//Metoda ustawia iloÅ›Ä‡ zajÄ™tych slotÃ³w
+		void SlotsRate::setSlotCounter(const int slot_counter)
 		{
 			m_slot_counter = slot_counter;
 		}
 
-		//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu
-		void CSlotsRate::updateAnimations(float dt)
+		//Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu
+		void SlotsRate::updateAnimations(float dt)
 		{
 			switch (m_slot_counter)
 			{
@@ -111,8 +111,8 @@ namespace logic
 			}
 		}
 
-		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CSlotsRate::update(float dt)
+		//Wirtualna metoda aktualizujÄ…ca obiekt
+		void SlotsRate::update(float dt)
 		{
 			//aktualizacja shadow engine
 			CPhysical::UpdateShadow(dt);

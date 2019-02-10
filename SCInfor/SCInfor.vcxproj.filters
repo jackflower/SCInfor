@@ -390,21 +390,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Logic\Enemy\CEnemy.cpp">
-      <Filter>source\Logic\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Energetics\PowerRelay\CPowerRelayStation.cpp">
-      <Filter>source\Logic\Energetics\PowerRelay</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Energetics\PowerRelay\CRelayStation.cpp">
-      <Filter>source\Logic\Energetics\PowerRelay</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Energetics\PowerRelay\CSlotsRate.cpp">
-      <Filter>source\Logic\Energetics\PowerRelay</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Energetics\RelayStationData\CSlotsRateData.cpp">
-      <Filter>source\Logic\Energetics\RelayStationData</Filter>
-    </ClCompile>
     <ClCompile Include="source\Logic\Flora\CFlora.cpp">
       <Filter>source\Logic\Flora</Filter>
     </ClCompile>
@@ -1002,6 +987,21 @@
     <ClCompile Include="source\Logic\Communication\Transmitter.cpp">
       <Filter>source\Logic\Communication</Filter>
     </ClCompile>
+    <ClCompile Include="source\Logic\Enemy\Enemy.cpp">
+      <Filter>source\Logic\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Energetics\PowerRelay\PowerRelayStation.cpp">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Energetics\PowerRelay\RelayStation.cpp">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Energetics\PowerRelay\SlotsRate.cpp">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Energetics\RelayStationData\SlotsRateData.cpp">
+      <Filter>source\Logic\Energetics\RelayStationData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1081,23 +1081,8 @@
     <ClInclude Include="source\Logic\Communication\ENetworking.h">
       <Filter>source\Logic\Communication</Filter>
     </ClInclude>
-    <ClInclude Include="source\Logic\Enemy\CEnemy.h">
-      <Filter>source\Logic\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Energetics\PowerRelay\CPowerRelayStation.h">
-      <Filter>source\Logic\Energetics\PowerRelay</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Energetics\PowerRelay\CRelayStation.h">
-      <Filter>source\Logic\Energetics\PowerRelay</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Energetics\PowerRelay\CSlotsRate.h">
-      <Filter>source\Logic\Energetics\PowerRelay</Filter>
-    </ClInclude>
     <ClInclude Include="source\Logic\Energetics\PowerRelay\EPowerRelayStationState.h">
       <Filter>source\Logic\Energetics\PowerRelay</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Energetics\RelayStationData\CSlotsRateData.h">
-      <Filter>source\Logic\Energetics\RelayStationData</Filter>
     </ClInclude>
     <ClInclude Include="source\Logic\Flora\CFlora.h">
       <Filter>source\Logic\Flora</Filter>
@@ -1758,6 +1743,21 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Communication\Transmitter.h">
       <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Enemy\Enemy.h">
+      <Filter>source\Logic\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\PowerRelayStation.h">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\RelayStation.h">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Energetics\PowerRelay\SlotsRate.h">
+      <Filter>source\Logic\Energetics\PowerRelay</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Energetics\RelayStationData\SlotsRateData.h">
+      <Filter>source\Logic\Energetics\RelayStationData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

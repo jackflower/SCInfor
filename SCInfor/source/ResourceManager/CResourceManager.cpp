@@ -425,7 +425,7 @@ namespace resource
 		//		- PhysicalTemplate						->tworzy->	CPhysical
 		//		- ActorTemplate						->tworzy->	Actor
 		//		- CRoborTemplate						->tworzy->	CRobot
-		//		- EnemyTemplate						->tworzy->	CEnemy
+		//		- EnemyTemplate						->tworzy->	Enemy
 		//		- PlayerTemplate						->tworzy->	CPlayer
 		//		- BulletTemplate						->tworzy->	Bullet
 		//		- MonsterTemplate						->tworzy->	CMonster
@@ -448,9 +448,9 @@ namespace resource
 
 		//		- MapPhysicalTemplate					->tworzy->	CMapPhysical
 		//		- InformationTemplate					->tworzy->	Information
-		//		- PowerRelayStationTemplate			->tworzy->	CPowerRelayStation
+		//		- PowerRelayStationTemplate			->tworzy->	PowerRelayStation
 		//		- CommunicationTemplate				->tworzy->	Communication
-		//		- SlotsRateTemplate					->tworzy->	CSlotsRate
+		//		- SlotsRateTemplate					->tworzy->	SlotsRate
 		//		- AmmoTemplate							->tworzy->	Ammo
 		//		- GunTemplate							->tworzy->	Gun
 

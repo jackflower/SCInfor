@@ -116,16 +116,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CPowerRelayStation
-	CPowerRelayStation *PowerRelayStationTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy PowerRelayStation
+	PowerRelayStation *PowerRelayStationTemplate::create(std::wstring id)
 	{
-		CPowerRelayStation *power_relay_station = gPhysicalManager.CreatePowerRelayStation(id);
+		PowerRelayStation *power_relay_station = gPhysicalManager.CreatePowerRelayStation(id);
 		fill(power_relay_station);
 		return power_relay_station;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void PowerRelayStationTemplate::fill(CPowerRelayStation *p_power_relay_station)
+	void PowerRelayStationTemplate::fill(PowerRelayStation *p_power_relay_station)
 	{
 		if(p_power_relay_station)
 		{
@@ -164,7 +164,7 @@ namespace factory
 				{
 					//pobieramy składową moduł prezentacji stanu slotów i wzorzec wypełnia wskaźnik danymi
 					p_power_relay_station->setSlotsRate(p_templ_slot_rate->create(L""));
-					//przekazanie wskaźnikowi na klasę CPowerRelayStation informacji o wzorcu
+					//przekazanie wskaźnikowi na klasę PowerRelayStation informacji o wzorcu
 					p_power_relay_station->getSlotsRate()->SetTemplate(p_templ_slot_rate);
 				}
 			}
@@ -175,7 +175,7 @@ namespace factory
 				{
 					//pobieramy składową  wzorca baterii i wzorzec wypełniam wskaźnik danymi
 					p_power_relay_station->setBattery(p_templ_battery->create(L""));
-					//przekazanie wskaźnikowi na klasę CPowerRelayStation informacji o wzorcu
+					//przekazanie wskaźnikowi na klasę PowerRelayStation informacji o wzorcu
 					p_power_relay_station->getBattery()->SetTemplate(p_templ_battery);
 					//decorator (ten kod będzie na poziomie BatteryTemplate)
 					p_power_relay_station->getBattery()->setSmoothing(true);

@@ -80,16 +80,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CRelayStation
-	CRelayStation *RelayStationTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy RelayStation
+	RelayStation *RelayStationTemplate::create(std::wstring id)
 	{
-		CRelayStation *relay_station = gPhysicalManager.CreateRelayStation(id);
+		RelayStation *relay_station = gPhysicalManager.CreateRelayStation(id);
 		fill(relay_station);
 		return relay_station;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void RelayStationTemplate::fill(CRelayStation *p_relay_station)
+	void RelayStationTemplate::fill(RelayStation *p_relay_station)
 	{
 		if(p_relay_station)
 		{
@@ -119,9 +119,9 @@ namespace factory
 				if(p_templ_communication)
 				{
 					//pobieramy składową moduł komunikacji i wzorzec wypełnia wskaźnik danymi
-					p_relay_station->SetCommunication(p_templ_communication->create(L""));
+					p_relay_station->setCommunication(p_templ_communication->create(L""));
 					//przekazanie wskaźnikowi na klasę Communication informacji o wzorcu
-					p_relay_station->GetCommunication()->SetTemplate(p_templ_communication);
+					p_relay_station->getCommunication()->SetTemplate(p_templ_communication);
 				}
 			}
 

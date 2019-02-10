@@ -10,7 +10,7 @@
 #include "Physical/CPhysical.h"
 #include "Physical/PhysicalInfo/CPhysicalInfo.h"
 #include "Actor/Actor.h"
-#include "Enemy/CEnemy.h"
+#include "Enemy/Enemy.h"
 #include "Player/CPlayer.h"
 #include "Bullet/Bullet.h"
 #include "Monster/CMonster.h"
@@ -34,9 +34,9 @@
 #include "Industrial/PowerStation//CPowerStation.h"
 #include "Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
 #include "Industrial/PowerStation/WindPowerStation/CWindPowerStationMultipled.h"
-#include "Energetics/PowerRelay/CRelayStation.h"
-#include "Energetics/PowerRelay/CPowerRelayStation.h"
-#include "Energetics/PowerRelay/CSlotsRate.h"
+#include "Energetics/PowerRelay/RelayStation.h"
+#include "Energetics/PowerRelay/PowerRelayStation.h"
+#include "Energetics/PowerRelay/SlotsRate.h"
 #include "Communication/Communication.h"
 #include "../Map/Ground/CGround.h"
 #include "../Utilities/StringUtils/StringUtils.h"
@@ -128,11 +128,11 @@ namespace logic
 		return create<CRobot>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CEnemy i zwraca wskaünik na ten obiekt
-	CEnemy *CPhysicalManager::CreateEnemy(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Enemy i zwraca wskaünik na ten obiekt
+	Enemy *CPhysicalManager::CreateEnemy(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CEnemy created\n");
-		return create<CEnemy>(uniqueId);
+		fprintf(stderr, "Enemy created\n");
+		return create<Enemy>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy CPlayer i zwraca wskaünik na ten obiekt
@@ -290,25 +290,25 @@ namespace logic
 		return create<CWindPowerStationMultipled>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CRelayStation i zwraca wskaünik na ten obiekt
-	CRelayStation *CPhysicalManager::CreateRelayStation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy RelayStation i zwraca wskaünik na ten obiekt
+	RelayStation *CPhysicalManager::CreateRelayStation(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CRelayStation created\n");
-		return create<CRelayStation>(uniqueId);
+		fprintf(stderr, "RelayStation created\n");
+		return create<RelayStation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CPowerRelayStation i zwraca wskaünik na ten obiekt
-	CPowerRelayStation *CPhysicalManager::CreatePowerRelayStation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy PowerRelayStation i zwraca wskaünik na ten obiekt
+	PowerRelayStation *CPhysicalManager::CreatePowerRelayStation(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CPowerRelayStation created\n");
-		return create<CPowerRelayStation>(uniqueId);
+		fprintf(stderr, "PowerRelayStation created\n");
+		return create<PowerRelayStation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CSlotsRate i zwraca wskaünik na ten obiekt
-	CSlotsRate* CPhysicalManager::CreateSlotsRate(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy SlotsRate i zwraca wskaünik na ten obiekt
+	SlotsRate* CPhysicalManager::CreateSlotsRate(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CSlotsRate created\n");
-		return create<CSlotsRate>(uniqueId);
+		fprintf(stderr, "SlotsRate created\n");
+		return create<SlotsRate>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Communication i zwraca wskaünik na ten obiekt

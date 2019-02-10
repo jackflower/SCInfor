@@ -8,7 +8,7 @@
 #define H_RELAY_STATION_TEMPLATE_JACK
 
 #include "../../../ActorTemplate.h"
-#include "../../../../Logic/Energetics/PowerRelay/CRelayStation.h"
+#include "../../../../Logic/Energetics/PowerRelay/RelayStation.h"
 #include "../../../EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
 
 namespace factory
@@ -57,18 +57,18 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CRelayStation
+		///Metoda tworzy obiekt klasy RelayStation
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CRelayStation *create(std::wstring id = L"");
+		RelayStation *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_relay_station - wskaźnik na obiekt klasy CRelayStation
+		///@param *p_relay_station - wskaźnik na obiekt klasy RelayStation
 		///
-		virtual void fill(CRelayStation *p_relay_station);
+		virtual void fill(RelayStation *p_relay_station);
 
 	protected:
 

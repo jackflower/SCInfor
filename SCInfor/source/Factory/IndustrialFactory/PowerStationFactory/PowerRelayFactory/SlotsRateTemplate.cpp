@@ -56,16 +56,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CSlotsRate
-	CSlotsRate* SlotsRateTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy SlotsRate
+	SlotsRate* SlotsRateTemplate::create(std::wstring id)
 	{
-		CSlotsRate *slots_rate = gPhysicalManager.CreateSlotsRate(id);
+		SlotsRate *slots_rate = gPhysicalManager.CreateSlotsRate(id);
 		fill(slots_rate);
 		return slots_rate;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void SlotsRateTemplate::fill(CSlotsRate *p_slots_rate)
+	void SlotsRateTemplate::fill(SlotsRate *p_slots_rate)
 	{
 		if (p_slots_rate)
 		{

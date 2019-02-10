@@ -44,7 +44,7 @@
 #include "../Logic/CMapPhysicalManager.h"
 #include "../Map/MapPhysical/CMapPhysical.h"
 #include "../Logic/Actor/ActorController.h"
-#include "../Logic/Energetics/PowerRelay/CPowerRelayStation.h"
+#include "../Logic/Energetics/PowerRelay/PowerRelayStation.h"
 #include "../Logic/CPhysicalManager.h"
 #include "../Information/BaseInformation.h"
 #include "../Map/Ground/CGround.h"

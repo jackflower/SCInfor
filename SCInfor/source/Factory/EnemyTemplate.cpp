@@ -53,16 +53,16 @@ namespace factory
 		if (!ActorTemplate::load(xml))
 			return false;
 
-		//reszta, gdyby klasa CEnemy (jej wzorzec EnemyTemplate)
+		//reszta, gdyby klasa Enemy (jej wzorzec EnemyTemplate)
 		//miała jakieś pola do wczytania i przekazania...
 
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CEnemy
-	CEnemy* EnemyTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy Enemy
+	Enemy* EnemyTemplate::create(std::wstring id)
 	{
-		//CEnemy* enemy = gPhysicalManager.CreateEnemy(id);
+		//Enemy* enemy = gPhysicalManager.CreateEnemy(id);
 		//	float random =	gRand.Rndf( 0.0f, 1.0f );
 		//TEN KOD - uzupełnić w  f a b r y k a c h !
 		//	enemy->SetCategory(PHYSICAL_MONSTER);
@@ -76,13 +76,13 @@ namespace factory
 
 		//return enemy;
 	
-		CEnemy* enemy = gPhysicalManager.CreateEnemy(id);
+		Enemy* enemy = gPhysicalManager.CreateEnemy(id);
 		fill(enemy);
 		return enemy;
 	}
 
-	//Wirtualna metoda wypełniająca danymi obiekt klasy CEnemy
-	void EnemyTemplate::fill(CEnemy *enemy)
+	//Wirtualna metoda wypełniająca danymi obiekt klasy Enemy
+	void EnemyTemplate::fill(Enemy *enemy)
 	{
 		ActorTemplate::fill(enemy);
 		//ewentualnie reszta

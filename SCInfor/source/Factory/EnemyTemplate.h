@@ -8,7 +8,7 @@
 #define H_ENEMY_TEMPLATE_JACK
 
 #include "ActorTemplate.h"
-#include "../Logic/Enemy/CEnemy.h"
+#include "../Logic/Enemy/Enemy.h"
 #include <string>
 #include <vector>
 
@@ -58,20 +58,20 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CEnemy
+		///Metoda tworzy obiekt klasy Enemy
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CEnemy *create(std::wstring id = L"");
+		Enemy *create(std::wstring id = L"");
 
 	protected:
 
 		///
-		///Wirtualna metoda wypełniająca danymi obiekt klasy CEnemy
+		///Wirtualna metoda wypełniająca danymi obiekt klasy Enemy
 		///
-		///@param *enemy - wskaźnik na obiekt klasy CEnemy
+		///@param *enemy - wskaźnik na obiekt klasy Enemy
 		///
-		virtual void fill(CEnemy *enemy);
+		virtual void fill(Enemy *enemy);
 
 
 	private:

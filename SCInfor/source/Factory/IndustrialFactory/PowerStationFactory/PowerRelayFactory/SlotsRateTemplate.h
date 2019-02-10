@@ -8,7 +8,7 @@
 #define H_SLOTS_RATE_TEMPLATE_JACK
 
 #include "../../../ActorTemplate.h"
-#include "../../../../Logic/Energetics/PowerRelay/CSlotsRate.h"
+#include "../../../../Logic/Energetics/PowerRelay/SlotsRate.h"
 
 namespace factory
 {
@@ -56,18 +56,18 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CSlotsRate
+		///Metoda tworzy obiekt klasy SlotsRate
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CSlotsRate *create(std::wstring id = L"");
+		SlotsRate *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_slots_rate - wskaźnik na obiekt klasy CSlotsRate
+		///@param *p_slots_rate - wskaźnik na obiekt klasy SlotsRate
 		///
-		virtual void fill(CSlotsRate *p_slots_rate);
+		virtual void fill(SlotsRate *p_slots_rate);
 
 	private:
 

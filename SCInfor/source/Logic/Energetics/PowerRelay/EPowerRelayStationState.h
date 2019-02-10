@@ -1,4 +1,4 @@
-//  __________________________________________________________
+﻿//  __________________________________________________________
 // | EPowerRelayStationState.h - enumeration of states energy |
 // | Jack Flower - July 2015                                  |
 // |__________________________________________________________|
@@ -12,7 +12,7 @@ namespace logic
 	namespace energetics
 	{
 		///
-		///Wyliczenie stan�w dla obiektu CPowerRelayStation
+		///Wyliczenie stanów dla obiektu PowerRelayStation
 		///
 		enum EPowerRelayStationState
 		{
