@@ -78,7 +78,7 @@ namespace factory
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu komunikacji
 			std::string communication_filename_tmp = xml.GetString(node, "communication_filename");
 			
-			//emitery dla obiektu klasy CCommunication
+			//emitery dla obiektu klasy Communication
 			mm_templ_communication_data.setEmiter(xml.GetFloat(node, "communication_emiter_x"), xml.GetFloat(node, "communication_emiter_y"));
 
 			if(mm_templ_communication_data.getUseEquipment())
@@ -134,7 +134,7 @@ namespace factory
 				{
 					//pobieramy składową moduł komunikacji i wzorzec wypełnia wskaźnik danymi
 					p_power_station->SetCommunication(p_templ_communication->create(L""));
-					//przekazanie wskaźnikowi na klasę CCommunication informacji o wzorcu
+					//przekazanie wskaźnikowi na klasę Communication informacji o wzorcu
 					p_power_station->GetCommunication()->SetTemplate(p_templ_communication);
 					//decorate
 					p_power_station->GetCommunication()->setSmoothing(true);

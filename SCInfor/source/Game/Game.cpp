@@ -51,7 +51,7 @@
 #include "../Equipment/Weapon/Ammo/Ammo.h"
 #include "../Equipment/Weapon/Gun/Gun.h"
 #include "../Factory/EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
-#include "../Logic/Communication/CCommunication.h"
+#include "../Logic/Communication/Communication.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
 #include "../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/ThermalInsulationFactory/ThermalInsulationTemplate.h"

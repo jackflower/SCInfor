@@ -120,7 +120,7 @@ namespace factory
 				{
 					//pobieramy składową moduł komunikacji i wzorzec wypełnia wskaźnik danymi
 					p_relay_station->SetCommunication(p_templ_communication->create(L""));
-					//przekazanie wskaźnikowi na klasę CCommunication informacji o wzorcu
+					//przekazanie wskaźnikowi na klasę Communication informacji o wzorcu
 					p_relay_station->GetCommunication()->SetTemplate(p_templ_communication);
 				}
 			}

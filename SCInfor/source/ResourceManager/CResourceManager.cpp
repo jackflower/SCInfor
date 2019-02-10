@@ -427,7 +427,7 @@ namespace resource
 		//		- CRoborTemplate						->tworzy->	CRobot
 		//		- EnemyTemplate						->tworzy->	CEnemy
 		//		- PlayerTemplate						->tworzy->	CPlayer
-		//		- BulletTemplate						->tworzy->	CBullet
+		//		- BulletTemplate						->tworzy->	Bullet
 		//		- MonsterTemplate						->tworzy->	CMonster
 		//		- FuelTankTemplate						->tworzy->	FuelTank
 		//		- EnergyTankTemplate					->tworzy->	EnergyTank
@@ -449,7 +449,7 @@ namespace resource
 		//		- MapPhysicalTemplate					->tworzy->	CMapPhysical
 		//		- InformationTemplate					->tworzy->	Information
 		//		- PowerRelayStationTemplate			->tworzy->	CPowerRelayStation
-		//		- CommunicationTemplate				->tworzy->	CCommunication
+		//		- CommunicationTemplate				->tworzy->	Communication
 		//		- SlotsRateTemplate					->tworzy->	CSlotsRate
 		//		- AmmoTemplate							->tworzy->	Ammo
 		//		- GunTemplate							->tworzy->	Gun

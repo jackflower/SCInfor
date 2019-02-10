@@ -25,7 +25,7 @@ namespace logic
 	class Actor;
 	class CEnemy;
 	class CPlayer;
-	class CBullet;
+	class Bullet;
 	class CMonster;
 	class CFlora;
 	class CPhysicalInfo;
@@ -47,7 +47,7 @@ namespace logic
 	}
 	namespace communication
 	{
-		class CCommunication;
+		class Communication;
 	}
 }
 
@@ -163,11 +163,11 @@ namespace logic
 		CPlayer *CreatePlayer(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CBullet i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Bullet i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CBullet *CreateBullet(const std::wstring &uniqueId = L"");
+		Bullet *CreateBullet(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy Engine i zwraca wskaünik na ten obiekt
@@ -331,11 +331,11 @@ namespace logic
 		CSlotsRate* CreateSlotsRate(const std::wstring &uniqueId = L"");
 		
 		///
-		///Metoda tworzy obiekt klasy CCommunication i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Communication i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CCommunication *CreateCommunication(const std::wstring &uniqueId = L"");
+		Communication *CreateCommunication(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy LightingEquipment i zwraca wskaünik na ten obiekt

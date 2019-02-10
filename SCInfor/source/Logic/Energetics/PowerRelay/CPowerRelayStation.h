@@ -14,7 +14,7 @@
 #include "../../Actor/Actor.h"
 #include "../../Industrial/PowerStation/CPowerStation.h"
 #include "../../Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
-#include "../../Communication/CCommunication.h"
+#include "../../Communication/Communication.h"
 #include "../../../Equipment/Energy/Battery/Battery.h"
 #include "../../../Equipment/EquipmentData/EquipmentBatteryData.h"
 

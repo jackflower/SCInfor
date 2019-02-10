@@ -9,7 +9,7 @@
 
 #include "../../Actor/Actor.h"
 #include "../../Industrial/PowerStation/CPowerStation.h"
-#include "../../Communication/CCommunication.h"
+#include "../../Communication/Communication.h"
 
 using namespace logic::powerstation;
 using namespace logic::communication;
@@ -85,23 +85,23 @@ namespace logic
 			void setUseCommunication(const bool use_communication);
 
 			///
-			///Metoda zwraca wskaünik na obiekt klasy CCommunication
+			///Metoda zwraca wskaünik na obiekt klasy Communication
 			///
-			CCommunication* GetCommunication();
+			Communication* GetCommunication();
 
 			///
-			///Metoda ustawia wskaünik na obiekt klasy CCommunication
+			///Metoda ustawia wskaünik na obiekt klasy Communication
 			///
-			///@param *communication - wskaünik na obiekt klasy CCommunication
+			///@param *communication - wskaünik na obiekt klasy Communication
 			///
-			void SetCommunication(CCommunication* communication);
+			void SetCommunication(Communication* communication);
 
 		protected:
 
 			std::string			m_relay_station_name;	//nazwa przekaünika energii elektrycznej
 			Switch				m_unit_controller;		//w≥πcznik, sterownik, modu≥ zarzπdzania, starter, stacyjka
 			bool				m_use_communication;	//flaga, czy obiekt posiada modu≥ do komunikacji
-			CCommunication*		p_communication;		//wskaünik na obiekt klasy Communication
+			Communication*		p_communication;		//wskaünik na obiekt klasy Communication
 		};
 	}//namespace energetics
 }//namespace logic

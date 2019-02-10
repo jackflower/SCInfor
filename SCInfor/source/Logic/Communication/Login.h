@@ -1,7 +1,7 @@
-//  ___________________________________
-// | CLogin.h - class definition       |
-// | Jack Flower - July 2015           |
-// |___________________________________|
+Ôªø//  __________________________________
+// | Login.h - class definition       |
+// | Jack Flower - July 2015          |
+// |__________________________________|
 //
 
 #ifndef H_LOGIN_JACK
@@ -14,33 +14,33 @@ namespace logic
 {
 	namespace communication
 	{
-		class CLogin
+		class Login
 		{
 		public:
 
 			///
 			///Konstruktor
 			///
-			CLogin();
+			Login();
 
 			///
 			///Konstruktor parametryczny
 			///
 			///@param login - flaga zalogowania
 			///
-			CLogin(bool login);
+			Login(bool login);
 
 			///
-			///Konstruktor kopiujπcy
+			///Konstruktor kopiujƒÖcy
 			///
-			///@param &CLoginCopy - sta≥a referencja na obiekt klasy CLogin
+			///@param LoginCopy - sta≈Ça referencja na obiekt klasy Login
 			///
-			CLogin(const CLogin &CLoginCopy);
+			Login(const Login & LoginCopy);
 
 			///
 			///Destruktor
 			///
-			~CLogin();
+			~Login();
 
 			///
 			///Metoda zwraca login systemu
@@ -52,27 +52,27 @@ namespace logic
 			///
 			///@param login - login systemu
 			///
-			void setLogin(const std::string login);
+			void setLogin(const std::string & login);
 
 			///
-			///Metoda zwraca has≥o systemu
+			///Metoda zwraca has≈Ço systemu
 			///
 			const std::string getPassword() const;
 
 			///
-			///Metoda ustawia has≥o systemu
+			///Metoda ustawia has≈Ço systemu
 			///
-			///@param password - has≥o systemu
+			///@param password - has≈Ço systemu
 			///
-			void setPassword(const std::string password);
+			void setPassword(const std::string & password);
 
 			///
-			///Metoda zwraca has≥o logowania
+			///Metoda zwraca has≈Ço logowania
 			///
 			const bool getConnection() const;
 
 			///
-			///Metoda ustawia flagÍ, czy obiekt jest zalogowany do systemu
+			///Metoda ustawia flagƒô, czy obiekt jest zalogowany do systemu
 			///
 			///@param connection - flaga, czy obiekt jest zalogowany do systemu
 			///
@@ -83,19 +83,19 @@ namespace logic
 			///
 			///@param login - login systemu
 			///
-			///@param password - has≥o systemu
+			///@param password - has≈Ço systemu
 			///
-			bool Login(std::string login, std::string password);
+			bool processLogin(std::string login, std::string password);
 
 			///
 			///Metoda wylogowania z systemu
 			///
-			void Logout();
+			void processLogout();
 
 		private:
 
 			std::string		m_login;		//login
-			std::string		m_password;		//has≥o
+			std::string		m_password;		//has≈Ço
 			bool			m_connection;	//flaga, czy obiekt jest zalogowany do systemu
 		};
 	}//namespace communication

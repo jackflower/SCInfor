@@ -81,14 +81,14 @@ namespace logic
 			m_use_communication = use_communication;
 		}
 
-		//Metoda zwraca wskaünik na obiekt klasy CCommunication
-		CCommunication* CRelayStation::GetCommunication()
+		//Metoda zwraca wskaünik na obiekt klasy Communication
+		Communication* CRelayStation::GetCommunication()
 		{
 			return p_communication;
 		}
 
-		//Metoda ustawia wskaünik na obiekt klasy CCommunication
-		void CRelayStation::SetCommunication(CCommunication* communication)
+		//Metoda ustawia wskaünik na obiekt klasy Communication
+		void CRelayStation::SetCommunication(Communication* communication)
 		{
 			p_communication = communication;
 		}

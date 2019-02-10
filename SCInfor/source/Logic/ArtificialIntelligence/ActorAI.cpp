@@ -1,58 +1,47 @@
-//  _____________________________________
-// | CActorAI.cpp - class implementation |
-// | Jack Flower April 2015              |
-// |_____________________________________|
+ï»¿//  ____________________________________
+// | ActorAI.cpp - class implementation |
+// | Jack Flower April 2015             |
+// |____________________________________|
 //
 
 
 #include <cmath>
 #include <cstdio>
-#include "CActorAI.h"
+#include "ActorAI.h"
 #include "CAIScheme.h"
-//#include "CAISchemeManager.h"
-//#include "CAIAbilityHint.h"
-//#include "../CPlayer.h"
-//#include "../CPlayerManager.h"
-//#include "../Abilities/CAbility.h"
-//#include "../../Audio/CAudioManager.h"
-//to bêdzie wymaga³o sporej refaktoryzacji...
-//#include "../../Utils/MathsFunc.h"
-//#include "../../Utils/CRand.h"
-//#include "../../Utils/Directions.h"
-//#include "../../Utils/HRTimer.h"
-//#include "CActorFlock.h"
-
+#include "../../Utilities/Random/CRandom.h"
+#include "../../Utilities/MathFunctions/MathFunctions.h"
 
 namespace artificialintelligence
 {
-	RTTI_IMPL(CActorAI, ActorController);
+	RTTI_IMPL(ActorAI, ActorController);
 
 	//Konstruktor
-	CActorAI::CActorAI(Actor *actor)
+	ActorAI::ActorAI(Actor *actor)
 	:
-		ActorController		(actor),	//konstruktor klasy bazowej
-		//m_data				(this),		//ostrze¿enie zbyt wczesnego wi¹zania *)
-		m_data					(NULL),
-		m_turning_sharpness		(0.0f),
-		p_scheme				(NULL),
-		m_time_to_change_scheme	(0.0f)
+		ActorController(actor),	//konstruktor klasy bazowej
+		//m_data(this),	//ostrzeÅ¼enie zbyt wczesnego wiÄ…zania *)
+		m_data(NULL),
+		m_turning_sharpness(0.0f),
+		p_scheme(NULL),
+		m_time_to_change_scheme(0.0f)
 	{
-		m_data.setAI(this);//*) inicjacja wskaŸnika - obiekt jest utworzony
+		m_data.setAI(this); //*) inicjacja wskaÅºnika - obiekt jest utworzony
 	}
 
 	//Destruktor wirtualny
-	CActorAI::~CActorAI()
+	ActorAI::~ActorAI()
 	{
-		//ActorController		not edit
-		//m_data				not edit
-		m_turning_sharpness		= 0.0f;
-		p_scheme				= NULL;
+		//~ActorController()
+		//m_data
+		m_turning_sharpness = 0.0f;
+		p_scheme = NULL;
 		m_time_to_change_scheme	= 0.0f;
 
 	}
 
-	//Metoda ustawia wskaŸnik na schemat AI
-	void CActorAI::SetScheme(CAIScheme *scheme, float duration)
+	//Metoda ustawia wskaÅºnik na schemat AI
+	void ActorAI::setScheme(CAIScheme *scheme, float duration)
 	{
 		//if (p_scheme)
 		//	p_scheme->UnregisterAI(this->GetSafePointer());
@@ -62,7 +51,7 @@ namespace artificialintelligence
 		//m_time_to_change_scheme = duration;
 	}
 
-	void CActorAI::UpdateRotation(float dt)
+	void ActorAI::updateRotation(float dt)
 	{
 		/*
 		float rot = float( GetActor()->GetRotation() );
@@ -88,34 +77,31 @@ namespace artificialintelligence
 		*/
 	}
 
-	//float CActorAI::CalculateSpeedModifier(float turning_sharpness)
-	//{
-	//    return 0.6f + 0.2f * (1.0f + cosf(turning_sharpness*3.14159265f/180.0f));
-	//}
-
-
-	//int CActorAI::ChooseAbility()
-	//{
-	//    int r = gRand.Rnd(0,mAvailableAbilities.size());
-	//    if ((r >= 0) && ((unsigned int)r < mAvailableAbilities.size()))
-	//        return mAvailableAbilities[r];
-	//    else
-	//        return -1;
-	//}
-
-	//Metoda zwrca flagê, czy osi¹gniêto zamierzon¹ pozycjê
-	bool CActorAI::ReachedWaypoint()
+	float ActorAI::calculateSpeedModifier(float turning_sharpness)
 	{
-		//sf::Vector2f v = m_data.GetWaypoint() - GetActor()->GetPosition();
-		//float len = maths::Length( v );
-		//float tolerance = GetActor()->GetCircleRadius() + m_data.GetWaypointTolerance();
-		//return (len < tolerance);
+	    return 0.6f + 0.2f * (1.0f + cosf(turning_sharpness*3.14159265f/180.0f));
+	}
 
-		return false;//atrapa
+	int ActorAI::chooseAbility()
+	{
+	    int r = gRandom.Rnd(0, mAvailableAbilities.size());
+	    if ((r >= 0) && ((unsigned int)r < mAvailableAbilities.size()))
+	        return mAvailableAbilities[r];
+	    else
+	        return -1;
+	}
+
+	//Metoda zwraca flagÄ™, czy osiÄ…gniÄ™to zamierzonÄ… pozycjÄ™
+	bool ActorAI::reachedWaypoint()
+	{
+		sf::Vector2f v = m_data.GetWaypoint() - getActor()->GetPosition();
+		float len = maths::Length( v );
+		float tolerance = getActor()->GetCircleRadius() + m_data.GetWaypointTolerance();
+		return (len < tolerance);
 	}
 
 	//Metoda aktualizuje obiekt
-	void CActorAI::update(float dt)
+	void ActorAI::update(float dt)
 	{
 		/*
 		ActorController::update(dt);

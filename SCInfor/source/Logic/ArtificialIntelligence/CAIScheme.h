@@ -1,4 +1,4 @@
-//  __________________________________
+Ôªø//  __________________________________
 // | CAIDemo.h - class definition     |
 // | Jack Flower April 2015           |
 // |__________________________________|
@@ -10,23 +10,23 @@
 #include <string>
 #include "../../RTTI/RTTI.h"
 //#include "../../Utils/Memory/CSafePtr.h"
-//#include "CActorAI.h" //czy to pomoøe?
-// - jakkolwiek, uporzπdkowaÊ kod, aby nie by≥Û, aby wiÍcej
-//   jak jedna klas aby≥a w jednym pliku...
+//#include "ActorAI.h" //czy to pomo≈ºe?
+// - jakkolwiek, uporzƒÖdkowaƒá kod, aby nie by≈Ç√≥, aby wiƒôcej
+//   jak jedna klas aby≈Ça w jednym pliku...
 
-class CAISchemeManager;	//zapowiedü wobec powyøszego...
+class CAISchemeManager;	//zapowied≈∫ wobec powy≈ºszego...
 namespace logic
 {
-	class CActorAI;			//zapowiedü wobec powyøszego...
+	class ActorAI;			//zapowied≈∫ wobec powy≈ºszego...
 }
-class CActorAIData;		//zapowiedü wobec powyøszego...
+class ActorAIData;		//zapowied≈∫ wobec powy≈ºszego...
 
 using namespace logic;
 
 namespace artificialintelligence
 {
 	///
-	///Klasa reprezentuje skalÍ bazowπ definiujπcπ interfejs
+	///Klasa reprezentuje skalƒô bazowƒÖ definiujƒÖcƒÖ interfejs
 	///
 	class CAIScheme
 	{
@@ -34,23 +34,23 @@ namespace artificialintelligence
 
 	public:	
 
-		CAIScheme();
-		//{
+		CAIScheme()
+		{
 			//RTTI_IMPL_NOPARENT(CAIScheme);
-		//}
+		}
 		
-		virtual ~CAIScheme();// {};
+		virtual ~CAIScheme() {};
 		
-		//virtual void RegisterAI(Memory::CSafePtr<CActorAI> ai) {}
-		//virtual void UnregisterAI(Memory::CSafePtr<CActorAI> ai) {}
+		//virtual void RegisterAI(Memory::CSafePtr<ActorAI> ai) {}
+		//virtual void UnregisterAI(Memory::CSafePtr<ActorAI> ai) {}
 
-		//bez øadnych wynalazkÛw...wskaünik...po prostu...
-		virtual void RegisterAI(CActorAI* ai);// {}
-		virtual void UnregisterAI(CActorAI* ai);// {}
+		//bez ≈ºadnych wynalazk√≥w...wska≈∫nik...po prostu...
+		virtual void RegisterAI(ActorAI* ai) {};
+		virtual void UnregisterAI(ActorAI* ai) {};
 
 
-		virtual void update(float dt);// {}
-		virtual void UpdateAI(CActorAIData *ai, float dt) = 0;
+		virtual void update(float dt) {};
+		virtual void UpdateAI(ActorAIData *ai, float dt) = 0;
 		virtual std::string GetName() const = 0;
 
 		virtual void Init(CAISchemeManager &sm) = 0;

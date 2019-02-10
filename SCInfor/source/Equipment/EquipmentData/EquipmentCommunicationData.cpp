@@ -5,7 +5,7 @@
 //
 
 #include "EquipmentCommunicationData.h"
-#include "../../Logic/Communication/CCommunication.h"
+#include "../../Logic/Communication/Communication.h"
 #include "../../Logic/CPhysicalManager.h"
 
 namespace equipmentdata
@@ -43,14 +43,14 @@ namespace equipmentdata
 		return rtti.GetNameClass();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CCommunication
-	CCommunication* EquipmentCommunicationData::getCommunication()
+	//Metoda zwraca wskaźnik na obiekt klasy Communication
+	Communication* EquipmentCommunicationData::getCommunication()
 	{
 		return p_communication;
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CCommunication
-	void EquipmentCommunicationData::setCommunication(CCommunication* communication)
+	//Metoda ustawia wskaźnik na obiekt klasy Communication
+	void EquipmentCommunicationData::setCommunication(Communication* communication)
 	{
 		p_communication = communication;
 	}

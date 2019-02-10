@@ -1,7 +1,7 @@
-// ______________________________________________________________________
-// | ENetworking.h - wyliczenie rodzajów technologii po³¹czeñ sieciowych |
+ï»¿//  _____________________________________________________________________
+// | ENetworking.h - wyliczenie rodzajÃ³w technologii poÅ‚Ä…czeÅ„ sieciowych |
 // | Jack Flower - August 2015                                           |
-//|______________________________________________________________________|
+// |_____________________________________________________________________|
 //
 
 #ifndef H_NETWORKING_JACK
@@ -12,11 +12,11 @@ namespace logic
 	namespace communication
 	{
 		///
-		///Wyliczenie rodzajów technologii po³¹czeñ sieciowych
+		///Wyliczenie rodzajÃ³w technologii poÅ‚Ä…czeÅ„ sieciowych
 		///
 		enum ENetworking
 		{
-			TYPE_DEFAULT	=	0,//any type (ka¿dy - uniwersalny)
+			TYPE_DEFAULT	=	0,//any type (kaÅ¼dy - uniwersalny)
 			TYPE_IP			=	1,
 			TYPE_DHCP		=	2,
 			TYPE_BROADCAST	=	3

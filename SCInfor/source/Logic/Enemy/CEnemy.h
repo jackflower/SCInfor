@@ -13,7 +13,7 @@
 ///
 ///Forward declaration
 ///
-class CActorAI;
+class ActorAI;
 
 ///
 ///Forward declaration

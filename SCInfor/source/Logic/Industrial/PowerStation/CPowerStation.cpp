@@ -128,14 +128,14 @@ namespace logic
 			m_communication_data.setUseEquipment(use_communication);
 		}
 
-		//Metoda zwraca wskaŸnik na obiekt klasy CCommunication
-		CCommunication* CPowerStation::GetCommunication()
+		//Metoda zwraca wskaŸnik na obiekt klasy Communication
+		Communication* CPowerStation::GetCommunication()
 		{
 			return m_communication_data.getCommunication();
 		}
 
-		//Metoda ustawia wskaŸnik na obiekt klasy CCommunication
-		void CPowerStation::SetCommunication(CCommunication* communication)
+		//Metoda ustawia wskaŸnik na obiekt klasy Communication
+		void CPowerStation::SetCommunication(Communication* communication)
 		{
 			m_communication_data.setCommunication(communication);
 		}
@@ -151,7 +151,7 @@ namespace logic
 					//to logika ma za zadanie
 					//udostêpniæ, porównaæ, dokonaæ walidacji,
 					//swoj¹ konfiguracjê z konfiguracj¹ (prawami)
-					//modu³u komunikacyjnego CCommunication
+					//modu³u komunikacyjnego Communication
 					//przekaŸnika, który chce tê elektrowaniê
 					//zarejestrowaæ...
 					if(m_communication_data.getCommunication()->getRange() > 50)

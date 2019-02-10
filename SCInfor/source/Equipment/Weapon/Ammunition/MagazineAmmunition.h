@@ -16,7 +16,7 @@
 ///
 namespace logic
 {
-	class CBullet;
+	class Bullet;
 }
 
 using namespace logic;
@@ -70,7 +70,7 @@ namespace equipment
 
 		private:
 	
-			typedef std::vector<CBullet *> BulletVector; //definicja typu - (kontener) na pociski
+			typedef std::vector<Bullet *> BulletVector; //definicja typu - (kontener) na pociski
 
 			std::string m_ammunition_name; //nazwa logiki amunicji
 			int m_ammunition_capacity; //pojemność magazynka na amunicję

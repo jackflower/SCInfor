@@ -85,9 +85,9 @@ namespace factory
 	}
 
 	//Wirtualna metoda tworzenie obiektów pochodnych klasy CPhysical
-	CBullet *BulletTemplate::create(std::wstring id)
+	Bullet *BulletTemplate::create(std::wstring id)
 	{
-		CBullet *bullet = gPhysicalManager.CreateBullet();
+		Bullet *bullet = gPhysicalManager.CreateBullet();
 
 		fill(bullet);
 		
@@ -131,8 +131,8 @@ namespace factory
 
 	//implementacja metod  p r o t e c e t e d:
 
-	//Wirtualna metoda wypełniająca danymi obiekt klasy CBullet
-	void BulletTemplate::fill(CBullet *bullet)
+	//Wirtualna metoda wypełniająca danymi obiekt klasy Bullet
+	void BulletTemplate::fill(Bullet *bullet)
 	{
 		bullet->SetTemplate(this);
 		

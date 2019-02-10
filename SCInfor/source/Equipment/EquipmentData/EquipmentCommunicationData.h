@@ -16,7 +16,7 @@ namespace logic
 {
 	namespace communication
 	{
-		class CCommunication;
+		class Communication;
 	}
 }
 
@@ -56,20 +56,20 @@ namespace equipmentdata
 		const std::string getType() const;
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CCommunication
+		///Metoda zwraca wskaźnik na obiekt klasy Communication
 		///
-		CCommunication *getCommunication();
+		Communication *getCommunication();
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CCommunication
+		///Metoda ustawia wskaźnik na obiekt klasy Communication
 		///
-		///@param *communication - wskaźnik na obiekt klasy CCommunication
+		///@param *communication - wskaźnik na obiekt klasy Communication
 		///
-		void setCommunication(CCommunication * communication);
+		void setCommunication(Communication * communication);
 
 	private:
 
-		CCommunication *p_communication; //wskaźnik na klasę CCommunication - moduł komunikacyjny
+		Communication *p_communication; //wskaźnik na klasę Communication - moduł komunikacyjny
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_COMMUNICATION_DATA_JACK

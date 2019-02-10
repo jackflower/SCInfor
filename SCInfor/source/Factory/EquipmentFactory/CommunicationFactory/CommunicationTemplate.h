@@ -8,7 +8,7 @@
 #define H_COMMUNICATION_TEMPLATE_JACK
 
 #include "../../ActorTemplate.h"
-#include "../../../Logic/Communication/CCommunication.h"
+#include "../../../Logic/Communication/Communication.h"
 
 using namespace logic::communication;
 
@@ -58,26 +58,26 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CCommunication
+		///Metoda tworzy obiekt klasy Communication
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CCommunication *create(std::wstring id = L"");
+		Communication *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_communication - wskaźnik na obiekt klasy CCommunication
+		///@param *p_communication - wskaźnik na obiekt klasy Communication
 		///
-		virtual void fill(CCommunication *p_communication);
+		virtual void fill(Communication *p_communication);
 
 	private:
 
 		std::string m_templ_communication_name;	//nazwa modułu łączności
 		float m_templ_range; //zasięg pracy urządzenie - nadajnik/odbiornik
 		float m_templ_reset_duration; //czas co jaki moduł się resetuje/testuje
-		std::string m_templ_login; //login	- opakowanie dla CLogin
-		std::string m_templ_password; //hasło - opakowanie dla CLogin
+		std::string m_templ_login; //login	- opakowanie dla Login
+		std::string m_templ_password; //hasło - opakowanie dla Login
 
 		//tworząc plik xml należy zdecydować z jakich elementów ten obiekt się składa
 		//można zablokować reprezetację graficzną poporzez flagi use, można także

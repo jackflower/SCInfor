@@ -12,7 +12,7 @@
 #include "Actor/Actor.h"
 #include "Enemy/CEnemy.h"
 #include "Player/CPlayer.h"
-#include "Bullet/CBullet.h"
+#include "Bullet/Bullet.h"
 #include "Monster/CMonster.h"
 #include "Flora/CFlora.h"
 #include "Unit/CombatUnit/Robot/CRobot.h"
@@ -37,7 +37,7 @@
 #include "Energetics/PowerRelay/CRelayStation.h"
 #include "Energetics/PowerRelay/CPowerRelayStation.h"
 #include "Energetics/PowerRelay/CSlotsRate.h"
-#include "Communication/CCommunication.h"
+#include "Communication/Communication.h"
 #include "../Map/Ground/CGround.h"
 #include "../Utilities/StringUtils/StringUtils.h"
 #include "../Game/Game.h"
@@ -142,11 +142,11 @@ namespace logic
 		return create<CPlayer>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CBullet i zwraca wskaünik na ten obiekt
-	CBullet *CPhysicalManager::CreateBullet(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Bullet i zwraca wskaünik na ten obiekt
+	Bullet *CPhysicalManager::CreateBullet(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CBullet created\n");
-		return create<CBullet>(uniqueId);
+		fprintf(stderr, "Bullet created\n");
+		return create<Bullet>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Engine i zwraca wskaünik na ten obiekt
@@ -311,11 +311,11 @@ namespace logic
 		return create<CSlotsRate>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CCommunication i zwraca wskaünik na ten obiekt
-	CCommunication *CPhysicalManager::CreateCommunication(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Communication i zwraca wskaünik na ten obiekt
+	Communication *CPhysicalManager::CreateCommunication(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CCommunication created\n");
-		return create<CCommunication>(uniqueId);
+		fprintf(stderr, "Communication created\n");
+		return create<Communication>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy LightingEquipment i zwraca wskaünik na ten obiekt

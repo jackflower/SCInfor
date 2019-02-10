@@ -5,7 +5,7 @@
 //
 
 #include "MagazineAmmunition.h"
-#include "../../../Logic/Bullet/CBullet.h"
+#include "../../../Logic/Bullet/Bullet.h"
 #include <vector>
 
 namespace equipment

@@ -77,15 +77,15 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy CPowerStation
-	CCommunication* CommunicationTemplate::create(std::wstring id)
+	Communication* CommunicationTemplate::create(std::wstring id)
 	{
-		CCommunication *communication = gPhysicalManager.CreateCommunication(id);
+		Communication *communication = gPhysicalManager.CreateCommunication(id);
 		fill(communication);
 		return communication;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void CommunicationTemplate::fill(CCommunication *p_communication)
+	void CommunicationTemplate::fill(Communication *p_communication)
 	{
 		if(p_communication)
 		{
@@ -106,11 +106,11 @@ namespace factory
 			}
 
 			//pola tej klasy wzorca
-			p_communication->SetCommunicationName(m_templ_communication_name);
+			p_communication->setCommunicationName(m_templ_communication_name);
 			p_communication->setRange(m_templ_range);
 			p_communication->setResetDuration(m_templ_reset_duration);
-			p_communication->getLoginModule().setLogin(m_templ_login);
-			p_communication->getLoginModule().setPassword(m_templ_password);
+			p_communication->setLogin(m_templ_login);
+			p_communication->setPassword(m_templ_password);
 			//decorate
 			p_communication->setSmoothing(true);
 		}

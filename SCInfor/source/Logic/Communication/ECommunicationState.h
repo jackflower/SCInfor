@@ -1,7 +1,7 @@
-// ___________________________________________________________
-// | ECommunicationState.h - wyliczenie stanów CCommunication |
-// | Jack Flower - July 2015                                  |
-//|___________________________________________________________|
+ï»¿//  _________________________________________________________
+// | ECommunicationState.h - wyliczenie stanÃ³w Communication |
+// | Jack Flower - July 2015                                 |
+// |_________________________________________________________|
 //
 
 #ifndef H_COMMUNICATION_STATE_JACK
@@ -12,7 +12,7 @@ namespace logic
 	namespace communication
 	{
 		///
-		///Wyliczenie stanów dla obiektu CCommunication
+		///Wyliczenie stanÃ³w dla obiektu Communication
 		///
 		enum ECommunicationState
 		{

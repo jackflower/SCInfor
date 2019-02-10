@@ -9,7 +9,7 @@
 
 #include "../../Actor/Actor.h"
 #include "../../../Equipment/Switch.h"
-#include "../../Communication/CCommunication.h"
+#include "../../Communication/Communication.h"
 #include "../../../Equipment/EquipmentData/EquipmentCommunicationData.h"
 
 using namespace logic::communication;
@@ -119,16 +119,16 @@ namespace logic
 			void setUseCommunication(const bool use_communication);
 
 			///
-			///Metoda zwraca wskaünik na obiekt klasy CCommunication
+			///Metoda zwraca wskaünik na obiekt klasy Communication
 			///
-			CCommunication* GetCommunication();
+			Communication* GetCommunication();
 
 			///
-			///Metoda ustawia wskaünik na obiekt klasy CCommunication
+			///Metoda ustawia wskaünik na obiekt klasy Communication
 			///
-			///@param *communication - wskaünik na obiekt klasy CCommunication
+			///@param *communication - wskaünik na obiekt klasy Communication
 			///
-			void SetCommunication(CCommunication* communication);
+			void SetCommunication(Communication* communication);
 
 			///
 			///Wirtualna metoda aktualizujπca obiekt

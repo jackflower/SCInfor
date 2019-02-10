@@ -99,7 +99,7 @@ namespace logic
 		///
 		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
 		///
-		virtual ~Actor(void);
+		virtual ~Actor();
 
 	public:
 
@@ -340,7 +340,7 @@ namespace logic
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy Airconditioning
 		///
-		Airconditioning* getAirconditioning();
+		Airconditioning *getAirconditioning();
 
 		///
 		///Metoda ustawia wskaźnik na obiekt klasy Airconditioning
@@ -364,7 +364,7 @@ namespace logic
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy Gun
 		///
-		Gun* getGun();
+		Gun *getGun();
 
 		///
 		///Metoda ustawia wskaźnik na obiekt klasy Gun

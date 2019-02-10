@@ -390,27 +390,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Logic\ArtificialIntelligence\CActorAI.cpp">
-      <Filter>source\Logic\ArtificialIntelligence</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\ArtificialIntelligence\CActorAIData.cpp">
-      <Filter>source\Logic\ArtificialIntelligence</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Bullet\CBullet.cpp">
-      <Filter>source\Logic\Bullet</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Communication\CCommunication.cpp">
-      <Filter>source\Logic\Communication</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Communication\CLogin.cpp">
-      <Filter>source\Logic\Communication</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Communication\CReceiver.cpp">
-      <Filter>source\Logic\Communication</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Communication\CTransmitter.cpp">
-      <Filter>source\Logic\Communication</Filter>
-    </ClCompile>
     <ClCompile Include="source\Logic\Enemy\CEnemy.cpp">
       <Filter>source\Logic\Enemy</Filter>
     </ClCompile>
@@ -1002,6 +981,27 @@
     <ClCompile Include="source\Logic\Actor\Actor.cpp">
       <Filter>source\Logic\Actor</Filter>
     </ClCompile>
+    <ClCompile Include="source\Logic\ArtificialIntelligence\ActorAI.cpp">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\ArtificialIntelligence\ActorAIData.cpp">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Bullet\Bullet.cpp">
+      <Filter>source\Logic\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Communication\Communication.cpp">
+      <Filter>source\Logic\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Communication\Login.cpp">
+      <Filter>source\Logic\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Communication\Receiver.cpp">
+      <Filter>source\Logic\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Communication\Transmitter.cpp">
+      <Filter>source\Logic\Communication</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1072,29 +1072,8 @@
     <ClInclude Include="source\Logic\Actor\EActorSpawnState.h">
       <Filter>source\Logic\Actor</Filter>
     </ClInclude>
-    <ClInclude Include="source\Logic\ArtificialIntelligence\CActorAI.h">
-      <Filter>source\Logic\ArtificialIntelligence</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\ArtificialIntelligence\CActorAIData.h">
-      <Filter>source\Logic\ArtificialIntelligence</Filter>
-    </ClInclude>
     <ClInclude Include="source\Logic\ArtificialIntelligence\CAIScheme.h">
       <Filter>source\Logic\ArtificialIntelligence</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Bullet\CBullet.h">
-      <Filter>source\Logic\Bullet</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Communication\CCommunication.h">
-      <Filter>source\Logic\Communication</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Communication\CLogin.h">
-      <Filter>source\Logic\Communication</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Communication\CReceiver.h">
-      <Filter>source\Logic\Communication</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Communication\CTransmitter.h">
-      <Filter>source\Logic\Communication</Filter>
     </ClInclude>
     <ClInclude Include="source\Logic\Communication\ECommunicationState.h">
       <Filter>source\Logic\Communication</Filter>
@@ -1758,6 +1737,27 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Actor\Actor.h">
       <Filter>source\Logic\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\ArtificialIntelligence\ActorAI.h">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\ArtificialIntelligence\ActorAIData.h">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Bullet\Bullet.h">
+      <Filter>source\Logic\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\Communication.h">
+      <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\Login.h">
+      <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\Receiver.h">
+      <Filter>source\Logic\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Communication\Transmitter.h">
+      <Filter>source\Logic\Communication</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

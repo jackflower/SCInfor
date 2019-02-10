@@ -31,7 +31,7 @@ namespace logic
 	//Chroniony konstruktor domyślny
 	Actor::Actor(const std::wstring & uniqueId)
 	:
-		CPhysical(uniqueId),	//konstruktor klasy bazowej
+		CPhysical(uniqueId), //konstruktor klasy bazowej
 		p_anim_set(NULL),
 		m_technical_data(),
 		m_engine_data(),
@@ -61,7 +61,7 @@ namespace logic
 	}
 
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
-	Actor::~Actor(void)
+	Actor::~Actor()
 	{
 		//~CPhysical()
 		p_anim_set = NULL;
@@ -320,7 +320,7 @@ namespace logic
 	}
 
 	//Metoda ustawia wskaźnik na obiekt klasy Airconditioning
-	void Actor::setAirconditioning(Airconditioning* airconditioning)
+	void Actor::setAirconditioning(Airconditioning *airconditioning)
 	{
 		m_airconditiong_data.setAirconditioning(airconditioning);
 	}
@@ -544,10 +544,10 @@ namespace logic
 			CAnimation *curr_anim = GetAnimationBody();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> &old_anims = p_anim_set->GetAnims();
+			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->GetAnims();
 
 			//kontener przechowujący nowy (parametr tej metody) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> &new_anims = anim_set->GetAnims();
+			const std::vector<CNameAnimPairTranslator> & new_anims = anim_set->GetAnims();
 
 			//indeks, pod którym może znajdować się szukana animacja
 			unsigned int index = -1;
@@ -590,10 +590,10 @@ namespace logic
 			CAnimation *curr_anim = GetAnimationHead();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> &old_anims = p_anim_set->GetAnims();
+			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->GetAnims();
 
 			//kontener przechowujący nowy (parametr tej metody) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> &new_anims = anim_set->GetAnims();
+			const std::vector<CNameAnimPairTranslator> & new_anims = anim_set->GetAnims();
 
 			//indeks, pod którym może znajdować się szukana animacja
 			unsigned int index = -1;

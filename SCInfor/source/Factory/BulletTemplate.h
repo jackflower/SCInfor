@@ -9,7 +9,7 @@
 
 #include "ActorTemplate.h"
 #include "../Logic/CPhysicalManager.h"
-#include "../Logic/Bullet/CBullet.h"
+#include "../Logic/Bullet/Bullet.h"
 
 
 ///
@@ -74,16 +74,16 @@ namespace factory
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CBullet *create(std::wstring id = L"");
+		Bullet *create(std::wstring id = L"");
 
 	protected:
 
 		///
-		///Wirtualna metoda wypełniająca danymi obiekt klasy CBullet
+		///Wirtualna metoda wypełniająca danymi obiekt klasy Bullet
 		///
-		///@param *bullet - wskaźnik na obiekt klasy CBullet
+		///@param *bullet - wskaźnik na obiekt klasy Bullet
 		///
-		virtual void fill(CBullet *bullet);
+		virtual void fill(Bullet *bullet);
 
 	private:
 
