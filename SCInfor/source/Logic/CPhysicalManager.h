@@ -26,7 +26,7 @@ namespace logic
 	class Enemy;
 	class CPlayer;
 	class Bullet;
-	class CMonster;
+	class Monster;
 	class Flora;
 	class CPhysicalInfo;
 	namespace unit
@@ -198,11 +198,11 @@ namespace logic
 		EnergyTank *CreateEnergyTank(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CMonster i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Monster i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CMonster *CreateMonster(const std::wstring &uniqueId = L"");
+		Monster *CreateMonster(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy Flora i zwraca wskaünik na ten obiekt

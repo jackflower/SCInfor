@@ -1,12 +1,11 @@
-/*
- _______________________________________
-| CMonster.cpp - implementacja klasy.   |
-| Jack Flower - January 2014.           |
-|_______________________________________|
+ï»¿//  _____________________________________
+// | Monster.cpp - class implementation  |
+// | Jack Flower - January 2014          |
+// |_____________________________________|
+//
 
-*/
 
-#include "CMonster.h"
+#include "Monster.h"
 #include "../Physical/PhysicalInfo/CPhysicalInfo.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Rendering/Animations/CAnimationState.h"
@@ -20,33 +19,47 @@ using namespace game;
 
 namespace logic
 {
-	//Chroniony konstruktor domyœlny
-	CMonster::CMonster(const std::wstring& uniqueId)
+	//Chroniony konstruktor domyÅ›lny
+	Monster::Monster(const std::wstring& uniqueId)
 		:
 		Actor(uniqueId),//konstruktor klasy bazowej
 		m_time_do_death(0.0f)
 	{
 	}
 
+	//Chroniony konstruktor kopiujÄ…cy
+	Monster::Monster(const Monster & MonsterCopy)
+	:
+		Actor(MonsterCopy),//konstruktor kopiujÄ…cy klasy bazowej
+		m_time_do_death(MonsterCopy.m_time_do_death)
+	{
+	}
+
 	//Destruktor wirtualny
-	CMonster::~CMonster(void)
+	Monster::~Monster()
 	{
 		m_time_do_death = 0.0f;
 	}
 
-	//Wirtualna metoda aktualizuj¹ca obiekt
-	void CMonster::update(float dt)
+	//Metoda zwraca typ obiektu /RTTI/
+	const std::string Monster::getType() const
+	{
+		return rtti.GetNameClass();
+	}
+
+	//Wirtualna metoda aktualizujÄ…ca obiekt
+	void Monster::update(float dt)
 	{
 		CPhysical::update(dt);
 		Actor::updateComponents(dt);
 
-		////////na razie testy..., bo w Actor bêdzie ju¿ opakowana metoda...
+		////////na razie testy..., bo w Actor bÄ™dzie juÅ¼ opakowana metoda...
 		//////if (p_physical_info)
 		//////	p_physical_info->SetPosition(this->GetPosition());
 
 
 		sf::Vector2i position = sf::Mouse::getPosition(*gGame.getRenderWindow());
-		//zamiana koordynatów na wspó³rzêdne œwiata u¿ywaj¹cego kamery
+		//zamiana koordynatÃ³w na wspÃ³Å‚rzÄ™dne Å›wiata uÅ¼ywajÄ…cego kamery
 		position.x = (int)gGame.getRenderWindow()->mapPixelToCoords(position).x;
 		position.y = (int)gGame.getRenderWindow()->mapPixelToCoords(position).y;
 
@@ -59,15 +72,15 @@ namespace logic
 			//RotateBody(-0.62f);	//brakuje wrappera w tej klasie dla metody void RotateBody(float angle) - equipment
 			SetRotationHead(this->GetRotationHead() + 0.62f);
 			SetRotationBody(this->GetRotationBody() - 0.62f);
-			//tutaj obs³uga klawiatury...
+			//tutaj obsÅ‚uga klawiatury...
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 				fprintf(stderr, "Test key pressed...\n");
 		}
 
-		//atrapa odroczonej œmierci...
+		//atrapa odroczonej Å›mierci...
 		//if(p_animation_body)
 		//{
-		//	m_time_do_death = m_time_do_death + 0.01f;//kumulujê...
+		//	m_time_do_death = m_time_do_death + 0.01f;//kumulujÄ™...
 		//	if(m_time_do_death > p_animation_body->TotalLength())
 		//		kill();
 		//}
@@ -79,12 +92,12 @@ namespace logic
 		//int demo = 0;
 
 
-		//Obs³ugiwane klawisze: RGBTY
-		//to dzia³a...
-		//uwaga, z racji tego, ¿e jestemm w update, tak wszystko co testujê
-		//odbywa siê w pêtli czasu rzeczywistego...
-		//zatem, nale¿y pamiêtaæ, aby obs³uga odbywa³a siê "jeden raz",
-		//czyli ob³uga zdarzeñ...
+		//ObsÅ‚ugiwane klawisze: RGBTY
+		//to dziaÅ‚a...
+		//uwaga, z racji tego, Å¼e jestemm w update, tak wszystko co testujÄ™
+		//odbywa siÄ™ w pÄ™tli czasu rzeczywistego...
+		//zatem, naleÅ¼y pamiÄ™taÄ‡, aby obsÅ‚uga odbywaÅ‚a siÄ™ "jeden raz",
+		//czyli obÅ‚uga zdarzeÅ„...
 		//////sf::Event::KeyEvent &e  = gGame.GetGameEvent().key;
 		//////if (e.code == sf::Keyboard::T)
 		//////{
@@ -93,14 +106,14 @@ namespace logic
 		//////}
 
 
-		////////ten kod dzia³a
+		////////ten kod dziaÅ‚a
 		//////if (gGame.GetGameEvent().key.code == sf::Keyboard::Y)
 		//////{
 		//////	GetDisplayableBody()->setColor(sf::Color::Yellow);
 		//////	fprintf(stderr, "Yellow key pressed...\n");//strzelam seriami...
 		//////}
 
-		//ten kod dzia³a poprawnie
+		//ten kod dziaÅ‚a poprawnie
 		if (gGame.getGameEvent().key.code == sf::Keyboard::K)
 			RestoreColorBody();
 	
@@ -109,21 +122,21 @@ namespace logic
 		{
 			//key R is pressed: set Red color our character
 			GetDisplayableBody()->setColor(sf::Color::Red);
-			fprintf(stderr, "Red key pressed...\n");//single...(ale w update trudno upilnowaæ)
+			fprintf(stderr, "Red key pressed...\n");//single...(ale w update trudno upilnowaÄ‡)
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
 		{
 			//key G is pressed: set Green color our character
 			GetDisplayableBody()->setColor(sf::Color::Green);
-			fprintf(stderr, "Green key pressed...\n");//single...(ale w update trudno upilnowaæ)
+			fprintf(stderr, "Green key pressed...\n");//single...(ale w update trudno upilnowaÄ‡)
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
 		{
 			//key B is pressed: set Blue color our character
 			GetDisplayableBody()->setColor(sf::Color::Blue);
-			fprintf(stderr, "Blue key pressed...\n");//single...(ale w update trudno upilnowaæ)
+			fprintf(stderr, "Blue key pressed...\n");//single...(ale w update trudno upilnowaÄ‡)
 		}
 	}
 }//namespace logic

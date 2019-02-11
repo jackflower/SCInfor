@@ -46,7 +46,7 @@ namespace factory
 		if (!ActorTemplate::load(xml))
 			return false;
 
-		//gdyby w klasie CMonster były jakieś pola
+		//gdyby w klasie Monster były jakieś pola
 		//to tutaj, w klasie jej fabryki
 		//należałoby wczytać te pola z pliku xml,
 		//aby fabryka była kompletna
@@ -54,21 +54,21 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CMonster
-	CMonster *MonsterTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy Monster
+	Monster *MonsterTemplate::create(std::wstring id)
 	{
-		CMonster *monster = gPhysicalManager.CreateMonster(id);
+		Monster *monster = gPhysicalManager.CreateMonster(id);
 		fill(monster);
 
-		//gdyby w klasie CMonster były jakieś pola
+		//gdyby w klasie Monster były jakieś pola
 		//to tutaj, neleżałoby te pola przekazać z fabryki do potwora,
 		//aby fabryka była kompletna
 
 		return monster;
 	}
 
-	//Wirtualna metoda wypełniająca danymi obiekt klasy CMonster
-	void MonsterTemplate::fill(CMonster *monster)
+	//Wirtualna metoda wypełniająca danymi obiekt klasy Monster
+	void MonsterTemplate::fill(Monster *monster)
 	{
 		ActorTemplate::fill(monster);
 		//ewentualnie reszta

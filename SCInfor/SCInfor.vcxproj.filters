@@ -390,20 +390,11 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Logic\Monster\CMonster.cpp">
-      <Filter>source\Logic\Monster</Filter>
-    </ClCompile>
     <ClCompile Include="source\Logic\Physical\CPhysical.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Physical\PartCollisionData\CPartCollisionData.cpp">
-      <Filter>source\Logic\Physical\PartCollisionData</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Physical\PhysicalData\CPhysicalData.cpp">
-      <Filter>source\Logic\Physical\PhysicalData</Filter>
     </ClCompile>
     <ClCompile Include="source\Logic\Physical\PhysicalInfo\CPhysicalInfo.cpp">
       <Filter>source\Logic\Physical\PhysicalInfo</Filter>
@@ -1002,6 +993,15 @@
     <ClCompile Include="source\Logic\Industrial\PowerStation\PowerStation.cpp">
       <Filter>source\Logic\Industrial\PowerStation</Filter>
     </ClCompile>
+    <ClCompile Include="source\Logic\Monster\Monster.cpp">
+      <Filter>source\Logic\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physical\PartCollisionData\PartCollisionData.cpp">
+      <Filter>source\Logic\Physical\PartCollisionData</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physical\PhysicalData\PhysicalData.cpp">
+      <Filter>source\Logic\Physical\PhysicalData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1087,9 +1087,6 @@
     <ClInclude Include="source\Logic\Industrial\PowerStation\EWindPowerStationState.h">
       <Filter>source\Logic\Industrial\PowerStation</Filter>
     </ClInclude>
-    <ClInclude Include="source\Logic\Monster\CMonster.h">
-      <Filter>source\Logic\Monster</Filter>
-    </ClInclude>
     <ClInclude Include="source\Logic\Physical\CPhysical.h">
       <Filter>source\Logic\Physical</Filter>
     </ClInclude>
@@ -1101,12 +1098,6 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Physical\PhysicalCategories.h">
       <Filter>source\Logic\Physical</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Physical\PartCollisionData\CPartCollisionData.h">
-      <Filter>source\Logic\Physical\PartCollisionData</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Physical\PhysicalData\CPhysicalData.h">
-      <Filter>source\Logic\Physical\PhysicalData</Filter>
     </ClInclude>
     <ClInclude Include="source\Logic\Physical\PhysicalInfo\CPhysicalInfo.h">
       <Filter>source\Logic\Physical\PhysicalInfo</Filter>
@@ -1758,6 +1749,15 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Industrial\PowerStation\PowerStation.h">
       <Filter>source\Logic\Industrial\PowerStation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Monster\Monster.h">
+      <Filter>source\Logic\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\PartCollisionData\PartCollisionData.h">
+      <Filter>source\Logic\Physical\PartCollisionData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\PhysicalData\PhysicalData.h">
+      <Filter>source\Logic\Physical\PhysicalData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

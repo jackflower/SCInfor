@@ -250,9 +250,9 @@ namespace game
 		//która aktywuje tę flagę dla obiektu klasy CGame
 		//
 		//ograniczenie dla generatora klawiatury...
-		//należy pamiętać, że obsługa klawiarury z poziomu class CMonster
+		//należy pamiętać, że obsługa klawiarury z poziomu class Monster
 		//wygeneruje na konsoli komunikat testowy tyle razy ile jest
-		//zarejestrowanych obiektów klasy CMonster
+		//zarejestrowanych obiektów klasy Monster
 		//
 		//prawidłowa (implementacja z projektu Testowy), determinuje
 		//obsługę klawiatury poprzez flagę aktywowania poprzez wskazanie

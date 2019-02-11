@@ -10,8 +10,8 @@
 #include "PhysicalCategories.h"
 #include "ECollisionShape.h"
 #include "EPhysicalPart.h"
-#include "PhysicalData/CPhysicalData.h"
-#include "PartCollisionData/CPartCollisionData.h"
+#include "PhysicalData/PhysicalData.h"
+#include "PartCollisionData/PartCollisionData.h"
 #include "../../RTTI/RTTI.h"
 
 ///
@@ -901,7 +901,7 @@ namespace logic
 		///
 		///Metoda zwraca opakowanie informacji o kolidowaniu
 		///
-		CPartCollisionData	& getPartCollisionData();
+		PartCollisionData	& getPartCollisionData();
 
 		///
 		///Wirtualna metoda aktualizuj¹ca obiekt
@@ -922,13 +922,13 @@ namespace logic
 		sf::Vector2f		m_rect_size_head;			//wektor przechowuj¹cy rozmiar obszaru prostok¹tnego - head (wykorzystywany do tworzenia syntetyków)
 		PhysicalTemplate*	p_template;					//wskaŸnik na obiekt klasy PhysicalTemplate
 		bool				m_ready_for_destruction;	//flaga ustawia obiekty gotowe do destrukcji
-		CPartCollisionData	m_part_collision_data;		//opakowanie informacji o kolidowaniu
+		PartCollisionData	m_part_collision_data;		//opakowanie informacji o kolidowaniu
 		float				m_new_anim_speed;			//wyliczony wspó³czynnik prêdkoœci odtwarzania animacji
 
 	private:
 
 		int					m_physical_manager_index;	//wyliczony indeks w CPhysicalManager
-		CPhysicalData		m_physical_data;			//opakowanie funkcjonalnoœci klasy CPhysical
+		PhysicalData		m_physical_data;			//opakowanie funkcjonalnoœci klasy CPhysical
 		bool				m_smooth;					//flaga, czy obiekt wyg³adza piksele tekstury
 		static float		m_increase;					//wspó³czynnik wirtualnej wysokoœci obiektu
 

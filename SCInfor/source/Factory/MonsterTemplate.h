@@ -8,7 +8,7 @@
 #define H_MONSTER_TEMPLATE_JACK
 
 #include "ActorTemplate.h"
-#include "../Logic/Monster/CMonster.h"
+#include "../Logic/Monster/Monster.h"
 
 
 ///
@@ -59,22 +59,22 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CMonster
+		///Metoda tworzy obiekt klasy Monster
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CMonster *create(std::wstring id = L"");
+		Monster *create(std::wstring id = L"");
 
 	private:
 
 		///
-		///Wirtualna metoda wypełniająca danymi obiekt klasy CMonster
+		///Wirtualna metoda wypełniająca danymi obiekt klasy Monster
 		///
-		///@param *actor - wskaźnik na obiekt klasy CMonster
+		///@param *actor - wskaźnik na obiekt klasy Monster
 		///
-		virtual void fill(CMonster *monster);
+		virtual void fill(Monster *monster);
 
-		//gdyby w klasie CMonster były jakieś pola
+		//gdyby w klasie Monster były jakieś pola
 		//to tutaj, w klasie jej fabryki,
 		//należałoby utworzyć takie same pola,
 		//aby fabryka była kompletna i mogła uzbroić potwora

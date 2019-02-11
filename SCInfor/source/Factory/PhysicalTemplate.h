@@ -123,7 +123,7 @@ namespace factory
 		sf::Color m_templ_color_head; //kolor - head
 		float m_templ_scale_body; //skala - body
 		float m_templ_scale_head; //skala - head
-		CPartCollisionData m_templ_part_collision_data; //opakowanie informacji o kolidowaniu
+		PartCollisionData m_templ_part_collision_data; //opakowanie informacji o kolidowaniu
 
 	private:
 

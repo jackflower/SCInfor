@@ -177,208 +177,208 @@ namespace logic
 	//Metoda zwraca pozycjê obiektu
 	const sf::Vector2f & CPhysical::GetPosition() const
 	{
-		return m_physical_data.GetPosition();
+		return m_physical_data.getPosition();
 	}
 
 	//Metoda ustawia pozycjê obiektu
 	void CPhysical::SetPosition(float x, float y, bool change_old_position)
 	{
-		m_physical_data.SetPosition(x, y);
+		m_physical_data.setPosition(x, y);
 	}
 
 	//Metoda ustawia pozycjê obiektu
 	void CPhysical::SetPosition(const sf::Vector2f & new_value, bool change_old_position)
 	{
-		m_physical_data.SetPosition(new_value);
+		m_physical_data.setPosition(new_value);
 	}
 
 	//Metoda zwraca pozycjê przed aktualizacj¹ logiki m_old_position
 	const sf::Vector2f & CPhysical::GetOldPosition() const
 	{
-		return m_physical_data.GetOldPosition();
+		return m_physical_data.getOldPosition();
 	}
 
 	//Metoda zwraca skalê (body)
 	const sf::Vector2f & CPhysical::GetScaleBody() const
 	{
-		return m_physical_data.GetDisplayableBody()->getScale();
+		return m_physical_data.getDisplayableBody()->getScale();
 	}
 
 	//Metoda ustawia skalê (body)
 	void CPhysical::SetScaleBody(float scale_X, float scale_Y)
 	{
 		//zapamiêtujê skalê
-		m_physical_data.SetStoredScaleBody(scale_X, scale_Y);
+		m_physical_data.setStoredScaleBody(scale_X, scale_Y);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableBody())
-			m_physical_data.GetDisplayableBody()->setScale(scale_X, scale_Y);
+		if(m_physical_data.getDisplayableBody())
+			m_physical_data.getDisplayableBody()->setScale(scale_X, scale_Y);
 
-		if(m_physical_data.GetDisplayableBodyShadow())
-			m_physical_data.GetDisplayableBodyShadow()->setScale(scale_X, scale_Y);
+		if(m_physical_data.getDisplayableBodyShadow())
+			m_physical_data.getDisplayableBodyShadow()->setScale(scale_X, scale_Y);
 	}
 
 	//Metoda ustawia skalê (body)
 	void CPhysical::SetScaleBody(const sf::Vector2f & scale_vector)
 	{
 		//zapamiêtujê skalê
-		m_physical_data.SetStoredScaleBody(scale_vector);
+		m_physical_data.setStoredScaleBody(scale_vector);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableBody())
-			m_physical_data.GetDisplayableBody()->setScale(scale_vector);
+		if(m_physical_data.getDisplayableBody())
+			m_physical_data.getDisplayableBody()->setScale(scale_vector);
 
-		if(m_physical_data.GetDisplayableBodyShadow())
-			m_physical_data.GetDisplayableBodyShadow()->setScale(scale_vector);
+		if(m_physical_data.getDisplayableBodyShadow())
+			m_physical_data.getDisplayableBodyShadow()->setScale(scale_vector);
 	}
 
 	//Metoda zwraca skalê (body)
 	const sf::Vector2f & CPhysical::GetScaleHead() const
 	{
-		return m_physical_data.GetDisplayableHead()->getScale();
+		return m_physical_data.getDisplayableHead()->getScale();
 	}
 
 	//Metoda ustawia skalê (head)
 	void CPhysical::SetScaleHead(float scale_X, float scale_Y)
 	{
 		//zapamiêtujê skalê
-		m_physical_data.SetStoredScaleHead(scale_X, scale_Y);
+		m_physical_data.setStoredScaleHead(scale_X, scale_Y);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableHead())
-			m_physical_data.GetDisplayableHead()->setScale(scale_X, scale_Y);
+		if(m_physical_data.getDisplayableHead())
+			m_physical_data.getDisplayableHead()->setScale(scale_X, scale_Y);
 
-		if(m_physical_data.GetDisplayableHeadShadow())
-			m_physical_data.GetDisplayableHeadShadow()->setScale(scale_X, scale_Y);
+		if(m_physical_data.getDisplayableHeadShadow())
+			m_physical_data.getDisplayableHeadShadow()->setScale(scale_X, scale_Y);
 	}
 
 	//Metoda ustawia skalê (head)
 	void CPhysical::SetScaleHead(const sf::Vector2f & scale_vector)
 	{
 		//zapamiêtujê skalê
-		m_physical_data.SetStoredScaleHead(scale_vector);
+		m_physical_data.setStoredScaleHead(scale_vector);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableHead())
-			m_physical_data.GetDisplayableHead()->setScale(scale_vector);
+		if(m_physical_data.getDisplayableHead())
+			m_physical_data.getDisplayableHead()->setScale(scale_vector);
 
-		if(m_physical_data.GetDisplayableHeadShadow())
-			m_physical_data.GetDisplayableHeadShadow()->setScale(scale_vector);
+		if(m_physical_data.getDisplayableHeadShadow())
+			m_physical_data.getDisplayableHeadShadow()->setScale(scale_vector);
 	}
 
 	//Metoda ustawia skalê (body and head)
 	void CPhysical::SetScale(float scale_X, float scale_Y)
 	{
 		//zapamiêtujê skalê
-		m_physical_data.SetStoredScaleBody(scale_X, scale_Y);
+		m_physical_data.setStoredScaleBody(scale_X, scale_Y);
 
 		//zapamiêtujê skalê
-		m_physical_data.SetStoredScaleHead(scale_X, scale_Y);
+		m_physical_data.setStoredScaleHead(scale_X, scale_Y);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableBody())
-			m_physical_data.GetDisplayableBody()->setScale(scale_X, scale_Y);
+		if(m_physical_data.getDisplayableBody())
+			m_physical_data.getDisplayableBody()->setScale(scale_X, scale_Y);
 
-		if(m_physical_data.GetDisplayableBodyShadow())
-			m_physical_data.GetDisplayableBodyShadow()->setScale(scale_X, scale_Y);
+		if(m_physical_data.getDisplayableBodyShadow())
+			m_physical_data.getDisplayableBodyShadow()->setScale(scale_X, scale_Y);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableHead())
-			m_physical_data.GetDisplayableHead()->setScale(scale_X, scale_Y);
+		if(m_physical_data.getDisplayableHead())
+			m_physical_data.getDisplayableHead()->setScale(scale_X, scale_Y);
 
-		if(m_physical_data.GetDisplayableHeadShadow())
-			m_physical_data.GetDisplayableHeadShadow()->setScale(scale_X, scale_Y);
+		if(m_physical_data.getDisplayableHeadShadow())
+			m_physical_data.getDisplayableHeadShadow()->setScale(scale_X, scale_Y);
 	}
 
 	//Metoda ustawia skalê (body and head)
 	void CPhysical::SetScale(const sf::Vector2f & scale)
 	{
 		//zapamiêtujê skalê
-		m_physical_data.SetStoredScaleBody(scale);
-		m_physical_data.SetStoredScaleHead(scale);
+		m_physical_data.setStoredScaleBody(scale);
+		m_physical_data.setStoredScaleHead(scale);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableBody())
-			m_physical_data.GetDisplayableBody()->setScale(scale);
+		if(m_physical_data.getDisplayableBody())
+			m_physical_data.getDisplayableBody()->setScale(scale);
 
-		if (m_physical_data.GetDisplayableBodyShadow())
-			m_physical_data.GetDisplayableBodyShadow()->setScale(scale);
+		if (m_physical_data.getDisplayableBodyShadow())
+			m_physical_data.getDisplayableBodyShadow()->setScale(scale);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableHead())
-			m_physical_data.GetDisplayableHead()->setScale(scale);
+		if(m_physical_data.getDisplayableHead())
+			m_physical_data.getDisplayableHead()->setScale(scale);
 
-		if (m_physical_data.GetDisplayableHeadShadow())
-			m_physical_data.GetDisplayableHeadShadow()->setScale(scale);
+		if (m_physical_data.getDisplayableHeadShadow())
+			m_physical_data.getDisplayableHeadShadow()->setScale(scale);
 	}
 
 	//Metoda ustawia skalê
 	void CPhysical::SetScale(float uniform)
 	{
 		//zapamiêtujê skalê
-		m_physical_data.SetStoredScaleBody(uniform, uniform);
+		m_physical_data.setStoredScaleBody(uniform, uniform);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableBody())
-			m_physical_data.GetDisplayableBody()->setScale(uniform);
+		if(m_physical_data.getDisplayableBody())
+			m_physical_data.getDisplayableBody()->setScale(uniform);
 
-		if (m_physical_data.GetDisplayableHead())
-			m_physical_data.GetDisplayableHead()->setScale(uniform);
+		if (m_physical_data.getDisplayableHead())
+			m_physical_data.getDisplayableHead()->setScale(uniform);
 
 		//obiekt zasadniczy i cieñ zawsze maj¹ tê sam¹ skalê
-		if(m_physical_data.GetDisplayableBodyShadow())
-			m_physical_data.GetDisplayableBodyShadow()->setScale(uniform);
+		if(m_physical_data.getDisplayableBodyShadow())
+			m_physical_data.getDisplayableBodyShadow()->setScale(uniform);
 
-		if (m_physical_data.GetDisplayableHeadShadow())
-			m_physical_data.GetDisplayableHeadShadow()->setScale(uniform);
+		if (m_physical_data.getDisplayableHeadShadow())
+			m_physical_data.getDisplayableHeadShadow()->setScale(uniform);
 	}
 
 	//Metoda zwraca wartoœæ obrotu obiektu w stopniach
 	const float CPhysical::GetRotation() const
 	{
-		return m_physical_data.GetRotation();
+		return m_physical_data.getRotation();
 	}
 
 	//Metoda ustawia wartoœæ obrotu obiektu w stopniach (body and head)
 	void CPhysical::SetRotation(float rotation)
 	{
-		m_physical_data.SetRotation(rotation);
+		m_physical_data.setRotation(rotation);
 	}
 
 	//Metoda zwraca wartoœæ obrotu obiektu w stopniach (body)
 	const float CPhysical::GetRotationBody() const
 	{
-		return m_physical_data.GetRotationBody();
+		return m_physical_data.getRotationBody();
 	}
 
 	//Metoda ustawia wartoœæ obrotu obiektu w stopniach (body)
 	void CPhysical::SetRotationBody(float rotation_body)
 	{
-		m_physical_data.SetRotationBody(rotation_body);
+		m_physical_data.setRotationBody(rotation_body);
 	}
 
 	//Metoda zwraca wartoœæ obrotu obiektu w stopniach (head)
 	const float CPhysical::GetRotationHead() const
 	{
-		return m_physical_data.GetRotationHead();
+		return m_physical_data.getRotationHead();
 	}
 
 	//Metoda ustawia wartoœæ obrotu obiektu w stopniach (head)
 	void CPhysical::SetRotationHead(float rotation_head)
 	{
-		m_physical_data.SetRotationHead(rotation_head);
+		m_physical_data.setRotationHead(rotation_head);
 	}
 
 	//Metoda obraca obiekt o zadany k¹t (body)
 	void CPhysical::RotateBody(float angle)
 	{
-		m_physical_data.RotateBody(angle);
+		m_physical_data.rotateBody(angle);
 	}
 
 	//Metoda obraca obiekt o zadany k¹t (head)
 	void CPhysical::RotateHead(float angle)
 	{
-		m_physical_data.RotateHead(angle);
+		m_physical_data.rotateHead(angle);
 	}
 
 	//Metoda obraca obiekt o zadany k¹t (body and head)
@@ -391,13 +391,13 @@ namespace logic
 	//Metoda zwraca prêdkoœæ obiektu
 	const sf::Vector2f & CPhysical::GetVelocity() const
 	{
-		return m_physical_data.GetVelocity();
+		return m_physical_data.getVelocity();
 	}
 
 	//Metoda ustawia prêdkoœæ obiektu
 	void CPhysical::SetVelocity(const sf::Vector2f & velocity)
 	{
-		m_physical_data.SetVelocity(velocity);
+		m_physical_data.setVelocity(velocity);
 	}
 
 	//Metoda zwraca promieñ detekcji wykorzystywany przy liczeniu kolizji
@@ -524,248 +524,248 @@ namespace logic
 	//Metoda zwraca wartoœæ pu³apu obiektu
 	const float CPhysical::GetAltitude() const
 	{
-		return m_physical_data.GetAltitude();
+		return m_physical_data.getAltitude();
 	}
 
 	//Metoda ustawia wartoœæ pu³apu obiektu
 	void CPhysical::SetAltitude(float altitude)
 	{
 		if(altitude < 0) return;
-		m_physical_data.SetAltitude(altitude);
+		m_physical_data.setAltitude(altitude);
 	}
 
 	//Metoda zwraca kolor obiektu - body
 	const sf::Color & CPhysical::GetColor() const
 	{
-		return m_physical_data.GetColorBody();	//umawiamy siê, ¿e default to czêœæ body
+		return m_physical_data.getColorBody();	//umawiamy siê, ¿e default to czêœæ body
 	}
 
 	//Metoda ustawia kolor obiektu - (body and head)
 	void CPhysical::SetColor(const sf::Color & color)
 	{
-		m_physical_data.SetColor(color);
+		m_physical_data.setColor(color);
 	}
 
 	//Metoda zwraca kolor obiektu - body
 	const sf::Color & CPhysical::GetColorBody() const
 	{
-		return m_physical_data.GetColorBody();
+		return m_physical_data.getColorBody();
 	}
 
 	//Metoda ustawia kolor obiektu - body
 	void CPhysical::SetColorBody(const sf::Color & color_body)
 	{
-		m_physical_data.SetColorBody(color_body);
+		m_physical_data.setColorBody(color_body);
 	}
 
 	//Metoda zwraca kolor obiektu - head
 	const sf::Color & CPhysical::GetColorHead() const
 	{
-		return m_physical_data.GetColorHead();
+		return m_physical_data.getColorHead();
 	}
 
 	//Metoda ustawia kolor obiektu - head
 	void CPhysical::SetColorHead(const sf::Color & color_head)
 	{
-		m_physical_data.SetColorHead(color_head);
+		m_physical_data.setColorHead(color_head);
 	}
 
 	//Metoda ustawia oryginalny kolor obiektu za³adowany z tekstury - body and head
 	void CPhysical::RestoreColor()
 	{
-		m_physical_data.RestoreColor();
+		m_physical_data.restoreColor();
 	}
 
 	//Metoda ustawia oryginalny kolor obiektu za³adowany z tekstury - body
 	void CPhysical::RestoreColorBody()
 	{
-		m_physical_data.RestoreColorBody();
+		m_physical_data.restoreColorBody();
 	}
 
 	//Metoda ustawia oryginalny kolor obiektu za³adowany z tekstury - head
 	void CPhysical::RestoreColorHead()
 	{
-		m_physical_data.RestoreColorHead();
+		m_physical_data.restoreColorHead();
 	}
 
 	//Metoda ustawia kolor do zapamiêtania - body
 	const sf::Color & CPhysical::GetStoredColorBody() const
 	{
-		return m_physical_data.GetStoredColorBody();
+		return m_physical_data.getStoredColorBody();
 	}
 
 	//Metoda ustawia kolor do zapamiêtania - body
 	void CPhysical::StoreColorBody(const sf::Color & color_stored_body)
 	{
-		m_physical_data.StoreColorBody(color_stored_body);
+		m_physical_data.storeColorBody(color_stored_body);
 	}
 	
 	//Metoda ustawia kolor do zapamiêtania - body
 	const sf::Color & CPhysical::GetStoredColorHead() const
 	{
-		return m_physical_data.GetStoredColorHead();
+		return m_physical_data.getStoredColorHead();
 	}
 
 	//Metoda ustawia kolor do zapamiêtania - body
 	void CPhysical::StoreColorHead(const sf::Color & color_stored_head)
 	{
-		m_physical_data.StoreColorHead(color_stored_head);
+		m_physical_data.storeColorHead(color_stored_head);
 	}
 
 	//Metoda zwraca kolor cienia obiektu
 	const sf::Color & CPhysical::GetColorShadow() const
 	{
-		return m_physical_data.GetColorShadow();
+		return m_physical_data.getColorShadow();
 	}
 
 	//Metoda ustawia kolor cienia obiektu
 	void CPhysical::SetColorShadow(const sf::Color & color_shadow)
 	{
-		m_physical_data.SetColorShadow(color_shadow);
+		m_physical_data.setColorShadow(color_shadow);
 	}
 
 	//Metoda zwraca wektor przesuniêcia cienia wzglêdem obiektu - body
 	sf::Vector2f & CPhysical::GetShadowOffsetBody()
 	{
-		return m_physical_data.GetShadowOffsetBody();
+		return m_physical_data.getShadowOffsetBody();
 	}
 
 	//Metoda ustawia wektor przesuniêcia cienia wzglêdem obiektu - body
 	void CPhysical::SetShadowOffsetBody(sf::Vector2f & shadow_offset_body)
 	{
-		m_physical_data.SetShadowOffsetBody(shadow_offset_body);
+		m_physical_data.setShadowOffsetBody(shadow_offset_body);
 	}
 
 	//Metoda zwraca wektor przesuniêcia cienia wzglêdem obiektu - head
 	sf::Vector2f & CPhysical::GetShadowOffsetHead()
 	{
-		return m_physical_data.GetShadowOffsetHead();
+		return m_physical_data.getShadowOffsetHead();
 	}
 
 	//Metoda ustawia wektor przesuniêcia cienia wzglêdem obiektu - head
 	void CPhysical::SetShadowOffsetHead(sf::Vector2f & shadow_offset_head)
 	{
-		m_physical_data.SetShadowOffsetHead(shadow_offset_head);
+		m_physical_data.setShadowOffsetHead(shadow_offset_head);
 	}
 
 	//Metoda zwraca flagê, czy obiekt generuje reprezentacjê graficzn¹ (body and head) /zgodnoœæ interfejsu/
 	const bool CPhysical::GetUseDisplayable() const
 	{
-		return m_physical_data.GetUseDisplayableBody();
+		return m_physical_data.getUseDisplayableBody();
 	}
 
 	//Metoda zwraca flagê, czy CPhysical ma reprezentacjê graficz¹ (body)
 	const bool CPhysical::GetUseDisplayableBody() const
 	{
-		return m_physical_data.GetUseDisplayableBody();
+		return m_physical_data.getUseDisplayableBody();
 	}
 
 	//Metoda zwraca flagê, czy CPhysical ma reprezentacjê graficz¹ (head)
 	const bool CPhysical::GetUseDisplayableHead() const
 	{
-		return m_physical_data.GetUseDisplayableHead();
+		return m_physical_data.getUseDisplayableHead();
 	}
 
 	//Metoda ustawia flagê, czy CPhysical ma reprezentacjê graficz¹ (body and head)
 	void CPhysical::SetUseDisplayable(const bool use_displayable)
 	{
-		m_physical_data.SetUseDisplayable(use_displayable);
+		m_physical_data.setUseDisplayable(use_displayable);
 	}
 
 	//Metoda ustawia flagê, czy CPhysical ma reprezentacjê graficz¹ (body)
 	void CPhysical::SetUseDisplayableBody(const bool use_displayable_body)
 	{
-		m_physical_data.SetUseDisplayableBody(use_displayable_body);
+		m_physical_data.setUseDisplayableBody(use_displayable_body);
 	}
 
 	//Metoda ustawia flagê, czy CPhysical ma reprezentacjê graficz¹ (head)
 	void CPhysical::SetUseDisplayableHead(const bool use_displayable_head)
 	{
-		m_physical_data.SetUseDisplayableHead(use_displayable_head);
+		m_physical_data.setUseDisplayableHead(use_displayable_head);
 	}
 
 	//Metoda zwraca flagê, czy obiekt generuje cieñ (body and head) /zgodnoœæ interfejsu/
 	const bool CPhysical::GetUseShadow() const
 	{
-		return m_physical_data.GetUseShadowBody();
+		return m_physical_data.getUseShadowBody();
 	}
 
 	//Metoda zwraca flagê, czy obiekt generuje cieñ (body)
 	const bool CPhysical::GetUseShadowBody() const
 	{
-		return m_physical_data.GetUseShadowBody();
+		return m_physical_data.getUseShadowBody();
 	}
 
 	//Metoda zwraca flagê, czy obiekt generuje cieñ (head)
 	const bool CPhysical::GetUseShadowHead() const
 	{
-		return m_physical_data.GetUseShadowHead();
+		return m_physical_data.getUseShadowHead();
 	}
 
 	//Metoda ustawia flagê, czy obiekt ma generowaæ cieñ (body and head) /zgodnoœæ interfejsu/
 	void CPhysical::SetUseShadow(const bool use_shadow)
 	{
-		m_physical_data.SetUseShadow(use_shadow);
+		m_physical_data.setUseShadow(use_shadow);
 	}
 
 	//Metoda ustawia flagê, czy obiekt ma generowaæ cieñ (body)
 	void CPhysical::SetUseShadowBody(const bool use_shadow_body)
 	{
-		m_physical_data.SetUseShadowBody(use_shadow_body);
+		m_physical_data.setUseShadowBody(use_shadow_body);
 	}
 
 	//Metoda ustawia flagê, czy obiekt ma generowaæ cieñ (head)
 	void CPhysical::SetUseShadowHead(const bool use_shadow_head)
 	{
-		m_physical_data.SetUseShadowHead(use_shadow_head);
+		m_physical_data.setUseShadowHead(use_shadow_head);
 	}
 
 	//Metoda zwraca wskaŸnik na animacjê - obiekt klasy CAnimation (body)
 	CAnimation *CPhysical::GetAnimationBody()
 	{
-		return m_physical_data.GetAnimationBody();
+		return m_physical_data.getAnimationBody();
 	}
 
 	//Metoda ustawia ustawia wskaŸnik na animacjê (body)
 	void CPhysical::SetAnimationBody(CAnimation* p_anim_body)
 	{
-		m_physical_data.SetAnimationBody(p_anim_body);
+		m_physical_data.setAnimationBody(p_anim_body);
 	}
 
 	//Metoda zwraca nazwê animacji (body)
 	const std::string & CPhysical::GetAnimationBodyName() const
 	{
-		return m_physical_data.GetAnimationBodyName();
+		return m_physical_data.getAnimationBodyName();
 	}
 
 	//Metoda ustawia nazwê animacji (body)
 	void CPhysical::SetAnimationBody(const std::string & anim_body_name)
 	{
-		m_physical_data.SetAnimationBody(anim_body_name);
+		m_physical_data.setAnimationBody(anim_body_name);
 	}
 
 	//Metoda zwraca wskaŸnik na animacjê - obiekt klasy CAnimation (head)
 	CAnimation *CPhysical::GetAnimationHead()
 	{
-		return m_physical_data.GetAnimationHead();
+		return m_physical_data.getAnimationHead();
 	}
 
 	//Metoda ustawia ustawia wskaŸnik na animacjê (head)
 	void CPhysical::SetAnimationHead(CAnimation *p_anim_head)
 	{
-		m_physical_data.SetAnimationHead(p_anim_head);
+		m_physical_data.setAnimationHead(p_anim_head);
 	}
 
 	//Metoda zwraca nazwê animacji (head)
 	const std::string & CPhysical::GetAnimationHeadName() const
 	{
-		return m_physical_data.GetAnimationHeadName();
+		return m_physical_data.getAnimationHeadName();
 	}
 
 	//Metoda ustawia nazwê animacji (head)
 	void CPhysical::SetAnimationHead(const std::string & anim_head_name)
 	{
-		m_physical_data.SetAnimationHead(anim_head_name);
+		m_physical_data.setAnimationHead(anim_head_name);
 	}
 
 	//Metoda ustawia komplet animacji
@@ -785,37 +785,37 @@ namespace logic
 	//Metoda zwraca pamiêtany wspó³czynnik prêdkoœci odtwarzania animacji (body)
 	const float CPhysical::GetStoredAnimSpeedBody() const
 	{
-		return m_physical_data.GetStoredAnimSpeedBody();
+		return m_physical_data.getStoredAnimSpeedBody();
 	}
 
 	//Metoda zwraca pamiêtany wspó³czynnik prêdkoœci odtwarzania animacji (body)
 	const float CPhysical::GetStoredAnimSpeedHead() const
 	{
-		return m_physical_data.GetStoredAnimSpeedHead();
+		return m_physical_data.getStoredAnimSpeedHead();
 	}
 
 	//Metoda zwraca wspó³czynnik prêdkoœci odtwarzania animacji 1.0f - normal speed (body)
 	const float CPhysical::GetAnimSpeedBody() const
 	{
-		return m_physical_data.GetAnimSpeedBody();
+		return m_physical_data.getAnimSpeedBody();
 	}
 
 	//Metoda zwraca wspó³czynnik prêdkoœci odtwarzania animacji 1.0f - normal speed (head)
 	const float CPhysical::GetAnimSpeedHead() const
 	{
-		return m_physical_data.GetAnimSpeedHead();
+		return m_physical_data.getAnimSpeedHead();
 	}
 
 	//Metoda ustawia wspó³czynnik prêdkoœci odtwarzania animacji 1.0f - normal speed (body)
 	void CPhysical::SetAnimSpeedBody(float anim_speed)
 	{
-		m_physical_data.SetAnimSpeedBody(anim_speed);
+		m_physical_data.setAnimSpeedBody(anim_speed);
 	}
 
 	//Metoda ustawia wspó³czynnik prêdkoœci odtwarzania animacji 1.0f - normal speed (head)
 	void CPhysical::SetAnimSpeedHead(float anim_speed)
 	{
-		m_physical_data.SetAnimSpeedHead(anim_speed);
+		m_physical_data.setAnimSpeedHead(anim_speed);
 	}
 
 	//Metoda ustawia wspó³czynnik prêdkoœci odtwarzania animacji 1.0f - normal speed (body and head)
@@ -835,57 +835,57 @@ namespace logic
 	//Metoda zwraca wskaŸnik na obiekt klasy CDisplayable (body) /zgodnoœæ interfejsu/
 	CDisplayable *CPhysical::GetDisplayable()
 	{
-		return m_physical_data.GetDisplayableBody();
+		return m_physical_data.getDisplayableBody();
 	}
 
 	//Metoda zwraca wskaŸnik na obiekt klasy CDisplayable (shadow) /zgodnoœæ interfejsu/
 	CDisplayable *CPhysical::GetShadow()
 	{
-		return m_physical_data.GetDisplayableBodyShadow();
+		return m_physical_data.getDisplayableBodyShadow();
 	}
 
 	//Metoda zwraca wskaŸnik na obiekt klasy CDisplayable (body)
 	CDisplayable *CPhysical::GetDisplayable(EPhysicalPart physical_part)
 	{
 		if (physical_part == BODY)
-			return m_physical_data.GetDisplayableBody();
+			return m_physical_data.getDisplayableBody();
 		else if (physical_part == HEAD)
-			return m_physical_data.GetDisplayableHead();
-		return m_physical_data.GetDisplayableBody();
+			return m_physical_data.getDisplayableHead();
+		return m_physical_data.getDisplayableBody();
 	}
 
 	//Metoda zwraca wskaŸnik na obiekt klasy CDisplayable (shadow)
 	CDisplayable *CPhysical::GetShadow(EPhysicalPart physical_part)
 	{
 		if (physical_part == BODY)
-			return m_physical_data.GetDisplayableBodyShadow();
+			return m_physical_data.getDisplayableBodyShadow();
 		else if (physical_part == HEAD)
-			return m_physical_data.GetDisplayableHead();
-		return m_physical_data.GetDisplayableBodyShadow();
+			return m_physical_data.getDisplayableHead();
+		return m_physical_data.getDisplayableBodyShadow();
 	}
 
 	//Metoda zwraca wskaŸnik na obiekt klasy CDisplayable (body)
 	CDisplayable *CPhysical::GetDisplayableBody()
 	{
-		return m_physical_data.GetDisplayableBody();
+		return m_physical_data.getDisplayableBody();
 	}
 
 	//Metoda zwraca wskaŸnik na obiekt klasy CDisplayable (body shadow)
 	CDisplayable *CPhysical::GetDisplayableBodyShadow()
 	{
-		return m_physical_data.GetDisplayableBodyShadow();
+		return m_physical_data.getDisplayableBodyShadow();
 	}
 
 	//Metoda zwraca wskaŸnik na obiekt klasy CDisplayable (head)
 	CDisplayable *CPhysical::GetDisplayableHead()
 	{
-		return m_physical_data.GetDisplayableHead();
+		return m_physical_data.getDisplayableHead();
 	}
 
 	//Metoda zwraca wskaŸnik na obiekt klasy CDisplayable (head shadow)
 	CDisplayable *CPhysical::GetDisplayableHeadShadow()
 	{
-		return m_physical_data.GetDisplayableHeadShadow();
+		return m_physical_data.getDisplayableHeadShadow();
 	}
 
 	//Metoda ustawia flagê dla obiektów gotowych do destrukcji
@@ -909,49 +909,49 @@ namespace logic
 	//Metoda zwraca nazwê tekstury
 	const std::string & CPhysical::GetTextureBody() const
 	{
-		return m_physical_data.GetTextureBody();
+		return m_physical_data.getTextureBody();
 	}
 
 	//Metoda ustatawia nazwê tekstury (body)
 	void CPhysical::SetTextureBody(const std::string & texture_body)
 	{
-		m_physical_data.SetTextureBody(texture_body);
+		m_physical_data.setTextureBody(texture_body);
 	}
 
 	//Metoda zwraca nazwê tekstury (head)
 	const std::string & CPhysical::GetTextureHead() const
 	{
-		return m_physical_data.GetTextureHead();
+		return m_physical_data.getTextureHead();
 	}
 
 	//Metoda ustatwia nazwê tekstury (head)
 	void CPhysical::SetTextureHead(const std::string & texture_head)
 	{
-		m_physical_data.SetTextureHead(texture_head);
+		m_physical_data.setTextureHead(texture_head);
 	}
 
 	//Metoda generuje obraz tekstury
 	void CPhysical::SetTextureBody(unsigned width, unsigned height, const sf::Color & color)
 	{
-		m_physical_data.SetTextureBody(width, height, color);
+		m_physical_data.setTextureBody(width, height, color);
 	}
 
 	//Metoda generuje obraz tekstury
 	void CPhysical::SetTextureBody(unsigned width, unsigned height, unsigned r, unsigned g, unsigned b, unsigned a)
 	{
-		m_physical_data.SetTextureBody(width, height, r, g, b, a);
+		m_physical_data.setTextureBody(width, height, r, g, b, a);
 	}
 
 	//Metoda generuje obraz tekstury
 	void CPhysical::SetTextureHead(unsigned width, unsigned height, const sf::Color & color)
 	{
-		m_physical_data.SetTextureHead(width, height, color);
+		m_physical_data.setTextureHead(width, height, color);
 	}
 
 	//Metoda generuje obraz tekstury
 	void CPhysical::SetTextureHead(unsigned width, unsigned height, unsigned r, unsigned g, unsigned b, unsigned a)
 	{
-		m_physical_data.SetTextureHead(width, height, r, g, b, a);
+		m_physical_data.setTextureHead(width, height, r, g, b, a);
 	}
 
 	//Metoda zwraca tryb wyg³adzania tekstury
@@ -965,14 +965,14 @@ namespace logic
 	{
 		m_smooth = smooth; //zapamietujê flagê wyg³adzania tekstury
 
-		if(m_physical_data.GetDisplayableBody())
-			m_physical_data.GetDisplayableBody()->setSmoothing(m_smooth);
-		if(m_physical_data.GetDisplayableBodyShadow())
-			m_physical_data.GetDisplayableBodyShadow()->setSmoothing(m_smooth);
-		if(m_physical_data.GetDisplayableHead())
-			m_physical_data.GetDisplayableHead()->setSmoothing(m_smooth);
-		if(m_physical_data.GetDisplayableHeadShadow())
-			m_physical_data.GetDisplayableHeadShadow()->setSmoothing(m_smooth);
+		if(m_physical_data.getDisplayableBody())
+			m_physical_data.getDisplayableBody()->setSmoothing(m_smooth);
+		if(m_physical_data.getDisplayableBodyShadow())
+			m_physical_data.getDisplayableBodyShadow()->setSmoothing(m_smooth);
+		if(m_physical_data.getDisplayableHead())
+			m_physical_data.getDisplayableHead()->setSmoothing(m_smooth);
+		if(m_physical_data.getDisplayableHeadShadow())
+			m_physical_data.getDisplayableHeadShadow()->setSmoothing(m_smooth);
 	}
 
 	//Metoda zwraca statyczny wspó³czynnik wirtualnej wysokoœci obiektu
@@ -988,7 +988,7 @@ namespace logic
 	}
 
 	//Metoda zwraca opakowanie informacji o kolidowaniu
-	CPartCollisionData	& CPhysical::getPartCollisionData()
+	PartCollisionData	& CPhysical::getPartCollisionData()
 	{
 		return m_part_collision_data;
 	}
@@ -997,9 +997,9 @@ namespace logic
 	void CPhysical::update(float dt)
 	{
 		sf::Vector2f new_position;
-		new_position.x = m_physical_data.GetPosition().x + (dt * m_physical_data.GetVelocity().x);
-		new_position.y = m_physical_data.GetPosition().y + (dt * m_physical_data.GetVelocity().y);
-		m_physical_data.SetOldPosition(m_physical_data.GetPosition());
+		new_position.x = m_physical_data.getPosition().x + (dt * m_physical_data.getVelocity().x);
+		new_position.y = m_physical_data.getPosition().y + (dt * m_physical_data.getVelocity().y);
+		m_physical_data.setOldPosition(m_physical_data.getPosition());
 		SetPosition(new_position);
 		UpdateShadow(dt);
 	}
@@ -1028,55 +1028,55 @@ namespace logic
 	//Metoda zwraca indeks warstwy renderingu obiektu (body)
 	const int CPhysical::GetZIndexBody() const
 	{
-		return m_physical_data.GetZIndexBody();
+		return m_physical_data.getZIndexBody();
 	}
 
 	//Metoda ustawia indeks warstwy renderingu obiektu (body)
 	void CPhysical::SetZIndexBody(int layer_index)
 	{
-		m_physical_data.SetZIndexBody(layer_index);
+		m_physical_data.setZIndexBody(layer_index);
 	}
 
 	//Metoda zwraca indeks warstwy renderingu obiektu (body shadow)
 	const int CPhysical::GetZIndexShadowBody() const
 	{
-		return m_physical_data.GetZIndexShadowBody();
+		return m_physical_data.getZIndexShadowBody();
 	}
 	
 	//Metoda ustawia indeks warstwy renderingu obiektu (body shadow)
 	void CPhysical::SetZIndexShadowBody(int layer_index)
 	{
-		m_physical_data.SetZIndexShadowBody(layer_index);
+		m_physical_data.setZIndexShadowBody(layer_index);
 	}
 
 	//Metoda zwraca indeks warstwy renderingu obiektu (head)
 	const int CPhysical::GetZIndexHead() const
 	{
-		return m_physical_data.GetZIndexHead();
+		return m_physical_data.getZIndexHead();
 	}
 
 	//Metoda ustawia indeks warstwy renderingu obiektu (head)
 	void CPhysical::SetZIndexHead(int layer_index)
 	{
-		m_physical_data.SetZIndexHead(layer_index);
+		m_physical_data.setZIndexHead(layer_index);
 	}
 
 	//Metoda zwraca indeks warstwy renderingu obiektu (head shadow)
 	const int CPhysical::GetZIndexShadowHead() const
 	{
-		return m_physical_data.GetZIndexShadowHead();
+		return m_physical_data.getZIndexShadowHead();
 	}
 
 	//Metoda ustawia indeks warstwy renderingu obiektu (head shadow)
 	void CPhysical::SetZIndexShadowHead(int layer_index)
 	{
-		m_physical_data.SetZIndexShadowHead(layer_index);
+		m_physical_data.setZIndexShadowHead(layer_index);
 	}
 
 	//Metoda aktualizuje cieñ rzucany przez obiekt i jego nasycenie w zale¿noœci od pory dnia
 	void CPhysical::UpdateShadow(float dt)
 	{
-		m_physical_data.UpdateShadowTransformation();
+		m_physical_data.updateShadowTransformation();
 	}
 
 
@@ -1085,13 +1085,13 @@ namespace logic
 	//prywatna metoda sprawdza, czy trzeba utworzyæ obiekt klasy CDisplayable
 	void CPhysical::CheckDisplayableBody()
 	{
-		m_physical_data.CheckDisplayableBody();
+		m_physical_data.checkDisplayableBody();
 	}
 
 	//prywatna metoda sprawdza, czy trzeba utworzyæ obiekt klasy CDisplayable
 	void CPhysical::CheckDisplayableHead()
 	{
-		m_physical_data.CheckDisplayableHead();
+		m_physical_data.checkDisplayableHead();
 	}
 
 	//prywatna metoda dobieraj¹ca przesuniêcie cienia
@@ -1100,26 +1100,26 @@ namespace logic
 	//pozycji s³oñca (Ÿród³a œwiat³a - gwiazd, etc...)
 	void CPhysical::UpdateShadowTransformation()
 	{
-		m_physical_data.UpdateShadowTransformation();
+		m_physical_data.updateShadowTransformation();
 	}
 
 	//Metoda ustala wektor przesuniêcia cienia - body
 	void CPhysical::CheckShadowOffsetBody()
 	{
-		m_physical_data.CheckShadowOffsetBody();
+		m_physical_data.checkShadowOffsetBody();
 	}
 
 	//Metoda ustala wektor przesuniêcia cienia - head
 	void CPhysical::CheckShadowOffsetHead()
 	{
-		m_physical_data.CheckShadowOffsetHead();
+		m_physical_data.checkShadowOffsetHead();
 	}
 
 	//Metoda ustala wektor przesuniêcia cienia - body and head
 	void CPhysical::CheckShadowOffset()
 	{
-		m_physical_data.CheckShadowOffsetBody();
-		m_physical_data.CheckShadowOffsetHead();
+		m_physical_data.checkShadowOffsetBody();
+		m_physical_data.checkShadowOffsetHead();
 	}
 
 }//namespace logic

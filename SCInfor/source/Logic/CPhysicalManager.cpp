@@ -13,7 +13,7 @@
 #include "Enemy/Enemy.h"
 #include "Player/CPlayer.h"
 #include "Bullet/Bullet.h"
-#include "Monster/CMonster.h"
+#include "Monster/Monster.h"
 #include "Flora/Flora.h"
 #include "Unit/CombatUnit/Robot/CRobot.h"
 #include "../Equipment/Engine/Engine.h"
@@ -177,11 +177,11 @@ namespace logic
 		return create<EnergyTank>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CMonster i zwraca wskaünik na ten obiekt
-	CMonster *CPhysicalManager::CreateMonster(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Monster i zwraca wskaünik na ten obiekt
+	Monster *CPhysicalManager::CreateMonster(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CMonster created\n");
-		return create<CMonster>(uniqueId);
+		fprintf(stderr, "Monster created\n");
+		return create<Monster>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Flora i zwraca wskaünik na ten obiekt

@@ -428,7 +428,7 @@ namespace resource
 		//		- EnemyTemplate						->tworzy->	Enemy
 		//		- PlayerTemplate						->tworzy->	CPlayer
 		//		- BulletTemplate						->tworzy->	Bullet
-		//		- MonsterTemplate						->tworzy->	CMonster
+		//		- MonsterTemplate						->tworzy->	Monster
 		//		- FuelTankTemplate						->tworzy->	FuelTank
 		//		- EnergyTankTemplate					->tworzy->	EnergyTank
 		//		- FuelBarTemplate						->tworzy->	FuelBar
