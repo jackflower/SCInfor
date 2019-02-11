@@ -56,16 +56,16 @@ namespace factory
 		if (!ActorTemplate::load(xml))
 			return false;
 
-		//reszta, gdyby klasa CPlayer (jej wzorzec PlayerTemplate)
+		//reszta, gdyby klasa Player (jej wzorzec PlayerTemplate)
 		//miały jakieś pola do wczytania i przekazania...
 
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CPlayer
-	CPlayer *PlayerTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy Player
+	Player *PlayerTemplate::create(std::wstring id)
 	{
-		CPlayer *player = gPhysicalManager.CreatePlayer(id);
+		Player *player = gPhysicalManager.CreatePlayer(id);
 		fill(player);
 		//gdyby były jakieś pola do przekazania, należy to uczynić...
 		return player;

@@ -245,9 +245,9 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp" />
     <ClCompile Include="source\Logic\Physical\PhysicalData\PhysicalData.cpp" />
     <ClCompile Include="source\Logic\Physical\PhysicalInfo\PhysicalInfo.cpp" />
-    <ClCompile Include="source\Logic\Physics\CActorTechnicalData.cpp" />
-    <ClCompile Include="source\Logic\Physics\CPhysicsData.cpp" />
-    <ClCompile Include="source\Logic\Player\CPlayer.cpp" />
+    <ClCompile Include="source\Logic\Physics\ActorTechnicalData.cpp" />
+    <ClCompile Include="source\Logic\Physics\PhysicsData.cpp" />
+    <ClCompile Include="source\Logic\Player\Player.cpp" />
     <ClCompile Include="source\Logic\Unit\CombatUnit\CCombatUnit.cpp" />
     <ClCompile Include="source\Logic\Unit\CombatUnit\Robot\CRobot.cpp" />
     <ClCompile Include="source\Logic\Unit\CStrategyController.cpp" />
@@ -485,9 +485,9 @@
     <ClInclude Include="source\Logic\Physical\PhysicalCategories.h" />
     <ClInclude Include="source\Logic\Physical\PhysicalData\PhysicalData.h" />
     <ClInclude Include="source\Logic\Physical\PhysicalInfo\PhysicalInfo.h" />
-    <ClInclude Include="source\Logic\Physics\CActorTechnicalData.h" />
-    <ClInclude Include="source\Logic\Physics\CPhysicsData.h" />
-    <ClInclude Include="source\Logic\Player\CPlayer.h" />
+    <ClInclude Include="source\Logic\Physics\ActorTechnicalData.h" />
+    <ClInclude Include="source\Logic\Physics\PhysicsData.h" />
+    <ClInclude Include="source\Logic\Player\Player.h" />
     <ClInclude Include="source\Logic\Unit\CombatUnit\CCombatUnit.h" />
     <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\CRobot.h" />
     <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\ERobotState.h" />

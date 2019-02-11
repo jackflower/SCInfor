@@ -43,9 +43,7 @@ namespace logic
 
 		//Aby uzyskać obiekt Physical, należy wywołać CPhysicalManager::CreatePhysical();
 
-		///	protected:
-
-
+		///
 		///Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
 		///
 		///@param uniqueId - stała referencja na obiekt klasy std::wstring

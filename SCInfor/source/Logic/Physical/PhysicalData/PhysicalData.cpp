@@ -175,96 +175,96 @@ namespace physicaldata
 	//Metoda zwraca pozycję obiektu
 	const sf::Vector2f & PhysicalData::getPosition() const
 	{
-		return m_physics_data.GetPosition();
+		return m_physics_data.getPosition();
 	}
 
 	//Metoda ustawia pozycję obiektu
 	void PhysicalData::setPosition(float x, float y, bool change_old_position)
 	{
 		//zakładamy, że body and head ma wspólny uchwyt
-		m_physics_data.SetPosition(x, y);	//aktualizacja pola w klasie (składowa wektora - x i y)
+		m_physics_data.setPosition(x, y);	//aktualizacja pola w klasie (składowa wektora - x i y)
 
 		//decorate
 		if (p_displayable_body)
-			p_displayable_body->setPosition(m_physics_data.GetPosition().x, m_physics_data.GetPosition().y);
+			p_displayable_body->setPosition(m_physics_data.getPosition().x, m_physics_data.getPosition().y);
 
 		if (p_displayable_head)
-			p_displayable_head->setPosition(m_physics_data.GetPosition().x, m_physics_data.GetPosition().y);
+			p_displayable_head->setPosition(m_physics_data.getPosition().x, m_physics_data.getPosition().y);
 
 		if (p_displayable_body_shadow)
-			p_displayable_body_shadow->setPosition(m_physics_data.GetPosition().x + m_shadow_offset_body.x, m_physics_data.GetPosition().y + m_shadow_offset_body.y);
+			p_displayable_body_shadow->setPosition(m_physics_data.getPosition().x + m_shadow_offset_body.x, m_physics_data.getPosition().y + m_shadow_offset_body.y);
 
 		if (p_displayable_head_shadow)
-			p_displayable_head_shadow->setPosition(m_physics_data.GetPosition().x + m_shadow_offset_head.x, m_physics_data.GetPosition().y + m_shadow_offset_head.y);
+			p_displayable_head_shadow->setPosition(m_physics_data.getPosition().x + m_shadow_offset_head.x, m_physics_data.getPosition().y + m_shadow_offset_head.y);
 
 		if (change_old_position)
-			m_physics_data.SetOldPosition(x, y);
+			m_physics_data.setOldPosition(x, y);
 	}
 
 	//Metoda ustawia pozycję obiektu
 	void PhysicalData::setPosition(const sf::Vector2f & new_value, bool change_old_position)
 	{
 		//zakładamy, że body and head ma wspólny uchwyt
-		m_physics_data.SetPosition(new_value);	//aktualizacja pola w klasie (wektor)
+		m_physics_data.setPosition(new_value);	//aktualizacja pola w klasie (wektor)
 
 		//decorate
 		if (p_displayable_body)
-			p_displayable_body->setPosition(m_physics_data.GetPosition().x, m_physics_data.GetPosition().y);
+			p_displayable_body->setPosition(m_physics_data.getPosition().x, m_physics_data.getPosition().y);
 
 		if (p_displayable_head)
-			p_displayable_head->setPosition(m_physics_data.GetPosition().x, m_physics_data.GetPosition().y);
+			p_displayable_head->setPosition(m_physics_data.getPosition().x, m_physics_data.getPosition().y);
 
 		if (p_displayable_body_shadow)
-			p_displayable_body_shadow->setPosition(m_physics_data.GetPosition().x + m_shadow_offset_body.x, m_physics_data.GetPosition().y + m_shadow_offset_body.y);
+			p_displayable_body_shadow->setPosition(m_physics_data.getPosition().x + m_shadow_offset_body.x, m_physics_data.getPosition().y + m_shadow_offset_body.y);
 
 		if (p_displayable_head_shadow)
-			p_displayable_head_shadow->setPosition(m_physics_data.GetPosition().x + m_shadow_offset_head.x, m_physics_data.GetPosition().y + m_shadow_offset_head.y);
+			p_displayable_head_shadow->setPosition(m_physics_data.getPosition().x + m_shadow_offset_head.x, m_physics_data.getPosition().y + m_shadow_offset_head.y);
 
 		if (change_old_position)
-			m_physics_data.SetOldPosition(new_value);
+			m_physics_data.setOldPosition(new_value);
 	}
 
 	//Metoda zwraca pozycję przed aktualizacją logiki m_old_position
 	const sf::Vector2f & PhysicalData::getOldPosition() const
 	{
-		return m_physics_data.GetOldPosition();
+		return m_physics_data.getOldPosition();
 	}
 
 	//Metoda zwraca pozycję przed aktualizacją logiki m_old_position
 	void PhysicalData::setOldPosition(const sf::Vector2f & old_position)
 	{
-		m_physics_data.SetOldPosition(old_position);
+		m_physics_data.setOldPosition(old_position);
 	}
 
 	//Metoda ustawia pozycję obiektu
 	void PhysicalData::setOldPosition(float x, float y, bool change_old_position)
 	{
-		m_physics_data.SetOldPosition(x, y);
+		m_physics_data.setOldPosition(x, y);
 	}
 
 	//Metoda zwraca prędkość obiektu
 	const sf::Vector2f & PhysicalData::getVelocity() const
 	{
-		return m_physics_data.GetVelocity();
+		return m_physics_data.getVelocity();
 	}
 
 	//Metoda ustawia prędkość obiektu
 	void PhysicalData::setVelocity(const sf::Vector2f & velocity)
 	{
-		m_physics_data.SetVelocity(velocity);
+		m_physics_data.setVelocity(velocity);
 	}
 
 	//Metoda zwraca wartość pułapu obiektu
 	const float PhysicalData::getAltitude() const
 	{
-		return m_physics_data.GetAltitude();
+		return m_physics_data.getAltitude();
 	}
 
 	//Metoda ustawia wartość pułapu obiektu
 	void PhysicalData::setAltitude(float altitude)
 	{
 		if (altitude < 0) return;
-		m_physics_data.SetAltitude(altitude);
+		m_physics_data.setAltitude(altitude);
 	}
 
 	//Metoda zwraca flagę, czy obiekt ma reprezentację graficzną (body and head) /zgodność interfejsu/
@@ -691,81 +691,82 @@ namespace physicaldata
 	//Metoda zwraca zapamiętaną skalę (body)
 	const sf::Vector2f & PhysicalData::getStoredScaleBody() const
 	{
-		return m_physics_data.GetStoredScaleBody();
+		return m_physics_data.getStoredScaleBody();
 	}
 
 	//Metoda ustawia zapamiętaną skalę (body)
 	void PhysicalData::setStoredScaleBody(float stored_scale_X, float stored_scale_Y)
 	{
-		m_physics_data.SetStoredScaleBody(stored_scale_X, stored_scale_Y);
+		m_physics_data.setStoredScaleBody(stored_scale_X, stored_scale_Y);
 	}
 
 	//Metoda ustawia zapamiętaną skalę (body)
 	void PhysicalData::setStoredScaleBody(const sf::Vector2f & stored_scale_vector)
 	{
-		m_physics_data.SetStoredScaleBody(stored_scale_vector);
+		m_physics_data.setStoredScaleBody(stored_scale_vector);
 	}
 
 	//Metoda zwraca zapamiętaną skalę (body)
 	const sf::Vector2f & PhysicalData::getStoredScaleHead() const
 	{
-		return m_physics_data.GetStoredScaleHead();
+		return m_physics_data.getStoredScaleHead();
 	}
 
 	//Metoda ustawia zapamiętaną skalę (head)
 	void PhysicalData::setStoredScaleHead(float stored_scale_X, float stored_scale_Y)
 	{
-		m_physics_data.SetStoredScaleHead(stored_scale_X, stored_scale_Y);
+		m_physics_data.setStoredScaleHead(stored_scale_X, stored_scale_Y);
 	}
 
 	//Metoda ustawia zapamiętaną skalę (head)
 	void PhysicalData::setStoredScaleHead(const sf::Vector2f & stored_scale_vector)
 	{
-		m_physics_data.SetStoredScaleHead(stored_scale_vector);
+		m_physics_data.setStoredScaleHead(stored_scale_vector);
 	}
 
 	//Metoda ustawia zapamiętaną skalę (body and head)
 	void PhysicalData::setStoredScale(float stored_scale_X, float stored_scale_Y)
 	{
-		m_physics_data.SetStoredScaleBody(stored_scale_X, stored_scale_Y);
-		m_physics_data.SetStoredScaleHead(stored_scale_X, stored_scale_Y);
+		m_physics_data.setStoredScaleBody(stored_scale_X, stored_scale_Y);
+		m_physics_data.setStoredScaleHead(stored_scale_X, stored_scale_Y);
 	}
 
 	//Metoda ustawia zapamiętaną skalę (body and head)
 	void PhysicalData::setStoredScale(const sf::Vector2f & stored_scale)
 	{
-		m_physics_data.SetStoredScaleBody(stored_scale);
-		m_physics_data.SetStoredScaleHead(stored_scale);
+		m_physics_data.setStoredScaleBody(stored_scale);
+		m_physics_data.setStoredScaleHead(stored_scale);
 	}
 
-	//Metoda ustawia zapamiętaną skalę
+	//Metoda ustawia zapamiętaną skalę (body and head)
 	void PhysicalData::setStoredScale(float stored_uniform)
 	{
-		m_physics_data.SetStoredScaleHead(stored_uniform, stored_uniform);
+		m_physics_data.setStoredScaleBody(stored_uniform, stored_uniform);
+		m_physics_data.setStoredScaleHead(stored_uniform, stored_uniform);
 	}
 
 	//Metoda zwraca wartość obrotu obiektu w stopniach
 	const float PhysicalData::getRotation() const
 	{
-		return m_physics_data.GetRotation();
+		return m_physics_data.getRotation();
 	}
 
 	//Metoda ustawia wartość obrotu obiektu w stopniach (body and head)
 	void PhysicalData::setRotation(float rotation)
 	{
-		m_physics_data.SetRotation(rotation);
+		m_physics_data.setRotation(rotation);
 	}
 
 	//Metoda zwraca wartość obrotu obiektu w stopniach (body)
 	const float PhysicalData::getRotationBody() const
 	{
-		return m_physics_data.GetRotationBody();
+		return m_physics_data.getRotationBody();
 	}
 
 	//Metoda ustawia wartość obrotu obiektu w stopniach (body)
 	void PhysicalData::setRotationBody(float rotation_body)
 	{
-		m_physics_data.SetRotationBody(rotation_body);
+		m_physics_data.setRotationBody(rotation_body);
 
 		//decorate
 		if (p_displayable_body)
@@ -779,13 +780,13 @@ namespace physicaldata
 	//Metoda zwraca wartość obrotu obiektu w stopniach (head)
 	const float PhysicalData::getRotationHead() const
 	{
-		return m_physics_data.GetRotationHead();
+		return m_physics_data.getRotationHead();
 	}
 
 	//Metoda ustawia wartość obrotu obiektu w stopniach (head)
 	void PhysicalData::setRotationHead(float rotation_head)
 	{
-		m_physics_data.SetRotationHead(rotation_head);
+		m_physics_data.setRotationHead(rotation_head);
 
 		//decorate
 		if (p_displayable_head)
@@ -799,7 +800,7 @@ namespace physicaldata
 	//Metoda obraca obiekt o zadany kąt (body)
 	void PhysicalData::rotateBody(float angle)
 	{
-		m_physics_data.SetRotationBody(angle);
+		m_physics_data.setRotationBody(angle);
 
 		//decorate
 		if (p_displayable_body)
@@ -813,7 +814,7 @@ namespace physicaldata
 	//Metoda obraca obiekt o zadany kąt (head)
 	void PhysicalData::rotateHead(float angle)
 	{
-		m_physics_data.SetRotationHead(angle);
+		m_physics_data.setRotationHead(angle);
 
 		//decorate
 		if (p_displayable_head)
@@ -1001,10 +1002,10 @@ namespace physicaldata
 			}
 
 			//transformacja
-			p_displayable_body->setPosition(m_physics_data.GetPosition());
-			p_displayable_body->setRotation(m_physics_data.GetRotationBody());
+			p_displayable_body->setPosition(m_physics_data.getPosition());
+			p_displayable_body->setRotation(m_physics_data.getRotationBody());
 			p_displayable_body->setColor(p_displayable_body->getColor());
-			p_displayable_body->setScale(m_physics_data.GetStoredScaleBody());
+			p_displayable_body->setScale(m_physics_data.getStoredScaleBody());
 			//zapamiętujemy oryginalny kolor
 			m_color_stored_body = p_displayable_body->getColor();
 		}
@@ -1022,15 +1023,13 @@ namespace physicaldata
 			//transformacja
 			p_displayable_body_shadow->setPosition
 			(
-				m_physics_data.GetPosition().x +
-				m_shadow_offset_body.x,
-				m_physics_data.GetPosition().y +
-				m_shadow_offset_body.y
+				m_physics_data.getPosition().x + m_shadow_offset_body.x,
+				m_physics_data.getPosition().y + m_shadow_offset_body.y
 			);
 
-			p_displayable_body_shadow->setRotation(m_physics_data.GetRotationBody());
+			p_displayable_body_shadow->setRotation(m_physics_data.getRotationBody());
 			p_displayable_body_shadow->setColor(gWeather.GetShadowColor());
-			p_displayable_body_shadow->setScale(m_physics_data.GetStoredScaleBody());
+			p_displayable_body_shadow->setScale(m_physics_data.getStoredScaleBody());
 		}
 	}
 
@@ -1049,10 +1048,10 @@ namespace physicaldata
 			}
 
 			//transformacja
-			p_displayable_head->setPosition(m_physics_data.GetPosition());
-			p_displayable_head->setRotation(m_physics_data.GetRotationHead());
+			p_displayable_head->setPosition(m_physics_data.getPosition());
+			p_displayable_head->setRotation(m_physics_data.getRotationHead());
 			p_displayable_head->setColor(p_displayable_head->getColor());
-			p_displayable_head->setScale(m_physics_data.GetStoredScaleHead());
+			p_displayable_head->setScale(m_physics_data.getStoredScaleHead());
 			//zapamiętujemy oryginalny kolor
 			m_color_stored_head = p_displayable_head->getColor();
 		}
@@ -1070,15 +1069,13 @@ namespace physicaldata
 			//transformacja
 			p_displayable_head_shadow->setPosition
 			(
-				m_physics_data.GetPosition().x +
-				m_shadow_offset_head.x,
-				m_physics_data.GetPosition().y +
-				m_shadow_offset_head.y
+				m_physics_data.getPosition().x + m_shadow_offset_head.x,
+				m_physics_data.getPosition().y + m_shadow_offset_head.y
 			);
 
-			p_displayable_head_shadow->setRotation(m_physics_data.GetRotationHead());
+			p_displayable_head_shadow->setRotation(m_physics_data.getRotationHead());
 			p_displayable_head_shadow->setColor(gWeather.GetShadowColor());
-			p_displayable_head_shadow->setScale(m_physics_data.GetStoredScaleHead());
+			p_displayable_head_shadow->setScale(m_physics_data.getStoredScaleHead());
 		}
 	}
 
@@ -1102,10 +1099,10 @@ namespace physicaldata
 			(
 				m_shadow_offset_body.x
 				* PhysicalData::m_shadow_init
-				* m_physics_data.GetAltitude() * p_displayable_body->getScale().x,
+				* m_physics_data.getAltitude() * p_displayable_body->getScale().x,
 				m_shadow_offset_body.y
 				* PhysicalData::m_shadow_init
-				* m_physics_data.GetAltitude() * p_displayable_body->getScale().y
+				* m_physics_data.getAltitude() * p_displayable_body->getScale().y
 			);
 		}
 	}
@@ -1130,10 +1127,10 @@ namespace physicaldata
 			(
 				m_shadow_offset_head.x
 				* PhysicalData::m_shadow_init
-				* m_physics_data.GetAltitude() * p_displayable_head->getScale().x,
+				* m_physics_data.getAltitude() * p_displayable_head->getScale().x,
 				m_shadow_offset_head.y
 				* PhysicalData::m_shadow_init
-				* m_physics_data.GetAltitude() * p_displayable_head->getScale().y
+				* m_physics_data.getAltitude() * p_displayable_head->getScale().y
 			);
 		}
 	}

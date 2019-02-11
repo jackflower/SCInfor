@@ -393,9 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Logic\Player\CPlayer.cpp">
-      <Filter>source\Logic\Player</Filter>
-    </ClCompile>
     <ClCompile Include="source\Logic\Unit\CombatUnit\Robot\CRobot.cpp">
       <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
     </ClCompile>
@@ -677,12 +674,6 @@
     </ClCompile>
     <ClCompile Include="source\XML\CXml.cpp">
       <Filter>source\XML</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Physics\CActorTechnicalData.cpp">
-      <Filter>source\Logic\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Physics\CPhysicsData.cpp">
-      <Filter>source\Logic\Physics</Filter>
     </ClCompile>
     <ClCompile Include="source\Game\Game.cpp">
       <Filter>source\Game</Filter>
@@ -1002,6 +993,15 @@
     <ClCompile Include="source\Logic\Physical\Physical.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
+    <ClCompile Include="source\Logic\Physics\ActorTechnicalData.cpp">
+      <Filter>source\Logic\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physics\PhysicsData.cpp">
+      <Filter>source\Logic\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Player\Player.cpp">
+      <Filter>source\Logic\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1095,9 +1095,6 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Physical\PhysicalCategories.h">
       <Filter>source\Logic\Physical</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Player\CPlayer.h">
-      <Filter>source\Logic\Player</Filter>
     </ClInclude>
     <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\CRobot.h">
       <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
@@ -1435,12 +1432,6 @@
     <ClInclude Include="source\XML\CXml.h">
       <Filter>source\XML</Filter>
     </ClInclude>
-    <ClInclude Include="source\Logic\Physics\CActorTechnicalData.h">
-      <Filter>source\Logic\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Physics\CPhysicsData.h">
-      <Filter>source\Logic\Physics</Filter>
-    </ClInclude>
     <ClInclude Include="source\Game\Game.h">
       <Filter>source\Game</Filter>
     </ClInclude>
@@ -1758,6 +1749,15 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Physical\Physical.h">
       <Filter>source\Logic\Physical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physics\ActorTechnicalData.h">
+      <Filter>source\Logic\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physics\PhysicsData.h">
+      <Filter>source\Logic\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Player\Player.h">
+      <Filter>source\Logic\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

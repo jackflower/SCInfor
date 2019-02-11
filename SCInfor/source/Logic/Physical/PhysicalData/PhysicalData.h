@@ -7,7 +7,7 @@
 #ifndef H_PHYSICAL_DATA_JACK
 #define H_PHYSICAL_DATA_JACK
 
-#include "../../Physics/CPhysicsData.h"
+#include "../../Physics/PhysicsData.h"
 #include "../../../RTTI/RTTI.h"
 #include "../../../Logic/Physical/EPhysicalPart.h"
 #include "../../../ResourceManager/CTexture.h"
@@ -849,7 +849,7 @@ namespace physicaldata
 
 	private:
 
-		CPhysicsData m_physics_data; //opakowanie informacji o fizyce
+		PhysicsData m_physics_data; //opakowanie informacji o fizyce
 		bool m_use_displayable_body; //flaga określa, czy obiekt posiada reprezentację graficzną - body
 		bool m_use_shadow_body; //flaga określa, czy obiekt posiada reprezentację graficzną - body - cień
 		bool m_use_displayable_head; //flaga określa, czy obiekt posiada reprezentację graficzną - head

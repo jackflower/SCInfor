@@ -426,7 +426,7 @@ namespace resource
 		//		- ActorTemplate						->tworzy->	Actor
 		//		- CRoborTemplate						->tworzy->	CRobot
 		//		- EnemyTemplate						->tworzy->	Enemy
-		//		- PlayerTemplate						->tworzy->	CPlayer
+		//		- PlayerTemplate						->tworzy->	Player
 		//		- BulletTemplate						->tworzy->	Bullet
 		//		- MonsterTemplate						->tworzy->	Monster
 		//		- FuelTankTemplate						->tworzy->	FuelTank

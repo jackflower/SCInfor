@@ -24,7 +24,7 @@ namespace logic
 	class Physical;
 	class Actor;
 	class Enemy;
-	class CPlayer;
+	class Player;
 	class Bullet;
 	class Monster;
 	class Flora;
@@ -156,11 +156,11 @@ namespace logic
 		Enemy *CreateEnemy(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CPlayer i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Player i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CPlayer *CreatePlayer(const std::wstring &uniqueId = L"");
+		Player *CreatePlayer(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy Bullet i zwraca wskaünik na ten obiekt

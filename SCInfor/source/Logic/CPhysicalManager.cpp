@@ -11,7 +11,7 @@
 #include "Physical/PhysicalInfo/PhysicalInfo.h"
 #include "Actor/Actor.h"
 #include "Enemy/Enemy.h"
-#include "Player/CPlayer.h"
+#include "Player/Player.h"
 #include "Bullet/Bullet.h"
 #include "Monster/Monster.h"
 #include "Flora/Flora.h"
@@ -135,11 +135,11 @@ namespace logic
 		return create<Enemy>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CPlayer i zwraca wskaünik na ten obiekt
-	CPlayer *CPhysicalManager::CreatePlayer(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Player i zwraca wskaünik na ten obiekt
+	Player *CPhysicalManager::CreatePlayer(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CPlayer created\n");
-		return create<CPlayer>(uniqueId);
+		fprintf(stderr, "Player created\n");
+		return create<Player>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Bullet i zwraca wskaünik na ten obiekt

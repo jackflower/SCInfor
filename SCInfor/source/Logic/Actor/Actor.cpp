@@ -158,13 +158,13 @@ namespace logic
 	}
 
 	//Metoda zwraca referencję na klasę bedącą opakowaniem fizyki
-	CActorTechnicalData & Actor::getTechnicalData()
+	ActorTechnicalData & Actor::getTechnicalData()
 	{
 		return m_technical_data;
 	}
 
 	//Metoda ustawia referencję na klasę bedącą opakowaniem fizyki
-	void Actor::setTechnicalData(CActorTechnicalData & technical_data)
+	void Actor::setTechnicalData(ActorTechnicalData & technical_data)
 	{
 		m_technical_data = technical_data;
 	}

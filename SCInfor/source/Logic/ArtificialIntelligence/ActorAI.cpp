@@ -154,7 +154,7 @@ namespace artificialintelligence
 		// atak
 		for ( unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++ )
 		{
-			CPlayer *player = gPlayerManager.GetPlayerByOrder( i );
+			Player *player = gPlayerManager.GetPlayerByOrder( i );
 			if (player == NULL) continue;
 			mAvailableAbilities.clear();
 			GetActor()->GetAbilityPerformer().GetAvailableAbilities(mAvailableAbilities);

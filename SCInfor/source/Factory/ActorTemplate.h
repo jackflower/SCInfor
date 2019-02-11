@@ -103,7 +103,7 @@ namespace factory
 
 		CAnimSet *p_templ_animations; //wskaźnik na zestaw animacji Actor
 		std::vector<CAnimSet*> m_templ_available_animations; //wektor wskaźników na zestawy dostępnych animacji dla Actor
-		CActorTechnicalData m_templ_technical_data; //opakowanie fizyki
+		ActorTechnicalData m_templ_technical_data; //opakowanie fizyki
 		EquipmentEngineData m_templ_engine_data; //opakowanie funkcjonalności silnika
 		EquipmentEnergyData m_templ_energy_data; //opakowanie funkcjonalności energii
 		EquipmentAirconditioningData m_templ_airconditioning_data; //opakowanie funkcjonalności klimatyzacji

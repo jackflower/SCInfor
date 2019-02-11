@@ -8,7 +8,7 @@
 #define H_PLAYER_TEMPLATE_JACK
 
 #include "ActorTemplate.h"
-#include "../Logic/Player/CPlayer.h"
+#include "../Logic/Player/Player.h"
 
 namespace factory
 {
@@ -56,11 +56,11 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CPlayer
+		///Metoda tworzy obiekt klasy Player
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CPlayer *create(std::wstring id = L"");
+		Player *create(std::wstring id = L"");
 
 	private:
 

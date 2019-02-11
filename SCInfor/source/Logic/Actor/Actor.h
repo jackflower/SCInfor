@@ -9,7 +9,7 @@
 
 #include "ActorStateData/ActorStateData.h"
 #include "../Physical/Physical.h"
-#include "../Physics/CActorTechnicalData.h"
+#include "../Physics/ActorTechnicalData.h"
 #include "../../Equipment/EquipmentData/EquipmentEngineData.h"
 #include "../../Equipment/EquipmentData/EquipmentEnergyData.h"
 #include "../../Equipment/EquipmentData/EquipmentAirconditioningData.h"
@@ -183,14 +183,14 @@ namespace logic
 		///
 		///Metoda zwraca referencję na klasę bedącą opakowaniem fizyki
 		///
-		CActorTechnicalData & getTechnicalData();
+		ActorTechnicalData & getTechnicalData();
 
 		///
 		///Metoda ustawia referencję na klasę bedącą opakowaniem fizyki
 		///
 		///@param technical_data - referencja na opakowanie fizyki
 		///
-		void setTechnicalData (CActorTechnicalData & technical_data);
+		void setTechnicalData (ActorTechnicalData & technical_data);
 
 		///
 		///Metoda zwraca flagę, czy obiekt posiada silnik
@@ -443,7 +443,7 @@ namespace logic
 	protected:
 
 		CAnimSet *p_anim_set; //wskaźnik na obiekt klasy CAnimSet (zestaw animacji)
-		CActorTechnicalData m_technical_data; //opakowanie fizyki
+		ActorTechnicalData m_technical_data; //opakowanie fizyki
 		EquipmentEngineData m_engine_data; //opakowanie funkcjonalności silnika
 		EquipmentEnergyData m_energy_data; //opakowanie funkcjonalności energii
 		EquipmentAirconditioningData m_airconditiong_data; //opakowanie funkcjonalności klimatyzatora

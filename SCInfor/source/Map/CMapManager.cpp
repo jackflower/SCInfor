@@ -12,7 +12,7 @@
 #include "../Rendering/Drawable/CDrawableManager.h"
 //#include "../Rendering/Camera/CCamera.h"
 #include "../ResourceManager/CResourceManager.h"
-//#include "../Logic/CPlayer.h"
+//#include "../Logic/Player.h"
 //#include "../Logic/CPlayerManager.h"
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
