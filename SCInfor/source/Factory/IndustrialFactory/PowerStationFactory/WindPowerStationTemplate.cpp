@@ -89,15 +89,15 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy WindTurbine
-	CWindPowerStation* WindPowerStationTemplate::create(std::wstring id)
+	WindPowerStation* WindPowerStationTemplate::create(std::wstring id)
 	{
-		CWindPowerStation* windpower_station = gPhysicalManager.CreateWindPowerStation(id);
+		WindPowerStation* windpower_station = gPhysicalManager.CreateWindPowerStation(id);
 		fill(windpower_station);
 		return windpower_station;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void WindPowerStationTemplate::fill(CWindPowerStation *p_windpower_station)
+	void WindPowerStationTemplate::fill(WindPowerStation *p_windpower_station)
 	{
 		if(p_windpower_station)
 		{
@@ -124,7 +124,7 @@ namespace factory
 
 					//inicjujemy wskaźnik na składową - wskaźnik na obiekt wzorzeca dla klasy WindTurbineTemplate
 					p_windpower_station->setWindTurbine(p_templ_windturbine->create(L""));
-					//przekazanie wskaźnikowi na klasę CWindPowerStation informacji o wzorcu obiektu
+					//przekazanie wskaźnikowi na klasę WindPowerStation informacji o wzorcu obiektu
 					p_windpower_station->getWindTurbine()->SetTemplate(p_templ_windturbine);
 					//decorate
 					p_windpower_station->getWindTurbine()->setSmoothing(true);

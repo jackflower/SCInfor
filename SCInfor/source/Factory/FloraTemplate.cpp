@@ -59,7 +59,7 @@ namespace factory
 		if (!ActorTemplate::load(xml))
 			return false;
 
-		//gdy w klasie CFlora bydą dodawane pola
+		//gdy w klasie Flora bydą dodawane pola
 		//to tutaj, w klasie jej fabryki,
 		//należay utworzyć takie same pola oraz je uwzględnić
 
@@ -73,16 +73,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CFlora
-	CFlora *FloraTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy Flora
+	Flora *FloraTemplate::create(std::wstring id)
 	{
-		CFlora *flora = gPhysicalManager.CreateFlora(id);
+		Flora *flora = gPhysicalManager.CreateFlora(id);
 		fill(flora);
 		return flora;
 	}
 
-	//Wirtualna metoda wypełniająca danymi obiekt klasy CFlora
-	void FloraTemplate::fill(CFlora *flora)
+	//Wirtualna metoda wypełniająca danymi obiekt klasy Flora
+	void FloraTemplate::fill(Flora *flora)
 	{
 		ActorTemplate::fill(flora);
 		//ewentualnie reszta

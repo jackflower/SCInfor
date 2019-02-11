@@ -440,8 +440,8 @@ namespace resource
 		//		- VentilatorTemplate					->tworzy->	Ventilator
 		//		- WindTurbineTemplate					->tworzy->	WindTurbine
 		//		- SolarCellTemplate					->tworzy->	SolarCell
-		//		- WindPowerStationTemplate				->tworzy->	CWindPowerStation
-		//		- WindPowerStationMultipledTemplate	->tworzy->	CWindPowerStationMultipled
+		//		- WindPowerStationTemplate				->tworzy->	WindPowerStation
+		//		- WindPowerStationMultipledTemplate	->tworzy->	WindPowerStationMultipled
 		//		- GroundWorkTemplate					->tworzy->	CGroundWork
 
 		//		- GroundTemplate						->tworzy->	CGround

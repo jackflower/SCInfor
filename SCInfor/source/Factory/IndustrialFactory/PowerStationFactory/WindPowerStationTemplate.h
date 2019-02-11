@@ -7,7 +7,7 @@
 #ifndef H_WIND_POWER_STATION_TEMPLATE_JACK
 #define H_WIND_POWER_STATION_TEMPLATE_JACK
 
-#include "../../../Logic/Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
+#include "../../../Logic/Industrial/PowerStation/WindPowerStation/WindPowerStation.h"
 #include "../../EquipmentFactory/IndustrialFactory/PowerModuleFactory/WindTurbineTemplate.h"
 #include "PowerStationTemplate.h"
 
@@ -58,18 +58,18 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CWindPowerStation
+		///Metoda tworzy obiekt klasy WindPowerStation
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CWindPowerStation *create(std::wstring id = L"");
+		WindPowerStation *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_windpower_station - wskaźnik na obiekt klasy CWindPowerStation
+		///@param *p_windpower_station - wskaźnik na obiekt klasy WindPowerStation
 		///
-		virtual void fill(CWindPowerStation *p_windpower_station);
+		virtual void fill(WindPowerStation *p_windpower_station);
 
 
 		//metody  p o m o c n i c z e

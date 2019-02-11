@@ -8,7 +8,7 @@
 #define H_WIND_POWER_STATION_MULTIPLED_TEMPLATE_JACK
 
 #include "WindPowerStationTemplate.h"
-#include "../../../Logic/Industrial/PowerStation/WindPowerStation/CWindPowerStationMultipled.h"
+#include "../../../Logic/Industrial/PowerStation/WindPowerStation/WindPowerStationMultipled.h"
 
 namespace factory
 {
@@ -56,18 +56,18 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CWindPowerStationMultipled
+		///Metoda tworzy obiekt klasy WindPowerStationMultipled
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CWindPowerStationMultipled *create(std::wstring id = L"");
+		WindPowerStationMultipled *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wype≥niajπca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_windpower_station_multipled - wskaünik na obiekt klasy CWindPowerStationMultipled
+		///@param *p_windpower_station_multipled - wskaünik na obiekt klasy WindPowerStationMultipled
 		///
-		virtual void fill(CWindPowerStationMultipled *p_windpower_station_multipled);
+		virtual void fill(WindPowerStationMultipled *p_windpower_station_multipled);
 
 	private:
 

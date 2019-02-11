@@ -390,33 +390,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Logic\Flora\CFlora.cpp">
-      <Filter>source\Logic\Flora</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Industrial\PowerStation\CPowerStation.cpp">
-      <Filter>source\Logic\Industrial\PowerStation</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Industrial\PowerStation\CoalPowerPlant\CCoalPowerPlant.cpp">
-      <Filter>source\Logic\Industrial\PowerStation\CoalPowerPlant</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Industrial\PowerStation\Hydroelectric\CHydroelectric.cpp">
-      <Filter>source\Logic\Industrial\PowerStation\Hydroelectric</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Industrial\PowerStation\NuclearPowerPlant\CNuclearPowerPlant.cpp">
-      <Filter>source\Logic\Industrial\PowerStation\NuclearPowerPlant</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Industrial\PowerStation\SolarPowerStation\CSolarPowerStation.cpp">
-      <Filter>source\Logic\Industrial\PowerStation\SolarPowerStation</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Industrial\PowerStation\SuppliedDieselPower\CSuppliedDieselPower.cpp">
-      <Filter>source\Logic\Industrial\PowerStation\SuppliedDieselPower</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStation.cpp">
-      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStationMultipled.cpp">
-      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
-    </ClCompile>
     <ClCompile Include="source\Logic\Monster\CMonster.cpp">
       <Filter>source\Logic\Monster</Filter>
     </ClCompile>
@@ -1002,6 +975,33 @@
     <ClCompile Include="source\Logic\Energetics\RelayStationData\SlotsRateData.cpp">
       <Filter>source\Logic\Energetics\RelayStationData</Filter>
     </ClCompile>
+    <ClCompile Include="source\Logic\Flora\Flora.cpp">
+      <Filter>source\Logic\Flora</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\CoalPowerPlant\CoalPowerPlant.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\CoalPowerPlant</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\Hydroelectric\Hydroelectric.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\Hydroelectric</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\NuclearPowerPlant\NuclearPowerPlant.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\NuclearPowerPlant</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\SolarPowerStation\SolarPowerStation.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\SolarPowerStation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\SuppliedDieselPower\SuppliedDieselPower.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\SuppliedDieselPower</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\WindPowerStation\WindPowerStation.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\WindPowerStation\WindPowerStationMultipled.cpp">
+      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Industrial\PowerStation\PowerStation.cpp">
+      <Filter>source\Logic\Industrial\PowerStation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1084,35 +1084,8 @@
     <ClInclude Include="source\Logic\Energetics\PowerRelay\EPowerRelayStationState.h">
       <Filter>source\Logic\Energetics\PowerRelay</Filter>
     </ClInclude>
-    <ClInclude Include="source\Logic\Flora\CFlora.h">
-      <Filter>source\Logic\Flora</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Industrial\PowerStation\CPowerStation.h">
-      <Filter>source\Logic\Industrial\PowerStation</Filter>
-    </ClInclude>
     <ClInclude Include="source\Logic\Industrial\PowerStation\EWindPowerStationState.h">
       <Filter>source\Logic\Industrial\PowerStation</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Industrial\PowerStation\CoalPowerPlant\CCoalPowerPlant.h">
-      <Filter>source\Logic\Industrial\PowerStation\CoalPowerPlant</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Industrial\PowerStation\Hydroelectric\CHydroelectric.h">
-      <Filter>source\Logic\Industrial\PowerStation\Hydroelectric</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Industrial\PowerStation\NuclearPowerPlant\CNuclearPowerPlant.h">
-      <Filter>source\Logic\Industrial\PowerStation\NuclearPowerPlant</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Industrial\PowerStation\SolarPowerStation\CSolarPowerStation.h">
-      <Filter>source\Logic\Industrial\PowerStation\SolarPowerStation</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Industrial\PowerStation\SuppliedDieselPower\CSuppliedDieselPower.h">
-      <Filter>source\Logic\Industrial\PowerStation\SuppliedDieselPower</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStation.h">
-      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Industrial\PowerStation\WindPowerStation\CWindPowerStationMultipled.h">
-      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
     </ClInclude>
     <ClInclude Include="source\Logic\Monster\CMonster.h">
       <Filter>source\Logic\Monster</Filter>
@@ -1758,6 +1731,33 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Energetics\RelayStationData\SlotsRateData.h">
       <Filter>source\Logic\Energetics\RelayStationData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Flora\Flora.h">
+      <Filter>source\Logic\Flora</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\CoalPowerPlant\CoalPowerPlant.h">
+      <Filter>source\Logic\Industrial\PowerStation\CoalPowerPlant</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\Hydroelectric\Hydroelectric.h">
+      <Filter>source\Logic\Industrial\PowerStation\Hydroelectric</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\NuclearPowerPlant\NuclearPowerPlant.h">
+      <Filter>source\Logic\Industrial\PowerStation\NuclearPowerPlant</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\SolarPowerStation\SolarPowerStation.h">
+      <Filter>source\Logic\Industrial\PowerStation\SolarPowerStation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\SuppliedDieselPower\SuppliedDieselPower.h">
+      <Filter>source\Logic\Industrial\PowerStation\SuppliedDieselPower</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\WindPowerStation\WindPowerStation.h">
+      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\WindPowerStation\WindPowerStationMultipled.h">
+      <Filter>source\Logic\Industrial\PowerStation\WindPowerStation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Industrial\PowerStation\PowerStation.h">
+      <Filter>source\Logic\Industrial\PowerStation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

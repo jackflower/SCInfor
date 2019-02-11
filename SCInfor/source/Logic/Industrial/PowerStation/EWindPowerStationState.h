@@ -1,5 +1,5 @@
-// ________________________________________________________________
-//| EWindPowerStationState.h - wyliczenie stanów CWindPowerStation |
+ï»¿// ________________________________________________________________
+//| EWindPowerStationState.h - wyliczenie stanÃ³w WindPowerStation |
 //| Jack Flower - August 2014                                      |
 //|________________________________________________________________|
 //
@@ -12,7 +12,7 @@ namespace logic
 	namespace powerstation
 	{
 		///
-		///Wyliczenie stanów dla obiektu CWindPowerStation
+		///Wyliczenie stanÃ³w dla obiektu WindPowerStation
 		///
 		enum EWindPowerStationState
 		{

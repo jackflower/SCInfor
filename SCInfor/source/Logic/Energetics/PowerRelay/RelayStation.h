@@ -8,7 +8,7 @@
 #define H_RELAY_STATION_JACK
 
 #include "../../Actor/Actor.h"
-#include "../../Industrial/PowerStation/CPowerStation.h"
+#include "../../Industrial/PowerStation/PowerStation.h"
 #include "../../Communication/Communication.h"
 
 using namespace logic::powerstation;

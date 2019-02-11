@@ -5,7 +5,7 @@
 //
 
 #include "WindPowerStationMultipledTemplate.h"
-#include "../../../Logic/Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
+#include "../../../Logic/Industrial/PowerStation/WindPowerStation/WindPowerStation.h"
 
 namespace factory
 {
@@ -74,17 +74,17 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CWindPowerStationMultipled
-	CWindPowerStationMultipled* WindPowerStationMultipledTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy WindPowerStationMultipled
+	WindPowerStationMultipled* WindPowerStationMultipledTemplate::create(std::wstring id)
 	{
-		//CWindPowerStationMultipled* windpower_station_multipled = gPhysicalManager.XXX(id);
+		//WindPowerStationMultipled* windpower_station_multipled = gPhysicalManager.XXX(id);
 		//fill(windpower_station);
 		//return windpower_station;
 		return NULL;//atrapa...
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy
-	void WindPowerStationMultipledTemplate::fill(CWindPowerStationMultipled *p_windpower_station_multipled)
+	void WindPowerStationMultipledTemplate::fill(WindPowerStationMultipled *p_windpower_station_multipled)
 	{
 		if (p_windpower_station_multipled)
 		{
@@ -106,7 +106,7 @@ namespace factory
 				//{
 					//inicjujemy wskaŸnik na sk³adow¹ - wskaŸnik na obiekt wzorzeca dla klasy WindTurbineTemplate
 				//	p_windpower_station->setWindTurbine(p_templ_windturbine->create(L""));
-					//przekazanie wskaŸnikowi na klasê CWindPowerStation informacji o wzorcu obiektu
+					//przekazanie wskaŸnikowi na klasê WindPowerStation informacji o wzorcu obiektu
 				//	p_windpower_station->getWindTurbine()->SetTemplate(p_templ_windturbine);
 				//}
 			//}

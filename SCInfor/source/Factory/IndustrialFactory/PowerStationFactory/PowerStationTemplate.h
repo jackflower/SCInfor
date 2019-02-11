@@ -8,7 +8,7 @@
 #define H_POWER_STATION_TEMPLATE_JACK
 
 #include "../../ActorTemplate.h"
-#include "../../../Logic/Industrial/PowerStation/CPowerStation.h"
+#include "../../../Logic/Industrial/PowerStation/PowerStation.h"
 #include "../../../Equipment/EquipmentData/EquipmentCommunicationData.h"
 
 ///
@@ -65,18 +65,18 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CPowerStation
+		///Metoda tworzy obiekt klasy PowerStation
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CPowerStation *create(std::wstring id = L"");
+		PowerStation *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_power_station - wskaźnik na obiekt klasy CPowerStation
+		///@param *p_power_station - wskaźnik na obiekt klasy PowerStation
 		///
-		virtual void fill(CPowerStation *p_power_station);
+		virtual void fill(PowerStation *p_power_station);
 
 	private:
 

@@ -14,7 +14,7 @@
 #include "Player/CPlayer.h"
 #include "Bullet/Bullet.h"
 #include "Monster/CMonster.h"
-#include "Flora/CFlora.h"
+#include "Flora/Flora.h"
 #include "Unit/CombatUnit/Robot/CRobot.h"
 #include "../Equipment/Engine/Engine.h"
 #include "../Equipment/Engine/FuelTank/FuelTank.h"
@@ -31,9 +31,9 @@
 #include "../Equipment/Lightingequipment/LightingEquipment.h"
 #include "../Equipment/Industrial/PowerModuleType/WindTurbine.h"
 #include "../Equipment/Industrial/PowerModuleType/SolarCell.h"
-#include "Industrial/PowerStation//CPowerStation.h"
-#include "Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
-#include "Industrial/PowerStation/WindPowerStation/CWindPowerStationMultipled.h"
+#include "Industrial/PowerStation//PowerStation.h"
+#include "Industrial/PowerStation/WindPowerStation/WindPowerStation.h"
+#include "Industrial/PowerStation/WindPowerStation/WindPowerStationMultipled.h"
 #include "Energetics/PowerRelay/RelayStation.h"
 #include "Energetics/PowerRelay/PowerRelayStation.h"
 #include "Energetics/PowerRelay/SlotsRate.h"
@@ -184,11 +184,11 @@ namespace logic
 		return create<CMonster>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CFlora i zwraca wskaünik na ten obiekt
-	CFlora *CPhysicalManager::CreateFlora(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Flora i zwraca wskaünik na ten obiekt
+	Flora *CPhysicalManager::CreateFlora(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CFlora created\n");
-		return create<CFlora>(uniqueId);
+		fprintf(stderr, "Flora created\n");
+		return create<Flora>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy FuelBar i zwraca wskaünik na ten obiekt
@@ -269,25 +269,25 @@ namespace logic
 		return create<SolarCell>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CPowerStation i zwraca wskaünik na ten obiekt
-	CPowerStation *CPhysicalManager::CreatePowerStation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy PowerStation i zwraca wskaünik na ten obiekt
+	PowerStation *CPhysicalManager::CreatePowerStation(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CPowerStation created\n");
-		return create<CPowerStation>(uniqueId);
+		fprintf(stderr, "PowerStation created\n");
+		return create<PowerStation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CWindPowerStation i zwraca wskaünik na ten obiekt
-	CWindPowerStation *CPhysicalManager::CreateWindPowerStation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy WindPowerStation i zwraca wskaünik na ten obiekt
+	WindPowerStation *CPhysicalManager::CreateWindPowerStation(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CWindPowerStation created\n");
-		return create<CWindPowerStation>(uniqueId);
+		fprintf(stderr, "WindPowerStation created\n");
+		return create<WindPowerStation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CWindPowerStationMultipled i zwraca wskaünik na ten obiekt
-	CWindPowerStationMultipled *CPhysicalManager::CreateWindPowerStationMultipled(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy WindPowerStationMultipled i zwraca wskaünik na ten obiekt
+	WindPowerStationMultipled *CPhysicalManager::CreateWindPowerStationMultipled(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CWindPowerStationMultipled created\n");
-		return create<CWindPowerStationMultipled>(uniqueId);
+		fprintf(stderr, "WindPowerStationMultipled created\n");
+		return create<WindPowerStationMultipled>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy RelayStation i zwraca wskaünik na ten obiekt
@@ -400,15 +400,15 @@ namespace logic
 
 	//metody p o m o c n i c z e	implementacja
 
-	//Metoda zwraca sta≥π referencjÍ na kontener, w ktÛrym sπ wskaüniki na obiekty klasy CWindPowerStation
+	//Metoda zwraca sta≥π referencjÍ na kontener, w ktÛrym sπ wskaüniki na obiekty klasy WindPowerStation
 	//elektrownie wiatrowe
-	const std::vector<CWindPowerStation*>& CPhysicalManager::GetWindPowerstations()
+	const std::vector<WindPowerStation*>& CPhysicalManager::GetWindPowerstations()
 	{
 		std::vector<CPhysical*>::iterator	it;	//iterator tego kontenera
 		for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		{
 			if ((*it)->GetCategory() == PHYSICAL_WINDPOWERSTATION)
-				m_wind_powerstation.push_back((CWindPowerStation*)*it);
+				m_wind_powerstation.push_back((WindPowerStation*)*it);
 		}
 		return m_wind_powerstation;
 	}

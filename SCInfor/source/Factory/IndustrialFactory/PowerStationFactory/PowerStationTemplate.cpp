@@ -89,16 +89,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CPowerStation
-	CPowerStation *PowerStationTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy PowerStation
+	PowerStation *PowerStationTemplate::create(std::wstring id)
 	{
-		CPowerStation *power_station = gPhysicalManager.CreatePowerStation(id);
+		PowerStation *power_station = gPhysicalManager.CreatePowerStation(id);
 		fill(power_station);
 		return power_station;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void PowerStationTemplate::fill(CPowerStation *p_power_station)
+	void PowerStationTemplate::fill(PowerStation *p_power_station)
 	{
 		if(p_power_station)
 		{
@@ -122,7 +122,7 @@ namespace factory
 			p_power_station->SetCategory(PHYSICAL_POWERSTATION);
 
 			//pola tej klasy wzorca
-			p_power_station->SetPowerStationName(m_templ_power_station_name);
+			p_power_station->setPowerStationName(m_templ_power_station_name);
 			p_power_station->setEnergyCapacitor(m_templ_energy_capacitor);
 			p_power_station->setAmountPowerModules(m_templ_amount_power_modules);
 			p_power_station->setUseCommunication(mm_templ_communication_data.getUseEquipment());

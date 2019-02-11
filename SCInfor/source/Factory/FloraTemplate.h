@@ -8,7 +8,7 @@
 #define H_FLORA_TEMPLATE_JACK
 
 #include "ActorTemplate.h"
-#include "../Logic/Flora/CFlora.h"
+#include "../Logic/Flora/Flora.h"
 
 ///
 ///Forward declaration
@@ -64,22 +64,22 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CFlora
+		///Metoda tworzy obiekt klasy Flora
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CFlora *create(std::wstring id = L"");
+		Flora *create(std::wstring id = L"");
 
 	private:
 
 		///
-		///Wirtualna metoda wypełniająca danymi obiekt klasy CFlora
+		///Wirtualna metoda wypełniająca danymi obiekt klasy Flora
 		///
-		///@param *flora - wskaźnik na obiekt klasy CFlora
+		///@param *flora - wskaźnik na obiekt klasy Flora
 		///
-		virtual void fill(CFlora *flora);
+		virtual void fill(Flora *flora);
 
-		//gdy w klasie CFlora bydą dodawane pola
+		//gdy w klasie Flora bydą dodawane pola
 		//to tutaj, w klasie jej fabryki,
 		//należay utworzyć takie same pola oraz je uwzględnić
 

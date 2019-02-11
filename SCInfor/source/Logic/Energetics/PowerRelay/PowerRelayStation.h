@@ -12,8 +12,8 @@
 #include "SlotsRate.h"
 #include "../RelayStationData/SlotsRateData.h"
 #include "../../Actor/Actor.h"
-#include "../../Industrial/PowerStation/CPowerStation.h"
-#include "../../Industrial/PowerStation/WindPowerStation/CWindPowerStation.h"
+#include "../../Industrial/PowerStation/PowerStation.h"
+#include "../../Industrial/PowerStation/WindPowerStation/WindPowerStation.h"
 #include "../../Communication/Communication.h"
 #include "../../../Equipment/Energy/Battery/Battery.h"
 #include "../../../Equipment/EquipmentData/EquipmentBatteryData.h"
@@ -228,7 +228,7 @@ namespace logic
 
 		private:
 
-			typedef std::vector<CWindPowerStation*>	PowerstationList; //definicja typu - kontener na elektrownie
+			typedef std::vector<WindPowerStation*>	PowerstationList; //definicja typu - kontener na elektrownie
 			
 			PowerstationList m_powerstations; //elektrownie
 			EPowerRelayStationState m_powerrelaystation_state;//wyliczenie stanów obiektu - przekaźnika energii elektrycznej

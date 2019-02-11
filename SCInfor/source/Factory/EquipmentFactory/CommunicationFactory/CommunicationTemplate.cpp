@@ -76,7 +76,7 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CPowerStation
+	//Metoda tworzy obiekt klasy PowerStation
 	Communication* CommunicationTemplate::create(std::wstring id)
 	{
 		Communication *communication = gPhysicalManager.CreateCommunication(id);

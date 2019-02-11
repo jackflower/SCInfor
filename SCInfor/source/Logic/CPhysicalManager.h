@@ -27,7 +27,7 @@ namespace logic
 	class CPlayer;
 	class Bullet;
 	class CMonster;
-	class CFlora;
+	class Flora;
 	class CPhysicalInfo;
 	namespace unit
 	{
@@ -35,9 +35,9 @@ namespace logic
 	}
 	namespace powerstation
 	{
-		class CPowerStation;
-		class CWindPowerStation;
-		class CWindPowerStationMultipled;
+		class PowerStation;
+		class WindPowerStation;
+		class WindPowerStationMultipled;
 	}
 	namespace energetics
 	{
@@ -205,11 +205,11 @@ namespace logic
 		CMonster *CreateMonster(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CFlora i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Flora i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CFlora *CreateFlora(const std::wstring &uniqueId = L"");
+		Flora *CreateFlora(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy FuelBar i zwraca wskaünik na ten obiekt
@@ -289,25 +289,25 @@ namespace logic
 		SolarCell *CreateSolarCell(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CPowerStation i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy PowerStation i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CPowerStation *CreatePowerStation(const std::wstring &uniqueId = L"");
+		PowerStation *CreatePowerStation(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CWindPowerStation i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy WindPowerStation i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CWindPowerStation *CreateWindPowerStation(const std::wstring &uniqueId = L"");
+		WindPowerStation *CreateWindPowerStation(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CWindPowerStationMultipled i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy WindPowerStationMultipled i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CWindPowerStationMultipled *CreateWindPowerStationMultipled(const std::wstring &uniqueId = L"");
+		WindPowerStationMultipled *CreateWindPowerStationMultipled(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy RelayStation i zwraca wskaünik na ten obiekt
@@ -393,10 +393,10 @@ namespace logic
 		//metody p o m o c n i c z e
 
 		///
-		///Metoda zwraca sta≥π referencjÍ na kontener, w ktÛrym sπ wskaüniki na obiekty klasy CWindPowerStation
+		///Metoda zwraca sta≥π referencjÍ na kontener, w ktÛrym sπ wskaüniki na obiekty klasy WindPowerStation
 		////elektrownie wiatrowe
 		///
-		const std::vector<CWindPowerStation*>& GetWindPowerstations();
+		const std::vector<WindPowerStation*>& GetWindPowerstations();
 
 		///
 		///Wirtualny interfejs - implementacja
@@ -413,7 +413,7 @@ namespace logic
 	    
 		std::map<std::wstring, CPhysical*>	m_named_physicals;	//kontener <map> na nazwane obiekty klasy CPhysical
 		std::vector<CPhysical*>				m_physicals;		//kontener <vector> na wskaüniki na obiekty klasy CPhysical
-		std::vector<CWindPowerStation*>		m_wind_powerstation;		//elektrownie wiatrowa
+		std::vector<WindPowerStation*>		m_wind_powerstation;		//elektrownie wiatrowa
 		//
 		//Prywatna metoda sprawdzajπca jaki identyfikator nadaÊ obiektowi przy utworzeniu
 		//
