@@ -142,8 +142,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetVentilatorBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetVentilatorHeadDefaultAnim());
+				setAnimationBody(p_anim_set->GetVentilatorBodyDefaultAnim());
+				setAnimationHead(p_anim_set->GetVentilatorHeadDefaultAnim());
 			}
 			break;
 		}
@@ -151,8 +151,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetVentilatorBodyDamagetAnim());
-				SetAnimationHead(p_anim_set->GetVentilatorHeadDamagetAnim());
+				setAnimationBody(p_anim_set->GetVentilatorBodyDamagetAnim());
+				setAnimationHead(p_anim_set->GetVentilatorHeadDamagetAnim());
 			}
 			break;
 		}

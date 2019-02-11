@@ -150,11 +150,11 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetEnergyBodyDefaultAnim()!= NULL)
-					p_energy->SetAnimationBody(p_templ_animations->GetEnergyBodyDefaultAnim());
+					p_energy->setAnimationBody(p_templ_animations->GetEnergyBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetEnergyHeadDefaultAnim()!= NULL)
-					p_energy->SetAnimationHead(p_templ_animations->GetEnergyHeadDefaultAnim());
+					p_energy->setAnimationHead(p_templ_animations->GetEnergyHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca
@@ -180,7 +180,7 @@ namespace factory
 					//pobieramy składową fueltank i wzorzec wypełnia wskaźnik danymi
 					p_energy->setEnergyTank(p_templ_energy_tank->create(L""));
 					//przekazanie wskaźnikowi na klasę EnergyTank informacji o wzorcu
-					p_energy->getEnergyTank()->SetTemplate(p_templ_energy_tank);
+					p_energy->getEnergyTank()->setTemplate(p_templ_energy_tank);
 					//decorator
 					p_energy->getEnergyTank()->setSmoothing(true);
 				}
@@ -194,7 +194,7 @@ namespace factory
 					//pobieramy składową battery i wzorzec wypełnia wskaźnik danymi
 					p_energy->setBattery(p_templ_battery->create(L""));
 					//przekazanie wskaźnikowi na klasę Battery informacji o wzorcu
-					p_energy->getBattery()->SetTemplate(p_templ_battery);
+					p_energy->getBattery()->setTemplate(p_templ_battery);
 					//decorator
 					p_energy->getBattery()->setSmoothing(true);
 				}

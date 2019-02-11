@@ -68,7 +68,7 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Wirtualna metoda tworzenie obiektów pochodnych klasy CPhysical
+		///Wirtualna metoda tworzenie obiektów pochodnych klasy Physical
 		///
 		///implementowana przez w pełni konkretne podklasy
 		///

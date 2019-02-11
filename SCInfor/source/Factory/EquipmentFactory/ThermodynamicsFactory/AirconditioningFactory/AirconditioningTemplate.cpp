@@ -129,11 +129,11 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetAirconditioningBodyDefaultAnim() != NULL)
-					p_airconditioning->SetAnimationBody(p_templ_animations->GetAirconditioningBodyDefaultAnim());
+					p_airconditioning->setAnimationBody(p_templ_animations->GetAirconditioningBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetAirconditioningHeadDefaultAnim() != NULL)
-					p_airconditioning->SetAnimationHead(p_templ_animations->GetAirconditioningHeadDefaultAnim());
+					p_airconditioning->setAnimationHead(p_templ_animations->GetAirconditioningHeadDefaultAnim());
 			}
 
 			//Metoda łądujaca dane ładuje poniższe wartości z xml'a,
@@ -175,7 +175,7 @@ namespace factory
 					//pobieramy składową thermalinsulation i wzorzec wypełnia wskaźnik danymi
 					p_airconditioning->setThermalInsulation(p_templ_thermal_insulation->create(L""));//nazwa z xml'a
 					//przekazanie wskaźnikowi na klasę Airconditioning informacji o wzorcu
-					p_airconditioning->getThermalInsulation()->SetTemplate(p_templ_thermal_insulation);
+					p_airconditioning->getThermalInsulation()->setTemplate(p_templ_thermal_insulation);
 					//decorator
 					p_airconditioning->getThermalInsulation()->setSmoothing(true);
 				}

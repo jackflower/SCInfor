@@ -375,28 +375,28 @@ void game::Game::gameTest()
 
 	//p h y s i c a l - obiekt testowy - mam być tylko jeden tej klasy (respawn używa innych)
 	PhysicalTemplate *p_enemy_factory = gResourceManager.GetPhysicalTemplate(file_name);
-	CPhysical *p_enemy = p_enemy_factory->create(L"ID_Enemy");
+	Physical *p_enemy = p_enemy_factory->create(L"ID_Enemy");
 	if (p_enemy)
 	{
-		p_enemy->SetPosition(300, 100);
-		p_enemy->SetRotationHead(45.f);
-		//p_enemy->SetScaleBody(2.5f, 2.5f);
-		//p_enemy->SetScaleHead(2.5f, 2.5f);
-		p_enemy->SetScale(2.5f);
+		p_enemy->setPosition(300, 100);
+		p_enemy->setRotationHead(45.f);
+		//p_enemy->setScaleBody(2.5f, 2.5f);
+		//p_enemy->setScaleHead(2.5f, 2.5f);
+		p_enemy->setScale(2.5f);
 		p_enemy->setSmoothing(true);
 		//do testów...jak znalazł...
-		//p_enemy->GetDisplayableHead()->setVisible(false);
-		//p_enemy->GetDisplayableHeadShadow()->setVisible(false);
-		//p_enemy->GetDisplayableBody()->setVisible(false);
-		//p_enemy->GetDisplayableBodyShadow()->setVisible(false);
+		//p_enemy->getDisplayableHead()->setVisible(false);
+		//p_enemy->getDisplayableHeadShadow()->setVisible(false);
+		//p_enemy->getDisplayableBody()->setVisible(false);
+		//p_enemy->getDisplayableBodyShadow()->setVisible(false);
 		//Play(); Stop()...
-		//p_enemy->GetDisplayableBody()->GetAnimationState()->
+		//p_enemy->getDisplayableBody()->GetAnimationState()->
 	}
 
 	//for (int i = 0; i < 5; i++)
 	//{
-	//	CPhysical *p_object = p_enemy_factory->create(L"ID_Object");
-	//	p_object->SetPosition((i * 64)+200, 520);
+	//	Physical *p_object = p_enemy_factory->create(L"ID_Object");
+	//	p_object->setPosition((i * 64)+200, 520);
 	//	p_object->setSmoothing(true);
 	//}
 

@@ -8,7 +8,7 @@
 #define H_ACTOR_JACK
 
 #include "ActorStateData/ActorStateData.h"
-#include "../Physical/CPhysical.h"
+#include "../Physical/Physical.h"
 #include "../Physics/CActorTechnicalData.h"
 #include "../../Equipment/EquipmentData/EquipmentEngineData.h"
 #include "../../Equipment/EquipmentData/EquipmentEnergyData.h"
@@ -69,7 +69,7 @@ namespace logic
 	///
 	///Klasa reprezentuje klasę bazową, z której dziedziczą wszystkie obiekty sceny np. Enemy, Player, etc...
 	///
-	class Actor : public CPhysical
+	class Actor : public Physical
 	{
 		RTTI_DECL;
 

@@ -32,10 +32,10 @@ namespace equipment
 			m_ammo_empty_message(false),
 			m_reserve_ammo(0)
 		{
-			SetZIndexBody(Z_PHYSICAL_AMMO_BODY);
-			SetZIndexShadowBody(Z_PHYSICAL_SHADOW_AMMO_BODY);
-			SetZIndexHead(Z_PHYSICAL_AMMO_HEAD);
-			SetZIndexShadowHead(Z_PHYSICAL_SHADOW_AMMO_HEAD);
+			setZIndexBody(Z_PHYSICAL_AMMO_BODY);
+			setZIndexShadowBody(Z_PHYSICAL_SHADOW_AMMO_BODY);
+			setZIndexHead(Z_PHYSICAL_AMMO_HEAD);
+			setZIndexShadowHead(Z_PHYSICAL_SHADOW_AMMO_HEAD);
 		}
 
 		//Chroniony konstruktor kopiujący
@@ -50,6 +50,10 @@ namespace equipment
 			m_ammo_empty_message(AmmoCopy.m_ammo_empty_message),
 			m_reserve_ammo(AmmoCopy.m_reserve_ammo)
 		{
+			setZIndexBody(Z_PHYSICAL_AMMO_BODY);
+			setZIndexShadowBody(Z_PHYSICAL_SHADOW_AMMO_BODY);
+			setZIndexHead(Z_PHYSICAL_AMMO_HEAD);
+			setZIndexShadowHead(Z_PHYSICAL_SHADOW_AMMO_HEAD);
 		}
 
 		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
@@ -222,7 +226,7 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetAmmoDefaultAnim());
+					setAnimationBody(p_anim_set->GetAmmoDefaultAnim());
 					//head - not used
 				}
 				break;
@@ -231,7 +235,7 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetAmmoReserveAnim());
+					setAnimationBody(p_anim_set->GetAmmoReserveAnim());
 					//head - not used
 				}
 				break;
@@ -240,7 +244,7 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetAmmoEmptyAnim());
+					setAnimationBody(p_anim_set->GetAmmoEmptyAnim());
 					//head - not used
 				}
 				break;
@@ -249,7 +253,7 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetAmmoDamageAnim());
+					setAnimationBody(p_anim_set->GetAmmoDamageAnim());
 					//head - not used
 				}
 				break;
@@ -263,7 +267,7 @@ namespace equipment
 		void Ammo::update(float dt)
 		{
 			//aktualizacja shadow engine
-			CPhysical::UpdateShadow(dt);
+			Physical::updateShadow(dt);
 			
 			//jeśli ilość amunicji w magazynku jest większa od ilości dla rezerwy
 			if(m_ammo > m_reserve_ammo)

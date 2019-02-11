@@ -390,14 +390,8 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Logic\Physical\CPhysical.cpp">
-      <Filter>source\Logic\Physical</Filter>
-    </ClCompile>
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Physical\PhysicalInfo\CPhysicalInfo.cpp">
-      <Filter>source\Logic\Physical\PhysicalInfo</Filter>
     </ClCompile>
     <ClCompile Include="source\Logic\Player\CPlayer.cpp">
       <Filter>source\Logic\Player</Filter>
@@ -1002,6 +996,12 @@
     <ClCompile Include="source\Logic\Physical\PhysicalData\PhysicalData.cpp">
       <Filter>source\Logic\Physical\PhysicalData</Filter>
     </ClCompile>
+    <ClCompile Include="source\Logic\Physical\PhysicalInfo\PhysicalInfo.cpp">
+      <Filter>source\Logic\Physical\PhysicalInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Physical\Physical.cpp">
+      <Filter>source\Logic\Physical</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1087,9 +1087,6 @@
     <ClInclude Include="source\Logic\Industrial\PowerStation\EWindPowerStationState.h">
       <Filter>source\Logic\Industrial\PowerStation</Filter>
     </ClInclude>
-    <ClInclude Include="source\Logic\Physical\CPhysical.h">
-      <Filter>source\Logic\Physical</Filter>
-    </ClInclude>
     <ClInclude Include="source\Logic\Physical\ECollisionShape.h">
       <Filter>source\Logic\Physical</Filter>
     </ClInclude>
@@ -1098,9 +1095,6 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Physical\PhysicalCategories.h">
       <Filter>source\Logic\Physical</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Physical\PhysicalInfo\CPhysicalInfo.h">
-      <Filter>source\Logic\Physical\PhysicalInfo</Filter>
     </ClInclude>
     <ClInclude Include="source\Logic\Player\CPlayer.h">
       <Filter>source\Logic\Player</Filter>
@@ -1758,6 +1752,12 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Physical\PhysicalData\PhysicalData.h">
       <Filter>source\Logic\Physical\PhysicalData</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\PhysicalInfo\PhysicalInfo.h">
+      <Filter>source\Logic\Physical\PhysicalInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Physical\Physical.h">
+      <Filter>source\Logic\Physical</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

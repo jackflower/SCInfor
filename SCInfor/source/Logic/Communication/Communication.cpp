@@ -31,6 +31,7 @@ namespace logic
 			m_login_module(false),
 			m_networking(TYPE_DEFAULT)
 		{
+			//to do: layers
 		}
 
 		//Chroniony konstruktor kopiujący
@@ -47,6 +48,7 @@ namespace logic
 			m_login_module(CommunicationCopy.m_login_module),
 			m_networking(CommunicationCopy.m_networking)
 		{
+			//to do: layers
 		}
 
 		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
@@ -178,8 +180,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetCommunicationBodyDefaultAnim());
-					SetAnimationHead(p_anim_set->GetCommunicationHeadDefaultAnim());
+					setAnimationBody(p_anim_set->GetCommunicationBodyDefaultAnim());
+					setAnimationHead(p_anim_set->GetCommunicationHeadDefaultAnim());
 				}
 				break;
 			}
@@ -187,8 +189,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetCommunicationBodySearchAnim());
-					SetAnimationHead(p_anim_set->GetCommunicationHeadSearchAnim());
+					setAnimationBody(p_anim_set->GetCommunicationBodySearchAnim());
+					setAnimationHead(p_anim_set->GetCommunicationHeadSearchAnim());
 				}
 				break;
 			}
@@ -196,8 +198,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetCommunicationBodyLoginAnim());
-					SetAnimationHead(p_anim_set->GetCommunicationHeadLoginAnim());
+					setAnimationBody(p_anim_set->GetCommunicationBodyLoginAnim());
+					setAnimationHead(p_anim_set->GetCommunicationHeadLoginAnim());
 				}
 				break;
 			}
@@ -205,8 +207,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetCommunicationBodyAuthorizationAnim());
-					SetAnimationHead(p_anim_set->GetCommunicationHeadAuthorizationAnim());
+					setAnimationBody(p_anim_set->GetCommunicationBodyAuthorizationAnim());
+					setAnimationHead(p_anim_set->GetCommunicationHeadAuthorizationAnim());
 				}
 				break;
 			}
@@ -214,8 +216,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetCommunicationBodyUpdateAnim());
-					SetAnimationHead(p_anim_set->GetCommunicationHeadUpdateAnim());
+					setAnimationBody(p_anim_set->GetCommunicationBodyUpdateAnim());
+					setAnimationHead(p_anim_set->GetCommunicationHeadUpdateAnim());
 				}
 				break;
 			}
@@ -223,8 +225,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetCommunicationBodyDamageAnim());
-					SetAnimationHead(p_anim_set->GetCommunicationHeadDamageAnim());
+					setAnimationBody(p_anim_set->GetCommunicationBodyDamageAnim());
+					setAnimationHead(p_anim_set->GetCommunicationHeadDamageAnim());
 				}
 				break;
 			}
@@ -232,8 +234,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetCommunicationBodyDeathAnim());
-					SetAnimationHead(p_anim_set->GetCommunicationHeadDeathAnim());
+					setAnimationBody(p_anim_set->GetCommunicationBodyDeathAnim());
+					setAnimationHead(p_anim_set->GetCommunicationHeadDeathAnim());
 				}
 				break;
 			}
@@ -246,7 +248,7 @@ namespace logic
 		void Communication::update(float dt)
 		{
 			//aktualizacja shadow engine
-			CPhysical::update(dt);
+			Physical::update(dt);
 
 			//aktualizacja tylko przy włączonym urządzeniu
 			if (m_unit_controller.getState())

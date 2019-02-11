@@ -26,10 +26,10 @@ namespace equipment
 		m_energy_tank_rotor_speed(0.0f),
 		m_unit_controller(true)//urządzenie włączone
 	{
-		SetZIndexBody(Z_PHYSICAL_ENERGY_TANK_BODY);
-		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_TANK_BODY);
-		SetZIndexHead(Z_PHYSICAL_ENERGY_TANK_HEAD);
-		SetZIndexShadowHead(Z_PHYSICAL_SHADOW_ENERGY_TANK_HEAD);
+		setZIndexBody(Z_PHYSICAL_ENERGY_TANK_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_TANK_BODY);
+		setZIndexHead(Z_PHYSICAL_ENERGY_TANK_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_SHADOW_ENERGY_TANK_HEAD);
 	}
 
 	//Chroniony konstruktor kopiujący
@@ -43,6 +43,10 @@ namespace equipment
 		m_energy_tank_rotor_speed(EnergyTankCopy.m_energy_tank_rotor_speed),
 		m_unit_controller(EnergyTankCopy.m_unit_controller)
 	{
+		setZIndexBody(Z_PHYSICAL_ENERGY_TANK_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_TANK_BODY);
+		setZIndexHead(Z_PHYSICAL_ENERGY_TANK_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_SHADOW_ENERGY_TANK_HEAD);
 	}
 
 	//Destruktor wirtualny
@@ -144,8 +148,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEnergyTankBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetEnergyTankHeadDefaultAnim());
+				setAnimationBody(p_anim_set->GetEnergyTankBodyDefaultAnim());
+				setAnimationHead(p_anim_set->GetEnergyTankHeadDefaultAnim());
 			}
 			break;
 		}
@@ -153,8 +157,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEnergyTankBodyReserveAnim());
-				SetAnimationHead(p_anim_set->GetEnergyTankHeadReserveAnim());
+				setAnimationBody(p_anim_set->GetEnergyTankBodyReserveAnim());
+				setAnimationHead(p_anim_set->GetEnergyTankHeadReserveAnim());
 			}
 			break;
 		}
@@ -162,8 +166,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEnergyTankBodyEmptyAnim());
-				SetAnimationHead(p_anim_set->GetEnergyTankHeadEmptyAnim());
+				setAnimationBody(p_anim_set->GetEnergyTankBodyEmptyAnim());
+				setAnimationHead(p_anim_set->GetEnergyTankHeadEmptyAnim());
 			}
 			break;
 		}
@@ -171,8 +175,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEnergyTankBodyDamageAnim());
-				SetAnimationHead(p_anim_set->GetEnergyTankHeadDamageAnim());
+				setAnimationBody(p_anim_set->GetEnergyTankBodyDamageAnim());
+				setAnimationHead(p_anim_set->GetEnergyTankHeadDamageAnim());
 			}
 			break;
 		}
@@ -190,7 +194,7 @@ namespace equipment
 	//Wirtualna metoda aktualizująca obiekt
 	void EnergyTank::update(float dt)
 	{
-		UpdateShadow(dt); //aktualizacja shadow engine
+		updateShadow(dt); //aktualizacja shadow engine
 
 		if(m_unit_controller.getState())
 		{
@@ -200,7 +204,7 @@ namespace equipment
 				m_energy_tank_rotor_speed = (m_energy/m_energy_tank_capacity) *
 											 m_energy_tank_rotation_speed;
 
-			RotateHead(m_energy_tank_rotor_speed * dt);
+			rotateHead(m_energy_tank_rotor_speed * dt);
 			updateAnimations(dt);
 		}
 	}

@@ -10,7 +10,7 @@
 #include "CLogic.h"
 #include "../Game/Game.h"
 #include "../Logic/CPhysicalManager.h"
-#include "../Logic/Physical/CPhysical.h"
+#include "../Logic/Physical/Physical.h"
 
 #include "../Logic/CMapPhysicalManager.h"
 #include "../Map/MapPhysical/CMapPhysical.h"
@@ -64,8 +64,8 @@ namespace logic
 		//to do...
 
 		//testy obs≥ugi klawiatury
-		//do sta≥ej referencji podpinamy kontener ze wskaünikami na obiekty klasy CPhysical
-		//const std::vector<CPhysical*> &physicals = gPhysicalManager.GetPhysicals();
+		//do sta≥ej referencji podpinamy kontener ze wskaünikami na obiekty klasy Physical
+		//const std::vector<Physical*> &physicals = gPhysicalManager.GetPhysicals();
 		if (e.code == sf::Keyboard::W)
 		{
 			//for (unsigned int i = 0; i < physicals.size(); ++i)
@@ -139,11 +139,11 @@ namespace logic
 		//to do...
 	}
 
-	//Metoda aktualizuje wszystkie obiekty dziedziczπce po CPhysical
+	//Metoda aktualizuje wszystkie obiekty dziedziczπce po Physical
 	void CLogic::UpdatePhysicals(float secondsPassed)
 	{
-		//do sta≥ej referencji podpinamy kontener ze wskaünikami na obiekty klasy CPhysical
-		const std::vector<CPhysical*> &physicals = gPhysicalManager.GetPhysicals();
+		//do sta≥ej referencji podpinamy kontener ze wskaünikami na obiekty klasy Physical
+		const std::vector<Physical*> &physicals = gPhysicalManager.GetPhysicals();
 
 		//aktualizacja - wywo≥anie wirtualnej metody z logikπ
 		for (unsigned int i = 0; i < physicals.size(); ++i)
@@ -164,8 +164,8 @@ namespace logic
 		////2016 - czerwiec
 		////dodaÊ do kodu fabryk, wywo≥anie metody ustawiajacej kategoriÍ
 		////danego obiektu (metoda fill(Typ *pointer)
-		//std::vector<CPhysical*>				power;
-		//std::vector<CPhysical*>::iterator	it_power;
+		//std::vector<Physical*>				power;
+		//std::vector<Physical*>::iterator	it_power;
 		//for (unsigned int i = 0; i < physicals.size(); ++i)
 		//	if(physicals[i]->GetCategory() == PHYSICAL_POWERSTATION)
 		//		power.push_back(physicals[i]);

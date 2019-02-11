@@ -206,7 +206,7 @@ namespace logic
 	//Wirtualna metoda aktualizująca obiekt
 	void Bullet::update(float dt)
 	{
-		CPhysical::update(dt);
+		Physical::update(dt);
 		//this->kill();
 		//this->MarkForDelete();
 		//potrzebuję klasy CDetector...
@@ -226,7 +226,7 @@ namespace logic
 	//Wirtualna metoda aktualizująca obiekt
 	void Bullet::update(float _elapsedtime)
 	{
-		CPhysical::update(_elapsedtime);//aktualizcja
+		Physical::update(_elapsedtime);//aktualizcja
 
 		//obliczam drogę przebytą przez pocisk
 		m_road = sqrtf( ((GetPosition().x - GetInitial().x)*(GetPosition().x - GetInitial().x)) + 

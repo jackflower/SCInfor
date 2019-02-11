@@ -58,7 +58,7 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
 	bool GroundTemplate::load(CXml & xml)
 	{
-		//ładowanie danych klasy bazowej CPhysical
+		//ładowanie danych klasy bazowej Physical
 		if (!ActorTemplate::load(xml)) return false;
 		
 		//dane dla fizyki podłoża
@@ -102,7 +102,7 @@ namespace factory
 			ground->setThermalTransmittance(gRandom.Rndf(m_template_physicsground.getThermalTransmittance()));
 		}
 
-		ground->SetTemplate(this);
+		ground->setTemplate(this);
 	}
 
 	//Metoda zwraca współczynnik tarcia

@@ -99,11 +99,11 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetThermalInsulationBodyDefaultAnim() != NULL)
-					p_thermalinsulation->SetAnimationBody(p_templ_animations->GetThermalInsulationBodyDefaultAnim());
+					p_thermalinsulation->setAnimationBody(p_templ_animations->GetThermalInsulationBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetThermalInsulationHeadDefaultAnim() != NULL)
-					p_thermalinsulation->SetAnimationHead(p_templ_animations->GetThermalInsulationHeadDefaultAnim());
+					p_thermalinsulation->setAnimationHead(p_templ_animations->GetThermalInsulationHeadDefaultAnim());
 			}
 
 

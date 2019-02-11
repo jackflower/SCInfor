@@ -46,7 +46,7 @@ using namespace logic;
 namespace physicaldata
 {
 	///
-	///Klasa reprezentuje opakowanie funkcjonalności klasy CPhysical
+	///Klasa reprezentuje opakowanie funkcjonalności klasy Physical
 	///
 	class PhysicalData
 	{

@@ -7,7 +7,7 @@
 #ifndef H_BULLET_JACK
 #define H_BULLET_JACK
 
-#include "../Physical/CPhysical.h"
+#include "../Physical/Physical.h"
 #include "../Actor/Actor.h"
 
 namespace logic

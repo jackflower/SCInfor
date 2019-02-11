@@ -20,10 +20,10 @@ namespace logic
 		m_rotation_speed_body(0.0f),
 		m_rotation_speed_head(0.0f)
 	{
-		SetZIndexBody(Z_FLORA_BODY);
-		SetZIndexShadowBody(Z_FLORA_SHADOW_BODY);
-		SetZIndexHead(Z_FLORA_HEAD);
-		SetZIndexShadowHead(Z_FLORA_SHADOW_HEAD);
+		setZIndexBody(Z_FLORA_BODY);
+		setZIndexShadowBody(Z_FLORA_SHADOW_BODY);
+		setZIndexHead(Z_FLORA_HEAD);
+		setZIndexShadowHead(Z_FLORA_SHADOW_HEAD);
 	}
 
 	//Chroniony konstruktor kopiujący
@@ -33,10 +33,10 @@ namespace logic
 		m_rotation_speed_body(FloraCopy.m_rotation_speed_body),
 		m_rotation_speed_head(FloraCopy.m_rotation_speed_head)
 	{
-		SetZIndexBody(Z_FLORA_BODY);
-		SetZIndexShadowBody(Z_FLORA_SHADOW_BODY);
-		SetZIndexHead(Z_FLORA_HEAD);
-		SetZIndexShadowHead(Z_FLORA_SHADOW_HEAD);
+		setZIndexBody(Z_FLORA_BODY);
+		setZIndexShadowBody(Z_FLORA_SHADOW_BODY);
+		setZIndexHead(Z_FLORA_HEAD);
+		setZIndexShadowHead(Z_FLORA_SHADOW_HEAD);
 	}
 
 
@@ -80,10 +80,10 @@ namespace logic
 	//Wirtualna metoda aktualizująca obiekt
 	void Flora::update(float dt)
 	{
-		UpdateShadow(dt);	//aktualizacja shadow engine
+		updateShadow(dt);	//aktualizacja shadow engine
 
-		RotateBody(m_rotation_speed_body * gWeather.GetWindSpeed());
-		RotateHead(m_rotation_speed_head * gWeather.GetWindSpeed());
+		rotateBody(m_rotation_speed_body * gWeather.GetWindSpeed());
+		rotateHead(m_rotation_speed_head * gWeather.GetWindSpeed());
 		//AI flora: To Do...
 	}
 }//namespace logic

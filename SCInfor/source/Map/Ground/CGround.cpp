@@ -81,7 +81,7 @@ namespace mapengine
 	//Wirtualna metoda aktualizuj¹ca obiekt
 	void CGround::update(float dt)
 	{
-		CPhysical::UpdateShadow(dt);
+		Physical::updateShadow(dt);
 		//to do
 		//2016-02-20
 		//Pod³o¿e w swojej logice - behawioralnym zachowaniu

@@ -9,7 +9,7 @@
 
 #include "PhysicalTemplate.h"
 #include "../Rendering/Displayable/CRectangle.h"
-#include "../Logic/Physical/PhysicalInfo/CPhysicalInfo.h"
+#include "../Logic/Physical/PhysicalInfo/PhysicalInfo.h"
 
 ///
 ///Forward declaration
@@ -68,18 +68,18 @@ namespace factory
 		bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CPhysicalInfo
+		///Metoda tworzy obiekt klasy PhysicalInfo
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CPhysicalInfo *create(std::wstring id = L"");
+		PhysicalInfo *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *p_physical_info - wskaźnik na obiekt klasy CPhysicalInfo
+		///@param *p_physical_info - wskaźnik na obiekt klasy PhysicalInfo
 		///
-		virtual void fill(CPhysicalInfo *p_physical_info);
+		virtual void fill(PhysicalInfo *p_physical_info);
 	
 	private:
 

@@ -176,8 +176,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetWindPowerStationBodyDefaultAnim());
-					SetAnimationHead(p_anim_set->GetWindPowerStationHeadDefaultAnim());
+					setAnimationBody(p_anim_set->GetWindPowerStationBodyDefaultAnim());
+					setAnimationHead(p_anim_set->GetWindPowerStationHeadDefaultAnim());
 				}
 				break;
 			}
@@ -185,8 +185,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetWindPowerStationBodyUpdateEnergyAnim());
-					SetAnimationHead(p_anim_set->GetWindPowerStationHeadUpdateEnergyAnim());
+					setAnimationBody(p_anim_set->GetWindPowerStationBodyUpdateEnergyAnim());
+					setAnimationHead(p_anim_set->GetWindPowerStationHeadUpdateEnergyAnim());
 				}
 				break;
 			}
@@ -194,8 +194,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetWindPowerStationBodyDamageAnim());
-					SetAnimationHead(p_anim_set->GetWindPowerStationHeadDamageAnim());
+					setAnimationBody(p_anim_set->GetWindPowerStationBodyDamageAnim());
+					setAnimationHead(p_anim_set->GetWindPowerStationHeadDamageAnim());
 				}
 				break;
 			}
@@ -203,8 +203,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetWindPowerStationBodyDeathAnim());
-					SetAnimationHead(p_anim_set->GetWindPowerStationHeadDeathAnim());
+					setAnimationBody(p_anim_set->GetWindPowerStationBodyDeathAnim());
+					setAnimationHead(p_anim_set->GetWindPowerStationHeadDeathAnim());
 				}
 				break;
 			}
@@ -217,7 +217,7 @@ namespace logic
 		void WindPowerStation::update(float dt)
 		{
 			//aktualizacja shadow engine
-			CPhysical::UpdateShadow(dt);
+			Physical::updateShadow(dt);
 			
 			//Wywołanie z klasy bazowej - AI logowania do systemu...
 			PowerStation::update(dt);
@@ -234,7 +234,7 @@ namespace logic
 
 			//jeśli flaga jest ustawiona na true - obraca się moduł - korpus (HEAD)
 			if(m_use_rotation_head)
-				RotateHead(m_speed_rotation_head);
+				rotateHead(m_speed_rotation_head);
 		}
 
 		//prywatna metoda aktualizuje stan obiektu
@@ -329,7 +329,7 @@ namespace logic
 				//możliwość dowolnego dobory położenia turbin.
 				//W tej klasie - nie korzystam z tego mechanizmu,
 				//turbina jest położona na wspólnej osi jej właściciela
-				m_windturbine_data.getTurbine()->SetPosition(GetPosition());
+				m_windturbine_data.getTurbine()->setPosition(getPosition());
 			}
 		}
 

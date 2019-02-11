@@ -171,44 +171,44 @@ namespace factory
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void PhysicalTemplate::fill(CPhysical *physical)
+	void PhysicalTemplate::fill(Physical *physical)
 	{
 		//ustawienie kompletnego wzorca
-		physical->SetTemplate(this);
+		physical->setTemplate(this);
 
 		//nazwa gatunku
-		physical->SetGenre(m_templ_genre);
+		physical->setGenre(m_templ_genre);
 
 		//radius
-		physical->SetBoundingCircle(m_templ_circle_radius);
+		physical->setBoundingCircle(m_templ_circle_radius);
 
 		//rectangle size
-		physical->SetBoundingRect(m_templ_rect_size);
+		physical->setBoundingRect(m_templ_rect_size);
 
 		//rectangle size - synthetic
 		//body
-		physical->SetRectangleSizeBody(m_templ_rect_size_body);
+		physical->setRectangleSizeBody(m_templ_rect_size_body);
 		//head
-		physical->SetRectangleSizeHead(m_templ_rect_size_head);
+		physical->setRectangleSizeHead(m_templ_rect_size_head);
 
 		//body scale
-		physical->SetScaleBody(m_templ_scale_body, m_templ_scale_body);
+		physical->setScaleBody(m_templ_scale_body, m_templ_scale_body);
 
 		//head scale
-		physical->SetScaleHead(m_templ_scale_head, m_templ_scale_head);
+		physical->setScaleHead(m_templ_scale_head, m_templ_scale_head);
 
 		//altitude - pułap obiektu względem podłoża
-		physical->SetAltitude(m_templ_altitude);
+		physical->setAltitude(m_templ_altitude);
 
 		//konfiguracja obiektu - body, head, wygląd, cień, etc...
-		physical->SetUseDisplayableBody(m_templ_use_displayable_body);
-		physical->SetUseShadowBody(m_templ_use_shadow_body);
-		physical->SetUseDisplayableHead(m_templ_use_displayable_head);
-		physical->SetUseShadowHead(m_templ_use_shadow_head);
+		physical->setUseDisplayableBody(m_templ_use_displayable_body);
+		physical->setUseShadowBody(m_templ_use_shadow_body);
+		physical->setUseDisplayableHead(m_templ_use_displayable_head);
+		physical->setUseShadowHead(m_templ_use_shadow_head);
 
 		//konfiguracja koloru (szczególnie tektury syntetyczne)
-		physical->SetColorBody(m_templ_color_body);
-		physical->SetColorHead(m_templ_color_head);
+		physical->setColorBody(m_templ_color_body);
+		physical->setColorHead(m_templ_color_head);
 
 		//konfiguraja danych o kolidowaniu poszczególnych części, z których składa się obiekt
 		physical->getPartCollisionData().setCollidingBody(m_templ_part_collision_data.getCollidingBody());
@@ -221,10 +221,10 @@ namespace factory
 		{
 			//static image body
 			if (m_templ_texture_body != "")
-				physical->SetTextureBody(m_templ_texture_body);
+				physical->setTextureBody(m_templ_texture_body);
 			else
 				//synthetic body
-				physical->SetTextureBody((unsigned)m_templ_rect_size_body.x, (unsigned)m_templ_rect_size_body.y, m_templ_color_body);
+				physical->setTextureBody((unsigned)m_templ_rect_size_body.x, (unsigned)m_templ_rect_size_body.y, m_templ_color_body);
 		}
 
 		//konfiguracja danych reprezentacji graficznej - head
@@ -232,10 +232,10 @@ namespace factory
 		{
 			//static image head
 			if (m_templ_texture_head != "")
-				physical->SetTextureHead(m_templ_texture_head);
+				physical->setTextureHead(m_templ_texture_head);
 			else
 				//synthetic head
-				physical->SetTextureHead((unsigned)m_templ_rect_size_head.x, (unsigned)m_templ_rect_size_head.y, m_templ_color_head);
+				physical->setTextureHead((unsigned)m_templ_rect_size_head.x, (unsigned)m_templ_rect_size_head.y, m_templ_color_head);
 		}
 	}
 

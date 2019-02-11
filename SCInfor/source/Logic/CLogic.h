@@ -107,7 +107,7 @@ namespace logic
 		void LoadGame(const std::string& name);
 
 		///
-		///Metoda aktualizuje wszystkie obiekty dziedzicz¹ce po CPhysical
+		///Metoda aktualizuje wszystkie obiekty dziedzicz¹ce po Physical
 		///
 		///@param secondsPassed - up³ywaj¹cy czas gry
 		///

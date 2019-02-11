@@ -26,12 +26,12 @@ using namespace weather;
 
 namespace logic
 {
-	RTTI_IMPL(Actor, CPhysical);
+	RTTI_IMPL(Actor, Physical);
 
 	//Chroniony konstruktor domyślny
 	Actor::Actor(const std::wstring & uniqueId)
 	:
-		CPhysical(uniqueId), //konstruktor klasy bazowej
+		Physical(uniqueId), //konstruktor klasy bazowej
 		p_anim_set(NULL),
 		m_technical_data(),
 		m_engine_data(),
@@ -47,7 +47,7 @@ namespace logic
 	//Chroniony konstruktor kopiujący
 	Actor::Actor(const Actor & ActorCopy)
 	:
-		CPhysical(ActorCopy),//konstruktor kopiujący klasy bazowej
+		Physical(ActorCopy),//konstruktor kopiujący klasy bazowej
 		p_anim_set(ActorCopy.p_anim_set),
 		m_technical_data(ActorCopy.m_technical_data),
 		m_engine_data(ActorCopy.m_engine_data),
@@ -63,7 +63,7 @@ namespace logic
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
 	Actor::~Actor()
 	{
-		//~CPhysical()
+		//~Physical()
 		p_anim_set = NULL;
 		//m_technical_data
 		//m_engine_data
@@ -411,7 +411,7 @@ namespace logic
 	//Wirtualan metoda zabija obiekt klasy Actor i wywołuje odpowiednie czynności z tym związane
 	void Actor::kill()
 	{
-		CPhysical::kill();
+		Physical::kill();
 		//to do...
 	}
 
@@ -419,7 +419,7 @@ namespace logic
 	void Actor::update(float dt)
 	{
 		//aktualizacja klasy bazowej
-		CPhysical::update(dt);		
+		Physical::update(dt);		
 
 		//aktualizacja animacji
 		updateAnimations(dt);
@@ -541,7 +541,7 @@ namespace logic
 		if (p_anim_set)//body
 		{
 			//płynna zmiana animacji - body
-			CAnimation *curr_anim = GetAnimationBody();
+			CAnimation *curr_anim = getAnimationBody();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
 			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->GetAnims();
@@ -569,13 +569,13 @@ namespace logic
 			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].GetAnimation() != NULL))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
-				float currTime = GetDisplayableBody()->GetAnimationState()->GetCurrentTime();
+				float currTime = getDisplayableBody()->GetAnimationState()->GetCurrentTime();
 
 				//podmieniam starą animację ze starego zestawu na nową animację z nowego zestawu
-				SetAnimationBody(new_anims[index].GetAnimation());
+				setAnimationBody(new_anims[index].GetAnimation());
 
 				//przewijam animację do "czasu", w którym rozpoczął się proces podmiany animacji
-				GetDisplayableBody()->GetAnimationState()->RewindTo(currTime);
+				getDisplayableBody()->GetAnimationState()->RewindTo(currTime);
 			}
 		}
 	}
@@ -587,7 +587,7 @@ namespace logic
 		if (p_anim_set)//head
 		{
 			//płynna zmiana animacji - head
-			CAnimation *curr_anim = GetAnimationHead();
+			CAnimation *curr_anim = getAnimationHead();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
 			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->GetAnims();
@@ -615,13 +615,13 @@ namespace logic
 			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].GetAnimation() != NULL))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
-				float currTime = GetDisplayableHead()->GetAnimationState()->GetCurrentTime();
+				float currTime = getDisplayableHead()->GetAnimationState()->GetCurrentTime();
 
 				//podmieniam starą animację ze starego zestawu na nową animację z nowego zestawu
-				SetAnimationHead(new_anims[index].GetAnimation());
+				setAnimationHead(new_anims[index].GetAnimation());
 
 				//przewijam animację do "czasu", w którym rozpoczął się proces podmiany animacji
-				GetDisplayableHead()->GetAnimationState()->RewindTo(currTime);
+				getDisplayableHead()->GetAnimationState()->RewindTo(currTime);
 			}
 		}
 	}

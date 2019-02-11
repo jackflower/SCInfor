@@ -38,10 +38,10 @@ namespace logic
 			m_time_to_start(0.0f),
 			m_duration_disconnect(0.0f)
 		{
-			SetZIndexBody(Z_PHYSICAL_RELAY_STATION_BODY);
-			SetZIndexShadowBody(Z_PHYSICAL_SHADOW_RELAY_STATION_BODY);
-			SetZIndexHead(Z_PHYSICAL_RELAY_STATION_HEAD);
-			SetZIndexShadowHead(Z_PHYSICAL_SHADOW_RELAY_STATION_HEAD);
+			setZIndexBody(Z_PHYSICAL_RELAY_STATION_BODY);
+			setZIndexShadowBody(Z_PHYSICAL_SHADOW_RELAY_STATION_BODY);
+			setZIndexHead(Z_PHYSICAL_RELAY_STATION_HEAD);
+			setZIndexShadowHead(Z_PHYSICAL_SHADOW_RELAY_STATION_HEAD);
 		}
 
 		//Chroniony konstruktor kopiujący
@@ -60,10 +60,10 @@ namespace logic
 			m_time_to_start(PowerRelayStationCopy.m_time_to_start),
 			m_duration_disconnect(PowerRelayStationCopy.m_duration_disconnect)
 		{
-			SetZIndexBody(Z_PHYSICAL_RELAY_STATION_BODY);
-			SetZIndexShadowBody(Z_PHYSICAL_SHADOW_RELAY_STATION_BODY);
-			SetZIndexHead(Z_PHYSICAL_RELAY_STATION_HEAD);
-			SetZIndexShadowHead(Z_PHYSICAL_SHADOW_RELAY_STATION_HEAD);
+			setZIndexBody(Z_PHYSICAL_RELAY_STATION_BODY);
+			setZIndexShadowBody(Z_PHYSICAL_SHADOW_RELAY_STATION_BODY);
+			setZIndexHead(Z_PHYSICAL_RELAY_STATION_HEAD);
+			setZIndexShadowHead(Z_PHYSICAL_SHADOW_RELAY_STATION_HEAD);
 		}
 
 		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
@@ -245,8 +245,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetPowerRelayStationBodyDefaultAnim());
-					SetAnimationHead(p_anim_set->GetPowerRelayStationHeadDefaultAnim());
+					setAnimationBody(p_anim_set->GetPowerRelayStationBodyDefaultAnim());
+					setAnimationHead(p_anim_set->GetPowerRelayStationHeadDefaultAnim());
 				}
 				break;
 			}
@@ -254,8 +254,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetPowerRelayStationBodyUpdateConnectionAnim());
-					SetAnimationHead(p_anim_set->GetPowerRelayStationHeadUpdateConnectionAnim());
+					setAnimationBody(p_anim_set->GetPowerRelayStationBodyUpdateConnectionAnim());
+					setAnimationHead(p_anim_set->GetPowerRelayStationHeadUpdateConnectionAnim());
 				}
 				break;
 			}
@@ -263,8 +263,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetPowerRelayStationBodyDisconnectAnim());
-					SetAnimationHead(p_anim_set->GetPowerRelayStationHeadDisconnectAnim());
+					setAnimationBody(p_anim_set->GetPowerRelayStationBodyDisconnectAnim());
+					setAnimationHead(p_anim_set->GetPowerRelayStationHeadDisconnectAnim());
 				}
 				break;
 			}
@@ -272,8 +272,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetPowerRelayStationBodyDamageAnim());
-					SetAnimationHead(p_anim_set->GetPowerRelayStationHeadDamageAnim());
+					setAnimationBody(p_anim_set->GetPowerRelayStationBodyDamageAnim());
+					setAnimationHead(p_anim_set->GetPowerRelayStationHeadDamageAnim());
 				}
 				break;
 			}
@@ -281,8 +281,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetPowerRelayStationBodyDeathAnim());
-					SetAnimationHead(p_anim_set->GetPowerRelayStationHeadDeathAnim());
+					setAnimationBody(p_anim_set->GetPowerRelayStationBodyDeathAnim());
+					setAnimationHead(p_anim_set->GetPowerRelayStationHeadDeathAnim());
 				}
 				break;
 			}
@@ -295,7 +295,7 @@ namespace logic
 		void PowerRelayStation::update(float dt)
 		{
 			//aktualizacja shadow engine
-			CPhysical::UpdateShadow(dt);
+			Physical::updateShadow(dt);
 
 			//aktualizacja geometrii - niezależnie od tego, czy urządzenie jest włączone
 			if (m_slotsrate_date.getUseEquipment())
@@ -334,7 +334,7 @@ namespace logic
 			
 			if (m_state_time > 0)
 			{
-				SetRotationHead(GetRotationHead() + m_rotation_speed);
+				setRotationHead(getRotationHead() + m_rotation_speed);
 				m_state_time = m_state_time - dt;
 			}
 		}
@@ -415,9 +415,9 @@ namespace logic
 		{
 			if (m_slotsrate_date.getSlotsRate())//wskaźnik jest zainicjowamy
 			{
-				m_slotsrate_date.getSlotsRate()->SetPosition(GetPosition());
-				m_slotsrate_date.getSlotsRate()->SetScaleBody(GetScaleHead());
-				m_slotsrate_date.getSlotsRate()->SetRotationBody(GetRotationHead());
+				m_slotsrate_date.getSlotsRate()->setPosition(getPosition());
+				m_slotsrate_date.getSlotsRate()->setScaleBody(getScaleHead());
+				m_slotsrate_date.getSlotsRate()->setRotationBody(getRotationHead());
 			}
 		}
 	}//namespace energetics

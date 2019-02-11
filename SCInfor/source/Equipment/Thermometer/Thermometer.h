@@ -8,7 +8,7 @@
 #define H_THERMOMETER_JACK
 
 #include "../../RTTI/RTTI.h"
-#include "../../Logic/Physical/CPhysical.h"
+#include "../../Logic/Physical/Physical.h"
 #include "EDisplayType.h"
 
 using namespace logic;
@@ -18,7 +18,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje termometr - urządzenie pomiarowe
 	///
-	class Thermometer : public CPhysical
+	class Thermometer : public Physical
 	{
 		RTTI_DECL;
 

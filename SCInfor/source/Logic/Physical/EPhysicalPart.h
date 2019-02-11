@@ -1,4 +1,4 @@
-//  _______________________________
+ï»¿//  _______________________________
 // | EPhysicalPart.h - enumeration |
 // | Jack Flower - October 2012    |
 // |_______________________________|
@@ -10,12 +10,12 @@
 namespace logic
 {
 	///
-	///Wyliczenie reprezentuje elementy sk³adowe klasy CPhysical
+	///Wyliczenie reprezentuje elementy skÅ‚adowe klasy Physical
 	///
 	enum EPhysicalPart
 	{
-		BODY,	//czêœæ podstawa (np. w przypadku czo³gu - podwozie)
-		HEAD	//czêœæ dodatkowa (np. w przypadku czo³gu - wie¿a)
+		BODY,	//czÄ™Å›Ä‡ podstawa (np. w przypadku czoÅ‚gu - podwozie)
+		HEAD	//czÄ™Å›Ä‡ dodatkowa (np. w przypadku czoÅ‚gu - wieÅ¼a)
 	};
 }
 #endif //H_PHYSICAL_PART_JACK

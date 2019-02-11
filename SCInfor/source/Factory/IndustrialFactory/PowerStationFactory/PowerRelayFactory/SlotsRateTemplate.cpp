@@ -80,11 +80,11 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetSlotsRateBody_0_Anim() != NULL)
-					p_slots_rate->SetAnimationBody(p_templ_animations->GetSlotsRateBody_0_Anim());
+					p_slots_rate->setAnimationBody(p_templ_animations->GetSlotsRateBody_0_Anim());
 
 				//head
 				if (p_templ_animations->GetSlotsRateHead_0_Anim() != NULL)
-					p_slots_rate->SetAnimationHead(p_templ_animations->GetSlotsRateHead_0_Anim());
+					p_slots_rate->setAnimationHead(p_templ_animations->GetSlotsRateHead_0_Anim());
 			}
 			//decorate
 			p_slots_rate->setSmoothing(true);

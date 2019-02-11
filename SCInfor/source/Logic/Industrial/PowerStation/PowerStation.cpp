@@ -26,10 +26,10 @@ namespace logic
 			m_unit_controller(true),//urządzenie włączone
 			m_communication_data()
 		{
-			SetZIndexBody(Z_PHYSICAL_SHADOW_POWER_STATION_BODY);
-			SetZIndexShadowBody(Z_PHYSICAL_POWER_STATION_BODY);
-			SetZIndexHead(Z_PHYSICAL_SHADOW_POWER_STATION_HEAD);
-			SetZIndexShadowHead(Z_PHYSICAL_POWERM_STATION_HEAD);
+			setZIndexBody(Z_PHYSICAL_SHADOW_POWER_STATION_BODY);
+			setZIndexShadowBody(Z_PHYSICAL_POWER_STATION_BODY);
+			setZIndexHead(Z_PHYSICAL_SHADOW_POWER_STATION_HEAD);
+			setZIndexShadowHead(Z_PHYSICAL_POWERM_STATION_HEAD);
 
 			//testy...zaliczone...
 			//this->SetCategory(PHYSICAL_MONSTER);
@@ -49,10 +49,10 @@ namespace logic
 			m_unit_controller(PowerStationCopy.m_unit_controller),
 			m_communication_data(PowerStationCopy.m_communication_data)
 		{
-			SetZIndexBody(Z_PHYSICAL_SHADOW_POWER_STATION_BODY);
-			SetZIndexShadowBody(Z_PHYSICAL_POWER_STATION_BODY);
-			SetZIndexHead(Z_PHYSICAL_SHADOW_POWER_STATION_HEAD);
-			SetZIndexShadowHead(Z_PHYSICAL_POWERM_STATION_HEAD);
+			setZIndexBody(Z_PHYSICAL_SHADOW_POWER_STATION_BODY);
+			setZIndexShadowBody(Z_PHYSICAL_POWER_STATION_BODY);
+			setZIndexHead(Z_PHYSICAL_SHADOW_POWER_STATION_HEAD);
+			setZIndexShadowHead(Z_PHYSICAL_POWERM_STATION_HEAD);
 		}
 
 		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
@@ -159,7 +159,7 @@ namespace logic
 					//przekaźnika, który chce tę elektrowanię
 					//zarejestrować...
 					if(m_communication_data.getCommunication()->getRange() > 50)
-						Rotate(-2);
+						rotate(-2);
 				}
 			}
 		}

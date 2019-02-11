@@ -98,11 +98,11 @@ namespace factory
 				
 				//body
 				if (p_templ_animations->GetEnergyTankBodyDefaultAnim()!= NULL)
-					p_energytank->SetAnimationBody(p_templ_animations->GetEnergyTankBodyDefaultAnim());
+					p_energytank->setAnimationBody(p_templ_animations->GetEnergyTankBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetEnergyTankHeadDefaultAnim()!= NULL)
-					p_energytank->SetAnimationHead(p_templ_animations->GetEnergyTankHeadDefaultAnim());
+					p_energytank->setAnimationHead(p_templ_animations->GetEnergyTankHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca

@@ -65,15 +65,15 @@ namespace logic
 		//	SetRotationBody(this->GetRotationBody() - 0.62f);
 		//}
 
-		if(	position.x >= GetPosition().x - GetDisplayableBody()->getLocalBounds().width * GetDisplayableBody()->getScale().x * 0.5f && 
-			position.x <= GetPosition().x + GetDisplayableBody()->getLocalBounds().width * GetDisplayableBody()->getScale().x * 0.5f && 
-			position.y >= GetPosition().y - GetDisplayableBody()->getLocalBounds().height * GetDisplayableBody()->getScale().y * 0.5f &&
-			position.y <= GetPosition().y + GetDisplayableBody()->getLocalBounds().height * GetDisplayableBody()->getScale().y * 0.5f)
+		if(	position.x >= getPosition().x - getDisplayableBody()->getLocalBounds().width * getDisplayableBody()->getScale().x * 0.5f && 
+			position.x <= getPosition().x + getDisplayableBody()->getLocalBounds().width * getDisplayableBody()->getScale().x * 0.5f && 
+			position.y >= getPosition().y - getDisplayableBody()->getLocalBounds().height * getDisplayableBody()->getScale().y * 0.5f &&
+			position.y <= getPosition().y + getDisplayableBody()->getLocalBounds().height * getDisplayableBody()->getScale().y * 0.5f)
 		{
-			//RotateHead(0.62f);	//2019-02-10 (jest) brakuje wrappera w tej klasie dla metody void RotateHead(float angle) - equipment
-			//RotateBody(-0.62f);	//2019-02-10 (jest) brakuje wrappera w tej klasie dla metody void RotateBody(float angle) - equipment
-			SetRotationHead(this->GetRotationHead() + 0.62f);
-			SetRotationBody(this->GetRotationBody() - 0.62f);
+			//rotateHead(0.62f);	//2019-02-10 (jest) brakuje wrappera w tej klasie dla metody void RotateHead(float angle) - equipment
+			//rotateBody(-0.62f);	//2019-02-10 (jest) brakuje wrappera w tej klasie dla metody void RotateBody(float angle) - equipment
+			setRotationHead(this->getRotationHead() + 0.62f);
+			setRotationBody(this->getRotationBody() - 0.62f);
 		}
 	}
 

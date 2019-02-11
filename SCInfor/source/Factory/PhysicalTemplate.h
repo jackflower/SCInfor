@@ -8,7 +8,7 @@
 #define H_PHYSICAL_TEMPLATE_JACK
 
 #include "../ResourceManager/IResource.h"
-#include "../Logic/Physical/CPhysical.h"
+#include "../Logic/Physical/Physical.h"
 #include "../Logic/CPhysicalManager.h"
 #include "../XML/CXml.h"
 #include "../RTTI/RTTI.h"
@@ -65,20 +65,20 @@ namespace factory
 		virtual bool load(CXml & xml);
 
 		///
-		///Wirtualna metoda tworzenie obiektów pochodnych klasy CPhysical
+		///Wirtualna metoda tworzenie obiektów pochodnych klasy Physical
 		///
 		///implementowana przez w pełni konkretne podklasy
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		virtual CPhysical *create(std::wstring id = L"") = 0 ;
+		virtual Physical *create(std::wstring id = L"") = 0 ;
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *physical - wskaźnik na obiekt klasy CPhysical
+		///@param *physical - wskaźnik na obiekt klasy Physical
 		///
-		virtual void fill(CPhysical *physical);
+		virtual void fill(Physical *physical);
 
 		///
 		///Metoda zwraca nazwę pliku zasobu
@@ -115,10 +115,10 @@ namespace factory
 		std::string m_templ_texture_body; //nazwa tekstury reprezentacji graficznej obiektu - body
 		std::string m_templ_texture_head; //nazwa tekstury reprezentacji graficznej obiektu - head
 		float m_templ_altitude; //wartość pułapu obiektu względem podłoża
-		bool m_templ_use_displayable_body; //flaga określa, czy CPhysical posiada reprezentację graficzną - body
-		bool m_templ_use_shadow_body; //flaga określa, czy CPhysical posiada reprezentację graficzną - body - cień
-		bool m_templ_use_displayable_head; //flaga określa, czy CPhysical posiada reprezentację graficzną - head
-		bool m_templ_use_shadow_head; //flaga określa, czy CPhysical posiada reprezentację graficzną - head - cień
+		bool m_templ_use_displayable_body; //flaga określa, czy Physical posiada reprezentację graficzną - body
+		bool m_templ_use_shadow_body; //flaga określa, czy Physical posiada reprezentację graficzną - body - cień
+		bool m_templ_use_displayable_head; //flaga określa, czy Physical posiada reprezentację graficzną - head
+		bool m_templ_use_shadow_head; //flaga określa, czy Physical posiada reprezentację graficzną - head - cień
 		sf::Color m_templ_color_body; //kolor - body
 		sf::Color m_templ_color_head; //kolor - head
 		float m_templ_scale_body; //skala - body

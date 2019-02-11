@@ -155,8 +155,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetThermalInsulationBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetThermalInsulationHeadDefaultAnim());
+				setAnimationBody(p_anim_set->GetThermalInsulationBodyDefaultAnim());
+				setAnimationHead(p_anim_set->GetThermalInsulationHeadDefaultAnim());
 			}
 			break;
 		}
@@ -164,8 +164,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetThermalInsulationBodyDamagetAnim());
-				SetAnimationHead(p_anim_set->GetThermalInsulationHeadDamagetAnim());
+				setAnimationBody(p_anim_set->GetThermalInsulationBodyDamagetAnim());
+				setAnimationHead(p_anim_set->GetThermalInsulationHeadDamagetAnim());
 			}
 			break;
 		}

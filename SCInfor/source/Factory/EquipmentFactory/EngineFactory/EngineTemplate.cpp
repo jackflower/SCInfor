@@ -127,11 +127,11 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetEngineBodyDefaultAnim()!= NULL)
-					p_engine->SetAnimationBody(p_templ_animations->GetEngineBodyDefaultAnim());
+					p_engine->setAnimationBody(p_templ_animations->GetEngineBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetEngineHeadDefaultAnim()!= NULL)
-					p_engine->SetAnimationHead(p_templ_animations->GetEngineHeadDefaultAnim());
+					p_engine->setAnimationHead(p_templ_animations->GetEngineHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca
@@ -155,7 +155,7 @@ namespace factory
 					//pobieramy składową fueltank i wzorzec wypełnia wskaźnik danymi
 					p_engine->setFuelTank(p_templ_fuel_tank->create(L""));
 					//przekazanie wskaźnikowi na klasę FuelTank informacji o wzorcu
-					p_engine->getFuelTank()->SetTemplate(p_templ_fuel_tank);
+					p_engine->getFuelTank()->setTemplate(p_templ_fuel_tank);
 					//decorator
 					p_engine->getFuelTank()->setSmoothing(true);
 				}

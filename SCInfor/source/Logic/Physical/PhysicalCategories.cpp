@@ -1,7 +1,7 @@
-//  __________________________________________
-// | CPhysicalCategories.cpp - implementation |
-// | Jack Flower October 2012                 |
-// |__________________________________________|
+//  _________________________________________
+// | PhysicalCategories.cpp - implementation |
+// | Jack Flower October 2012                |
+// |_________________________________________|
 //
 
 #include "PhysicalCategories.h"
@@ -13,7 +13,7 @@
 
 namespace logic
 {
-	//tablica kategorii CPhysical
+	//tablica kategorii Physical
 	const int Categories[] =
 	{
 		PHYSICAL_DETECTOR,
@@ -36,7 +36,7 @@ namespace logic
 	//wyliczona iloœæ elementów tablicy kategorii
 	const int CategoryCount = sizeof(Categories)/sizeof(int);
 
-	//tablica nazw kategorii CPhysical
+	//tablica nazw kategorii Physical
 	const std::string CategoryNames[] =
 	{
 		"detector",
@@ -56,7 +56,7 @@ namespace logic
 		//Aktualizacja i synchronizacja wzglêdem PhysicalCategories.h
 	};
 
-	//tablica nazw filtrów kategorii CPhysical
+	//tablica nazw filtrów kategorii Physical
 	const int Filters[] =
 	{
 		PHYSICAL_HOSTILES,		//1
@@ -87,8 +87,8 @@ namespace logic
 		//Aktualizacja i synchronizacja wzglêdem PhysicalCategories.h
 	};
 
-	//Metoda zwraca indeks filtra CPhysical na podstawie nazwy filtru
-	int ParsePhysicalFilter(const std::string &input)
+	//Metoda zwraca indeks filtra Physical na podstawie nazwy filtru
+	int ParsePhysicalFilter(const std::string & input)
 	{
 		std::vector< std::string > filters = stringutils::Tokenize( input );
 		int ret = 0;
@@ -119,7 +119,7 @@ namespace logic
 		return ret;
 	}
 
-	//Metoda zwraca nazwê filtru CPhysical na podstawie numeru filtru
+	//Metoda zwraca nazwê filtru Physical na podstawie numeru filtru
 	std::string SerializePhysicalFilter(int filter)
 	{
 		std::string result = "";

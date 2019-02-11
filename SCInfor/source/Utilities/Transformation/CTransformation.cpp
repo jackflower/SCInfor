@@ -106,8 +106,8 @@ namespace transformation
 	{
 		//transformacja opiera siê na zainicjowanych wskaŸnikach
 		//obiektów drawowalnych, zatem trzeba sprawdziæ ten warunek
-		if (!p_child->GetDisplayableBody()) return;
-		if (!p_parent->GetDisplayableBody()) return;
+		if (!p_child->getDisplayableBody()) return;
+		if (!p_parent->getDisplayableBody()) return;
 
 		//obiekt p_child znajduje siê na czêœci body w³aœciciela p_parent
 		//dlatego wszystkie obliczenia (aktualizacja po³o¿enie)
@@ -118,21 +118,21 @@ namespace transformation
 			if (p_child != NULL)
 			{
 				//pobieramy wartoœæ obrotu w³aœciciela (body)
-				p_child->SetRotationBody(p_parent->GetRotationBody());
+				p_child->setRotationBody(p_parent->getRotationBody());
 				
 				//pobieramy skalê w³aœciciela
-				p_child->SetScale(p_parent->GetScaleBody());
+				p_child->setScale(p_parent->getScaleBody());
 
 				//ustawiam wektor przesuniêcia wzglêdem w³aœciciela (body)
-				m_offset.x = p_parent->GetDisplayableBody()->getLocalBounds().width * 0.5f * p_parent->GetScaleBody().x + (m_emiter.x * p_parent->GetScaleBody().x);
-				m_offset.y = p_parent->GetDisplayableBody()->getLocalBounds().height * 0.5f * p_parent->GetScaleBody().y + (m_emiter.y * p_parent->GetScaleBody().y);
+				m_offset.x = p_parent->getDisplayableBody()->getLocalBounds().width * 0.5f * p_parent->getScaleBody().x + (m_emiter.x * p_parent->getScaleBody().x);
+				m_offset.y = p_parent->getDisplayableBody()->getLocalBounds().height * 0.5f * p_parent->getScaleBody().y + (m_emiter.y * p_parent->getScaleBody().y);
 
 				//wyliczam pozycjê pocz¹tkow¹ uwzglêdniaj¹c przesuniêcie (body)
-				m_initial.x = p_parent->GetDisplayableBody()->getPosition().x + (m_offset.x * -cos(p_parent->GetRotationBody() * (float)RADIANS_PER_DEGREE) + m_offset.y * -sin(p_parent->GetRotationBody() * (float)RADIANS_PER_DEGREE));
-				m_initial.y = p_parent->GetDisplayableBody()->getPosition().y + (m_offset.x * -sin(p_parent->GetRotationBody() * (float)RADIANS_PER_DEGREE) - m_offset.y * -cos(p_parent->GetRotationBody() * (float)RADIANS_PER_DEGREE));
+				m_initial.x = p_parent->getDisplayableBody()->getPosition().x + (m_offset.x * -cos(p_parent->getRotationBody() * (float)RADIANS_PER_DEGREE) + m_offset.y * -sin(p_parent->getRotationBody() * (float)RADIANS_PER_DEGREE));
+				m_initial.y = p_parent->getDisplayableBody()->getPosition().y + (m_offset.x * -sin(p_parent->getRotationBody() * (float)RADIANS_PER_DEGREE) - m_offset.y * -cos(p_parent->getRotationBody() * (float)RADIANS_PER_DEGREE));
 
 				//przekazujê wyliczon¹ pozycjê do child
-				p_child->SetPosition(m_initial.x, m_initial.y);
+				p_child->setPosition(m_initial.x, m_initial.y);
 			}
 		}
 	}

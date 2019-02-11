@@ -94,9 +94,9 @@ namespace artificialintelligence
 	//Metoda zwraca flagę, czy osiągnięto zamierzoną pozycję
 	bool ActorAI::reachedWaypoint()
 	{
-		sf::Vector2f v = m_data.GetWaypoint() - getActor()->GetPosition();
+		sf::Vector2f v = m_data.GetWaypoint() - getActor()->getPosition();
 		float len = maths::Length( v );
-		float tolerance = getActor()->GetCircleRadius() + m_data.GetWaypointTolerance();
+		float tolerance = getActor()->getCircleRadius() + m_data.GetWaypointTolerance();
 		return (len < tolerance);
 	}
 

@@ -22,6 +22,7 @@ namespace logic
 			Actor(uniqueId),//konstruktor klasy bazowej
 			m_slot_counter(0)
 		{
+			//to do: layers
 		}
 
 		//Chroniony konstruktor kopiujący
@@ -30,6 +31,7 @@ namespace logic
 			Actor(SlotsRateCopy),//konstruktor kopiujacy klasy bazowej
 			m_slot_counter(SlotsRateCopy.m_slot_counter)
 		{
+			//to do: layers
 		}
 
 		SlotsRate::~SlotsRate()
@@ -65,8 +67,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetSlotsRateBody_0_Anim());
-					SetAnimationHead(p_anim_set->GetSlotsRateHead_0_Anim());
+					setAnimationBody(p_anim_set->GetSlotsRateBody_0_Anim());
+					setAnimationHead(p_anim_set->GetSlotsRateHead_0_Anim());
 				}
 				break;
 			}
@@ -74,8 +76,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetSlotsRateBody_1_Anim());
-					SetAnimationHead(p_anim_set->GetSlotsRateHead_1_Anim());
+					setAnimationBody(p_anim_set->GetSlotsRateBody_1_Anim());
+					setAnimationHead(p_anim_set->GetSlotsRateHead_1_Anim());
 				}
 				break;
 			}
@@ -83,8 +85,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetSlotsRateBody_2_Anim());
-					SetAnimationHead(p_anim_set->GetSlotsRateHead_2_Anim());
+					setAnimationBody(p_anim_set->GetSlotsRateBody_2_Anim());
+					setAnimationHead(p_anim_set->GetSlotsRateHead_2_Anim());
 				}
 				break;
 			}
@@ -92,8 +94,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetSlotsRateBody_3_Anim());
-					SetAnimationHead(p_anim_set->GetSlotsRateHead_3_Anim());
+					setAnimationBody(p_anim_set->GetSlotsRateBody_3_Anim());
+					setAnimationHead(p_anim_set->GetSlotsRateHead_3_Anim());
 				}
 				break;
 			}
@@ -101,8 +103,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetSlotsRateBody_4_Anim());
-					SetAnimationHead(p_anim_set->GetSlotsRateHead_4_Anim());
+					setAnimationBody(p_anim_set->GetSlotsRateBody_4_Anim());
+					setAnimationHead(p_anim_set->GetSlotsRateHead_4_Anim());
 				}
 				break;
 			}
@@ -115,7 +117,7 @@ namespace logic
 		void SlotsRate::update(float dt)
 		{
 			//aktualizacja shadow engine
-			CPhysical::UpdateShadow(dt);
+			Physical::updateShadow(dt);
 
 			updateAnimations(dt);
 		}

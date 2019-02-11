@@ -6,7 +6,7 @@
 
 
 #include "Monster.h"
-#include "../Physical/PhysicalInfo/CPhysicalInfo.h"
+#include "../Physical/PhysicalInfo/PhysicalInfo.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Rendering/Animations/CAnimationState.h"
 #include "../../Rendering/Animations/CAnimation.h"
@@ -50,7 +50,7 @@ namespace logic
 	//Wirtualna metoda aktualizująca obiekt
 	void Monster::update(float dt)
 	{
-		CPhysical::update(dt);
+		Physical::update(dt);
 		Actor::updateComponents(dt);
 
 		////////na razie testy..., bo w Actor będzie już opakowana metoda...
@@ -63,15 +63,15 @@ namespace logic
 		position.x = (int)gGame.getRenderWindow()->mapPixelToCoords(position).x;
 		position.y = (int)gGame.getRenderWindow()->mapPixelToCoords(position).y;
 
-		if (position.x >= GetPosition().x - GetDisplayableBody()->getLocalBounds().width * GetDisplayableBody()->getScale().x * 0.5f &&
-			position.x <= GetPosition().x + GetDisplayableBody()->getLocalBounds().width * GetDisplayableBody()->getScale().x * 0.5f &&
-			position.y >= GetPosition().y - GetDisplayableBody()->getLocalBounds().height * GetDisplayableBody()->getScale().y * 0.5f &&
-			position.y <= GetPosition().y + GetDisplayableBody()->getLocalBounds().height * GetDisplayableBody()->getScale().y * 0.5f)
+		if (position.x >= getPosition().x - getDisplayableBody()->getLocalBounds().width * getDisplayableBody()->getScale().x * 0.5f &&
+			position.x <= getPosition().x + getDisplayableBody()->getLocalBounds().width * getDisplayableBody()->getScale().x * 0.5f &&
+			position.y >= getPosition().y - getDisplayableBody()->getLocalBounds().height * getDisplayableBody()->getScale().y * 0.5f &&
+			position.y <= getPosition().y + getDisplayableBody()->getLocalBounds().height * getDisplayableBody()->getScale().y * 0.5f)
 		{
-			//RotateHead(0.62f);	//brakuje wrappera w tej klasie dla metody void RotateHead(float angle) - equipment
-			//RotateBody(-0.62f);	//brakuje wrappera w tej klasie dla metody void RotateBody(float angle) - equipment
-			SetRotationHead(this->GetRotationHead() + 0.62f);
-			SetRotationBody(this->GetRotationBody() - 0.62f);
+			//rotateHead(0.62f);	//2019-02-11 jest -> brakuje wrappera w tej klasie dla metody void RotateHead(float angle) - equipment
+			//rotateBody(-0.62f);	//2019-02-11 jest -> brakuje wrappera w tej klasie dla metody void RotateBody(float angle) - equipment
+			setRotationHead(this->getRotationHead() + 0.62f);
+			setRotationBody(this->getRotationBody() - 0.62f);
 			//tutaj obsługa klawiatury...
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 				fprintf(stderr, "Test key pressed...\n");
@@ -115,27 +115,27 @@ namespace logic
 
 		//ten kod działa poprawnie
 		if (gGame.getGameEvent().key.code == sf::Keyboard::K)
-			RestoreColorBody();
+			restoreColorBody();
 	
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
 		{
 			//key R is pressed: set Red color our character
-			GetDisplayableBody()->setColor(sf::Color::Red);
+			getDisplayableBody()->setColor(sf::Color::Red);
 			fprintf(stderr, "Red key pressed...\n");//single...(ale w update trudno upilnować)
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
 		{
 			//key G is pressed: set Green color our character
-			GetDisplayableBody()->setColor(sf::Color::Green);
+			getDisplayableBody()->setColor(sf::Color::Green);
 			fprintf(stderr, "Green key pressed...\n");//single...(ale w update trudno upilnować)
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
 		{
 			//key B is pressed: set Blue color our character
-			GetDisplayableBody()->setColor(sf::Color::Blue);
+			getDisplayableBody()->setColor(sf::Color::Blue);
 			fprintf(stderr, "Blue key pressed...\n");//single...(ale w update trudno upilnować)
 		}
 	}

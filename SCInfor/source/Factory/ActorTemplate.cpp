@@ -94,7 +94,7 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml
 	bool ActorTemplate::load(CXml & xml)
 	{
-		//ładowanie danych klasy bazowej CPhysical
+		//ładowanie danych klasy bazowej Physical
 		if (!PhysicalTemplate::load(xml)) return false;
 
 		//dane techniczne obiektu
@@ -269,11 +269,11 @@ namespace factory
 				
 				//body
 				if (p_templ_animations->GetDefaultAnimBody()!= NULL)
-					actor->SetAnimationBody(p_templ_animations->GetDefaultAnimBody());
+					actor->setAnimationBody(p_templ_animations->GetDefaultAnimBody());
 
 				//head
 				if (p_templ_animations->GetDefaultAnimHead()!= NULL)
-					actor->SetAnimationHead(p_templ_animations->GetDefaultAnimHead());
+					actor->setAnimationHead(p_templ_animations->GetDefaultAnimHead());
 			}
 
 			//jeśli obiekt posiada silnik engine
@@ -294,7 +294,7 @@ namespace factory
 					//actor->SetEngine(p_templ_engine->create(engine_genre));
 					//
 					//przekazanie wskaźnikowi na klasę Engine informacji o wzorcu
-					actor->getEngine()->SetTemplate(p_templ_engine);
+					actor->getEngine()->setTemplate(p_templ_engine);
 					//decorator
 					actor->getEngine()->setSmoothing(true);
 				}
@@ -310,7 +310,7 @@ namespace factory
 					///
 					//pobieramy składową physical_info i wzorzec wypełnia wskaźnik danymi
 					//actor->SetPhysicalInfo(p_templ_physical_info->create(L""));
-					//przekazanie wskaźnikowi na klasę CPhysicalInfo informacji o wzorcu
+					//przekazanie wskaźnikowi na klasę PhysicalInfo informacji o wzorcu
 					//actor->GetPhysicalInfo()->SetTemplate(p_templ_physical_info);
 				}
 			}
@@ -326,7 +326,7 @@ namespace factory
 					//pobieramy składową energy i wzorzec wypełnia wskaźnik danymi
 					actor->setEnergy(p_templ_energy->create(L""));
 					//przekazanie wskaźnikowi na klasę Energy informacji o wzorcu
-					actor->getEnergy()->SetTemplate(p_templ_energy);
+					actor->getEnergy()->setTemplate(p_templ_energy);
 					//decorator
 					actor->getEnergy()->setSmoothing(true);
 				}
@@ -343,7 +343,7 @@ namespace factory
 					//pobieramy składową moduł klimatyzatora i wzorzec wypełnia wskaźnik danymi
 					actor->setAirconditioning(p_templ_airconditioning->create(L""));
 					//przekazanie wskaźnikowi na klasę Airconditioning informacji o wzorcu
-					actor->getAirconditioning()->SetTemplate(p_templ_airconditioning);
+					actor->getAirconditioning()->setTemplate(p_templ_airconditioning);
 					//decorator
 					actor->getAirconditioning()->setSmoothing(true);
 				}
@@ -360,7 +360,7 @@ namespace factory
 					//pobieramy składową moduł wentylatora i wzorzec wypełnia wskaźnik danymi
 					actor->setVentilator(p_templ_ventilator->create(L""));
 					//przekazanie wskaźnikowi na klasę Ventilator informacji o wzorcu
-					actor->getVentilator()->SetTemplate(p_templ_ventilator);
+					actor->getVentilator()->setTemplate(p_templ_ventilator);
 					//decorator
 					actor->getVentilator()->setSmoothing(true);
 				}
@@ -377,7 +377,7 @@ namespace factory
 					//pobieramy składową moduł wentylatora i wzorzec wypełnia wskaźnik danymi
 					actor->setGun(p_templ_gun->create(L""));
 					//przekazanie wskaźnikowi na klasę Gun informacji o wzorcu
-					actor->getGun()->SetTemplate(p_templ_gun);
+					actor->getGun()->setTemplate(p_templ_gun);
 					//decorator
 					actor->getGun()->setSmoothing(true);
 				}

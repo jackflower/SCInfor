@@ -25,10 +25,10 @@ namespace equipment
 		m_fueltank_state(EFuelTankState::FUELTANK_DEFAULT),
 		m_unit_controller(true)//urządzenie włączone
 	{
-		SetZIndexBody(Z_PHYSICAL_FUEL_TANK_BODY);
-		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_FUEL_TANK_BODY);
-		SetZIndexHead(Z_PHYSICAL_FUEL_TANK_HEAD);
-		SetZIndexShadowHead(Z_PHYSICAL_SHADOW_FUEL_TANK_HEAD);
+		setZIndexBody(Z_PHYSICAL_FUEL_TANK_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_FUEL_TANK_BODY);
+		setZIndexHead(Z_PHYSICAL_FUEL_TANK_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_SHADOW_FUEL_TANK_HEAD);
 	}
 
 	//Chroniony konstruktor kopiujący
@@ -41,6 +41,10 @@ namespace equipment
 		m_fueltank_state(FuelTankCopy.m_fueltank_state),
 		m_unit_controller(FuelTankCopy.m_unit_controller)
 	{
+		setZIndexBody(Z_PHYSICAL_FUEL_TANK_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_FUEL_TANK_BODY);
+		setZIndexHead(Z_PHYSICAL_FUEL_TANK_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_SHADOW_FUEL_TANK_HEAD);
 	}
 
 	//Destruktor wirtualny
@@ -122,8 +126,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetFuelBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetFuelHeadDefaultAnim());
+				setAnimationBody(p_anim_set->GetFuelBodyDefaultAnim());
+				setAnimationHead(p_anim_set->GetFuelHeadDefaultAnim());
 			}
 			break;
 		}
@@ -131,8 +135,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetFuelBodyReserveAnim());
-				SetAnimationHead(p_anim_set->GetFuelHeadReserveAnim());
+				setAnimationBody(p_anim_set->GetFuelBodyReserveAnim());
+				setAnimationHead(p_anim_set->GetFuelHeadReserveAnim());
 			}
 			break;
 		}
@@ -140,8 +144,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetFuelBodyEmptyAnim());
-				SetAnimationHead(p_anim_set->GetFuelHeadEmptyAnim());
+				setAnimationBody(p_anim_set->GetFuelBodyEmptyAnim());
+				setAnimationHead(p_anim_set->GetFuelHeadEmptyAnim());
 			}
 			break;
 		}
@@ -149,8 +153,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetFuelBodyDamageAnim());
-				SetAnimationHead(p_anim_set->GetFuelHeadDamageAnim());
+				setAnimationBody(p_anim_set->GetFuelBodyDamageAnim());
+				setAnimationHead(p_anim_set->GetFuelHeadDamageAnim());
 			}
 			break;
 		}
@@ -168,7 +172,7 @@ namespace equipment
 	//Wirtualna metoda aktualizująca obiekt
 	void FuelTank::update(float dt)
 	{
-		UpdateShadow(dt);	//aktualizacja shadow engine
+		updateShadow(dt);	//aktualizacja shadow engine
 
 		if (m_unit_controller.getState())
 			updateAnimations(dt);

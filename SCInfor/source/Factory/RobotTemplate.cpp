@@ -88,11 +88,11 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetRobotBodyDefaultAnim() != NULL)
-					robot->SetAnimationBody(p_templ_animations->GetRobotBodyDefaultAnim());
+					robot->setAnimationBody(p_templ_animations->GetRobotBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetRobotHeadDefaultAnim() != NULL)
-					robot->SetAnimationHead(p_templ_animations->GetRobotHeadDefaultAnim());
+					robot->setAnimationHead(p_templ_animations->GetRobotHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca

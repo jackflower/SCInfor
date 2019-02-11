@@ -95,11 +95,11 @@ namespace factory
 				
 				//body
 				if (p_templ_animations->GetFuelBodyDefaultAnim()!= NULL)
-					p_fueltank->SetAnimationBody(p_templ_animations->GetFuelBodyDefaultAnim());
+					p_fueltank->setAnimationBody(p_templ_animations->GetFuelBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetFuelHeadDefaultAnim()!= NULL)
-					p_fueltank->SetAnimationHead(p_templ_animations->GetFuelHeadDefaultAnim());
+					p_fueltank->setAnimationHead(p_templ_animations->GetFuelHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca

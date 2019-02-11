@@ -46,7 +46,7 @@ namespace logic
 		void WindPowerStationMultipled::update(float dt)
 		{
 			//aktualizacja shadow engine
-			CPhysical::UpdateShadow(dt);
+			Physical::updateShadow(dt);
 
 			//Wywołanie z klasy bazowej - AI logowania do systemu...
 			PowerStation::update(dt);
@@ -60,7 +60,7 @@ namespace logic
 
 			//jeśli flaga jest ustawiona na true - obraca się moduł - korpus (HEAD)
 			if (m_use_rotation_head)
-				RotateHead(m_speed_rotation_head);
+				rotateHead(m_speed_rotation_head);
 			//transformacja
 			updateWindturbineTransformation(dt);
 		}

@@ -7,8 +7,8 @@
 */
 
 #include "CPhysicalManager.h"
-#include "Physical/CPhysical.h"
-#include "Physical/PhysicalInfo/CPhysicalInfo.h"
+#include "Physical/Physical.h"
+#include "Physical/PhysicalInfo/PhysicalInfo.h"
 #include "Actor/Actor.h"
 #include "Enemy/Enemy.h"
 #include "Player/CPlayer.h"
@@ -67,8 +67,8 @@ namespace logic
 	void CPhysicalManager::frameStarted(float secondsPassed)
 	{
 		//Czyszczenie obiektów
-		std::vector<CPhysical*>				dirty;		//kontener na obiekty do zniszczenia
-		std::vector<CPhysical*>::iterator	it;			//iterator tego kontenera
+		std::vector<Physical*>				dirty;		//kontener na obiekty do zniszczenia
+		std::vector<Physical*>::iterator	it;			//iterator tego kontenera
 
 		for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		{
@@ -107,11 +107,11 @@ namespace logic
 		return obj;
 	}
 
-	//Metoda tworzy obiekt klasy CPhysical i zwraca wskaŸnik na ten obiekt
-	CPhysical *CPhysicalManager::CreatePhysical(const std::wstring& unique_id)
+	//Metoda tworzy obiekt klasy Physical i zwraca wskaŸnik na ten obiekt
+	Physical *CPhysicalManager::CreatePhysical(const std::wstring& unique_id)
 	{
-		fprintf(stderr, "CPhysical created\n");
-		return create<CPhysical>(unique_id);
+		fprintf(stderr, "Physical created\n");
+		return create<Physical>(unique_id);
 	}
 
 	//Metoda tworzy obiekt klasy Actor i zwraca wskaŸnik na ten obiekt
@@ -198,11 +198,11 @@ namespace logic
 		return create<FuelBar>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CPhysicalInfo i zwraca wskaŸnik na ten obiekt
-	CPhysicalInfo *CPhysicalManager::CreatePhysicalInfo(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy PhysicalInfo i zwraca wskaŸnik na ten obiekt
+	PhysicalInfo *CPhysicalManager::CreatePhysicalInfo(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CPhysicalInfo created\n");
-		return create<CPhysicalInfo>(uniqueId);
+		fprintf(stderr, "PhysicalInfo created\n");
+		return create<PhysicalInfo>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Battery i zwraca wskaŸnik na ten obiekt
@@ -332,8 +332,8 @@ namespace logic
 		return create<CGround>(uniqueId);
 	}
 	
-	//Metoda usuwa obiekt klasy CPhysical z kontenera
-	void CPhysicalManager::DestroyPhysical(CPhysical* physical)
+	//Metoda usuwa obiekt klasy Physical z kontenera
+	void CPhysicalManager::DestroyPhysical(Physical* physical)
 	{
 		if (physical->m_physical_manager_index >= 0)
 		{
@@ -341,18 +341,18 @@ namespace logic
 			m_physicals[physical->m_physical_manager_index]->m_physical_manager_index = physical->m_physical_manager_index;
 			m_physicals.pop_back();
 			physical->m_physical_manager_index = -1;
-			fprintf(stderr, "PhysicalsManager::DestroyPhysical - %ls\n", physical->GetUniqueId().c_str());
-			DestroyPhysical(physical->GetUniqueId());
+			fprintf(stderr, "PhysicalsManager::DestroyPhysical - %ls\n", physical->getUniqueId().c_str());
+			DestroyPhysical(physical->getUniqueId());
 			delete physical;
 		}
 	}
 
-	//Metoda usuwa obiekt klasy CPhysical z kontenera
+	//Metoda usuwa obiekt klasy Physical z kontenera
 	void CPhysicalManager::DestroyPhysical(const std::wstring& id_physical)
 	{
 		if (m_named_physicals.find(id_physical) != m_named_physicals.end())
 		{
-			CPhysical* physical = m_named_physicals[id_physical];
+			Physical* physical = m_named_physicals[id_physical];
 			m_named_physicals.erase(m_named_physicals.find( id_physical));
 			DestroyPhysical(physical);
 		}
@@ -361,11 +361,11 @@ namespace logic
 	//Metoda usuwa wszystkie obiekty z kontenera
 	void CPhysicalManager::Clear(bool force_destroy_instantly)
 	{
-		std::vector<CPhysical*>::iterator it;
+		std::vector<Physical*>::iterator it;
 
 		for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		{
-			(*it)->MarkForDelete();
+			(*it)->markForDelete();
 		}
 
 		if (force_destroy_instantly)
@@ -374,20 +374,20 @@ namespace logic
 		}
 	}
 
-	//Metoda zwraca sta³¹ referencjê do kontenera z nazwami wszystkich zarejestorwanych obiektów CPhysical
-	const std::map<std::wstring, CPhysical*>& CPhysicalManager::GetNamedPhysicals()
+	//Metoda zwraca sta³¹ referencjê do kontenera z nazwami wszystkich zarejestorwanych obiektów Physical
+	const std::map<std::wstring, Physical*>& CPhysicalManager::GetNamedPhysicals()
 	{
 		return m_named_physicals;
 	}
 
-	//Metoda zwraca sta³¹ referencjê do kontenera z wszystkimi wskaŸnikami zarejestorwanych obiektów CPhysical
-	const std::vector<CPhysical *> &CPhysicalManager::GetPhysicals()
+	//Metoda zwraca sta³¹ referencjê do kontenera z wszystkimi wskaŸnikami zarejestorwanych obiektów Physical
+	const std::vector<Physical *> &CPhysicalManager::GetPhysicals()
 	{
 		return m_physicals;
 	}
 
-	//Metoda zwraca wskaŸnik na obiekt klasy CPhysical z kontenera na podstawie identyfikatora
-	CPhysical* CPhysicalManager::GetPhysicalById(const std::wstring& physical_id)
+	//Metoda zwraca wskaŸnik na obiekt klasy Physical z kontenera na podstawie identyfikatora
+	Physical* CPhysicalManager::GetPhysicalById(const std::wstring& physical_id)
 	{
 		if (m_named_physicals.find(physical_id) != m_named_physicals.end())
 			return m_named_physicals[physical_id];
@@ -404,10 +404,10 @@ namespace logic
 	//elektrownie wiatrowe
 	const std::vector<WindPowerStation*>& CPhysicalManager::GetWindPowerstations()
 	{
-		std::vector<CPhysical*>::iterator	it;	//iterator tego kontenera
+		std::vector<Physical*>::iterator	it;	//iterator tego kontenera
 		for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		{
-			if ((*it)->GetCategory() == PHYSICAL_WINDPOWERSTATION)
+			if ((*it)->getCategory() == PHYSICAL_WINDPOWERSTATION)
 				m_wind_powerstation.push_back((WindPowerStation*)*it);
 		}
 		return m_wind_powerstation;
@@ -421,7 +421,7 @@ namespace logic
 		fprintf(stderr, "CPhysicalManager::Cleanup()\n");
 
 		//nie jestem do koñca pewien tego kodu...
-		//std::vector<CPhysical*>::iterator it;
+		//std::vector<Physical*>::iterator it;
 		//for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		//	DestroyPhysical(*(it));
 		Clear();

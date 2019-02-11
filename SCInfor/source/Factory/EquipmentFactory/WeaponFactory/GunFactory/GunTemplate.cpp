@@ -153,11 +153,11 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetGunBodyDefaultAnim() != NULL)
-					p_gun->SetAnimationBody(p_templ_animations->GetGunBodyDefaultAnim());
+					p_gun->setAnimationBody(p_templ_animations->GetGunBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetGunHeadDefaultAnim() != NULL)
-					p_gun->SetAnimationHead(p_templ_animations->GetGunHeadDefaultAnim());
+					p_gun->setAnimationHead(p_templ_animations->GetGunHeadDefaultAnim());
 			}
 
 			//jeśli obiekt posiada ammo (magazynek z amunicją)
@@ -168,7 +168,7 @@ namespace factory
 					//pobieramy składową ammo i wzorzec wypełnia wskaźnik danymi
 					p_gun->setAmmo(p_templ_ammo->create(L""));
 					//przekazanie wskaźnikowi na klasę Ammo informacji o wzorcu
-					p_gun->getAmmo()->SetTemplate(p_templ_ammo);
+					p_gun->getAmmo()->setTemplate(p_templ_ammo);
 					//decorator
 					p_gun->getAmmo()->setSmoothing(true);
 				}

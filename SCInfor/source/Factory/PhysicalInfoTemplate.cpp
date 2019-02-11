@@ -93,7 +93,7 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml
 	bool PhysicalInfoTemplate::load(CXml & xml)
 	{
-		//ładowanie danych klasy bazowej CPhysical
+		//ładowanie danych klasy bazowej Physical
 		if (!PhysicalTemplate::load(xml)) return false;
 
 		//odczytanie danych animacji - owner(this) body part
@@ -137,58 +137,58 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CPhysicalInfo
-	CPhysicalInfo *PhysicalInfoTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy PhysicalInfo
+	PhysicalInfo *PhysicalInfoTemplate::create(std::wstring id)
 	{
-		CPhysicalInfo *physical_info = gPhysicalManager.CreatePhysicalInfo(id);
+		PhysicalInfo *physical_info = gPhysicalManager.CreatePhysicalInfo(id);
 		fill(physical_info);
 		return physical_info;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void PhysicalInfoTemplate::fill(CPhysicalInfo *p_physical_info)
+	void PhysicalInfoTemplate::fill(PhysicalInfo *p_physical_info)
 	{
 		if(p_physical_info)
 		{
 			PhysicalTemplate::fill(p_physical_info);
 			//składowe tej klasy			
-			p_physical_info->SetPhysicalInfoName(m_templ_physical_info_name);
-			p_physical_info->SetZIndexRectangle(m_templ_z_index_rectangle);
+			p_physical_info->setPhysicalInfoName(m_templ_physical_info_name);
+			p_physical_info->setZIndexRectangle(m_templ_z_index_rectangle);
 			p_physical_info->setUseStatusBarEnergy(m_templ_use_status_bar_energy);
 			p_physical_info->setUseStatusBarFuel(m_templ_use_status_bar_fuel);
 
 			//animacja/tekstura - owner(this) body part
 			if(m_templ_use_animation)
-				p_physical_info->SetAnimationBody(m_templ_animation_name);
+				p_physical_info->setAnimationBody(m_templ_animation_name);
 
 			//tekstura/animacja - owner(this) body part
 			if(m_templ_use_texture)
-				p_physical_info->SetTextureBody(m_templ_texture_name);
+				p_physical_info->setTextureBody(m_templ_texture_name);
 
 			//wskaźnik energii
 			if(m_templ_use_status_bar_energy)
 			{
 				//wymuszam utworzenie obiektu
-				p_physical_info->InitStatusBarEnergy();
+				p_physical_info->initStatusBarEnergy();
 				//kolor status progress bar (energia-życie)
 				p_physical_info->setFillColorEnergy(m_templ_color_bar_energy);
 				//rozmiar paska - progress bar (energia-życie)
-				p_physical_info->SetEnergyStatusBarSize(m_templ_size_energy);
+				p_physical_info->setEnergyStatusBarSize(m_templ_size_energy);
 				//wektor kalibracji położenia obiektu - progress bar (energia-życie)
-				p_physical_info->SetEnergyPositionStatusBarOffset(m_templ_position_offset_energy);
+				p_physical_info->setEnergyPositionStatusBarOffset(m_templ_position_offset_energy);
 			}
 
 			//wskaźnik paliwa
 			if(m_templ_use_status_bar_fuel)
 			{
 				//wymuszam utworzenie obiektu
-				p_physical_info->InitStatusBarFuel();
+				p_physical_info->initStatusBarFuel();
 				//kolor status progress bar (energia-życie)
 				p_physical_info->setFillColorFuel(m_templ_color_bar_fuel);
 				//rozmiar paska - progress bar (energia-życie)
-				p_physical_info->SetFuelStatusBarSize(m_templ_size_fuel);
+				p_physical_info->setFuelStatusBarSize(m_templ_size_fuel);
 				//wektor kalibracji położenia obiektu - progress bar (energia-życie)
-				p_physical_info->SetFuelPositionStatusBarOffset(m_templ_position_offset_fuel);
+				p_physical_info->setFuelPositionStatusBarOffset(m_templ_position_offset_fuel);
 			}
 		}
 	}

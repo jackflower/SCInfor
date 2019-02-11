@@ -5,7 +5,7 @@
 //
 
 #include "CQuadtree.h"
-//#include "Object.h"	//atrapa - dodaæ nag³ówek klasy CPhysical
+//#include "Object.h"	//atrapa - dodaæ nag³ówek klasy Physical
 #include <iostream>
 #include <sstream>
 

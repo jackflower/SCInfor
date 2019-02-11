@@ -98,11 +98,11 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetCommunicationBodyDefaultAnim() != NULL)
-					p_communication->SetAnimationBody(p_templ_animations->GetCommunicationBodyDefaultAnim());
+					p_communication->setAnimationBody(p_templ_animations->GetCommunicationBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetCommunicationHeadDefaultAnim() != NULL)
-					p_communication->SetAnimationHead(p_templ_animations->GetCommunicationHeadDefaultAnim());
+					p_communication->setAnimationHead(p_templ_animations->GetCommunicationHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca

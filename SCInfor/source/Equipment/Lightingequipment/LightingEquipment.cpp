@@ -26,10 +26,10 @@ namespace equipment
 		m_energy_consumption(0.0f),
 		m_lighting_equipment_state(LIGHTING_EQUIPMENT_DEFAULT)
 	{
-		SetZIndexBody(Z_PHYSICAL_LIGHTING_EQUIPMENT_BODY);
-		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_BODY);
-		SetZIndexHead(Z_PHYSICAL_LIGHTING_EQUIPMENT_HEAD);
-		SetZIndexShadowHead(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_HEAD);
+		setZIndexBody(Z_PHYSICAL_LIGHTING_EQUIPMENT_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_BODY);
+		setZIndexHead(Z_PHYSICAL_LIGHTING_EQUIPMENT_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_HEAD);
 	}
 
 	//Chroniony konstruktor kopiujący
@@ -40,10 +40,10 @@ namespace equipment
 		m_energy_consumption(LightingEquipmentCopy.m_energy_consumption),
 		m_lighting_equipment_state(LightingEquipmentCopy.m_lighting_equipment_state)
 	{
-		SetZIndexBody(Z_PHYSICAL_LIGHTING_EQUIPMENT_BODY);
-		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_BODY);
-		SetZIndexHead(Z_PHYSICAL_LIGHTING_EQUIPMENT_HEAD);
-		SetZIndexShadowHead(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_HEAD);
+		setZIndexBody(Z_PHYSICAL_LIGHTING_EQUIPMENT_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_BODY);
+		setZIndexHead(Z_PHYSICAL_LIGHTING_EQUIPMENT_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_HEAD);
 	}
 
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
@@ -95,8 +95,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetLightingEquipmentBodyLightDafaultAnim());
-				SetAnimationHead(p_anim_set->GetLightingEquipmentHeadLightDafaultAnim());
+				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightDafaultAnim());
+				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightDafaultAnim());
 			}
 			break;
 		}
@@ -104,8 +104,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetLightingEquipmentBodyLightOnAnim());
-				SetAnimationHead(p_anim_set->GetLightingEquipmentHeadLightOnAnim());
+				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightOnAnim());
+				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightOnAnim());
 			}
 			break;
 		}
@@ -113,8 +113,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetLightingEquipmentBodyLightOffAnim());
-				SetAnimationHead(p_anim_set->GetLightingEquipmentHeadLightOffAnim());
+				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightOffAnim());
+				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightOffAnim());
 			}
 			break;
 		}
@@ -122,8 +122,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetLightingEquipmentBodyLightDamageAnim());
-				SetAnimationHead(p_anim_set->GetLightingEquipmentHeadLightDamageAnim());
+				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightDamageAnim());
+				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightDamageAnim());
 			}
 			break;
 		}
@@ -131,8 +131,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetLightingEquipmentBodyLightDeathAnim());
-				SetAnimationHead(p_anim_set->GetLightingEquipmentHeadLightDeathAnim());
+				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightDeathAnim());
+				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightDeathAnim());
 			}
 			break;
 		}
@@ -150,7 +150,7 @@ namespace equipment
 	//Wirtualna metoda aktualizuje logikę obiektu
 	void LightingEquipment::update(float dt)
 	{
-		CPhysical::UpdateShadow(dt);	//aktualizacja shadow engine
+		Physical::updateShadow(dt);	//aktualizacja shadow engine
 
 		//jeśli urządzenie jest włączone
 		if(m_unit_controller.getState())

@@ -44,10 +44,10 @@ namespace equipment
 		m_unit_controller(false)//urządzenie wyłączone - uruchamia się z opóźnieniem
 	{
 		//inverse - docelowo jakaś metoda...
-		SetZIndexBody(Z_PHYSICAL_ENERGY_HEAD);
-		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_HEAD);
-		SetZIndexHead(Z_PHYSICAL_ENERGY_BODY);
-		SetZIndexShadowHead(Z_PHYSICAL_ENERGY_BODY);
+		setZIndexBody(Z_PHYSICAL_ENERGY_HEAD);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_HEAD);
+		setZIndexHead(Z_PHYSICAL_ENERGY_BODY);
+		setZIndexShadowHead(Z_PHYSICAL_ENERGY_BODY);
 	}
 
 	//Konstruktor kopiujący
@@ -74,6 +74,11 @@ namespace equipment
 		m_owner_death_candidate(EnergyCopy.m_owner_death_candidate),
 		m_unit_controller(EnergyCopy.m_unit_controller)
 	{
+		//inverse - docelowo jakaś metoda...
+		setZIndexBody(Z_PHYSICAL_ENERGY_HEAD);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_HEAD);
+		setZIndexHead(Z_PHYSICAL_ENERGY_BODY);
+		setZIndexShadowHead(Z_PHYSICAL_ENERGY_BODY);
 	}
 
 	//Destruktor
@@ -247,8 +252,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEnergyBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetEnergyHeadDefaultAnim());
+				setAnimationBody(p_anim_set->GetEnergyBodyDefaultAnim());
+				setAnimationHead(p_anim_set->GetEnergyHeadDefaultAnim());
 			}
 			break;
 		}
@@ -256,8 +261,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEnergyBodyReserveAnim());
-				SetAnimationHead(p_anim_set->GetEnergyHeadReserveAnim());
+				setAnimationBody(p_anim_set->GetEnergyBodyReserveAnim());
+				setAnimationHead(p_anim_set->GetEnergyHeadReserveAnim());
 			}
 			break;
 		}
@@ -265,8 +270,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEnergyBodyEmptyAnim());
-				SetAnimationHead(p_anim_set->GetEnergyHeadEmptyAnim());
+				setAnimationBody(p_anim_set->GetEnergyBodyEmptyAnim());
+				setAnimationHead(p_anim_set->GetEnergyHeadEmptyAnim());
 			}
 			break;
 		}
@@ -274,8 +279,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEnergyBodyDamageAnim());
-				SetAnimationHead(p_anim_set->GetEnergyHeadDamageAnim());
+				setAnimationBody(p_anim_set->GetEnergyBodyDamageAnim());
+				setAnimationHead(p_anim_set->GetEnergyHeadDamageAnim());
 			}
 			break;
 		}
@@ -283,8 +288,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEnergyBodyDeathAnim());
-				SetAnimationHead(p_anim_set->GetEnergyHeadDeathAnim());
+				setAnimationBody(p_anim_set->GetEnergyBodyDeathAnim());
+				setAnimationHead(p_anim_set->GetEnergyHeadDeathAnim());
 			}
 			break;
 		}
@@ -350,7 +355,7 @@ namespace equipment
 	//Wirtualna metoda aktualizuje logikę obiektu
 	void Energy::update(float dt)
 	{
-		CPhysical::UpdateShadow(dt);	//aktualizacja shadow engine
+		Physical::updateShadow(dt);	//aktualizacja shadow engine
 
 		updateEnergyTankTransformation(dt);
 
@@ -373,7 +378,7 @@ namespace equipment
 
 				//prędkość rotacji wirnika alternatora zależy od energii akumulatora i stanu obiektu
 				if(m_energytank_data.getEnergyTank()->getEnergy() && m_energy_state != ENERGY_DEATH)
-					RotateHead(m_energy_rotor_speed * dt);
+					rotateHead(m_energy_rotor_speed * dt);
 				
 				//regeneracja - energii w akumulatorze jest mniej niż wynosi pojemność akumulatora
 				if(m_energytank_data.getEnergyTank()->getEnergy() < m_energytank_data.getEnergyTank()->getEnergyTankCapacity())
@@ -388,11 +393,11 @@ namespace equipment
 
 				//prędkość rotacji wirnika - moduł energii uszkodony - zasilanie bateryjne
 				if(m_energy_state == ENERGY_DAMAGE)
-					RotateHead(- m_energy_rotation_speed * 0.5f * dt);
+					rotateHead(- m_energy_rotation_speed * 0.5f * dt);
 
 				//prędkość rotacji wirnika - moduł energii zniszczony
 				if(m_energy_state == ENERGY_DEATH)
-					RotateHead(- m_energy_rotation_speed * 0.25f * dt);
+					rotateHead(- m_energy_rotation_speed * 0.25f * dt);
 			}
 
 			//aktualizacja energii - jeśli jest energia

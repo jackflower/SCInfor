@@ -66,12 +66,12 @@ namespace mapengine
 	//Metoda tworzy obiekt mapy
 	void CMapObjectDescriptor::create()
 	{
-		CPhysical *phys = p_templ->create(stringutils::ConvertToWString(m_name));
+		Physical *phys = p_templ->create(stringutils::ConvertToWString(m_name));
 		if (phys != 0)
 		{
-			phys->SetPosition(sf::Vector2f(m_x_position, m_y_position));
-			phys->SetRotationBody(m_rotation_body);
-			phys->SetRotationHead(m_rotation_head);
+			phys->setPosition(sf::Vector2f(m_x_position, m_y_position));
+			phys->setRotationBody(m_rotation_body);
+			phys->setRotationHead(m_rotation_head);
 			phys->setSmoothing(m_smooth);
 		}
 	}

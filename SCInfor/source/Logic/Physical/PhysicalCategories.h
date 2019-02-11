@@ -1,7 +1,7 @@
-//  __________________________________________
-// | CPhysicalCategories.h - definition       |
-// | Jack Flower October 2012                 |
-// |__________________________________________|
+ï»¿//  _________________________________________
+// | PhysicalCategories.h - definition       |
+// | Jack Flower October 2012                |
+// |_________________________________________|
 //
 
 #ifndef H_PHYSICAL_CATEGORIES_JACK
@@ -9,15 +9,15 @@
 
 #include <string>
 
-//wydzielenie kategorii CPhysical,
+//wydzielenie kategorii Physical,
 //rozbudowane filtry,
 //parsowanie std::string (przy wczytywaniu z Xml),
-//kolejnoœæ i zale¿noœæ - obiekty porusz¹jace siê sa na pocz¹tku
+//kolejnoÅ›Ä‡ i zaleÅ¼noÅ›Ä‡ - obiekty poruszÄ…jace siÄ™ sa na poczÄ…tku
 
 namespace logic
 {
 	///
-	///Wyliczenie kategorii CPhysical
+	///Wyliczenie kategorii Physical
 	///
 	enum physCategory			
 	{							
@@ -38,10 +38,10 @@ namespace logic
 		PHYSICAL_WINDPOWERSTATION	= 16384	//15
 	};
 
-	//Dodaj¹c now¹ kategoriê, nale¿y zaktualizowaæ ich iloœæ
+	//DodajÄ…c nowÄ… kategoriÄ™, naleÅ¼y zaktualizowaÄ‡ ich iloÅ›Ä‡
 	const int PHYSICAL_CATEGORIES_COUNT = 15;
 
-	//Dodaj¹c nowy typ , nale¿y zaktualizowaæ tablice nazw i filtrów PhysicalCategories.cpp
+	//DodajÄ…c nowy typ , naleÅ¼y zaktualizowaÄ‡ tablice nazw i filtrÃ³w PhysicalCategories.cpp
 	const int PHYSICAL_HOSTILES			= PHYSICAL_MONSTER	| PHYSICAL_LAIR;
 	const int PHYSICAL_FRIENDLY			= PHYSICAL_PLAYER	| PHYSICAL_NPC;
 	const int PHYSICAL_ACTORS			= PHYSICAL_HOSTILES | PHYSICAL_FRIENDLY;
@@ -57,14 +57,14 @@ namespace logic
 	const int PHYSICAL_ANY				= (1 << PHYSICAL_CATEGORIES_COUNT) - 1;
 
 	///
-	///Metoda zwraca indeks filtra CPhysical na podstawie nazwy filtru
+	///Metoda zwraca indeks filtra Physical na podstawie nazwy filtru
 	///
-	///@param &input - sta³a referencja na std::string
+	///@param input - staÅ‚a referencja na std::string
 	///
-	int ParsePhysicalFilter(const std::string &input);
+	int ParsePhysicalFilter(const std::string & input);
 
 	///
-	///Metoda zwraca nazwê filtru CPhysical na podstawie numeru filtru
+	///Metoda zwraca nazwÄ™ filtru Physical na podstawie numeru filtru
 	///
 	///@param filter - numer filtru
 	///

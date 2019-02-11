@@ -405,11 +405,11 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetGunBodyDefaultAnim());
-					SetAnimationHead(p_anim_set->GetGunHeadDefaultAnim());
+					setAnimationBody(p_anim_set->GetGunBodyDefaultAnim());
+					setAnimationHead(p_anim_set->GetGunHeadDefaultAnim());
 					//animacja head odtwarza się w pętli
-					GetDisplayableHead()->GetAnimationState()->SetLooped(true);
-					GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+					getDisplayableHead()->GetAnimationState()->SetLooped(true);
+					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
 				}
 				break;
 			}
@@ -417,11 +417,11 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetGunBodyShootAnim());
-					SetAnimationHead(p_anim_set->GetGunHeadShootAnim());
+					setAnimationBody(p_anim_set->GetGunBodyShootAnim());
+					setAnimationHead(p_anim_set->GetGunHeadShootAnim());
 					//animacja head odtwarza się jeden raz
-					GetDisplayableHead()->GetAnimationState()->SetLooped(false);
-					GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
+					getDisplayableHead()->GetAnimationState()->SetLooped(false);
+					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
 				}
 				break;
 			}
@@ -429,11 +429,11 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetGunBodyAmmoLoadingAnim());
-					SetAnimationHead(p_anim_set->GetGunHeadAmmoLoadingAnim());
+					setAnimationBody(p_anim_set->GetGunBodyAmmoLoadingAnim());
+					setAnimationHead(p_anim_set->GetGunHeadAmmoLoadingAnim());
 					//animacja head odtwarza się jeden raz
-					GetDisplayableHead()->GetAnimationState()->SetLooped(false);
-					GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
+					getDisplayableHead()->GetAnimationState()->SetLooped(false);
+					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
 				}
 				break;
 			}
@@ -441,11 +441,11 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetGunBodyAmmoEmptyAnim());
-					SetAnimationHead(p_anim_set->GetGunHeadAmmoEmptyAnim());
+					setAnimationBody(p_anim_set->GetGunBodyAmmoEmptyAnim());
+					setAnimationHead(p_anim_set->GetGunHeadAmmoEmptyAnim());
 					//animacja head odtwarza się w pętli
-					GetDisplayableHead()->GetAnimationState()->SetLooped(true);
-					GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+					getDisplayableHead()->GetAnimationState()->SetLooped(true);
+					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
 				}
 				break;
 			}
@@ -453,11 +453,11 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetGunBodyDamageAnim());
-					SetAnimationHead(p_anim_set->GetGunHeadDamageAnim());
+					setAnimationBody(p_anim_set->GetGunBodyDamageAnim());
+					setAnimationHead(p_anim_set->GetGunHeadDamageAnim());
 					//animacja head odtwarza się w pętli
-					GetDisplayableHead()->GetAnimationState()->SetLooped(true);
-					GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+					getDisplayableHead()->GetAnimationState()->SetLooped(true);
+					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
 				}
 				break;
 			}
@@ -465,11 +465,11 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetGunBodyServiceAnim());
-					SetAnimationHead(p_anim_set->GetGunHeadServiceAnim());
+					setAnimationBody(p_anim_set->GetGunBodyServiceAnim());
+					setAnimationHead(p_anim_set->GetGunHeadServiceAnim());
 					//animacja head odtwarza się w pętli
-					GetDisplayableHead()->GetAnimationState()->SetLooped(true);
-					GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+					getDisplayableHead()->GetAnimationState()->SetLooped(true);
+					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
 				}
 				break;
 			}
@@ -477,8 +477,8 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					SetAnimationBody(p_anim_set->GetGunBodyDeathAnim());
-					SetAnimationHead(p_anim_set->GetGunHeadDeathAnim());
+					setAnimationBody(p_anim_set->GetGunBodyDeathAnim());
+					setAnimationHead(p_anim_set->GetGunHeadDeathAnim());
 				}
 				break;
 			}
@@ -491,7 +491,7 @@ namespace equipment
 		void Gun::update(float dt)
 		{
 			//aktualizacja shadow engine
-			CPhysical::UpdateShadow(dt);
+			Physical::updateShadow(dt);
 
 			//metoda aktualizuje składowe transformacji względem włąściciela
 			updateAmmoTransformation(dt);
@@ -514,7 +514,7 @@ namespace equipment
 				m_time = 0.0f;
 			}
 			float radius_offset = gRandom.Rndf(0.62f);
-			SetRotationHead(GetRotationHead() + (radius_offset*direction));
+			setRotationHead(getRotationHead() + (radius_offset*direction));
 			//
 			//c  h  a  o  s  - testy
 		}
@@ -538,7 +538,7 @@ namespace equipment
 						m_gun_state = EGunState::GUN_SHOOT;
 
 						//dostosowanie prędkości odtwarzania animacji dla strzału
-						SetAnimSpeedHead(CPhysical::getCalcualtedAnimSpeed(m_time_shot));
+						setAnimSpeedHead(Physical::getCalcualtedAnimSpeed(m_time_shot));
 
 						//bilans amunicji w magazynku
 						m_ammo_data.getAmmo()->setAmmo(m_ammo_data.getAmmo()->getAmmo() - getBulletPerSoot());
@@ -564,10 +564,10 @@ namespace equipment
 							//stan trwania ładowania amunicji
 							m_gun_state = EGunState::GUN_AMMO_LOADING;
 							//przywróć czas ekspozycji klatki animacji na wartość zapamiętaną
-							SetAnimSpeedHead(GetStoredAnimSpeedHead());
+							setAnimSpeedHead(getStoredAnimSpeedHead());
 
 							//dostosowanie prędkości odtwarzania animacji ładowania amunicji
-							SetAnimSpeedHead(CPhysical::getCalcualtedAnimSpeed(m_time_ammo_load_delay));
+							setAnimSpeedHead(Physical::getCalcualtedAnimSpeed(m_time_ammo_load_delay));
 
 							m_ammo_loading = true;		//ustawiamy flagę, że trzeba przeładować działo
 							m_shot_in_progress = false;	//czas strzału się zakończył
@@ -588,7 +588,7 @@ namespace equipment
 							//stan default
 							m_gun_state = EGunState::GUN_DEFAULT;
 							//przywróć czas ekspozycji klatki animacji na wartość zapamiętaną
-							SetAnimSpeedHead(GetStoredAnimSpeedHead());
+							setAnimSpeedHead(getStoredAnimSpeedHead());
 
 							m_ammo_loading = false;		//już nie można przeładowywać działa
 							m_process_time = 0.0f;		//reset zegara
@@ -602,7 +602,7 @@ namespace equipment
 						m_gun_state = EGunState::GUN_AMMO_EMPTY;
 
 						//przywróć czas ekspozycji klatki animacji na wartość zapamiętaną
-						SetAnimSpeedHead(GetStoredAnimSpeedHead());
+						setAnimSpeedHead(getStoredAnimSpeedHead());
 
 						m_ammo_loading = true;	//ustawiamy flagę, że trzeba przeładować działo
 						m_shot_enabled = false;	//nie można teraz strzelać
@@ -621,7 +621,7 @@ namespace equipment
 				if (m_process_time >= m_damage.getDurationDamage())//pobrać z factory
 				{
 					m_gun_state = EGunState::GUN_DEFAULT;
-					RestoreColorHead();
+					restoreColorHead();
 				}
 			}
 

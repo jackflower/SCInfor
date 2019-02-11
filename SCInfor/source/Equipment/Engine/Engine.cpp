@@ -39,10 +39,10 @@ namespace equipment
 		m_percentage_fuel(0.0f),
 		m_unit_controller(true)//urządzenie włączone
 	{
-		SetZIndexBody(Z_PHYSICAL_ENGINE_BODY);
-		SetZIndexShadowBody(Z_PHYSICAL_SHADOW_ENGINE_BODY);
-		SetZIndexHead(Z_PHYSICAL_ENGINE_HEAD);
-		SetZIndexShadowHead(Z_PHYSICAL_SHADOW_ENGINE_HEAD);
+		setZIndexBody(Z_PHYSICAL_ENGINE_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENGINE_BODY);
+		setZIndexHead(Z_PHYSICAL_ENGINE_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_SHADOW_ENGINE_HEAD);
 	}
 
 	//Chroniony konstruktor kopiujący
@@ -65,6 +65,10 @@ namespace equipment
 		m_percentage_fuel(EngineCopy.m_percentage_fuel),
 		m_unit_controller(EngineCopy.m_unit_controller)
 	{
+		setZIndexBody(Z_PHYSICAL_ENGINE_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENGINE_BODY);
+		setZIndexHead(Z_PHYSICAL_ENGINE_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_SHADOW_ENGINE_HEAD);
 	}
 
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
@@ -259,8 +263,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEngineBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetEngineHeadDefaultAnim());
+				setAnimationBody(p_anim_set->GetEngineBodyDefaultAnim());
+				setAnimationHead(p_anim_set->GetEngineHeadDefaultAnim());
 			}
 			break;
 		}
@@ -268,8 +272,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEngineBodyStartAnim());
-				SetAnimationHead(p_anim_set->GetEngineHeadStartAnim());
+				setAnimationBody(p_anim_set->GetEngineBodyStartAnim());
+				setAnimationHead(p_anim_set->GetEngineHeadStartAnim());
 			}
 			break;
 		}
@@ -277,8 +281,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEngineBodyStopAnim());
-				SetAnimationHead(p_anim_set->GetEngineHeadStopAnim());
+				setAnimationBody(p_anim_set->GetEngineBodyStopAnim());
+				setAnimationHead(p_anim_set->GetEngineHeadStopAnim());
 			}
 			break;
 		}
@@ -286,8 +290,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEngineBodyDamageAnim());
-				SetAnimationHead(p_anim_set->GetEngineHeadDamageAnim());
+				setAnimationBody(p_anim_set->GetEngineBodyDamageAnim());
+				setAnimationHead(p_anim_set->GetEngineHeadDamageAnim());
 			}
 			break;
 		}
@@ -295,8 +299,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetEngineBodyDeathAnim());
-				SetAnimationHead(p_anim_set->GetEngineHeadDeathAnim());
+				setAnimationBody(p_anim_set->GetEngineBodyDeathAnim());
+				setAnimationHead(p_anim_set->GetEngineHeadDeathAnim());
 			}
 			break;
 		}
@@ -314,7 +318,7 @@ namespace equipment
 	//Wirtualna metoda aktualizuje logikę obiektu
 	void Engine::update(float dt)
 	{
-		CPhysical::UpdateShadow(dt);//aktualizacja shadow engine
+		Physical::updateShadow(dt);//aktualizacja shadow engine
 
 		updateFuelTankTransformation(dt);
 
@@ -323,7 +327,7 @@ namespace equipment
 			m_engine_timer += dt;	//kumulacja upływającego czasu
 
 			if(m_engine_run)//jeśli silnik pracuje, łopatki wirnika się obracają
-				RotateHead(m_rotor_speed * dt);
+				rotateHead(m_rotor_speed * dt);
 			
 			//engine - aktualizacja paliwa
 			if(m_fueltank_data.getFuelTank())

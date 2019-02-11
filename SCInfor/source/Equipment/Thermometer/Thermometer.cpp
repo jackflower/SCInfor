@@ -8,13 +8,13 @@
 
 namespace equipment
 {
-	RTTI_IMPL(Thermometer, CPhysical)
+	RTTI_IMPL(Thermometer, Physical)
 
 
 	//Chroniony konstruktor domyślny
 	Thermometer::Thermometer(const std::wstring & uniqueId)
 	:
-		CPhysical(uniqueId),//konstruktor klasy bazowej
+		Physical(uniqueId),//konstruktor klasy bazowej
 		m_range(),
 		m_temperature(0.0f),
 		e_display_type(EDisplayType::PROGRESS_BAR)
@@ -25,7 +25,7 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	Thermometer::Thermometer(const Thermometer & ThermometerCopy)
 	:
-		CPhysical(ThermometerCopy),//konstruktor kopiujący klasy bazowej
+		Physical(ThermometerCopy),//konstruktor kopiujący klasy bazowej
 		m_range(ThermometerCopy.m_range),
 		m_temperature(ThermometerCopy.m_temperature),
 		e_display_type(ThermometerCopy.e_display_type)
@@ -36,7 +36,7 @@ namespace equipment
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
 	Thermometer::~Thermometer()
 	{
-		//CPhysical
+		//Physical
 		m_range.max = 0.0f;
 		m_range.min = 0.0f;
 		m_temperature = 0.0f;
@@ -58,7 +58,7 @@ namespace equipment
 	//Wirtualna metoda aktualizuje logikę obiektu
 	void Thermometer::update(float dt)
 	{
-		//CPhysical...
+		//Physical...
 	}
 
 }//namespace equipment

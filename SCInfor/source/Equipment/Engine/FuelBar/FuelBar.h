@@ -8,7 +8,7 @@
 #define H_FUEL_BAR_JACK
 
 #include "../../../RTTI/RTTI.h"
-#include "../../../Logic/Physical/CPhysical.h"
+#include "../../../Logic/Physical/Physical.h"
 
 using namespace logic;
 
@@ -18,7 +18,7 @@ namespace equipment
 	///
 	///Klasa reprezentuje wskaźnik stanu paliwa - progress bar
 	///
-	class FuelBar : public CPhysical
+	class FuelBar : public Physical
 	{
 		RTTI_DECL;
 	

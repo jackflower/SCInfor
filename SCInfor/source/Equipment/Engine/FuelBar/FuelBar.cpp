@@ -9,13 +9,13 @@
 namespace equipment
 {
 
-	RTTI_IMPL(FuelBar, CPhysical);
+	RTTI_IMPL(FuelBar, Physical);
 
 
 	//Konstruktor
 	FuelBar::FuelBar(const std::wstring & uniqueId)
 	:
-		CPhysical(uniqueId),//konstruktor klasy bazowej
+		Physical(uniqueId),//konstruktor klasy bazowej
 		m_fuelbar_name(),
 		m_thickness(0.0f),
 		m_size(0.0f, 0.0f),
@@ -26,7 +26,7 @@ namespace equipment
 	//Konstruktor kopiujący
 	FuelBar::FuelBar(const FuelBar & FuelBarCopy)
 	:
-		CPhysical(FuelBarCopy),//konstruktor kopiujący klasy bazowej
+		Physical(FuelBarCopy),//konstruktor kopiujący klasy bazowej
 		m_fuelbar_name(FuelBarCopy.m_fuelbar_name),
 		m_thickness(FuelBarCopy.m_thickness),
 		m_size(FuelBarCopy.m_size),
@@ -37,7 +37,7 @@ namespace equipment
 	//Destruktor
 	FuelBar::~FuelBar(void)
 	{
-		//CPhysical
+		//Physical
 		m_fuelbar_name = "";
 		m_thickness = 0.0f;
 		m_size.x = 0.0f;

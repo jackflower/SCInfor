@@ -12,7 +12,7 @@
 //#include "SearchTools/CPath.h"
 //#include "SearchTools/CPathFinder.h"
 #include "../Logic/CPhysicalManager.h"
-#include "../Logic/Physical/CPhysical.h"
+#include "../Logic/Physical/Physical.h"
 #include "../Utilities/MathFunctions/MathFunctions.h"
 #include <climits>
 #include <iostream>
@@ -85,7 +85,7 @@ namespace mapengine
 	//Metoda aktualizuje wszystkie obiekty znajduj¹ce siê na mapie kolizji
 	void CCollisionMap::UpdateAllPhysicals()
 	{
-		const std::vector<CPhysical*> &physicals = gPhysicalManager.GetPhysicals();
+		const std::vector<Physical*> &physicals = gPhysicalManager.GetPhysicals();
 		for (unsigned i = 0; i < physicals.size(); i++)
 		{
 			UpdatePhysical(physicals[i], true);
@@ -95,18 +95,18 @@ namespace mapengine
 	//Metoda aktualizuje obiekty znajduj¹ce siê na mapie kolizji w zale¿noœci od kategorii
 	void CCollisionMap::UpdatePhysicals(int category)
 	{
-		const std::vector<CPhysical*> &physicals = gPhysicalManager.GetPhysicals();
+		const std::vector<Physical*> &physicals = gPhysicalManager.GetPhysicals();
 		for (unsigned i = 0; i < physicals.size(); i++)
 		{
-			if (physicals[i]->GetCategory() & category)
+			if (physicals[i]->getCategory() & category)
 				UpdatePhysical(physicals[i], true);
 		}
 	}
 
-	//Metoda aktualizuje wskazany obiekt klasy CPhysical
-	void CCollisionMap::UpdatePhysical(CPhysical *physical, bool collision)
+	//Metoda aktualizuje wskazany obiekt klasy Physical
+	void CCollisionMap::UpdatePhysical(Physical *physical, bool collision)
 	{
-		if (!(physical->GetCategory() & PHYSICAL_PATHBLOCKER))	return;
+		if (!(physical->getCategory() & PHYSICAL_PATHBLOCKER))	return;
 		if (!gMapManager.GetCurrent())							return;
 
 		//pobieramy rozmiar mapy w kaflach, aby poprawnie zeskalowaæ wspó³rzêdne
@@ -115,10 +115,10 @@ namespace mapengine
 		//rzutowanie physicala na mapê kolizji o danym rozmiarze
 		sf::IntRect rect
 		(
-			int ((physical->GetPosition().x - physical->GetRectSize().x * 0.49f) * (float) m_size.x / (float) mapSize.x),
-			int ((physical->GetPosition().y - physical->GetRectSize().y * 0.49f) * (float) m_size.y / (float) mapSize.y),
-			int ((physical->GetPosition().x + physical->GetRectSize().x * 0.49f) * (float) m_size.x / (float) mapSize.x),
-			int ((physical->GetPosition().y + physical->GetRectSize().y * 0.49f) * (float) m_size.y / (float) mapSize.y)
+			int ((physical->getPosition().x - physical->getRectSize().x * 0.49f) * (float) m_size.x / (float) mapSize.x),
+			int ((physical->getPosition().y - physical->getRectSize().y * 0.49f) * (float) m_size.y / (float) mapSize.y),
+			int ((physical->getPosition().x + physical->getRectSize().x * 0.49f) * (float) m_size.x / (float) mapSize.x),
+			int ((physical->getPosition().y + physical->getRectSize().y * 0.49f) * (float) m_size.y / (float) mapSize.y)
 		);
 
 		//TUTAJ utkn¹³em, bo wymaga to policzenia...

@@ -104,7 +104,7 @@ namespace factory
 			PowerStationTemplate::fill(p_windpower_station);
 			
 			//kategoria
-			p_windpower_station->SetCategory(PHYSICAL_WINDPOWERSTATION);
+			p_windpower_station->setCategory(PHYSICAL_WINDPOWERSTATION);
 
 			//przekazanie danych...
 			p_windpower_station->setEnergyCondensationTime(m_templ_energy_condensation_time);
@@ -125,7 +125,7 @@ namespace factory
 					//inicjujemy wskaźnik na składową - wskaźnik na obiekt wzorzeca dla klasy WindTurbineTemplate
 					p_windpower_station->setWindTurbine(p_templ_windturbine->create(L""));
 					//przekazanie wskaźnikowi na klasę WindPowerStation informacji o wzorcu obiektu
-					p_windpower_station->getWindTurbine()->SetTemplate(p_templ_windturbine);
+					p_windpower_station->getWindTurbine()->setTemplate(p_templ_windturbine);
 					//decorate
 					p_windpower_station->getWindTurbine()->setSmoothing(true);
 				}

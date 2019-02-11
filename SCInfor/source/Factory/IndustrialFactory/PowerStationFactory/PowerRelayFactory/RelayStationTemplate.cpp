@@ -106,11 +106,11 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetPowerRelayStationBodyDefaultAnim()!= NULL)
-					p_relay_station->SetAnimationBody(p_templ_animations->GetPowerRelayStationBodyDefaultAnim());
+					p_relay_station->setAnimationBody(p_templ_animations->GetPowerRelayStationBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetPowerRelayStationHeadDefaultAnim()!= NULL)
-					p_relay_station->SetAnimationHead(p_templ_animations->GetPowerRelayStationHeadDefaultAnim());
+					p_relay_station->setAnimationHead(p_templ_animations->GetPowerRelayStationHeadDefaultAnim());
 			}
 
 			//jeśli obiekt posiada moduł do komunikacji
@@ -121,7 +121,7 @@ namespace factory
 					//pobieramy składową moduł komunikacji i wzorzec wypełnia wskaźnik danymi
 					p_relay_station->setCommunication(p_templ_communication->create(L""));
 					//przekazanie wskaźnikowi na klasę Communication informacji o wzorcu
-					p_relay_station->getCommunication()->SetTemplate(p_templ_communication);
+					p_relay_station->getCommunication()->setTemplate(p_templ_communication);
 				}
 			}
 

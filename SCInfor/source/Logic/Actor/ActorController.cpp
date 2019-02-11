@@ -49,7 +49,7 @@ namespace logic
 		if (p_actor->getSpawnState() == SPAWN_STATE_ALIVE)
 		{
 			//uwzględniam strafe
-			sf::Vector2f dir = RotationToVector((float)p_actor->GetRotationBody());//body
+			sf::Vector2f dir = RotationToVector((float)p_actor->getRotationBody());//body
 			sf::Vector2f move;
 
 			//jeśli aktor strzela, ostrzeliwuje się...
@@ -74,7 +74,7 @@ namespace logic
 
 			move = Normalize(move);//normalizacja wektora
 
-			p_actor->SetVelocity(move * speed);//ustawienie prędkości
+			p_actor->setVelocity(move * speed);//ustawienie prędkości
 		}
 	}
 
@@ -87,7 +87,7 @@ namespace logic
 	        m_true_rot += rotation;
 	        while (m_true_rot < 0.0f) m_true_rot += 360.0f;
 	        while (m_true_rot > 360.0f) m_true_rot -= 360.0f;
-			p_actor->SetRotationBody(m_true_rot);//body
+			p_actor->setRotationBody(m_true_rot);//body
 	        if ((rotation >= 0.001f) || (rotation <= -0.001))
 				p_actor->setMoveState(MOVE_STATE_TURNING);
 	    }
@@ -119,7 +119,7 @@ namespace logic
 		//przed zejściem z tego świata, obiekt się zatrzymuje...
 		if (p_actor->getSpawnState() != SPAWN_STATE_ALIVE)
 		{
-			p_actor->SetVelocity(sf::Vector2f(0.0f, 0.0f));
+			p_actor->setVelocity(sf::Vector2f(0.0f, 0.0f));
 		}
 
 		p_actor->setMoveState(MOVE_STATE_STANDING);
@@ -138,7 +138,7 @@ namespace logic
 	{
 		if (source != EffectSourcePtr(NULL))
 		{
-			CPhysical *dealer = source->DeterminePhysicalSource();
+			Physical *dealer = source->DeterminePhysicalSource();
 			if (dealer)
 			{
 				//co to takiego? w kodzie zakomentowano...

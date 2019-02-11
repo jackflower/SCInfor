@@ -112,8 +112,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetSolarCellBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetSolarCellHeadDefaultAnim());
+				setAnimationBody(p_anim_set->GetSolarCellBodyDefaultAnim());
+				setAnimationHead(p_anim_set->GetSolarCellHeadDefaultAnim());
 			}
 			break;
 		}
@@ -121,8 +121,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetSolarCellBodyUpdateEnergyAnim());
-				SetAnimationHead(p_anim_set->GetSolarCellHeadUpdateEnergyAnim());
+				setAnimationBody(p_anim_set->GetSolarCellBodyUpdateEnergyAnim());
+				setAnimationHead(p_anim_set->GetSolarCellHeadUpdateEnergyAnim());
 			}
 			break;
 		}
@@ -130,8 +130,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetSolarCellBodyDamageAnim());
-				SetAnimationHead(p_anim_set->GetSolarCellHeadDamageAnim());
+				setAnimationBody(p_anim_set->GetSolarCellBodyDamageAnim());
+				setAnimationHead(p_anim_set->GetSolarCellHeadDamageAnim());
 			}
 			break;
 		}
@@ -139,8 +139,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetSolarCellBodyDeathAnim());
-				SetAnimationHead(p_anim_set->GetSolarCellHeadDeathAnim());
+				setAnimationBody(p_anim_set->GetSolarCellBodyDeathAnim());
+				setAnimationHead(p_anim_set->GetSolarCellHeadDeathAnim());
 			}
 			break;
 		}
@@ -152,7 +152,7 @@ namespace equipment
 	//Wirtualna metoda aktualizująca obiekt
 	void SolarCell::update(float dt)
 	{
-		CPhysical::UpdateShadow(dt);//aktualizacja shadow engine
+		Physical::updateShadow(dt);//aktualizacja shadow engine
 
 		//jeśli urządzenie jest włączone
 		if(m_unit_controller.getState())
@@ -206,16 +206,16 @@ namespace equipment
 		//2014-08-08
 		//bardzo źle napisany kod - zająć się tym w innym czasie...
 		//kąt obrotu obiektu jest mniejszy od kąta źródła termicznego
-		if(GetRotationHead() < (gWeather.getAngleSun() - CALIBRATION_FACTOR_ANGLE))
+		if(getRotationHead() < (gWeather.getAngleSun() - CALIBRATION_FACTOR_ANGLE))
 		{
-			SetRotationHead(GetRotationHead() + m_rotation_speed * dt);
-			if(GetRotationHead() <= (gWeather.getAngleSun()- CALIBRATION_FACTOR_ANGLE))
+			setRotationHead(getRotationHead() + m_rotation_speed * dt);
+			if(getRotationHead() <= (gWeather.getAngleSun()- CALIBRATION_FACTOR_ANGLE))
 				return;//wyjście, jeśli warunek spełniony
 		}
 		else
 		{
-			SetRotationHead(GetRotationHead() - m_rotation_speed * dt);
-			if(GetRotationHead() >= (gWeather.getAngleSun() - CALIBRATION_FACTOR_ANGLE))
+			setRotationHead(getRotationHead() - m_rotation_speed * dt);
+			if(getRotationHead() >= (gWeather.getAngleSun() - CALIBRATION_FACTOR_ANGLE))
 				return;//wyjście, jeśli warunek spełniony
 		}
 		//old code:

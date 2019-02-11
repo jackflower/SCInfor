@@ -91,7 +91,7 @@ namespace factory
 			p_fuelbar->setThickness(m_templ_thickness);
 			p_fuelbar->setBarSize(m_templ_size);
 			p_fuelbar->setBarPositionOffset(m_templ_position_offset);
-			p_fuelbar->SetColor(m_templ_color);
+			p_fuelbar->setColor(m_templ_color);
 		}
 	}
 }//namespace factory

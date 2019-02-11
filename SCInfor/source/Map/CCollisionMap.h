@@ -22,7 +22,7 @@ class CPath;
 
 namespace logic
 {
-	class CPhysical;
+	class Physical;
 }
 
 using namespace logic;
@@ -73,13 +73,13 @@ namespace mapengine
 		void UpdatePhysicals(int category);
 
 		///
-		///Metoda aktualizuje wskazany obiekt klasy CPhysical
+		///Metoda aktualizuje wskazany obiekt klasy Physical
 		///
-		///@param *physical - wskaünik na obiekt klasy CPhysical
+		///@param *physical - wskaünik na obiekt klasy Physical
 		///
 		///@param collision - flaga kolizji
 		///
-		void UpdatePhysical(CPhysical *physical, bool collision);
+		void UpdatePhysical(Physical *physical, bool collision);
 		
 		///
 		///Metoda zwraca flagÍ, czy nastπpi≥a kolizja z jakimkolwiek obiektem z kontenera przechowujπcego obiekty klasy CCell

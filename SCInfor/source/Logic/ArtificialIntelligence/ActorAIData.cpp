@@ -79,12 +79,12 @@ namespace artificialintelligence
 	{
 		if (p_AI != NULL)
 		{
-			return getActor()->GetPosition();
+			return getActor()->getPosition();
 		}
 		else
 		{
 			//atrapa
-			return getActor()->GetPosition();
+			return getActor()->getPosition();
 			//tego poniżej nie ma...czekam na impelmentację...
 			//return mFlock->GetCenter();
 		}

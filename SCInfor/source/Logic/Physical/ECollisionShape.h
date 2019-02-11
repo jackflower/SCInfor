@@ -1,4 +1,4 @@
-//  _________________________________
+ï»¿//  _________________________________
 // | ECollisionShape.h - enumeration |
 // | Jack Flower - 2012              |
 // |_________________________________|
@@ -10,12 +10,12 @@
 namespace logic
 {
 	///
-	///Wyliczenie typów kolizji
+	///Wyliczenie typÃ³w kolizji
 	///
 	enum ECollisionShape
 	{
-		SHAPE_CIRCLE,	//kolizja okr¹g - okr¹g
-		SHAPE_RECT		//kolizja prostok¹t - prostok¹t
+		SHAPE_CIRCLE,	//kolizja okrÄ…g - okrÄ…g
+		SHAPE_RECT		//kolizja prostokÄ…t - prostokÄ…t
 	};
 }
 #endif //H_ECOLLISION_SHAPE_JACK

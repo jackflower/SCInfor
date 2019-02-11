@@ -266,7 +266,7 @@ namespace physics
 		//	rotation
 		//	origin
 		//	scale
-		//odpowiednio dla sk³adowych CPhysical (obiekt sk³ada siê z elementów)
+		//odpowiednio dla sk³adowych Physical (obiekt sk³ada siê z elementów)
 
 	};
 }//namespace physics

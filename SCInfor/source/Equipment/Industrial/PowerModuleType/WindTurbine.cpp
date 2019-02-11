@@ -35,10 +35,10 @@ namespace equipment
 		m_calculated_speed_rotor(0.0f),
 		m_calculated_energy_full_duration(0.0f)
 	{
-		SetZIndexBody(Z_PHYSICAL_SHADOW_WIND_TURBINE_BODY);
-		SetZIndexShadowBody(Z_PHYSICAL_WIND_TURBINE_BODY);
-		SetZIndexHead(Z_PHYSICAL_SHADOW_WIND_TURBINE_HEAD);
-		SetZIndexShadowHead(Z_PHYSICAL_WIND_TURBINE_HEAD);
+		setZIndexBody(Z_PHYSICAL_SHADOW_WIND_TURBINE_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_WIND_TURBINE_BODY);
+		setZIndexHead(Z_PHYSICAL_SHADOW_WIND_TURBINE_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_WIND_TURBINE_HEAD);
 	}
 
 	//Chroniony konstruktor kopiujący
@@ -56,10 +56,10 @@ namespace equipment
 		m_calculated_speed_rotor(WindTurbineCopy.m_calculated_speed_rotor),
 		m_calculated_energy_full_duration (WindTurbineCopy.m_calculated_energy_full_duration)
 	{
-		SetZIndexBody(Z_PHYSICAL_SHADOW_WIND_TURBINE_BODY);
-		SetZIndexShadowBody(Z_PHYSICAL_WIND_TURBINE_BODY);
-		SetZIndexHead(Z_PHYSICAL_SHADOW_WIND_TURBINE_HEAD);
-		SetZIndexShadowHead(Z_PHYSICAL_WIND_TURBINE_HEAD);
+		setZIndexBody(Z_PHYSICAL_SHADOW_WIND_TURBINE_BODY);
+		setZIndexShadowBody(Z_PHYSICAL_WIND_TURBINE_BODY);
+		setZIndexHead(Z_PHYSICAL_SHADOW_WIND_TURBINE_HEAD);
+		setZIndexShadowHead(Z_PHYSICAL_WIND_TURBINE_HEAD);
 	}
 
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
@@ -154,12 +154,12 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetWindTurbineBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetWindTurbineHeadDefaultAnim());
+				setAnimationBody(p_anim_set->GetWindTurbineBodyDefaultAnim());
+				setAnimationHead(p_anim_set->GetWindTurbineHeadDefaultAnim());
 
 				//animacja head odtwarza się w pętli
-				GetDisplayableHead()->GetAnimationState()->SetLooped(true);
-				GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+				getDisplayableHead()->GetAnimationState()->SetLooped(true);
+				getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
 			}
 			break;
 		}
@@ -168,11 +168,11 @@ namespace equipment
 			if (p_anim_set)
 			{
 				//SetAnimationBody(p_anim_set->GetWindTurbineBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetWindTurbineHeadCargoOpenAnim());
+				setAnimationHead(p_anim_set->GetWindTurbineHeadCargoOpenAnim());
 				
 				//animacja head odtwarza się jeden raz
-				GetDisplayableHead()->GetAnimationState()->SetLooped(false);
-				GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
+				getDisplayableHead()->GetAnimationState()->SetLooped(false);
+				getDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
 			}
 			break;
 		}
@@ -181,11 +181,11 @@ namespace equipment
 			if (p_anim_set)
 			{
 				//SetAnimationBody(p_anim_set->GetWindTurbineBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetWindTurbineHeadCargoCloseAnim());
+				setAnimationHead(p_anim_set->GetWindTurbineHeadCargoCloseAnim());
 
 				//animacja head odtwarza się jeden raz
-				GetDisplayableHead()->GetAnimationState()->SetLooped(false);
-				GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
+				getDisplayableHead()->GetAnimationState()->SetLooped(false);
+				getDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
 			}
 			break;
 		}
@@ -194,10 +194,10 @@ namespace equipment
 			if (p_anim_set)
 			{
 				//SetAnimationBody(p_anim_set->GetWindTurbineBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetWindTurbineHeadUpdateEnergyAnim());
+				setAnimationHead(p_anim_set->GetWindTurbineHeadUpdateEnergyAnim());
 				//animacja head odtwarza się w pętli
-				GetDisplayableHead()->GetAnimationState()->SetLooped(true);
-				GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+				getDisplayableHead()->GetAnimationState()->SetLooped(true);
+				getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
 			}
 			break;
 		}
@@ -205,12 +205,12 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetWindTurbineBodyDamagetAnim());
-				SetAnimationHead(p_anim_set->GetWindTurbineHeadDamagetAnim());
+				setAnimationBody(p_anim_set->GetWindTurbineBodyDamagetAnim());
+				setAnimationHead(p_anim_set->GetWindTurbineHeadDamagetAnim());
 
 				//animacja head odtwarza się w pętli
-				GetDisplayableHead()->GetAnimationState()->SetLooped(true);
-				GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+				getDisplayableHead()->GetAnimationState()->SetLooped(true);
+				getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
 			}
 			break;
 		}
@@ -218,12 +218,12 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetWindTurbineBodyDeathAnim());
-				SetAnimationHead(p_anim_set->GetWindTurbineHeadDeathAnim());
+				setAnimationBody(p_anim_set->GetWindTurbineBodyDeathAnim());
+				setAnimationHead(p_anim_set->GetWindTurbineHeadDeathAnim());
 
 				//animacja head odtwarza się w pętli
-				GetDisplayableHead()->GetAnimationState()->SetLooped(true);
-				GetDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+				getDisplayableHead()->GetAnimationState()->SetLooped(true);
+				getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
 			}
 			break;
 		}
@@ -235,7 +235,7 @@ namespace equipment
 	//Wirtualna metoda aktualizująca obiekt
 	void WindTurbine::update(float dt)
 	{
-		CPhysical::UpdateShadow(dt);	//aktualizacja shadow engine
+		Physical::updateShadow(dt);	//aktualizacja shadow engine
 
 		//jeśli urządzenie jest włączone
 		if(m_unit_controller.getState())
@@ -261,7 +261,7 @@ namespace equipment
 				//zliczam czas
 				m_cargo_open_duration += dt;
 				//po zakończeniu odtworzania jednego cyklu animacji otwierania luku - zmiana stanu
-				if(m_cargo_open_duration >= GetAnimationHead()->TotalLength())
+				if(m_cargo_open_duration >= getAnimationHead()->TotalLength())
 				{
 					//obliczam prędkość łopatek turniny
 					m_calculated_speed_rotor = m_speed_rotor * m_speed_transmission * gWeather.GetWindSpeed() * dt;
@@ -274,8 +274,8 @@ namespace equipment
 			if(m_turbine_state == TURBINE_UPDATE_ENERGY)
 			{
 				//włączam obracanie łopatek turbiny
-				SetRotationBody(GetRotationBody() + m_calculated_speed_rotor);
-				if(GetRotationBody() > FULL_ROTATION)//wykonano pełny obrót łopatek turbiny
+				setRotationBody(getRotationBody() + m_calculated_speed_rotor);
+				if(getRotationBody() > FULL_ROTATION)//wykonano pełny obrót łopatek turbiny
 					m_stored_energy += m_power;
 
 				//diagnostyka
@@ -288,7 +288,7 @@ namespace equipment
 				//zliczam czas
 				m_cargo_close_duration += dt;
 				//po zakończeniu odtworzenia jednego cyklu animacji zamykania luku - zmiana stanu
-				if(m_cargo_close_duration >= GetAnimationHead()->TotalLength())
+				if(m_cargo_close_duration >= getAnimationHead()->TotalLength())
 				{
 					//zmiana stanu - odnowienie procesu aktualizacji energii
 					m_turbine_state = TURBINE_DEFAULT;

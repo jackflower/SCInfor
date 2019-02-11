@@ -151,10 +151,10 @@ namespace factory
 				p_power_relay_station->setAnimSet(p_templ_animations);
 				//body
 				if (p_templ_animations->GetPowerRelayStationBodyDefaultAnim()!= NULL)
-					p_power_relay_station->SetAnimationBody(p_templ_animations->GetPowerRelayStationBodyDefaultAnim());
+					p_power_relay_station->setAnimationBody(p_templ_animations->GetPowerRelayStationBodyDefaultAnim());
 				//head
 				if (p_templ_animations->GetPowerRelayStationHeadDefaultAnim()!= NULL)
-					p_power_relay_station->SetAnimationHead(p_templ_animations->GetPowerRelayStationHeadDefaultAnim());
+					p_power_relay_station->setAnimationHead(p_templ_animations->GetPowerRelayStationHeadDefaultAnim());
 			}
 			
 			//jeśli obiekt posiada moduł prezentacji stanu slotów
@@ -165,7 +165,7 @@ namespace factory
 					//pobieramy składową moduł prezentacji stanu slotów i wzorzec wypełnia wskaźnik danymi
 					p_power_relay_station->setSlotsRate(p_templ_slot_rate->create(L""));
 					//przekazanie wskaźnikowi na klasę PowerRelayStation informacji o wzorcu
-					p_power_relay_station->getSlotsRate()->SetTemplate(p_templ_slot_rate);
+					p_power_relay_station->getSlotsRate()->setTemplate(p_templ_slot_rate);
 				}
 			}
 
@@ -176,7 +176,7 @@ namespace factory
 					//pobieramy składową  wzorca baterii i wzorzec wypełniam wskaźnik danymi
 					p_power_relay_station->setBattery(p_templ_battery->create(L""));
 					//przekazanie wskaźnikowi na klasę PowerRelayStation informacji o wzorcu
-					p_power_relay_station->getBattery()->SetTemplate(p_templ_battery);
+					p_power_relay_station->getBattery()->setTemplate(p_templ_battery);
 					//decorator (ten kod będzie na poziomie BatteryTemplate)
 					p_power_relay_station->getBattery()->setSmoothing(true);
 				}

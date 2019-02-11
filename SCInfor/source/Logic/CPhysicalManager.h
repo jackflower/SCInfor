@@ -21,14 +21,14 @@
 ///
 namespace logic
 {
-	class CPhysical;
+	class Physical;
 	class Actor;
 	class Enemy;
 	class CPlayer;
 	class Bullet;
 	class Monster;
 	class Flora;
-	class CPhysicalInfo;
+	class PhysicalInfo;
 	namespace unit
 	{
 		class CRobot;
@@ -128,11 +128,11 @@ namespace logic
 		virtual void frameStarted(float secondsPassed);
 		
 		///
-		///Metoda tworzy obiekt klasy CPhysical i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Physical i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CPhysical* CreatePhysical(const std::wstring& unique_id = L"");
+		Physical* CreatePhysical(const std::wstring& unique_id = L"");
 
 		///
 		///Metoda tworzy obiekt klasy Actor i zwraca wskaünik na ten obiekt
@@ -219,11 +219,11 @@ namespace logic
 		FuelBar *CreateFuelBar(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CPhysicalInfo i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy PhysicalInfo i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CPhysicalInfo *CreatePhysicalInfo(const std::wstring &uniqueId = L"");
+		PhysicalInfo *CreatePhysicalInfo(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy Battery i zwraca wskaünik na ten obiekt
@@ -352,14 +352,14 @@ namespace logic
 		CGround *CreateGround(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda usuwa obiekt klasy CPhysical z kontenera
+		///Metoda usuwa obiekt klasy Physical z kontenera
 		///
-		///@param *physical - wskaünik na obiekt klasy CPhysical
+		///@param *physical - wskaünik na obiekt klasy Physical
 		///
-		void DestroyPhysical(CPhysical* physical);
+		void DestroyPhysical(Physical* physical);
 	    
 		///
-		///Metoda usuwa obiekt klasy CPhysical z kontenera
+		///Metoda usuwa obiekt klasy Physical z kontenera
 		///
 		///@param &id_physical - sta≥a referencja na obiekt klasy std::wstring - unikalny identyfikator obiektu
 		///
@@ -373,21 +373,21 @@ namespace logic
 		void Clear(bool force_destroy_instantly = false);
 
 		///
-		///Metoda zwraca sta≥a referencjÍ do kontenera z nazwami wszystkich zarejestorwanych obiektÛw CPhysical
+		///Metoda zwraca sta≥a referencjÍ do kontenera z nazwami wszystkich zarejestorwanych obiektÛw Physical
 		///
-		const std::map<std::wstring, CPhysical*>& GetNamedPhysicals();
+		const std::map<std::wstring, Physical*>& GetNamedPhysicals();
 
 		///
-		///Metoda zwraca sta≥a referencjÍ do kontenera z wszystkimi wskaünikami zarejestorwanych obiektÛw CPhysical
+		///Metoda zwraca sta≥a referencjÍ do kontenera z wszystkimi wskaünikami zarejestorwanych obiektÛw Physical
 		///
-		const std::vector<CPhysical*>& GetPhysicals();
+		const std::vector<Physical*>& GetPhysicals();
 
 		///
-		///Metoda zwraca wskaünik na obiekt klasy CPhysical z kontenera na podstawie identyfikatora
+		///Metoda zwraca wskaünik na obiekt klasy Physical z kontenera na podstawie identyfikatora
 		///
 		///@param &physical_id - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CPhysical* GetPhysicalById(const std::wstring& physical_id);
+		Physical* GetPhysicalById(const std::wstring& physical_id);
 				
 		
 		//metody p o m o c n i c z e
@@ -411,8 +411,8 @@ namespace logic
 		//
 		template<class T> T* create(const std::wstring &uniqueId);
 	    
-		std::map<std::wstring, CPhysical*>	m_named_physicals;	//kontener <map> na nazwane obiekty klasy CPhysical
-		std::vector<CPhysical*>				m_physicals;		//kontener <vector> na wskaüniki na obiekty klasy CPhysical
+		std::map<std::wstring, Physical*>	m_named_physicals;	//kontener <map> na nazwane obiekty klasy Physical
+		std::vector<Physical*>				m_physicals;		//kontener <vector> na wskaüniki na obiekty klasy Physical
 		std::vector<WindPowerStation*>		m_wind_powerstation;		//elektrownie wiatrowa
 		//
 		//Prywatna metoda sprawdzajπca jaki identyfikator nadaÊ obiektowi przy utworzeniu

@@ -111,15 +111,15 @@ namespace factory
 
 				//body
 				if (p_templ_animations->GetWindPowerStationBodyDefaultAnim() != NULL)
-					p_power_station->SetAnimationBody(p_templ_animations->GetWindPowerStationBodyDefaultAnim());
+					p_power_station->setAnimationBody(p_templ_animations->GetWindPowerStationBodyDefaultAnim());
 
 				//head
 				if (p_templ_animations->GetWindPowerStationHeadDefaultAnim() != NULL)
-					p_power_station->SetAnimationHead(p_templ_animations->GetWindPowerStationHeadDefaultAnim());
+					p_power_station->setAnimationHead(p_templ_animations->GetWindPowerStationHeadDefaultAnim());
 			}
 
 			//kategoria
-			p_power_station->SetCategory(PHYSICAL_POWERSTATION);
+			p_power_station->setCategory(PHYSICAL_POWERSTATION);
 
 			//pola tej klasy wzorca
 			p_power_station->setPowerStationName(m_templ_power_station_name);
@@ -135,7 +135,7 @@ namespace factory
 					//pobieramy składową moduł komunikacji i wzorzec wypełnia wskaźnik danymi
 					p_power_station->SetCommunication(p_templ_communication->create(L""));
 					//przekazanie wskaźnikowi na klasę Communication informacji o wzorcu
-					p_power_station->GetCommunication()->SetTemplate(p_templ_communication);
+					p_power_station->GetCommunication()->setTemplate(p_templ_communication);
 					//decorate
 					p_power_station->GetCommunication()->setSmoothing(true);
 				}

@@ -31,7 +31,7 @@ namespace equipment
 		m_airconditioning_state(EAirconditioningState::AIRCONDITIONING_DEFAULT),
 		m_unit_controller(false)//urządzenie wyłączone - uruchamia się z opóźnieniem
 	{
-		//to ro: layers
+		//to do: layers
 	}
 
 	//Chroniony konstruktor kopiujący
@@ -48,7 +48,7 @@ namespace equipment
 		m_airconditioning_state(AirconditioningCopy.m_airconditioning_state),
 		m_unit_controller(AirconditioningCopy.m_unit_controller)
 	{
-		//to ro: layers
+		//to do: layers
 	}
 
 	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
@@ -220,8 +220,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetAirconditioningBodyDefaultAnim());
-				SetAnimationHead(p_anim_set->GetAirconditioningHeadDefaultAnim());
+				setAnimationBody(p_anim_set->GetAirconditioningBodyDefaultAnim());
+				setAnimationHead(p_anim_set->GetAirconditioningHeadDefaultAnim());
 			}
 			break;
 		}
@@ -229,8 +229,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetAirconditioningBodyHeatingtAnim());
-				SetAnimationHead(p_anim_set->GetAirconditioningHeadHeatingtAnim());
+				setAnimationBody(p_anim_set->GetAirconditioningBodyHeatingtAnim());
+				setAnimationHead(p_anim_set->GetAirconditioningHeadHeatingtAnim());
 			}
 			break;
 		}
@@ -238,8 +238,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetAirconditioningBodyCoolingAnim());
-				SetAnimationHead(p_anim_set->GetAirconditioningHeadCoolingAnim());
+				setAnimationBody(p_anim_set->GetAirconditioningBodyCoolingAnim());
+				setAnimationHead(p_anim_set->GetAirconditioningHeadCoolingAnim());
 			}
 			break;
 		}
@@ -247,8 +247,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetAirconditioningBodyIneffectiveAnim());
-				SetAnimationHead(p_anim_set->GetAirconditioningHeadIneffectiveAnim());
+				setAnimationBody(p_anim_set->GetAirconditioningBodyIneffectiveAnim());
+				setAnimationHead(p_anim_set->GetAirconditioningHeadIneffectiveAnim());
 			}
 			break;
 		}
@@ -256,8 +256,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				SetAnimationBody(p_anim_set->GetAirconditioningBodyDamageAnim());
-				SetAnimationHead(p_anim_set->GetAirconditioningHeadDamageAnim());
+				setAnimationBody(p_anim_set->GetAirconditioningBodyDamageAnim());
+				setAnimationHead(p_anim_set->GetAirconditioningHeadDamageAnim());
 			}
 			break;
 		}
@@ -270,7 +270,7 @@ namespace equipment
 	void Airconditioning::update(float dt)
 	{
 		//aktualizacja shadow engine
-		CPhysical::UpdateShadow(dt);
+		Physical::updateShadow(dt);
 
 		//aktualizacja położenia względem właściciela
 		updateThermalInsulationTransformation(dt);
