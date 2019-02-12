@@ -19,10 +19,10 @@
 ///
 namespace mapengine
 {
-	class CMapPhysical;
+	class MapPhysical;
 	namespace groundwork
 	{
-		class CGroundWork;
+		class GroundWork;
 	}
 }
 //fabryka może produkować obiekty wyżej wymienionych klasy
@@ -62,28 +62,28 @@ namespace logic
 		virtual void frameStarted(float secondsPassed);
 
 		///
-		///Metoda tworzy obiekt klasy CMapPhysical i zwraca wskaźnik na ten obiekt
+		///Metoda tworzy obiekt klasy MapPhysical i zwraca wskaźnik na ten obiekt
 		///
 		///@param uniqueId - unikalny identyfikator - stała referencja na obiekt klasy std::wstring
 		///
-		CMapPhysical *createMapPhysical(const std::wstring & unique_id = L"");
+		MapPhysical *createMapPhysical(const std::wstring & unique_id = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CGroundWork i zwraca wskaźnik na ten obiekt
+		///Metoda tworzy obiekt klasy GroundWork i zwraca wskaźnik na ten obiekt
 		///
 		///@param uniqueId - unikalny identyfikator - stała referencja na obiekt klasy std::wstring
 		///
-		CGroundWork *createGroundWork(const std::wstring & unique_id = L"");
+		GroundWork *createGroundWork(const std::wstring & unique_id = L"");
 
 		///
-		///Metoda usuwa obiekt klasy CMapPhysical z kontenera
+		///Metoda usuwa obiekt klasy MapPhysical z kontenera
 		///
-		///@param *mapphysical - wskaźnik na obiekt klasy CMapPhysical
+		///@param *mapphysical - wskaźnik na obiekt klasy MapPhysical
 		///
-		void destroyMapPhysical(CMapPhysical *mapphysical);
+		void destroyMapPhysical(MapPhysical *mapphysical);
 	    
 		///
-		///Metoda usuwa obiekt klasy CMapPhysical z kontenera
+		///Metoda usuwa obiekt klasy MapPhysical z kontenera
 		///
 		///@param id_mapphysical - stała referencja na obiekt klasy std::wstring - unikalny identyfikator obiektu
 		///
@@ -97,21 +97,21 @@ namespace logic
 		void clear(bool force_destroy_instantly = false);
 
 		///
-		///Metoda zwraca stała referencję do kontenera z nazwami wszystkich zarejestorwanych obiektów CMapPhysical
+		///Metoda zwraca stała referencję do kontenera z nazwami wszystkich zarejestorwanych obiektów MapPhysical
 		///
-		const std::map<std::wstring, CMapPhysical*> & getNamedMapPhysicals();
+		const std::map<std::wstring, MapPhysical*> & getNamedMapPhysicals();
 
 		///
-		///Metoda zwraca stała referencję do kontenera z wszystkimi wskaźnikami zarejestorwanych obiektów CMapPhysical
+		///Metoda zwraca stała referencję do kontenera z wszystkimi wskaźnikami zarejestorwanych obiektów MapPhysical
 		///
-		const std::vector<CMapPhysical*> & getMapPhysicals();
+		const std::vector<MapPhysical*> & getMapPhysicals();
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CMapPhysical z kontenera na podstawie identyfikatora
+		///Metoda zwraca wskaźnik na obiekt klasy MapPhysical z kontenera na podstawie identyfikatora
 		///
 		///@param mapphysical_id - stała referencja na obiekt klasy std::wstring
 		///
-		CMapPhysical *getMapPhysicalById(const std::wstring & mapphysical_id);
+		MapPhysical *getMapPhysicalById(const std::wstring & mapphysical_id);
 
 		///
 		///Wirtualny interfejs - implementacja
@@ -125,8 +125,8 @@ namespace logic
 		//
 		template<class T> T* create(const std::wstring & uniqueId);
 	    
-		std::map<std::wstring, CMapPhysical*> m_named_mapphysicals; //kontener <map> na nazwane obiekty klasy CMapPhysical
-		std::vector<CMapPhysical*> m_mapphysicals; //kontener <vector> na wskaźniki na obiekty klasy CMapPhysical
+		std::map<std::wstring, MapPhysical*> m_named_mapphysicals; //kontener <map> na nazwane obiekty klasy MapPhysical
+		std::vector<MapPhysical*> m_mapphysicals; //kontener <vector> na wskaźniki na obiekty klasy MapPhysical
 
 		//
 		//Prywatna metoda sprawdzająca jaki identyfikator nadać obiektowi przy utworzeniu

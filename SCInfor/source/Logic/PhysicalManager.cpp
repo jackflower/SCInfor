@@ -36,7 +36,7 @@
 #include "Energetics/PowerRelay/PowerRelayStation.h"
 #include "Energetics/PowerRelay/SlotsRate.h"
 #include "Communication/Communication.h"
-#include "../Map/Ground/CGround.h"
+#include "../Map/Ground/Ground.h"
 #include "../Utilities/StringUtils/StringUtils.h"
 #include "../Game/Game.h"
 #include <sstream>
@@ -323,11 +323,11 @@ namespace logic
 		return create<LightingEquipment>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CGround i zwraca wskaźnik na ten obiekt
-	CGround *PhysicalManager::createGround(const std::wstring & uniqueId)
+	//Metoda tworzy obiekt klasy Ground i zwraca wskaźnik na ten obiekt
+	Ground *PhysicalManager::createGround(const std::wstring & uniqueId)
 	{
-		fprintf(stderr, "CGround created\n");
-		return create<CGround>(uniqueId);
+		fprintf(stderr, "Ground created\n");
+		return create<Ground>(uniqueId);
 	}
 	
 	//Metoda usuwa obiekt klasy Physical z kontenera

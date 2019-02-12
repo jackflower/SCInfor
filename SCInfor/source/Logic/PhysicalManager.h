@@ -85,7 +85,7 @@ namespace equipment
 ///
 namespace mapengine
 {
-	class CGround;
+	class Ground;
 }
 
 //fabryka może produkować obiekty wyżej wymienionych klasy
@@ -344,11 +344,11 @@ namespace logic
 		LightingEquipment *createLightingEquipment(const std::wstring & uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CGround i zwraca wskaźnik na ten obiekt
+		///Metoda tworzy obiekt klasy Ground i zwraca wskaźnik na ten obiekt
 		///
 		///@param uniqueId - unikalny identyfikator - stała referencja na obiekt klasy std::wstring
 		///
-		CGround *createGround(const std::wstring & uniqueId = L"");
+		Ground *createGround(const std::wstring & uniqueId = L"");
 
 		///
 		///Metoda usuwa obiekt klasy Physical z kontenera

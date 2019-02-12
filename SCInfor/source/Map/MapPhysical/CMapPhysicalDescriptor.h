@@ -22,7 +22,7 @@ using namespace factory;
 namespace mapengine
 {
 	///
-	///Klasa reprezentuje opakowanie danych dla obiektów (CMapPhysical),
+	///Klasa reprezentuje opakowanie danych dla obiektów (MapPhysical),
 	///umieszczonych na mapie (plik xml)
 	///
 	class CMapPhysicalDescriptor
@@ -214,7 +214,7 @@ namespace mapengine
 
 	private:
 
-		MapPhysicalTemplate*	p_template;		//wskaŸnik na wzorzec - obiekt klasy CMapPhysical jak i te¿ pochodne tej klasy
+		MapPhysicalTemplate*	p_template;		//wskaŸnik na wzorzec - obiekt klasy MapPhysical jak i te¿ pochodne tej klasy
 		int						m_unique_id;	//unikalny identyfikator (nadawany w MapPhysicalManager)
 		std::string				m_code;			//nazwa kodu dla typu pod³o¿a (nazwa w tablicy 2D - zapisanej w pliku xml)
 		std::string				m_name;			//nazwa w³asna obiektu, któr¹ nadajemy obiektowi na poziomie wpisu w pliku xml

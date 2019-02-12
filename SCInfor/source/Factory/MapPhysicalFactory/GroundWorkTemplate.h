@@ -8,7 +8,7 @@
 #define H_GROUND_WORK_TEMPLATE_JACK
 
 #include "MapPhysicalTemplate.h"
-#include "../../Map/MapPhysical/GroundWork/CGroundWork.h"
+#include "../../Map/MapPhysical/GroundWork/GroundWork.h"
 
 using namespace mapengine::groundwork;
 
@@ -67,18 +67,18 @@ namespace factory
 	protected:
 
 		///
-		///Metoda tworzy obiekt klasy CGroundWork
+		///Metoda tworzy obiekt klasy GroundWork
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CGroundWork *create(std::wstring id = L"");
+		GroundWork *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *groundwork - wskaźnik na obiekt klasy CGroundWork
+		///@param *groundwork - wskaźnik na obiekt klasy GroundWork
 		///
-		virtual void fill(CGroundWork *groundwork);
+		virtual void fill(GroundWork *groundwork);
 
 		///
 		///Metoda zwraca współczynnik tarcia
@@ -118,7 +118,7 @@ namespace factory
 	
 private:
 		
-		CPhysicsGround m_template_physicsground; //obiekt klasy opakowującej fizykę podłoża
+		PhysicsGround m_template_physicsground; //obiekt klasy opakowującej fizykę podłoża
 
 	};
 }//namespace factory

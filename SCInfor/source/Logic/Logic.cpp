@@ -10,7 +10,7 @@
 #include "../Logic/PhysicalManager.h"
 #include "../Logic/Physical/Physical.h"
 #include "../Logic/MapPhysicalManager.h"
-#include "../Map/MapPhysical/CMapPhysical.h"
+#include "../Map/MapPhysical/MapPhysical.h"
 
 //może się przyda, gdy jakiś uczeń napisze implementację...
 //#include <cstdio>
@@ -189,10 +189,10 @@ namespace logic
 		//}
 	}
 
-	//Metoda aktualizuje wszystkie obiekty dziedziczące po CMapPhysical
+	//Metoda aktualizuje wszystkie obiekty dziedziczące po MapPhysical
 	void Logic::updateMapPhysicals(float secondsPassed)
 	{
-		const std::vector<CMapPhysical*> &mapphysicals = gMapPhysicalManager.getMapPhysicals();
+		const std::vector<MapPhysical*> &mapphysicals = gMapPhysicalManager.getMapPhysicals();
 		for (unsigned int i = 0; i < mapphysicals.size(); ++i)
 			mapphysicals[i]->update( secondsPassed );
 	}

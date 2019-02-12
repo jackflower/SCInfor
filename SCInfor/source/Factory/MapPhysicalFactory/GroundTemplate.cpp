@@ -73,16 +73,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CGroundWork
-	CGround *GroundTemplate::create(const std::wstring id)
+	//Metoda tworzy obiekt klasy GroundWork
+	Ground *GroundTemplate::create(const std::wstring id)
 	{
-		CGround *ground = gPhysicalManager.createGround(id);
+		Ground *ground = gPhysicalManager.createGround(id);
 		fill(ground);
 		return ground;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void GroundTemplate::fill(CGround *ground)
+	void GroundTemplate::fill(Ground *ground)
 	{
 		ActorTemplate::fill(ground);
 		

@@ -71,16 +71,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CGroundWork
-	CGroundWork *GroundWorkTemplate::create(const std::wstring id)
+	//Metoda tworzy obiekt klasy GroundWork
+	GroundWork *GroundWorkTemplate::create(const std::wstring id)
 	{
-		CGroundWork* groundwork = gMapPhysicalManager.createGroundWork(id);
+		GroundWork* groundwork = gMapPhysicalManager.createGroundWork(id);
 		fill(groundwork);
 		return groundwork;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void GroundWorkTemplate::fill(CGroundWork *groundwork)
+	void GroundWorkTemplate::fill(GroundWork *groundwork)
 	{
 		MapPhysicalTemplate::fill(groundwork);
 		
@@ -99,7 +99,7 @@ namespace factory
 			groundwork->setThermalTransmittance(gRandom.Rndf(m_template_physicsground.getThermalTransmittance()));
 		}
 
-		groundwork->SetTemplate(this);
+		groundwork->setTemplate(this);
 	}
 
 	//Metoda zwraca współczynnik tarcia

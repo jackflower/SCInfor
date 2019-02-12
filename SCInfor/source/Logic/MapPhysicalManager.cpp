@@ -5,8 +5,8 @@
 //
 
 #include "MapPhysicalManager.h"
-#include "../Map/MapPhysical/CMapPhysical.h"
-#include "../Map/MapPhysical/GroundWork/CGroundWork.h"
+#include "../Map/MapPhysical/MapPhysical.h"
+#include "../Map/MapPhysical/GroundWork/GroundWork.h"
 #include "../Utilities/StringUtils/StringUtils.h"
 #include "../Game/Game.h"
 #include <iostream>
@@ -38,29 +38,29 @@ namespace logic
 	{
 		//std::cout << m_mapphysicals[0]->getCode() << std::endl;
 		//std::cout << "Zorro" << std::endl;//listener nasłuchuje...
-		//jakby co, to w kontenerze są wskaźniki na CMapPhysical i potomne...
+		//jakby co, to w kontenerze są wskaźniki na MapPhysical i potomne...
 		//
 		//2015-07-06
 		//tutaj umieścić kod zarządzający logiką
 		//odpowiedzialną za warstwę logiczną - trakcja energetyczna
 	}
 
-	//Metoda tworzy obiekt klasy CMapPhysical i zwraca wskaźnik na ten obiekt
-	CMapPhysical *MapPhysicalManager::createMapPhysical(const std::wstring& unique_id)
+	//Metoda tworzy obiekt klasy MapPhysical i zwraca wskaźnik na ten obiekt
+	MapPhysical *MapPhysicalManager::createMapPhysical(const std::wstring& unique_id)
 	{
-		fprintf(stderr, "CMapPhysical created\n");
-		return create<CMapPhysical>(unique_id);
+		fprintf(stderr, "MapPhysical created\n");
+		return create<MapPhysical>(unique_id);
 	}
 
-	//Metoda tworzy obiekt klasy CGroundWork i zwraca wskaźnik na ten obiekt
-	CGroundWork *MapPhysicalManager::createGroundWork(const std::wstring& unique_id)
+	//Metoda tworzy obiekt klasy GroundWork i zwraca wskaźnik na ten obiekt
+	GroundWork *MapPhysicalManager::createGroundWork(const std::wstring& unique_id)
 	{
-		fprintf(stderr, "CGroundWork created\n");
-		return create<CGroundWork>(unique_id);
+		fprintf(stderr, "GroundWork created\n");
+		return create<GroundWork>(unique_id);
 	}
 
-	//Metoda usuwa obiekt klasy CMapPhysical z kontenera
-	void MapPhysicalManager::destroyMapPhysical(CMapPhysical* mapphysical)
+	//Metoda usuwa obiekt klasy MapPhysical z kontenera
+	void MapPhysicalManager::destroyMapPhysical(MapPhysical* mapphysical)
 	{
 		if (mapphysical->m_mapphysical_manager_index >= 0)
 		{
@@ -68,18 +68,18 @@ namespace logic
 			m_mapphysicals[mapphysical->m_mapphysical_manager_index]->m_mapphysical_manager_index = mapphysical->m_mapphysical_manager_index;
 			m_mapphysicals.pop_back();
 			mapphysical->m_mapphysical_manager_index = -1;
-			fprintf(stderr, "MapPhysicalManager::DestroyMapPhysical - %ls\n", mapphysical->GetUniqueId().c_str());
-			destroyMapPhysical(mapphysical->GetUniqueId());
+			fprintf(stderr, "MapPhysicalManager::DestroyMapPhysical - %ls\n", mapphysical->getUniqueId().c_str());
+			destroyMapPhysical(mapphysical->getUniqueId());
 			delete mapphysical;
 		}
 	}
 
-	//Metoda usuwa obiekt klasy CMapPhysical z kontenera
+	//Metoda usuwa obiekt klasy MapPhysical z kontenera
 	void MapPhysicalManager::destroyMapPhysical(const std::wstring& id_mapphysical)
 	{
 		if (m_named_mapphysicals.find(id_mapphysical) != m_named_mapphysicals.end())
 		{
-			CMapPhysical* mapphysical = m_named_mapphysicals[id_mapphysical];
+			MapPhysical* mapphysical = m_named_mapphysicals[id_mapphysical];
 			m_named_mapphysicals.erase(m_named_mapphysicals.find( id_mapphysical));
 			destroyMapPhysical(mapphysical);
 		}
@@ -88,28 +88,28 @@ namespace logic
 	//Metoda usuwa wszystkie obiekty z kontenera
 	void MapPhysicalManager::clear(bool force_destroy_instantly)
 	{
-		std::vector<CMapPhysical*>::iterator it;
+		std::vector<MapPhysical*>::iterator it;
 
 		for (it = m_mapphysicals.begin(); it != m_mapphysicals.end(); it++)
 		{
-			(*it)->MarkForDelete();
+			(*it)->markForDelete();
 		}
 	}
 
-	//Metoda zwraca stałą referencję do kontenera z nazwami wszystkich zarejestorwanych obiektów CMapPhysical
-	const std::map<std::wstring, CMapPhysical*> & MapPhysicalManager::getNamedMapPhysicals()
+	//Metoda zwraca stałą referencję do kontenera z nazwami wszystkich zarejestorwanych obiektów MapPhysical
+	const std::map<std::wstring, MapPhysical*> & MapPhysicalManager::getNamedMapPhysicals()
 	{
 		return m_named_mapphysicals;
 	}
 
-	//Metoda zwraca stałą referencję do kontenera z wszystkimi wskaźnikami zarejestorwanych obiektów CMapPhysical
-	const std::vector<CMapPhysical *> & MapPhysicalManager::getMapPhysicals()
+	//Metoda zwraca stałą referencję do kontenera z wszystkimi wskaźnikami zarejestorwanych obiektów MapPhysical
+	const std::vector<MapPhysical *> & MapPhysicalManager::getMapPhysicals()
 	{
 		return m_mapphysicals;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CMapPhysical z kontenera na podstawie identyfikatora
-	CMapPhysical* MapPhysicalManager::getMapPhysicalById(const std::wstring & mapphysical_id)
+	//Metoda zwraca wskaźnik na obiekt klasy MapPhysical z kontenera na podstawie identyfikatora
+	MapPhysical* MapPhysicalManager::getMapPhysicalById(const std::wstring & mapphysical_id)
 	{
 		if (m_named_mapphysicals.find(mapphysical_id) != m_named_mapphysicals.end())
 			return m_named_mapphysicals[mapphysical_id];
@@ -126,7 +126,7 @@ namespace logic
 		fprintf(stderr, "MapPhysicalManager::Cleanup()\n");
 		
 		//nie jestem do końca pewien tego kodu...
-		//std::vector<CMapPhysical*>::iterator it;
+		//std::vector<MapPhysical*>::iterator it;
 		//for (it = m_mapphysicals.begin(); it != m_mapphysicals.end(); it++)
 		//	DestroyMapPhysical(*(it));
 		fprintf(stderr, "MapPhysicalManager::Cleanup() done...\n");

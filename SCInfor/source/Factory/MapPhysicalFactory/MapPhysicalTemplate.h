@@ -8,7 +8,7 @@
 #define H_MAP_PHYSICAL_TEMPLATE_JACK
 
 #include "../../ResourceManager/IResource.h"
-#include "../../Map/MapPhysical/CMapPhysical.h"
+#include "../../Map/MapPhysical/MapPhysical.h"
 #include "../../Logic/MapPhysicalManager.h"
 #include "../../XML/CXml.h"
 #include "../../RTTI/RTTI.h"
@@ -73,20 +73,20 @@ namespace factory
 		virtual bool load(CXml & xml);
 
 		///
-		///Wirtualna metoda tworzenie obiektów pochodnych klasy CMapPhysical
+		///Wirtualna metoda tworzenie obiektów pochodnych klasy MapPhysical
 		///
 		///implementowana przez w pełni konkretne podklasy
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		virtual CMapPhysical *create(std::wstring id = L"");
+		virtual MapPhysical *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *mapphysical - wskaźnik na obiekt klasy CMapPhysical
+		///@param *mapphysical - wskaźnik na obiekt klasy MapPhysical
 		///
-		virtual void fill(CMapPhysical *mapphysical);
+		virtual void fill(MapPhysical *mapphysical);
 
 		///
 		///Metoda zwraca nazwę pliku zasobu

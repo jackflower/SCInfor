@@ -47,7 +47,7 @@
 #include "../Factory/EquipmentFactory/WeaponFactory/AmmoFactory/AmmoTemplate.h"
 #include "../Factory/EquipmentFactory/WeaponFactory/GunFactory/GunTemplate.h"
 #include "../Map/CMap.h"
-#include "../Map/Ground/CGround.h"
+#include "../Map/Ground/Ground.h"
 
 template<> resource::CResourceManager* CSingleton<resource::CResourceManager>::m_singleton = 0;
 unsigned long long CResourceManager::m_resource_enumerator = 0x1000;
@@ -185,7 +185,7 @@ namespace resource
 		return (CMap*)GetResource<CMap>(name);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CGround
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy Ground
 	GroundTemplate* CResourceManager::GetGround(const std::string& name)
 	{
 		return (GroundTemplate*)GetResource<GroundTemplate>(name);
@@ -442,11 +442,11 @@ namespace resource
 		//		- SolarCellTemplate					->tworzy->	SolarCell
 		//		- WindPowerStationTemplate				->tworzy->	WindPowerStation
 		//		- WindPowerStationMultipledTemplate	->tworzy->	WindPowerStationMultipled
-		//		- GroundWorkTemplate					->tworzy->	CGroundWork
+		//		- GroundWorkTemplate					->tworzy->	GroundWork
 
-		//		- GroundTemplate						->tworzy->	CGround
+		//		- GroundTemplate						->tworzy->	Ground
 
-		//		- MapPhysicalTemplate					->tworzy->	CMapPhysical
+		//		- MapPhysicalTemplate					->tworzy->	MapPhysical
 		//		- InformationTemplate					->tworzy->	Information
 		//		- PowerRelayStationTemplate			->tworzy->	PowerRelayStation
 		//		- CommunicationTemplate				->tworzy->	Communication

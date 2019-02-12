@@ -96,7 +96,7 @@ namespace factory
 		//nazwa pliku xml
 		m_templ_filename = xml.GetFilename();
 
-		//typ obiektu - CResourceManager - na tej podstawie tworzy CMapPhysical
+		//typ obiektu - CResourceManager - na tej podstawie tworzy MapPhysical
 		if (xml_node<> *node = xml.GetRootNode())
 			m_templ_type = xml.GetString(node, "type");
 
@@ -124,16 +124,16 @@ namespace factory
 		return true;
 	}
 
-	//Wirtualna metoda tworzenie obiektów pochodnych klasy CMapPhysical
-	CMapPhysical* MapPhysicalTemplate::create(std::wstring id)
+	//Wirtualna metoda tworzenie obiektów pochodnych klasy MapPhysical
+	MapPhysical* MapPhysicalTemplate::create(std::wstring id)
 	{
-		CMapPhysical *mapphysical = gMapPhysicalManager.createMapPhysical(id);
+		MapPhysical *mapphysical = gMapPhysicalManager.createMapPhysical(id);
 		fill(mapphysical);
 		return mapphysical;
 	}
 
 	//Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
-	void MapPhysicalTemplate::fill(CMapPhysical *mapphysical)
+	void MapPhysicalTemplate::fill(MapPhysical *mapphysical)
 	{
 		if(mapphysical)
 		{
@@ -150,7 +150,7 @@ namespace factory
 			mapphysical->setScale(m_templ_scale);
 			mapphysical->setRotation(m_templ_rotation);
 			mapphysical->setSize(m_templ_size);
-			mapphysical->SetTemplate(this);
+			mapphysical->setTemplate(this);
 			mapphysical->setSmooth(m_templ_smooth);
 		}
 	}

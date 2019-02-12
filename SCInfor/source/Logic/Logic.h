@@ -110,7 +110,7 @@ namespace logic
 		void updatePhysicals(float secondsPassed);
 
 		///
-		///Metoda aktualizuje wszystkie obiekty dziedziczące po CMapPhysical
+		///Metoda aktualizuje wszystkie obiekty dziedziczące po MapPhysical
 		///
 		///@param secondsPassed - upływający czas gry
 		///

@@ -71,7 +71,7 @@ namespace resource
 namespace mapengine
 {
 	class CMap;
-	class CGround;
+	class Ground;
 }
 
 namespace information
@@ -235,7 +235,7 @@ namespace resource
 		CMap* GetMap(const std::string& name);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CGround
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy Ground
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///

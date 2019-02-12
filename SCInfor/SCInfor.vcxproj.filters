@@ -417,26 +417,11 @@
     <ClCompile Include="source\Map\CMapPhysicalHeader.cpp">
       <Filter>source\Map</Filter>
     </ClCompile>
-    <ClCompile Include="source\Map\Ground\PhysicsGround\CPhysicsGround.cpp">
-      <Filter>source\Map\Ground\PhysicsGround</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\Ground\CGround.cpp">
-      <Filter>source\Map\Ground</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\MapPhysical\CMapPhysical.cpp">
-      <Filter>source\Map\MapPhysical</Filter>
-    </ClCompile>
     <ClCompile Include="source\Map\MapPhysical\CMapPhysicalDescriptor.cpp">
       <Filter>source\Map\MapPhysical</Filter>
     </ClCompile>
     <ClCompile Include="source\Map\MapPhysical\CMapPhysicalType.cpp">
       <Filter>source\Map\MapPhysical</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\MapPhysical\GroundWork\CGroundWork.cpp">
-      <Filter>source\Map\MapPhysical\GroundWork</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\MapPhysical\GroundWork\CGroundWorkCollision.cpp">
-      <Filter>source\Map\MapPhysical\GroundWork</Filter>
     </ClCompile>
     <ClCompile Include="source\Map\MapPhysicalObject\CMapObjectDescriptor.cpp">
       <Filter>source\Map\MapPhysicalObject</Filter>
@@ -1002,6 +987,21 @@
     <ClCompile Include="source\Logic\PhysicalManager.cpp">
       <Filter>source\Logic</Filter>
     </ClCompile>
+    <ClCompile Include="source\Map\Ground\PhysicsGround\PhysicsGround.cpp">
+      <Filter>source\Map\Ground\PhysicsGround</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\Ground\Ground.cpp">
+      <Filter>source\Map\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\GroundWork\GroundWork.cpp">
+      <Filter>source\Map\MapPhysical\GroundWork</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\GroundWork\GroundWorkCollision.cpp">
+      <Filter>source\Map\MapPhysical\GroundWork</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\MapPhysical.cpp">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1135,26 +1135,11 @@
     <ClInclude Include="source\Map\MapHeader.h">
       <Filter>source\Map</Filter>
     </ClInclude>
-    <ClInclude Include="source\Map\Ground\PhysicsGround\CPhysicsGround.h">
-      <Filter>source\Map\Ground\PhysicsGround</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\Ground\CGround.h">
-      <Filter>source\Map\Ground</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\MapPhysical\CMapPhysical.h">
-      <Filter>source\Map\MapPhysical</Filter>
-    </ClInclude>
     <ClInclude Include="source\Map\MapPhysical\CMapPhysicalDescriptor.h">
       <Filter>source\Map\MapPhysical</Filter>
     </ClInclude>
     <ClInclude Include="source\Map\MapPhysical\CMapPhysicalType.h">
       <Filter>source\Map\MapPhysical</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\MapPhysical\GroundWork\CGroundWork.h">
-      <Filter>source\Map\MapPhysical\GroundWork</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\MapPhysical\GroundWork\CGroundWorkCollision.h">
-      <Filter>source\Map\MapPhysical\GroundWork</Filter>
     </ClInclude>
     <ClInclude Include="source\Map\MapPhysicalObject\CMapObjectDescriptor.h">
       <Filter>source\Map\MapPhysicalObject</Filter>
@@ -1758,6 +1743,21 @@
     </ClInclude>
     <ClInclude Include="source\Logic\PhysicalManager.h">
       <Filter>source\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Ground\PhysicsGround\PhysicsGround.h">
+      <Filter>source\Map\Ground\PhysicsGround</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Ground\Ground.h">
+      <Filter>source\Map\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\GroundWork\GroundWork.h">
+      <Filter>source\Map\MapPhysical\GroundWork</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\GroundWork\GroundWorkCollision.h">
+      <Filter>source\Map\MapPhysical\GroundWork</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\MapPhysical.h">
+      <Filter>source\Map\MapPhysical</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

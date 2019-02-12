@@ -7,13 +7,13 @@
 #ifndef H_GROUND_TEMPLATE_JACK
 #define H_GROUND_TEMPLATE_JACK
 
-#include "../../Map/Ground/CGround.h"
+#include "../../Map/Ground/Ground.h"
 #include "../../Factory/ActorTemplate.h"
 
 namespace factory
 {
 	///
-	//Klasa reprezentuje wzorzec klasy CGround
+	//Klasa reprezentuje wzorzec klasy Ground
 	///
 	class GroundTemplate : public ActorTemplate
 	{
@@ -63,18 +63,18 @@ namespace factory
 		virtual bool load(CXml & xml);
 
 		///
-		///Metoda tworzy obiekt klasy CGroundWork
+		///Metoda tworzy obiekt klasy GroundWork
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CGround *create(std::wstring id = L"");
+		Ground *create(std::wstring id = L"");
 
 		///
 		///Wirtualna metoda wypełniająca wskazany obiekt danymi tej klasy
 		///
-		///@param *ground - wskaźnik na obiekt klasy CGround
+		///@param *ground - wskaźnik na obiekt klasy Ground
 		///
-		virtual void fill(CGround *ground);
+		virtual void fill(Ground *ground);
 
 		///
 		///Metoda zwraca współczynnik tarcia
@@ -114,7 +114,7 @@ namespace factory
 
 	private:
 
-		CPhysicsGround m_template_physicsground; //obiekt klasy opakowującej fizykę podłoża
+		PhysicsGround m_template_physicsground; //obiekt klasy opakowującej fizykę podłoża
 
 	};
 }//namespace factory
