@@ -66,16 +66,16 @@ namespace factory
 		return true;
 	}
 
-	//Metoda tworzy obiekt klasy CRobot
-	CRobot *RobotTemplate::create(std::wstring id)
+	//Metoda tworzy obiekt klasy Robot
+	Robot *RobotTemplate::create(std::wstring id)
 	{
-		CRobot *robot = gPhysicalManager.CreateRobot(id);
+		Robot *robot = gPhysicalManager.CreateRobot(id);
 		fill(robot);
 		return robot;
 	}
 
-	//Wirtualna metoda wypełniająca danymi obiekt klasy CRobot
-	void RobotTemplate::fill(CRobot *robot)
+	//Wirtualna metoda wypełniająca danymi obiekt klasy Robot
+	void RobotTemplate::fill(Robot *robot)
 	{
 		if (robot)
 		{

@@ -1,4 +1,4 @@
-//  _______________________________________________________________________
+ï»¿//  _______________________________________________________________________
 // | ERobotState.h - enumeration of states robot - fighting machine moving |
 // | Jack Flower - June 2016                                               |
 // |_______________________________________________________________________|
@@ -8,17 +8,17 @@
 #define H_E_ROBOT_STATE_JACK
 
 ///
-///Wyliczenie stanów obiektu
+///Wyliczenie stanÃ³w obiektu
 ///
 enum ERobotState
 {
 	ROBOT_DEFAULT,				//stan normalny
 	ROBOT_ATTACK_PREPARE,		//przygotowanie do ataku (head open)
 	ROBOT_ATTACK_DURING,		//stan ataku
-	ROBOT_ATTACK_TERMINATE,		//zakoñczenie ataku (head close)
+	ROBOT_ATTACK_TERMINATE,		//zakoÅ„czenie ataku (head close)
 	ROBOT_DEFENSE_PREPARE,		//przygotowanie do obrony (head open)
 	ROBOT_DEFENSE_DURING,		//stan obrony
-	ROBOT_DEFENSE_TERMINATE,	//zakoñczenie obrony (head close)
+	ROBOT_DEFENSE_TERMINATE,	//zakoÅ„czenie obrony (head close)
 	ROBOT_DAMAGE,				//uszkodzenia
 	ROBOT_DEATH
 };

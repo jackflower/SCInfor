@@ -8,7 +8,7 @@
 #define H_ROBOT_TEMPLATE_JACK
 
 #include "ActorTemplate.h"
-#include "../Logic/Unit/CombatUnit/Robot/CRobot.h"
+#include "../Logic/Unit/CombatUnit/Robot/Robot.h"
 
 using namespace logic::unit;
 
@@ -60,22 +60,22 @@ namespace factory
 	protected:
 
 		///
-		///Metoda tworzy obiekt klasy CRobot
+		///Metoda tworzy obiekt klasy Robot
 		///
 		///@param id - nazwa identyfikatora - obiekt klasy std::wstring
 		///
-		CRobot *create(std::wstring id = L"");
+		Robot *create(std::wstring id = L"");
 
 		///
-		///Wirtualna metoda wypełniająca danymi obiekt klasy CRobot
+		///Wirtualna metoda wypełniająca danymi obiekt klasy Robot
 		///
-		///@param *robot - wskaźnik na obiekt klasy CRobot
+		///@param *robot - wskaźnik na obiekt klasy Robot
 		///
-		virtual void fill(CRobot *robot);
+		virtual void fill(Robot *robot);
 
 	private:
 
-		CStrategyDuration m_templ_strategy_duration; //opakowanie mechanizmu zarządzania czasem stanów strategicznych
+		StrategyDuration m_templ_strategy_duration; //opakowanie mechanizmu zarządzania czasem stanów strategicznych
 
 	};
 }//namespace factory

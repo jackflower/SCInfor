@@ -31,7 +31,7 @@ namespace logic
 	class PhysicalInfo;
 	namespace unit
 	{
-		class CRobot;
+		class Robot;
 	}
 	namespace powerstation
 	{
@@ -142,11 +142,11 @@ namespace logic
 		Actor *CreateActor(const std::wstring &uniqueId = L"");
 
 		///
-		///Metoda tworzy obiekt klasy CRobot i zwraca wskaünik na ten obiekt
+		///Metoda tworzy obiekt klasy Robot i zwraca wskaünik na ten obiekt
 		///
 		///@param &uniqueId - unikalny identyfikator - sta≥a referencja na obiekt klasy std::wstring
 		///
-		CRobot *CreateRobot(const std::wstring &uniqueId = L"");
+		Robot *CreateRobot(const std::wstring &uniqueId = L"");
 
 		///
 		///Metoda tworzy obiekt klasy Enemy i zwraca wskaünik na ten obiekt

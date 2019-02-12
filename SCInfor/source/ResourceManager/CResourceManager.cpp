@@ -424,7 +424,7 @@ namespace resource
 		//
 		//		- PhysicalTemplate						->tworzy->	Physical
 		//		- ActorTemplate						->tworzy->	Actor
-		//		- CRoborTemplate						->tworzy->	CRobot
+		//		- CRoborTemplate						->tworzy->	Robot
 		//		- EnemyTemplate						->tworzy->	Enemy
 		//		- PlayerTemplate						->tworzy->	Player
 		//		- BulletTemplate						->tworzy->	Bullet

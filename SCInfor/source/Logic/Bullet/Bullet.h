@@ -235,7 +235,7 @@ namespace logic
 		float m_bullet_speed;				//prędkość pocisku - przenieść do Bullet (to pocisk posiada wiedzę, jaki jest "szybki")
 
 //
-//		float			m_range;							//zasięg strzału pobierany od właściciela działa (CRobot-Gun)
+//		float			m_range;							//zasięg strzału pobierany od właściciela działa (Robot-Gun)
 //		sf::Vector2f	m_initial;							//położenie początkowe pocisku
 //	[ok]		sf::Vector2f	m_target;							//położenie celu, do którego podąża pocisk
 //	[ok]		float			m_speed;							//prędkość pocisku
@@ -253,7 +253,7 @@ namespace logic
 //		CForce			m_bullet_force;						//funkcjonalność ataku pocisku
 //		float			m_bullet_shocks_range;				//zasięg rażenia odłamków pocisku po eksplozji bez kolizji z celem
 //		bool			m_bullet_check_collision;			//flaga, czy pocisk ma sprawdzać kolizję
-//		CRobot*			p_bullet_parent;					//wskaźnik na właściciela pocisku
+//		Robot*			p_bullet_parent;					//wskaźnik na właściciela pocisku
 //		float			m_target_altitude;					//apogeum pułapu - apogeum wysokości
 															//jaką może osiągnąć pocisk w czasie
 															//lotu balistycznego (max)

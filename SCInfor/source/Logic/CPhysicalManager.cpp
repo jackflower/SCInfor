@@ -15,7 +15,7 @@
 #include "Bullet/Bullet.h"
 #include "Monster/Monster.h"
 #include "Flora/Flora.h"
-#include "Unit/CombatUnit/Robot/CRobot.h"
+#include "Unit/CombatUnit/Robot/Robot.h"
 #include "../Equipment/Engine/Engine.h"
 #include "../Equipment/Engine/FuelTank/FuelTank.h"
 #include "../Equipment/Engine/FuelBar/FuelBar.h"
@@ -121,11 +121,11 @@ namespace logic
 		return create<Actor>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CRobot i zwraca wskaünik na ten obiekt
-	CRobot *CPhysicalManager::CreateRobot(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Robot i zwraca wskaünik na ten obiekt
+	Robot *CPhysicalManager::CreateRobot(const std::wstring &uniqueId)
 	{
-		fprintf(stderr, "CRobot created\n");
-		return create<CRobot>(uniqueId);
+		fprintf(stderr, "Robot created\n");
+		return create<Robot>(uniqueId);
 	}
 
 	//Metoda tworzy obiekt klasy Enemy i zwraca wskaünik na ten obiekt

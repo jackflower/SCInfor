@@ -393,21 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Logic\Unit\CombatUnit\Robot\CRobot.cpp">
-      <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Unit\CombatUnit\CCombatUnit.cpp">
-      <Filter>source\Logic\Unit\CombatUnit</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Unit\CStrategyController.cpp">
-      <Filter>source\Logic\Unit</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Unit\CStrategyDuration.cpp">
-      <Filter>source\Logic\Unit</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\Unit\CUnit.cpp">
-      <Filter>source\Logic\Unit</Filter>
-    </ClCompile>
     <ClCompile Include="source\Logic\CLogic.cpp">
       <Filter>source\Logic</Filter>
     </ClCompile>
@@ -1002,6 +987,21 @@
     <ClCompile Include="source\Logic\Player\Player.cpp">
       <Filter>source\Logic\Player</Filter>
     </ClCompile>
+    <ClCompile Include="source\Logic\Unit\CombatUnit\CombatUnit.cpp">
+      <Filter>source\Logic\Unit\CombatUnit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Unit\CombatUnit\Robot\Robot.cpp">
+      <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Unit\StrategyController.cpp">
+      <Filter>source\Logic\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Unit\StrategyDuration.cpp">
+      <Filter>source\Logic\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\Unit\Unit.cpp">
+      <Filter>source\Logic\Unit</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1096,23 +1096,8 @@
     <ClInclude Include="source\Logic\Physical\PhysicalCategories.h">
       <Filter>source\Logic\Physical</Filter>
     </ClInclude>
-    <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\CRobot.h">
-      <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
-    </ClInclude>
     <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\ERobotState.h">
       <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Unit\CombatUnit\CCombatUnit.h">
-      <Filter>source\Logic\Unit\CombatUnit</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Unit\CStrategyController.h">
-      <Filter>source\Logic\Unit</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Unit\CStrategyDuration.h">
-      <Filter>source\Logic\Unit</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\Unit\CUnit.h">
-      <Filter>source\Logic\Unit</Filter>
     </ClInclude>
     <ClInclude Include="source\Logic\Unit\EStrategyState.h">
       <Filter>source\Logic\Unit</Filter>
@@ -1758,6 +1743,21 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Player\Player.h">
       <Filter>source\Logic\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\CombatUnit\CombatUnit.h">
+      <Filter>source\Logic\Unit\CombatUnit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\CombatUnit\Robot\Robot.h">
+      <Filter>source\Logic\Unit\CombatUnit\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\StrategyController.h">
+      <Filter>source\Logic\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\StrategyDuration.h">
+      <Filter>source\Logic\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Unit\Unit.h">
+      <Filter>source\Logic\Unit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

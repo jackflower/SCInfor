@@ -1,4 +1,4 @@
-//  __________________________________________________
+﻿//  __________________________________________________
 // | EStrategyState.h - enumeration of strategy state |
 // | Jack Flower - June 2016                          |
 // |__________________________________________________|
@@ -8,7 +8,7 @@
 #define H_E_STRATEGY_STATE_JACK
 
 ///
-///Wyliczenie stan�w obiektu
+///Wyliczenie stanów obiektu
 ///
 enum EStrategyState
 {

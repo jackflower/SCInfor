@@ -1,10 +1,10 @@
-//  ___________________________________
-// | CRobot.cpp - class implementation |
-// | Jack Flower - June 2016           |
-// |___________________________________|
+ï»¿//  __________________________________
+// | Robot.cpp - class implementation |
+// | Jack Flower - June 2016          |
+// |__________________________________|
 //
 
-#include "CRobot.h"
+#include "Robot.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 #include "../../../../Rendering/Animations/CAnimation.h"
 #include "../../../../Rendering/Animations/CAnimationState.h"
@@ -19,56 +19,56 @@ namespace logic
 {
 	namespace unit
 	{
-		RTTI_IMPL(CRobot, CUnit);
+		RTTI_IMPL(Robot, Unit);
 
-		CRobot::CRobot(const std::wstring& uniqueId)
+		Robot::Robot(const std::wstring & uniqueId)
 		:
-			CUnit					(uniqueId),	//chroniony konstruktor klasy bazowej
-			m_robot_state			(ERobotState::ROBOT_DEFAULT),
-			m_strategy_duration		(),
-			m_elapsed_time			(0.0f)
+			Unit(uniqueId), //chroniony konstruktor klasy bazowej
+			m_robot_state(ERobotState::ROBOT_DEFAULT),
+			m_strategy_duration(),
+			m_elapsed_time(0.0f)
 		{
 		}
 
-		//Chroniony konstruktor kopiuj¹cy
-		CRobot::CRobot(const CRobot & CRobottCopy)
+		//Chroniony konstruktor kopiujÄ…cy
+		Robot::Robot(const Robot & RobottCopy)
 		:
-			CUnit					(CRobottCopy),	//chroniony konstruktor kopiuj¹cy klasy bazowej
-			m_robot_state			(CRobottCopy.m_robot_state),
-			m_strategy_duration		(CRobottCopy.m_strategy_duration),
-			m_elapsed_time			(CRobottCopy.m_elapsed_time)
+			Unit (RobottCopy), //chroniony konstruktor kopiujÄ…cy klasy bazowej
+			m_robot_state(RobottCopy.m_robot_state),
+			m_strategy_duration(RobottCopy.m_strategy_duration),
+			m_elapsed_time(RobottCopy.m_elapsed_time)
 		{
 		}
 
-		//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CPhysicalManager
-		CRobot::~CRobot()
+		//Chroniony destruktor wirtualny - uÅ¼ywany wyÅ‚Ä…cznie przez CPhysicalManager
+		Robot::~Robot()
 		{
-			//CUnit					not edit
-			m_robot_state			= ERobotState::ROBOT_DEFAULT;
-			//m_strategy_duration	not edit
-			m_elapsed_time			= 0.0f;
+			//~Unit()
+			m_robot_state = ERobotState::ROBOT_DEFAULT;
+			//m_strategy_duration
+			m_elapsed_time = 0.0f;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/
-		const std::string CRobot::GetType() const
+		const std::string Robot::getType() const
 		{
 			return rtti.GetNameClass();
 		}
 
-		//Metoda zwraca sta³¹ referencjê na obiekt klasy CStrategyDuration
-		const CStrategyDuration & CRobot::getStrategyDuration() const
+		//Metoda zwraca staÅ‚Ä… referencjÄ™ na obiekt klasy StrategyDuration
+		const StrategyDuration & Robot::getStrategyDuration() const
 		{
 			return m_strategy_duration;
 		}
 
-		//Metoda ustawia referencjê na obiekt klasy CStrategyDuration
-		void CRobot::setStrategyDuration(const CStrategyDuration & strategy_duration)
+		//Metoda ustawia referencjÄ™ na obiekt klasy StrategyDuration
+		void Robot::setStrategyDuration(const StrategyDuration & strategy_duration)
 		{
 			m_strategy_duration = strategy_duration;
 		}
 
-		//Wirtualna metoda aktualizuje animacje w zale¿noœci od stanu logiki obiektu (move, attack, death, etc...)
-		void CRobot::updateAnimations(float dt)
+		//Wirtualna metoda aktualizuje animacje w zaleÅ¼noÅ›ci od stanu logiki obiektu (move, attack, death, etc...)
+		void Robot::updateAnimations(float dt)
 		{
 			switch (m_robot_state)
 			{
@@ -176,14 +176,14 @@ namespace logic
 			}
 		}
 
-		//Wirtualan metoda zabija obiekt klasy Actor i wywo³uje odpowiednie czynnoœci z tym zwi¹zane
-		void CRobot::kill()
+		//Wirtualan metoda zabija obiekt klasy Actor i wywoÅ‚uje odpowiednie czynnoÅ›ci z tym zwiÄ…zane
+		void Robot::kill()
 		{
-			//to do...
+			//
 		}
 
-		//Wirtualna metoda aktualizuj¹ca obiekt
-		void CRobot::update(float dt)
+		//Wirtualna metoda aktualizujÄ…ca obiekt
+		void Robot::update(float dt)
 		{
 			//Physical::update(dt);
 			//Actor::update(dt);
@@ -194,29 +194,29 @@ namespace logic
 			Actor::updateComponents(dt);
 		}
 
-		void CRobot::updateState(float dt)
+		void Robot::updateState(float dt)
 		{
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 			{
-				if (m_robot_state != ERobotState::ROBOT_ATTACK_DURING && CUnit::m_strategy_controller.getStrategyState() == EStrategyState::NEUTRAL)
+				if (m_robot_state != ERobotState::ROBOT_ATTACK_DURING && Unit::m_strategy_controller.getStrategyState() == EStrategyState::NEUTRAL)
 				{
 					fprintf(stderr, "Attack...\n");
-					CUnit::m_strategy_controller.Attack();
+					Unit::m_strategy_controller.attack();
 				}
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 			{
-				if (m_robot_state != ERobotState::ROBOT_DEFENSE_DURING && CUnit::m_strategy_controller.getStrategyState() == EStrategyState::NEUTRAL)
+				if (m_robot_state != ERobotState::ROBOT_DEFENSE_DURING && Unit::m_strategy_controller.getStrategyState() == EStrategyState::NEUTRAL)
 				{
 					fprintf(stderr, "Defense...\n");
-					CUnit::m_strategy_controller.Defense();
+					Unit::m_strategy_controller.defense();
 				}
 			}
 
 			//a t t a c k
-			if (CUnit::m_strategy_controller.getStrategyState() == EStrategyState::ATTACK)
+			if (Unit::m_strategy_controller.getStrategyState() == EStrategyState::ATTACK)
 			{
 				m_elapsed_time += dt;
 
@@ -237,14 +237,14 @@ namespace logic
 					if (m_elapsed_time >= m_strategy_duration.getTimeAttackPrepare())
 					{
 						m_robot_state = ERobotState::ROBOT_ATTACK_DURING;
-						CUnit::m_strategy_controller.setStrategyState(EStrategyState::NEUTRAL);
+						Unit::m_strategy_controller.setStrategyState(EStrategyState::NEUTRAL);
 						m_elapsed_time = 0;
 					}
 				}
 			}
 
 			//d e f e n s e
-			if (CUnit::m_strategy_controller.getStrategyState() == EStrategyState::DEFENSE)
+			if (Unit::m_strategy_controller.getStrategyState() == EStrategyState::DEFENSE)
 			{
 				m_elapsed_time += dt;
 
@@ -265,7 +265,7 @@ namespace logic
 					if (m_elapsed_time >= m_strategy_duration.getTimeDefensePrepare())
 					{
 						m_robot_state = ERobotState::ROBOT_DEFENSE_DURING;
-						CUnit::m_strategy_controller.setStrategyState(EStrategyState::NEUTRAL);
+						Unit::m_strategy_controller.setStrategyState(EStrategyState::NEUTRAL);
 						m_elapsed_time = 0;
 					}
 				}
