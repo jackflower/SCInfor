@@ -22,9 +22,9 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 		
-		//Aby uzyskać obiekt SolarCell, należy wywołać CPhysicalManager::CreateSolarCell();
+		//Aby uzyskać obiekt SolarCell, należy wywołać PhysicalManager::CreateSolarCell();
 
 	protected:
 
@@ -43,7 +43,7 @@ namespace equipment
 		SolarCell(const SolarCell & SolarCellCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~SolarCell(void);
 

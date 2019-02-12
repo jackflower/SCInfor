@@ -119,7 +119,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy PowerRelayStation
 	PowerRelayStation *PowerRelayStationTemplate::create(std::wstring id)
 	{
-		PowerRelayStation *power_relay_station = gPhysicalManager.CreatePowerRelayStation(id);
+		PowerRelayStation *power_relay_station = gPhysicalManager.createPowerRelayStation(id);
 		fill(power_relay_station);
 		return power_relay_station;
 	}

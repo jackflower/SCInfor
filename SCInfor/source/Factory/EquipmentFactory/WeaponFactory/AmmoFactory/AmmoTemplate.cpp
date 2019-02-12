@@ -83,7 +83,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Ammo
 	Ammo* AmmoTemplate::create(std::wstring id)
 	{
-		Ammo* ammo = gPhysicalManager.CreateAmmo(id);
+		Ammo* ammo = gPhysicalManager.createAmmo(id);
 		fill(ammo);
 		return ammo;
 	}

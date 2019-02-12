@@ -20,9 +20,9 @@ namespace logic
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 		
-		//Aby uzyskać obiekt Monster, należy wywołać CPhysicalManager::CreateMonster();
+		//Aby uzyskać obiekt Monster, należy wywołać PhysicalManager::CreateMonster();
 
 	protected:
 

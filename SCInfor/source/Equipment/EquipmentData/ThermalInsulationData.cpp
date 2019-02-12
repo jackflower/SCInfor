@@ -6,7 +6,7 @@
 
 #include "ThermalInsulationData.h"
 #include "../Thermodynamics//ThermalInsulation/ThermalInsulation.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 
 namespace equipmentdata
 {
@@ -33,7 +33,7 @@ namespace equipmentdata
 	{
 		//EquipmentData	not edit
 		if (p_thermalinsulation)
-			gPhysicalManager.DestroyPhysical(p_thermalinsulation);
+			gPhysicalManager.destroyPhysical(p_thermalinsulation);
 		p_thermalinsulation = NULL;
 	}
 

@@ -16,7 +16,7 @@ namespace equipment
 {
 	RTTI_IMPL(ThermalInsulation, Actor);
 
-	//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+	//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 	ThermalInsulation::ThermalInsulation(const std::wstring & uniqueId)
 	:
 		Actor(uniqueId),//konstruktor klasy bazowej

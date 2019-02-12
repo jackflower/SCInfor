@@ -48,7 +48,7 @@ namespace equipment
 	{
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	SolarCell::~SolarCell(void)
 	{
 		//PowerModule

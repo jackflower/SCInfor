@@ -78,7 +78,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy SolarCell
 	SolarCell* SolarCellTemplate::create(std::wstring id)
 	{
-		SolarCell *solarcell = gPhysicalManager.CreateSolarCell(id);
+		SolarCell *solarcell = gPhysicalManager.createSolarCell(id);
 		fill(solarcell);
 		return solarcell;
 	}

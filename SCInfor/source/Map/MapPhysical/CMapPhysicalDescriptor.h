@@ -71,7 +71,7 @@ namespace mapengine
 		void SetTemplate(MapPhysicalTemplate* template_param);
 
 		///
-		///Metoda zwraca unikalny identyfikator (nadawany w CMapPhysicalManager)
+		///Metoda zwraca unikalny identyfikator (nadawany w MapPhysicalManager)
 		///
 		const int GetUniqueId() const;
 
@@ -215,7 +215,7 @@ namespace mapengine
 	private:
 
 		MapPhysicalTemplate*	p_template;		//wskaŸnik na wzorzec - obiekt klasy CMapPhysical jak i te¿ pochodne tej klasy
-		int						m_unique_id;	//unikalny identyfikator (nadawany w CMapPhysicalManager)
+		int						m_unique_id;	//unikalny identyfikator (nadawany w MapPhysicalManager)
 		std::string				m_code;			//nazwa kodu dla typu pod³o¿a (nazwa w tablicy 2D - zapisanej w pliku xml)
 		std::string				m_name;			//nazwa w³asna obiektu, któr¹ nadajemy obiektowi na poziomie wpisu w pliku xml
 		sf::Vector2f			m_position;		//pozycja obiektu

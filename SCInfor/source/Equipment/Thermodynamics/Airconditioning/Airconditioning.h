@@ -27,14 +27,14 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 
-		//Aby uzyskać obiekt Airconditioning, należy wywołać CPhysicalManager::CreateAirconditioning();
+		//Aby uzyskać obiekt Airconditioning, należy wywołać PhysicalManager::CreateAirconditioning();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+		///Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		///
 		///@param uniqueId - unikalny identyfikator obiektu - stała referncja na obiekt klasy std::wstring
 		///
@@ -48,7 +48,7 @@ namespace equipment
 		Airconditioning(const Airconditioning & AirconditioningCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		~Airconditioning(void);
 

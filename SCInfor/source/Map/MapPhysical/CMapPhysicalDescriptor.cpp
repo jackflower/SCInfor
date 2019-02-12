@@ -97,7 +97,7 @@ namespace mapengine
 		p_template = template_param;
 	}
 
-	//Metoda zwraca unikalny identyfikator (nadawany w CMapPhysicalManager)
+	//Metoda zwraca unikalny identyfikator (nadawany w MapPhysicalManager)
 	const int CMapPhysicalDescriptor::GetUniqueId() const
 	{
 		return m_unique_id;

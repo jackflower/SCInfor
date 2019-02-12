@@ -235,7 +235,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Actor
 	Actor *ActorTemplate::create(std::wstring id)
 	{
-		Actor *actor = gPhysicalManager.CreateActor(id);
+		Actor *actor = gPhysicalManager.createActor(id);
 		fill(actor);
 		return actor;
 	}

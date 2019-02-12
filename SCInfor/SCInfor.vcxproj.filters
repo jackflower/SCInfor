@@ -393,15 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Logic\CLogic.cpp">
-      <Filter>source\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\CMapPhysicalManager.cpp">
-      <Filter>source\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Logic\CPhysicalManager.cpp">
-      <Filter>source\Logic</Filter>
-    </ClCompile>
     <ClCompile Include="source\Map\CCell.cpp">
       <Filter>source\Map</Filter>
     </ClCompile>
@@ -1002,6 +993,15 @@
     <ClCompile Include="source\Logic\Unit\Unit.cpp">
       <Filter>source\Logic\Unit</Filter>
     </ClCompile>
+    <ClCompile Include="source\Logic\Logic.cpp">
+      <Filter>source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\MapPhysicalManager.cpp">
+      <Filter>source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Logic\PhysicalManager.cpp">
+      <Filter>source\Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1101,15 +1101,6 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Unit\EStrategyState.h">
       <Filter>source\Logic\Unit</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\CLogic.h">
-      <Filter>source\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\CMapPhysicalManager.h">
-      <Filter>source\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Logic\CPhysicalManager.h">
-      <Filter>source\Logic</Filter>
     </ClInclude>
     <ClInclude Include="source\Logic\EEnemyAttitude.h">
       <Filter>source\Logic</Filter>
@@ -1758,6 +1749,15 @@
     </ClInclude>
     <ClInclude Include="source\Logic\Unit\Unit.h">
       <Filter>source\Logic\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\Logic.h">
+      <Filter>source\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\MapPhysicalManager.h">
+      <Filter>source\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\PhysicalManager.h">
+      <Filter>source\Logic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

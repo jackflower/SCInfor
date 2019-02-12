@@ -6,7 +6,7 @@
 
 #include "PlayerTemplate.h"
 //#include "../XML/CXml.h"
-//#include "../Logic/CPhysicalManager.h"
+//#include "../Logic/PhysicalManager.h"
 
 namespace factory
 {
@@ -65,7 +65,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Player
 	Player *PlayerTemplate::create(std::wstring id)
 	{
-		Player *player = gPhysicalManager.CreatePlayer(id);
+		Player *player = gPhysicalManager.createPlayer(id);
 		fill(player);
 		//gdyby były jakieś pola do przekazania, należy to uczynić...
 		return player;

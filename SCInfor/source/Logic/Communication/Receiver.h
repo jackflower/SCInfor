@@ -26,9 +26,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 
-			//Aby uzyskać obiekt Receiver, należy wywołać CPhysicalManager::CreateReceiver();
+			//Aby uzyskać obiekt Receiver, należy wywołać PhysicalManager::CreateReceiver();
 
 		protected:
 
@@ -47,7 +47,7 @@ namespace logic
 			Receiver(const Receiver & ReceiverCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			virtual ~Receiver();
 

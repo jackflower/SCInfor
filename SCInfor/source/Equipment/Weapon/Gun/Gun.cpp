@@ -5,7 +5,7 @@
 //
 
 #include "Gun.h"
-#include "../../../Logic/CPhysicalManager.h"
+#include "../../../Logic/PhysicalManager.h"
 #include "../../../Rendering/Animations/CAnimation.h"
 #include "../../../Rendering/Animations/CAnimationState.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
@@ -24,7 +24,7 @@ namespace equipment
 	{
 		RTTI_IMPL(Gun, Actor);
 
-		//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+		//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		Gun::Gun(const std::wstring & uniqueId)
 		:
 			Actor(uniqueId),//konstruktor klasy bazowej
@@ -82,7 +82,7 @@ namespace equipment
 			//to do: layers
 		}
 
-		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		Gun::~Gun(void)
 		{
 			//Actor

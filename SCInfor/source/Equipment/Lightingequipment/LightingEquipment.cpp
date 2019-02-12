@@ -5,7 +5,7 @@
 //
 
 #include "LightingEquipment.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 #include "../../Rendering/Drawable/Layers.h"
 #include "../../Rendering/Animations/CAnimSet.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
@@ -46,7 +46,7 @@ namespace equipment
 		setZIndexShadowHead(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_HEAD);
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	LightingEquipment::~LightingEquipment(void)
 	{
 		//Actor

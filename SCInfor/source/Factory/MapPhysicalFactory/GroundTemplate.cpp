@@ -76,7 +76,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy CGroundWork
 	CGround *GroundTemplate::create(const std::wstring id)
 	{
-		CGround *ground = gPhysicalManager.CreateGround(id);
+		CGround *ground = gPhysicalManager.createGround(id);
 		fill(ground);
 		return ground;
 	}

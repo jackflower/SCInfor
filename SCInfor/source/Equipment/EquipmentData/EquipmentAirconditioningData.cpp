@@ -6,7 +6,7 @@
 
 #include "EquipmentAirconditioningData.h"
 #include "../Thermodynamics//Airconditioning/Airconditioning.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 
 namespace equipmentdata
 {
@@ -33,7 +33,7 @@ namespace equipmentdata
 	{
 		//EquipmentData
 		if (p_airconditiong)
-			gPhysicalManager.DestroyPhysical(p_airconditiong);
+			gPhysicalManager.destroyPhysical(p_airconditiong);
 		p_airconditiong = NULL;
 	}
 

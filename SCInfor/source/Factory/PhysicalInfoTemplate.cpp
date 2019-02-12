@@ -140,7 +140,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy PhysicalInfo
 	PhysicalInfo *PhysicalInfoTemplate::create(std::wstring id)
 	{
-		PhysicalInfo *physical_info = gPhysicalManager.CreatePhysicalInfo(id);
+		PhysicalInfo *physical_info = gPhysicalManager.createPhysicalInfo(id);
 		fill(physical_info);
 		return physical_info;
 	}

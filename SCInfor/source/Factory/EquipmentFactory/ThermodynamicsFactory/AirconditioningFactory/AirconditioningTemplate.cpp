@@ -110,7 +110,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Airconditioning
 	Airconditioning* AirconditioningTemplate::create(std::wstring id)
 	{
-		Airconditioning * airconditioning = gPhysicalManager.CreateAirconditioning(id);
+		Airconditioning * airconditioning = gPhysicalManager.createAirconditioning(id);
 		fill(airconditioning);
 		return airconditioning;
 	}

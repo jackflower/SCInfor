@@ -6,7 +6,7 @@
 
 #include "MonsterTemplate.h"
 #include "../XML/CXml.h"
-#include "../Logic/CPhysicalManager.h"
+#include "../Logic/PhysicalManager.h"
 
 namespace factory
 {
@@ -57,7 +57,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Monster
 	Monster *MonsterTemplate::create(std::wstring id)
 	{
-		Monster *monster = gPhysicalManager.CreateMonster(id);
+		Monster *monster = gPhysicalManager.createMonster(id);
 		fill(monster);
 
 		//gdyby w klasie Monster były jakieś pola

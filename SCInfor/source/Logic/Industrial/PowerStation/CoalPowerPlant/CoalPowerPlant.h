@@ -23,9 +23,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 			
-			//Aby uzyskać obiekt CoalPowerPlant, należy wywołać CPhysicalManager::CreateCoalPowerPlant();
+			//Aby uzyskać obiekt CoalPowerPlant, należy wywołać PhysicalManager::CreateCoalPowerPlant();
 
 		protected:
 
@@ -44,7 +44,7 @@ namespace logic
 			CoalPowerPlant(const CoalPowerPlant & CoalPowerPlantCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			~CoalPowerPlant();
 

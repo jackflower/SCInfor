@@ -5,7 +5,7 @@
 //
 
 #include "Engine.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 #include "../../Rendering/Animations/CAnimSet.h"
 #include "../../Rendering/Drawable/Layers.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
@@ -71,7 +71,7 @@ namespace equipment
 		setZIndexShadowHead(Z_PHYSICAL_SHADOW_ENGINE_HEAD);
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	Engine::~Engine(void)
 	{
 		//Actor

@@ -36,9 +36,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 
-			//Aby uzyskać obiekt PowerRelayStation, należy wywołać CPhysicalManager::CreatePowerRelayStation();
+			//Aby uzyskać obiekt PowerRelayStation, należy wywołać PhysicalManager::CreatePowerRelayStation();
 
 		protected:
 
@@ -57,7 +57,7 @@ namespace logic
 			PowerRelayStation(const PowerRelayStation & PowerRelayStationCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			virtual ~PowerRelayStation();
 

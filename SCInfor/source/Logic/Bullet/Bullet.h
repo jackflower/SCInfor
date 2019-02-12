@@ -22,9 +22,9 @@ namespace logic
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 		
-		//Aby uzyskać obiekt Bullet, należy wywołać CPhysicalManager::CreateCBullet();
+		//Aby uzyskać obiekt Bullet, należy wywołać PhysicalManager::CreateCBullet();
 		
 	protected:
 
@@ -41,7 +41,7 @@ namespace logic
 		Bullet(const Bullet & BulletCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~Bullet();
 

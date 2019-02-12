@@ -25,14 +25,14 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 
-		//Aby uzyskać obiekt ThermalInsulation, należy wywołać CPhysicalManager::CreateThermalInsulation();
+		//Aby uzyskać obiekt ThermalInsulation, należy wywołać PhysicalManager::CreateThermalInsulation();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+		///Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		///
 		///@param uniqueId - unikalny identyfikator obiektu - stała referncja na obiekt klasy std::wstring
 		///

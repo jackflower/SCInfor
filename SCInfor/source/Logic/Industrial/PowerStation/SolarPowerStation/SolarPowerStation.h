@@ -24,9 +24,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 			
-			//Aby uzyskać obiekt SolarPowerStation, należy wywołać CPhysicalManager::CreateSolarPowerStation();
+			//Aby uzyskać obiekt SolarPowerStation, należy wywołać PhysicalManager::CreateSolarPowerStation();
 
 		protected:
 
@@ -45,7 +45,7 @@ namespace logic
 			SolarPowerStation(const SolarPowerStation & SolarPowerStationCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			~SolarPowerStation(void);
 

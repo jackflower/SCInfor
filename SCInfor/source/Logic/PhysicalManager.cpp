@@ -1,12 +1,10 @@
-/*
- ____________________________________________
-| CPhysicalManager.cpp - implementacja klasy |
-| Jack Flower - November 2012.               |
-|____________________________________________|
+Ôªø//  ____________________________________________
+// | PhysicalManager.cpp - class implementation |
+// | Jack Flower - November 2012                |
+// |____________________________________________|
+//
 
-*/
-
-#include "CPhysicalManager.h"
+#include "PhysicalManager.h"
 #include "Physical/Physical.h"
 #include "Physical/PhysicalInfo/PhysicalInfo.h"
 #include "Actor/Actor.h"
@@ -45,50 +43,50 @@
 
 using namespace game;
 
-template<> CPhysicalManager* CSingleton<CPhysicalManager>::m_singleton = 0;
+template<> PhysicalManager* CSingleton<PhysicalManager>::m_singleton = 0;
 
 namespace logic
 {
 	//Konstruktor
-	CPhysicalManager::CPhysicalManager()
+	PhysicalManager::PhysicalManager()
 	{
-		fprintf(stderr, "CPhysicalManager::CPhysicalManager()\n");
+		fprintf(stderr, "PhysicalManager::PhysicalManager()\n");
 		gGame.addFrameListener(this);
 	}
 
 	//Destruktor wirtualny
-	CPhysicalManager::~CPhysicalManager()
+	PhysicalManager::~PhysicalManager()
 	{
-		fprintf(stderr, "CPhysicalManager::~CPhysicalManager()\n");
-		Clear(true);
+		fprintf(stderr, "PhysicalManager::~PhysicalManager()\n");
+		clear(true);
 	}
 
-	//Wirtualna metoda - czyúci obiekty z kontenera
-	void CPhysicalManager::frameStarted(float secondsPassed)
+	//Wirtualna metoda - czy≈õci obiekty z kontenera
+	void PhysicalManager::frameStarted(float secondsPassed)
 	{
-		//Czyszczenie obiektÛw
+		//Czyszczenie obiekt√≥w
 		std::vector<Physical*>				dirty;		//kontener na obiekty do zniszczenia
 		std::vector<Physical*>::iterator	it;			//iterator tego kontenera
 
 		for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		{
-			if ((*it)->m_ready_for_destruction)			//jeúli obiekt jest gotowy do zniszczaenia
-				dirty.push_back(*it);					//wstawiamy go do kontenera "úmierci"
+			if ((*it)->m_ready_for_destruction)			//je≈õli obiekt jest gotowy do zniszczaenia
+				dirty.push_back(*it);					//wstawiamy go do kontenera "≈õmierci"
 		}
 
 		for (unsigned int i = 0; i < dirty.size(); i++)	//iterujemy po tym kontenerze
-			DestroyPhysical(dirty[i]);					//i usuwamy obiekty
+			destroyPhysical(dirty[i]);					//i usuwamy obiekty
 
 	}
 
-	//Szablon metody tworzenia obiektÛw
+	//Szablon metody tworzenia obiekt√≥w
 	template<class T>
-	T* CPhysicalManager::create(const std::wstring &uniqueId)
+	T* PhysicalManager::create(const std::wstring &uniqueId)
 	{
 		std::wstring new_unique_id = uniqueId;
 		if (uniqueId != L"")
 		{
-			CheckUniqueId(new_unique_id);
+			checkUniqueId(new_unique_id);
 
 			if (m_named_physicals.find(new_unique_id) != m_named_physicals.end())
 			{
@@ -107,233 +105,233 @@ namespace logic
 		return obj;
 	}
 
-	//Metoda tworzy obiekt klasy Physical i zwraca wskaünik na ten obiekt
-	Physical *CPhysicalManager::CreatePhysical(const std::wstring& unique_id)
+	//Metoda tworzy obiekt klasy Physical i zwraca wska≈∫nik na ten obiekt
+	Physical *PhysicalManager::createPhysical(const std::wstring & unique_id)
 	{
 		fprintf(stderr, "Physical created\n");
 		return create<Physical>(unique_id);
 	}
 
-	//Metoda tworzy obiekt klasy Actor i zwraca wskaünik na ten obiekt
-	Actor *CPhysicalManager::CreateActor(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Actor i zwraca wska≈∫nik na ten obiekt
+	Actor *PhysicalManager::createActor(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Actor created\n");
 		return create<Actor>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Robot i zwraca wskaünik na ten obiekt
-	Robot *CPhysicalManager::CreateRobot(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Robot i zwraca wska≈∫nik na ten obiekt
+	Robot *PhysicalManager::createRobot(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Robot created\n");
 		return create<Robot>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Enemy i zwraca wskaünik na ten obiekt
-	Enemy *CPhysicalManager::CreateEnemy(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Enemy i zwraca wska≈∫nik na ten obiekt
+	Enemy *PhysicalManager::createEnemy(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Enemy created\n");
 		return create<Enemy>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Player i zwraca wskaünik na ten obiekt
-	Player *CPhysicalManager::CreatePlayer(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Player i zwraca wska≈∫nik na ten obiekt
+	Player *PhysicalManager::createPlayer(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Player created\n");
 		return create<Player>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Bullet i zwraca wskaünik na ten obiekt
-	Bullet *CPhysicalManager::CreateBullet(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Bullet i zwraca wska≈∫nik na ten obiekt
+	Bullet *PhysicalManager::createBullet(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Bullet created\n");
 		return create<Bullet>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Engine i zwraca wskaünik na ten obiekt
-	Engine *CPhysicalManager::CreateEngine(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Engine i zwraca wska≈∫nik na ten obiekt
+	Engine *PhysicalManager::createEngine(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Engine created\n");
 		return create<Engine>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy FuelTank i zwraca wskaünik na ten obiekt
-	FuelTank *CPhysicalManager::CreateFuelTank(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy FuelTank i zwraca wska≈∫nik na ten obiekt
+	FuelTank *PhysicalManager::createFuelTank(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "FuelTank created\n");
 		return create<FuelTank>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Energy i zwraca wskaünik na ten obiekt
-	Energy *CPhysicalManager::CreateEnergy(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Energy i zwraca wska≈∫nik na ten obiekt
+	Energy *PhysicalManager::createEnergy(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Energy created\n");
 		return create<Energy>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy EnergyTank i zwraca wskaünik na ten obiekt
-	EnergyTank *CPhysicalManager::CreateEnergyTank(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy EnergyTank i zwraca wska≈∫nik na ten obiekt
+	EnergyTank *PhysicalManager::createEnergyTank(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "EnergyTank created\n");
 		return create<EnergyTank>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Monster i zwraca wskaünik na ten obiekt
-	Monster *CPhysicalManager::CreateMonster(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Monster i zwraca wska≈∫nik na ten obiekt
+	Monster *PhysicalManager::createMonster(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Monster created\n");
 		return create<Monster>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Flora i zwraca wskaünik na ten obiekt
-	Flora *CPhysicalManager::CreateFlora(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Flora i zwraca wska≈∫nik na ten obiekt
+	Flora *PhysicalManager::createFlora(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Flora created\n");
 		return create<Flora>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy FuelBar i zwraca wskaünik na ten obiekt
-	FuelBar *CPhysicalManager::CreateFuelBar(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy FuelBar i zwraca wska≈∫nik na ten obiekt
+	FuelBar *PhysicalManager::createFuelBar(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "FuelBar created\n");
 		return create<FuelBar>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy PhysicalInfo i zwraca wskaünik na ten obiekt
-	PhysicalInfo *CPhysicalManager::CreatePhysicalInfo(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy PhysicalInfo i zwraca wska≈∫nik na ten obiekt
+	PhysicalInfo *PhysicalManager::createPhysicalInfo(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "PhysicalInfo created\n");
 		return create<PhysicalInfo>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Battery i zwraca wskaünik na ten obiekt
-	Battery *CPhysicalManager::CreateBattery(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Battery i zwraca wska≈∫nik na ten obiekt
+	Battery *PhysicalManager::createBattery(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Battery created\n");
 		return create<Battery>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy SolarBattery i zwraca wskaünik na ten obiekt
-	SolarBattery *CPhysicalManager::CreateSolarBattery(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy SolarBattery i zwraca wska≈∫nik na ten obiekt
+	SolarBattery *PhysicalManager::createSolarBattery(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "CBatteCSolarBatteryry created\n");
 		return create<SolarBattery>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Airconditioning i zwraca wskaünik na ten obiekt
-	Airconditioning *CPhysicalManager::CreateAirconditioning(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Airconditioning i zwraca wska≈∫nik na ten obiekt
+	Airconditioning *PhysicalManager::createAirconditioning(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Airconditioning created\n");
 		return create<Airconditioning>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy ThermalInsulation i zwraca wskaünik na ten obiekt
-	ThermalInsulation *CPhysicalManager::CreateThermalInsulation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy ThermalInsulation i zwraca wska≈∫nik na ten obiekt
+	ThermalInsulation *PhysicalManager::createThermalInsulation(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "ThermalInsulation created\n");
 		return create<ThermalInsulation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Ventilator i zwraca wskaünik na ten obiekt
-	Ventilator *CPhysicalManager::CreateVentilator(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Ventilator i zwraca wska≈∫nik na ten obiekt
+	Ventilator *PhysicalManager::createVentilator(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Ventilator created\n");
 		return create<Ventilator>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Ammo i zwraca wskaünik na ten obiekt
-	Ammo *CPhysicalManager::CreateAmmo(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Ammo i zwraca wska≈∫nik na ten obiekt
+	Ammo *PhysicalManager::createAmmo(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Ammo created\n");
 		return create<Ammo>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Gun i zwraca wskaünik na ten obiekt
-	Gun *CPhysicalManager::CreateGun(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Gun i zwraca wska≈∫nik na ten obiekt
+	Gun *PhysicalManager::createGun(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Gun created\n");
 		return create<Gun>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Gun i zwraca wskaünik na ten obiekt
-	WindTurbine *CPhysicalManager::CreateWindTurbine(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Gun i zwraca wska≈∫nik na ten obiekt
+	WindTurbine *PhysicalManager::createWindTurbine(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "WindTurbine created\n");
 		return create<WindTurbine>(uniqueId);
 	}
 
 
-	//Metoda tworzy obiekt klasy SolarCell i zwraca wskaünik na ten obiekt
-	SolarCell *CPhysicalManager::CreateSolarCell(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy SolarCell i zwraca wska≈∫nik na ten obiekt
+	SolarCell *PhysicalManager::createSolarCell(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "SolarCell created\n");
 		return create<SolarCell>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy PowerStation i zwraca wskaünik na ten obiekt
-	PowerStation *CPhysicalManager::CreatePowerStation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy PowerStation i zwraca wska≈∫nik na ten obiekt
+	PowerStation *PhysicalManager::createPowerStation(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "PowerStation created\n");
 		return create<PowerStation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy WindPowerStation i zwraca wskaünik na ten obiekt
-	WindPowerStation *CPhysicalManager::CreateWindPowerStation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy WindPowerStation i zwraca wska≈∫nik na ten obiekt
+	WindPowerStation *PhysicalManager::createWindPowerStation(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "WindPowerStation created\n");
 		return create<WindPowerStation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy WindPowerStationMultipled i zwraca wskaünik na ten obiekt
-	WindPowerStationMultipled *CPhysicalManager::CreateWindPowerStationMultipled(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy WindPowerStationMultipled i zwraca wska≈∫nik na ten obiekt
+	WindPowerStationMultipled *PhysicalManager::createWindPowerStationMultipled(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "WindPowerStationMultipled created\n");
 		return create<WindPowerStationMultipled>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy RelayStation i zwraca wskaünik na ten obiekt
-	RelayStation *CPhysicalManager::CreateRelayStation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy RelayStation i zwraca wska≈∫nik na ten obiekt
+	RelayStation *PhysicalManager::createRelayStation(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "RelayStation created\n");
 		return create<RelayStation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy PowerRelayStation i zwraca wskaünik na ten obiekt
-	PowerRelayStation *CPhysicalManager::CreatePowerRelayStation(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy PowerRelayStation i zwraca wska≈∫nik na ten obiekt
+	PowerRelayStation *PhysicalManager::createPowerRelayStation(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "PowerRelayStation created\n");
 		return create<PowerRelayStation>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy SlotsRate i zwraca wskaünik na ten obiekt
-	SlotsRate* CPhysicalManager::CreateSlotsRate(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy SlotsRate i zwraca wska≈∫nik na ten obiekt
+	SlotsRate* PhysicalManager::createSlotsRate(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "SlotsRate created\n");
 		return create<SlotsRate>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy Communication i zwraca wskaünik na ten obiekt
-	Communication *CPhysicalManager::CreateCommunication(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy Communication i zwraca wska≈∫nik na ten obiekt
+	Communication *PhysicalManager::createCommunication(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "Communication created\n");
 		return create<Communication>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy LightingEquipment i zwraca wskaünik na ten obiekt
-	LightingEquipment *CPhysicalManager::CreateLightingEquipment(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy LightingEquipment i zwraca wska≈∫nik na ten obiekt
+	LightingEquipment *PhysicalManager::createLightingEquipment(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "LightingEquipment created\n");
 		return create<LightingEquipment>(uniqueId);
 	}
 
-	//Metoda tworzy obiekt klasy CGround i zwraca wskaünik na ten obiekt
-	CGround *CPhysicalManager::CreateGround(const std::wstring &uniqueId)
+	//Metoda tworzy obiekt klasy CGround i zwraca wska≈∫nik na ten obiekt
+	CGround *PhysicalManager::createGround(const std::wstring & uniqueId)
 	{
 		fprintf(stderr, "CGround created\n");
 		return create<CGround>(uniqueId);
 	}
 	
 	//Metoda usuwa obiekt klasy Physical z kontenera
-	void CPhysicalManager::DestroyPhysical(Physical* physical)
+	void PhysicalManager::destroyPhysical(Physical *physical)
 	{
 		if (physical->m_physical_manager_index >= 0)
 		{
@@ -342,24 +340,24 @@ namespace logic
 			m_physicals.pop_back();
 			physical->m_physical_manager_index = -1;
 			fprintf(stderr, "PhysicalsManager::DestroyPhysical - %ls\n", physical->getUniqueId().c_str());
-			DestroyPhysical(physical->getUniqueId());
+			destroyPhysical(physical->getUniqueId());
 			delete physical;
 		}
 	}
 
 	//Metoda usuwa obiekt klasy Physical z kontenera
-	void CPhysicalManager::DestroyPhysical(const std::wstring& id_physical)
+	void PhysicalManager::destroyPhysical(const std::wstring & id_physical)
 	{
 		if (m_named_physicals.find(id_physical) != m_named_physicals.end())
 		{
 			Physical* physical = m_named_physicals[id_physical];
 			m_named_physicals.erase(m_named_physicals.find( id_physical));
-			DestroyPhysical(physical);
+			destroyPhysical(physical);
 		}
 	}
 
 	//Metoda usuwa wszystkie obiekty z kontenera
-	void CPhysicalManager::Clear(bool force_destroy_instantly)
+	void PhysicalManager::clear(bool force_destroy_instantly)
 	{
 		std::vector<Physical*>::iterator it;
 
@@ -374,20 +372,20 @@ namespace logic
 		}
 	}
 
-	//Metoda zwraca sta≥π referencjÍ do kontenera z nazwami wszystkich zarejestorwanych obiektÛw Physical
-	const std::map<std::wstring, Physical*>& CPhysicalManager::GetNamedPhysicals()
+	//Metoda zwraca sta≈ÇƒÖ referencjƒô do kontenera z nazwami wszystkich zarejestorwanych obiekt√≥w Physical
+	const std::map<std::wstring, Physical*> & PhysicalManager::getNamedPhysicals()
 	{
 		return m_named_physicals;
 	}
 
-	//Metoda zwraca sta≥π referencjÍ do kontenera z wszystkimi wskaünikami zarejestorwanych obiektÛw Physical
-	const std::vector<Physical *> &CPhysicalManager::GetPhysicals()
+	//Metoda zwraca sta≈ÇƒÖ referencjƒô do kontenera z wszystkimi wska≈∫nikami zarejestorwanych obiekt√≥w Physical
+	const std::vector<Physical *> & PhysicalManager::getPhysicals()
 	{
 		return m_physicals;
 	}
 
-	//Metoda zwraca wskaünik na obiekt klasy Physical z kontenera na podstawie identyfikatora
-	Physical* CPhysicalManager::GetPhysicalById(const std::wstring& physical_id)
+	//Metoda zwraca wska≈∫nik na obiekt klasy Physical z kontenera na podstawie identyfikatora
+	Physical *PhysicalManager::getPhysicalById(const std::wstring & physical_id)
 	{
 		if (m_named_physicals.find(physical_id) != m_named_physicals.end())
 			return m_named_physicals[physical_id];
@@ -400,11 +398,11 @@ namespace logic
 
 	//metody p o m o c n i c z e	implementacja
 
-	//Metoda zwraca sta≥π referencjÍ na kontener, w ktÛrym sπ wskaüniki na obiekty klasy WindPowerStation
+	//Metoda zwraca sta≈ÇƒÖ referencjƒô na kontener, w kt√≥rym sƒÖ wska≈∫niki na obiekty klasy WindPowerStation
 	//elektrownie wiatrowe
-	const std::vector<WindPowerStation*>& CPhysicalManager::GetWindPowerstations()
+	const std::vector<WindPowerStation*> & PhysicalManager::getWindPowerstations()
 	{
-		std::vector<Physical*>::iterator	it;	//iterator tego kontenera
+		std::vector<Physical*>::iterator it; //iterator tego kontenera
 		for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		{
 			if ((*it)->getCategory() == PHYSICAL_WINDPOWERSTATION)
@@ -416,32 +414,32 @@ namespace logic
 	///
 	///Wirtualny interfejs - implementacja
 	///
-	void CPhysicalManager::Cleanup()
+	void PhysicalManager::cleanup()
 	{
-		fprintf(stderr, "CPhysicalManager::Cleanup()\n");
+		fprintf(stderr, "PhysicalManager::Cleanup()\n");
 
-		//nie jestem do koÒca pewien tego kodu...
+		//nie jestem do ko≈Ñca pewien tego kodu...
 		//std::vector<Physical*>::iterator it;
 		//for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		//	DestroyPhysical(*(it));
-		Clear();
-		fprintf(stderr, "CPhysicalManager::Cleanup() done...\n");
+		clear();
+		fprintf(stderr, "PhysicalManager::Cleanup() done...\n");
 	}
 
 
 	//implementajca metod private:
 
-	//Prywatna metoda sprawdzajπca jaki identyfikator nadaÊ obiektowi przy utworzeniu
-	void CPhysicalManager::CheckUniqueId(std::wstring& new_unique_id)
+	//Prywatna metoda sprawdzajƒÖca jaki identyfikator nadaƒá obiektowi przy utworzeniu
+	void PhysicalManager::checkUniqueId(std::wstring & new_unique_id)
 	{
 		static long physicalCount = 0;
-		//jeúli identyfikator jest ciπgiem pustych znakÛw
-		//lub w kontenerze sπ juø jakieú nazwy
+		//je≈õli identyfikator jest ciƒÖgiem pustych znak√≥w
+		//lub w kontenerze sƒÖ ju≈º jakie≈õ nazwy
 		if ((new_unique_id == L"" ) || (m_named_physicals.count(new_unique_id) > 0))
 			do
 			{
-				//to tworzymy nazwÍ zsyntetyzowanπ
-				//do s≥owa "physical" do dajemy wartoúÊ licznika zamienionπ na string
+				//to tworzymy nazwƒô zsyntetyzowanƒÖ
+				//do s≈Çowa "physical" do dajemy warto≈õƒá licznika zamienionƒÖ na string
 				new_unique_id = L"physical" + stringutils::ToWString(physicalCount++);
 			}
 			while (m_named_physicals.find(new_unique_id) != m_named_physicals.end());

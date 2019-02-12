@@ -77,7 +77,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy FuelBar
 	FuelBar* FuelBarTemplate::create(std::wstring id)
 	{
-		FuelBar* fuelbar = gPhysicalManager.CreateFuelBar(id);
+		FuelBar* fuelbar = gPhysicalManager.createFuelBar(id);
 		fill(fuelbar);
 		return fuelbar;
 	}

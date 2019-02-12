@@ -76,9 +76,9 @@ namespace logic
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 		
-		//Aby uzyskać obiekt Actor, należy wywołać CPhysicalManager::CreateActor();
+		//Aby uzyskać obiekt Actor, należy wywołać PhysicalManager::CreateActor();
 
 	protected:
 
@@ -97,7 +97,7 @@ namespace logic
 		Actor(const Actor & ActorCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~Actor();
 

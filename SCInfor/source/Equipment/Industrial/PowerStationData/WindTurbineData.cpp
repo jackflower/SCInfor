@@ -6,7 +6,7 @@
 
 #include "WindTurbineData.h"
 #include "../PowerModuleType/WindTurbine.h"
-#include "../../../Logic/CPhysicalManager.h"
+#include "../../../Logic/PhysicalManager.h"
 
 namespace equipmentpowerstationdata
 {
@@ -33,7 +33,7 @@ namespace equipmentpowerstationdata
 	{
 		//EquipmentData
 		if (p_turbine)
-			gPhysicalManager.DestroyPhysical(p_turbine);
+			gPhysicalManager.destroyPhysical(p_turbine);
 		p_turbine = NULL;
 	}
 

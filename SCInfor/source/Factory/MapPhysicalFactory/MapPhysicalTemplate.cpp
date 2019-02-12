@@ -127,7 +127,7 @@ namespace factory
 	//Wirtualna metoda tworzenie obiektów pochodnych klasy CMapPhysical
 	CMapPhysical* MapPhysicalTemplate::create(std::wstring id)
 	{
-		CMapPhysical *mapphysical = gMapPhysicalManager.CreateMapPhysical(id);
+		CMapPhysical *mapphysical = gMapPhysicalManager.createMapPhysical(id);
 		fill(mapphysical);
 		return mapphysical;
 	}

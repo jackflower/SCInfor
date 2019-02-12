@@ -24,9 +24,9 @@ namespace equipment
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 
-			//Aby uzyskać obiekt SolarBattery, należy wywołać CPhysicalManager::CreateSolarBattery();
+			//Aby uzyskać obiekt SolarBattery, należy wywołać PhysicalManager::CreateSolarBattery();
 
 		protected:
 			

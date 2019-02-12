@@ -30,7 +30,7 @@ namespace factory
 }
 namespace logic
 {
-	class CMapPhysicalManager;
+	class MapPhysicalManager;
 }
 
 using namespace rendering;
@@ -50,16 +50,16 @@ namespace mapengine
 		///
 		///Deklaracja przyjaŸni
 		///
-		friend class CMapPhysicalManager;
+		friend class MapPhysicalManager;
 
-		//Aby uzyskaæ obiekt CMapPhysicalManager, nale¿y wywo³aæ CMapPhysicalManager::CreateMapPhysical();
+		//Aby uzyskaæ obiekt MapPhysicalManager, nale¿y wywo³aæ MapPhysicalManager::CreateMapPhysical();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyœlny - u¿ywany wy³¹cznie przez CMapPhysicalManager
+		///Chroniony konstruktor domyœlny - u¿ywany wy³¹cznie przez MapPhysicalManager
 		///
-		///@param & uniqueId - unikalny identyfikator (nadawany w CMapPhysicalManager)
+		///@param & uniqueId - unikalny identyfikator (nadawany w MapPhysicalManager)
 		///
 		CMapPhysical(const std::wstring& uniqueId);
 
@@ -71,7 +71,7 @@ namespace mapengine
 		CMapPhysical(const CMapPhysical &CMapPhysicalCopy);
 
 		///
-		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CMapPhysicalManager
+		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez MapPhysicalManager
 		///
 		virtual ~CMapPhysical();
 
@@ -336,7 +336,7 @@ namespace mapengine
 
 	protected:
 
-		std::wstring			m_unique_id;				//unikalny identyfikator (nadawany w CMapPhysicalManager)
+		std::wstring			m_unique_id;				//unikalny identyfikator (nadawany w MapPhysicalManager)
 		std::string				m_code;						//nazwa kodu dla typu pod³o¿a (obiektu fabrycznego)
 		CDisplayable*			p_displayable;				//wskaŸnik na graficzn¹ reprezentacjê obiektu
 		sf::Vector2f			m_map_physical_position;	//pozycja pod³o¿a (podobnie jak kafle)
@@ -352,7 +352,7 @@ namespace mapengine
 
 	private:
 
-		int						m_mapphysical_manager_index;//wyliczony indeks w CMapPhysicalManager
+		int						m_mapphysical_manager_index;//wyliczony indeks w MapPhysicalManager
 		bool					m_ready_for_destruction;	//flaga ustawia obiekty gotowe do destrukcji
 
 		//prywatna metoda sprawdza, czy trzeba utworzyæ

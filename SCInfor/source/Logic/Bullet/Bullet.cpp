@@ -6,7 +6,7 @@
 
 
 #include "Bullet.h"
-#include "../CPhysicalManager.h"
+#include "../PhysicalManager.h"
 
 namespace logic
 {
@@ -42,7 +42,7 @@ namespace logic
 	{
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	Bullet::~Bullet()
 	{
 		m_speed = 0.0f;

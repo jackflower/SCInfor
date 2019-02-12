@@ -91,7 +91,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy WindTurbine
 	WindPowerStation* WindPowerStationTemplate::create(std::wstring id)
 	{
-		WindPowerStation* windpower_station = gPhysicalManager.CreateWindPowerStation(id);
+		WindPowerStation* windpower_station = gPhysicalManager.createWindPowerStation(id);
 		fill(windpower_station);
 		return windpower_station;
 	}

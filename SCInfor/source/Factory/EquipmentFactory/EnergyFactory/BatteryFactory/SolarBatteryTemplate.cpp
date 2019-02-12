@@ -63,7 +63,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy SolarBattery
 	SolarBattery *SolarBatteryTemplate::create(std::wstring id)
 	{
-		SolarBattery *solar_battery = gPhysicalManager.CreateSolarBattery(id);
+		SolarBattery *solar_battery = gPhysicalManager.createSolarBattery(id);
 		fill(solar_battery);
 		return solar_battery;
 	}

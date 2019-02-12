@@ -5,7 +5,7 @@
 //
 
 #include "EquipmentFuelTankData.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 
 namespace equipmentdata
 {
@@ -33,7 +33,7 @@ namespace equipmentdata
 	{
 		//EquipmentData
 		if (p_fueltank)
-			gPhysicalManager.DestroyPhysical(p_fueltank);
+			gPhysicalManager.destroyPhysical(p_fueltank);
 		p_fueltank = NULL;
 	}
 

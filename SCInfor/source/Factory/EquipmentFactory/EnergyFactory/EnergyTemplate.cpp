@@ -131,7 +131,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Engine
 	Energy *EnergyTemplate::create(std::wstring id)
 	{
-		Energy *energy = gPhysicalManager.CreateEnergy(id);
+		Energy *energy = gPhysicalManager.createEnergy(id);
 		fill(energy);
 		return energy;
 	}

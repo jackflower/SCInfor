@@ -6,7 +6,7 @@
 
 #include "EquipmentAmmoData.h"
 #include "../Weapon/Ammo/Ammo.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 
 namespace equipmentdata
 {
@@ -33,7 +33,7 @@ namespace equipmentdata
 	{
 		//EquipmentData
 		if (p_ammo)
-			gPhysicalManager.DestroyPhysical(p_ammo);
+			gPhysicalManager.destroyPhysical(p_ammo);
 		p_ammo = NULL;
 	}
 

@@ -39,12 +39,12 @@ namespace logic
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 
-		//Aby uzyskać obiekt Physical, należy wywołać CPhysicalManager::CreatePhysical();
+		//Aby uzyskać obiekt Physical, należy wywołać PhysicalManager::CreatePhysical();
 
 		///
-		///Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+		///Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		///
 		///@param uniqueId - stała referencja na obiekt klasy std::wstring
 		///
@@ -58,7 +58,7 @@ namespace logic
 		Physical(const Physical & PhysicalCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~Physical();
 
@@ -911,7 +911,7 @@ namespace logic
 	protected:
 	    
 		physCategory m_category; //kategoria Physical
-		std::wstring m_unique_id; //unikalny identyfikator (nadawany w CPhysicalManager)
+		std::wstring m_unique_id; //unikalny identyfikator (nadawany w PhysicalManager)
 		std::wstring m_genre; //nazwa "gatunku" obiektu (np. robot, human, gun, etc.)
 		float m_circle_radius; //promień detekcji kolizji
 		ECollisionShape m_collision_shape; //wyliczenie - typ detekcji kolizji
@@ -925,7 +925,7 @@ namespace logic
 
 	private:
 
-		int m_physical_manager_index; //wyliczony indeks w CPhysicalManager
+		int m_physical_manager_index; //wyliczony indeks w PhysicalManager
 		PhysicalData m_physical_data; //opakowanie funkcjonalności klasy Physical
 		bool m_smooth; //flaga, czy obiekt wygładza piksele tekstury
 		static float m_increase; //współczynnik wirtualnej wysokości obiektu

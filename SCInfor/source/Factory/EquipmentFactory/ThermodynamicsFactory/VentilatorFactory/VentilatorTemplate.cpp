@@ -75,7 +75,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Ventilator
 	Ventilator *VentilatorTemplate::create(std::wstring id)
 	{
-		Ventilator* ventilator = gPhysicalManager.CreateVentilator(id);
+		Ventilator* ventilator = gPhysicalManager.createVentilator(id);
 		fill(ventilator);
 		return ventilator;
 	}

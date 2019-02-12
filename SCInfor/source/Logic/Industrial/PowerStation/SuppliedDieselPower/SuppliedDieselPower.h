@@ -23,9 +23,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 			
-			//Aby uzyskać obiekt SuppliedDieselPower, należy wywołać CPhysicalManager::CreateSuppliedDieselPower();
+			//Aby uzyskać obiekt SuppliedDieselPower, należy wywołać PhysicalManager::CreateSuppliedDieselPower();
 
 		protected:
 
@@ -44,7 +44,7 @@ namespace logic
 			SuppliedDieselPower(const SuppliedDieselPower & SuppliedDieselPowerCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			~SuppliedDieselPower();
 

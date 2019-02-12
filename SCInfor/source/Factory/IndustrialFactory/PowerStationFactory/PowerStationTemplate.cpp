@@ -92,7 +92,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy PowerStation
 	PowerStation *PowerStationTemplate::create(std::wstring id)
 	{
-		PowerStation *power_station = gPhysicalManager.CreatePowerStation(id);
+		PowerStation *power_station = gPhysicalManager.createPowerStation(id);
 		fill(power_station);
 		return power_station;
 	}

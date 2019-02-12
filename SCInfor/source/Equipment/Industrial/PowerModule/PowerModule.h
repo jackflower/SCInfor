@@ -24,9 +24,9 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 		
-		//Aby uzyskać obiekt PowerModule, należy wywołać CPhysicalManager::CreatePowerModule();
+		//Aby uzyskać obiekt PowerModule, należy wywołać PhysicalManager::CreatePowerModule();
 
 		///
 		///Chroniony konstruktor domyślny
@@ -43,7 +43,7 @@ namespace equipment
 		PowerModule(const PowerModule & PowerModuleCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~PowerModule(void);
 

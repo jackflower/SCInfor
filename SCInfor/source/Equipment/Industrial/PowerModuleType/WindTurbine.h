@@ -23,9 +23,9 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 		
-		//Aby uzyskać obiekt WindTurbine, należy wywołać CPhysicalManager::CreateWindTurbine();
+		//Aby uzyskać obiekt WindTurbine, należy wywołać PhysicalManager::CreateWindTurbine();
 
 	protected:
 
@@ -44,7 +44,7 @@ namespace equipment
 		WindTurbine(const WindTurbine & WindTurbineCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~WindTurbine(void);
 

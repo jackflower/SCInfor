@@ -79,7 +79,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy PowerStation
 	Communication* CommunicationTemplate::create(std::wstring id)
 	{
-		Communication *communication = gPhysicalManager.CreateCommunication(id);
+		Communication *communication = gPhysicalManager.createCommunication(id);
 		fill(communication);
 		return communication;
 	}

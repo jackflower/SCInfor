@@ -5,7 +5,7 @@
 //
 
 #include "SlotsRateData.h"
-#include "../../CPhysicalManager.h"
+#include "../../PhysicalManager.h"
 #include "../PowerRelay/SlotsRate.h"
 
 namespace relaystationdata
@@ -33,7 +33,7 @@ namespace relaystationdata
 	{
 		//~EquipmentData()
 		if (p_slotsrate)
-			gPhysicalManager.DestroyPhysical(p_slotsrate);
+			gPhysicalManager.destroyPhysical(p_slotsrate);
 		p_slotsrate	= NULL;
 	}
 

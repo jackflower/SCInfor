@@ -6,7 +6,7 @@
 
 #include "EquipmentEngineData.h"
 #include "../Engine/Engine.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 
 namespace equipmentdata
 {
@@ -33,7 +33,7 @@ namespace equipmentdata
 	{
 		//EquipmentData
 		if (p_engine)
-			gPhysicalManager.DestroyPhysical(p_engine);
+			gPhysicalManager.destroyPhysical(p_engine);
 		p_engine = NULL;
 	}
 

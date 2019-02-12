@@ -30,9 +30,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 			
-			//Aby uzyskać obiekt WindPowerStation, należy wywołać CPhysicalManager::CreateWindPowerStation();
+			//Aby uzyskać obiekt WindPowerStation, należy wywołać PhysicalManager::CreateWindPowerStation();
 
 		protected:
 
@@ -51,7 +51,7 @@ namespace logic
 			WindPowerStation(const WindPowerStation & WindPowerStationCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			~WindPowerStation();
 

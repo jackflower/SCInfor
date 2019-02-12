@@ -11,7 +11,7 @@
 #include "CMapManager.h"
 //#include "SearchTools/CPath.h"
 //#include "SearchTools/CPathFinder.h"
-#include "../Logic/CPhysicalManager.h"
+#include "../Logic/PhysicalManager.h"
 #include "../Logic/Physical/Physical.h"
 #include "../Utilities/MathFunctions/MathFunctions.h"
 #include <climits>
@@ -85,7 +85,7 @@ namespace mapengine
 	//Metoda aktualizuje wszystkie obiekty znajduj¹ce siê na mapie kolizji
 	void CCollisionMap::UpdateAllPhysicals()
 	{
-		const std::vector<Physical*> &physicals = gPhysicalManager.GetPhysicals();
+		const std::vector<Physical*> & physicals = gPhysicalManager.getPhysicals();
 		for (unsigned i = 0; i < physicals.size(); i++)
 		{
 			UpdatePhysical(physicals[i], true);
@@ -95,7 +95,7 @@ namespace mapengine
 	//Metoda aktualizuje obiekty znajduj¹ce siê na mapie kolizji w zale¿noœci od kategorii
 	void CCollisionMap::UpdatePhysicals(int category)
 	{
-		const std::vector<Physical*> &physicals = gPhysicalManager.GetPhysicals();
+		const std::vector<Physical*> & physicals = gPhysicalManager.getPhysicals();
 		for (unsigned i = 0; i < physicals.size(); i++)
 		{
 			if (physicals[i]->getCategory() & category)

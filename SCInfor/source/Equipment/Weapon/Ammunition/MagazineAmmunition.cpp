@@ -15,7 +15,7 @@ namespace equipment
 
 		RTTI_IMPL(MagazineAmmunition, Actor);
 
-		//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+		//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		MagazineAmmunition::MagazineAmmunition(const std::wstring & uniqueId)
 		:
 			Actor(uniqueId),//konstruktor klasy bazowej

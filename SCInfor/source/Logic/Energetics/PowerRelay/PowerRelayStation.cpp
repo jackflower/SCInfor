@@ -5,7 +5,7 @@
 //
 
 #include "PowerRelayStation.h"
-#include "../../CPhysicalManager.h"
+#include "../../PhysicalManager.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Animations/CAnimation.h"
@@ -66,7 +66,7 @@ namespace logic
 			setZIndexShadowHead(Z_PHYSICAL_SHADOW_RELAY_STATION_HEAD);
 		}
 
-		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		PowerRelayStation::~PowerRelayStation()
 		{
 			//~RelayStation()						not edit

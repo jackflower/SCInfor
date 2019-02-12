@@ -59,7 +59,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy SlotsRate
 	SlotsRate* SlotsRateTemplate::create(std::wstring id)
 	{
-		SlotsRate *slots_rate = gPhysicalManager.CreateSlotsRate(id);
+		SlotsRate *slots_rate = gPhysicalManager.createSlotsRate(id);
 		fill(slots_rate);
 		return slots_rate;
 	}

@@ -5,7 +5,7 @@
 //
 
 #include "EnergyTankTemplate.h"
-#include "../../../../Logic/CPhysicalManager.h"
+#include "../../../../Logic/PhysicalManager.h"
 #include "../../../../Logic/Actor/Actor.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 
@@ -79,7 +79,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy FuelTank
 	EnergyTank *EnergyTankTemplate::create(std::wstring id)
 	{
-		EnergyTank *energytank = gPhysicalManager.CreateEnergyTank(id);
+		EnergyTank *energytank = gPhysicalManager.createEnergyTank(id);
 		fill(energytank);
 		return energytank;
 	}

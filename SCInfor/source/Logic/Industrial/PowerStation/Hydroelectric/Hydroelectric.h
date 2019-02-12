@@ -23,9 +23,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 			
-			//Aby uzyskać obiekt Hydroelectric, należy wywołać CPhysicalManager::CreateHydroelectric();
+			//Aby uzyskać obiekt Hydroelectric, należy wywołać PhysicalManager::CreateHydroelectric();
 
 		protected:
 
@@ -44,7 +44,7 @@ namespace logic
 			Hydroelectric(const Hydroelectric & HydroelectricCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			~Hydroelectric();
 

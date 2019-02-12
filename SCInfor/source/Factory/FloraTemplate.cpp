@@ -6,7 +6,7 @@
 
 #include "FloraTemplate.h"
 #include "../XML/CXml.h"
-#include "../Logic/CPhysicalManager.h"
+#include "../Logic/PhysicalManager.h"
 
 namespace factory
 {
@@ -76,7 +76,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Flora
 	Flora *FloraTemplate::create(std::wstring id)
 	{
-		Flora *flora = gPhysicalManager.CreateFlora(id);
+		Flora *flora = gPhysicalManager.createFlora(id);
 		fill(flora);
 		return flora;
 	}

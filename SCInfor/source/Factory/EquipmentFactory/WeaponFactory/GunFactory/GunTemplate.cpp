@@ -117,7 +117,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Gun
 	Gun *GunTemplate::create(std::wstring id)
 	{
-		Gun *gun = gPhysicalManager.CreateGun(id);
+		Gun *gun = gPhysicalManager.createGun(id);
 		fill(gun);
 		return gun;
 	}

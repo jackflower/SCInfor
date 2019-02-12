@@ -5,7 +5,7 @@
 //
 
 #include "Actor.h"
-#include "../CPhysicalManager.h"
+#include "../PhysicalManager.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Rendering/Animations/CAnimSet.h"
 #include "../../Rendering/Animations/CAnimationState.h"
@@ -60,7 +60,7 @@ namespace logic
 	{
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	Actor::~Actor()
 	{
 		//~Physical()

@@ -28,9 +28,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 			
-			//Aby uzyskać obiekt PowerStation, należy wywołać CPhysicalManager::CreatePowerStation();
+			//Aby uzyskać obiekt PowerStation, należy wywołać PhysicalManager::CreatePowerStation();
 
 		protected:
 
@@ -49,7 +49,7 @@ namespace logic
 			PowerStation(const PowerStation & PowerStationCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			virtual ~PowerStation(void);
 

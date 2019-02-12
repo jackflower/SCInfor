@@ -33,7 +33,7 @@ namespace equipment
 		//to do: layers
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	Thermometer::~Thermometer()
 	{
 		//Physical

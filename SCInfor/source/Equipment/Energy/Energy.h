@@ -29,9 +29,9 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 	
-		//Aby uzyskać obiekt Energy, należy wywołać CPhysicalManager::CreateEnergy();
+		//Aby uzyskać obiekt Energy, należy wywołać PhysicalManager::CreateEnergy();
 
 	private:
 

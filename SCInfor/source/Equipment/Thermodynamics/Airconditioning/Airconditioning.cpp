@@ -17,7 +17,7 @@ namespace equipment
 {
 	RTTI_IMPL(Airconditioning, Actor);
 	
-	//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+	//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 	Airconditioning::Airconditioning(const std::wstring & uniqueId)
 	:
 		Actor(uniqueId),//konstruktor klasy bazowej
@@ -51,7 +51,7 @@ namespace equipment
 		//to do: layers
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	Airconditioning::~Airconditioning(void)
 	{
 		//Actor

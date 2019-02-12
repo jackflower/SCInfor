@@ -8,7 +8,7 @@
 #include "../../../Rendering/Animations/CAnimation.h"
 #include "../../../Rendering/Animations/CAnimationState.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
-#include "../../CPhysicalManager.h"
+#include "../../PhysicalManager.h"
 
 using namespace rendering::drawable;
 
@@ -40,7 +40,7 @@ namespace logic
 		{
 		}
 
-		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		RelayStation::~RelayStation()
 		{
 			//~Actor()
@@ -48,7 +48,7 @@ namespace logic
 			//m_unit_controller
 			m_use_communication = false;
 			if (p_communication)
-				gPhysicalManager.DestroyPhysical(p_communication);
+				gPhysicalManager.destroyPhysical(p_communication);
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

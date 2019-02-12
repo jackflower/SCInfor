@@ -27,7 +27,7 @@ namespace logic
 		{
 		}
 
-		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		Unit::~Unit()
 		{
 			//~Actor()

@@ -26,9 +26,9 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 			
-		//Aby uzyskać obiekt Engine, należy wywołać CPhysicalManager::CreateEngine();
+		//Aby uzyskać obiekt Engine, należy wywołać PhysicalManager::CreateEngine();
 
 	protected:
 
@@ -47,7 +47,7 @@ namespace equipment
 		Engine(const Engine & EngineCopy);
 				
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~Engine(void);
 

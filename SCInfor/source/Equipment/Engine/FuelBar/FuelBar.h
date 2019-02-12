@@ -25,14 +25,14 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 	
-		//Aby uzyskać obiekt FuelBar, należy wywołać CPhysicalManager::CreateFuelBar();
+		//Aby uzyskać obiekt FuelBar, należy wywołać PhysicalManager::CreateFuelBar();
 
 	private:
 
 		///
-		///Prywatny konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+		///Prywatny konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		///
 		///@param uniqueId - unikalny identyfikator obiektu - stała referncja na obiekt klasy std::wstring
 		///

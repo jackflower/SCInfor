@@ -9,7 +9,7 @@
 
 #include "../../ResourceManager/IResource.h"
 #include "../../Map/MapPhysical/CMapPhysical.h"
-#include "../../Logic/CMapPhysicalManager.h"
+#include "../../Logic/MapPhysicalManager.h"
 #include "../../XML/CXml.h"
 #include "../../RTTI/RTTI.h"
 #include <string>

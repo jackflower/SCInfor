@@ -8,7 +8,7 @@
 #define H_BULLET_TEMPLATE_JACK
 
 #include "ActorTemplate.h"
-#include "../Logic/CPhysicalManager.h"
+#include "../Logic/PhysicalManager.h"
 #include "../Logic/Bullet/Bullet.h"
 
 

@@ -13,7 +13,7 @@ namespace logic
 {
 	RTTI_IMPL(PhysicalInfo, Physical);
 
-	//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+	//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 	PhysicalInfo::PhysicalInfo(const std::wstring & uniqueId)
 	:
 		Physical(uniqueId),//konstruktor klasy bazowej
@@ -65,7 +65,7 @@ namespace logic
 		setZIndexShadowHead(Z_PHYSICAL_INFO_HEAD_SHADOW);
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	PhysicalInfo::~PhysicalInfo()
 	{
 		if (p_status_bar_energy)

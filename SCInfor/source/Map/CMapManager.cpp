@@ -16,7 +16,7 @@
 //#include "../Logic/CPlayerManager.h"
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "../Logic/CLogic.h"
+#include "../Logic/Logic.h"
 //#include "../Logic/Boss/CBossManager.h"
 //#include "../Commands/CCommands.h"
 #include "../Game/GameProperties.h"

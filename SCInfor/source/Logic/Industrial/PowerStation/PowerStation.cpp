@@ -5,7 +5,7 @@
 //
 
 #include "PowerStation.h"
-#include "../../CPhysicalManager.h"
+#include "../../PhysicalManager.h"
 #include "../../../Rendering/Drawable/Layers.h"
 
 using namespace rendering::drawable;
@@ -55,7 +55,7 @@ namespace logic
 			setZIndexShadowHead(Z_PHYSICAL_POWERM_STATION_HEAD);
 		}
 
-		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		PowerStation::~PowerStation(void)
 		{
 			//~Actor()

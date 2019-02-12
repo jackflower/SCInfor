@@ -20,7 +20,7 @@ namespace equipment
 
 		RTTI_IMPL(Ammo, Actor);
 
-		////Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+		////Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		Ammo::Ammo(const std::wstring & uniqueId)
 		:
 			Actor(uniqueId),
@@ -56,7 +56,7 @@ namespace equipment
 			setZIndexShadowHead(Z_PHYSICAL_SHADOW_AMMO_HEAD);
 		}
 
-		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		Ammo::~Ammo()
 		{
 			//Actor

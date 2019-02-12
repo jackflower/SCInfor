@@ -80,7 +80,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy ThermalInsulation
 	ThermalInsulation *ThermalInsulationTemplate::create(std::wstring id)
 	{
-		ThermalInsulation* thermalinsulation = gPhysicalManager.CreateThermalInsulation(id);
+		ThermalInsulation* thermalinsulation = gPhysicalManager.createThermalInsulation(id);
 		fill(thermalinsulation);
 		return thermalinsulation;
 	}

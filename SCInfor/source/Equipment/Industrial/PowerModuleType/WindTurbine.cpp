@@ -62,7 +62,7 @@ namespace equipment
 		setZIndexShadowHead(Z_PHYSICAL_WIND_TURBINE_HEAD);
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	WindTurbine::~WindTurbine(void)
 	{
 		//PowerModule

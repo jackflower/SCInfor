@@ -34,14 +34,14 @@ namespace equipment
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 
-			//Aby uzyskać obiekt Gun, należy wywołać CPhysicalManager::CreateGun();
+			//Aby uzyskać obiekt Gun, należy wywołać PhysicalManager::CreateGun();
 
 		protected:
 
 			///
-			///Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+			///Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 			///
 			///@param uniqueId - unikalny identyfikator obiektu - stała referncja na obiekt klasy std::wstring
 			///
@@ -55,7 +55,7 @@ namespace equipment
 			Gun(const Gun & GunCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			~Gun(void);
 

@@ -27,9 +27,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 
-			//Aby uzyskać obiekt Transmitter, należy wywołać CPhysicalManager::CreateTransmitter();
+			//Aby uzyskać obiekt Transmitter, należy wywołać PhysicalManager::CreateTransmitter();
 		
 		protected:
 		
@@ -48,7 +48,7 @@ namespace logic
 			Transmitter(const Transmitter & TransmitterCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			virtual ~Transmitter();
 

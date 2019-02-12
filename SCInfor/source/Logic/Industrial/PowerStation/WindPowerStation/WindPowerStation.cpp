@@ -9,7 +9,7 @@
 #include "../../../../Rendering/Animations/CAnimation.h"
 #include "../../../../Rendering/Animations/CAnimationState.h"
 #include "../../../../Rendering/Displayable/CDisplayable.h"
-#include "../../../CPhysicalManager.h"
+#include "../../../PhysicalManager.h"
 #include <iostream>
 
 namespace logic
@@ -50,7 +50,7 @@ namespace logic
 		{
 		}
 
-		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		WindPowerStation::~WindPowerStation()
 		{
 			//~PowerStation()

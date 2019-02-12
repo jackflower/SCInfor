@@ -9,7 +9,7 @@
 
 #include "../ResourceManager/IResource.h"
 #include "../Logic/Physical/Physical.h"
-#include "../Logic/CPhysicalManager.h"
+#include "../Logic/PhysicalManager.h"
 #include "../XML/CXml.h"
 #include "../RTTI/RTTI.h"
 

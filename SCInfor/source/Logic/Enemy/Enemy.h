@@ -37,9 +37,9 @@ namespace logic
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 
-		//Aby uzyskać obiekt Enemy, należy wywołać CPhysicalManager::CreateEnemy();
+		//Aby uzyskać obiekt Enemy, należy wywołać PhysicalManager::CreateEnemy();
 
 	protected:
 
@@ -58,7 +58,7 @@ namespace logic
 		Enemy(const Enemy & EnemyCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~Enemy(void);
 

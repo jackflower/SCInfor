@@ -23,9 +23,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 
-			//Aby uzyskać obiekt SlotsRate, należy wywołać CPhysicalManager::CreateSlotsRate();
+			//Aby uzyskać obiekt SlotsRate, należy wywołać PhysicalManager::CreateSlotsRate();
 
 		protected:
 
@@ -44,7 +44,7 @@ namespace logic
 			SlotsRate(const SlotsRate & SlotsRateCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			virtual ~SlotsRate();
 

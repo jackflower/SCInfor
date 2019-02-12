@@ -83,7 +83,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy RelayStation
 	RelayStation *RelayStationTemplate::create(std::wstring id)
 	{
-		RelayStation *relay_station = gPhysicalManager.CreateRelayStation(id);
+		RelayStation *relay_station = gPhysicalManager.createRelayStation(id);
 		fill(relay_station);
 		return relay_station;
 	}

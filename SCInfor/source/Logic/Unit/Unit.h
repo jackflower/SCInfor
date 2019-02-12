@@ -24,9 +24,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 
-			//Aby uzyskać obiekt Unit, należy wywołać CPhysicalManager::CreateUnit();
+			//Aby uzyskać obiekt Unit, należy wywołać PhysicalManager::CreateUnit();
 
 		protected:
 
@@ -52,7 +52,7 @@ namespace logic
 			virtual void update(float dt);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			virtual ~Unit();
 

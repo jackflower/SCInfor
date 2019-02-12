@@ -1,5 +1,5 @@
-//  _________________________________________
-// | EEnemyState.h - Wyliczenie stanów wroga |
+ï»¿//  _________________________________________
+// | EEnemyState.h - Wyliczenie stanÃ³w wroga |
 // | Jack Flower - April 2015                |
 // |_________________________________________|
 //
@@ -9,13 +9,13 @@
 #define H_E_ENEMY_STATE_JACK
 
 ///
-///Wyliczenie stanów obiektu
+///Wyliczenie stanÃ³w obiektu
 ///
 enum EEnemyState
 { 
 	ENEMY_STATE_NORMAL,		//stan normalny
 	ENEMY_STATE_TURN,		//stan wykonywania obrotu
-	ENEMY_STATE_WAYPOINT	//wêdrówka w kierunku puntu na mapie
+	ENEMY_STATE_WAYPOINT	//wÄ™drÃ³wka w kierunku puntu na mapie
 };
 
 #endif//H_E_ENEMY_STATE_JACK

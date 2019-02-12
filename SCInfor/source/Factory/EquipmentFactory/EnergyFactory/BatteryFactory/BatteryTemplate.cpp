@@ -76,7 +76,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Battery
 	Battery* BatteryTemplate::create(std::wstring id)
 	{
-		Battery *battery = gPhysicalManager.CreateBattery(id);
+		Battery *battery = gPhysicalManager.createBattery(id);
 		fill(battery);
 		return battery;
 	}

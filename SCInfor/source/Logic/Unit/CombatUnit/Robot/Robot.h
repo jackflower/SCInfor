@@ -25,9 +25,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 
-			//Aby uzyskać obiekt Robot, należy wywołać CPhysicalManager::CreateRobot();
+			//Aby uzyskać obiekt Robot, należy wywołać PhysicalManager::CreateRobot();
 
 		protected:
 
@@ -46,7 +46,7 @@ namespace logic
 			Robot(const Robot & RobotCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			virtual ~Robot();
 

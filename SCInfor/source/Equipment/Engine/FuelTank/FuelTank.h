@@ -26,9 +26,9 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 			
-		//Aby uzyskać obiekt FuelTank, należy wywołać CPhysicalManager::CreateFuelTank();
+		//Aby uzyskać obiekt FuelTank, należy wywołać PhysicalManager::CreateFuelTank();
 
 	protected:
 

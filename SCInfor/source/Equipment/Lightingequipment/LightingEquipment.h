@@ -27,9 +27,9 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 			
-		//Aby uzyskać obiekt LightingEquipment, należy wywołać CPhysicalManager::CreateLightingEquipment();
+		//Aby uzyskać obiekt LightingEquipment, należy wywołać PhysicalManager::CreateLightingEquipment();
 
 	protected:
 
@@ -48,7 +48,7 @@ namespace equipment
 		LightingEquipment(const LightingEquipment & LightingEquipmentCopy);
 				
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~LightingEquipment(void);
 

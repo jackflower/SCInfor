@@ -5,7 +5,7 @@
 //
 
 #include "WindPowerStationMultipled.h"
-#include "../../../../Logic/CPhysicalManager.h"
+#include "../../../../Logic/PhysicalManager.h"
 
 namespace logic
 {
@@ -29,7 +29,7 @@ namespace logic
 		{
 		}
 
-		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		WindPowerStationMultipled::~WindPowerStationMultipled()
 		{
 			//~WindPowerStation()

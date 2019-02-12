@@ -108,7 +108,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Engine
 	Engine *EngineTemplate::create(std::wstring id)
 	{
-		Engine *engine = gPhysicalManager.CreateEngine(id);
+		Engine *engine = gPhysicalManager.createEngine(id);
 		fill(engine);
 		return engine;
 	}

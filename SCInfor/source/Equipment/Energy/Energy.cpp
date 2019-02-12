@@ -5,7 +5,7 @@
 //
 
 #include "Energy.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 #include "../../Rendering/Animations/CAnimSet.h"
 #include "../../Rendering/Drawable/Layers.h"
 #include "../../Rendering/Displayable/CDisplayable.h"

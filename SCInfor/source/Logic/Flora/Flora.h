@@ -20,9 +20,9 @@ namespace logic
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 		
-		//Aby uzyskać obiekt Flora, należy wywołać CPhysicalManager::CreateFlora();
+		//Aby uzyskać obiekt Flora, należy wywołać PhysicalManager::CreateFlora();
 
 	protected:
 		///

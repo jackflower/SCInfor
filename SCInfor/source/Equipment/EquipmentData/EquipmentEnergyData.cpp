@@ -6,7 +6,7 @@
 
 #include "EquipmentEnergyData.h"
 #include "../Energy/Energy.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 
 namespace equipmentdata
 {
@@ -33,7 +33,7 @@ namespace equipmentdata
 	{
 		//EquipmentData	not edit
 		if (p_energy)
-			gPhysicalManager.DestroyPhysical(p_energy);
+			gPhysicalManager.destroyPhysical(p_energy);
 		p_energy = NULL;
 	}
 

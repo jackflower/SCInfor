@@ -28,9 +28,9 @@ namespace logic
 			///
 			///Deklaracja przyjaźni
 			///
-			friend class CPhysicalManager;
+			friend class PhysicalManager;
 
-			//Aby uzyskać obiekt RelayStation, należy wywołać CPhysicalManager::CreateRelayStation();
+			//Aby uzyskać obiekt RelayStation, należy wywołać PhysicalManager::CreateRelayStation();
 
 		protected:
 
@@ -49,7 +49,7 @@ namespace logic
 			RelayStation(const RelayStation & RelayStationCopy);
 
 			///
-			///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
 			virtual ~RelayStation();
 

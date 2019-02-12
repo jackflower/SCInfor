@@ -7,7 +7,7 @@
 #ifndef H_GROUND_JACK
 #define H_GROUND_JACK
 
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 #include "../../Logic/Actor/Actor.h"
 #include "PhysicsGround/CPhysicsGround.h"
 
@@ -25,16 +25,16 @@ namespace mapengine
 		///
 		///Deklaracja przyjaŸni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 
-		//Aby uzyskaæ obiekt CGround, nale¿y wywo³aæ CPhysicalManager::CreateGround();
+		//Aby uzyskaæ obiekt CGround, nale¿y wywo³aæ PhysicalManager::CreateGround();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyœlny - u¿ywany wy³¹cznie przez CPhysicalManager
+		///Chroniony konstruktor domyœlny - u¿ywany wy³¹cznie przez PhysicalManager
 		///
-		///@param & uniqueId - unikalny identyfikator (nadawany w CPhysicalManager)
+		///@param & uniqueId - unikalny identyfikator (nadawany w PhysicalManager)
 		///
 		CGround(const std::wstring& uniqueId);
 
@@ -46,7 +46,7 @@ namespace mapengine
 		CGround(const CGround & CGroundCopy);
 
 		///
-		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CMapPhysicalManager
+		///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez MapPhysicalManager
 		///
 		virtual ~CGround(void);
 

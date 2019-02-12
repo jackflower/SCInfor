@@ -6,7 +6,7 @@
 
 #include "EquipmentCommunicationData.h"
 #include "../../Logic/Communication/Communication.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 
 namespace equipmentdata
 {
@@ -33,7 +33,7 @@ namespace equipmentdata
 	{
 		//EquipmentData	not edit
 		if (p_communication)
-			gPhysicalManager.DestroyPhysical(p_communication);
+			gPhysicalManager.destroyPhysical(p_communication);
 		p_communication = NULL;
 	}
 

@@ -27,7 +27,7 @@ namespace logic
 			//~PowerStation()
 		}
 
-		//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		Hydroelectric::~Hydroelectric()
 		{
 		}

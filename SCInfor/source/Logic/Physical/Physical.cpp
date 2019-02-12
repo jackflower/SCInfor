@@ -20,7 +20,7 @@ namespace logic
 {
 	RTTI_IMPL_NOPARENT(Physical);
 
-	//Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+	//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 	Physical::Physical(const std::wstring & uniqueId)
 	:
 		//private:
@@ -66,7 +66,7 @@ namespace logic
 	{
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	Physical::~Physical()
 	{
 		//private:

@@ -69,7 +69,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Robot
 	Robot *RobotTemplate::create(std::wstring id)
 	{
-		Robot *robot = gPhysicalManager.CreateRobot(id);
+		Robot *robot = gPhysicalManager.createRobot(id);
 		fill(robot);
 		return robot;
 	}

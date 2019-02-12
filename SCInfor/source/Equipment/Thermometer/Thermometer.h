@@ -25,9 +25,9 @@ namespace equipment
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 			
-		//Aby uzyskać obiekt Thermometer, należy wywołać CPhysicalManager::CreateThermometer();
+		//Aby uzyskać obiekt Thermometer, należy wywołać PhysicalManager::CreateThermometer();
 
 	protected:
 
@@ -46,7 +46,7 @@ namespace equipment
 		Thermometer(const Thermometer & ThermometerCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~Thermometer();
 

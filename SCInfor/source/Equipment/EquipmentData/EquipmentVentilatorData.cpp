@@ -6,7 +6,7 @@
 
 #include "EquipmentVentilatorData.h"
 #include "../Thermodynamics/Ventilator/Ventilator.h"
-#include "../../Logic/CPhysicalManager.h"
+#include "../../Logic/PhysicalManager.h"
 
 namespace equipmentdata
 {
@@ -33,7 +33,7 @@ namespace equipmentdata
 	{
 		//EquipmentData
 		if (p_ventilator)
-			gPhysicalManager.DestroyPhysical(p_ventilator);
+			gPhysicalManager.destroyPhysical(p_ventilator);
 		p_ventilator = NULL;
 	}
 

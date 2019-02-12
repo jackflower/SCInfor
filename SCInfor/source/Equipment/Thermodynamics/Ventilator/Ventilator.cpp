@@ -18,7 +18,7 @@ namespace equipment
 {
 	RTTI_IMPL_NOPARENT(Ventilator);
 
-	////Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+	////Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 	Ventilator::Ventilator(const std::wstring& uniqueId)
 	:
 		Actor (uniqueId),//konstruktor klasy bazowej

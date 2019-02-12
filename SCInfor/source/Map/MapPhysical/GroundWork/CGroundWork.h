@@ -26,16 +26,16 @@ namespace mapengine
 			///
 			///Deklaracja przyjaŸni
 			///
-			friend class CMapPhysicalManager;
+			friend class MapPhysicalManager;
 
-			//Aby uzyskaæ obiekt CGroundWork, nale¿y wywo³aæ CMapPhysicalManager::CreateGroundWork();
+			//Aby uzyskaæ obiekt CGroundWork, nale¿y wywo³aæ MapPhysicalManager::CreateGroundWork();
 
 		protected:
 
 			///
-			///Chroniony konstruktor domyœlny - u¿ywany wy³¹cznie przez CMapPhysicalManager
+			///Chroniony konstruktor domyœlny - u¿ywany wy³¹cznie przez MapPhysicalManager
 			///
-			///@param & uniqueId - unikalny identyfikator (nadawany w CMapPhysicalManager)
+			///@param & uniqueId - unikalny identyfikator (nadawany w MapPhysicalManager)
 			///
 			CGroundWork(const std::wstring& uniqueId);
 
@@ -47,7 +47,7 @@ namespace mapengine
 			CGroundWork(const CGroundWork & CGroundWorkCopy);
 
 			///
-			///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CMapPhysicalManager
+			///Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez MapPhysicalManager
 			///
 			~CGroundWork(void);
 

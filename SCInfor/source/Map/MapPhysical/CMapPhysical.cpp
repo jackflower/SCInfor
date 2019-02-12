@@ -18,7 +18,7 @@ namespace mapengine
 {
 	RTTI_IMPL_NOPARENT(CMapPhysical);
 
-	//Chroniony konstruktor domyœlny - u¿ywany wy³¹cznie przez CMapPhysicalManager
+	//Chroniony konstruktor domyœlny - u¿ywany wy³¹cznie przez MapPhysicalManager
 	CMapPhysical::CMapPhysical(const std::wstring& uniqueId)
 	:
 		m_unique_id					(uniqueId),
@@ -62,7 +62,7 @@ namespace mapengine
 	{
 	}
 
-	//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez CMapPhysicalManager
+	//Chroniony destruktor wirtualny - u¿ywany wy³¹cznie przez MapPhysicalManager
 	CMapPhysical::~CMapPhysical()
 	{
 		m_unique_id						= L"";

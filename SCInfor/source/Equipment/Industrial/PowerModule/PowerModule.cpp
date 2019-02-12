@@ -32,7 +32,7 @@ namespace equipment
 	{
 	}
 
-	//Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	PowerModule::~PowerModule(void)
 	{
 		//Actor

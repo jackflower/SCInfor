@@ -76,7 +76,7 @@ namespace factory
 
 		//return enemy;
 	
-		Enemy* enemy = gPhysicalManager.CreateEnemy(id);
+		Enemy* enemy = gPhysicalManager.createEnemy(id);
 		fill(enemy);
 		return enemy;
 	}

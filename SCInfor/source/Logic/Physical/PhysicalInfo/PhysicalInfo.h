@@ -25,14 +25,14 @@ namespace logic
 		///
 		///Deklaracja przyjaźni
 		///
-		friend class CPhysicalManager;
+		friend class PhysicalManager;
 
-		//Aby uzyskać obiekt PhysicalInfo, należy wywołać CPhysicalManager::CreatePhysicalInfo();
+		//Aby uzyskać obiekt PhysicalInfo, należy wywołać PhysicalManager::CreatePhysicalInfo();
 
 	protected:
 
 		///
-		///Chroniony konstruktor domyślny - używany wyłącznie przez CPhysicalManager
+		///Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		///
 		///@param uniqueId - unikalny identyfikator obiektu - stała referncja na obiekt klasy std::wstring
 		///
@@ -46,7 +46,7 @@ namespace logic
 		PhysicalInfo(const PhysicalInfo & PhysicalInfoCopy);
 
 		///
-		///Chroniony destruktor wirtualny - używany wyłącznie przez CPhysicalManager
+		///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		///
 		virtual ~PhysicalInfo();
 
