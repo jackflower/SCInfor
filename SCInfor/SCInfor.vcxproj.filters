@@ -417,18 +417,6 @@
     <ClCompile Include="source\Map\CMapPhysicalHeader.cpp">
       <Filter>source\Map</Filter>
     </ClCompile>
-    <ClCompile Include="source\Map\SceneManager\CQuadtree.cpp">
-      <Filter>source\Map\SceneManager</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\SearchTools\CWaypoint.cpp">
-      <Filter>source\Map\SearchTools</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\SearchTools\CWaypointCell.cpp">
-      <Filter>source\Map\SearchTools</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\SearchTools\CWaypointPriorityQueue.cpp">
-      <Filter>source\Map\SearchTools</Filter>
-    </ClCompile>
     <ClCompile Include="source\Map\Tile\CMapTileType.cpp">
       <Filter>source\Map\Tile</Filter>
     </ClCompile>
@@ -1002,6 +990,18 @@
     <ClCompile Include="source\Map\MapPhysicalObject\MapObjectType.cpp">
       <Filter>source\Map\MapPhysicalObject</Filter>
     </ClCompile>
+    <ClCompile Include="source\Map\SceneManager\Quadtree.cpp">
+      <Filter>source\Map\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\SearchTools\Waypoint.cpp">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\SearchTools\WaypointCell.cpp">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\SearchTools\WaypointPriorityQueue.cpp">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1134,18 +1134,6 @@
     </ClInclude>
     <ClInclude Include="source\Map\MapHeader.h">
       <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\SceneManager\CQuadtree.h">
-      <Filter>source\Map\SceneManager</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\SearchTools\CWaypoint.h">
-      <Filter>source\Map\SearchTools</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\SearchTools\CWaypointCell.h">
-      <Filter>source\Map\SearchTools</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\SearchTools\CWaypointPriorityQueue.h">
-      <Filter>source\Map\SearchTools</Filter>
     </ClInclude>
     <ClInclude Include="source\Map\Tile\CMapTileType.h">
       <Filter>source\Map\Tile</Filter>
@@ -1758,6 +1746,18 @@
     </ClInclude>
     <ClInclude Include="source\Map\MapPhysicalObject\MapObjectType.h">
       <Filter>source\Map\MapPhysicalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\SceneManager\Quadtree.h">
+      <Filter>source\Map\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\SearchTools\Waypoint.h">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\SearchTools\WaypointCell.h">
+      <Filter>source\Map\SearchTools</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\SearchTools\WaypointPriorityQueue.h">
+      <Filter>source\Map\SearchTools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
