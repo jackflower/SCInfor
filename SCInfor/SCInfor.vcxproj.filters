@@ -417,18 +417,6 @@
     <ClCompile Include="source\Map\CMapPhysicalHeader.cpp">
       <Filter>source\Map</Filter>
     </ClCompile>
-    <ClCompile Include="source\Map\MapPhysical\CMapPhysicalDescriptor.cpp">
-      <Filter>source\Map\MapPhysical</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\MapPhysical\CMapPhysicalType.cpp">
-      <Filter>source\Map\MapPhysical</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\MapPhysicalObject\CMapObjectDescriptor.cpp">
-      <Filter>source\Map\MapPhysicalObject</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\MapPhysicalObject\CMapObjectType.cpp">
-      <Filter>source\Map\MapPhysicalObject</Filter>
-    </ClCompile>
     <ClCompile Include="source\Map\SceneManager\CQuadtree.cpp">
       <Filter>source\Map\SceneManager</Filter>
     </ClCompile>
@@ -1002,6 +990,18 @@
     <ClCompile Include="source\Map\MapPhysical\MapPhysical.cpp">
       <Filter>source\Map\MapPhysical</Filter>
     </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\MapPhysicalDescriptor.cpp">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysical\MapPhysicalType.cpp">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysicalObject\MapObjectDescriptor.cpp">
+      <Filter>source\Map\MapPhysicalObject</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysicalObject\MapObjectType.cpp">
+      <Filter>source\Map\MapPhysicalObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1134,18 +1134,6 @@
     </ClInclude>
     <ClInclude Include="source\Map\MapHeader.h">
       <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\MapPhysical\CMapPhysicalDescriptor.h">
-      <Filter>source\Map\MapPhysical</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\MapPhysical\CMapPhysicalType.h">
-      <Filter>source\Map\MapPhysical</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\MapPhysicalObject\CMapObjectDescriptor.h">
-      <Filter>source\Map\MapPhysicalObject</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\MapPhysicalObject\CMapObjectType.h">
-      <Filter>source\Map\MapPhysicalObject</Filter>
     </ClInclude>
     <ClInclude Include="source\Map\SceneManager\CQuadtree.h">
       <Filter>source\Map\SceneManager</Filter>
@@ -1758,6 +1746,18 @@
     </ClInclude>
     <ClInclude Include="source\Map\MapPhysical\MapPhysical.h">
       <Filter>source\Map\MapPhysical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\MapPhysicalDescriptor.h">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysical\MapPhysicalType.h">
+      <Filter>source\Map\MapPhysical</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysicalObject\MapObjectDescriptor.h">
+      <Filter>source\Map\MapPhysicalObject</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysicalObject\MapObjectType.h">
+      <Filter>source\Map\MapPhysicalObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

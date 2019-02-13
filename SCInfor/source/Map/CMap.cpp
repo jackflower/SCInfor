@@ -236,7 +236,7 @@ namespace mapengine
 		}
 
 		//typy fabryczne dla physicali na danej mapie
-		CMapObjectType* p_map_object_type;
+		MapObjectType* p_map_object_type;
 
 		for (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "objtype"); node; node = xml.GetSibling(node, "objtype"))
 		{
@@ -246,30 +246,30 @@ namespace mapengine
 				fprintf(stderr, "Cannot load object template file: %s", str_data.c_str());
 				return false;
 			}
-			p_map_object_type = new CMapObjectType();
-			p_map_object_type->SetCode(xml.GetString(node, "code"));
-			p_map_object_type->SetTemplate(gResourceManager.GetPhysicalTemplate(str_data));
+			p_map_object_type = new MapObjectType();
+			p_map_object_type->setCode(xml.GetString(node, "code"));
+			p_map_object_type->setTemplate(gResourceManager.GetPhysicalTemplate(str_data));
 			m_map_object_types.push_back(p_map_object_type);
         }
 
 		//physical's (potwory, drzewka, domki, to co potrafimy utworzyæ)
-		CMapObjectDescriptor *p_map_object;
+		MapObjectDescriptor *p_map_object;
 		for (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "obj"); node; node = xml.GetSibling(node, "obj"))
 		{
 			str_data = xml.GetString(node, "code");
 			int i = getMapObjectTypeIndex(str_data);//pobieramy indeks wzorca fabrycznego na podstawie nazwy
 			if (i < 0)			//jeœli nie ma wzorców fabrycznych
 				return false;	//wychodzimy z pêtli
-			p_map_object = new CMapObjectDescriptor();
+			p_map_object = new MapObjectDescriptor();
 
-			p_map_object->SetCode(str_data);//nazwa wzorca (fabryczna)
-			p_map_object->SetName(xml.GetString(node, "name"));//nazwa obiektu
-			p_map_object->SetXPosition(xml.GetFloat(node, "x"));
-			p_map_object->SetYPosition(xml.GetFloat(node, "y"));
-			p_map_object->SetRotationBody(xml.GetFloat(node, "rotation_body"));
-			p_map_object->SetRotationHead(xml.GetFloat(node, "rotation_head"));
-			p_map_object->SetSmooth(xml.GetBool(node, "smooth"));
-			p_map_object->SetTemplate(m_map_object_types[i]->GetTemplate());
+			p_map_object->setCode(str_data);//nazwa wzorca (fabryczna)
+			p_map_object->setName(xml.GetString(node, "name"));//nazwa obiektu
+			p_map_object->setXPosition(xml.GetFloat(node, "x"));
+			p_map_object->setYPosition(xml.GetFloat(node, "y"));
+			p_map_object->setRotationBody(xml.GetFloat(node, "rotation_body"));
+			p_map_object->setRotationHead(xml.GetFloat(node, "rotation_head"));
+			p_map_object->setSmooth(xml.GetBool(node, "smooth"));
+			p_map_object->setTemplate(m_map_object_types[i]->getTemplate());
 			//wstawiamy do kontenera opakowania danych do utworzenia physical's
 			m_map_object_descriptors.push_back(p_map_object);
 		}
@@ -287,7 +287,7 @@ namespace mapengine
 		m_map_tile_types.clear();
 	}
 
-	//Metoda usuwa z wektora wskaŸniki na obiekty klasy CMapObjectDescriptor i dane pod tymi wskaŸnikami
+	//Metoda usuwa z wektora wskaŸniki na obiekty klasy MapObjectDescriptor i dane pod tymi wskaŸnikami
 	void CMap::ClearMapObjects()
 	{
 		//obiekty
@@ -300,7 +300,7 @@ namespace mapengine
 	int CMap::getMapObjectTypeIndex(const std::string &map_object_type_name)
 	{
 		for (unsigned int i = 0; i < m_map_object_types.size(); i++)
-			if (m_map_object_types[i]->GetCode() == map_object_type_name)
+			if (m_map_object_types[i]->getCode() == map_object_type_name)
 				return i;
 		// zwraca -1, wiec to chyba nie jest niezbedne?
 		// tego nie analizowaæ, ja Jack Flower - mêczy³em siê
@@ -441,12 +441,12 @@ namespace mapengine
 		serialized_object << "\t" << "<!--code - nazwa wzorca-->" << "\n";
 		serialized_object << "\t" << "<!--file - nazwa pliku xml-->" << "\n";
         for (unsigned int i = 0; i < m_map_object_types.size(); i++){
-			if (m_map_object_types[i]->GetTemplate())
+			if (m_map_object_types[i]->getTemplate())
 				serialized_object
 					<< "\t<objtype code = \""
-					<< m_map_object_types[i]->GetCode()
+					<< m_map_object_types[i]->getCode()
 					<< "\" file = \""
-					<< m_map_object_types[i]->GetTemplate()->getFilename()
+					<< m_map_object_types[i]->getTemplate()->getFilename()
 					<< "\"/>\n";
             else
                 fprintf(stderr, "ERROR: null objtype template pointer @ CMap::Serialize!\n");
@@ -466,13 +466,13 @@ namespace mapengine
         for (unsigned int i = 0; i < m_map_object_descriptors.size(); i++)
 		{
 			serialized_object
-				<< "\t<obj code = \""		<< m_map_object_descriptors[i]->GetCode()
-				<< "\" name = \""			<< m_map_object_descriptors[i]->GetName()
-				<< "\" x = \""				<< m_map_object_descriptors[i]->GetXPosition()
-				<< "\" y = \""				<< m_map_object_descriptors[i]->GetYPosition()
-				<< "\" rotation_body = \""	<< m_map_object_descriptors[i]->GetRotationBody()
-				<< "\" rotation_head = \""	<< m_map_object_descriptors[i]->GetRotationHead()
-				<< "\" smooth = \""			<< BoolToString(m_map_object_descriptors[i]->GetSmooth())
+				<< "\t<obj code = \""		<< m_map_object_descriptors[i]->getCode()
+				<< "\" name = \""			<< m_map_object_descriptors[i]->getName()
+				<< "\" x = \""				<< m_map_object_descriptors[i]->getXPosition()
+				<< "\" y = \""				<< m_map_object_descriptors[i]->getYPosition()
+				<< "\" rotation_body = \""	<< m_map_object_descriptors[i]->getRotationBody()
+				<< "\" rotation_head = \""	<< m_map_object_descriptors[i]->getRotationHead()
+				<< "\" smooth = \""			<< BoolToString(m_map_object_descriptors[i]->getSmooth())
 				<< "\"/>\n";
 
 

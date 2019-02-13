@@ -13,16 +13,16 @@
 #include "MapHeader.h"
 #include "Tile/CTile.h"
 #include "Tile/CMapTileType.h"
-#include "MapPhysicalObject/CMapObjectType.h"
-#include "MapPhysicalObject/CMapObjectDescriptor.h"
+#include "MapPhysicalObject/MapObjectType.h"
+#include "MapPhysicalObject/MapObjectDescriptor.h"
 
 ///
 ///Forward declaration
 ///
 namespace mapengine
 {
-	class CMapObjectDescriptor;
-	class CMapPhysicalDescriptor;
+	class MapObjectDescriptor;
+	class MapPhysicalDescriptor;
 	namespace tile
 	{
 		class CTile;
@@ -105,7 +105,7 @@ namespace mapengine
 		void ClearTiles();
 
 		///
-		///Metoda usuwa z wektora wskaüniki na obiekty klasy CMapObjectDescriptor i dane pod tymi wskaünikami
+		///Metoda usuwa z wektora wskaüniki na obiekty klasy MapObjectDescriptor i dane pod tymi wskaünikami
 		///
 		void ClearMapObjects();
 
@@ -179,8 +179,8 @@ namespace mapengine
 		sf::IntRect								m_view_rectangle;			//obszar widoku (mapa w oku kamery)
 		std::vector<CTile*>*					p_fields;					//wskaünik na wektor wskaünikÛw do obiektÛw klasy CTile - kafli
 		std::vector<CMapTileType*>				m_map_tile_types;			//wektor wskaünikÛw na obiekty - opakowanie informacji o kaflu
-		std::vector<CMapObjectType*>			m_map_object_types;			//wektor wskaünikÛw na obiekty fabryczne - wzorce dla obiektÛw mapy
-		std::vector<CMapObjectDescriptor*>		m_map_object_descriptors;	//wektor wskaünikÛw na obiekty umieszczone na mapie
+		std::vector<MapObjectType*>			m_map_object_types;			//wektor wskaünikÛw na obiekty fabryczne - wzorce dla obiektÛw mapy
+		std::vector<MapObjectDescriptor*>		m_map_object_descriptors;	//wektor wskaünikÛw na obiekty umieszczone na mapie
 
 		//std::vector<CRegionDescriptor *>		mRegionDescriptors;
 		bool									m_use_wind;					//flaga, czy na mapie bÍdzie generowany wiatr
