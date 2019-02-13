@@ -70,7 +70,7 @@ namespace resource
 
 namespace mapengine
 {
-	class CMap;
+	class Map;
 	class Ground;
 }
 
@@ -156,7 +156,7 @@ namespace resource
 		ResourceHandle LoadMapPhysicalTemplate(const std::string& name);
 
 		///
-		///Metoda ładuje zasób CMap
+		///Metoda ładuje zasób Map
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
@@ -228,11 +228,11 @@ namespace resource
 		MapPhysicalTemplate* GetMapPhysicalTemplate(const std::string& name);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CMap
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy Map
 		///
 		///@param &name - stała referencja na nazwę zasobu
 		///
-		CMap* GetMap(const std::string& name);
+		Map* GetMap(const std::string& name);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy Ground
@@ -312,11 +312,11 @@ namespace resource
 		MapPhysicalTemplate* GetMapPhysicalTemplate(ResourceHandle handle);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy CMap
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy Map
 		///
 		///@param &handle - uchwyt zasobu
 		///
-		CMap* GetMap(ResourceHandle handle);
+		Map* GetMap(ResourceHandle handle);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy GroundTemplate

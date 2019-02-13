@@ -5,8 +5,8 @@
 //
 
 #include "WaypointCell.h"
-#include "../CMapManager.h"
-#include "../CCollisionMap.h"
+#include "../MapManager.h"
+#include "../CollisionMap.h"
 
 WaypointCell::WaypointCell(const sf::Vector2i & cell)
 :
@@ -53,7 +53,7 @@ Waypoint * WaypointCell::clone() const
 
 void WaypointCell::checkNeighbour(std::vector< Waypoint * > & neighbours, const sf::Vector2i neighbour) const
 {
-    if (gMapManager.GetCollisionMap()->GetCollisionByCell(neighbour) == false)
+    if (gMapManager.getCollisionMap()->getCollisionByCell(neighbour) == false)
     {
         neighbours.push_back(new WaypointCell(neighbour));
     }

@@ -1,12 +1,12 @@
-//  ________________________________________
-// | CMapManager.cpp - class implementation |
-// | Jack Flower June 2013.                 |
-// |________________________________________|
+ï»¿//  _______________________________________
+// | MapManager.cpp - class implementation |
+// | Jack Flower June 2013                 |
+// |_______________________________________|
 //
 
 #include <iostream>
 #include <cstdio>
-#include "CMapManager.h"
+#include "MapManager.h"
 //#include "../Editor/CEditor.h"
 #include "../Game/Game.h"
 #include "../Rendering/Drawable/CDrawableManager.h"
@@ -23,9 +23,9 @@
 //#include "../Utilities/HRTimer.h"
 //#include "../Utilities/FileUtils/FileUtils.h"
 
-//template<> mapengine::CMapManager* CSingleton<mapengine::CMapManager>::m_Singleton = 0;
+//template<> mapengine::MapManager* CSingleton<mapengine::MapManager>::m_Singleton = 0;
 using namespace mapengine;
-template<> mapengine::CMapManager* CSingleton<mapengine::CMapManager>::m_singleton = 0;
+template<> mapengine::MapManager* CSingleton<mapengine::MapManager>::m_singleton = 0;
 
 using namespace resource;
 using namespace game;
@@ -33,25 +33,25 @@ using namespace game;
 namespace mapengine
 {
 	//Konstruktor
-	CMapManager::CMapManager()
+	MapManager::MapManager()
 	:
-		p_map						(NULL)//,
+		p_map(NULL)//,
 	//	p_scene_manager				(new CQuadTreeSceneManager()),
-	//	p_collision_map				(new CCollisionMap()),
+	//	p_collision_map				(new CollisionMap()),
     //  m_current_map_time_elapsed	(0.0f),
     //    m_hide_loading_screen		(false)
 	{
-		fprintf(stderr, "CMapManager::CMapManager()\n");
+		fprintf(stderr, "MapManager::MapManager()\n");
 		gGame.addFrameListener(this);
 		m_visited_maps.clear();
 	}
 
 	//Destruktor wirtualny
-	CMapManager::~CMapManager()
+	MapManager::~MapManager()
 	{
-		printf("CMapManager::~CMapManager()\n");
+		printf("MapManager::~MapManager()\n");
 
-		//blokujê (luty 2015)
+		//blokujÄ™ (luty 2015)
 
 		//if (p_scene_manager)
 		//	delete p_scene_manager;
@@ -64,24 +64,24 @@ namespace mapengine
 		m_visited_maps.clear();
 	}
 
-	//Metoda ustawia parametry mapy na podstawie sta³ego wskaŸnika void
-	void CMapManager::SetMapFromData(const void *data)
+	//Metoda ustawia parametry mapy na podstawie staÅ‚ego wskaÅºnika void
+	void MapManager::setMapFromData(const void *data)
 	{
-		//blokujê (luty 2015)
-		//CMapManager::NextMapData *p_data = (CMapManager::NextMapData*)data;
+		//blokujÄ™ (luty 2015)
+		//MapManager::NextMapData *p_data = (MapManager::NextMapData*)data;
 		//SetMap(*(p_data->m_next_map), p_data->m_load_complete_map, *(p_data->m_next_map_region));
 	}
 
-	//Logika zarzêdza harmonogramem zmian przemieszczania siê na mapach œwiata gry
-	void CMapManager::ScheduleSetMap(const std::string *p_map_file, bool load_complete_map, const std::string *region)
+	//Logika zarzÄ™dza harmonogramem zmian przemieszczania siÄ™ na mapach Å›wiata gry
+	void MapManager::scheduleSetMap(const std::string *p_map_file, bool load_complete_map, const std::string *region)
 	{
-		SetMap(*p_map_file, true, *region);
+		setMap(*p_map_file, true, *region);
 	}
 
-	//Metoda sprawdza i ustawiam mapê na odwiedzon¹ (gracz opuszcza mapê - nastêpna)
-	void CMapManager::SetCurrentMapAsVisited()
+	//Metoda sprawdza i ustawiam mapÄ™ na odwiedzonÄ… (gracz opuszcza mapÄ™ - nastÄ™pna)
+	void MapManager::setCurrentMapAsVisited()
 	{
-		//blokujê (luty 2015)
+		//blokujÄ™ (luty 2015)
 		/*
 		if (p_map != NULL)
 		{
@@ -94,41 +94,40 @@ namespace mapengine
 				if (i == m_visited_maps.size() - 1) m_visited_maps.push_back(p_map);
 			}
 			sf::FloatRect zero(0.0f,0.0f,0.0f,0.0f);
-			p_map->CullVisibility(zero);//zerujemy widocznoœæ kafli znajduj¹cych siê w obszarze kamery
+			p_map->CullVisibility(zero);//zerujemy widocznoÅ›Ä‡ kafli znajdujÄ…cych siÄ™ w obszarze kamery
 			p_map = NULL;
 		}
 		*/
 		p_map = NULL;
 	}
 
-	//Metoda ³aduje i/lub udostepnia mapê z zasobów. Automatycznie czyœcie scenê
-	bool CMapManager::SetMap(const std::string &map_file, bool load_complete_map, const std::string &region)
+	//Metoda Å‚aduje i/lub udostepnia mapÄ™ z zasobÃ³w. Automatycznie czyÅ›cie scenÄ™
+	bool MapManager::setMap(const std::string & map_file, bool load_complete_map, const std::string & region)
 	{
         // mierzenie czasu zaladowania
-		//blokujê (luty 2015)
+		//blokujÄ™ (luty 2015)
         //sf::Clock timer;
         //timer.Reset();
 
-//#ifndef __I_AM_TOXIC__
-//		if ( p_map != NULL && p_map->GetFilename() == mapFile ){
-//			if ( region != "" )
-//			{
-//              gPlayerManager.MovePlayersToRegion(region);
-//            }
-//			return true;
-//		}
-//#endif
+		//#ifndef __NONAME___
+		//		if ( p_map != NULL && p_map->GetFilename() == mapFile ){
+		//			if ( region != "" )
+		//			{
+		//              gPlayerManager.MovePlayersToRegion(region);
+		//            }
+		//			return true;
+		//		}
+		//#endif
 
-		SetCurrentMapAsVisited();
+		setCurrentMapAsVisited();
 
-//#ifdef __I_AM_TOXIC__
-//		gResourceManager.LoadMap( mapFile );
-//#endif
-        // bo segfault przy ominieciu bossa..
-        //gBossManager.ClearData();
-
+		//#ifdef __NONAME___
+		//		gResourceManager.LoadMap( mapFile );
+		//#endif
+				// bo segfault przy ominieciu bossa..
+				//gBossManager.ClearData();
 		//jeszcze tego nie mam...
-		///*
+
 		p_map = gResourceManager.GetMap( map_file );
 		if ( p_map )
 		{
@@ -136,20 +135,20 @@ namespace mapengine
 			fprintf( stderr, "m_CurrentMap->GetFilename() = %s\n", p_map->getFilename().c_str() );
 			//p_scene_manager->Initialize( p_map->GetSize() );
 			           
-			p_map->RespawnMapObjects(load_complete_map);
+			p_map->respawnMapObjects(load_complete_map);
 			
 			int x = 0;//
 			//p_map->RespawnDoodahs();
-			//TUTAJ inicjujê wskaŸnik na mapê kolizji, a dok³adniej
+			//TUTAJ inicjujÄ™ wskaÅºnik na mapÄ™ kolizji, a dokÅ‚adniej
 			//ustawiam rozmiar mapy kolizji zgodnie w rozmiarem
-			//wczytanej wczeœniej mapy œwiata..
-			//bo tylko ta klasa (CMapManager)
-			//mo¿e ³adowaæ mapy oraz nimi zarz¹dzaæ...
+			//wczytanej wczeÅ›niej mapy Å›wiata..
+			//bo tylko ta klasa (MapManager)
+			//moÅ¼e Å‚adowaÄ‡ mapy oraz nimi zarzÄ…dzaÄ‡...
 			//ale dlaczego razy cztery?
-			//czy¿by quadtree?
+			//czyÅ¼by quadtree?
 
 
-			//na razie zablokujê mechanizm mapy kolizji...
+			//na razie zablokujÄ™ mechanizm mapy kolizji...
 			//p_collision_map->Initialize( p_map->GetSize() * 4 );
 			//for ( unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++ )
 			//{
@@ -184,8 +183,8 @@ namespace mapengine
 		return false;
 	}
 
-	//Wirtualna metoda aktualizuj¹ca logikê mapy
-	void CMapManager::frameStarted(float secondsPassed)
+	//Wirtualna metoda aktualizujÄ…ca logikÄ™ mapy
+	void MapManager::frameStarted(float secondsPassed)
 	{
 		//sf::FloatRect cameraRect
 		//(
@@ -193,7 +192,7 @@ namespace mapengine
 			//gGame.GetRenderWindow()->GetDefaultView().GetRect().Top / mapengine::TILE_SIZE,
 			//gGame.GetRenderWindow()->GetDefaultView().GetRect().Right / mapengine::TILE_SIZE,
 			//gGame.GetRenderWindow()->GetDefaultView().GetRect().Bottom / mapengine::TILE_SIZE
-			//to odblokowaæ...poni¿ej
+			//to odblokowaÄ‡...poniÅ¼ej
 			//gGame.GetRenderWindow()->GetDefaultView().GetRect().Left,	//	/ mapengine::TILE_SIZE,
 			//gGame.GetRenderWindow()->GetDefaultView().GetRect().Top,	//	/ mapengine::TILE_SIZE,
 			//gGame.GetRenderWindow()->GetDefaultView().GetRect().Right,	//	/ mapengine::TILE_SIZE,
@@ -205,17 +204,17 @@ namespace mapengine
 		//p_scene_manager->CullVisibility(cameraRect);
 
 		//if (p_map)
-		//	p_map->CullVisibility(cameraRect);//aktualizacja widocznoœci kafli
+		//	p_map->CullVisibility(cameraRect);//aktualizacja widocznoÅ›ci kafli
 
-        //TODO: potencjalny bug: jeœli gra bedzie w trybie pause, ten czas nadal leci
+        //TODO: potencjalny bug: jeÅ›li gra bedzie w trybie pause, ten czas nadal leci
         m_current_map_time_elapsed += secondsPassed;
 		//diagnostyka
-		//ok...dzia³a...
+		//ok...dziaÅ‚a...
 		//std::cout << m_current_map_time_elapsed << std::endl;
 	}
 
-	//Metoda zapisuje mapê
-    bool CMapManager::SaveMap(const std::string &map_file)
+	//Metoda zapisuje mapÄ™
+    bool MapManager::saveMap(const std::string & map_file)
 	{
         if (p_map == NULL)
             return false;
@@ -224,8 +223,8 @@ namespace mapengine
     }
 
 	/*
-	//Metoda zapisuje pust¹ mapê
-	void CMapManager::SaveEmptyMap(const std::string& filename, const sf::Vector2i& size)
+	//Metoda zapisuje pustÄ… mapÄ™
+	void MapManager::SaveEmptyMap(const std::string& filename, const sf::Vector2i& size)
 	{
 		std::stringstream ss;
 		ss << "<map>\n";
@@ -233,10 +232,10 @@ namespace mapengine
 		ss << "<width>" << size.x << "</width>\n";
 		ss << "<height>" << size.y << "</height>\n";
 
-		//do tego napisaæ coœ rozs¹dniejszego...jakoœ pod³o¿yæ defaultow¹ grafikê fabrycznego kafla
-		//lub utworzyæ taki obiekt syntetycznie
+		//do tego napisaÄ‡ coÅ› rozsÄ…dniejszego...jakoÅ› podÅ‚oÅ¼yÄ‡ defaultowÄ… grafikÄ™ fabrycznego kafla
+		//lub utworzyÄ‡ taki obiekt syntetycznie
 		ss << "<tiletype code=\"aa\" image=\"data/maps/themes/test/rgrass.png\"/>\n";
-		//do tego napisaæ coœ rozs¹dniejszego...
+		//do tego napisaÄ‡ coÅ› rozsÄ…dniejszego...
 
 		// kafle
 		ss << "<tiles>";

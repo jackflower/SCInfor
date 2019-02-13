@@ -1,7 +1,7 @@
-//  _________________________________
-// | CMap.cpp - class implementation |
-// | Jack Flower October 2012        |
-// |_________________________________|
+ï»¿//  ________________________________
+// | Map.cpp - class implementation |
+// | Jack Flower October 2012       |
+// |________________________________|
 //
 
 #include <iostream>
@@ -9,7 +9,7 @@
 #include <sstream>
 #include <string>
 
-#include "CMap.h"
+#include "Map.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../Rendering/Displayable/CDisplayable.h"
 #include "../Rendering/Drawable/CDrawableManager.h"
@@ -26,75 +26,75 @@ using namespace stringutils;
 
 namespace mapengine
 {
-	RTTI_IMPL(CMap, IResource);
+	RTTI_IMPL(Map, IResource);
 
 	//Konstruktor
-	CMap::CMap(void)
+	Map::Map()
 	:
-		m_map_filename					(""),
-		m_map_header					(NULL),
-		m_size							(0,0),
-		m_view_rectangle				(0,0,0,0),
-		p_fields						(NULL),
-		m_map_tile_types				(NULL),
-		m_map_object_types				(NULL),
-		m_map_object_descriptors		(NULL),
-		m_use_wind						(false),
-		m_max_living_monsters			(MAX_MONSTERS_DEFAULT),
-		str_data						()
+		m_map_filename(""),
+		m_map_header(NULL),
+		m_size(0,0),
+		m_view_rectangle(0,0,0,0),
+		p_fields(NULL),
+		m_map_tile_types(NULL),
+		m_map_object_types(NULL),
+		m_map_object_descriptors(NULL),
+		m_use_wind(false),
+		m_max_living_monsters(MAX_MONSTERS_DEFAULT),
+		str_data()
 	{
-		fprintf(stderr, "CMap::CMap()\n");
+		fprintf(stderr, "Map::Map()\n");
 	}
 
-	//Konstruktor kopiuj¹cy
-	CMap::CMap(const CMap& CMapCopy)
+	//Konstruktor kopiujÄ…cy
+	Map::Map(const Map & MapCopy)
 	:
-		m_map_filename					(CMapCopy.m_map_filename),
-		m_map_header					(CMapCopy.m_map_header),
-		m_size							(CMapCopy.m_size),
-		m_view_rectangle				(CMapCopy.m_view_rectangle),
-		p_fields						(CMapCopy.p_fields),
-		m_map_tile_types				(CMapCopy.m_map_tile_types),
-		m_map_object_types				(CMapCopy.m_map_object_types),
-		m_map_object_descriptors		(CMapCopy.m_map_object_descriptors),
-		m_use_wind						(CMapCopy.m_use_wind),
-		m_max_living_monsters			(CMapCopy.m_max_living_monsters),
-		str_data						(CMapCopy.str_data)
+		m_map_filename(MapCopy.m_map_filename),
+		m_map_header(MapCopy.m_map_header),
+		m_size(MapCopy.m_size),
+		m_view_rectangle(MapCopy.m_view_rectangle),
+		p_fields(MapCopy.p_fields),
+		m_map_tile_types(MapCopy.m_map_tile_types),
+		m_map_object_types(MapCopy.m_map_object_types),
+		m_map_object_descriptors(MapCopy.m_map_object_descriptors),
+		m_use_wind(MapCopy.m_use_wind),
+		m_max_living_monsters(MapCopy.m_max_living_monsters),
+		str_data(MapCopy.str_data)
 	{
-		fprintf(stderr, "CMap::CMap(const CMap& CMapCopy)\n");
+		fprintf(stderr, "Map::Map(const Map& CMapCopy)\n");
 	}
 
 	//Destruktor
-	CMap::~CMap(void)
+	Map::~Map(void)
 	{
-		m_map_filename					= "";
-		m_map_header					= NULL;
-		m_size.x						= 0;
-		m_size.y						= 0;
-		//m_view_rectangle				not edit
-		//p_map_physical_types			not edit
-		//p_map_physical_descriptors	not edit
-		p_fields						= NULL;
-		//m_map_tile_types				not edit
-		//m_map_object_types			not edit
-		//m_map_object_descriptors		not edit
-		m_use_wind						= false;
-		m_max_living_monsters			= MAX_MONSTERS_DEFAULT;
-		str_data						= "";
+		m_map_filename = "";
+		m_map_header = NULL;
+		m_size.x = 0;
+		m_size.y = 0;
+		//m_view_rectangle
+		//p_map_physical_types
+		//p_map_physical_descriptors
+		p_fields = NULL;
+		//m_map_tile_types
+		//m_map_object_types
+		//m_map_object_descriptors
+		m_use_wind = false;
+		m_max_living_monsters = MAX_MONSTERS_DEFAULT;
+		str_data = "";
 
-		fprintf(stderr, "CMap::~CMap(void)\n");
+		fprintf(stderr, "Map::~Map(void)\n");
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CMap::GetType() const
+	const std::string Map::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych
-	void CMap::drop()
+	//Wirtualna metoda zwalniajÄ…ca zasÃ³b - implementacje w klasach pochodnych
+	void Map::drop()
 	{
-		fprintf(stderr, "CMap::drop()\n");
+		fprintf(stderr, "Map::drop()\n");
 		
 		size_t tileCount = p_fields->size();
 		for(size_t i = 0; i < tileCount; i++)
@@ -113,9 +113,9 @@ namespace mapengine
 	}
 
 	//Metoda rozmieszcza na mapie obiekty wczytane z pliku
-	void CMap::RespawnMapObjects(bool load_complete_map)
+	void Map::respawnMapObjects(bool load_complete_map)
 	{
-		//póki co, przy wywo³aniu metody flagê nale¿y ustawiæ na true
+		//pÃ³ki co, przy wywoÅ‚aniu metody flagÄ™ naleÅ¼y ustawiÄ‡ na true
         for (unsigned int i = 0; i < m_map_object_descriptors.size(); i++)
         {
             if (load_complete_map)
@@ -123,26 +123,26 @@ namespace mapengine
         }
 	}
 
-	//Metoda ³aduj¹ca dane
-	bool CMap::load(const std::string &filename)
+	//Metoda Å‚adujÄ…ca dane
+	bool Map::load(const std::string &filename)
 	{
 		fprintf(stderr, "map %s loaded...\n", filename.c_str());
-		//wszystkie pliki xml z mapami - maj¹ nag³ówek root <map>
+		//wszystkie pliki xml z mapami - majÄ… nagÅ‚Ã³wek root <map>
 		CXml xml(filename, "map" );
 		return load(xml);
 	}
 
-	//Wirtualna metoda ³aduj¹ca dane z xml
-	bool CMap::load(CXml &xml)
+	//Wirtualna metoda Å‚adujÄ…ca dane z xml
+	bool Map::load(CXml &xml)
 	{
 		m_map_filename = xml.GetFilename();				//nazwa pliku xml mapy
-		p_fields = new std::vector<CTile*>();			//inicjujemy wskaŸnik na wektor wskaŸników do obiektów klasy CTile - kafli
-        m_map_header = new MapHeader();					//tworzymy nag³ówek mapy
+		p_fields = new std::vector<Tile*>();			//inicjujemy wskaÅºnik na wektor wskaÅºnikÃ³w do obiektÃ³w klasy Tile - kafli
+        m_map_header = new MapHeader();					//tworzymy nagÅ‚Ã³wek mapy
 
 		//konfiguracja mapy - lokacji
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "map_header_config"))
 		{
-			//wype³niamy danymi strukturê opisuj¹c¹ mapê
+			//wypeÅ‚niamy danymi strukturÄ™ opisujÄ…cÄ… mapÄ™
 
 			//sprawdzamy, czy wersja mapy jest poprawna
 			m_map_header->m_map_version = xml.GetInt(node, "version" );
@@ -160,10 +160,10 @@ namespace mapengine
 			m_size.x = m_map_header->m_map_width_in_tile;
 			m_size.y = m_map_header->m_map_height_in_tile;
 
-			//maksymalna ilosc zywych potworow - jeœli nie odczytano z xml - default
+			//maksymalna ilosc zywych potworow - jeÅ›li nie odczytano z xml - default
 			m_max_living_monsters = xml.GetInt(node, "max_living_monsters" );
 
-			if(m_max_living_monsters < 0)//kara za próbê wpisania ujemnej liczby potworów
+			if(m_max_living_monsters < 0)//kara za prÃ³bÄ™ wpisania ujemnej liczby potworÃ³w
 				m_max_living_monsters = MAX_MONSTERS_DEFAULT;
 		}
 		else
@@ -172,58 +172,58 @@ namespace mapengine
 			return false;
 		}
 
-		//³adowanie danych dla zjawisk pogodowych
+		//Å‚adowanie danych dla zjawisk pogodowych
 		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "weather_data"))
 		{
 			std::string filename = xml.GetString(node, "weather_data_filename"); 
 			gWeather.load(filename);
-			//po za³adowaniu pogody, przekazujê flagê do mapy, czy na danej mapie jest wiatr...
+			//po zaÅ‚adowaniu pogody, przekazujÄ™ flagÄ™ do mapy, czy na danej mapie jest wiatr...
 			m_use_wind = gWeather.getUseWind();
 		}
 
-		//typy fabryczne kafli u¿ywanych na mapie
-		CMapTileType *p_map_tile_type;//wskaŸnik na obiekt klasy - opakowanie informacji o kaflu
+		//typy fabryczne kafli uÅ¼ywanych na mapie
+		MapTileType *p_map_tile_type;//wskaÅºnik na obiekt klasy - opakowanie informacji o kaflu
 		
 		for (xml_node<> *node = xml.GetChild(xml.GetRootNode(),"tiletype"); node; node=xml.GetSibling(node,"tiletype"))
 		{
-			p_map_tile_type = new CMapTileType();
+			p_map_tile_type = new MapTileType();
 
-			p_map_tile_type->SetCode(xml.GetString(node,"code"));
-			p_map_tile_type->SetImageFileName(xml.GetString(node,"image"));
-			p_map_tile_type->SetImageNumberInAtlas(xml.GetInt(node,"index"));
+			p_map_tile_type->setCode(xml.GetString(node,"code"));
+			p_map_tile_type->setImageFileName(xml.GetString(node,"image"));
+			p_map_tile_type->setImageNumberInAtlas(xml.GetInt(node,"index"));
 
-			if(gResourceManager.LoadTexture(p_map_tile_type->GetImageFileName()) == false)
+			if(gResourceManager.LoadTexture(p_map_tile_type->getImageFileName()) == false)
 			{
-				fprintf(stderr, "Cannot load tile image file: %s", p_map_tile_type->GetImageFileName().c_str());
+				fprintf(stderr, "Cannot load tile image file: %s", p_map_tile_type->getImageFileName().c_str());
 				ClearTiles();
 				delete p_map_tile_type;
 				return false;
-				//uwaga - w takim wypadku, reszta obiektów mapy nie zostanie za³adowana
+				//uwaga - w takim wypadku, reszta obiektÃ³w mapy nie zostanie zaÅ‚adowana
 			}
 			m_map_tile_types.push_back(p_map_tile_type);
 		}
 
         //rozmieszczenie kafli
-        if(xml_node<> *node = xml.GetChild(xml.GetRootNode(),"tiles"))//odczytujê do wêz³a tablicê kafli
+        if(xml_node<> *node = xml.GetChild(xml.GetRootNode(),"tiles"))//odczytujÄ™ do wÄ™zÅ‚a tablicÄ™ kafli
 		{
-			const std::string &cdata = xml.GetString(node);	//odczytany ³añcuch zawieraj¹cy tablicê kafli
+			const std::string &cdata = xml.GetString(node);	//odczytany Å‚aÅ„cuch zawierajÄ…cy tablicÄ™ kafli
 			std::stringstream ss(cdata);					//przekazanie tablicy kafli do strumienia
-			//obliczamy iloœæ kafli, które nale¿y wygenerowaæ na mapie
+			//obliczamy iloÅ›Ä‡ kafli, ktÃ³re naleÅ¼y wygenerowaÄ‡ na mapie
 			int tilesNum = m_map_header->m_map_width_in_tile *  m_map_header->m_map_height_in_tile;
 			
 			for(int i = 0; i < tilesNum; i++)
 			{
-				ss >> str_data;								//strumieñ przekazuje dane z tablicy kafli
-				CTile * tile = new CTile(str_data);			//na podstawie tych danych tworzony jest kafel
-				int imageIndex = getTileTypeIndex(str_data);//indeks obrazu, gdyby ³adowania mia³o miejsce z atlasu
+				ss >> str_data;								//strumieÅ„ przekazuje dane z tablicy kafli
+				Tile * tile = new Tile(str_data);			//na podstawie tych danych tworzony jest kafel
+				int imageIndex = getTileTypeIndex(str_data);//indeks obrazu, gdyby Å‚adowania miaÅ‚o miejsce z atlasu
 
 				//inicjujemy kafel danymi
-				tile->initializeTile(m_map_tile_types[imageIndex]->GetImageFileName(), m_map_tile_types[imageIndex]->GetImageNumberInAtlas());
-				//pozycja kafla wzglêdem tablicy mapy w pliku xml
+				tile->initializeTile(m_map_tile_types[imageIndex]->getImageFileName(), m_map_tile_types[imageIndex]->getImageNumberInAtlas());
+				//pozycja kafla wzglÄ™dem tablicy mapy w pliku xml
 				tile->setPosition((i % m_map_header->m_map_width_in_tile) + 0.5f, (i/m_map_header->m_map_width_in_tile) + 0.5f);
-				//zamiana pozycji na wspó³rzêdne œwiata
+				//zamiana pozycji na wspÃ³Å‚rzÄ™dne Å›wiata
 				tile->setPosition(tile->getPosition().x * TILE_SIZE, tile->getPosition().y * TILE_SIZE);
-				//atrapa - widoczne - docelowo po za³adowaniu mapy, wywo³ywana metoda wyœwietlaj¹ca kafle w oku kamery
+				//atrapa - widoczne - docelowo po zaÅ‚adowaniu mapy, wywoÅ‚ywana metoda wyÅ›wietlajÄ…ca kafle w oku kamery
 				tile->setVisible(true);
 				//wstawianie gotowego kafle do wektora
 				p_fields->push_back(tile);
@@ -252,14 +252,14 @@ namespace mapengine
 			m_map_object_types.push_back(p_map_object_type);
         }
 
-		//physical's (potwory, drzewka, domki, to co potrafimy utworzyæ)
+		//physical's (potwory, drzewka, domki, to co potrafimy utworzyÄ‡)
 		MapObjectDescriptor *p_map_object;
 		for (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "obj"); node; node = xml.GetSibling(node, "obj"))
 		{
 			str_data = xml.GetString(node, "code");
 			int i = getMapObjectTypeIndex(str_data);//pobieramy indeks wzorca fabrycznego na podstawie nazwy
-			if (i < 0)			//jeœli nie ma wzorców fabrycznych
-				return false;	//wychodzimy z pêtli
+			if (i < 0)			//jeÅ›li nie ma wzorcÃ³w fabrycznych
+				return false;	//wychodzimy z pÄ™tli
 			p_map_object = new MapObjectDescriptor();
 
 			p_map_object->setCode(str_data);//nazwa wzorca (fabryczna)
@@ -273,11 +273,11 @@ namespace mapengine
 			//wstawiamy do kontenera opakowania danych do utworzenia physical's
 			m_map_object_descriptors.push_back(p_map_object);
 		}
-        return true;//jeœli pomyœlnie zosta³y za³adowane dane - zwracamy true
+        return true;//jeÅ›li pomyÅ›lnie zostaÅ‚y zaÅ‚adowane dane - zwracamy true
 	}
 
-	//Metoda usuwa z wektora wskaŸniki na obiekty klasy CMapTileType i dane pod tymi wskaŸnikami
-	void CMap::ClearTiles()
+	//Metoda usuwa z wektora wskaÅºniki na obiekty klasy MapTileType i dane pod tymi wskaÅºnikami
+	void Map::ClearTiles()
 	{
 		for(unsigned int i=0;i<m_map_tile_types.size();i++)
 		{
@@ -287,8 +287,8 @@ namespace mapengine
 		m_map_tile_types.clear();
 	}
 
-	//Metoda usuwa z wektora wskaŸniki na obiekty klasy MapObjectDescriptor i dane pod tymi wskaŸnikami
-	void CMap::ClearMapObjects()
+	//Metoda usuwa z wektora wskaÅºniki na obiekty klasy MapObjectDescriptor i dane pod tymi wskaÅºnikami
+	void Map::ClearMapObjects()
 	{
 		//obiekty
 		for (unsigned i = 0; i < m_map_object_descriptors.size(); i++)
@@ -297,70 +297,70 @@ namespace mapengine
 	}
 
 	//Metoda zwraca indeks wzorca na podstawie nazwy
-	int CMap::getMapObjectTypeIndex(const std::string &map_object_type_name)
+	int Map::getMapObjectTypeIndex(const std::string &map_object_type_name)
 	{
 		for (unsigned int i = 0; i < m_map_object_types.size(); i++)
 			if (m_map_object_types[i]->getCode() == map_object_type_name)
 				return i;
 		// zwraca -1, wiec to chyba nie jest niezbedne?
-		// tego nie analizowaæ, ja Jack Flower - mêczy³em siê
-		// i nawet nie pamiêtam, czy ten temat "zamiot³em"?
+		// tego nie analizowaÄ‡, ja Jack Flower - mÄ™czyÅ‚em siÄ™
+		// i nawet nie pamiÄ™tam, czy ten temat "zamiotÅ‚em"?
 		fprintf(stderr, "failed to find object template code %s\n",map_object_type_name.c_str());
 		return -1;
 	}
 
 	//Metoda zwraca na podstawie nazwy indeks kafla w tablicy
-    int CMap::getTileTypeIndex(const std::string &map_tile_type_name)
+    int Map::getTileTypeIndex(const std::string &map_tile_type_name)
 	{
         for (unsigned int i = 0; i < m_map_tile_types.size(); i++)
-			if (m_map_tile_types[i]->GetCode() == map_tile_type_name)
+			if (m_map_tile_types[i]->getCode() == map_tile_type_name)
                 return i;
         fprintf(stderr, "failed to find image code %s\n",map_tile_type_name.c_str());
         return 0;
     }
 
-	//Metoda zwraca nazwê pliku z map¹
-	const std::string& CMap::getFilename()
+	//Metoda zwraca nazwÄ™ pliku z mapÄ…
+	const std::string& Map::getFilename()
 	{
 		return m_map_filename;
 	}
 
 	//Metoda zwraca wektor z rozmiarem mapy w kaflach
-	sf::Vector2<int> CMap::getSize()
+	sf::Vector2<int> Map::getSize()
 	{
 		return m_size;
 	}
 
-	//Metoda zwraca wersjê mapy
-	int CMap::getVersion()
+	//Metoda zwraca wersjÄ™ mapy
+	int Map::getVersion()
 	{
 		return m_map_header->m_map_version;
 	}
 	
-	//Metoda zwraca flagê, czy na mapie bêdzie generowany wiatr
-	const bool CMap::getUseWind() const
+	//Metoda zwraca flagÄ™, czy na mapie bÄ™dzie generowany wiatr
+	const bool Map::getUseWind() const
 	{
 		return m_use_wind;
 	}
 
-	//Metoda ustawia flagê, czy na mapie bêdzie generowany wiatr
-	void CMap::setUseWind(bool use_wind)
+	//Metoda ustawia flagÄ™, czy na mapie bÄ™dzie generowany wiatr
+	void Map::setUseWind(bool use_wind)
 	{
 		m_use_wind = use_wind;
 	}
 
-	//Metoda zwraca maksymaln¹ iloœæ powtorów ¿yj¹cych na mapie
-	const int CMap::getMaxLivingMonsters() const
+	//Metoda zwraca maksymalnÄ… iloÅ›Ä‡ powtorÃ³w Å¼yjÄ…cych na mapie
+	const int Map::getMaxLivingMonsters() const
 	{
 		return m_max_living_monsters; 
 	}
 
-	//Metoda zapisuje mapê do pliku
-	bool CMap::save(const std::string & filename)
+	//Metoda zapisuje mapÄ™ do pliku
+	bool Map::save(const std::string & filename)
 	{
-        // plik tymczasowy, strumieñ, do którego przekazywana jest
-		// zserializoana postaæ danych, która zostan¹ zapisane
-		// w pliku xml, reprezentuj¹cycm mapê, poziom, œwiat, etc...
+        // plik tymczasowy, strumieÅ„, do ktÃ³rego przekazywana jest
+		// zserializoana postaÄ‡ danych, ktÃ³ra zostanÄ… zapisane
+		// w pliku xml, reprezentujÄ…cycm mapÄ™, poziom, Å›wiat, etc...
 		std::stringstream serialized_string; //serialized object
         serialize(serialized_string);
 
@@ -378,7 +378,7 @@ namespace mapengine
 	}
 
 	//Metoda serializuje obiekt
-	void CMap::serialize(std::stringstream &serialized_object)
+	void Map::serialize(std::stringstream &serialized_object)
 	{
 		//in xml description
 		serialized_object << "<!--mapa zapisana w pliku xml - wezel root = map-->" << "\n";
@@ -408,7 +408,7 @@ namespace mapengine
 			<< "\"\n\t/>\n";
 		serialized_object << "\n";
 
-		//typy kafli u¿ywanych na mapie
+		//typy kafli uÅ¼ywanych na mapie
 		//in xml description
 		serialized_object << "\t" << "<!--typy wzorcow kafli dostepnych na mapie-->" << "\n";
 		serialized_object << "\t" << "<!--code unikalna nazwa wzorca kafla -->" << "\n";
@@ -417,9 +417,9 @@ namespace mapengine
 		{
 			serialized_object
 				<< "\t<tiletype code = \""
-				<< m_map_tile_types[i]->GetCode()
+				<< m_map_tile_types[i]->getCode()
 				<< "\" image = \""
-				<< m_map_tile_types[i]->GetImageFileName()
+				<< m_map_tile_types[i]->getImageFileName()
 				<< "\"/>\n";
 		}
 		serialized_object << "\n";
@@ -435,7 +435,7 @@ namespace mapengine
         serialized_object<< "\n\t</tiles>\n";
 		serialized_object << "\n";
         
-		//typy wzorców physical's dostêpnych na mapie-->
+		//typy wzorcÃ³w physical's dostÄ™pnych na mapie-->
 		//in xml description
 		serialized_object << "\t" << "<!--typy wzorcow physical's dostepnych na mapie-->" << "\n";
 		serialized_object << "\t" << "<!--code - nazwa wzorca-->" << "\n";
@@ -449,7 +449,7 @@ namespace mapengine
 					<< m_map_object_types[i]->getTemplate()->getFilename()
 					<< "\"/>\n";
             else
-                fprintf(stderr, "ERROR: null objtype template pointer @ CMap::Serialize!\n");
+                fprintf(stderr, "ERROR: null objtype template pointer @ Map::Serialize!\n");
         }
 		serialized_object << "\n";
 
@@ -476,8 +476,8 @@ namespace mapengine
 				<< "\"/>\n";
 
 
-			//param - zupe³nie mi obcy obszar wiedzy...
-			//z czym to jeœæ...?
+			//param - zupeÅ‚nie mi obcy obszar wiedzy...
+			//z czym to jeÅ›Ä‡...?
 
             //if (m_map_object_descriptors[i]->param != NULL)
 			//{
@@ -485,7 +485,7 @@ namespace mapengine
 			//if (m_map_object_descriptors[i]->GetTemplate())
             //        m_map_object_descriptors[i]->GetTemplate()->SerializeParam(out, mMapObjectDescriptors[i]->param, 1);
             //    else
-            //        fprintf(stderr, "ERROR: null object descriptor's template pointer @ CMap::Serialize!\n");
+            //        fprintf(stderr, "ERROR: null object descriptor's template pointer @ Map::Serialize!\n");
             //    out << "\t</obj>\n";
             //}
 			//else 
@@ -504,8 +504,8 @@ namespace mapengine
         //    mRegionDescriptors[i]->Serialize(out, 1);
         //}
 
-		//nad tym ewentualnie mogê popracowaæ...bêdzie niekoniecnzie wygodnie
-		//z kolejnoœci¹ w pliku xml, ale za to bêdzie produkcja...
+		//nad tym ewentualnie mogÄ™ popracowaÄ‡...bÄ™dzie niekoniecnzie wygodnie
+		//z kolejnoÅ›ciÄ… w pliku xml, ale za to bÄ™dzie produkcja...
         // doodahy
         // <sprite out="data/maps/doodahs/tree2.png"           x="0.27" y="40.8" z="foreground" scale="1.4" rot="35" />
         //for (unsigned int i = 0; i < mDoodahDescriptors.size(); i++)

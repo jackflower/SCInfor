@@ -393,36 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Map\CCell.cpp">
-      <Filter>source\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\CCollisionMap.cpp">
-      <Filter>source\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\CDoodahDescriptor.cpp">
-      <Filter>source\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\CDynamicRegion.cpp">
-      <Filter>source\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\CDynamicRegionsGenerator.cpp">
-      <Filter>source\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\CMap.cpp">
-      <Filter>source\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\CMapManager.cpp">
-      <Filter>source\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\CMapPhysicalHeader.cpp">
-      <Filter>source\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\Tile\CMapTileType.cpp">
-      <Filter>source\Map\Tile</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Map\Tile\CTile.cpp">
-      <Filter>source\Map\Tile</Filter>
-    </ClCompile>
     <ClCompile Include="source\Rendering\Animated\CAnimated.cpp">
       <Filter>source\Rendering\Animated</Filter>
     </ClCompile>
@@ -1002,6 +972,36 @@
     <ClCompile Include="source\Map\SearchTools\WaypointPriorityQueue.cpp">
       <Filter>source\Map\SearchTools</Filter>
     </ClCompile>
+    <ClCompile Include="source\Map\Tile\MapTileType.cpp">
+      <Filter>source\Map\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\Tile\Tile.cpp">
+      <Filter>source\Map\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\Cell.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\CollisionMap.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\DoodahDescriptor.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\DynamicRegion.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\DynamicRegionsGenerator.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapPhysicalHeader.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\MapManager.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Map\Map.cpp">
+      <Filter>source\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1108,38 +1108,8 @@
     <ClInclude Include="source\Logic\EEnemyState.h">
       <Filter>source\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="source\Map\CCell.h">
-      <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\CCollisionMap.h">
-      <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\CDoodahDescriptor.h">
-      <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\CDynamicRegion.h">
-      <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\CDynamicRegionsGenerator.h">
-      <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\CMap.h">
-      <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\CMapManager.h">
-      <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\CMapPhysicalHeader.h">
-      <Filter>source\Map</Filter>
-    </ClInclude>
     <ClInclude Include="source\Map\MapHeader.h">
       <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\Tile\CMapTileType.h">
-      <Filter>source\Map\Tile</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Map\Tile\CTile.h">
-      <Filter>source\Map\Tile</Filter>
     </ClInclude>
     <ClInclude Include="source\Rendering\Animated\CAnimated.h">
       <Filter>source\Rendering\Animated</Filter>
@@ -1758,6 +1728,36 @@
     </ClInclude>
     <ClInclude Include="source\Map\SearchTools\WaypointPriorityQueue.h">
       <Filter>source\Map\SearchTools</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Tile\MapTileType.h">
+      <Filter>source\Map\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Tile\Tile.h">
+      <Filter>source\Map\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Cell.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\CollisionMap.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\DoodahDescriptor.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\DynamicRegion.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\DynamicRegionsGenerator.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapPhysicalHeader.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\MapManager.h">
+      <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Map\Map.h">
+      <Filter>source\Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -20,7 +20,7 @@
 #include "../Weather/CWeather.h"
 #include "../Factory/PhysicalTemplate.h"
 #include "../Logic/Logic.h"
-#include "../Map/CMap.h"
+#include "../Map/Map.h"
 #include "../Utilities/Random/CRandom.h"
 #include "../Utilities/EntityTranslator/CEntityTranslator.h"
 #include "../Equipment/Industrial/PowerModuleType/WindTurbine.h"
@@ -30,8 +30,8 @@
 #include "../Utilities/Translation/Directions.h"
 #include "../Utilities/CharsetTools/CCharSetManager.h"
 #include "../Utilities/FileUtils/PathManager/CPathManager.h"
-#include "../Map/Tile/CTile.h"
-#include "../Map/CMapManager.h"
+#include "../Map/Tile/Tile.h"
+#include "../Map/MapManager.h"
 #include "../Equipment/Lightingequipment/ELightingEquipmentState.h"
 #include "../Universe/CUniverse.h"
 #include "../Factory/EquipmentFactory/ThermodynamicsFactory/AirconditioningFactory/AirconditioningTemplate.h"
@@ -271,7 +271,7 @@ namespace game
 		m_fps_text.setPosition(10,10);
 
 		// m a p a
-		gMapManager.SetMap("../data/xml_data/maps/dark_forest.xml", true);
+		gMapManager.setMap("../data/xml_data/maps/dark_forest.xml", true);
 		//gMapManager.SaveMap("../data/xml_data/maps/alabama.xml");
 
 		gameTest();

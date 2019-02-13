@@ -1,5 +1,5 @@
-//  __________________________________________________
-// | MapHeader.h - definicja struktury opisuj¹ce mapê |
+ï»¿//  __________________________________________________
+// | MapHeader.h - definicja struktury opisujÄ…ce mapÄ™ |
 // | Jack Flower April 2013                           |
 // |__________________________________________________|
 //
@@ -7,15 +7,13 @@
 #ifndef H_MAP_HEADER_JACK
 #define H_MAP_HEADER_JACK
 
-#include <SFML/System/Vector2.hpp>
-
 ///
-///Struktura opisuje konfiguracjê mapy
+///Struktura opisuje konfiguracjÄ™ mapy
 ///
 struct MapHeader
 {
-	int				m_map_version;				//wersja mapy
-	int				m_map_width_in_tile;		//szerkoœæ mapy w kaflach
-	int				m_map_height_in_tile;		//wysokoœæ mapy w kaflach
+	int m_map_version; //wersja mapy
+	int m_map_width_in_tile; //szerkoÅ›Ä‡ mapy w kaflach
+	int m_map_height_in_tile; //wysokoÅ›Ä‡ mapy w kaflach
 };
 #endif //H_MAP_HEADER_JACK

@@ -46,7 +46,7 @@
 #include "../Factory/IndustrialFactory/PowerStationFactory/PowerRelayFactory/SlotsRateTemplate.h"
 #include "../Factory/EquipmentFactory/WeaponFactory/AmmoFactory/AmmoTemplate.h"
 #include "../Factory/EquipmentFactory/WeaponFactory/GunFactory/GunTemplate.h"
-#include "../Map/CMap.h"
+#include "../Map/Map.h"
 #include "../Map/Ground/Ground.h"
 
 template<> resource::CResourceManager* CSingleton<resource::CResourceManager>::m_singleton = 0;
@@ -113,11 +113,11 @@ namespace resource
 		return LoadResource<MapPhysicalTemplate>(name);
 	}
 
-	//Metoda ³aduje zasób CMap
+	//Metoda ³aduje zasób Map
 	ResourceHandle CResourceManager::LoadMap(const std::string& name)
 	{
 		fprintf(stderr, "CResourceManager::LoadMap() %s\n", name.c_str());
-		return LoadResource<CMap>(name);
+		return LoadResource<Map>(name);
 	}
 
 	//Metoda ³aduje zasób GroundWorkTemplate
@@ -179,10 +179,10 @@ namespace resource
 		return (MapPhysicalTemplate*)GetResource<MapPhysicalTemplate>(name);
 	}
 
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CMap
-	CMap* CResourceManager::GetMap(const std::string& name)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy Map
+	Map* CResourceManager::GetMap(const std::string& name)
 	{
-		return (CMap*)GetResource<CMap>(name);
+		return (Map*)GetResource<Map>(name);
 	}
 
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy Ground
@@ -251,10 +251,10 @@ namespace resource
 		return (MapPhysicalTemplate*)GetResource<MapPhysicalTemplate>(handle);
 	}
 	
-	//Metoda zwraca wskaŸnik na zasób - obiekt klasy CMap
-	CMap* CResourceManager::GetMap(ResourceHandle handle)
+	//Metoda zwraca wskaŸnik na zasób - obiekt klasy Map
+	Map* CResourceManager::GetMap(ResourceHandle handle)
 	{
-		return (CMap*)GetResource<CMap>(handle);
+		return (Map*)GetResource<Map>(handle);
 	}
 
 	//Metoda zwraca wskaŸnik na zasób - obiekt klasy GroundTemplate

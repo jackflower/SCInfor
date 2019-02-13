@@ -1,14 +1,14 @@
-//  ________________________________________
-// | CCollisionMap.h - class implementation |
-// | Jack Flower July 2013                  |
-// |________________________________________|
+ï»¿//  _______________________________________
+// | CollisionMap.h - class implementation |
+// | Jack Flower July 2013                 |
+// |_______________________________________|
 //
 
-#include "CCollisionMap.h"
-//#include "CDynamicRegionsGenerator.h"//to pozostanie, ale zanim - includujê CDynamicRegion
-#include "CDynamicRegion.h"
-#include "CMap.h"
-#include "CMapManager.h"
+#include "CollisionMap.h"
+//#include "DynamicRegionsGenerator.h"//to pozostanie, ale zanim - includujÄ™ DynamicRegion
+#include "DynamicRegion.h"
+#include "Map.h"
+#include "MapManager.h"
 //#include "SearchTools/CPath.h"
 //#include "SearchTools/CPathFinder.h"
 #include "../Logic/PhysicalManager.h"
@@ -17,51 +17,51 @@
 #include <climits>
 #include <iostream>
 
-const int kUnaccessableTile = INT_MAX;	//limit iloœci kafli - niedostêpne
-const int kRegionSize = 10;				//kazdy region zajmuje x komórek
+const int kUnaccessableTile = INT_MAX;	//limit iloÅ›ci kafli - niedostÄ™pne
+const int kRegionSize = 10;				//kazdy region zajmuje x komÃ³rek
 
 using namespace mapengine;
 
 namespace mapengine
 {
-	RTTI_IMPL_NOPARENT(CCollisionMap);
+	RTTI_IMPL_NOPARENT(CollisionMap);
 
 	//Konstruktor
-	CCollisionMap::CCollisionMap()
+	CollisionMap::CollisionMap()
 	:
-		m_size				(0, 0),
-		m_cell_per_tile		(0.0f, 0.0f),
-		m_single_cell_size	(0.0f, 0.0f),
-		m_cell_list			(),
-		m_region_list		(),
-		m_enemy_density		(5)
+		m_size(0, 0),
+		m_cell_per_tile(0.0f, 0.0f),
+		m_single_cell_size(0.0f, 0.0f),
+		m_cell_list(),
+		m_region_list(),
+		m_enemy_density(5)
 	{
 		m_cell_list.clear();
 		m_region_list.clear();
 	}
 
 	//Destruktor
-	CCollisionMap::~CCollisionMap()
+	CollisionMap::~CollisionMap()
 	{
 		m_cell_list.clear();
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string CCollisionMap::GetType() const
+	const std::string CollisionMap::getType() const
 	{
 		return rtti.GetNameClass();
 	}
 
-	//Metoda inicjuje mapê kolizji
-	void CCollisionMap::Initialize(sf::Vector2i size)
+	//Metoda inicjuje mapÄ™ kolizji
+	void CollisionMap::initialize(sf::Vector2i size)
 	{
 		m_size = size;//tutaj ustawiam rozmiar mapy kolizji
-		//wywo³ane raz w CMapManager...
+		//wywoÅ‚ane raz w MapManager...
 		
-		if (gMapManager.GetCurrent())
+		if (gMapManager.getCurrent())
 		{
-			m_cell_per_tile.x = (float)size.x/(float)gMapManager.GetCurrent()->getSize().x;
-			m_cell_per_tile.y = (float)size.y/(float)gMapManager.GetCurrent()->getSize().y;
+			m_cell_per_tile.x = (float)size.x/(float)gMapManager.getCurrent()->getSize().x;
+			m_cell_per_tile.y = (float)size.y/(float)gMapManager.getCurrent()->getSize().y;
 		}
 		else
 			m_cell_per_tile = sf::Vector2f(0.0f, 0.0f);
@@ -77,42 +77,44 @@ namespace mapengine
 			m_cell_list[i].setCollision(false);
 		}
 
-		UpdatePhysicals(PHYSICAL_PATHBLOCKER);
-		UpdateRegions();
-		UpdatePhysicals(PHYSICAL_ACTORS);
+		updatePhysicals(PHYSICAL_PATHBLOCKER);
+		updateRegions();
+		updatePhysicals(PHYSICAL_ACTORS);
 	}
 
-	//Metoda aktualizuje wszystkie obiekty znajduj¹ce siê na mapie kolizji
-	void CCollisionMap::UpdateAllPhysicals()
+	//Metoda aktualizuje wszystkie obiekty znajdujÄ…ce siÄ™ na mapie kolizji
+	void CollisionMap::updateAllPhysicals()
 	{
 		const std::vector<Physical*> & physicals = gPhysicalManager.getPhysicals();
 		for (unsigned i = 0; i < physicals.size(); i++)
 		{
-			UpdatePhysical(physicals[i], true);
+			updatePhysical(physicals[i], true);
 		}
 	}
 
-	//Metoda aktualizuje obiekty znajduj¹ce siê na mapie kolizji w zale¿noœci od kategorii
-	void CCollisionMap::UpdatePhysicals(int category)
+	//Metoda aktualizuje obiekty znajdujÄ…ce siÄ™ na mapie kolizji w zaleÅ¼noÅ›ci od kategorii
+	void CollisionMap::updatePhysicals(int category)
 	{
 		const std::vector<Physical*> & physicals = gPhysicalManager.getPhysicals();
 		for (unsigned i = 0; i < physicals.size(); i++)
 		{
 			if (physicals[i]->getCategory() & category)
-				UpdatePhysical(physicals[i], true);
+				updatePhysical(physicals[i], true);
 		}
 	}
 
 	//Metoda aktualizuje wskazany obiekt klasy Physical
-	void CCollisionMap::UpdatePhysical(Physical *physical, bool collision)
+	void CollisionMap::updatePhysical(Physical *physical, bool collision)
 	{
-		if (!(physical->getCategory() & PHYSICAL_PATHBLOCKER))	return;
-		if (!gMapManager.GetCurrent())							return;
+		if (!(physical->getCategory() & PHYSICAL_PATHBLOCKER))
+			return;
+		if (!gMapManager.getCurrent())
+			return;
 
-		//pobieramy rozmiar mapy w kaflach, aby poprawnie zeskalowaæ wspó³rzêdne
-		sf::Vector2i mapSize = gMapManager.GetCurrent()->getSize();
+		//pobieramy rozmiar mapy w kaflach, aby poprawnie zeskalowaÄ‡ wspÃ³Å‚rzÄ™dne
+		sf::Vector2i mapSize = gMapManager.getCurrent()->getSize();
 
-		//rzutowanie physicala na mapê kolizji o danym rozmiarze
+		//rzutowanie physicala na mapÄ™ kolizji o danym rozmiarze
 		sf::IntRect rect
 		(
 			int ((physical->getPosition().x - physical->getRectSize().x * 0.49f) * (float) m_size.x / (float) mapSize.x),
@@ -121,10 +123,10 @@ namespace mapengine
 			int ((physical->getPosition().y + physical->getRectSize().y * 0.49f) * (float) m_size.y / (float) mapSize.y)
 		);
 
-		//TUTAJ utkn¹³em, bo wymaga to policzenia...
+		//TUTAJ utknÄ…Å‚em, bo wymaga to policzenia...
 		//kogut - co jest grane???
 
-		//zabezpieczenie przed wyjœciem poza tablice
+		//zabezpieczenie przed wyjÅ›ciem poza tablice
 
 		//if ( rect.Left < 0 )				rect.Left = 0;
 		//if ( rect.Left >= m_size.x )		rect.Left = m_size.x - 1;
@@ -146,27 +148,27 @@ namespace mapengine
 
 		// no i nareszcie...
 
-		//ponbi¿ej (nie ruszaæ, ma byæ comment, patrz source WG
+		//ponbiÅ¼ej (nie ruszaÄ‡, ma byÄ‡ comment, patrz source WG
 		//UWAGA - ODBLOKOWANIE!!!!
 	//	for ( unsigned y = rect.Top; y <= (unsigned) rect.Bottom; y++ )
 	//		for ( unsigned x = rect.Left; x <= (unsigned) rect.Right; x++ )
 	//			m_cell_list[ y * m_size.x + x ].collision = collision;	
 
-		//po analizie domniemujê... - co jest grane???
-		//w tej pêtli okreœlam, czy dany obszar mapy jest zajêty...
+		//po analizie domniemujÄ™... - co jest grane???
+		//w tej pÄ™tli okreÅ›lam, czy dany obszar mapy jest zajÄ™ty...
 		//czyli czy jest w tym obszarze kolizja?
 	}
 
-	//Metoda zwraca flagê, czy nast¹pi³a kolizja z jakimkolwiek obiektem z kontenera przechowuj¹cego obiekty klasy CCell
-	bool CCollisionMap::GetCollisionByCell(const sf::Vector2i& collision) const
+	//Metoda zwraca flagÄ™, czy nastÄ…piÅ‚a kolizja z jakimkolwiek obiektem z kontenera przechowujÄ…cego obiekty klasy Cell
+	bool CollisionMap::getCollisionByCell(const sf::Vector2i& collision) const
 	{
 		if (collision.x < 0 || collision.y < 0 || collision.x >= m_size.x || collision.y >= m_size.y)
 			return true;
-		return m_cell_list[CellToIndex(collision)].getCollision();
+		return m_cell_list[cellToIndex(collision)].getCollision();
 	}
 
-	//Metoda zwraca flagê, czy nast¹pi³a kolizja z obiektem opisanym wspó³rzêdnymi skrajnych wierzcho³ków
-	bool CCollisionMap::GetCollisionByRect(const sf::Vector2i &leftUp, const sf::Vector2i &rightDown) const
+	//Metoda zwraca flagÄ™, czy nastÄ…piÅ‚a kolizja z obiektem opisanym wspÃ³Å‚rzÄ™dnymi skrajnych wierzchoÅ‚kÃ³w
+	bool CollisionMap::getCollisionByRect(const sf::Vector2i &leftUp, const sf::Vector2i &rightDown) const
 	{
 		for (int y = leftUp.y; y <= rightDown.y; y++)
 			for (int x = leftUp.x; x <= rightDown.x; x++)
@@ -175,17 +177,17 @@ namespace mapengine
 		return false;
 	}
 
-	//Metoda zwraca gêstoœæ obiektów w obszarze klasy CCell
-	int CCollisionMap::GetDensityByCell(const sf::Vector2i& cell)
+	//Metoda zwraca gÄ™stoÅ›Ä‡ obiektÃ³w w obszarze klasy Cell
+	int CollisionMap::getDensityByCell(const sf::Vector2i& cell)
 	{
-		int index = CellToIndex(cell);
+		int index = cellToIndex(cell);
 		return (m_cell_list[index].getCollision() == true ? kUnaccessableTile : m_cell_list[index].getDensity());
 	}
 
-	//Metoda zwraca gêstoœæ obiektów opisanych wspó³rzêdnymi skrajnych wierzcho³ków
-	int CCollisionMap::GetDensityByRect(const sf::Vector2i& leftUp, const sf::Vector2i& rightDown)
+	//Metoda zwraca gÄ™stoÅ›Ä‡ obiektÃ³w opisanych wspÃ³Å‚rzÄ™dnymi skrajnych wierzchoÅ‚kÃ³w
+	int CollisionMap::getDensityByRect(const sf::Vector2i& leftUp, const sf::Vector2i& rightDown)
 	{
-		if (GetCollisionByRect(leftUp, rightDown) == true)
+		if (getCollisionByRect(leftUp, rightDown) == true)
 		{
 			return kUnaccessableTile;
 		}
@@ -203,20 +205,20 @@ namespace mapengine
 		return totalDensity;
 	}
 
-	//Metoda dodaje do kontenera wêze³ œcie¿ki
-	void CCollisionMap::AddPath(const CPath * path)
+	//Metoda dodaje do kontenera wÄ™zeÅ‚ Å›cieÅ¼ki
+	void CollisionMap::addPath(const CPath * path)
 	{
-		ModifyPath(path, m_enemy_density);
+		modifyPath(path, m_enemy_density);
 	}
 
-	//Metoda usuwa z kontenera wêze³ œcie¿ki
-	void CCollisionMap::RemovePath(const CPath * path)
+	//Metoda usuwa z kontenera wÄ™zeÅ‚ Å›cieÅ¼ki
+	void CollisionMap::removePath(const CPath * path)
 	{
-		ModifyPath(path, -m_enemy_density);
+		modifyPath(path, -m_enemy_density);
 	}
 
-	//Metoda modyfikuje œci¿kê
-	void CCollisionMap::ModifyPath(const CPath* path, int delta)
+	//Metoda modyfikuje Å›ciÅ¼kÄ™
+	void CollisionMap::modifyPath(const CPath* path, int delta)
 	{
 		/*
 		sf::Vector2i size = path->GetSize();
@@ -234,8 +236,8 @@ namespace mapengine
 		*/
 	}
 
-	//Metoda znajduje œcie¿kê
-	bool CCollisionMap::FindPath(
+	//Metoda znajduje Å›cieÅ¼kÄ™
+	bool CollisionMap::findPath(
 		const sf::Vector2f & start,
 		const sf::Vector2f & goal,
 		const sf::Vector2f & physicalSize,
@@ -245,8 +247,8 @@ namespace mapengine
 		return false; ///atrapa...
 	}
 
-	//Metoda zwraca pozycjê kafla dla danych wspó³rzêdnych globalnych
-	sf::Vector2i CCollisionMap::GetCellByCoords(const sf::Vector2f& point) 
+	//Metoda zwraca pozycjÄ™ kafla dla danych wspÃ³Å‚rzÄ™dnych globalnych
+	sf::Vector2i CollisionMap::getCellByCoords(const sf::Vector2f& point) 
 	{ 
 		return sf::Vector2i
 			( 
@@ -255,8 +257,8 @@ namespace mapengine
 			);
 	}
 
-	//Metoda zwraca wspó³rzêdne globalne dla danego kafla
-	sf::Vector2f CCollisionMap::GetCoordsByCell( const sf::Vector2i& cell )
+	//Metoda zwraca wspÃ³Å‚rzÄ™dne globalne dla danego kafla
+	sf::Vector2f CollisionMap::getCoordsByCell( const sf::Vector2i& cell )
 	{
 		return sf::Vector2f
 			( 
@@ -265,8 +267,8 @@ namespace mapengine
 			);
 	}
 
-	//Metoda zamienia rozmiar w iloœæ zajmowanych pol
-	sf::Vector2i CCollisionMap::ConvertSizeToCells(const sf::Vector2f & size)
+	//Metoda zamienia rozmiar w iloÅ›Ä‡ zajmowanych pol
+	sf::Vector2i CollisionMap::convertSizeToCells(const sf::Vector2f & size)
 	{
 		return sf::Vector2i
 			(
@@ -276,20 +278,20 @@ namespace mapengine
 	}
 
 	//Metoda dynamicznie aktalizuje regiony mapy
-	void CCollisionMap::UpdateRegions()
+	void CollisionMap::updateRegions()
 	{
-	    //CDynamicRegionsGenerator regionsGenerator(m_size, sf::Vector2i(kRegionSize, kRegionSize));
+	    //DynamicRegionsGenerator regionsGenerator(m_size, sf::Vector2i(kRegionSize, kRegionSize));
 	    //regionsGenerator.GenerateRegions(m_cell_list, m_region_list);
 	}
 
-	//Metoda zwraca wskaŸnik na obiekt klasy CDynamicRegion
-	CDynamicRegion *CCollisionMap::GetRegionByCell(const sf::Vector2i &cell)
+	//Metoda zwraca wskaÅºnik na obiekt klasy DynamicRegion
+	DynamicRegion *CollisionMap::getRegionByCell(const sf::Vector2i &cell)
 	{
-		int regionId = m_cell_list.at(CellToIndex((cell))).getRegionId();
+		int regionId = m_cell_list.at(cellToIndex((cell))).getRegionId();
 
-		for (std::vector<CDynamicRegion*>::const_iterator it = m_region_list.begin(); it != m_region_list.end(); ++it)
+		for (std::vector<DynamicRegion*>::const_iterator it = m_region_list.begin(); it != m_region_list.end(); ++it)
 		{
-			if ((*it)->GetRegionID() == regionId)
+			if ((*it)->getRegionID() == regionId)
 		        return *it;
 		}
 		return NULL;
