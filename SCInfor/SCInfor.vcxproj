@@ -277,9 +277,9 @@
     <ClCompile Include="source\Map\SearchTools\WaypointPriorityQueue.cpp" />
     <ClCompile Include="source\Map\Tile\MapTileType.cpp" />
     <ClCompile Include="source\Map\Tile\Tile.cpp" />
-    <ClCompile Include="source\Rendering\Animated\CAnimated.cpp" />
-    <ClCompile Include="source\Rendering\Animated\CAnimatedAnimation.cpp" />
-    <ClCompile Include="source\Rendering\Animated\CAnimatedFrame.cpp" />
+    <ClCompile Include="source\Rendering\Animated\Animated.cpp" />
+    <ClCompile Include="source\Rendering\Animated\AnimatedAnimation.cpp" />
+    <ClCompile Include="source\Rendering\Animated\AnimatedFrame.cpp" />
     <ClCompile Include="source\Rendering\Animations\CAnimation.cpp" />
     <ClCompile Include="source\Rendering\Animations\CAnimationFrame.cpp" />
     <ClCompile Include="source\Rendering\Animations\CAnimationManager.cpp" />
@@ -295,6 +295,7 @@
     <ClCompile Include="source\Rendering\Displayable\CRectangle.cpp" />
     <ClCompile Include="source\Rendering\Displayable\CSprite.cpp" />
     <ClCompile Include="source\Rendering\Displayable\CTextHeadUpDisplay.cpp" />
+    <ClCompile Include="source\Rendering\Displayable\Texture.cpp" />
     <ClCompile Include="source\Rendering\Drawable\CDrawableManager.cpp" />
     <ClCompile Include="source\Rendering\Drawable\IDrawable.cpp" />
     <ClCompile Include="source\Rendering\Particle\CParticle.cpp" />
@@ -519,9 +520,9 @@
     <ClInclude Include="source\Map\SearchTools\WaypointPriorityQueue.h" />
     <ClInclude Include="source\Map\Tile\MapTileType.h" />
     <ClInclude Include="source\Map\Tile\Tile.h" />
-    <ClInclude Include="source\Rendering\Animated\CAnimated.h" />
-    <ClInclude Include="source\Rendering\Animated\CAnimatedAnimation.h" />
-    <ClInclude Include="source\Rendering\Animated\CAnimatedFrame.h" />
+    <ClInclude Include="source\Rendering\Animated\Animated.h" />
+    <ClInclude Include="source\Rendering\Animated\AnimatedAnimation.h" />
+    <ClInclude Include="source\Rendering\Animated\AnimatedFrame.h" />
     <ClInclude Include="source\Rendering\Animations\CAnimation.h" />
     <ClInclude Include="source\Rendering\Animations\CAnimationFrame.h" />
     <ClInclude Include="source\Rendering\Animations\CAnimationManager.h" />
@@ -538,6 +539,7 @@
     <ClInclude Include="source\Rendering\Displayable\CRectangle.h" />
     <ClInclude Include="source\Rendering\Displayable\CSprite.h" />
     <ClInclude Include="source\Rendering\Displayable\CTextHeadUpDisplay.h" />
+    <ClInclude Include="source\Rendering\Displayable\Texture.h" />
     <ClInclude Include="source\Rendering\Drawable\CDrawableManager.h" />
     <ClInclude Include="source\Rendering\Drawable\IDrawable.h" />
     <ClInclude Include="source\Rendering\Drawable\Layers.h" />

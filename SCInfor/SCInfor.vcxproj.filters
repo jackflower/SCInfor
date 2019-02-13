@@ -393,15 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Rendering\Animated\CAnimated.cpp">
-      <Filter>source\Rendering\Animated</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Animated\CAnimatedAnimation.cpp">
-      <Filter>source\Rendering\Animated</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Animated\CAnimatedFrame.cpp">
-      <Filter>source\Rendering\Animated</Filter>
-    </ClCompile>
     <ClCompile Include="source\Rendering\Animations\CAnimation.cpp">
       <Filter>source\Rendering\Animations</Filter>
     </ClCompile>
@@ -1002,6 +993,18 @@
     <ClCompile Include="source\Map\Map.cpp">
       <Filter>source\Map</Filter>
     </ClCompile>
+    <ClCompile Include="source\Rendering\Animated\Animated.cpp">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animated\AnimatedAnimation.cpp">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\Texture.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animated\AnimatedFrame.cpp">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1110,15 +1113,6 @@
     </ClInclude>
     <ClInclude Include="source\Map\MapHeader.h">
       <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Animated\CAnimated.h">
-      <Filter>source\Rendering\Animated</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Animated\CAnimatedAnimation.h">
-      <Filter>source\Rendering\Animated</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Animated\CAnimatedFrame.h">
-      <Filter>source\Rendering\Animated</Filter>
     </ClInclude>
     <ClInclude Include="source\Rendering\Animations\CAnimation.h">
       <Filter>source\Rendering\Animations</Filter>
@@ -1758,6 +1752,18 @@
     </ClInclude>
     <ClInclude Include="source\Map\Map.h">
       <Filter>source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animated\Animated.h">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animated\AnimatedAnimation.h">
+      <Filter>source\Rendering\Animated</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\Texture.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animated\AnimatedFrame.h">
+      <Filter>source\Rendering\Animated</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
