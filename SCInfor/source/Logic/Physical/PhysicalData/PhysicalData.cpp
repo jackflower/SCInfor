@@ -7,7 +7,7 @@
 #include "PhysicalData.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
 #include "../../../Rendering/Drawable/CDrawableManager.h"
-#include "../../../Rendering/Animations/CAnimation.h"
+#include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/CAnimationState.h"
 #include "../../../Weather/CWeather.h"
 #include "../../../Utilities/Utilities/Utilities.h"
@@ -832,14 +832,14 @@ namespace physicaldata
 		rotateHead(angle);
 	}
 
-	//Metoda zwraca wskaźnik na animację - obiekt klasy CAnimation (body)
-	CAnimation *PhysicalData::getAnimationBody()
+	//Metoda zwraca wskaźnik na animację - obiekt klasy Animation (body)
+	Animation *PhysicalData::getAnimationBody()
 	{
 		return p_animation_body;
 	}
 
 	//Metoda ustawia ustawia wskaźnik na animację (body)
-	void PhysicalData::setAnimationBody(CAnimation* p_anim_body)
+	void PhysicalData::setAnimationBody(Animation* p_anim_body)
 	{
 		checkDisplayableBody();
 		p_animation_body = p_anim_body;
@@ -854,7 +854,7 @@ namespace physicaldata
 	//Metoda zwraca nazwę animacji (body)
 	const std::string & PhysicalData::getAnimationBodyName() const
 	{
-		return p_displayable_body->GetAnimationState()->GetAnimation()->GetAnimationName();
+		return p_displayable_body->GetAnimationState()->GetAnimation()->getAnimationName();
 	}
 
 	//Metoda ustawia nazwę animacji (body)
@@ -873,14 +873,14 @@ namespace physicaldata
 			p_animation_body = p_displayable_body->GetAnimationState()->GetAnimation();
 	}
 
-	//Metoda zwraca wskaźnik na animację - obiekt klasy CAnimation (head)
-	CAnimation *PhysicalData::getAnimationHead()
+	//Metoda zwraca wskaźnik na animację - obiekt klasy Animation (head)
+	Animation *PhysicalData::getAnimationHead()
 	{
 		return p_animation_head;
 	}
 
 	//Metoda ustawia ustawia wskaźnik na animację (head)
-	void PhysicalData::setAnimationHead(CAnimation *p_anim_head)
+	void PhysicalData::setAnimationHead(Animation *p_anim_head)
 	{
 		checkDisplayableHead();
 
@@ -896,7 +896,7 @@ namespace physicaldata
 	//Metoda zwraca nazwę animacji (head)
 	const std::string & PhysicalData::getAnimationHeadName() const
 	{
-		return p_displayable_head->GetAnimationState()->GetAnimation()->GetAnimationName();
+		return p_displayable_head->GetAnimationState()->GetAnimation()->getAnimationName();
 	}
 
 	//Metoda ustawia nazwę animacji (head)
@@ -916,7 +916,7 @@ namespace physicaldata
 	}
 
 	//Metoda ustawia komplet animacji
-	void PhysicalData::setAnimation(CAnimation *p_anim_body, CAnimation *p_anim_head)
+	void PhysicalData::setAnimation(Animation *p_anim_body, Animation *p_anim_head)
 	{
 		setAnimationBody(p_anim_body);
 		setAnimationHead(p_anim_head);

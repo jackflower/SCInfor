@@ -26,7 +26,7 @@ namespace rendering
 		///
 		///Forward declaration
 		///
-		class CAnimation;
+		class Animation;
 		class CAnimationState;
 	}
 }
@@ -66,7 +66,7 @@ namespace rendering
 			///
 			///@param &animation_name - nazwa animacji
 			///
-			CAnimation* GetAnimation(const std::string& animation_name);
+			Animation* GetAnimation(const std::string& animation_name);
 
 			///
 			///Metoda tworzy funkcjonalny obiekt animowany
@@ -80,7 +80,7 @@ namespace rendering
 			///
 			///@param *p_animation - wskaŸnik na animacjê
 			///
-			CAnimationState* CreateAnimationState(CAnimation *p_animation);
+			CAnimationState* CreateAnimationState(Animation *p_animation);
 
 			///
 			///Metoda usuwa funkcjonalny obiekt animowany
@@ -101,7 +101,7 @@ namespace rendering
 
 		private:
 
-			typedef std::map<std::string, CAnimation*>	AnimationsMap;		//definicja typu - kontener (mapa) na animacje
+			typedef std::map<std::string, Animation*>	AnimationsMap;		//definicja typu - kontener (mapa) na animacje
 			typedef std::set<CAnimationState*>			AnimationStatesSet;	//definicja typu - kontener (set) na funkcjonalne obiekty animowane
 			AnimationsMap								m_animations;		//kontener (mapa) na animacje
 			AnimationStatesSet							m_animation_states;	//kontener (set) na funkcjonalne obiekty animowane

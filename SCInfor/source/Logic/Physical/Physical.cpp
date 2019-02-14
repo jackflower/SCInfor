@@ -8,7 +8,7 @@
 #include "../../Weather/CWeather.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Rendering/Drawable/CDrawableManager.h"
-#include "../../Rendering/Animations/CAnimation.h"
+#include "../../Rendering/Animations/Animation.h"
 #include "../../Rendering/Animations/CAnimationState.h"
 #include "../../Factory/PhysicalTemplate.h"
 #include "../../Utilities/Utilities/Utilities.h"
@@ -720,14 +720,14 @@ namespace logic
 		m_physical_data.setUseShadowHead(use_shadow_head);
 	}
 
-	//Metoda zwraca wskaźnik na animację - obiekt klasy CAnimation (body)
-	CAnimation *Physical::getAnimationBody()
+	//Metoda zwraca wskaźnik na animację - obiekt klasy Animation (body)
+	Animation *Physical::getAnimationBody()
 	{
 		return m_physical_data.getAnimationBody();
 	}
 
 	//Metoda ustawia ustawia wskaźnik na animację (body)
-	void Physical::setAnimationBody(CAnimation* p_anim_body)
+	void Physical::setAnimationBody(Animation* p_anim_body)
 	{
 		m_physical_data.setAnimationBody(p_anim_body);
 	}
@@ -744,14 +744,14 @@ namespace logic
 		m_physical_data.setAnimationBody(anim_body_name);
 	}
 
-	//Metoda zwraca wskaźnik na animację - obiekt klasy CAnimation (head)
-	CAnimation *Physical::getAnimationHead()
+	//Metoda zwraca wskaźnik na animację - obiekt klasy Animation (head)
+	Animation *Physical::getAnimationHead()
 	{
 		return m_physical_data.getAnimationHead();
 	}
 
 	//Metoda ustawia ustawia wskaźnik na animację (head)
-	void Physical::setAnimationHead(CAnimation *p_anim_head)
+	void Physical::setAnimationHead(Animation *p_anim_head)
 	{
 		m_physical_data.setAnimationHead(p_anim_head);
 	}
@@ -769,7 +769,7 @@ namespace logic
 	}
 
 	//Metoda ustawia komplet animacji
-	void Physical::setAnimation(CAnimation *p_anim_body, CAnimation *p_anim_head)
+	void Physical::setAnimation(Animation *p_anim_body, Animation *p_anim_head)
 	{
 		setAnimationBody(p_anim_body);
 		setAnimationHead(p_anim_head);

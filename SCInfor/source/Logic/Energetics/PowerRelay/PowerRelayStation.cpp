@@ -8,7 +8,7 @@
 #include "../../PhysicalManager.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
-#include "../../../Rendering/Animations/CAnimation.h"
+#include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/CAnimationState.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
 #include "../../../Utilities/Random/CRandom.h"

@@ -6,7 +6,7 @@
 
 #include "CAnimationManager.h"
 #include "CAnimationState.h"
-#include "CAnimation.h"
+#include "Animation.h"
 #include "../../Game/Game.h"
 #include "../../XML/CXml.h"
 
@@ -58,9 +58,9 @@ namespace rendering
 		}
 
 		//Metoda zwraca animacjê z kontenera na podstawie nazwy
-		CAnimation* CAnimationManager::GetAnimation(const std::string& animation_name)
+		Animation* CAnimationManager::GetAnimation(const std::string& animation_name)
 		{
-			CAnimation* animationPtr = NULL;
+			Animation* animationPtr = NULL;
 			if (m_animations.find(animation_name) != m_animations.end())
 				animationPtr = m_animations[animation_name];
 
@@ -76,12 +76,12 @@ namespace rendering
 		//Metoda tworzy funkcjonalny obiekt animowany
 		CAnimationState* CAnimationManager::CreateAnimationState(const std::string& animation_name)
 		{
-			CAnimation* animationPtr = GetAnimation(animation_name);
+			Animation* animationPtr = GetAnimation(animation_name);
 			return CreateAnimationState(animationPtr);
 		}
 
 		//Metoda tworzy funkcjonalny obiekt animowany
-		CAnimationState* CAnimationManager::CreateAnimationState(CAnimation *p_animation)
+		CAnimationState* CAnimationManager::CreateAnimationState(Animation *p_animation)
 		{
 			if (p_animation == NULL)
 				return NULL;
@@ -127,8 +127,8 @@ namespace rendering
 			for(xml_node<> *node = xml.GetChild(xml.GetRootNode(),"animation_name"); node; node = xml.GetSibling(node,"animation_name"))
 			{
 				m_animation_name = xml.GetString(node, "name");	//odczutujê nazwê
-				CAnimation* animation = new CAnimation();		//tworzê animacjê
-				animation->SetAnimationName(m_animation_name);	//nadajê nazwê animacji
+				Animation* animation = new Animation();		//tworzê animacjê
+				animation->setAnimationName(m_animation_name);	//nadajê nazwê animacji
 				m_total_frame_time = 0;							//resetujemy kumulacjê czasu trwania animacji
 
 				for(xml_node<> *second_node = xml.GetChild(node,"animation_frame"); second_node; second_node = xml.GetSibling(second_node,"animation_frame"))
@@ -145,10 +145,10 @@ namespace rendering
 					//kumulacja czasów ekspozycji poszczególnych klatek animacji
 					//zatem, pobieraj¹c z wektora ostatni element kontenera
 					//pobieramy tym samym ³¹czny czas trwania animacji
-					//float CAnimation::TotalLength()
+					//float Animation::TotalLength()
 					m_total_frame_time += m_frame_time;
-					m_animations[animation->GetAnimationName()] = animation;
-					animation->m_frames.push_back(CTimedAnimationFrame(m_total_frame_time, CAnimationFrame(m_texture_name, rectangle)));
+					m_animations[animation->getAnimationName()] = animation;
+					animation->m_frames.push_back(CTimedAnimationFrame(m_total_frame_time, AnimationFrame(m_texture_name, rectangle)));
 				}
 			}
 		}

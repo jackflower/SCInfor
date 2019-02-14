@@ -17,7 +17,7 @@ namespace rendering
 		///
 		///Forward declaration
 		///
-		class CAnimation;
+		class Animation;
 
 		///
 		///Klasa reprezentuje mechanizm zamiany nazwy animacji na jej wskaŸnik
@@ -60,14 +60,14 @@ namespace rendering
 			///
 			///Metoda zwraca wskaŸnik na animacjê
 			///
-			CAnimation * GetAnimation() const;
+			Animation * GetAnimation() const;
 
 			///
 			///Metoda wstawia animacjê do s³ownika
 			///
 			///@param *p_anim - wskaŸnik na animacjê
 			///
-			void SetAnim(CAnimation *p_anim);
+			void SetAnim(Animation *p_anim);
 
 			///
 			///Metoda zwraca referencjê na nazwê animacji
@@ -82,7 +82,7 @@ namespace rendering
 		private:
 
 			std::string		m_animation_name;	//nazwa animacji
-			CAnimation*		p_animation;		//wskaŸnik na animacjê
+			Animation*		p_animation;		//wskaŸnik na animacjê
 			bool			m_is_ready;			//flaga, czy wskaŸnik
 												//na animacjê (p_animation) jest zainicjowany,
 												//czy animacja jest gotowa do u¿ycia

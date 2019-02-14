@@ -62,7 +62,7 @@ namespace animated
 		///
 		///Przeciążony operator przypisania kopiowania
 		///
-		///@param copy - stała referencja na obiekt klasy Animation
+		///@param copy - stała referencja na obiekt klasy AnimatedAnimation
 		///
 		AnimatedAnimation & operator=(const AnimatedAnimation & copy);
 

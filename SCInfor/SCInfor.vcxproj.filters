@@ -393,12 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Rendering\Animations\CAnimation.cpp">
-      <Filter>source\Rendering\Animations</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Animations\CAnimationFrame.cpp">
-      <Filter>source\Rendering\Animations</Filter>
-    </ClCompile>
     <ClCompile Include="source\Rendering\Animations\CAnimationManager.cpp">
       <Filter>source\Rendering\Animations</Filter>
     </ClCompile>
@@ -1005,6 +999,12 @@
     <ClCompile Include="source\Rendering\Animated\AnimatedFrame.cpp">
       <Filter>source\Rendering\Animated</Filter>
     </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\Animation.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\AnimationFrame.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1113,12 +1113,6 @@
     </ClInclude>
     <ClInclude Include="source\Map\MapHeader.h">
       <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Animations\CAnimation.h">
-      <Filter>source\Rendering\Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Animations\CAnimationFrame.h">
-      <Filter>source\Rendering\Animations</Filter>
     </ClInclude>
     <ClInclude Include="source\Rendering\Animations\CAnimationManager.h">
       <Filter>source\Rendering\Animations</Filter>
@@ -1764,6 +1758,12 @@
     </ClInclude>
     <ClInclude Include="source\Rendering\Animated\AnimatedFrame.h">
       <Filter>source\Rendering\Animated</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\Animation.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\AnimationFrame.h">
+      <Filter>source\Rendering\Animations</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -280,8 +280,8 @@
     <ClCompile Include="source\Rendering\Animated\Animated.cpp" />
     <ClCompile Include="source\Rendering\Animated\AnimatedAnimation.cpp" />
     <ClCompile Include="source\Rendering\Animated\AnimatedFrame.cpp" />
-    <ClCompile Include="source\Rendering\Animations\CAnimation.cpp" />
-    <ClCompile Include="source\Rendering\Animations\CAnimationFrame.cpp" />
+    <ClCompile Include="source\Rendering\Animations\Animation.cpp" />
+    <ClCompile Include="source\Rendering\Animations\AnimationFrame.cpp" />
     <ClCompile Include="source\Rendering\Animations\CAnimationManager.cpp" />
     <ClCompile Include="source\Rendering\Animations\CAnimationState.cpp" />
     <ClCompile Include="source\Rendering\Animations\CAnimSet.cpp" />
@@ -523,8 +523,8 @@
     <ClInclude Include="source\Rendering\Animated\Animated.h" />
     <ClInclude Include="source\Rendering\Animated\AnimatedAnimation.h" />
     <ClInclude Include="source\Rendering\Animated\AnimatedFrame.h" />
-    <ClInclude Include="source\Rendering\Animations\CAnimation.h" />
-    <ClInclude Include="source\Rendering\Animations\CAnimationFrame.h" />
+    <ClInclude Include="source\Rendering\Animations\Animation.h" />
+    <ClInclude Include="source\Rendering\Animations\AnimationFrame.h" />
     <ClInclude Include="source\Rendering\Animations\CAnimationManager.h" />
     <ClInclude Include="source\Rendering\Animations\CAnimationState.h" />
     <ClInclude Include="source\Rendering\Animations\CAnimSet.h" />

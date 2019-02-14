@@ -5,7 +5,7 @@
 //
 
 #include "CDisplayable.h"
-#include "../Animations/CAnimation.h"
+#include "../Animations/Animation.h"
 #include "../Animations/CAnimationManager.h"
 #include "../Animations/CAnimationState.h"
 #include "../../ResourceManager/CResourceManager.h"
@@ -308,7 +308,7 @@ namespace rendering
 		}
 
 		//Metoda ustawia animacjê
-		void CDisplayable::SetAnimation(CAnimation *p_animation)
+		void CDisplayable::SetAnimation(Animation *p_animation)
 		{
 			//warunki, gdy zamiana animacji siê nie powiedzie:
 			//jeœli wskaŸnik jest NULL - return
@@ -319,7 +319,7 @@ namespace rendering
 			if ((m_animation_state != NULL) && (m_animation_state->GetAnimation() == p_animation))
 				return;
 
-			m_animation_name = p_animation->GetAnimationName();
+			m_animation_name = p_animation->getAnimationName();
 
 			if (m_animation_state)
 				gAnimationManager.DestroyAnimationState(m_animation_state);
@@ -359,25 +359,25 @@ namespace rendering
 			if (m_animation_state)
 			{
 				//tworzymy klatkê animacji i pobieramy bie¿¹c¹ klatkê z CAnimationState
-				CAnimationFrame frame = m_animation_state->GetCurrentFrame();
+				AnimationFrame frame = m_animation_state->GetCurrentFrame();
 
 				//tworzymy wskaŸnik na obiekt klasy CTexture (tekstura)
 				//inicjujemy ten wskaŸnik obrazem pobranym na podstawie nazwy
 				//tekstury, na której znajduje sie klatka animacji.
 				//CResourceManager zwraca na podstawie tej nazwy wskaŸnik na teksturê.
-				CTexture* p_texture = gResourceManager.GetTexture(frame.GetTextureName());
+				CTexture* p_texture = gResourceManager.GetTexture(frame.getTextureName());
 				//ustawiamy flagê wyg³adzania tekstury
 				p_texture->setSmooth(m_smooth);
 
 				//jeœli wskaŸnik nie jest zainicjowany - komunikat o b³êdzie
 				if (!p_texture)
 				{
-					fprintf(stderr, "warning: CDisplayable::Draw: animation: unable to obtain image `%s'\n", frame.GetTextureName().c_str());
+					fprintf(stderr, "warning: CDisplayable::Draw: animation: unable to obtain image `%s'\n", frame.getTextureName().c_str());
 				}
 				else
 				{
 					//w przeciwnym wypadku pobieramy obszar klatki animacji
-					sf::IntRect rect = frame.GetImageRectangle();
+					sf::IntRect rect = frame.getImageRectangle();
 
 					//sprawdzamy, wielkoœæ tekstury (czy ten kod jest potrzebny?)
 					//niech na razie sobie tutaj pole¿y, najwy¿ej mo¿na to zakomentowaæ...

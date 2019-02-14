@@ -9,7 +9,7 @@
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Rendering/Drawable/CDrawableManager.h"
 #include "../../Rendering/Drawable/Layers.h"
-#include "../../Rendering/Animations/CAnimation.h"
+#include "../../Rendering/Animations/Animation.h"
 #include "../../Rendering/Animations/CAnimationState.h"
 #include "../../Factory/MapPhysicalFactory/MapPhysicalTemplate.h"
 

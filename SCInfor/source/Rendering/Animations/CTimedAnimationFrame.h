@@ -7,7 +7,7 @@
 #ifndef H_TIMED_ANIMATION_FRAME_JACK
 #define H_TIMED_ANIMATION_FRAME_JACK
 
-#include "CAnimationFrame.h"
+#include "AnimationFrame.h"
 
 namespace rendering
 {
@@ -39,9 +39,9 @@ namespace rendering
 			///
 			///@param time - czas
 			///
-			///@param &frame - sta³a referencja na obiekt klasy CAnimationFrame
+			///@param &frame - sta³a referencja na obiekt klasy AnimationFrame
 			///
-			CTimedAnimationFrame(float time, const CAnimationFrame& frame);
+			CTimedAnimationFrame(float time, const AnimationFrame& frame);
 
 			///
 			///Destruktor
@@ -59,13 +59,13 @@ namespace rendering
 			float GetFrameTime();
 
 			///
-			///Metoda zwraca referencjê klatki animacji - referencja do obiektu klasy CAnimationFrame
+			///Metoda zwraca referencjê klatki animacji - referencja do obiektu klasy AnimationFrame
 			///
-			CAnimationFrame &GetAnimationFrame();
+			AnimationFrame &GetAnimationFrame();
 
 		private:
 
-			CAnimationFrame m_frame;		//klatka animacji - obiekt klasy CAnimationFrame
+			AnimationFrame m_frame;		//klatka animacji - obiekt klasy AnimationFrame
 			float			m_time;			//czas ekspozycji klatki animacji
 		};
 	}//namespace animation

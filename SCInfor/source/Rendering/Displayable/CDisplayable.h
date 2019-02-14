@@ -29,8 +29,8 @@ namespace rendering
 	namespace animation
 	{
 		class CAnimationState;
-		class CAnimationFrame;
-		class CAnimation;
+		class AnimationFrame;
+		class Animation;
 	}
 }
 
@@ -306,9 +306,9 @@ namespace rendering
 			///
 			///Metoda ustawia animacjÍ
 			///
-			///@param *p_animation - wskaünik na obiekt klasy CAnimation
+			///@param *p_animation - wskaünik na obiekt klasy Animation
 			///
-			void SetAnimation(CAnimation *p_animation);
+			void SetAnimation(Animation *p_animation);
 
 			///
 			///Metoda zwraca wskaünik na obiekt klasy CAnimationState

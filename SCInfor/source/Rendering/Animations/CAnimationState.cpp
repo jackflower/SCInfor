@@ -5,7 +5,7 @@
 //
 
 #include "CAnimationState.h"
-#include "CAnimation.h"
+#include "Animation.h"
 
 namespace rendering
 {
@@ -14,7 +14,7 @@ namespace rendering
 		RTTI_IMPL_NOPARENT(CAnimationState);
 
 		//Pusta klatka animacji i nadanie jej nazwy
-		CAnimationFrame gNullFrame = CAnimationFrame("NULL_ANIMATION");
+		AnimationFrame gNullFrame = AnimationFrame("NULL_ANIMATION");
 
 		//Konstruktor domyœlny
 		CAnimationState::CAnimationState(void)
@@ -41,7 +41,7 @@ namespace rendering
 		}
 
 		//Konstruktor parametryczny
-		CAnimationState::CAnimationState(CAnimation* animation)
+		CAnimationState::CAnimationState(Animation* animation)
 		:
 			m_current_time		(0),
 			m_anim_speed		(1.0f),
@@ -117,14 +117,14 @@ namespace rendering
 			m_is_paused = is_paused;
 		}
 
-		//Metoda zwraca wskaŸnik na obiekt klasy CAnimation
-		CAnimation* CAnimationState::GetAnimation()
+		//Metoda zwraca wskaŸnik na obiekt klasy Animation
+		Animation* CAnimationState::GetAnimation()
 		{
 			return p_animation;
 		}
 
-		//Metoda ustawia wskaŸnik na animacjê - obiekt klasy CAnimation
-		void CAnimationState::SetAnimation(CAnimation* animation)
+		//Metoda ustawia wskaŸnik na animacjê - obiekt klasy Animation
+		void CAnimationState::SetAnimation(Animation* animation)
 		{
 			p_animation = animation;
 		}
@@ -135,7 +135,7 @@ namespace rendering
 			//kumulujemy up³ywaj¹cy czas
 			m_current_time += time * m_anim_speed;				//G³ówna idea - "oszczêdzamy" czas
 
-			float animationLength = p_animation->TotalLength();	//d³ugoœæ animacji to czas równy
+			float animationLength = p_animation->totalLength();	//d³ugoœæ animacji to czas równy
 																//ca³kowitej sumie czasów trwania wszystkich
 																//jej klatek animacji - suma poszczególnych czasów ka¿dej klatki
 
@@ -162,7 +162,7 @@ namespace rendering
 		}
 		
 		//Metoda zwraca sta³¹ referencjê na kolejn¹ (nastêpn¹) klatkê animacji
-		const CAnimationFrame& CAnimationState::GetCurrentFrame()
+		const AnimationFrame& CAnimationState::GetCurrentFrame()
 		{
 			if (p_animation->m_frames.empty())								//jeœli w kontenerze nie ma klatek animacji
 					return gNullFrame;										//zwracamy pust¹ animacjê
@@ -201,7 +201,7 @@ namespace rendering
 			if (position < 0.0f) position = 0.0f;
 			if (position > 1.0f) position = 1.0f;
 
-			float animationLength = p_animation->TotalLength();
+			float animationLength = p_animation->totalLength();
 			m_current_time = animationLength * position;
 		}
 	}//namespace animation

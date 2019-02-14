@@ -29,7 +29,7 @@ namespace rendering
 		}
 
 		//Konstruktor paramatryczny
-		CTimedAnimationFrame::CTimedAnimationFrame(float time, const CAnimationFrame& frame)
+		CTimedAnimationFrame::CTimedAnimationFrame(float time, const AnimationFrame& frame)
 		:
 			m_time	(time),
 			m_frame	(frame)
@@ -54,8 +54,8 @@ namespace rendering
 			return m_time;
 		}
 
-		//Metoda zwraca referencjê klatki animacji - referencja do obiektu klasy CAnimationFrame
-		CAnimationFrame &CTimedAnimationFrame::GetAnimationFrame()
+		//Metoda zwraca referencjê klatki animacji - referencja do obiektu klasy AnimationFrame
+		AnimationFrame &CTimedAnimationFrame::GetAnimationFrame()
 		{
 			return m_frame;
 		}

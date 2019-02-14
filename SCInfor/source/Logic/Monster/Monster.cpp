@@ -9,7 +9,7 @@
 #include "../Physical/PhysicalInfo/PhysicalInfo.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Rendering/Animations/CAnimationState.h"
-#include "../../Rendering/Animations/CAnimation.h"
+#include "../../Rendering/Animations/Animation.h"
 #include "../../Game/Game.h"
 #include <SFML/Window.hpp>
 

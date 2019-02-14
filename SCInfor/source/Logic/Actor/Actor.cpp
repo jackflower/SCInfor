@@ -541,7 +541,7 @@ namespace logic
 		if (p_anim_set)//body
 		{
 			//płynna zmiana animacji - body
-			CAnimation *curr_anim = getAnimationBody();
+			Animation *curr_anim = getAnimationBody();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
 			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->GetAnims();
@@ -587,7 +587,7 @@ namespace logic
 		if (p_anim_set)//head
 		{
 			//płynna zmiana animacji - head
-			CAnimation *curr_anim = getAnimationHead();
+			Animation *curr_anim = getAnimationHead();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
 			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->GetAnims();

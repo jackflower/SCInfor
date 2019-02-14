@@ -22,7 +22,7 @@ namespace rendering
 		///
 		///Forward declaration
 		///
-		class CAnimation;
+		class Animation;
 
 		///
 		///Forward declaration
@@ -79,7 +79,7 @@ namespace rendering
 			///
 			///@param *p_anim - wskaŸnik na animacjê
 			///
-			void SetAnimation(int anim_handle, CAnimation *p_anim);
+			void SetAnimation(int anim_handle, Animation *p_anim);
 
 			///
 			///Metoda ustawia animacjê
@@ -102,282 +102,282 @@ namespace rendering
 			///
 			///@param anim_handle - uchwyt animacji
 			///
-			CAnimation *GetAnim(int anim_handle);
+			Animation *GetAnim(int anim_handle);
 	    
 			//metody pomocnicze
 			
 			//p h y s i c a l
 			//body animations
-			inline CAnimation *GetDefaultAnimBody				()	{ return GetAnim(anim_handle_body_Default);			}
-			inline CAnimation *GetMoveAnimBody					()	{ return GetAnim(anim_handle_body_Move);			}
-			inline CAnimation *GetDeathAnimBody					()	{ return GetAnim(anim_handle_body_Death);			}
+			inline Animation *GetDefaultAnimBody				()	{ return GetAnim(anim_handle_body_Default);			}
+			inline Animation *GetMoveAnimBody					()	{ return GetAnim(anim_handle_body_Move);			}
+			inline Animation *GetDeathAnimBody					()	{ return GetAnim(anim_handle_body_Death);			}
 			//head animations
-			inline CAnimation *GetDefaultAnimHead				()	{ return GetAnim(anim_handle_head_Default);			}
-			inline CAnimation *GetShotAnimHead					()	{ return GetAnim(anim_handle_head_Shot);			}
-			inline CAnimation *GetAmmoLoadingAnimHead			()	{ return GetAnim(anim_handle_head_Ammo_Loading);	}
-			inline CAnimation *GetDeathAnimHead					()	{ return GetAnim(anim_handle_head_Death);			}
+			inline Animation *GetDefaultAnimHead				()	{ return GetAnim(anim_handle_head_Default);			}
+			inline Animation *GetShotAnimHead					()	{ return GetAnim(anim_handle_head_Shot);			}
+			inline Animation *GetAmmoLoadingAnimHead			()	{ return GetAnim(anim_handle_head_Ammo_Loading);	}
+			inline Animation *GetDeathAnimHead					()	{ return GetAnim(anim_handle_head_Death);			}
 			
 			//a c t o r
 			//body animations
-			inline CAnimation *GetUnitBodyDefaultAnim			() { return GetAnim(anim_handle_body_ActorDefault);		}
-			inline CAnimation *GetUnitBodyMovetAnim				() { return GetAnim(anim_handle_body_ActorMove);		}
-			inline CAnimation *GetUnitBodyAttackAnim			() { return GetAnim(anim_handle_body_ActorAttack);		}
-			inline CAnimation *GetUnitBodyDefenseAnim			() { return GetAnim(anim_handle_body_ActorDefense);		}
-			inline CAnimation *GetUnitBodyDamageAnim			() { return GetAnim(anim_handle_body_ActorDamage);		}
-			inline CAnimation *GetUnitBodyDeathAnim				() { return GetAnim(anim_handle_body_ActorDeath);		}
+			inline Animation *GetUnitBodyDefaultAnim			() { return GetAnim(anim_handle_body_ActorDefault);		}
+			inline Animation *GetUnitBodyMovetAnim				() { return GetAnim(anim_handle_body_ActorMove);		}
+			inline Animation *GetUnitBodyAttackAnim			() { return GetAnim(anim_handle_body_ActorAttack);		}
+			inline Animation *GetUnitBodyDefenseAnim			() { return GetAnim(anim_handle_body_ActorDefense);		}
+			inline Animation *GetUnitBodyDamageAnim			() { return GetAnim(anim_handle_body_ActorDamage);		}
+			inline Animation *GetUnitBodyDeathAnim				() { return GetAnim(anim_handle_body_ActorDeath);		}
 			//head animations
-			inline CAnimation *GetUnitHeadDefaultAnim			() { return GetAnim(anim_handle_head_ActorDefault);		}
-			inline CAnimation *GetUnitHeadMovetAnim				() { return GetAnim(anim_handle_head_ActorMove);		}
-			inline CAnimation *GetUnitHeadAttackAnim			() { return GetAnim(anim_handle_head_ActorAttack);		}
-			inline CAnimation *GetUnitHeadDefenseAnim			() { return GetAnim(anim_handle_head_ActorDefense);		}
-			inline CAnimation *GetUnitHeadDamageAnim			() { return GetAnim(anim_handle_head_ActorDamage);		}
-			inline CAnimation *GetUnitHeadDeathAnim				() { return GetAnim(anim_handle_head_ActorDeath);		}
+			inline Animation *GetUnitHeadDefaultAnim			() { return GetAnim(anim_handle_head_ActorDefault);		}
+			inline Animation *GetUnitHeadMovetAnim				() { return GetAnim(anim_handle_head_ActorMove);		}
+			inline Animation *GetUnitHeadAttackAnim			() { return GetAnim(anim_handle_head_ActorAttack);		}
+			inline Animation *GetUnitHeadDefenseAnim			() { return GetAnim(anim_handle_head_ActorDefense);		}
+			inline Animation *GetUnitHeadDamageAnim			() { return GetAnim(anim_handle_head_ActorDamage);		}
+			inline Animation *GetUnitHeadDeathAnim				() { return GetAnim(anim_handle_head_ActorDeath);		}
 
 			//r o b o t
 			//body animations
-			inline CAnimation *GetRobotBodyDefaultAnim			() { return GetAnim(anim_handle_body_RobotDefault);			}
+			inline Animation *GetRobotBodyDefaultAnim			() { return GetAnim(anim_handle_body_RobotDefault);			}
 			//head animations
-			inline CAnimation *GetRobotHeadDefaultAnim			() { return GetAnim(anim_handle_head_RobotDefault);			}
-			inline CAnimation *GetRobotHeadAttackOpenAnim		() { return GetAnim(anim_handle_head_RobotAttackOpen);		}
-			inline CAnimation *GetRobotHeadAttackAnim			() { return GetAnim(anim_handle_head_RobotAttack);			}
-			inline CAnimation *GetRobotHeadAttackCloseAnim		() { return GetAnim(anim_handle_head_RobotAttackClose);		}
-			inline CAnimation *GetRobotHeadDefenseOpenAnim		() { return GetAnim(anim_handle_head_RobotDefenseOpen);		}
-			inline CAnimation *GetRobotHeadDefenseAnim			() { return GetAnim(anim_handle_head_RobotDefense);			}
-			inline CAnimation *GetRobotHeadDefenseCloseAnim		() { return GetAnim(anim_handle_head_RobotDefenseClose);	}
-			inline CAnimation *GetRobotHeadDamageAnim			() { return GetAnim(anim_handle_head_RobotDamage);			}
-			inline CAnimation *GetRobotHeadDeathAnim			() { return GetAnim(anim_handle_head_RobotDeath);			}
+			inline Animation *GetRobotHeadDefaultAnim			() { return GetAnim(anim_handle_head_RobotDefault);			}
+			inline Animation *GetRobotHeadAttackOpenAnim		() { return GetAnim(anim_handle_head_RobotAttackOpen);		}
+			inline Animation *GetRobotHeadAttackAnim			() { return GetAnim(anim_handle_head_RobotAttack);			}
+			inline Animation *GetRobotHeadAttackCloseAnim		() { return GetAnim(anim_handle_head_RobotAttackClose);		}
+			inline Animation *GetRobotHeadDefenseOpenAnim		() { return GetAnim(anim_handle_head_RobotDefenseOpen);		}
+			inline Animation *GetRobotHeadDefenseAnim			() { return GetAnim(anim_handle_head_RobotDefense);			}
+			inline Animation *GetRobotHeadDefenseCloseAnim		() { return GetAnim(anim_handle_head_RobotDefenseClose);	}
+			inline Animation *GetRobotHeadDamageAnim			() { return GetAnim(anim_handle_head_RobotDamage);			}
+			inline Animation *GetRobotHeadDeathAnim			() { return GetAnim(anim_handle_head_RobotDeath);			}
 
 			//e n e r g y
 			//animation energy (energy)
 			//body
-			inline CAnimation *GetEnergyBodyDefaultAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyDefault);	}
-			inline CAnimation *GetEnergyBodyReserveAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyReserve);	}
-			inline CAnimation *GetEnergyBodyEmptyAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyEmpty);	}
-			inline CAnimation *GetEnergyBodyDamageAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyDamage);	}
-			inline CAnimation *GetEnergyBodyDeathAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyDeath);	}
+			inline Animation *GetEnergyBodyDefaultAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyDefault);	}
+			inline Animation *GetEnergyBodyReserveAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyReserve);	}
+			inline Animation *GetEnergyBodyEmptyAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyEmpty);	}
+			inline Animation *GetEnergyBodyDamageAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyDamage);	}
+			inline Animation *GetEnergyBodyDeathAnim			()	{ return GetAnim(anim_equipment_handle_EnergyBodyDeath);	}
 			//head
-			inline CAnimation *GetEnergyHeadDefaultAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadDefault);	}
-			inline CAnimation *GetEnergyHeadReserveAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadReserve);	}
-			inline CAnimation *GetEnergyHeadEmptyAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadEmpty);	}
-			inline CAnimation *GetEnergyHeadDamageAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadDamage);	}
-			inline CAnimation *GetEnergyHeadDeathAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadDeath);	}
+			inline Animation *GetEnergyHeadDefaultAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadDefault);	}
+			inline Animation *GetEnergyHeadReserveAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadReserve);	}
+			inline Animation *GetEnergyHeadEmptyAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadEmpty);	}
+			inline Animation *GetEnergyHeadDamageAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadDamage);	}
+			inline Animation *GetEnergyHeadDeathAnim			()	{ return GetAnim(anim_equipment_handle_EnergyHeadDeath);	}
 
 			//e n g i n e
 			//animation engine
 			//body
-			inline CAnimation *GetEngineBodyDefaultAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyDefault);	}
-			inline CAnimation *GetEngineBodyStartAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyStart);	}
-			inline CAnimation *GetEngineBodyStopAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyStop);		}
-			inline CAnimation *GetEngineBodyDamageAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyDamage);	}
-			inline CAnimation *GetEngineBodyDeathAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyDeath);	}
+			inline Animation *GetEngineBodyDefaultAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyDefault);	}
+			inline Animation *GetEngineBodyStartAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyStart);	}
+			inline Animation *GetEngineBodyStopAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyStop);		}
+			inline Animation *GetEngineBodyDamageAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyDamage);	}
+			inline Animation *GetEngineBodyDeathAnim			()	{ return GetAnim(anim_equipment_handle_EngineBodyDeath);	}
 			//head
-			inline CAnimation *GetEngineHeadDefaultAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadDefault);	}
-			inline CAnimation *GetEngineHeadStartAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadStart);	}
-			inline CAnimation *GetEngineHeadStopAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadStop);		}
-			inline CAnimation *GetEngineHeadDamageAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadDamage);	}
-			inline CAnimation *GetEngineHeadDeathAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadDeath);	}
+			inline Animation *GetEngineHeadDefaultAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadDefault);	}
+			inline Animation *GetEngineHeadStartAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadStart);	}
+			inline Animation *GetEngineHeadStopAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadStop);		}
+			inline Animation *GetEngineHeadDamageAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadDamage);	}
+			inline Animation *GetEngineHeadDeathAnim			()	{ return GetAnim(anim_equipment_handle_EngineHeadDeath);	}
 
 			//f u e l t a n k
 			//animation fueltank
 			//body
-			inline CAnimation *GetFuelBodyDefaultAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankBodyDefault);	}
-			inline CAnimation *GetFuelBodyReserveAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankBodyReserve);	}
-			inline CAnimation *GetFuelBodyEmptyAnim				()	{ return GetAnim(anim_equipment_handle_FuelTankBodyEmpty);		}
-			inline CAnimation *GetFuelBodyDamageAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankBodyDamage);		}
+			inline Animation *GetFuelBodyDefaultAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankBodyDefault);	}
+			inline Animation *GetFuelBodyReserveAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankBodyReserve);	}
+			inline Animation *GetFuelBodyEmptyAnim				()	{ return GetAnim(anim_equipment_handle_FuelTankBodyEmpty);		}
+			inline Animation *GetFuelBodyDamageAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankBodyDamage);		}
 			//head
-			inline CAnimation *GetFuelHeadDefaultAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankHeadDefault);	}
-			inline CAnimation *GetFuelHeadReserveAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankHeadReserve);	}
-			inline CAnimation *GetFuelHeadEmptyAnim				()	{ return GetAnim(anim_equipment_handle_FuelTankHeadEmpty);		}
-			inline CAnimation *GetFuelHeadDamageAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankHeadDamage);		}
+			inline Animation *GetFuelHeadDefaultAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankHeadDefault);	}
+			inline Animation *GetFuelHeadReserveAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankHeadReserve);	}
+			inline Animation *GetFuelHeadEmptyAnim				()	{ return GetAnim(anim_equipment_handle_FuelTankHeadEmpty);		}
+			inline Animation *GetFuelHeadDamageAnim			()	{ return GetAnim(anim_equipment_handle_FuelTankHeadDamage);		}
 
 			//e n e r g y t a n k
 			//animation energytank
 			//body
-			inline CAnimation *GetEnergyTankBodyDefaultAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankBodyDefault);		}
-			inline CAnimation *GetEnergyTankBodyReserveAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankBodyReserve);		}
-			inline CAnimation *GetEnergyTankBodyEmptyAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankBodyEmpty);		}
-			inline CAnimation *GetEnergyTankBodyDamageAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankBodyDamage);		}
+			inline Animation *GetEnergyTankBodyDefaultAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankBodyDefault);		}
+			inline Animation *GetEnergyTankBodyReserveAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankBodyReserve);		}
+			inline Animation *GetEnergyTankBodyEmptyAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankBodyEmpty);		}
+			inline Animation *GetEnergyTankBodyDamageAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankBodyDamage);		}
 			//head
-			inline CAnimation *GetEnergyTankHeadDefaultAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankHeadDefault);		}
-			inline CAnimation *GetEnergyTankHeadReserveAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankHeadReserve);		}
-			inline CAnimation *GetEnergyTankHeadEmptyAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankHeadEmpty);		}
-			inline CAnimation *GetEnergyTankHeadDamageAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankHeadDamage);		}
+			inline Animation *GetEnergyTankHeadDefaultAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankHeadDefault);		}
+			inline Animation *GetEnergyTankHeadReserveAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankHeadReserve);		}
+			inline Animation *GetEnergyTankHeadEmptyAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankHeadEmpty);		}
+			inline Animation *GetEnergyTankHeadDamageAnim		()	{ return GetAnim(anim_equipment_handle_EnergyTankHeadDamage);		}
 
 			//l i g h t i n g  e q u i p m e n t
 			//animation lightingequipment
 			//body
-			inline CAnimation *GetLightingEquipmentBodyLightDafaultAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightDefault);	}
-			inline CAnimation *GetLightingEquipmentBodyLightOnAnim		()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightOn);		}
-			inline CAnimation *GetLightingEquipmentBodyLightOffAnim		()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightOff);		}
-			inline CAnimation *GetLightingEquipmentBodyLightDamageAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightDamage);	}
-			inline CAnimation *GetLightingEquipmentBodyLightDeathAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightDeath);	}
+			inline Animation *GetLightingEquipmentBodyLightDafaultAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightDefault);	}
+			inline Animation *GetLightingEquipmentBodyLightOnAnim		()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightOn);		}
+			inline Animation *GetLightingEquipmentBodyLightOffAnim		()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightOff);		}
+			inline Animation *GetLightingEquipmentBodyLightDamageAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightDamage);	}
+			inline Animation *GetLightingEquipmentBodyLightDeathAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentBodyLightDeath);	}
 			//head
-			inline CAnimation *GetLightingEquipmentHeadLightDafaultAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightDefault);	}
-			inline CAnimation *GetLightingEquipmentHeadLightOnAnim		()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightOn);		}
-			inline CAnimation *GetLightingEquipmentHeadLightOffAnim		()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightOff);		}
-			inline CAnimation *GetLightingEquipmentHeadLightDamageAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightDamage);	}
-			inline CAnimation *GetLightingEquipmentHeadLightDeathAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightDeath);	}
+			inline Animation *GetLightingEquipmentHeadLightDafaultAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightDefault);	}
+			inline Animation *GetLightingEquipmentHeadLightOnAnim		()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightOn);		}
+			inline Animation *GetLightingEquipmentHeadLightOffAnim		()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightOff);		}
+			inline Animation *GetLightingEquipmentHeadLightDamageAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightDamage);	}
+			inline Animation *GetLightingEquipmentHeadLightDeathAnim	()	{ return GetAnim(anim_equipment_handle_LightingEquipmentHeadLightDeath);	}
 			
 			//g u n
 			//animation gun
 			//body
-			inline CAnimation *GetGunBodyDefaultAnim		()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunDefalt);		}
-			inline CAnimation *GetGunBodyShootAnim			()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunShoot);		}
-			inline CAnimation *GetGunBodyAmmoLoadingAnim	()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunAmmoLoading);	}
-			inline CAnimation *GetGunBodyAmmoEmptyAnim		()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunAmmoEmpty);	}
-			inline CAnimation *GetGunBodyDamageAnim			()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunDamage);		}
-			inline CAnimation *GetGunBodyServiceAnim		()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunService);		}
-			inline CAnimation *GetGunBodyDeathAnim			()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunDeath);		}
+			inline Animation *GetGunBodyDefaultAnim		()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunDefalt);		}
+			inline Animation *GetGunBodyShootAnim			()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunShoot);		}
+			inline Animation *GetGunBodyAmmoLoadingAnim	()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunAmmoLoading);	}
+			inline Animation *GetGunBodyAmmoEmptyAnim		()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunAmmoEmpty);	}
+			inline Animation *GetGunBodyDamageAnim			()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunDamage);		}
+			inline Animation *GetGunBodyServiceAnim		()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunService);		}
+			inline Animation *GetGunBodyDeathAnim			()	{ return GetAnim(anim_equipment_weapon_handle_BodyGunDeath);		}
 			//head
-			inline CAnimation *GetGunHeadDefaultAnim		()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunDefalt);		}
-			inline CAnimation *GetGunHeadShootAnim			()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunShoot);		}
-			inline CAnimation *GetGunHeadAmmoLoadingAnim	()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunAmmoLoading);	}
-			inline CAnimation *GetGunHeadAmmoEmptyAnim		()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunAmmoEmpty);	}
-			inline CAnimation *GetGunHeadDamageAnim			()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunDamage);		}
-			inline CAnimation *GetGunHeadServiceAnim		()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunService); }
-			inline CAnimation *GetGunHeadDeathAnim			()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunDeath);		}
+			inline Animation *GetGunHeadDefaultAnim		()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunDefalt);		}
+			inline Animation *GetGunHeadShootAnim			()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunShoot);		}
+			inline Animation *GetGunHeadAmmoLoadingAnim	()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunAmmoLoading);	}
+			inline Animation *GetGunHeadAmmoEmptyAnim		()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunAmmoEmpty);	}
+			inline Animation *GetGunHeadDamageAnim			()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunDamage);		}
+			inline Animation *GetGunHeadServiceAnim		()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunService); }
+			inline Animation *GetGunHeadDeathAnim			()	{ return GetAnim(anim_equipment_weapon_handle_HeadGunDeath);		}
 
 			//a m m o
 			//animation ammo
-			inline CAnimation *GetAmmoDefaultAnim				()	{ return GetAnim(anim_equipment_handle_AmmoDefault);	}
-			inline CAnimation *GetAmmoReserveAnim				()	{ return GetAnim(anim_equipment_handle_AmmoReserve);	}
-			inline CAnimation *GetAmmoEmptyAnim					()	{ return GetAnim(anim_equipment_handle_AmmoEmpty);		}
-			inline CAnimation *GetAmmoDamageAnim				()	{ return GetAnim(anim_equipment_handle_AmmoDamage);		}
+			inline Animation *GetAmmoDefaultAnim				()	{ return GetAnim(anim_equipment_handle_AmmoDefault);	}
+			inline Animation *GetAmmoReserveAnim				()	{ return GetAnim(anim_equipment_handle_AmmoReserve);	}
+			inline Animation *GetAmmoEmptyAnim					()	{ return GetAnim(anim_equipment_handle_AmmoEmpty);		}
+			inline Animation *GetAmmoDamageAnim				()	{ return GetAnim(anim_equipment_handle_AmmoDamage);		}
 
 			//w i n d t u r b i n e
 			//animation windturbine
 			//body
-			inline CAnimation *GetWindTurbineBodyDefaultAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineBodyDefault);			}
-			inline CAnimation *GetWindTurbineBodyDamagetAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineBodyDamage);			}
-			inline CAnimation *GetWindTurbineBodyDeathAnim			()	{ return GetAnim(anim_equipment_handle_WindTurbineBodyDeath);			}
+			inline Animation *GetWindTurbineBodyDefaultAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineBodyDefault);			}
+			inline Animation *GetWindTurbineBodyDamagetAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineBodyDamage);			}
+			inline Animation *GetWindTurbineBodyDeathAnim			()	{ return GetAnim(anim_equipment_handle_WindTurbineBodyDeath);			}
 			//head
-			inline CAnimation *GetWindTurbineHeadDefaultAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadDefault);			}
-			inline CAnimation *GetWindTurbineHeadCargoOpenAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadCargoOpen);		}
-			inline CAnimation *GetWindTurbineHeadCargoCloseAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadCargoClose);		}
-			inline CAnimation *GetWindTurbineHeadUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadUpdateEnergy);	}
-			inline CAnimation *GetWindTurbineHeadDamagetAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadDamage);			}
-			inline CAnimation *GetWindTurbineHeadDeathAnim			()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadDeath);			}
+			inline Animation *GetWindTurbineHeadDefaultAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadDefault);			}
+			inline Animation *GetWindTurbineHeadCargoOpenAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadCargoOpen);		}
+			inline Animation *GetWindTurbineHeadCargoCloseAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadCargoClose);		}
+			inline Animation *GetWindTurbineHeadUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadUpdateEnergy);	}
+			inline Animation *GetWindTurbineHeadDamagetAnim		()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadDamage);			}
+			inline Animation *GetWindTurbineHeadDeathAnim			()	{ return GetAnim(anim_equipment_handle_WindTurbineHeadDeath);			}
 
 			//s o l a r c e l l
 			//animation solarcell
 			//body
-			inline CAnimation *GetSolarCellBodyDefaultAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellBodyDefault);		}
-			inline CAnimation *GetSolarCellBodyUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_SolarCellBodyUpdateEnergy);	}
-			inline CAnimation *GetSolarCellBodyDamageAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellBodyDamage);		}
-			inline CAnimation *GetSolarCellBodyDeathAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellBodyDeath);			}
+			inline Animation *GetSolarCellBodyDefaultAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellBodyDefault);		}
+			inline Animation *GetSolarCellBodyUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_SolarCellBodyUpdateEnergy);	}
+			inline Animation *GetSolarCellBodyDamageAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellBodyDamage);		}
+			inline Animation *GetSolarCellBodyDeathAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellBodyDeath);			}
 			//head
-			inline CAnimation *GetSolarCellHeadDefaultAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellHeadDefault);		}
-			inline CAnimation *GetSolarCellHeadUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_SolarCellHeadUpdateEnergy);	}
-			inline CAnimation *GetSolarCellHeadDamageAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellHeadDamage);		}
-			inline CAnimation *GetSolarCellHeadDeathAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellHeadDeath);			}
+			inline Animation *GetSolarCellHeadDefaultAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellHeadDefault);		}
+			inline Animation *GetSolarCellHeadUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_SolarCellHeadUpdateEnergy);	}
+			inline Animation *GetSolarCellHeadDamageAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellHeadDamage);		}
+			inline Animation *GetSolarCellHeadDeathAnim		()	{ return GetAnim(anim_equipment_handle_SolarCellHeadDeath);			}
 
 			//w i n d p o w e r s t a t i o n
 			//animation windpowerstation
 			//body
-			inline CAnimation *GetWindPowerStationBodyDefaultAnim		()	{ return GetAnim(anim_equipment_handle_WindPowerStationBodyDefault);		}
-			inline CAnimation *GetWindPowerStationBodyUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_WindPowerStationBodyUpdateEnergy);	}
-			inline CAnimation *GetWindPowerStationBodyDamageAnim		()	{ return GetAnim(anim_equipment_handle_WindPowerStationBodyDamage);			}
-			inline CAnimation *GetWindPowerStationBodyDeathAnim			()	{ return GetAnim(anim_equipment_handle_WindPowerStationBodyDeath);			}
+			inline Animation *GetWindPowerStationBodyDefaultAnim		()	{ return GetAnim(anim_equipment_handle_WindPowerStationBodyDefault);		}
+			inline Animation *GetWindPowerStationBodyUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_WindPowerStationBodyUpdateEnergy);	}
+			inline Animation *GetWindPowerStationBodyDamageAnim		()	{ return GetAnim(anim_equipment_handle_WindPowerStationBodyDamage);			}
+			inline Animation *GetWindPowerStationBodyDeathAnim			()	{ return GetAnim(anim_equipment_handle_WindPowerStationBodyDeath);			}
 			//head
-			inline CAnimation *GetWindPowerStationHeadDefaultAnim		()	{ return GetAnim(anim_equipment_handle_WindPowerStationHeadDefault);		}
-			inline CAnimation *GetWindPowerStationHeadUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_WindPowerStationHeadUpdateEnergy);	}
-			inline CAnimation *GetWindPowerStationHeadDamageAnim		()	{ return GetAnim(anim_equipment_handle_WindPowerStationHeadDamage);			}
-			inline CAnimation *GetWindPowerStationHeadDeathAnim			()	{ return GetAnim(anim_equipment_handle_WindPowerStationHeadDeath);			}
+			inline Animation *GetWindPowerStationHeadDefaultAnim		()	{ return GetAnim(anim_equipment_handle_WindPowerStationHeadDefault);		}
+			inline Animation *GetWindPowerStationHeadUpdateEnergyAnim	()	{ return GetAnim(anim_equipment_handle_WindPowerStationHeadUpdateEnergy);	}
+			inline Animation *GetWindPowerStationHeadDamageAnim		()	{ return GetAnim(anim_equipment_handle_WindPowerStationHeadDamage);			}
+			inline Animation *GetWindPowerStationHeadDeathAnim			()	{ return GetAnim(anim_equipment_handle_WindPowerStationHeadDeath);			}
 
 			//p o w e r r e l a y s t a t i on
 			//animation powerrelaystation
 			//body
-			inline CAnimation *GetPowerRelayStationBodyDefaultAnim				() { return GetAnim(anim_handle_body_PowerRelayStationDefault);				}
-			inline CAnimation *GetPowerRelayStationBodyUpdateConnectionAnim		() { return GetAnim(anim_handle_body_PowerRelayStationUpdateConnection);	}
-			inline CAnimation *GetPowerRelayStationBodyDisconnectAnim			() { return GetAnim(anim_handle_body_PowerRelayStationDisconnect);			}
-			inline CAnimation *GetPowerRelayStationBodyDamageAnim				() { return GetAnim(anim_handle_body_PowerRelayStationDamage);				}
-			inline CAnimation *GetPowerRelayStationBodyDeathAnim				() { return GetAnim(anim_handle_body_PowerRelayStationDeath);				}
+			inline Animation *GetPowerRelayStationBodyDefaultAnim				() { return GetAnim(anim_handle_body_PowerRelayStationDefault);				}
+			inline Animation *GetPowerRelayStationBodyUpdateConnectionAnim		() { return GetAnim(anim_handle_body_PowerRelayStationUpdateConnection);	}
+			inline Animation *GetPowerRelayStationBodyDisconnectAnim			() { return GetAnim(anim_handle_body_PowerRelayStationDisconnect);			}
+			inline Animation *GetPowerRelayStationBodyDamageAnim				() { return GetAnim(anim_handle_body_PowerRelayStationDamage);				}
+			inline Animation *GetPowerRelayStationBodyDeathAnim				() { return GetAnim(anim_handle_body_PowerRelayStationDeath);				}
 			//head
-			inline CAnimation *GetPowerRelayStationHeadDefaultAnim				() { return GetAnim(anim_handle_head_PowerRelayStationDefault);				}
-			inline CAnimation *GetPowerRelayStationHeadUpdateConnectionAnim		() { return GetAnim(anim_handle_head_PowerRelayStationUpdateConnection);	}
-			inline CAnimation *GetPowerRelayStationHeadDisconnectAnim			() { return GetAnim(anim_handle_head_PowerRelayStationDisconnect);			}
-			inline CAnimation *GetPowerRelayStationHeadDamageAnim				() { return GetAnim(anim_handle_head_PowerRelayStationDamage);				}
-			inline CAnimation *GetPowerRelayStationHeadDeathAnim				() { return GetAnim(anim_handle_head_PowerRelayStationDeath);				}
+			inline Animation *GetPowerRelayStationHeadDefaultAnim				() { return GetAnim(anim_handle_head_PowerRelayStationDefault);				}
+			inline Animation *GetPowerRelayStationHeadUpdateConnectionAnim		() { return GetAnim(anim_handle_head_PowerRelayStationUpdateConnection);	}
+			inline Animation *GetPowerRelayStationHeadDisconnectAnim			() { return GetAnim(anim_handle_head_PowerRelayStationDisconnect);			}
+			inline Animation *GetPowerRelayStationHeadDamageAnim				() { return GetAnim(anim_handle_head_PowerRelayStationDamage);				}
+			inline Animation *GetPowerRelayStationHeadDeathAnim				() { return GetAnim(anim_handle_head_PowerRelayStationDeath);				}
 
 			//c o m m u n i c a t i o n
 			//animation communication
 			//body
-			inline CAnimation *GetCommunicationBodyDefaultAnim			() { return GetAnim(anim_handle_body_CommunicationDefault);			}
-			inline CAnimation *GetCommunicationBodySearchAnim			() { return GetAnim(anim_handle_body_CommunicationSearch);			}
-			inline CAnimation *GetCommunicationBodyLoginAnim			() { return GetAnim(anim_handle_body_CommunicationLogin);			}	
-			inline CAnimation *GetCommunicationBodyAuthorizationAnim	() { return GetAnim(anim_handle_body_CommunicationAuthorization);	}
-			inline CAnimation *GetCommunicationBodyUpdateAnim			() { return GetAnim(anim_handle_body_CommunicationUpdate);			}
-			inline CAnimation *GetCommunicationBodyDamageAnim			() { return GetAnim(anim_handle_body_CommunicationDamage);			}
-			inline CAnimation *GetCommunicationBodyDeathAnim			() { return GetAnim(anim_handle_body_CommunicationDeath);			}
+			inline Animation *GetCommunicationBodyDefaultAnim			() { return GetAnim(anim_handle_body_CommunicationDefault);			}
+			inline Animation *GetCommunicationBodySearchAnim			() { return GetAnim(anim_handle_body_CommunicationSearch);			}
+			inline Animation *GetCommunicationBodyLoginAnim			() { return GetAnim(anim_handle_body_CommunicationLogin);			}	
+			inline Animation *GetCommunicationBodyAuthorizationAnim	() { return GetAnim(anim_handle_body_CommunicationAuthorization);	}
+			inline Animation *GetCommunicationBodyUpdateAnim			() { return GetAnim(anim_handle_body_CommunicationUpdate);			}
+			inline Animation *GetCommunicationBodyDamageAnim			() { return GetAnim(anim_handle_body_CommunicationDamage);			}
+			inline Animation *GetCommunicationBodyDeathAnim			() { return GetAnim(anim_handle_body_CommunicationDeath);			}
 			//head
-			inline CAnimation *GetCommunicationHeadDefaultAnim			() { return GetAnim(anim_handle_head_CommunicationDefault);			}
-			inline CAnimation *GetCommunicationHeadSearchAnim			() { return GetAnim(anim_handle_head_CommunicationSearch);			}
-			inline CAnimation *GetCommunicationHeadLoginAnim			() { return GetAnim(anim_handle_head_CommunicationLogin);			}
-			inline CAnimation *GetCommunicationHeadAuthorizationAnim	() { return GetAnim(anim_handle_head_CommunicationAuthorization);	}
-			inline CAnimation *GetCommunicationHeadUpdateAnim			() { return GetAnim(anim_handle_head_CommunicationUpdate);			}
-			inline CAnimation *GetCommunicationHeadDamageAnim			() { return GetAnim(anim_handle_head_CommunicationDamage);			}
-			inline CAnimation *GetCommunicationHeadDeathAnim			() { return GetAnim(anim_handle_head_CommunicationDeath);			}
+			inline Animation *GetCommunicationHeadDefaultAnim			() { return GetAnim(anim_handle_head_CommunicationDefault);			}
+			inline Animation *GetCommunicationHeadSearchAnim			() { return GetAnim(anim_handle_head_CommunicationSearch);			}
+			inline Animation *GetCommunicationHeadLoginAnim			() { return GetAnim(anim_handle_head_CommunicationLogin);			}
+			inline Animation *GetCommunicationHeadAuthorizationAnim	() { return GetAnim(anim_handle_head_CommunicationAuthorization);	}
+			inline Animation *GetCommunicationHeadUpdateAnim			() { return GetAnim(anim_handle_head_CommunicationUpdate);			}
+			inline Animation *GetCommunicationHeadDamageAnim			() { return GetAnim(anim_handle_head_CommunicationDamage);			}
+			inline Animation *GetCommunicationHeadDeathAnim			() { return GetAnim(anim_handle_head_CommunicationDeath);			}
 
 			//s l o t s r a t e
 			//animation slotsrate
 			//body
-			inline CAnimation *GetSlotsRateBody_0_Anim					() { return GetAnim(anim_handle_body_SlotsRate_0); }
-			inline CAnimation *GetSlotsRateBody_1_Anim					() { return GetAnim(anim_handle_body_SlotsRate_1); }
-			inline CAnimation *GetSlotsRateBody_2_Anim					() { return GetAnim(anim_handle_body_SlotsRate_2); }
-			inline CAnimation *GetSlotsRateBody_3_Anim					() { return GetAnim(anim_handle_body_SlotsRate_3); }
-			inline CAnimation *GetSlotsRateBody_4_Anim					() { return GetAnim(anim_handle_body_SlotsRate_4); }
+			inline Animation *GetSlotsRateBody_0_Anim					() { return GetAnim(anim_handle_body_SlotsRate_0); }
+			inline Animation *GetSlotsRateBody_1_Anim					() { return GetAnim(anim_handle_body_SlotsRate_1); }
+			inline Animation *GetSlotsRateBody_2_Anim					() { return GetAnim(anim_handle_body_SlotsRate_2); }
+			inline Animation *GetSlotsRateBody_3_Anim					() { return GetAnim(anim_handle_body_SlotsRate_3); }
+			inline Animation *GetSlotsRateBody_4_Anim					() { return GetAnim(anim_handle_body_SlotsRate_4); }
 			//head
-			inline CAnimation *GetSlotsRateHead_0_Anim					() { return GetAnim(anim_handle_head_SlotsRate_0); }
-			inline CAnimation *GetSlotsRateHead_1_Anim					() { return GetAnim(anim_handle_head_SlotsRate_1); }
-			inline CAnimation *GetSlotsRateHead_2_Anim					() { return GetAnim(anim_handle_head_SlotsRate_2); }
-			inline CAnimation *GetSlotsRateHead_3_Anim					() { return GetAnim(anim_handle_head_SlotsRate_3); }
-			inline CAnimation *GetSlotsRateHead_4_Anim					() { return GetAnim(anim_handle_head_SlotsRate_4); }
+			inline Animation *GetSlotsRateHead_0_Anim					() { return GetAnim(anim_handle_head_SlotsRate_0); }
+			inline Animation *GetSlotsRateHead_1_Anim					() { return GetAnim(anim_handle_head_SlotsRate_1); }
+			inline Animation *GetSlotsRateHead_2_Anim					() { return GetAnim(anim_handle_head_SlotsRate_2); }
+			inline Animation *GetSlotsRateHead_3_Anim					() { return GetAnim(anim_handle_head_SlotsRate_3); }
+			inline Animation *GetSlotsRateHead_4_Anim					() { return GetAnim(anim_handle_head_SlotsRate_4); }
 
 			//a i r c o n d i t i o n i n g
 			//animation airconditioning
 			//body
-			inline CAnimation *GetAirconditioningBodyDefaultAnim		() { return GetAnim(anim_handle_body_airconditioning_default);		}
-			inline CAnimation *GetAirconditioningBodyHeatingtAnim		() { return GetAnim(anim_handle_body_airconditioning_heating);		}
-			inline CAnimation *GetAirconditioningBodyCoolingAnim		() { return GetAnim(anim_handle_body_airconditioning_cooling);		}
-			inline CAnimation *GetAirconditioningBodyIneffectiveAnim	() { return GetAnim(anim_handle_body_airconditioning_ineffective);	}
-			inline CAnimation *GetAirconditioningBodyDamageAnim			() { return GetAnim(anim_handle_body_airconditioning_damage);		}
+			inline Animation *GetAirconditioningBodyDefaultAnim		() { return GetAnim(anim_handle_body_airconditioning_default);		}
+			inline Animation *GetAirconditioningBodyHeatingtAnim		() { return GetAnim(anim_handle_body_airconditioning_heating);		}
+			inline Animation *GetAirconditioningBodyCoolingAnim		() { return GetAnim(anim_handle_body_airconditioning_cooling);		}
+			inline Animation *GetAirconditioningBodyIneffectiveAnim	() { return GetAnim(anim_handle_body_airconditioning_ineffective);	}
+			inline Animation *GetAirconditioningBodyDamageAnim			() { return GetAnim(anim_handle_body_airconditioning_damage);		}
 			//head
-			inline CAnimation *GetAirconditioningHeadDefaultAnim		() { return GetAnim(anim_handle_head_airconditioning_default);		}
-			inline CAnimation *GetAirconditioningHeadHeatingtAnim		() { return GetAnim(anim_handle_head_airconditioning_heating);		}
-			inline CAnimation *GetAirconditioningHeadCoolingAnim		() { return GetAnim(anim_handle_head_airconditioning_cooling);		}
-			inline CAnimation *GetAirconditioningHeadIneffectiveAnim	() { return GetAnim(anim_handle_head_airconditioning_ineffective);	}
-			inline CAnimation *GetAirconditioningHeadDamageAnim			() { return GetAnim(anim_handle_head_airconditioning_damage);		}
+			inline Animation *GetAirconditioningHeadDefaultAnim		() { return GetAnim(anim_handle_head_airconditioning_default);		}
+			inline Animation *GetAirconditioningHeadHeatingtAnim		() { return GetAnim(anim_handle_head_airconditioning_heating);		}
+			inline Animation *GetAirconditioningHeadCoolingAnim		() { return GetAnim(anim_handle_head_airconditioning_cooling);		}
+			inline Animation *GetAirconditioningHeadIneffectiveAnim	() { return GetAnim(anim_handle_head_airconditioning_ineffective);	}
+			inline Animation *GetAirconditioningHeadDamageAnim			() { return GetAnim(anim_handle_head_airconditioning_damage);		}
 
 			//t h e r m a l i n s u l a t i o n
 			//animation thermalinsulation
 			//body
-			inline CAnimation *GetThermalInsulationBodyDefaultAnim		() { return GetAnim(anim_handle_body_thermalinsulation_default);	}
-			inline CAnimation *GetThermalInsulationBodyDamagetAnim		() { return GetAnim(anim_handle_body_thermalinsulation_damage);		}
+			inline Animation *GetThermalInsulationBodyDefaultAnim		() { return GetAnim(anim_handle_body_thermalinsulation_default);	}
+			inline Animation *GetThermalInsulationBodyDamagetAnim		() { return GetAnim(anim_handle_body_thermalinsulation_damage);		}
 			//head
-			inline CAnimation *GetThermalInsulationHeadDefaultAnim		() { return GetAnim(anim_handle_head_thermalinsulation_default);	}
-			inline CAnimation *GetThermalInsulationHeadDamagetAnim		() { return GetAnim(anim_handle_head_thermalinsulation_damage);		}
+			inline Animation *GetThermalInsulationHeadDefaultAnim		() { return GetAnim(anim_handle_head_thermalinsulation_default);	}
+			inline Animation *GetThermalInsulationHeadDamagetAnim		() { return GetAnim(anim_handle_head_thermalinsulation_damage);		}
 
 			//v e n t i l a t o r
 			//animation thermalinsulation
 			//body
-			inline CAnimation *GetVentilatorBodyDefaultAnim		() { return GetAnim(anim_handle_body_ventilator_default);	}
-			inline CAnimation *GetVentilatorBodyDamagetAnim		() { return GetAnim(anim_handle_body_ventilator_damage);	}
+			inline Animation *GetVentilatorBodyDefaultAnim		() { return GetAnim(anim_handle_body_ventilator_default);	}
+			inline Animation *GetVentilatorBodyDamagetAnim		() { return GetAnim(anim_handle_body_ventilator_damage);	}
 			//head
-			inline CAnimation *GetVentilatorHeadDefaultAnim		() { return GetAnim(anim_handle_head_ventilator_default);	}
-			inline CAnimation *GetVentilatorHeadDamagetAnim		() { return GetAnim(anim_handle_head_ventilator_damage);	}
+			inline Animation *GetVentilatorHeadDefaultAnim		() { return GetAnim(anim_handle_head_ventilator_default);	}
+			inline Animation *GetVentilatorHeadDamagetAnim		() { return GetAnim(anim_handle_head_ventilator_damage);	}
 
 			//b a t t e r y
 			//animation battery
 			//body
-			inline CAnimation *GetBatteryBodyDefaultAnim	() { return GetAnim(anim_handle_body_battery_default);		}
-			inline CAnimation *GetBatteryBodyOperateAnim	() { return GetAnim(anim_handle_body_battery_operate);		}
-			inline CAnimation *GetBatteryBodyExhaustedAnim	() { return GetAnim(anim_handle_body_battery_exhausted);	}
-			inline CAnimation *GetBatteryBodyDamagetAnim	() { return GetAnim(anim_handle_body_battery_damage);		}
+			inline Animation *GetBatteryBodyDefaultAnim	() { return GetAnim(anim_handle_body_battery_default);		}
+			inline Animation *GetBatteryBodyOperateAnim	() { return GetAnim(anim_handle_body_battery_operate);		}
+			inline Animation *GetBatteryBodyExhaustedAnim	() { return GetAnim(anim_handle_body_battery_exhausted);	}
+			inline Animation *GetBatteryBodyDamagetAnim	() { return GetAnim(anim_handle_body_battery_damage);		}
 			//head
-			inline CAnimation *GetBatteryHeadDefaultAnim	() { return GetAnim(anim_handle_head_battery_default);		}
-			inline CAnimation *GetBatteryHeadOperateAnim	() { return GetAnim(anim_handle_head_battery_operate);		}
-			inline CAnimation *GetBatteryHeadExhaustedAnim	() { return GetAnim(anim_handle_head_battery_exhausted);	}
-			inline CAnimation *GetBatteryHeadDamagetAnim	() { return GetAnim(anim_handle_head_battery_damage);		}
+			inline Animation *GetBatteryHeadDefaultAnim	() { return GetAnim(anim_handle_head_battery_default);		}
+			inline Animation *GetBatteryHeadOperateAnim	() { return GetAnim(anim_handle_head_battery_operate);		}
+			inline Animation *GetBatteryHeadExhaustedAnim	() { return GetAnim(anim_handle_head_battery_exhausted);	}
+			inline Animation *GetBatteryHeadDamagetAnim	() { return GetAnim(anim_handle_head_battery_damage);		}
 
 			///
 			///Metoda sprawdza nazwy animacji i wstawia animacje do zestawu animacji

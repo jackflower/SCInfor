@@ -72,7 +72,6 @@ namespace animated
 			delete p_texture;
 			//tworzymy nowy obiekt na podstawie obiektu źródłowego
 			p_texture = new Texture(*copy.p_texture);
-			/////p_texture = new sf::Texture(*copy.p_texture);
 			m_rectangle = copy.m_rectangle;
 		}
 		return *this;
@@ -84,7 +83,7 @@ namespace animated
 		if (this != &other)
 		{
 			//zwalaniamy dane pod wskaźnikiem
-			//...delete p_texture; //rzuca wyjatkiem...
+			delete p_texture; //rzuca wyjatkiem...
 			//przenosimy pod wskaźnik dane z obiektu źródłowego
 			p_texture = other.p_texture;
 			m_rectangle = other.m_rectangle;

@@ -5,7 +5,7 @@
 //
 
 #include "CNameAnimPairTranslator.h"
-#include "CAnimation.h"
+#include "Animation.h"
 
 namespace rendering
 {
@@ -55,13 +55,13 @@ namespace rendering
 		}
 
 		//Metoda zwraca wskaŸnik na animacjê
-		CAnimation * CNameAnimPairTranslator::GetAnimation() const
+		Animation * CNameAnimPairTranslator::GetAnimation() const
 		{
 			return p_animation;
 		}
 
 		//Metoda wstawia animacjê do s³ownika
-		void CNameAnimPairTranslator::SetAnim(CAnimation *p_anim)
+		void CNameAnimPairTranslator::SetAnim(Animation *p_anim)
 		{
 			p_animation = p_anim;
 			m_is_ready = true;

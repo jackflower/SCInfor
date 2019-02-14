@@ -185,20 +185,20 @@ namespace animated
 		setOrigin(getGlobalBounds().width * 0.5f, getGlobalBounds().height * 0.5f);
 	}
 
-	//Metoda wyrejestrowuje animację - obiekt klasy CAnimation
+	//Metoda wyrejestrowuje animację - obiekt klasy Animation
 	void Animated::unsetAnim()
 	{
 		p_animation = nullptr;
 		stop();
 	}
 
-	//Metoda zwraca numer aktualnej klatki animacji obiektu klasy CAnimation
+	//Metoda zwraca numer aktualnej klatki animacji obiektu klasy Animation
 	const int Animated::getCurrentFrame() const
 	{
 		return m_currentframe;
 	}
 
-	//Metoda ustawia numer klatki animacji obiektu klasy CAnimation
+	//Metoda ustawia numer klatki animacji obiektu klasy Animation
 	const void Animated::setFrame(int frame)
 	{
 		if (p_animation != NULL)
@@ -213,13 +213,13 @@ namespace animated
 		}
 	}
 
-	//Metoda zwraca czas ekspozycji klatki animacji obiektu klasy CAnimation
+	//Metoda zwraca czas ekspozycji klatki animacji obiektu klasy Animation
 	const float Animated::getFrameTime() const
 	{
 		return m_time;
 	}
 
-	//Metoda ustawia czas ekspozycji klatki animacji obiektu klasy CAnimation
+	//Metoda ustawia czas ekspozycji klatki animacji obiektu klasy Animation
 	const void Animated::setFrameTime(float time)
 	{
 		m_time = time;

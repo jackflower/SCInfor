@@ -7,7 +7,7 @@
 #ifndef H_ANIMATION_STATE_JACK
 #define H_ANIMATION_STATE_JACK
 
-#include "CAnimationFrame.h"
+#include "AnimationFrame.h"
 
 namespace rendering
 {
@@ -16,7 +16,7 @@ namespace rendering
 		///
 		///Forward declaration
 		///
-		class CAnimation;
+		class Animation;
 
 		///
 		///Klasa reprezentuje funkcjonalny obiekt animowany
@@ -42,9 +42,9 @@ namespace rendering
 			///
 			///Konstruktor parametryczny
 			///
-			///@param *animation - wskaŸnik na obiekt klasy CAnimation
+			///@param *animation - wskaŸnik na obiekt klasy Animation
 			///
-			CAnimationState(CAnimation* animation);
+			CAnimationState(Animation* animation);
 
 			///
 			///Destruktor
@@ -105,16 +105,16 @@ namespace rendering
 			void SetPaused (bool is_paused);
 
 			///
-			///Metoda zwraca wskaŸnik na obiekt klasy CAnimation
+			///Metoda zwraca wskaŸnik na obiekt klasy Animation
 			///
-			CAnimation* GetAnimation();
+			Animation* GetAnimation();
 
 			///
-			///Metoda ustawia wskaŸnik na animacjê - obiekt klasy CAnimation
+			///Metoda ustawia wskaŸnik na animacjê - obiekt klasy Animation
 			///
-			///@param *animation - wskaŸnik na obiekt klasy CAnimation (pojemnik na klatki animacji)
+			///@param *animation - wskaŸnik na obiekt klasy Animation (pojemnik na klatki animacji)
 			///
-			void SetAnimation(CAnimation* animation);
+			void SetAnimation(Animation* animation);
 
 			///
 			///Metoda dodaje czas do odtwarzania animacji
@@ -126,7 +126,7 @@ namespace rendering
 			///
 			///Metoda zwraca sta³¹ referencjê na kolejn¹ (nastêpn¹) klatkê animacji
 			///
-			const CAnimationFrame& GetCurrentFrame();
+			const AnimationFrame& GetCurrentFrame();
 			
 			///
 			///Metoda uruchamia animacjê
@@ -157,7 +157,7 @@ namespace rendering
 			float		m_anim_speed;	//wspó³czynnik prêdkoœci odtwarzania animacji 1.0f - normal speed
 			bool		m_is_looped;	//flaga, czy animacja ma byæ odtwarzana jako zapêtlona (loop)
 			bool		m_is_paused;	//flaga, czy animacja jest wstrzymana
-			CAnimation* p_animation;	//wskaŸnik na obiekt klasy CAnimation (pojemnik z klatkami)
+			Animation* p_animation;	//wskaŸnik na obiekt klasy Animation (pojemnik z klatkami)
 			unsigned	m_frame_number;	//numer klatki animacji aktualnie wyœwietlanej
 		};
 	}//namespace animation

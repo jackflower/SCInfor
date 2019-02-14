@@ -96,29 +96,29 @@ namespace animated
 		const void setAnimation(AnimatedAnimation *animated, bool playmode = false);
 
 		///
-		///Metoda wyrejestrowuje animację - obiekt klasy CAnimation
+		///Metoda wyrejestrowuje animację - obiekt klasy Animation
 		///
 		void unsetAnim();
 
 		///
-	    ///Metoda zwraca numer aktualnej klatki animacji obiektu klasy CAnimation
+	    ///Metoda zwraca numer aktualnej klatki animacji obiektu klasy Animation
 		///
 		const int getCurrentFrame() const;
 
 		///
-		///Metoda ustawia numer klatki animacji obiektu klasy CAnimation
+		///Metoda ustawia numer klatki animacji obiektu klasy Animation
 		///
 		///@param frame - klatka animacji
 		///
 		const void setFrame(int frame);
 
 		///
-		///Metoda zwraca czas ekspozycji klatki animacji obiektu klasy CAnimation
+		///Metoda zwraca czas ekspozycji klatki animacji obiektu klasy Animation
 		///
 		const float getFrameTime() const;
 
 		///
-		///Metoda ustawia czas ekspozycji klatki animacji obiektu klasy CAnimation
+		///Metoda ustawia czas ekspozycji klatki animacji obiektu klasy Animation
 		///
 		///@param time - czas ekspozycji klatki animacji
 		///

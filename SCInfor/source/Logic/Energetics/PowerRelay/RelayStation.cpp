@@ -5,7 +5,7 @@
 //
 #include "RelayStation.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
-#include "../../../Rendering/Animations/CAnimation.h"
+#include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/CAnimationState.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
 #include "../../PhysicalManager.h"

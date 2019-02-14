@@ -608,14 +608,14 @@ namespace logic
 		///
 		///Metoda zwraca wskaźnik na animację (body)
 		///
-		CAnimation *getAnimationBody();
+		Animation *getAnimationBody();
 
 		///
 		///Metoda ustawia ustawia wskaźnik na animację (body)
 		///
-		///@param *p_anim_body - wskaźnik na animację - obiekt klasy CAnimation (body)
+		///@param *p_anim_body - wskaźnik na animację - obiekt klasy Animation (body)
 		///
-		void setAnimationBody(CAnimation *p_anim_body);
+		void setAnimationBody(Animation *p_anim_body);
 
 		///
 		///Metoda zwraca nazwę animacji (body)
@@ -632,14 +632,14 @@ namespace logic
 		///
 		///Metoda zwraca wskaźnik na animację (head)
 		///
-		CAnimation *getAnimationHead();
+		Animation *getAnimationHead();
 
 		///
 		///Metoda ustawia ustawia wskaźnik na animację (head)
 		///
-		///@param *p_anim_head - wskaźnik na animację - obiekt klasy CAnimation (head)
+		///@param *p_anim_head - wskaźnik na animację - obiekt klasy Animation (head)
 		///
-		void setAnimationHead(CAnimation *p_anim_head);
+		void setAnimationHead(Animation *p_anim_head);
 
 		///
 		///Metoda zwraca nazwę animacji (head)
@@ -656,11 +656,11 @@ namespace logic
 		///
 		///Metoda ustawia komplet animacji
 		///
-		///@param *p_anim_body - wskaźnik na obiekt klasy CAnimation (body)
+		///@param *p_anim_body - wskaźnik na obiekt klasy Animation (body)
 		///
-		///@param *p_anim_head - wskaźnik na obiekt klasy CAnimation (head)
+		///@param *p_anim_head - wskaźnik na obiekt klasy Animation (head)
 		///
-		void setAnimation(CAnimation *p_anim_body, CAnimation *p_anim_head);
+		void setAnimation(Animation *p_anim_body, Animation *p_anim_head);
 
 		///
 		///Metoda ustawia komplet animacji

@@ -7,7 +7,7 @@
 #include "WindTurbine.h"
 #include "../../../Weather/CWeather.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
-#include "../../../Rendering/Animations/CAnimation.h"
+#include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/CAnimationState.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
 #include "../../../Rendering/Drawable/Layers.h"
@@ -261,7 +261,7 @@ namespace equipment
 				//zliczam czas
 				m_cargo_open_duration += dt;
 				//po zakończeniu odtworzania jednego cyklu animacji otwierania luku - zmiana stanu
-				if(m_cargo_open_duration >= getAnimationHead()->TotalLength())
+				if(m_cargo_open_duration >= getAnimationHead()->totalLength())
 				{
 					//obliczam prędkość łopatek turniny
 					m_calculated_speed_rotor = m_speed_rotor * m_speed_transmission * gWeather.GetWindSpeed() * dt;
@@ -288,7 +288,7 @@ namespace equipment
 				//zliczam czas
 				m_cargo_close_duration += dt;
 				//po zakończeniu odtworzenia jednego cyklu animacji zamykania luku - zmiana stanu
-				if(m_cargo_close_duration >= getAnimationHead()->TotalLength())
+				if(m_cargo_close_duration >= getAnimationHead()->totalLength())
 				{
 					//zmiana stanu - odnowienie procesu aktualizacji energii
 					m_turbine_state = TURBINE_DEFAULT;

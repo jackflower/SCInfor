@@ -6,7 +6,7 @@
 
 #include "CAnimSet.h"
 #include "CAnimationManager.h"
-#include "CAnimation.h"
+#include "Animation.h"
 #include "CNameAnimPairTranslator.h"
 
 namespace rendering
@@ -338,11 +338,11 @@ namespace rendering
 		}
 
 		//Metoda ustawia animacjê
-		void CAnimSet::SetAnimation(int anim_handle, CAnimation *p_anim)
+		void CAnimSet::SetAnimation(int anim_handle, Animation *p_anim)
 		{
 			if ((anim_handle < 0) || (p_anim == NULL)) return;
 			if ((unsigned int)anim_handle >= m_anims.size()) m_anims.resize(anim_handle + 1);
-			m_anims[anim_handle] = CNameAnimPairTranslator(p_anim->GetAnimationName());
+			m_anims[anim_handle] = CNameAnimPairTranslator(p_anim->getAnimationName());
 			m_anims[anim_handle].SetAnim(p_anim);
 		}
 
@@ -363,7 +363,7 @@ namespace rendering
 		}
 
 		//Metoda zwraca wskaŸnik na animacjê na podstawie parametru - uchwytu
-		CAnimation *CAnimSet::GetAnim(int anim_handle)
+		Animation *CAnimSet::GetAnim(int anim_handle)
 		{
 			//nieprawid³owy uchwyt zwraca NULL
 			if ((anim_handle < 0) || ((unsigned int) anim_handle >= m_anims.size()))

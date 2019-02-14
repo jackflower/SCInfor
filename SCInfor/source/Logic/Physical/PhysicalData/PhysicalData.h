@@ -32,7 +32,7 @@ namespace rendering
 {
 	namespace animation
 	{
-		class CAnimation;
+		class Animation;
 		class CAnimationState;
 	}
 }
@@ -620,14 +620,14 @@ namespace physicaldata
 		///
 		///Metoda zwraca wskaźnik na animację (body)
 		///
-		CAnimation *getAnimationBody();
+		Animation *getAnimationBody();
 
 		///
 		///Metoda ustawia ustawia wskaźnik na animację (body)
 		///
-		///@param *p_anim_body - wskaźnik na animację - obiekt klasy CAnimation (body)
+		///@param *p_anim_body - wskaźnik na animację - obiekt klasy Animation (body)
 		///
-		void setAnimationBody(CAnimation *p_anim_body);
+		void setAnimationBody(Animation *p_anim_body);
 
 		///
 		///Metoda zwraca nazwę animacji (body)
@@ -644,14 +644,14 @@ namespace physicaldata
 		///
 		///Metoda zwraca wskaźnik na animację (head)
 		///
-		CAnimation *getAnimationHead();
+		Animation *getAnimationHead();
 
 		///
 		///Metoda ustawia ustawia wskaźnik na animację (head)
 		///
-		///@param *p_anim_head - wskaźnik na animację - obiekt klasy CAnimation (head)
+		///@param *p_anim_head - wskaźnik na animację - obiekt klasy Animation (head)
 		///
-		void setAnimationHead(CAnimation *p_anim_head);
+		void setAnimationHead(Animation *p_anim_head);
 
 		///
 		///Metoda zwraca nazwę animacji (head)
@@ -668,11 +668,11 @@ namespace physicaldata
 		///
 		///Metoda ustawia komplet animacji
 		///
-		///@param *p_anim_body - wskaźnik na obiekt klasy CAnimation (body)
+		///@param *p_anim_body - wskaźnik na obiekt klasy Animation (body)
 		///
-		///@param *p_anim_head - wskaźnik na obiekt klasy CAnimation (head)
+		///@param *p_anim_head - wskaźnik na obiekt klasy Animation (head)
 		///
-		void setAnimation(CAnimation *p_anim_body, CAnimation *p_anim_head);
+		void setAnimation(Animation *p_anim_body, Animation *p_anim_head);
 
 		///
 		///Metoda ustawia komplet animacji
@@ -865,8 +865,8 @@ namespace physicaldata
 		sf::Color m_color_shadow; //kolor cienia
 		sf::Vector2f m_shadow_offset_body; //wektor przesunięcia cienia - body
 		sf::Vector2f m_shadow_offset_head; //wektor przesunięcia cienia - head
-		CAnimation *p_animation_body; //wskaźnik na animację - body (cienie - taka sama animacja)
-		CAnimation *p_animation_head; //wskaźnik na animację - head (cienie - taka sama animacja)
+		Animation *p_animation_body; //wskaźnik na animację - body (cienie - taka sama animacja)
+		Animation *p_animation_head; //wskaźnik na animację - head (cienie - taka sama animacja)
 		float m_anim_speed_body; //prędkość odtwarzania animacji (body)
 		float m_anim_speed_head; //prędkość odtwarzania animacji (head)
 		float m_stored_anim_speed_body;	//zapamiętana prędkość odtwarzania animacji (body)
