@@ -9,7 +9,7 @@
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Rendering/Drawable/CDrawableManager.h"
 #include "../../Rendering/Animations/Animation.h"
-#include "../../Rendering/Animations/CAnimationState.h"
+#include "../../Rendering/Animations/AnimationState.h"
 #include "../../Factory/PhysicalTemplate.h"
 #include "../../Utilities/Utilities/Utilities.h"
 #include <math.h>

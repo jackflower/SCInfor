@@ -6,8 +6,8 @@
 
 #include "CDisplayable.h"
 #include "../Animations/Animation.h"
-#include "../Animations/CAnimationManager.h"
-#include "../Animations/CAnimationState.h"
+#include "../Animations/AnimationManager.h"
+#include "../Animations/AnimationState.h"
 #include "../../ResourceManager/CResourceManager.h"
 #include "../../ResourceManager/CTexture.h"
 #include <SFML/Graphics.hpp>
@@ -54,7 +54,7 @@ namespace rendering
 			m_sprite = NULL;
 
 			if(m_animation_state)
-				gAnimationManager.DestroyAnimationState(m_animation_state);
+				gAnimationManager.destroyAnimationState(m_animation_state);
 			
 			m_animation_state		= NULL;
 			m_animation_name		= "";
@@ -239,9 +239,9 @@ namespace rendering
 		//Metoda ustawia teksturê obiektu
 		void CDisplayable::setTexture(CTexture *p_texture, bool smoothing)
 		{
-			if (m_animation_state)					//jeœli wskaŸnik na CAnimationState jest zainicjowany
+			if (m_animation_state)					//jeœli wskaŸnik na AnimationState jest zainicjowany
 			{
-				gAnimationManager.DestroyAnimationState(m_animation_state);//usuwamy animacjê
+				gAnimationManager.destroyAnimationState(m_animation_state);//usuwamy animacjê
 				m_animation_state = NULL;			//ustawiamy wskaŸnik na NULL
 			}
 
@@ -257,9 +257,9 @@ namespace rendering
 		//Metoda generuje obraz tekstury
 		void CDisplayable::SetTexture(unsigned width, unsigned height, const sf::Color & color)
 		{
-			if (m_animation_state)					//jeœli wskaŸnik na CAnimationState jest zainicjowany
+			if (m_animation_state)					//jeœli wskaŸnik na AnimationState jest zainicjowany
 			{
-				gAnimationManager.DestroyAnimationState(m_animation_state);//usuwamy animacjê
+				gAnimationManager.destroyAnimationState(m_animation_state);//usuwamy animacjê
 				m_animation_state = NULL;			//ustawiamy wskaŸnik na NULL
 			}
 
@@ -272,9 +272,9 @@ namespace rendering
 		//Metoda generuje obraz tekstury
 		void CDisplayable::SetTexture(unsigned width, unsigned height, unsigned r, unsigned g, unsigned b, unsigned a)
 		{
-			if (m_animation_state)					//jeœli wskaŸnik na CAnimationState jest zainicjowany
+			if (m_animation_state)					//jeœli wskaŸnik na AnimationState jest zainicjowany
 			{
-				gAnimationManager.DestroyAnimationState(m_animation_state);//usuwamy animacjê
+				gAnimationManager.destroyAnimationState(m_animation_state);//usuwamy animacjê
 				m_animation_state = NULL;			//ustawiamy wskaŸnik na NULL
 			}
 			
@@ -296,10 +296,10 @@ namespace rendering
 
 			//usuwamy animacjê, jeœli wczeœniej jakaœ by³a
 			if (m_animation_state)
-				gAnimationManager.DestroyAnimationState(m_animation_state);
+				gAnimationManager.destroyAnimationState(m_animation_state);
 
 			//tworzymy now¹ animacjê
-			m_animation_state = gAnimationManager.CreateAnimationState(animation_name);
+			m_animation_state = gAnimationManager.createAnimationState(animation_name);
 
 			if (!m_animation_state)
 			{
@@ -316,14 +316,14 @@ namespace rendering
 
 			if (p_animation == NULL)
 				return;
-			if ((m_animation_state != NULL) && (m_animation_state->GetAnimation() == p_animation))
+			if ((m_animation_state != NULL) && (m_animation_state->getAnimation() == p_animation))
 				return;
 
 			m_animation_name = p_animation->getAnimationName();
 
 			if (m_animation_state)
-				gAnimationManager.DestroyAnimationState(m_animation_state);
-			m_animation_state = gAnimationManager.CreateAnimationState(p_animation);
+				gAnimationManager.destroyAnimationState(m_animation_state);
+			m_animation_state = gAnimationManager.createAnimationState(p_animation);
 
 			if (!m_animation_state)
 			{
@@ -331,8 +331,8 @@ namespace rendering
 			} 
 		}
 
-		//Metoda zwraca wskaŸnik na obiekt klasy CAnimationState
-		CAnimationState* CDisplayable::GetAnimationState()
+		//Metoda zwraca wskaŸnik na obiekt klasy AnimationState
+		AnimationState* CDisplayable::GetAnimationState()
 		{
 			return m_animation_state;
 		}
@@ -355,17 +355,17 @@ namespace rendering
 			//jeœli flaga nie pozwala - nie rysujemy obiektu - return
 			if(m_can_draw == false)	return;
 
-			//jeœli wskaŸnik na obiekt CAnimationState pokazuje na animacjê
+			//jeœli wskaŸnik na obiekt AnimationState pokazuje na animacjê
 			if (m_animation_state)
 			{
-				//tworzymy klatkê animacji i pobieramy bie¿¹c¹ klatkê z CAnimationState
-				AnimationFrame frame = m_animation_state->GetCurrentFrame();
+				//tworzymy klatkê animacji i pobieramy bie¿¹c¹ klatkê z AnimationState
+				AnimationFrame frame = m_animation_state->getCurrentFrame();
 
 				//tworzymy wskaŸnik na obiekt klasy CTexture (tekstura)
 				//inicjujemy ten wskaŸnik obrazem pobranym na podstawie nazwy
 				//tekstury, na której znajduje sie klatka animacji.
 				//CResourceManager zwraca na podstawie tej nazwy wskaŸnik na teksturê.
-				CTexture* p_texture = gResourceManager.GetTexture(frame.getTextureName());
+				CTexture *p_texture = gResourceManager.GetTexture(frame.getTextureName());
 				//ustawiamy flagê wyg³adzania tekstury
 				p_texture->setSmooth(m_smooth);
 

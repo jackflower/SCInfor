@@ -8,7 +8,7 @@
 #include "Monster.h"
 #include "../Physical/PhysicalInfo/PhysicalInfo.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
-#include "../../Rendering/Animations/CAnimationState.h"
+#include "../../Rendering/Animations/AnimationState.h"
 #include "../../Rendering/Animations/Animation.h"
 #include "../../Game/Game.h"
 #include <SFML/Window.hpp>

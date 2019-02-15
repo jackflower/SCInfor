@@ -282,8 +282,8 @@
     <ClCompile Include="source\Rendering\Animated\AnimatedFrame.cpp" />
     <ClCompile Include="source\Rendering\Animations\Animation.cpp" />
     <ClCompile Include="source\Rendering\Animations\AnimationFrame.cpp" />
-    <ClCompile Include="source\Rendering\Animations\CAnimationManager.cpp" />
-    <ClCompile Include="source\Rendering\Animations\CAnimationState.cpp" />
+    <ClCompile Include="source\Rendering\Animations\AnimationManager.cpp" />
+    <ClCompile Include="source\Rendering\Animations\AnimationState.cpp" />
     <ClCompile Include="source\Rendering\Animations\CAnimSet.cpp" />
     <ClCompile Include="source\Rendering\Animations\CNameAnimPairTranslator.cpp" />
     <ClCompile Include="source\Rendering\Animations\CTimedAnimationFrame.cpp" />
@@ -525,8 +525,8 @@
     <ClInclude Include="source\Rendering\Animated\AnimatedFrame.h" />
     <ClInclude Include="source\Rendering\Animations\Animation.h" />
     <ClInclude Include="source\Rendering\Animations\AnimationFrame.h" />
-    <ClInclude Include="source\Rendering\Animations\CAnimationManager.h" />
-    <ClInclude Include="source\Rendering\Animations\CAnimationState.h" />
+    <ClInclude Include="source\Rendering\Animations\AnimationManager.h" />
+    <ClInclude Include="source\Rendering\Animations\AnimationState.h" />
     <ClInclude Include="source\Rendering\Animations\CAnimSet.h" />
     <ClInclude Include="source\Rendering\Animations\CNameAnimPairTranslator.h" />
     <ClInclude Include="source\Rendering\Animations\CTimedAnimationFrame.h" />

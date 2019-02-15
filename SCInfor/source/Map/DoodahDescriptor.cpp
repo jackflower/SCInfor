@@ -8,7 +8,7 @@
 #include "DoodahDescriptor.h"
 #include "../Rendering/Drawable/Layers.h"
 #include "../Rendering/Displayable/CDisplayable.h"
-#include "../Rendering/Animations/CAnimationManager.h"
+#include "../Rendering/Animations/AnimationManager.h"
 #include "../Rendering/Drawable/CDrawableManager.h"
 //#include "SceneManager/CSceneNode.h"
 //#include "SceneManager/CQuadTreeSceneManager.h"

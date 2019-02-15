@@ -89,11 +89,11 @@ namespace universe
 
 	//Nad tym trzeba siê zastanowiæ...
 		//Metoda usuwa funkcjonalny obiekt animowany
-		void CAnimationManager::DestroyAnimationState(CAnimationState* p_animation_state)
+		void AnimationManager::DestroyAnimationState(AnimationState* p_animation_state)
 		{
 			if (!p_animation_state)
 			{
-				fprintf(stderr, "warning: CAnimationManager::DestroyAnimationState - p_animation_state was NULL\n");
+				fprintf(stderr, "warning: AnimationManager::DestroyAnimationState - p_animation_state was NULL\n");
 				return;
 			}
 
@@ -105,7 +105,7 @@ namespace universe
 			}
 			else
 			{
-				fprintf(stderr, "error: CAnimationManager::DestroyAnimationState - p_animation_state was not found in set\n");
+				fprintf(stderr, "error: AnimationManager::DestroyAnimationState - p_animation_state was not found in set\n");
 				return;
 			}
 		}

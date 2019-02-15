@@ -110,12 +110,13 @@ namespace rendering
 		//Metoda zwraca czas równy całkowitej długości trwania wszystkich klatek animacji (kumulacja)
 		float Animation::totalLength()
 		{
-			if (m_frames.empty())						//jeśli nie ma klatek, to czas odtwarzania klatki animacji
-				return 0.0f;							//jest równy zero
+			if (m_frames.empty()) //jeśli nie ma klatek, to czas odtwarzania klatki animacji
+				return 0.0f; //jest równy zero
 			else
-				return m_frames.back().GetFrameTime();	//w przeciwnym wypadku jest to czas odtwarzania
-														//(ostatniej) klatki animacji wektora - czyli czas
-														//kumulacji poprzednich (suma trwania wszystckich klatek)
+				return m_frames.back().GetFrameTime();
+				//w przeciwnym wypadku jest to czas odtwarzania
+				//(ostatniej) klatki animacji wektora - czyli czas
+				//kumulacji poprzednich (suma trwania wszystkich klatek)
 		}
 	}//namespace animation
 }//namespace rendering

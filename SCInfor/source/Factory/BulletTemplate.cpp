@@ -7,8 +7,8 @@
 #include "BulletTemplate.h"
 #include "../XML/CXml.h"
 #include "../Rendering/Displayable/CDisplayable.h"
-#include "../Rendering/Animations/CAnimationManager.h"
-#include "../Rendering/Animations/CAnimationState.h"
+#include "../Rendering/Animations/AnimationManager.h"
+#include "../Rendering/Animations/AnimationState.h"
 #include <iostream>
 
 using namespace rapidxml;

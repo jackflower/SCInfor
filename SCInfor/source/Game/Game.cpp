@@ -11,7 +11,7 @@
 #include "../ResourceManager/CResourceManager.h"
 #include "../ResourceManager/CTexture.h"
 #include "../ResourceManager/CFont.h"
-#include "../Rendering/Animations/CAnimationManager.h"
+#include "../Rendering/Animations/AnimationManager.h"
 #include "../Rendering/Drawable/CDrawableManager.h"
 #include "../Rendering/Displayable/CDisplayable.h"
 #include "../Rendering/Displayable/CRectangle.h"

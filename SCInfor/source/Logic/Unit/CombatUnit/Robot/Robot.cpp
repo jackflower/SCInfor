@@ -7,7 +7,7 @@
 #include "Robot.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 #include "../../../../Rendering/Animations/Animation.h"
-#include "../../../../Rendering/Animations/CAnimationState.h"
+#include "../../../../Rendering/Animations/AnimationState.h"
 #include "../../../../Rendering/Drawable/Layers.h"
 #include "../../../../Rendering/Displayable/CDisplayable.h"
 #include "../../../../Game/Game.h"
@@ -78,8 +78,8 @@ namespace logic
 				{
 					//setAnimationBody(p_anim_set->GetRobotBodyDefaultAnim());
 					setAnimationHead(p_anim_set->GetRobotHeadDefaultAnim());
-					getDisplayableHead()->GetAnimationState()->SetLooped(true);
-					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+					getDisplayableHead()->GetAnimationState()->setLooped(true);
+					getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
 				}
 				break;
 			}
@@ -89,8 +89,8 @@ namespace logic
 				{
 					//setAnimationBody(p_anim_set->GetRobotBodyDefaultAnim());
 					setAnimationHead(p_anim_set->GetRobotHeadAttackOpenAnim());
-					getDisplayableHead()->GetAnimationState()->SetLooped(false);
-					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
+					getDisplayableHead()->GetAnimationState()->setLooped(false);
+					getDisplayableHeadShadow()->GetAnimationState()->setLooped(false);
 				}
 				break;
 			}
@@ -100,8 +100,8 @@ namespace logic
 				{
 					//setAnimationBody(p_anim_set->GetRobotBodyDefaultAnim());
 					setAnimationHead(p_anim_set->GetRobotHeadAttackAnim());
-					getDisplayableHead()->GetAnimationState()->SetLooped(true);
-					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+					getDisplayableHead()->GetAnimationState()->setLooped(true);
+					getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
 				}
 				break;
 			}
@@ -111,8 +111,8 @@ namespace logic
 				{
 					//setAnimationBody(p_anim_set->GetRobotBodyDefaultAnim());
 					setAnimationHead(p_anim_set->GetRobotHeadAttackCloseAnim());
-					getDisplayableHead()->GetAnimationState()->SetLooped(false);
-					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
+					getDisplayableHead()->GetAnimationState()->setLooped(false);
+					getDisplayableHeadShadow()->GetAnimationState()->setLooped(false);
 				}
 				break;
 			}
@@ -122,8 +122,8 @@ namespace logic
 				{
 					//setAnimationBody(p_anim_set->GetRobotBodyDefaultAnim());
 					setAnimationHead(p_anim_set->GetRobotHeadDefenseOpenAnim());
-					getDisplayableHead()->GetAnimationState()->SetLooped(false);
-					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
+					getDisplayableHead()->GetAnimationState()->setLooped(false);
+					getDisplayableHeadShadow()->GetAnimationState()->setLooped(false);
 				}
 				break;
 			}
@@ -133,8 +133,8 @@ namespace logic
 				{
 					//setAnimationBody(p_anim_set->GetRobotBodyDefaultAnim());
 					setAnimationHead(p_anim_set->GetRobotHeadDefenseAnim());
-					getDisplayableHead()->GetAnimationState()->SetLooped(true);
-					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+					getDisplayableHead()->GetAnimationState()->setLooped(true);
+					getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
 				}
 				break;
 			}
@@ -144,8 +144,8 @@ namespace logic
 				{
 					//setAnimationBody(p_anim_set->GetRobotBodyDefaultAnim());
 					setAnimationHead(p_anim_set->GetRobotHeadDefenseCloseAnim());
-					getDisplayableHead()->GetAnimationState()->SetLooped(false);
-					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(false);
+					getDisplayableHead()->GetAnimationState()->setLooped(false);
+					getDisplayableHeadShadow()->GetAnimationState()->setLooped(false);
 				}
 				break;
 			}
@@ -155,8 +155,8 @@ namespace logic
 				{
 					//setAnimationBody(p_anim_set->GetRobotBodyDefaultAnim());
 					setAnimationHead(p_anim_set->GetRobotHeadDamageAnim());
-					getDisplayableHead()->GetAnimationState()->SetLooped(true);
-					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+					getDisplayableHead()->GetAnimationState()->setLooped(true);
+					getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
 				}
 				break;
 			}
@@ -166,8 +166,8 @@ namespace logic
 				{
 					//setAnimationBody(p_anim_set->GetRobotBodyDefaultAnim());
 					setAnimationHead(p_anim_set->GetRobotHeadDeathAnim());
-					getDisplayableHead()->GetAnimationState()->SetLooped(true);
-					getDisplayableHeadShadow()->GetAnimationState()->SetLooped(true);
+					getDisplayableHead()->GetAnimationState()->setLooped(true);
+					getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
 				}
 				break;
 			}

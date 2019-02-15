@@ -8,7 +8,7 @@
 #include "../PhysicalManager.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Rendering/Animations/CAnimSet.h"
-#include "../../Rendering/Animations/CAnimationState.h"
+#include "../../Rendering/Animations/AnimationState.h"
 #include "../../Rendering/Animations/CNameAnimPairTranslator.h"
 #include "../../Equipment/Engine/Engine.h"
 #include "../../Equipment/Energy/Energy.h"
@@ -569,13 +569,13 @@ namespace logic
 			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].GetAnimation() != NULL))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
-				float currTime = getDisplayableBody()->GetAnimationState()->GetCurrentTime();
+				float currTime = getDisplayableBody()->GetAnimationState()->getCurrentTime();
 
 				//podmieniam starą animację ze starego zestawu na nową animację z nowego zestawu
 				setAnimationBody(new_anims[index].GetAnimation());
 
 				//przewijam animację do "czasu", w którym rozpoczął się proces podmiany animacji
-				getDisplayableBody()->GetAnimationState()->RewindTo(currTime);
+				getDisplayableBody()->GetAnimationState()->rewindTo(currTime);
 			}
 		}
 	}
@@ -615,13 +615,13 @@ namespace logic
 			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].GetAnimation() != NULL))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
-				float currTime = getDisplayableHead()->GetAnimationState()->GetCurrentTime();
+				float currTime = getDisplayableHead()->GetAnimationState()->getCurrentTime();
 
 				//podmieniam starą animację ze starego zestawu na nową animację z nowego zestawu
 				setAnimationHead(new_anims[index].GetAnimation());
 
 				//przewijam animację do "czasu", w którym rozpoczął się proces podmiany animacji
-				getDisplayableHead()->GetAnimationState()->RewindTo(currTime);
+				getDisplayableHead()->GetAnimationState()->rewindTo(currTime);
 			}
 		}
 	}

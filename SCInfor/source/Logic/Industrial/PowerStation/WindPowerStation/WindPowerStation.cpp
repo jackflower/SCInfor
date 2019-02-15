@@ -7,7 +7,7 @@
 #include "WindPowerStation.h"
 #include "../../../../Rendering/Animations/CAnimSet.h"
 #include "../../../../Rendering/Animations/Animation.h"
-#include "../../../../Rendering/Animations/CAnimationState.h"
+#include "../../../../Rendering/Animations/AnimationState.h"
 #include "../../../../Rendering/Displayable/CDisplayable.h"
 #include "../../../PhysicalManager.h"
 #include <iostream>

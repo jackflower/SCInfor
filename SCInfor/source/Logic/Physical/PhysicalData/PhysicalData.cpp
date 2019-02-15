@@ -8,7 +8,7 @@
 #include "../../../Rendering/Displayable/CDisplayable.h"
 #include "../../../Rendering/Drawable/CDrawableManager.h"
 #include "../../../Rendering/Animations/Animation.h"
-#include "../../../Rendering/Animations/CAnimationState.h"
+#include "../../../Rendering/Animations/AnimationState.h"
 #include "../../../Weather/CWeather.h"
 #include "../../../Utilities/Utilities/Utilities.h"
 #include <math.h>
@@ -854,7 +854,7 @@ namespace physicaldata
 	//Metoda zwraca nazwę animacji (body)
 	const std::string & PhysicalData::getAnimationBodyName() const
 	{
-		return p_displayable_body->GetAnimationState()->GetAnimation()->getAnimationName();
+		return p_displayable_body->GetAnimationState()->getAnimation()->getAnimationName();
 	}
 
 	//Metoda ustawia nazwę animacji (body)
@@ -870,7 +870,7 @@ namespace physicaldata
 
 		//po załadowaniu animacji (parametr std::string), aktualizacja wskaźnika
 		if (p_displayable_body)
-			p_animation_body = p_displayable_body->GetAnimationState()->GetAnimation();
+			p_animation_body = p_displayable_body->GetAnimationState()->getAnimation();
 	}
 
 	//Metoda zwraca wskaźnik na animację - obiekt klasy Animation (head)
@@ -896,7 +896,7 @@ namespace physicaldata
 	//Metoda zwraca nazwę animacji (head)
 	const std::string & PhysicalData::getAnimationHeadName() const
 	{
-		return p_displayable_head->GetAnimationState()->GetAnimation()->getAnimationName();
+		return p_displayable_head->GetAnimationState()->getAnimation()->getAnimationName();
 	}
 
 	//Metoda ustawia nazwę animacji (head)
@@ -912,7 +912,7 @@ namespace physicaldata
 
 		//po załadowaniu animacji (parametr std::string), aktualizacja wskaźnika
 		if (p_displayable_head)
-			p_animation_head = p_displayable_head->GetAnimationState()->GetAnimation();
+			p_animation_head = p_displayable_head->GetAnimationState()->getAnimation();
 	}
 
 	//Metoda ustawia komplet animacji
@@ -958,9 +958,9 @@ namespace physicaldata
 	{
 		m_anim_speed_body = anim_speed;
 		if (p_displayable_body)
-			p_displayable_body->GetAnimationState()->SetAnimSpeed(m_anim_speed_body);
+			p_displayable_body->GetAnimationState()->setAnimSpeed(m_anim_speed_body);
 		if (p_displayable_body_shadow)
-			p_displayable_body_shadow->GetAnimationState()->SetAnimSpeed(m_anim_speed_head);
+			p_displayable_body_shadow->GetAnimationState()->setAnimSpeed(m_anim_speed_head);
 	}
 
 	//Metoda ustawia współczynnik prędkości odtwarzania animacji 1.0f - normal speed (head)
@@ -968,9 +968,9 @@ namespace physicaldata
 	{
 		m_anim_speed_head = anim_speed;
 		if (p_displayable_head)
-			p_displayable_head->GetAnimationState()->SetAnimSpeed(m_anim_speed_head);
+			p_displayable_head->GetAnimationState()->setAnimSpeed(m_anim_speed_head);
 		if(p_displayable_head_shadow)
-			p_displayable_head_shadow->GetAnimationState()->SetAnimSpeed(m_anim_speed_head);
+			p_displayable_head_shadow->GetAnimationState()->setAnimSpeed(m_anim_speed_head);
 	}
 
 	//Metoda ustawia współczynnik prędkości odtwarzania animacji 1.0f - normal speed (body and head)

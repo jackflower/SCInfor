@@ -33,7 +33,7 @@ namespace rendering
 	namespace animation
 	{
 		class Animation;
-		class CAnimationState;
+		class AnimationState;
 	}
 }
 

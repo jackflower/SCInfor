@@ -8,7 +8,7 @@
 #include "../../../Weather/CWeather.h"
 #include "../../../Rendering/Animations/CAnimSet.h"
 #include "../../../Rendering/Animations/Animation.h"
-#include "../../../Rendering/Animations/CAnimationState.h"
+#include "../../../Rendering/Animations/AnimationState.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
 #include "../../../Utilities/MathFunctions/MathFunctions.h"
 #include <iostream>

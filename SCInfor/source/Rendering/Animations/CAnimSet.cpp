@@ -5,7 +5,7 @@
 //
 
 #include "CAnimSet.h"
-#include "CAnimationManager.h"
+#include "AnimationManager.h"
 #include "Animation.h"
 #include "CNameAnimPairTranslator.h"
 
@@ -372,7 +372,7 @@ namespace rendering
 			if (!m_anims[anim_handle].GetReady())
 			{
 				//ustawiamy animacjê na pobran¹ w menad¿era animacji
-				m_anims[anim_handle].SetAnim(gAnimationManager.GetAnimation(m_anims[anim_handle].GetAnimationName()));
+				m_anims[anim_handle].SetAnim(gAnimationManager.getAnimation(m_anims[anim_handle].GetAnimationName()));
 			}
 			return m_anims[anim_handle].GetAnimation();//zwracamy z wzrorca ju¿ gotow¹ animacjê (wskaŸnik)
 		}

@@ -28,7 +28,7 @@ namespace rendering
 {
 	namespace animation
 	{
-		class CAnimationState;
+		class AnimationState;
 		class AnimationFrame;
 		class Animation;
 	}
@@ -311,9 +311,9 @@ namespace rendering
 			void SetAnimation(Animation *p_animation);
 
 			///
-			///Metoda zwraca wskaünik na obiekt klasy CAnimationState
+			///Metoda zwraca wskaünik na obiekt klasy AnimationState
 			///
-			CAnimationState* GetAnimationState();
+			AnimationState* GetAnimationState();
 
 			///
 			////Metoda zwraca tryb wyg≥adzania tekstury
@@ -337,7 +337,7 @@ namespace rendering
 		protected:
 		
 			CSprite*			m_sprite;				//wskaünik na obiekt klasy CSprite (kontekst graficzny)
-			CAnimationState*	m_animation_state;		//wskaünik na obiekt CAnimationState
+			AnimationState*	m_animation_state;		//wskaünik na obiekt AnimationState
 			std::string			m_animation_name;		//nazwa animacji
 			bool				m_smooth;				//flaga, czy obiekt wyg≥adza piksele tekstury
 
