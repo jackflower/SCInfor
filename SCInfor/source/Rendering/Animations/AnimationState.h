@@ -58,9 +58,6 @@ namespace rendering
 			///
 			~AnimationState();
 
-
-			/////////////// operatory...start
-
 			///
 			///Przeciążony operator przypisania kopiowania
 			///
@@ -74,7 +71,6 @@ namespace rendering
 			///@param other -  referencja do r-wartości
 			///
 			AnimationState & operator=(AnimationState && other);
-			///////////////////////////////// operatory end...
 
 			///
 			///Metoda zwraca typ obiektu /RTTI/

@@ -289,17 +289,64 @@ namespace rendering
 		//Konstruktor domyślny
 		AnimSet::AnimSet()
 		:
-			m_animset_name			("")
+			m_animset_name(""),
+			m_anims()
 		{
 			m_anims.resize(m_anim_handle_number);
+		}
+
+		//Konstruktor kopiujący
+		AnimSet::AnimSet(const AnimSet & AnimSetCopy)
+		:
+			m_animset_name(AnimSetCopy.m_animset_name),
+			m_anims(AnimSetCopy.m_anims)
+		{
+			m_anims.resize(m_anim_handle_number);
+		}
+
+		//Konstruktor przenoszący
+		AnimSet::AnimSet(AnimSet && other)
+		:
+			m_animset_name(other.m_animset_name),
+			m_anims(other.m_anims)
+		{
+			//zerujemy składowe obiektu źródłowego...
+			other.m_animset_name = "";
+			other.m_anims.clear();
 		}
 
 		//Destruktor
 		AnimSet::~AnimSet()
 		{
-			m_animset_name			= "";
-			m_anim_handle_number	= 0;
+			m_animset_name = "";
+			m_anim_handle_number = 0;
 			m_anims.clear();
+		}
+
+		//Przeciążony operator przypisania kopiowania
+		AnimSet & AnimSet::operator=(const AnimSet & copy)
+		{
+			if (this != &copy)
+			{
+				m_animset_name = copy.m_animset_name;
+				m_anims = copy.m_anims;
+			}
+			return *this;
+		}
+
+		//Przeciążony operator przypisania przenoszenia
+		AnimSet & AnimSet::operator=(AnimSet && other)
+		{
+			if (this != &other)
+			{
+				m_animset_name = other.m_animset_name;
+				m_anims = other.m_anims;
+
+				//zerowanie obiektu źródłowego
+				other.m_animset_name = "";
+				other.m_anims.clear();
+			}
+			return *this;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

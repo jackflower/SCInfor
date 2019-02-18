@@ -44,9 +44,37 @@ namespace rendering
 			AnimSet();
 
 			///
+			///Konstruktor kopiujący
+			///
+			///@param AnimSet - parametr - obiekt klasy AnimSet
+			///
+			AnimSet(const AnimSet & AnimSetCopy);
+
+			///
+			///Konstruktor przenoszący
+			///
+			///@param other = referencja do r-wartości
+			///
+			AnimSet(AnimSet && other);
+
+			///
 			///Destruktor
 			///
 			~AnimSet();
+
+			///
+			///Przeciążony operator przypisania kopiowania
+			///
+			///@param copy - stała referencja na obiekt klasy AnimSet
+			///
+			AnimSet & operator=(const AnimSet & copy);
+
+			///
+			///Przeciążony operator przypisania przenoszenia
+			///
+			///@param other -  referencja do r-wartości
+			///
+			AnimSet & operator=(AnimSet && other);
 
 			///
 			///Metoda zwraca typ obiektu /RTTI/
@@ -737,9 +765,11 @@ namespace rendering
 		private:
 
 			std::string m_animset_name; //nazwa zestawu
+			std::vector<CNameAnimPairTranslator> m_anims; //kontener przechowujący animacje
+
 			static int m_anim_handle_number; //uchwyt animacji
 			static std::string m_anim_handle_names[]; //tablica stringów przechowująca nazwy animacji
-			std::vector<CNameAnimPairTranslator> m_anims; //kontener przechowujący animacje
+			
 		};
 
 	}//namespace animation
