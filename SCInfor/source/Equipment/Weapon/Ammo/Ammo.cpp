@@ -5,7 +5,7 @@
 //
 
 #include "Ammo.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
@@ -226,7 +226,7 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetAmmoDefaultAnim());
+					setAnimationBody(p_anim_set->getAmmoDefaultAnim());
 					//head - not used
 				}
 				break;
@@ -235,7 +235,7 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetAmmoReserveAnim());
+					setAnimationBody(p_anim_set->getAmmoReserveAnim());
 					//head - not used
 				}
 				break;
@@ -244,7 +244,7 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetAmmoEmptyAnim());
+					setAnimationBody(p_anim_set->getAmmoEmptyAnim());
 					//head - not used
 				}
 				break;
@@ -253,7 +253,7 @@ namespace equipment
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetAmmoDamageAnim());
+					setAnimationBody(p_anim_set->getAmmoDamageAnim());
 					//head - not used
 				}
 				break;

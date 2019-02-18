@@ -5,7 +5,7 @@
 //
 
 #include "EngineTemplate.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 
 using namespace resource;
@@ -126,12 +126,12 @@ namespace factory
 				p_engine->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetEngineBodyDefaultAnim()!= NULL)
-					p_engine->setAnimationBody(p_templ_animations->GetEngineBodyDefaultAnim());
+				if (p_templ_animations->getEngineBodyDefaultAnim()!= NULL)
+					p_engine->setAnimationBody(p_templ_animations->getEngineBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetEngineHeadDefaultAnim()!= NULL)
-					p_engine->setAnimationHead(p_templ_animations->GetEngineHeadDefaultAnim());
+				if (p_templ_animations->getEngineHeadDefaultAnim()!= NULL)
+					p_engine->setAnimationHead(p_templ_animations->getEngineHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca

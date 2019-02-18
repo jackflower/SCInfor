@@ -5,7 +5,7 @@
 //
 
 #include "Communication.h"
-#include "../../Rendering/Animations/CAnimSet.h"
+#include "../../Rendering/Animations/AnimSet.h"
 #include "../../Rendering/Animations/Animation.h"
 #include "../../Rendering/Animations/AnimationState.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
@@ -180,8 +180,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetCommunicationBodyDefaultAnim());
-					setAnimationHead(p_anim_set->GetCommunicationHeadDefaultAnim());
+					setAnimationBody(p_anim_set->getCommunicationBodyDefaultAnim());
+					setAnimationHead(p_anim_set->getCommunicationHeadDefaultAnim());
 				}
 				break;
 			}
@@ -189,8 +189,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetCommunicationBodySearchAnim());
-					setAnimationHead(p_anim_set->GetCommunicationHeadSearchAnim());
+					setAnimationBody(p_anim_set->getCommunicationBodySearchAnim());
+					setAnimationHead(p_anim_set->getCommunicationHeadSearchAnim());
 				}
 				break;
 			}
@@ -198,8 +198,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetCommunicationBodyLoginAnim());
-					setAnimationHead(p_anim_set->GetCommunicationHeadLoginAnim());
+					setAnimationBody(p_anim_set->getCommunicationBodyLoginAnim());
+					setAnimationHead(p_anim_set->getCommunicationHeadLoginAnim());
 				}
 				break;
 			}
@@ -207,8 +207,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetCommunicationBodyAuthorizationAnim());
-					setAnimationHead(p_anim_set->GetCommunicationHeadAuthorizationAnim());
+					setAnimationBody(p_anim_set->getCommunicationBodyAuthorizationAnim());
+					setAnimationHead(p_anim_set->getCommunicationHeadAuthorizationAnim());
 				}
 				break;
 			}
@@ -216,8 +216,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetCommunicationBodyUpdateAnim());
-					setAnimationHead(p_anim_set->GetCommunicationHeadUpdateAnim());
+					setAnimationBody(p_anim_set->getCommunicationBodyUpdateAnim());
+					setAnimationHead(p_anim_set->getCommunicationHeadUpdateAnim());
 				}
 				break;
 			}
@@ -225,8 +225,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetCommunicationBodyDamageAnim());
-					setAnimationHead(p_anim_set->GetCommunicationHeadDamageAnim());
+					setAnimationBody(p_anim_set->getCommunicationBodyDamageAnim());
+					setAnimationHead(p_anim_set->getCommunicationHeadDamageAnim());
 				}
 				break;
 			}
@@ -234,8 +234,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetCommunicationBodyDeathAnim());
-					setAnimationHead(p_anim_set->GetCommunicationHeadDeathAnim());
+					setAnimationBody(p_anim_set->getCommunicationBodyDeathAnim());
+					setAnimationHead(p_anim_set->getCommunicationHeadDeathAnim());
 				}
 				break;
 			}

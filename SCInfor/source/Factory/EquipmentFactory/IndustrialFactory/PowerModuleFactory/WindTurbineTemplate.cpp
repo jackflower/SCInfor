@@ -5,7 +5,7 @@
 //
 
 #include "WindTurbineTemplate.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 using namespace resource;
 
@@ -109,12 +109,12 @@ namespace factory
 				p_turbine->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetWindTurbineBodyDefaultAnim()!= NULL)
-					p_turbine->setAnimationBody(p_templ_animations->GetWindTurbineBodyDefaultAnim());
+				if (p_templ_animations->getWindTurbineBodyDefaultAnim()!= NULL)
+					p_turbine->setAnimationBody(p_templ_animations->getWindTurbineBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetWindTurbineHeadDefaultAnim()!= NULL)
-					p_turbine->setAnimationHead(p_templ_animations->GetWindTurbineHeadDefaultAnim());
+				if (p_templ_animations->getWindTurbineHeadDefaultAnim()!= NULL)
+					p_turbine->setAnimationHead(p_templ_animations->getWindTurbineHeadDefaultAnim());
 			}
 			//decorate
 			p_turbine->setSmoothing(true);

@@ -7,7 +7,7 @@
 #include "Actor.h"
 #include "../PhysicalManager.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
-#include "../../Rendering/Animations/CAnimSet.h"
+#include "../../Rendering/Animations/AnimSet.h"
 #include "../../Rendering/Animations/AnimationState.h"
 #include "../../Rendering/Animations/CNameAnimPairTranslator.h"
 #include "../../Equipment/Engine/Engine.h"
@@ -144,13 +144,13 @@ namespace logic
 	}
 
 	//Metoda zwraca wskaźnik na zestaw animacji
-	CAnimSet *Actor::getAnimSet()
+	AnimSet *Actor::getAnimSet()
 	{
 		return p_anim_set;
 	}
 
 	//Metoda ustawia zestaw animacji
-	void Actor::setAnimSet(CAnimSet *anim_set)
+	void Actor::setAnimSet(AnimSet *anim_set)
 	{
 		setAnimSetBody(anim_set); //body
 		setAnimSetHead(anim_set); //head
@@ -535,7 +535,7 @@ namespace logic
 	}
 
 	//metoda ustawia zestaw animacji - body
-	void Actor::setAnimSetBody(CAnimSet *anim_set)
+	void Actor::setAnimSetBody(AnimSet *anim_set)
 	{
 		//jeśli zestaw animacji jest zainicjowany
 		if (p_anim_set)//body
@@ -544,10 +544,10 @@ namespace logic
 			Animation *curr_anim = getAnimationBody();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->GetAnims();
+			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->getAnims();
 
 			//kontener przechowujący nowy (parametr tej metody) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> & new_anims = anim_set->GetAnims();
+			const std::vector<CNameAnimPairTranslator> & new_anims = anim_set->getAnims();
 
 			//indeks, pod którym może znajdować się szukana animacja
 			unsigned int index = -1;
@@ -581,7 +581,7 @@ namespace logic
 	}
 
 	//metoda pomocnicza - metoda ustawia zestaw animacji - head
-	void Actor::setAnimSetHead(CAnimSet *anim_set)
+	void Actor::setAnimSetHead(AnimSet *anim_set)
 	{
 		//jeśli zestaw animacji jest zainicjowany
 		if (p_anim_set)//head
@@ -590,10 +590,10 @@ namespace logic
 			Animation *curr_anim = getAnimationHead();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->GetAnims();
+			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->getAnims();
 
 			//kontener przechowujący nowy (parametr tej metody) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> & new_anims = anim_set->GetAnims();
+			const std::vector<CNameAnimPairTranslator> & new_anims = anim_set->getAnims();
 
 			//indeks, pod którym może znajdować się szukana animacja
 			unsigned int index = -1;

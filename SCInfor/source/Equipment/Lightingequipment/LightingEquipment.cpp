@@ -7,7 +7,7 @@
 #include "LightingEquipment.h"
 #include "../../Logic/PhysicalManager.h"
 #include "../../Rendering/Drawable/Layers.h"
-#include "../../Rendering/Animations/CAnimSet.h"
+#include "../../Rendering/Animations/AnimSet.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 
 using namespace rendering::drawable;
@@ -95,8 +95,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightDafaultAnim());
-				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightDafaultAnim());
+				setAnimationBody(p_anim_set->getLightingEquipmentBodyLightDafaultAnim());
+				setAnimationHead(p_anim_set->getLightingEquipmentHeadLightDafaultAnim());
 			}
 			break;
 		}
@@ -104,8 +104,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightOnAnim());
-				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightOnAnim());
+				setAnimationBody(p_anim_set->getLightingEquipmentBodyLightOnAnim());
+				setAnimationHead(p_anim_set->getLightingEquipmentHeadLightOnAnim());
 			}
 			break;
 		}
@@ -113,8 +113,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightOffAnim());
-				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightOffAnim());
+				setAnimationBody(p_anim_set->getLightingEquipmentBodyLightOffAnim());
+				setAnimationHead(p_anim_set->getLightingEquipmentHeadLightOffAnim());
 			}
 			break;
 		}
@@ -122,8 +122,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightDamageAnim());
-				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightDamageAnim());
+				setAnimationBody(p_anim_set->getLightingEquipmentBodyLightDamageAnim());
+				setAnimationHead(p_anim_set->getLightingEquipmentHeadLightDamageAnim());
 			}
 			break;
 		}
@@ -131,8 +131,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetLightingEquipmentBodyLightDeathAnim());
-				setAnimationHead(p_anim_set->GetLightingEquipmentHeadLightDeathAnim());
+				setAnimationBody(p_anim_set->getLightingEquipmentBodyLightDeathAnim());
+				setAnimationHead(p_anim_set->getLightingEquipmentHeadLightDeathAnim());
 			}
 			break;
 		}

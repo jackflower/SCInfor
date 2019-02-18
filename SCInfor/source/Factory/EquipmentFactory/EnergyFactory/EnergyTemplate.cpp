@@ -5,7 +5,7 @@
 //
 
 #include "EnergyTemplate.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 
 using namespace resource;
@@ -149,12 +149,12 @@ namespace factory
 				p_energy->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetEnergyBodyDefaultAnim()!= NULL)
-					p_energy->setAnimationBody(p_templ_animations->GetEnergyBodyDefaultAnim());
+				if (p_templ_animations->getEnergyBodyDefaultAnim()!= NULL)
+					p_energy->setAnimationBody(p_templ_animations->getEnergyBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetEnergyHeadDefaultAnim()!= NULL)
-					p_energy->setAnimationHead(p_templ_animations->GetEnergyHeadDefaultAnim());
+				if (p_templ_animations->getEnergyHeadDefaultAnim()!= NULL)
+					p_energy->setAnimationHead(p_templ_animations->getEnergyHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca

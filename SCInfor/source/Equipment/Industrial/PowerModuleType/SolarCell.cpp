@@ -6,7 +6,7 @@
 
 #include "SolarCell.h"
 #include "../../../Weather/CWeather.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
@@ -112,8 +112,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetSolarCellBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetSolarCellHeadDefaultAnim());
+				setAnimationBody(p_anim_set->getSolarCellBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getSolarCellHeadDefaultAnim());
 			}
 			break;
 		}
@@ -121,8 +121,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetSolarCellBodyUpdateEnergyAnim());
-				setAnimationHead(p_anim_set->GetSolarCellHeadUpdateEnergyAnim());
+				setAnimationBody(p_anim_set->getSolarCellBodyUpdateEnergyAnim());
+				setAnimationHead(p_anim_set->getSolarCellHeadUpdateEnergyAnim());
 			}
 			break;
 		}
@@ -130,8 +130,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetSolarCellBodyDamageAnim());
-				setAnimationHead(p_anim_set->GetSolarCellHeadDamageAnim());
+				setAnimationBody(p_anim_set->getSolarCellBodyDamageAnim());
+				setAnimationHead(p_anim_set->getSolarCellHeadDamageAnim());
 			}
 			break;
 		}
@@ -139,8 +139,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetSolarCellBodyDeathAnim());
-				setAnimationHead(p_anim_set->GetSolarCellHeadDeathAnim());
+				setAnimationBody(p_anim_set->getSolarCellBodyDeathAnim());
+				setAnimationHead(p_anim_set->getSolarCellHeadDeathAnim());
 			}
 			break;
 		}

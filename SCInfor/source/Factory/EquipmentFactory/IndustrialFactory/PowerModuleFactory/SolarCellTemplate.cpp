@@ -5,7 +5,7 @@
 //
 
 #include "SolarCellTemplate.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 using namespace resource;
 
@@ -103,12 +103,12 @@ namespace factory
 				p_solarcell->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetSolarCellBodyDefaultAnim()!= NULL)
-					p_solarcell->setAnimationBody(p_templ_animations->GetSolarCellBodyDefaultAnim());
+				if (p_templ_animations->getSolarCellBodyDefaultAnim()!= NULL)
+					p_solarcell->setAnimationBody(p_templ_animations->getSolarCellBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetSolarCellHeadDefaultAnim()!= NULL)
-					p_solarcell->setAnimationHead(p_templ_animations->GetSolarCellHeadDefaultAnim());
+				if (p_templ_animations->getSolarCellHeadDefaultAnim()!= NULL)
+					p_solarcell->setAnimationHead(p_templ_animations->getSolarCellHeadDefaultAnim());
 			}
 			//decorate
 			p_solarcell->setSmoothing(true);

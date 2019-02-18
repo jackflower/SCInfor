@@ -5,7 +5,7 @@
 //
 
 #include "SlotsRate.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
@@ -67,8 +67,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetSlotsRateBody_0_Anim());
-					setAnimationHead(p_anim_set->GetSlotsRateHead_0_Anim());
+					setAnimationBody(p_anim_set->getSlotsRateBody_0_Anim());
+					setAnimationHead(p_anim_set->getSlotsRateHead_0_Anim());
 				}
 				break;
 			}
@@ -76,8 +76,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetSlotsRateBody_1_Anim());
-					setAnimationHead(p_anim_set->GetSlotsRateHead_1_Anim());
+					setAnimationBody(p_anim_set->getSlotsRateBody_1_Anim());
+					setAnimationHead(p_anim_set->getSlotsRateHead_1_Anim());
 				}
 				break;
 			}
@@ -85,8 +85,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetSlotsRateBody_2_Anim());
-					setAnimationHead(p_anim_set->GetSlotsRateHead_2_Anim());
+					setAnimationBody(p_anim_set->getSlotsRateBody_2_Anim());
+					setAnimationHead(p_anim_set->getSlotsRateHead_2_Anim());
 				}
 				break;
 			}
@@ -94,8 +94,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetSlotsRateBody_3_Anim());
-					setAnimationHead(p_anim_set->GetSlotsRateHead_3_Anim());
+					setAnimationBody(p_anim_set->getSlotsRateBody_3_Anim());
+					setAnimationHead(p_anim_set->getSlotsRateHead_3_Anim());
 				}
 				break;
 			}
@@ -103,8 +103,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetSlotsRateBody_4_Anim());
-					setAnimationHead(p_anim_set->GetSlotsRateHead_4_Anim());
+					setAnimationBody(p_anim_set->getSlotsRateBody_4_Anim());
+					setAnimationHead(p_anim_set->getSlotsRateHead_4_Anim());
 				}
 				break;
 			}

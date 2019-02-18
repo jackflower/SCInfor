@@ -12,9 +12,5 @@ int main()
 	CSingletonCleaner cleaner;
 	gGame.run();
 
-
-	//Glêdzienie na temat o niczym
-	//by Jack Flower
-
 	return 0;
 }

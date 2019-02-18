@@ -6,7 +6,7 @@
 
 #include "Ventilator.h"
 #include "../../../Weather/CWeather.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
 #include "../../../Utilities/MathFunctions/MathFunctions.h"
@@ -142,8 +142,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetVentilatorBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetVentilatorHeadDefaultAnim());
+				setAnimationBody(p_anim_set->getVentilatorBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getVentilatorHeadDefaultAnim());
 			}
 			break;
 		}
@@ -151,8 +151,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetVentilatorBodyDamagetAnim());
-				setAnimationHead(p_anim_set->GetVentilatorHeadDamagetAnim());
+				setAnimationBody(p_anim_set->getVentilatorBodyDamagetAnim());
+				setAnimationHead(p_anim_set->getVentilatorHeadDamagetAnim());
 			}
 			break;
 		}

@@ -6,7 +6,7 @@
 
 #include "Energy.h"
 #include "../../Logic/PhysicalManager.h"
-#include "../../Rendering/Animations/CAnimSet.h"
+#include "../../Rendering/Animations/AnimSet.h"
 #include "../../Rendering/Drawable/Layers.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Utilities/Utilities/Utilities.h"
@@ -252,8 +252,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEnergyBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetEnergyHeadDefaultAnim());
+				setAnimationBody(p_anim_set->getEnergyBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getEnergyHeadDefaultAnim());
 			}
 			break;
 		}
@@ -261,8 +261,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEnergyBodyReserveAnim());
-				setAnimationHead(p_anim_set->GetEnergyHeadReserveAnim());
+				setAnimationBody(p_anim_set->getEnergyBodyReserveAnim());
+				setAnimationHead(p_anim_set->getEnergyHeadReserveAnim());
 			}
 			break;
 		}
@@ -270,8 +270,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEnergyBodyEmptyAnim());
-				setAnimationHead(p_anim_set->GetEnergyHeadEmptyAnim());
+				setAnimationBody(p_anim_set->getEnergyBodyEmptyAnim());
+				setAnimationHead(p_anim_set->getEnergyHeadEmptyAnim());
 			}
 			break;
 		}
@@ -279,8 +279,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEnergyBodyDamageAnim());
-				setAnimationHead(p_anim_set->GetEnergyHeadDamageAnim());
+				setAnimationBody(p_anim_set->getEnergyBodyDamageAnim());
+				setAnimationHead(p_anim_set->getEnergyHeadDamageAnim());
 			}
 			break;
 		}
@@ -288,8 +288,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEnergyBodyDeathAnim());
-				setAnimationHead(p_anim_set->GetEnergyHeadDeathAnim());
+				setAnimationBody(p_anim_set->getEnergyBodyDeathAnim());
+				setAnimationHead(p_anim_set->getEnergyHeadDeathAnim());
 			}
 			break;
 		}

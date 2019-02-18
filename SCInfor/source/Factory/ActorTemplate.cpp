@@ -16,7 +16,7 @@
 #include "EquipmentFactory/EngineFactory/FuelBarFactory/FuelBarTemplate.h"
 #include "../Logic/Actor/Actor.h"
 #include "../XML/CXml.h"
-#include "../Rendering/Animations/CAnimSet.h"
+#include "../Rendering/Animations/AnimSet.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../Rendering/Displayable/CDisplayable.h"
 #include "../Weather/CWeather.h"
@@ -120,16 +120,16 @@ namespace factory
 		{
 			for (xml_node<>* node = xml.GetChild(xml.GetRootNode(), "animset"); node; node = xml.GetSibling(node,"animset"))
 			{
-				CAnimSet * animations = new CAnimSet();
-				animations->SetAnimSetName(xml.GetString(node, "name_animset"));
-				animations->Parse(xml,node);
+				AnimSet * animations = new AnimSet();
+				animations->setAnimSetName(xml.GetString(node, "name_animset"));
+				animations->parse(xml,node);
 				m_templ_available_animations.push_back(animations);
 			}
 		}
 		else
 		{
-			CAnimSet *animations = new CAnimSet();
-			animations->Parse(xml);
+			AnimSet *animations = new AnimSet();
+			animations->parse(xml);
 			m_templ_available_animations.push_back(animations);
 		}
 
@@ -268,12 +268,12 @@ namespace factory
 				actor->setAnimSet(p_templ_animations);
 				
 				//body
-				if (p_templ_animations->GetDefaultAnimBody()!= NULL)
-					actor->setAnimationBody(p_templ_animations->GetDefaultAnimBody());
+				if (p_templ_animations->getDefaultAnimBody()!= NULL)
+					actor->setAnimationBody(p_templ_animations->getDefaultAnimBody());
 
 				//head
-				if (p_templ_animations->GetDefaultAnimHead()!= NULL)
-					actor->setAnimationHead(p_templ_animations->GetDefaultAnimHead());
+				if (p_templ_animations->getDefaultAnimHead()!= NULL)
+					actor->setAnimationHead(p_templ_animations->getDefaultAnimHead());
 			}
 
 			//jeśli obiekt posiada silnik engine

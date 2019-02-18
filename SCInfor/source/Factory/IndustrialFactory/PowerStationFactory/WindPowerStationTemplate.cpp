@@ -5,7 +5,7 @@
 //
 
 #include "WindPowerStationTemplate.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 using namespace resource;
 

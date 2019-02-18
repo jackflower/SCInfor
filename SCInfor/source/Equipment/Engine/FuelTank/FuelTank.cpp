@@ -6,7 +6,7 @@
 
 #include "FuelTank.h"
 #include "../../../Rendering/Drawable/Layers.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 
 using namespace rendering::animation;
 using namespace rendering::drawable;
@@ -126,8 +126,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetFuelBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetFuelHeadDefaultAnim());
+				setAnimationBody(p_anim_set->getFuelBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getFuelHeadDefaultAnim());
 			}
 			break;
 		}
@@ -135,8 +135,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetFuelBodyReserveAnim());
-				setAnimationHead(p_anim_set->GetFuelHeadReserveAnim());
+				setAnimationBody(p_anim_set->getFuelBodyReserveAnim());
+				setAnimationHead(p_anim_set->getFuelHeadReserveAnim());
 			}
 			break;
 		}
@@ -144,8 +144,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetFuelBodyEmptyAnim());
-				setAnimationHead(p_anim_set->GetFuelHeadEmptyAnim());
+				setAnimationBody(p_anim_set->getFuelBodyEmptyAnim());
+				setAnimationHead(p_anim_set->getFuelHeadEmptyAnim());
 			}
 			break;
 		}
@@ -153,8 +153,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetFuelBodyDamageAnim());
-				setAnimationHead(p_anim_set->GetFuelHeadDamageAnim());
+				setAnimationBody(p_anim_set->getFuelBodyDamageAnim());
+				setAnimationHead(p_anim_set->getFuelHeadDamageAnim());
 			}
 			break;
 		}

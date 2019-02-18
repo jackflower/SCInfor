@@ -6,7 +6,7 @@
 
 #include "GunTemplate.h"
 #include "../../../../ResourceManager/CResourceManager.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 #include "../../../../Rendering/Displayable/CDisplayable.h"
 #include "../../../../Utilities/Random/CRandom.h"
 
@@ -152,12 +152,12 @@ namespace factory
 				p_gun->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetGunBodyDefaultAnim() != NULL)
-					p_gun->setAnimationBody(p_templ_animations->GetGunBodyDefaultAnim());
+				if (p_templ_animations->getGunBodyDefaultAnim() != NULL)
+					p_gun->setAnimationBody(p_templ_animations->getGunBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetGunHeadDefaultAnim() != NULL)
-					p_gun->setAnimationHead(p_templ_animations->GetGunHeadDefaultAnim());
+				if (p_templ_animations->getGunHeadDefaultAnim() != NULL)
+					p_gun->setAnimationHead(p_templ_animations->getGunHeadDefaultAnim());
 			}
 
 			//jeśli obiekt posiada ammo (magazynek z amunicją)

@@ -6,7 +6,7 @@
 
 #include "Airconditioning.h"
 #include "../../../Weather/CWeather.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
 
@@ -220,8 +220,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetAirconditioningBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetAirconditioningHeadDefaultAnim());
+				setAnimationBody(p_anim_set->getAirconditioningBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getAirconditioningHeadDefaultAnim());
 			}
 			break;
 		}
@@ -229,8 +229,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetAirconditioningBodyHeatingtAnim());
-				setAnimationHead(p_anim_set->GetAirconditioningHeadHeatingtAnim());
+				setAnimationBody(p_anim_set->getAirconditioningBodyHeatingtAnim());
+				setAnimationHead(p_anim_set->getAirconditioningHeadHeatingtAnim());
 			}
 			break;
 		}
@@ -238,8 +238,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetAirconditioningBodyCoolingAnim());
-				setAnimationHead(p_anim_set->GetAirconditioningHeadCoolingAnim());
+				setAnimationBody(p_anim_set->getAirconditioningBodyCoolingAnim());
+				setAnimationHead(p_anim_set->getAirconditioningHeadCoolingAnim());
 			}
 			break;
 		}
@@ -247,8 +247,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetAirconditioningBodyIneffectiveAnim());
-				setAnimationHead(p_anim_set->GetAirconditioningHeadIneffectiveAnim());
+				setAnimationBody(p_anim_set->getAirconditioningBodyIneffectiveAnim());
+				setAnimationHead(p_anim_set->getAirconditioningHeadIneffectiveAnim());
 			}
 			break;
 		}
@@ -256,8 +256,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetAirconditioningBodyDamageAnim());
-				setAnimationHead(p_anim_set->GetAirconditioningHeadDamageAnim());
+				setAnimationBody(p_anim_set->getAirconditioningBodyDamageAnim());
+				setAnimationHead(p_anim_set->getAirconditioningHeadDamageAnim());
 			}
 			break;
 		}

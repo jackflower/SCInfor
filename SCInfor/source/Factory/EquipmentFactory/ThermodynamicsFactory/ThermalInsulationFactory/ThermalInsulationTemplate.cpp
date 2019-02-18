@@ -6,7 +6,7 @@
 
 #include "ThermalInsulationTemplate.h"
 #include "../../../../Weather/CWeather.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 
 using namespace weather;
 
@@ -98,12 +98,12 @@ namespace factory
 				p_thermalinsulation->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetThermalInsulationBodyDefaultAnim() != NULL)
-					p_thermalinsulation->setAnimationBody(p_templ_animations->GetThermalInsulationBodyDefaultAnim());
+				if (p_templ_animations->getThermalInsulationBodyDefaultAnim() != NULL)
+					p_thermalinsulation->setAnimationBody(p_templ_animations->getThermalInsulationBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetThermalInsulationHeadDefaultAnim() != NULL)
-					p_thermalinsulation->setAnimationHead(p_templ_animations->GetThermalInsulationHeadDefaultAnim());
+				if (p_templ_animations->getThermalInsulationHeadDefaultAnim() != NULL)
+					p_thermalinsulation->setAnimationHead(p_templ_animations->getThermalInsulationHeadDefaultAnim());
 			}
 
 

@@ -5,7 +5,7 @@
 //
 
 #include "WindPowerStation.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 #include "../../../../Rendering/Animations/Animation.h"
 #include "../../../../Rendering/Animations/AnimationState.h"
 #include "../../../../Rendering/Displayable/CDisplayable.h"
@@ -176,8 +176,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetWindPowerStationBodyDefaultAnim());
-					setAnimationHead(p_anim_set->GetWindPowerStationHeadDefaultAnim());
+					setAnimationBody(p_anim_set->getWindPowerStationBodyDefaultAnim());
+					setAnimationHead(p_anim_set->getWindPowerStationHeadDefaultAnim());
 				}
 				break;
 			}
@@ -185,8 +185,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetWindPowerStationBodyUpdateEnergyAnim());
-					setAnimationHead(p_anim_set->GetWindPowerStationHeadUpdateEnergyAnim());
+					setAnimationBody(p_anim_set->getWindPowerStationBodyUpdateEnergyAnim());
+					setAnimationHead(p_anim_set->getWindPowerStationHeadUpdateEnergyAnim());
 				}
 				break;
 			}
@@ -194,8 +194,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetWindPowerStationBodyDamageAnim());
-					setAnimationHead(p_anim_set->GetWindPowerStationHeadDamageAnim());
+					setAnimationBody(p_anim_set->getWindPowerStationBodyDamageAnim());
+					setAnimationHead(p_anim_set->getWindPowerStationHeadDamageAnim());
 				}
 				break;
 			}
@@ -203,8 +203,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetWindPowerStationBodyDeathAnim());
-					setAnimationHead(p_anim_set->GetWindPowerStationHeadDeathAnim());
+					setAnimationBody(p_anim_set->getWindPowerStationBodyDeathAnim());
+					setAnimationHead(p_anim_set->getWindPowerStationHeadDeathAnim());
 				}
 				break;
 			}

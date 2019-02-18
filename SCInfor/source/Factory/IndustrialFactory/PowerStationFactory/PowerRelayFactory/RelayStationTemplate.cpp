@@ -5,7 +5,7 @@
 //
 
 #include "RelayStationTemplate.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 
 using namespace resource;
@@ -105,12 +105,12 @@ namespace factory
 				p_relay_station->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetPowerRelayStationBodyDefaultAnim()!= NULL)
-					p_relay_station->setAnimationBody(p_templ_animations->GetPowerRelayStationBodyDefaultAnim());
+				if (p_templ_animations->getPowerRelayStationBodyDefaultAnim()!= NULL)
+					p_relay_station->setAnimationBody(p_templ_animations->getPowerRelayStationBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetPowerRelayStationHeadDefaultAnim()!= NULL)
-					p_relay_station->setAnimationHead(p_templ_animations->GetPowerRelayStationHeadDefaultAnim());
+				if (p_templ_animations->getPowerRelayStationHeadDefaultAnim()!= NULL)
+					p_relay_station->setAnimationHead(p_templ_animations->getPowerRelayStationHeadDefaultAnim());
 			}
 
 			//jeśli obiekt posiada moduł do komunikacji

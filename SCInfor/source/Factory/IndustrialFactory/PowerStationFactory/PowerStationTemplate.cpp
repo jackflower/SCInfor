@@ -5,7 +5,7 @@
 //
 
 #include "PowerStationTemplate.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 #include "../../EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
 
@@ -110,12 +110,12 @@ namespace factory
 				p_power_station->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetWindPowerStationBodyDefaultAnim() != NULL)
-					p_power_station->setAnimationBody(p_templ_animations->GetWindPowerStationBodyDefaultAnim());
+				if (p_templ_animations->getWindPowerStationBodyDefaultAnim() != NULL)
+					p_power_station->setAnimationBody(p_templ_animations->getWindPowerStationBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetWindPowerStationHeadDefaultAnim() != NULL)
-					p_power_station->setAnimationHead(p_templ_animations->GetWindPowerStationHeadDefaultAnim());
+				if (p_templ_animations->getWindPowerStationHeadDefaultAnim() != NULL)
+					p_power_station->setAnimationHead(p_templ_animations->getWindPowerStationHeadDefaultAnim());
 			}
 
 			//kategoria

@@ -31,7 +31,7 @@ namespace rendering
 
 	namespace animation
 	{
-		class CAnimSet;
+		class AnimSet;
 	}
 }
 
@@ -171,14 +171,14 @@ namespace logic
 		///
 		///Metoda zwraca wskaźnik na zestaw animacji
 		///
-		CAnimSet *getAnimSet();
+		AnimSet *getAnimSet();
 
 		///
 		///Metoda ustawia zestaw animacji
 		///
-		///@param *anim_set - wskaźnik na obiekt klasy CAnimSet
+		///@param *anim_set - wskaźnik na obiekt klasy AnimSet
 		///
-		void setAnimSet(CAnimSet *anim_set);
+		void setAnimSet(AnimSet *anim_set);
 
 		///
 		///Metoda zwraca referencję na klasę bedącą opakowaniem fizyki
@@ -442,7 +442,7 @@ namespace logic
 
 	protected:
 
-		CAnimSet *p_anim_set; //wskaźnik na obiekt klasy CAnimSet (zestaw animacji)
+		AnimSet *p_anim_set; //wskaźnik na obiekt klasy AnimSet (zestaw animacji)
 		ActorTechnicalData m_technical_data; //opakowanie fizyki
 		EquipmentEngineData m_engine_data; //opakowanie funkcjonalności silnika
 		EquipmentEnergyData m_energy_data; //opakowanie funkcjonalności energii
@@ -477,10 +477,10 @@ namespace logic
 		void updateTemperature(float dt);
 
 		//metoda pomocnicza - metoda ustawia zestaw animacji - body
-		void setAnimSetBody(CAnimSet *anim_set);
+		void setAnimSetBody(AnimSet *anim_set);
 
 		//metoda pomocnicza - metoda ustawia zestaw animacji - head
-		void setAnimSetHead(CAnimSet *anim_set);
+		void setAnimSetHead(AnimSet *anim_set);
 	};
 }//namespace logic
 #endif //H_ACTOR_JACK

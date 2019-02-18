@@ -6,7 +6,7 @@
 
 #include "ThermalInsulation.h"
 #include "../../../Weather/CWeather.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
 
@@ -155,8 +155,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetThermalInsulationBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetThermalInsulationHeadDefaultAnim());
+				setAnimationBody(p_anim_set->getThermalInsulationBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getThermalInsulationHeadDefaultAnim());
 			}
 			break;
 		}
@@ -164,8 +164,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetThermalInsulationBodyDamagetAnim());
-				setAnimationHead(p_anim_set->GetThermalInsulationHeadDamagetAnim());
+				setAnimationBody(p_anim_set->getThermalInsulationBodyDamagetAnim());
+				setAnimationHead(p_anim_set->getThermalInsulationHeadDamagetAnim());
 			}
 			break;
 		}

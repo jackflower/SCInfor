@@ -5,7 +5,7 @@
 //
 
 #include "PowerRelayStationTemplate.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 #include "../../../../Utilities/Random/CRandom.h"
 
@@ -150,11 +150,11 @@ namespace factory
 			{
 				p_power_relay_station->setAnimSet(p_templ_animations);
 				//body
-				if (p_templ_animations->GetPowerRelayStationBodyDefaultAnim()!= NULL)
-					p_power_relay_station->setAnimationBody(p_templ_animations->GetPowerRelayStationBodyDefaultAnim());
+				if (p_templ_animations->getPowerRelayStationBodyDefaultAnim()!= NULL)
+					p_power_relay_station->setAnimationBody(p_templ_animations->getPowerRelayStationBodyDefaultAnim());
 				//head
-				if (p_templ_animations->GetPowerRelayStationHeadDefaultAnim()!= NULL)
-					p_power_relay_station->setAnimationHead(p_templ_animations->GetPowerRelayStationHeadDefaultAnim());
+				if (p_templ_animations->getPowerRelayStationHeadDefaultAnim()!= NULL)
+					p_power_relay_station->setAnimationHead(p_templ_animations->getPowerRelayStationHeadDefaultAnim());
 			}
 			
 			//jeśli obiekt posiada moduł prezentacji stanu slotów

@@ -35,7 +35,7 @@ namespace rendering
 {
 	namespace animation
 	{
-		class CAnimSet;
+		class AnimSet;
 	}
 }
 
@@ -101,8 +101,8 @@ namespace factory
 			
 	protected:
 
-		CAnimSet *p_templ_animations; //wskaźnik na zestaw animacji Actor
-		std::vector<CAnimSet*> m_templ_available_animations; //wektor wskaźników na zestawy dostępnych animacji dla Actor
+		AnimSet *p_templ_animations; //wskaźnik na zestaw animacji Actor
+		std::vector<AnimSet*> m_templ_available_animations; //wektor wskaźników na zestawy dostępnych animacji dla Actor
 		ActorTechnicalData m_templ_technical_data; //opakowanie fizyki
 		EquipmentEngineData m_templ_engine_data; //opakowanie funkcjonalności silnika
 		EquipmentEnergyData m_templ_energy_data; //opakowanie funkcjonalności energii
@@ -136,7 +136,7 @@ namespace factory
 	public:
 
 		//metoda zwraca referencję na kontener z zestawem animacji
-		inline const std::vector<CAnimSet*> & getAvailableAnims() { return m_templ_available_animations; }
+		inline const std::vector<AnimSet*> & getAvailableAnims() { return m_templ_available_animations; }
 	};
 } //namespace factory
 #endif //H_ACTOR_TEMPLATE_JACK

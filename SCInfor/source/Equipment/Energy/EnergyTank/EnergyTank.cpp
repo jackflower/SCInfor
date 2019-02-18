@@ -6,7 +6,7 @@
 
 #include "EnergyTank.h"
 #include "../../../Rendering/Drawable/Layers.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 
 using namespace rendering::animation;
 using namespace rendering::drawable;
@@ -148,8 +148,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEnergyTankBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetEnergyTankHeadDefaultAnim());
+				setAnimationBody(p_anim_set->getEnergyTankBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getEnergyTankHeadDefaultAnim());
 			}
 			break;
 		}
@@ -157,8 +157,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEnergyTankBodyReserveAnim());
-				setAnimationHead(p_anim_set->GetEnergyTankHeadReserveAnim());
+				setAnimationBody(p_anim_set->getEnergyTankBodyReserveAnim());
+				setAnimationHead(p_anim_set->getEnergyTankHeadReserveAnim());
 			}
 			break;
 		}
@@ -166,8 +166,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEnergyTankBodyEmptyAnim());
-				setAnimationHead(p_anim_set->GetEnergyTankHeadEmptyAnim());
+				setAnimationBody(p_anim_set->getEnergyTankBodyEmptyAnim());
+				setAnimationHead(p_anim_set->getEnergyTankHeadEmptyAnim());
 			}
 			break;
 		}
@@ -175,8 +175,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEnergyTankBodyDamageAnim());
-				setAnimationHead(p_anim_set->GetEnergyTankHeadDamageAnim());
+				setAnimationBody(p_anim_set->getEnergyTankBodyDamageAnim());
+				setAnimationHead(p_anim_set->getEnergyTankHeadDamageAnim());
 			}
 			break;
 		}

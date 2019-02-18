@@ -5,7 +5,7 @@
 //
 
 #include "SlotsRateTemplate.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 
 namespace factory
@@ -79,12 +79,12 @@ namespace factory
 				p_slots_rate->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetSlotsRateBody_0_Anim() != NULL)
-					p_slots_rate->setAnimationBody(p_templ_animations->GetSlotsRateBody_0_Anim());
+				if (p_templ_animations->getSlotsRateBody_0_Anim() != NULL)
+					p_slots_rate->setAnimationBody(p_templ_animations->getSlotsRateBody_0_Anim());
 
 				//head
-				if (p_templ_animations->GetSlotsRateHead_0_Anim() != NULL)
-					p_slots_rate->setAnimationHead(p_templ_animations->GetSlotsRateHead_0_Anim());
+				if (p_templ_animations->getSlotsRateHead_0_Anim() != NULL)
+					p_slots_rate->setAnimationHead(p_templ_animations->getSlotsRateHead_0_Anim());
 			}
 			//decorate
 			p_slots_rate->setSmoothing(true);

@@ -7,7 +7,7 @@
 #include "FuelTankTemplate.h"
 #include "../../../../Logic/PhysicalManager.h"
 #include "../../../../Logic/Actor/Actor.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 
 using namespace rendering::animation;
 using namespace equipment;
@@ -94,12 +94,12 @@ namespace factory
 				p_fueltank->setAnimSet(p_templ_animations);  
 				
 				//body
-				if (p_templ_animations->GetFuelBodyDefaultAnim()!= NULL)
-					p_fueltank->setAnimationBody(p_templ_animations->GetFuelBodyDefaultAnim());
+				if (p_templ_animations->getFuelBodyDefaultAnim()!= NULL)
+					p_fueltank->setAnimationBody(p_templ_animations->getFuelBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetFuelHeadDefaultAnim()!= NULL)
-					p_fueltank->setAnimationHead(p_templ_animations->GetFuelHeadDefaultAnim());
+				if (p_templ_animations->getFuelHeadDefaultAnim()!= NULL)
+					p_fueltank->setAnimationHead(p_templ_animations->getFuelHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca

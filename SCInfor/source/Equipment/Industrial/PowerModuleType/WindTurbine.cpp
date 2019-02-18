@@ -6,7 +6,7 @@
 
 #include "WindTurbine.h"
 #include "../../../Weather/CWeather.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
 #include "../../../Rendering/Displayable/CDisplayable.h"
@@ -154,8 +154,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetWindTurbineBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetWindTurbineHeadDefaultAnim());
+				setAnimationBody(p_anim_set->getWindTurbineBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getWindTurbineHeadDefaultAnim());
 
 				//animacja head odtwarza się w pętli
 				getDisplayableHead()->GetAnimationState()->setLooped(true);
@@ -167,8 +167,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				//SetAnimationBody(p_anim_set->GetWindTurbineBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetWindTurbineHeadCargoOpenAnim());
+				//SetAnimationBody(p_anim_set->getWindTurbineBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getWindTurbineHeadCargoOpenAnim());
 				
 				//animacja head odtwarza się jeden raz
 				getDisplayableHead()->GetAnimationState()->setLooped(false);
@@ -180,8 +180,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				//SetAnimationBody(p_anim_set->GetWindTurbineBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetWindTurbineHeadCargoCloseAnim());
+				//SetAnimationBody(p_anim_set->getWindTurbineBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getWindTurbineHeadCargoCloseAnim());
 
 				//animacja head odtwarza się jeden raz
 				getDisplayableHead()->GetAnimationState()->setLooped(false);
@@ -193,8 +193,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				//SetAnimationBody(p_anim_set->GetWindTurbineBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetWindTurbineHeadUpdateEnergyAnim());
+				//SetAnimationBody(p_anim_set->getWindTurbineBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getWindTurbineHeadUpdateEnergyAnim());
 				//animacja head odtwarza się w pętli
 				getDisplayableHead()->GetAnimationState()->setLooped(true);
 				getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
@@ -205,8 +205,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetWindTurbineBodyDamagetAnim());
-				setAnimationHead(p_anim_set->GetWindTurbineHeadDamagetAnim());
+				setAnimationBody(p_anim_set->getWindTurbineBodyDamagetAnim());
+				setAnimationHead(p_anim_set->getWindTurbineHeadDamagetAnim());
 
 				//animacja head odtwarza się w pętli
 				getDisplayableHead()->GetAnimationState()->setLooped(true);
@@ -218,8 +218,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetWindTurbineBodyDeathAnim());
-				setAnimationHead(p_anim_set->GetWindTurbineHeadDeathAnim());
+				setAnimationBody(p_anim_set->getWindTurbineBodyDeathAnim());
+				setAnimationHead(p_anim_set->getWindTurbineHeadDeathAnim());
 
 				//animacja head odtwarza się w pętli
 				getDisplayableHead()->GetAnimationState()->setLooped(true);

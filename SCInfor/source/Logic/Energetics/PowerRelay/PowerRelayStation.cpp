@@ -6,7 +6,7 @@
 
 #include "PowerRelayStation.h"
 #include "../../PhysicalManager.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
@@ -245,8 +245,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetPowerRelayStationBodyDefaultAnim());
-					setAnimationHead(p_anim_set->GetPowerRelayStationHeadDefaultAnim());
+					setAnimationBody(p_anim_set->getPowerRelayStationBodyDefaultAnim());
+					setAnimationHead(p_anim_set->getPowerRelayStationHeadDefaultAnim());
 				}
 				break;
 			}
@@ -254,8 +254,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetPowerRelayStationBodyUpdateConnectionAnim());
-					setAnimationHead(p_anim_set->GetPowerRelayStationHeadUpdateConnectionAnim());
+					setAnimationBody(p_anim_set->getPowerRelayStationBodyUpdateConnectionAnim());
+					setAnimationHead(p_anim_set->getPowerRelayStationHeadUpdateConnectionAnim());
 				}
 				break;
 			}
@@ -263,8 +263,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetPowerRelayStationBodyDisconnectAnim());
-					setAnimationHead(p_anim_set->GetPowerRelayStationHeadDisconnectAnim());
+					setAnimationBody(p_anim_set->getPowerRelayStationBodyDisconnectAnim());
+					setAnimationHead(p_anim_set->getPowerRelayStationHeadDisconnectAnim());
 				}
 				break;
 			}
@@ -272,8 +272,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetPowerRelayStationBodyDamageAnim());
-					setAnimationHead(p_anim_set->GetPowerRelayStationHeadDamageAnim());
+					setAnimationBody(p_anim_set->getPowerRelayStationBodyDamageAnim());
+					setAnimationHead(p_anim_set->getPowerRelayStationHeadDamageAnim());
 				}
 				break;
 			}
@@ -281,8 +281,8 @@ namespace logic
 			{
 				if (p_anim_set)
 				{
-					setAnimationBody(p_anim_set->GetPowerRelayStationBodyDeathAnim());
-					setAnimationHead(p_anim_set->GetPowerRelayStationHeadDeathAnim());
+					setAnimationBody(p_anim_set->getPowerRelayStationBodyDeathAnim());
+					setAnimationHead(p_anim_set->getPowerRelayStationHeadDeathAnim());
 				}
 				break;
 			}

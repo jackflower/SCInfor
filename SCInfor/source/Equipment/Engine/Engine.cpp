@@ -6,7 +6,7 @@
 
 #include "Engine.h"
 #include "../../Logic/PhysicalManager.h"
-#include "../../Rendering/Animations/CAnimSet.h"
+#include "../../Rendering/Animations/AnimSet.h"
 #include "../../Rendering/Drawable/Layers.h"
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Utilities/Utilities/Utilities.h"
@@ -263,8 +263,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEngineBodyDefaultAnim());
-				setAnimationHead(p_anim_set->GetEngineHeadDefaultAnim());
+				setAnimationBody(p_anim_set->getEngineBodyDefaultAnim());
+				setAnimationHead(p_anim_set->getEngineHeadDefaultAnim());
 			}
 			break;
 		}
@@ -272,8 +272,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEngineBodyStartAnim());
-				setAnimationHead(p_anim_set->GetEngineHeadStartAnim());
+				setAnimationBody(p_anim_set->getEngineBodyStartAnim());
+				setAnimationHead(p_anim_set->getEngineHeadStartAnim());
 			}
 			break;
 		}
@@ -281,8 +281,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEngineBodyStopAnim());
-				setAnimationHead(p_anim_set->GetEngineHeadStopAnim());
+				setAnimationBody(p_anim_set->getEngineBodyStopAnim());
+				setAnimationHead(p_anim_set->getEngineHeadStopAnim());
 			}
 			break;
 		}
@@ -290,8 +290,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEngineBodyDamageAnim());
-				setAnimationHead(p_anim_set->GetEngineHeadDamageAnim());
+				setAnimationBody(p_anim_set->getEngineBodyDamageAnim());
+				setAnimationHead(p_anim_set->getEngineHeadDamageAnim());
 			}
 			break;
 		}
@@ -299,8 +299,8 @@ namespace equipment
 		{
 			if (p_anim_set)
 			{
-				setAnimationBody(p_anim_set->GetEngineBodyDeathAnim());
-				setAnimationHead(p_anim_set->GetEngineHeadDeathAnim());
+				setAnimationBody(p_anim_set->getEngineBodyDeathAnim());
+				setAnimationHead(p_anim_set->getEngineHeadDeathAnim());
 			}
 			break;
 		}

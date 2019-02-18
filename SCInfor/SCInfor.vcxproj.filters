@@ -393,9 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Rendering\Animations\CAnimSet.cpp">
-      <Filter>source\Rendering\Animations</Filter>
-    </ClCompile>
     <ClCompile Include="source\Rendering\Animations\CNameAnimPairTranslator.cpp">
       <Filter>source\Rendering\Animations</Filter>
     </ClCompile>
@@ -1005,6 +1002,9 @@
     <ClCompile Include="source\Rendering\Animations\AnimationState.cpp">
       <Filter>source\Rendering\Animations</Filter>
     </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\AnimSet.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1113,9 +1113,6 @@
     </ClInclude>
     <ClInclude Include="source\Map\MapHeader.h">
       <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Animations\CAnimSet.h">
-      <Filter>source\Rendering\Animations</Filter>
     </ClInclude>
     <ClInclude Include="source\Rendering\Animations\CNameAnimPairTranslator.h">
       <Filter>source\Rendering\Animations</Filter>
@@ -1763,6 +1760,9 @@
       <Filter>source\Rendering\Animations</Filter>
     </ClInclude>
     <ClInclude Include="source\Rendering\Animations\AnimationState.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\AnimSet.h">
       <Filter>source\Rendering\Animations</Filter>
     </ClInclude>
   </ItemGroup>

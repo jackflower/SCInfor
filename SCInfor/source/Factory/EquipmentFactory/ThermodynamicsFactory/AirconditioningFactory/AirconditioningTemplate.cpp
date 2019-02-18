@@ -8,7 +8,7 @@
 #include "../../../../Weather/CWeather.h"
 #include "../../../../Utilities/Random/CRandom.h"
 #include "../../../../ResourceManager/CResourceManager.h"
-#include "../../../../Rendering/Animations/CAnimSet.h"
+#include "../../../../Rendering/Animations/AnimSet.h"
 
 using namespace weather;
 using namespace resource;
@@ -128,12 +128,12 @@ namespace factory
 				p_airconditioning->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetAirconditioningBodyDefaultAnim() != NULL)
-					p_airconditioning->setAnimationBody(p_templ_animations->GetAirconditioningBodyDefaultAnim());
+				if (p_templ_animations->getAirconditioningBodyDefaultAnim() != NULL)
+					p_airconditioning->setAnimationBody(p_templ_animations->getAirconditioningBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetAirconditioningHeadDefaultAnim() != NULL)
-					p_airconditioning->setAnimationHead(p_templ_animations->GetAirconditioningHeadDefaultAnim());
+				if (p_templ_animations->getAirconditioningHeadDefaultAnim() != NULL)
+					p_airconditioning->setAnimationHead(p_templ_animations->getAirconditioningHeadDefaultAnim());
 			}
 
 			//Metoda łądujaca dane ładuje poniższe wartości z xml'a,

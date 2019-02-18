@@ -5,7 +5,7 @@
 //
 
 #include "RobotTemplate.h"
-#include "../Rendering/Animations/CAnimSet.h"
+#include "../Rendering/Animations/AnimSet.h"
 
 //using namespace resource;
 
@@ -87,12 +87,12 @@ namespace factory
 				robot->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetRobotBodyDefaultAnim() != NULL)
-					robot->setAnimationBody(p_templ_animations->GetRobotBodyDefaultAnim());
+				if (p_templ_animations->getRobotBodyDefaultAnim() != NULL)
+					robot->setAnimationBody(p_templ_animations->getRobotBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetRobotHeadDefaultAnim() != NULL)
-					robot->setAnimationHead(p_templ_animations->GetRobotHeadDefaultAnim());
+				if (p_templ_animations->getRobotHeadDefaultAnim() != NULL)
+					robot->setAnimationHead(p_templ_animations->getRobotHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca

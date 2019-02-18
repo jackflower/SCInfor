@@ -1,10 +1,10 @@
-//  _____________________________________
-// | CAnimSet.cpp - class implementation |
-// |  Jack Flower - March 2012           |
-// |_____________________________________|
+ï»¿//  ____________________________________
+// | AnimSet.cpp - class implementation |
+// |  Jack Flower - March 2012          |
+// |____________________________________|
 //
 
-#include "CAnimSet.h"
+#include "AnimSet.h"
 #include "AnimationManager.h"
 #include "Animation.h"
 #include "CNameAnimPairTranslator.h"
@@ -13,11 +13,11 @@ namespace rendering
 {
 	namespace animation
 	{
-		RTTI_IMPL_NOPARENT(CAnimSet);
+		RTTI_IMPL_NOPARENT(AnimSet);
 
-		//Rejestracja wpisów tablicy s³ownika parsuj¹cego std::string na uchwyt (enum - wyliczenie)
-		//takimi mnemonikami pos³ugiwaæ siê w plikach xml
-		std::string CAnimSet::m_anim_handle_names[] = 
+		//Rejestracja wpisÃ³w tablicy sÅ‚ownika parsujÄ…cego std::string na uchwyt (enum - wyliczenie)
+		//takimi mnemonikami posÅ‚ugiwaÄ‡ siÄ™ w plikach xml
+		std::string AnimSet::m_anim_handle_names[] = 
 		{
 			//p h y s i c a l
 			//body animations names
@@ -159,16 +159,16 @@ namespace rendering
 
 			//w i n d t u r b i n e
 			//body animations turbine names
-			"windturbine_body_default",			//animacja ³opatek turbiny - normalna praca
-			"windturbine_body_damage",			//animacja ³opatek turbiny - uszkodzone (naprawa)
-			"windturbine_body_death",			//animacja ³opatek turbiny - trwale uszkodzone
+			"windturbine_body_default",			//animacja Å‚opatek turbiny - normalna praca
+			"windturbine_body_damage",			//animacja Å‚opatek turbiny - uszkodzone (naprawa)
+			"windturbine_body_death",			//animacja Å‚opatek turbiny - trwale uszkodzone
 			//body animations turbine names
 			"windturbine_head_default",			//animacja standardwej pracy turbiny
-			"windturbine_head_cargo_open",		//animacja otwierania luku (zale¿y od warunków pogodowych - wiatr)
-			"windturbine_head_cargo_close",		//animacja zamykania luku (zale¿y od warunków pogodowych - wiatr)
+			"windturbine_head_cargo_open",		//animacja otwierania luku (zaleÅ¼y od warunkÃ³w pogodowych - wiatr)
+			"windturbine_head_cargo_close",		//animacja zamykania luku (zaleÅ¼y od warunkÃ³w pogodowych - wiatr)
 			"windturbine_head_update_energy",	//animacja pracy turbiny - wytwarzanie energii
-			"windturbine_head_damage",			//animacja informuj¹ca, ¿e turbina jest jest uszkodzona (naprawa)
-			"windturbine_head_death",			//animacja informuj¹ca, ¿e turbina jest jest trwale uszkodzona
+			"windturbine_head_damage",			//animacja informujÄ…ca, Å¼e turbina jest jest uszkodzona (naprawa)
+			"windturbine_head_death",			//animacja informujÄ…ca, Å¼e turbina jest jest trwale uszkodzona
 
 			//s o l a r c e l l
 			//body animations solarcell names
@@ -242,9 +242,9 @@ namespace rendering
 
 			//a i r c o n d i t i o n i n g
 			//body animations airconditioning handlers
-			"airconditioning_body_default",				//animacja startowa dopóki urz¹dzenie siê nie w³¹czy
+			"airconditioning_body_default",				//animacja startowa dopÃ³ki urzÄ…dzenie siÄ™ nie wÅ‚Ä…czy
 			"airconditioning_body_heating",				//klimatyzator nagrzewa
-			"airconditioning_body_cooling",				//klimatyzator sch³adza
+			"airconditioning_body_cooling",				//klimatyzator schÅ‚adza
 			"airconditioning_body_ineffective",			//klimatyzator jest nieefektywny - temperaturaotoczenia poza zakresem
 			"airconditioning_body_damage",				//uszkodzenie
 			//head animations airconditioning handlers
@@ -283,11 +283,11 @@ namespace rendering
 			"battery_head_damage"
 		};
 
-		//Nadanie wartoœci sta³ej sk³adowej statycznej - obliczenie ile wpisów ma tablica m_anim_handle_names[]
-		int CAnimSet::m_anim_handle_number = sizeof(CAnimSet::m_anim_handle_names) / sizeof(std::string);
+		//Nadanie wartoÅ›ci staÅ‚ej skÅ‚adowej statycznej - obliczenie ile wpisÃ³w ma tablica m_anim_handle_names[]
+		int AnimSet::m_anim_handle_number = sizeof(AnimSet::m_anim_handle_names) / sizeof(std::string);
 
-		//Konstruktor domyœlny
-		CAnimSet::CAnimSet()
+		//Konstruktor domyÅ›lny
+		AnimSet::AnimSet()
 		:
 			m_animset_name			("")
 		{
@@ -295,7 +295,7 @@ namespace rendering
 		}
 
 		//Destruktor
-		CAnimSet::~CAnimSet()
+		AnimSet::~AnimSet()
 		{
 			m_animset_name			= "";
 			m_anim_handle_number	= 0;
@@ -303,42 +303,42 @@ namespace rendering
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/
-		const std::string CAnimSet::GetType() const
+		const std::string AnimSet::getType() const
 		{
 			return rtti.GetNameClass();
 		}
 
-		//Metoda zwraca nazwê zestawu animacji
-		const std::string CAnimSet::GetAnimSetName() const
+		//Metoda zwraca nazwÄ™ zestawu animacji
+		const std::string AnimSet::getAnimSetName() const
 		{
 			return m_animset_name;
 		}
 
-		//Metoda ustawia nazwê zestawu animacji
-		void CAnimSet::SetAnimSetName(const std::string &animset_name)
+		//Metoda ustawia nazwÄ™ zestawu animacji
+		void AnimSet::setAnimSetName(const std::string & animset_name)
 		{
 			m_animset_name = animset_name;
 		}
 
 		//Metoda parsuje uchwyt animacji na podstawie nazwy lub int
-		int CAnimSet::ParseAnimHandle(std::string &handle_input)
+		int AnimSet::parseAnimHandle(std::string & handle_input)
 		{
-			//sprawdzam, czy w tablicy znajduje siê podany parametr (uchwyt)
+			//sprawdzam, czy w tablicy znajduje siÄ™ podany parametr (uchwyt)
 			for (int i = 0; i < m_anim_handle_number; i++)
 				if (m_anim_handle_names[i] == handle_input)
 				return i;
 			
-			//sprawdzamy, czy parametr jest liczb¹
+			//sprawdzamy, czy parametr jest liczbÄ…
 			int tmp;
-			//sprawdzam, czy w tablicy znajduje siê podany parametr (jako liczba) (uchwyt)
+			//sprawdzam, czy w tablicy znajduje siÄ™ podany parametr (jako liczba) (uchwyt)
 			if (sscanf(handle_input.c_str(),"%d", &tmp) == 1)
 				return m_anim_handle_number + tmp;
-			//w przypadku, gdy w tablicy nie znaleziono podanego parametru (uchwytu) zwracamy kod b³êdu
+			//w przypadku, gdy w tablicy nie znaleziono podanego parametru (uchwytu) zwracamy kod bÅ‚Ä™du
 			return -1;
 		}
 
-		//Metoda ustawia animacjê
-		void CAnimSet::SetAnimation(int anim_handle, Animation *p_anim)
+		//Metoda ustawia animacjÄ™
+		void AnimSet::setAnimation(int anim_handle, Animation *p_anim)
 		{
 			if ((anim_handle < 0) || (p_anim == NULL)) return;
 			if ((unsigned int)anim_handle >= m_anims.size()) m_anims.resize(anim_handle + 1);
@@ -346,48 +346,48 @@ namespace rendering
 			m_anims[anim_handle].SetAnim(p_anim);
 		}
 
-		//Metoda ustawia animacjê
-		void CAnimSet::SetAnimation(int anim_handle, std::string &anim_name)
+		//Metoda ustawia animacjÄ™
+		void AnimSet::setAnimation(int anim_handle, std::string & anim_name)
 		{
 			if (anim_handle < 0) return;
 			if ((unsigned int) anim_handle >= m_anims.size()) m_anims.resize(anim_handle + 1);
 			m_anims[anim_handle] = CNameAnimPairTranslator(anim_name);
 		}
 
-		//Metoda zwraca nazwê animacji na podstawie uchwytu
-		std::string *CAnimSet::GetAnimName(int anim_handle)
+		//Metoda zwraca nazwÄ™ animacji na podstawie uchwytu
+		std::string *AnimSet::getAnimName(int anim_handle)
 		{
 			if ((anim_handle < 0) || ((unsigned int) anim_handle >= m_anims.size()))
 				return NULL;
 			return &m_anims[anim_handle].GetAnimationName();
 		}
 
-		//Metoda zwraca wskaŸnik na animacjê na podstawie parametru - uchwytu
-		Animation *CAnimSet::GetAnim(int anim_handle)
+		//Metoda zwraca wskaÅºnik na animacjÄ™ na podstawie parametru - uchwytu
+		Animation *AnimSet::getAnim(int anim_handle)
 		{
-			//nieprawid³owy uchwyt zwraca NULL
+			//nieprawidÅ‚owy uchwyt zwraca NULL
 			if ((anim_handle < 0) || ((unsigned int) anim_handle >= m_anims.size()))
 				return NULL;
-			//jeœli animacja pod indeksem (uchwyt-parametr) nie jest gotowa (wgrana)
+			//jeÅ›li animacja pod indeksem (uchwyt-parametr) nie jest gotowa (wgrana)
 			if (!m_anims[anim_handle].GetReady())
 			{
-				//ustawiamy animacjê na pobran¹ w menad¿era animacji
+				//ustawiamy animacjÄ™ na pobranÄ… w menadÅ¼era animacji
 				m_anims[anim_handle].SetAnim(gAnimationManager.getAnimation(m_anims[anim_handle].GetAnimationName()));
 			}
-			return m_anims[anim_handle].GetAnimation();//zwracamy z wzrorca ju¿ gotow¹ animacjê (wskaŸnik)
+			return m_anims[anim_handle].GetAnimation();//zwracamy z wzrorca juÅ¼ gotowÄ… animacjÄ™ (wskaÅºnik)
 		}
 
 		//Metoda sprawdza nazwy animacji i wstawia animacje do zestawu animacji
-		void CAnimSet::Parse(CXml &xml, rapidxml::xml_node<> *root)
+		void AnimSet::parse(CXml & xml, rapidxml::xml_node<> *root)
 		{
-			std::string tmp;//zmienna na odczytan¹ nazwê animacji i odczytany typ animacji z zestawu
+			std::string tmp;//zmienna na odczytanÄ… nazwÄ™ animacji i odczytany typ animacji z zestawu
 			for (xml_node<> *node = xml.GetChild(root, "anim"); node; node=xml.GetSibling(node, "anim") )
 			{
-				tmp = xml.GetString(node, "type");	//odczytujê typ animacji z zestawu
-				int a_handle = ParseAnimHandle(tmp);//sprawdzam, czy odczytany typ animacji istnieje (zamiana na uchwyt)
+				tmp = xml.GetString(node, "type");	//odczytujÄ™ typ animacji z zestawu
+				int a_handle = parseAnimHandle(tmp);//sprawdzam, czy odczytany typ animacji istnieje (zamiana na uchwyt)
 				if (a_handle < 0) continue;			//kontynuacja, gdy nie ma typu (zostanie to i tak zapisane pod takim kluczem)
 				tmp = xml.GetString(node, "name");	//odczyt nazwy animacji z zestawu
-				SetAnimation(a_handle, tmp);		//ustawienie animacji (uchwyt, nazwa animacji)
+				setAnimation(a_handle, tmp);		//ustawienie animacji (uchwyt, nazwa animacji)
 													//i zapis do wektora
 			}
 		}

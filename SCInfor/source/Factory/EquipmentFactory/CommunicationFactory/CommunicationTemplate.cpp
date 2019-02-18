@@ -5,7 +5,7 @@
 //
 
 #include "CommunicationTemplate.h"
-#include "../../../Rendering/Animations/CAnimSet.h"
+#include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../ResourceManager/CResourceManager.h"
 
 using namespace resource;
@@ -97,12 +97,12 @@ namespace factory
 				p_communication->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->GetCommunicationBodyDefaultAnim() != NULL)
-					p_communication->setAnimationBody(p_templ_animations->GetCommunicationBodyDefaultAnim());
+				if (p_templ_animations->getCommunicationBodyDefaultAnim() != NULL)
+					p_communication->setAnimationBody(p_templ_animations->getCommunicationBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->GetCommunicationHeadDefaultAnim() != NULL)
-					p_communication->setAnimationHead(p_templ_animations->GetCommunicationHeadDefaultAnim());
+				if (p_templ_animations->getCommunicationHeadDefaultAnim() != NULL)
+					p_communication->setAnimationHead(p_templ_animations->getCommunicationHeadDefaultAnim());
 			}
 
 			//pola tej klasy wzorca
