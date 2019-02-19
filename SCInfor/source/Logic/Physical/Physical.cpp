@@ -7,7 +7,7 @@
 #include "Physical.h"
 #include "../../Weather/CWeather.h"
 #include "../../Rendering/Displayable/Displayable.h"
-#include "../../Rendering/Drawable/CDrawableManager.h"
+#include "../../Rendering/Drawable/DrawableManager.h"
 #include "../../Rendering/Animations/Animation.h"
 #include "../../Rendering/Animations/AnimationState.h"
 #include "../../Factory/PhysicalTemplate.h"

@@ -117,8 +117,8 @@ namespace infologic
 	//Wirtualny interfejs - implementacja
 	void InfoManager::cleanup()
 	{
-		fprintf(stderr, "InfoManager::Cleanup()\n");
-		fprintf(stderr, "InfoManager::Cleanup() done...\n");
+		fprintf(stderr, "InfoManager::cleanup()\n");
+		fprintf(stderr, "InfoManager::cleanup() done...\n");
 	}
 
 	//implementajca metod private:

@@ -37,7 +37,7 @@ CEntityTranslator::CEntityTranslator(void)
 
 CEntityTranslator::~CEntityTranslator(void)
 {
-	Cleanup();
+	cleanup();
 }
 
 //Metoda rejestruje w translatorze obiekty ECaliber
@@ -70,9 +70,9 @@ const void CEntityTranslator::ReleaseTranslateEntity(void)
 }
 
 //Wirtualna metoda czyszcz¹ca singleton
-void CEntityTranslator::Cleanup()
+void CEntityTranslator::cleanup()
 {
-	fprintf(stderr, "CEntityTranslator::Cleanup()\n");
+	fprintf(stderr, "CEntityTranslator::cleanup()\n");
 	ReleaseTranslateEntity();
-	fprintf(stderr, "CEntityTranslator::Cleanup() done...\n");
+	fprintf(stderr, "CEntityTranslator::cleanup() done...\n");
 }

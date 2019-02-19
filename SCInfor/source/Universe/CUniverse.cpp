@@ -36,10 +36,10 @@ namespace universe
 	}
 
 	//Wirtualna metoda czyszcz¹ca singleton
-	void CUniverse::Cleanup()
+	void CUniverse::cleanup()
 	{
-		fprintf(stderr, "CUniverse::Cleanup()\n");
-		fprintf(stderr, "CUniverse::Cleanup() done...\n");
+		fprintf(stderr, "CUniverse::cleanup()\n");
+		fprintf(stderr, "CUniverse::cleanup() done...\n");
 	}
 
 	//Metoda na podstawie nazwy zwraca z kontenera wskaŸnik na galaktykê

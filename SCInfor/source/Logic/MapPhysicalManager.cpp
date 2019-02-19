@@ -123,13 +123,13 @@ namespace logic
 	//Wirtualny interfejs - implementacja
 	void MapPhysicalManager::cleanup()
 	{
-		fprintf(stderr, "MapPhysicalManager::Cleanup()\n");
+		fprintf(stderr, "MapPhysicalManager::cleanup()\n");
 		
 		//nie jestem do końca pewien tego kodu...
 		//std::vector<MapPhysical*>::iterator it;
 		//for (it = m_mapphysicals.begin(); it != m_mapphysicals.end(); it++)
 		//	DestroyMapPhysical(*(it));
-		fprintf(stderr, "MapPhysicalManager::Cleanup() done...\n");
+		fprintf(stderr, "MapPhysicalManager::cleanup() done...\n");
 	}
 
 	//implementajca metod private:

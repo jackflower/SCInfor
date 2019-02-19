@@ -152,7 +152,7 @@ namespace weather
 		///
 		///Wirtualna metoda czyszcz¹ca singleton
 		///
-		virtual void Cleanup();
+		virtual void cleanup();
 
 	private:
 

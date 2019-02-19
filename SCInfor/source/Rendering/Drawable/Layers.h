@@ -1,4 +1,4 @@
-//  _______________________________
+ï»¿//  _______________________________
 // | Layers.h - warstwy renderingu |
 // | Jack Flower - March 2012      |
 // |_______________________________|
@@ -12,12 +12,12 @@ namespace rendering
 	namespace drawable
 	{
 		///
-		///Lista wartoœci dla zdefiniowanych warstw, na których bêdzie renderowana grafika
+		///Lista wartoÅ›ci dla zdefiniowanych warstw, na ktÃ³rych bÄ™dzie renderowana grafika
 		///algorymt "m a l a r z a" - top down
 		///
 		const int Z_MAX											= 800;	//fundament (warstwa oddalona najdalej od oka kamery)
 		const int Z_TILE										= 700;	//klafle
-		const int Z_GROUND_WORK									= 600;	//pod³o¿e
+		const int Z_GROUND_WORK									= 600;	//podÅ‚oÅ¼e
 
 		//f l o r a
 		const int Z_FLORA_SHADOW_BODY							= 530;	//flora body shadow
@@ -26,7 +26,7 @@ namespace rendering
 		const int Z_FLORA_HEAD									= 500;	//flora head
 
 		//w r e c k
-		//1. magazynki z amunicj¹
+		//1. magazynki z amunicjÄ…
 		//2. to edit
 		//3. to edit
 		const int Z_WRECK_SHADOW_BODY							= 488;	//wreck body shadow
@@ -112,7 +112,7 @@ namespace rendering
 		const int Z_PHYSICAL_INFO_HEAD							= 40;	//physical info head
 
 		//i n f o r m a t i o n
-		const int Z_INFORMATION_BACK							= 30;	//warstwa informacji - podcieñ czcionki tekstu
+		const int Z_INFORMATION_BACK							= 30;	//warstwa informacji - podcieÅ„ czcionki tekstu
 		const int Z_INFORMATION_FRONT							= 20;	//warstwa informacji
 		const int Z_CURSOR										= 10;	//kursor
 		const int Z_ZERO										= 0;	//warstwa zerowa (pierwsza od oka kamery)

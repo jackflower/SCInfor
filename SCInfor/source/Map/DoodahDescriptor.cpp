@@ -9,7 +9,7 @@
 #include "../Rendering/Drawable/Layers.h"
 #include "../Rendering/Displayable/Displayable.h"
 #include "../Rendering/Animations/AnimationManager.h"
-#include "../Rendering/Drawable/CDrawableManager.h"
+#include "../Rendering/Drawable/DrawableManager.h"
 //#include "SceneManager/CSceneNode.h"
 //#include "SceneManager/CQuadTreeSceneManager.h"
 #include "MapManager.h"
@@ -77,7 +77,7 @@ namespace mapengine
 	void DoodahDescriptor::create()
 	{
 		//tworzymy obiekt klasy Displayable
-		Displayable* p_displayable = gDrawableManager.CreateDisplayable(m_zindex);
+		Displayable* p_displayable = gDrawableManager.createDisplayable(m_zindex);
 		
 		if (!m_anim.empty())//jeśli jest nazwa animacji
 		{

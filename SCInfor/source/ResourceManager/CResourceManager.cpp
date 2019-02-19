@@ -322,11 +322,11 @@ namespace resource
 	}
 
 	//Wirtualny interfejs - implementacja
-	void CResourceManager::Cleanup()
+	void CResourceManager::cleanup()
 	{
-		fprintf(stderr, "CResourceManager::Cleanup()\n");
+		fprintf(stderr, "CResourceManager::cleanup()\n");
 		Clear();
-		fprintf(stderr, "CResourceManager::Cleanup() done...\n");
+		fprintf(stderr, "CResourceManager::cleanup() done...\n");
 	}
 
 	//Szablon prywatnej metody zwracaj¹cej wskaŸnik na zasób na podstawie nazwy std::string

@@ -209,7 +209,7 @@ namespace game
 	//Wirtualna metoda czyszcząca singleton
 	void GameProperties::cleanup()
 	{
-		std::cout << "CGameProperties::Cleanup()" << std::endl;
-		std::cout << "CGameProperties::Cleanup() done..." << std::endl;
+		std::cout << "CGameProperties::cleanup()" << std::endl;
+		std::cout << "CGameProperties::cleanup() done..." << std::endl;
 	}
 }//namespace game

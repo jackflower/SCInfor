@@ -8,7 +8,7 @@
 #define H_RECTANGLE_JACK
 
 #include <SFML/Graphics.hpp>
-#include "../Drawable/IDrawable.h"
+#include "../Drawable/Drawable.h"
 #include "../../RTTI/RTTI.h"
 
 using namespace rendering::drawable;
@@ -29,7 +29,7 @@ namespace rendering
 		///
 		///Klasa reprezentuje wrapper klasy bibliotecznej sf::RectangleShape
 		///
-		class Rectangle : public IDrawable
+		class Rectangle : public rendering::drawable::Drawable
 		{
 			RTTI_DECL;
 		

@@ -23,12 +23,12 @@
 
 namespace displayable
 {
-	RTTI_IMPL(HudSprite, IDrawable);
+	RTTI_IMPL(HudSprite, Drawable);
 
 	//Konstruktor
 	HudSprite::HudSprite()
 	:
-		IDrawable(),//konstruktor klasy bazowej
+		Drawable(),//konstruktor klasy bazowej
 		m_sprite(NULL), 
 		m_clip_rect_enabled(false)
 	{

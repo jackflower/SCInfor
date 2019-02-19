@@ -12,12 +12,12 @@ namespace rendering
 {
 	namespace primitives
 	{
-		RTTI_IMPL(Rectangle, IDrawable);
+		RTTI_IMPL(Rectangle, Drawable);
 
 		//Konstruktor
 		Rectangle::Rectangle()
 		:
-			IDrawable(), //konstruktor klasy bazowej
+			Drawable(), //konstruktor klasy bazowej
 			p_rectangle()
 		{
 			//tworzymy obiekt klasy sf::RectangleShape

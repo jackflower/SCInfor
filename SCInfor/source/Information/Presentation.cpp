@@ -5,7 +5,7 @@
 //
 
 #include "Presentation.h"
-#include "../Rendering/Drawable/CDrawableManager.h"
+#include "../Rendering/Drawable/DrawableManager.h"
 #include "../Factory/InformationFactory/PresentationTemplate.h"
 
 namespace information
@@ -55,10 +55,10 @@ namespace information
 		{
 			//~BaseInformation()
 			if (p_hud_static_text_front != NULL)
-				gDrawableManager.DestroyDrawable(p_hud_static_text_front);
+				gDrawableManager.destroyDrawable(p_hud_static_text_front);
 
 			if (p_hud_static_text_back != NULL)
-				gDrawableManager.DestroyDrawable(p_hud_static_text_back);
+				gDrawableManager.destroyDrawable(p_hud_static_text_back);
 
 			//m_tranformable
 			m_font_name = "";
@@ -441,14 +441,14 @@ namespace information
 		void Presentation::checkHudStaticTextFront()
 		{
 			if (!p_hud_static_text_front)
-				p_hud_static_text_front = gDrawableManager.CreateHudStaticText(Z_INFORMATION_FRONT);
+				p_hud_static_text_front = gDrawableManager.createHudStaticText(Z_INFORMATION_FRONT);
 		}
 
 		//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy HudStaticText
 		void Presentation::checkHudStaticTextBack()
 		{
 			if (!p_hud_static_text_back)
-				p_hud_static_text_back = gDrawableManager.CreateHudStaticText(Z_INFORMATION_BACK);
+				p_hud_static_text_back = gDrawableManager.createHudStaticText(Z_INFORMATION_BACK);
 		}
 
 	}//namespace presentation

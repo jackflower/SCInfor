@@ -16,12 +16,12 @@ namespace rendering
 {
 	namespace displayable
 	{
-		RTTI_IMPL(Displayable, IDrawable);
+		RTTI_IMPL(Displayable, Drawable);
 
 		//Konstruktor domyślny
 		Displayable::Displayable()
 		:
-			IDrawable(),//konstruktor klasy bazowej
+			Drawable(),//konstruktor klasy bazowej
 			m_sprite(),
 			m_animation_state(NULL),
 			m_animation_name(""),
@@ -37,7 +37,7 @@ namespace rendering
 		//Konstruktor kopiujący
 		Displayable::Displayable(const Displayable & DisplayableCopy)
 		:
-			IDrawable(DisplayableCopy),//konstruktor kopiujący klasy bazowej
+			Drawable(DisplayableCopy),//konstruktor kopiujący klasy bazowej
 			//m_sprite //tego nie kopiujemy...(2019-02-19: poddać analizie...)
 			m_animation_state(DisplayableCopy.m_animation_state),
 			m_animation_name(DisplayableCopy.m_animation_name),

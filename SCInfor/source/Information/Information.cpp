@@ -5,7 +5,7 @@
 //
 
 #include "Information.h"
-#include "../Rendering/Drawable/CDrawableManager.h"
+#include "../Rendering/Drawable/DrawableManager.h"
 #include "../Factory/InformationFactory/InformationTemplate.h"
 
 namespace information
@@ -44,9 +44,9 @@ namespace information
 	Information::~Information()
 	{
 		if (p_digit_displayable != NULL)
-			gDrawableManager.DestroyDrawable(p_digit_displayable);
+			gDrawableManager.destroyDrawable(p_digit_displayable);
 		if (p_mask_displayable != NULL)
-			gDrawableManager.DestroyDrawable(p_mask_displayable);
+			gDrawableManager.destroyDrawable(p_mask_displayable);
 		m_texture_digit_name	= "";
 		m_texture_mask_name		= "";
 		p_template				= NULL;
@@ -482,7 +482,7 @@ namespace information
 	void Information::checkDisplayable_digit()
 	{
 		if (!p_digit_displayable)
-			p_digit_displayable = gDrawableManager.CreateDisplayable(Z_INFORMATION_FRONT);
+			p_digit_displayable = gDrawableManager.createDisplayable(Z_INFORMATION_FRONT);
 	}
 
 	//prywatna metoda sprawdza, czy trzeba utworzyć
@@ -491,6 +491,6 @@ namespace information
 	void Information::checkDisplayable_mask()
 	{
 		if (!p_mask_displayable)
-			p_mask_displayable = gDrawableManager.CreateDisplayable(Z_INFORMATION_BACK);
+			p_mask_displayable = gDrawableManager.createDisplayable(Z_INFORMATION_BACK);
 	}
 }//namespace information

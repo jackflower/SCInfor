@@ -41,7 +41,7 @@ namespace universe
 		///
 		///Wirtualny interfejs - implementacja
 		///
-		virtual void Cleanup();
+		virtual void cleanup();
 
 		///
 		///Metoda na podstawie nazwy zwraca z kontenera wskaŸnik na galaktykê

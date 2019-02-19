@@ -14,12 +14,12 @@ namespace rendering
 {
 	namespace displayable
 	{
-		RTTI_IMPL(HudStaticText, IDrawable);
+		RTTI_IMPL(HudStaticText, Drawable);
 
 		//Konstruktor
 		HudStaticText::HudStaticText()
 		:
-			IDrawable(),//konstruktor klasy bazowej
+			Drawable(),//konstruktor klasy bazowej
 			p_text(NULL),
 			m_color(),
 			p_font(NULL),

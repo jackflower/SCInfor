@@ -6,7 +6,7 @@
 
 #include "PhysicalInfoTemplate.h"
 #include "../Rendering/Drawable/Layers.h"
-#include "../Rendering/Drawable/CDrawableManager.h"
+#include "../Rendering/Drawable/DrawableManager.h"
 #include <SFML/Graphics/RectangleShape.hpp>
 
 using namespace rendering;
@@ -45,9 +45,9 @@ namespace factory
 	{
 		//~PhysicalTemplate()
 		if(p_templ_status_bar_energy)
-			gDrawableManager.DestroyDrawable(p_templ_status_bar_energy);
+			gDrawableManager.destroyDrawable(p_templ_status_bar_energy);
 		if(p_templ_status_bar_fuel)
-			gDrawableManager.DestroyDrawable(p_templ_status_bar_fuel);
+			gDrawableManager.destroyDrawable(p_templ_status_bar_fuel);
 
 		m_templ_physical_info_name = "";
 		m_templ_z_index_rectangle = 0;

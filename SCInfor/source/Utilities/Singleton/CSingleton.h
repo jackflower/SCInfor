@@ -46,7 +46,7 @@ public:
 	///
 	///Wirtualna metoda czyszcz¹ca singleton - implementacja w klasach pochodnych
 	///
-	virtual void Cleanup() {};
+	virtual void cleanup() {};
 
     ///
 	///Metoda statyczna zwracaj¹ca dereferencjê wskaŸnika obiektu

@@ -6,7 +6,7 @@
 
 #include "PhysicalData.h"
 #include "../../../Rendering/Displayable/Displayable.h"
-#include "../../../Rendering/Drawable/CDrawableManager.h"
+#include "../../../Rendering/Drawable/DrawableManager.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
 #include "../../../Weather/CWeather.h"
@@ -106,16 +106,16 @@ namespace physicaldata
 		m_use_shadow_head = false;
 
 		if (p_displayable_body)
-			gDrawableManager.DestroyDrawable(p_displayable_body);
+			gDrawableManager.destroyDrawable(p_displayable_body);
 
 		if (p_displayable_body_shadow)
-			gDrawableManager.DestroyDrawable(p_displayable_body_shadow);
+			gDrawableManager.destroyDrawable(p_displayable_body_shadow);
 
 		if (p_displayable_head)
-			gDrawableManager.DestroyDrawable(p_displayable_head);
+			gDrawableManager.destroyDrawable(p_displayable_head);
 
 		if (p_displayable_head_shadow)
-			gDrawableManager.DestroyDrawable(p_displayable_head_shadow);
+			gDrawableManager.destroyDrawable(p_displayable_head_shadow);
 
 		p_displayable_body = NULL;
 		p_displayable_body_shadow= NULL;
@@ -610,13 +610,13 @@ namespace physicaldata
 		//co może (powinno) być zaimplementowane w klasach pochodnych
 		//oraz gdy wskaźnik jest zainicjowany
 		if ((m_z_index_body != layer_index) && (p_displayable_body != NULL))
-			gDrawableManager.RegisterDrawable(p_displayable_body, layer_index);
+			gDrawableManager.registerDrawable(p_displayable_body, layer_index);
 		
 		//przekazanie
 		m_z_index_body = layer_index;
 		//decorate
 		if (p_displayable_body)
-			p_displayable_body->SetLayerIndex(layer_index);
+			p_displayable_body->setLayerIndex(layer_index);
 	}
 
 	//Metoda zwraca indeks warstwy renderingu obiektu (body shadow)
@@ -633,13 +633,13 @@ namespace physicaldata
 		//co może (powinno) być zaimplementowane w klasach pochodnych
 		//oraz gdy wskaźnik jest zainicjowany
 		if ((m_z_index_shadow_body != layer_index) && (p_displayable_body_shadow != NULL))
-			gDrawableManager.RegisterDrawable(p_displayable_body_shadow, layer_index);
+			gDrawableManager.registerDrawable(p_displayable_body_shadow, layer_index);
 		
 		//przekazanie
 		m_z_index_shadow_body = layer_index;
 		//decorate
 		if (p_displayable_body_shadow)
-			p_displayable_body_shadow->SetLayerIndex(layer_index);
+			p_displayable_body_shadow->setLayerIndex(layer_index);
 	}
 
 	//Metoda zwraca indeks warstwy renderingu obiektu (head)
@@ -656,13 +656,13 @@ namespace physicaldata
 		//co może (powinno) być zaimplementowane w klasach pochodnych
 		//oraz gdy wskaźnik jest zainicjowany
 		if ((m_z_index_head != layer_index) && (p_displayable_head != NULL))
-			gDrawableManager.RegisterDrawable(p_displayable_head, layer_index);
+			gDrawableManager.registerDrawable(p_displayable_head, layer_index);
 
 		//przekazanie
 		m_z_index_head = layer_index;
 		//decorate
 		if (p_displayable_head)
-			p_displayable_head->SetLayerIndex(layer_index);
+			p_displayable_head->setLayerIndex(layer_index);
 	}
 
 	//Metoda zwraca indeks warstwy renderingu obiektu (head shadow)
@@ -679,13 +679,13 @@ namespace physicaldata
 		//co może (powinno) być zaimplementowane w klasach pochodnych
 		//oraz gdy wskaźnik jest zainicjowany
 		if ((m_z_index_shadow_head != layer_index) && (p_displayable_head_shadow != NULL))
-			gDrawableManager.RegisterDrawable(p_displayable_head_shadow, layer_index);
+			gDrawableManager.registerDrawable(p_displayable_head_shadow, layer_index);
 
 		//przekazanie
 		m_z_index_shadow_head = layer_index;
 		//decorate
 		if (p_displayable_head_shadow)
-			p_displayable_head_shadow->SetLayerIndex(layer_index);
+			p_displayable_head_shadow->setLayerIndex(layer_index);
 	}
 
 	//Metoda zwraca zapamiętaną skalę (body)
@@ -994,7 +994,7 @@ namespace physicaldata
 		//body - oryginal
 		if ((m_use_displayable_body) && (!p_displayable_body))
 		{
-			p_displayable_body = gDrawableManager.CreateDisplayable(getZIndexBody());
+			p_displayable_body = gDrawableManager.createDisplayable(getZIndexBody());
 			if (!p_displayable_body)
 			{
 				fprintf(stderr, "error: PhysicalData::CheckDisplayable, p_displayable_body null, returning\n");
@@ -1013,7 +1013,7 @@ namespace physicaldata
 		//body - shadow
 		if ((m_use_shadow_body) && (!p_displayable_body_shadow))
 		{
-			p_displayable_body_shadow = gDrawableManager.CreateDisplayable(getZIndexShadowBody());
+			p_displayable_body_shadow = gDrawableManager.createDisplayable(getZIndexShadowBody());
 			if (!p_displayable_body_shadow)
 			{
 				fprintf(stderr, "error: PhysicalData::CheckDisplayable, p_displayable_body_shadow null, returning\n");
@@ -1040,7 +1040,7 @@ namespace physicaldata
 		//head - oryginal
 		if ((m_use_displayable_head) && (!p_displayable_head))
 		{
-			p_displayable_head = gDrawableManager.CreateDisplayable(getZIndexHead());
+			p_displayable_head = gDrawableManager.createDisplayable(getZIndexHead());
 			if (!p_displayable_head)
 			{
 				fprintf(stderr, "error: PhysicalData::CheckDisplayable, p_displayable_head null, returning\n");
@@ -1059,7 +1059,7 @@ namespace physicaldata
 		//head - shadow
 		if ((m_use_shadow_head) && (!p_displayable_head_shadow))
 		{
-			p_displayable_head_shadow = gDrawableManager.CreateDisplayable(getZIndexShadowHead());
+			p_displayable_head_shadow = gDrawableManager.createDisplayable(getZIndexShadowHead());
 			if (!p_displayable_head_shadow)
 			{
 				fprintf(stderr, "error: PhysicalData::CheckDisplayable, p_displayable_head_shadow null, returning\n");

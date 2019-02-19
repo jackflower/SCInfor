@@ -7,7 +7,7 @@
 #ifndef H_DISPLAYABLE_JACK
 #define H_DISPLAYABLE_JACK
 
-#include "../Drawable/IDrawable.h"
+#include "../Drawable/Drawable.h"
 #include "Sprite.h"
 #include <SFML/Graphics/Image.hpp>
 #include <string>
@@ -53,7 +53,7 @@ namespace rendering
 		///
 		///Klasa reprezentuje obiekt, który potrafi być renderowany (może być także animowany)
 		///
-		class Displayable : public IDrawable
+		class Displayable : public rendering::drawable::Drawable
 		{
 			RTTI_DECL;
 

@@ -12,7 +12,7 @@
 #include "../ResourceManager/CTexture.h"
 #include "../ResourceManager/CFont.h"
 #include "../Rendering/Animations/AnimationManager.h"
-#include "../Rendering/Drawable/CDrawableManager.h"
+#include "../Rendering/Drawable/DrawableManager.h"
 #include "../Rendering/Displayable/Displayable.h"
 #include "../Rendering/Displayable/Rectangle.h"
 #include "../Rendering/Displayable/HudStaticText.h"
@@ -114,15 +114,15 @@ namespace game
 		m_accumulator = 0.0f;
 		m_time_step = 0.0f;
 		//MAX_ACCUMULATED_TIME
-		Cleanup();
+		cleanup();
 	}
 
 	//Wirtualna metoda czyszcząca singleton
 	void Game::cleanup()
 	{
-		std::cout << "Game::Cleanup()" << std::endl;
+		std::cout << "Game::cleanup()" << std::endl;
 		m_render_window = NULL;
-		std::cout << "Game::Cleanup() done..." << std::endl;
+		std::cout << "Game::cleanup() done..." << std::endl;
 	}
 
 	//Metoda zwraca wskaźnik na okno gry
@@ -167,7 +167,7 @@ namespace game
 		//czyszczenie okna gry
 		m_render_window->clear(sf::Color(255,255,255));
 		//rysujemy obiekty na scenie
-		gDrawableManager.DrawFrame();
+		gDrawableManager.drawFrame();
 		//statystyki
 		m_fps_text.setString("FPS: "+ stringutils::ToString<float>(gClock.GetFPS()));
 		//m_fps_text.setString(L"ęęźźÓÓĄŻłń");

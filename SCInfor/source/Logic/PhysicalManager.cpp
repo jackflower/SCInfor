@@ -416,14 +416,14 @@ namespace logic
 	///
 	void PhysicalManager::cleanup()
 	{
-		fprintf(stderr, "PhysicalManager::Cleanup()\n");
+		fprintf(stderr, "PhysicalManager::cleanup()\n");
 
 		//nie jestem do końca pewien tego kodu...
 		//std::vector<Physical*>::iterator it;
 		//for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		//	DestroyPhysical(*(it));
 		clear();
-		fprintf(stderr, "PhysicalManager::Cleanup() done...\n");
+		fprintf(stderr, "PhysicalManager::cleanup() done...\n");
 	}
 
 

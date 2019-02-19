@@ -9,7 +9,7 @@
 #include "MapManager.h"
 //#include "../Editor/CEditor.h"
 #include "../Game/Game.h"
-#include "../Rendering/Drawable/CDrawableManager.h"
+#include "../Rendering/Drawable/DrawableManager.h"
 //#include "../Rendering/Camera/CCamera.h"
 #include "../ResourceManager/CResourceManager.h"
 //#include "../Logic/Player.h"

@@ -24,7 +24,7 @@ protected:
 	///
 	///Wirtualny interfejs
 	///
-	virtual void Cleanup() {};
+	virtual void cleanup() {};
 
 	///
 	///Destruktor Wirtualny

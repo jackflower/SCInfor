@@ -117,10 +117,10 @@ namespace charsettools
 	}
 
 	//Wirtualny interfejs - implementacja
-	void CCharSetManager::Cleanup()
+	void CCharSetManager::cleanup()
 	{
-		fprintf(stderr, "CCharSet::Cleanup()\n");
-		fprintf(stderr, "CCharSet::Cleanup() done...\n");
+		fprintf(stderr, "CCharSet::cleanup()\n");
+		fprintf(stderr, "CCharSet::cleanup() done...\n");
 	}
 
 }//namespace charsettools

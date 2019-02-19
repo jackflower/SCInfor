@@ -378,7 +378,7 @@ namespace resource
 		///
 		///Wirtualny interfejs - implementacja
 		///
-		virtual void Cleanup();
+		virtual void cleanup();
 		
 	private:
 

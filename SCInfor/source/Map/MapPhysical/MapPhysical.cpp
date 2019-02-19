@@ -7,7 +7,7 @@
 #include "MapPhysical.h"
 #include "../Ground/PhysicsGround/PhysicsGround.h"
 #include "../../Rendering/Displayable/Displayable.h"
-#include "../../Rendering/Drawable/CDrawableManager.h"
+#include "../../Rendering/Drawable/DrawableManager.h"
 #include "../../Rendering/Drawable/Layers.h"
 #include "../../Rendering/Animations/Animation.h"
 #include "../../Rendering/Animations/AnimationState.h"
@@ -69,7 +69,7 @@ namespace mapengine
 		m_code = "";
 		
 		if (p_displayable != NULL)
-			gDrawableManager.DestroyDrawable(p_displayable);
+			gDrawableManager.destroyDrawable(p_displayable);
 		
 		p_displayable = NULL;
 		m_map_physical_position.x = 0.0f;
@@ -378,6 +378,6 @@ namespace mapengine
 	void MapPhysical::checkDisplayable()
 	{
 		if (!p_displayable)
-			p_displayable = gDrawableManager.CreateDisplayable(Z_GROUND_WORK);
+			p_displayable = gDrawableManager.createDisplayable(Z_GROUND_WORK);
 	}
 }//namespace mapengine

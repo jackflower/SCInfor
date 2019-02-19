@@ -7,7 +7,7 @@
 #include "Tile.h"
 #include "../../Rendering/Displayable/Displayable.h"
 #include "../../Rendering/Drawable/Layers.h"
-#include "../../Rendering/Drawable/CDrawableManager.h"
+#include "../../Rendering/Drawable/DrawableManager.h"
 
 namespace mapengine
 {
@@ -38,7 +38,7 @@ namespace mapengine
 		Tile::~Tile()
 		{
 			if (p_displayable != NULL)
-				gDrawableManager.DestroyDrawable(p_displayable);
+				gDrawableManager.destroyDrawable(p_displayable);
 			m_code = "";
 			m_tile_position.x = 0.0f;
 			m_tile_position.y = 0.0f;
@@ -54,7 +54,7 @@ namespace mapengine
 		void Tile::initializeTile(const std::string & image_file, int number)
 		{
 			if (p_displayable == NULL)
-				p_displayable = gDrawableManager.CreateDisplayable(Z_TILE);
+				p_displayable = gDrawableManager.createDisplayable(Z_TILE);
 			if(p_displayable)
 			{
 				p_displayable->setTexture(image_file/*,false*/);

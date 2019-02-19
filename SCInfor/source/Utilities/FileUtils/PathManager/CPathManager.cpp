@@ -73,10 +73,10 @@ namespace fileutils
 	}
 
 	//Wirtualna metoda czyszcz¹ca singleton
-	void CPathManager::Cleanup()
+	void CPathManager::cleanup()
 	{
-		fprintf(stderr, "CPathManager::Cleanup()\n");
+		fprintf(stderr, "CPathManager::cleanup()\n");
 		ReleaseAllDataPath();
-		fprintf(stderr, "CPathManager::Cleanup() done...\n");
+		fprintf(stderr, "CPathManager::cleanup() done...\n");
 	}
 }//namespace fileutils

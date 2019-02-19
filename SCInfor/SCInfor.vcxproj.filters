@@ -393,12 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Rendering\Drawable\CDrawableManager.cpp">
-      <Filter>source\Rendering\Drawable</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Drawable\IDrawable.cpp">
-      <Filter>source\Rendering\Drawable</Filter>
-    </ClCompile>
     <ClCompile Include="source\Rendering\Particle\CParticle.cpp">
       <Filter>source\Rendering\Particle</Filter>
     </ClCompile>
@@ -1005,6 +999,12 @@
     <ClCompile Include="source\Rendering\Displayable\Displayable.cpp">
       <Filter>source\Rendering\Displayable</Filter>
     </ClCompile>
+    <ClCompile Include="source\Rendering\Drawable\Drawable.cpp">
+      <Filter>source\Rendering\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Drawable\DrawableManager.cpp">
+      <Filter>source\Rendering\Drawable</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1116,12 +1116,6 @@
     </ClInclude>
     <ClInclude Include="source\Rendering\Animations\EAnimHandler.h">
       <Filter>source\Rendering\Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Drawable\CDrawableManager.h">
-      <Filter>source\Rendering\Drawable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Drawable\IDrawable.h">
-      <Filter>source\Rendering\Drawable</Filter>
     </ClInclude>
     <ClInclude Include="source\Rendering\Drawable\Layers.h">
       <Filter>source\Rendering\Drawable</Filter>
@@ -1764,6 +1758,12 @@
     </ClInclude>
     <ClInclude Include="source\Rendering\Displayable\Displayable.h">
       <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Drawable\Drawable.h">
+      <Filter>source\Rendering\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Drawable\DrawableManager.h">
+      <Filter>source\Rendering\Drawable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

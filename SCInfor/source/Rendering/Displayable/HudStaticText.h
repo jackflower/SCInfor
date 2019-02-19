@@ -11,7 +11,7 @@
 #include "../../RTTI/RTTI.h"
 #include "../../ResourceManager/CResourceManager.h"
 #include "../../ResourceManager/CFont.h"
-#include "../Drawable/IDrawable.h"
+#include "../Drawable/Drawable.h"
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/Graphics/Color.hpp>
@@ -37,7 +37,7 @@ namespace rendering
 		///
 		///Klasa reprezentujaca tekst rysowany na HUD - przyklejony do kamery (ang. Head-Up Display)
 		///
-		class HudStaticText : public IDrawable
+		class HudStaticText : public rendering::drawable::Drawable
 		{
 			RTTI_DECL;
 

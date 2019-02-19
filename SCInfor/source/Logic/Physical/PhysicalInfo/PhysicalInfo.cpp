@@ -6,7 +6,7 @@
 
 #include "PhysicalInfo.h"
 #include "../../../Rendering/Drawable/Layers.h"
-#include "../../../Rendering/Drawable/CDrawableManager.h"
+#include "../../../Rendering/Drawable/DrawableManager.h"
 #include <SFML/Graphics/RectangleShape.hpp>
 
 namespace logic
@@ -69,9 +69,9 @@ namespace logic
 	PhysicalInfo::~PhysicalInfo()
 	{
 		if (p_status_bar_energy)
-			gDrawableManager.DestroyDrawable(p_status_bar_energy);
+			gDrawableManager.destroyDrawable(p_status_bar_energy);
 		if (p_status_bar_fuel)
-			gDrawableManager.DestroyDrawable(p_status_bar_fuel);
+			gDrawableManager.destroyDrawable(p_status_bar_fuel);
 
 		//~Physical()
 		m_physical_info_name = "";
@@ -349,7 +349,7 @@ namespace logic
 	{
 		if ((m_use_status_bar_energy) && (!p_status_bar_energy))
 		{
-			p_status_bar_energy = gDrawableManager.CreateRectangle(getZIndexRectangle());
+			p_status_bar_energy = gDrawableManager.createRectangle(getZIndexRectangle());
 			if (!p_status_bar_energy)
 			{
 				fprintf(stderr, "error: PhysicalInfo::InitStatusBarEnergy, p_status_bar_energy null, returning\n");
@@ -363,7 +363,7 @@ namespace logic
 	{
 		if ((m_use_status_bar_fuel) && (!p_status_bar_fuel))
 		{
-			p_status_bar_fuel = gDrawableManager.CreateRectangle(getZIndexRectangle());
+			p_status_bar_fuel = gDrawableManager.createRectangle(getZIndexRectangle());
 			if (!p_status_bar_fuel)
 			{
 				fprintf(stderr, "error: PhysicalInfo::InitStatusBarFuel, p_status_bar_fuel null, returning\n");

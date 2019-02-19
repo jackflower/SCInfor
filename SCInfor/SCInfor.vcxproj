@@ -296,8 +296,8 @@
     <ClCompile Include="source\Rendering\Displayable\Sprite.cpp" />
     <ClCompile Include="source\Rendering\Displayable\TextHeadUpDisplay.cpp" />
     <ClCompile Include="source\Rendering\Displayable\Texture.cpp" />
-    <ClCompile Include="source\Rendering\Drawable\CDrawableManager.cpp" />
-    <ClCompile Include="source\Rendering\Drawable\IDrawable.cpp" />
+    <ClCompile Include="source\Rendering\Drawable\DrawableManager.cpp" />
+    <ClCompile Include="source\Rendering\Drawable\Drawable.cpp" />
     <ClCompile Include="source\Rendering\Particle\CParticle.cpp" />
     <ClCompile Include="source\Rendering\Particle\CParticleState.cpp" />
     <ClCompile Include="source\ResourceManager\CFont.cpp" />
@@ -540,8 +540,8 @@
     <ClInclude Include="source\Rendering\Displayable\Sprite.h" />
     <ClInclude Include="source\Rendering\Displayable\TextHeadUpDisplay.h" />
     <ClInclude Include="source\Rendering\Displayable\Texture.h" />
-    <ClInclude Include="source\Rendering\Drawable\CDrawableManager.h" />
-    <ClInclude Include="source\Rendering\Drawable\IDrawable.h" />
+    <ClInclude Include="source\Rendering\Drawable\DrawableManager.h" />
+    <ClInclude Include="source\Rendering\Drawable\Drawable.h" />
     <ClInclude Include="source\Rendering\Drawable\Layers.h" />
     <ClInclude Include="source\Rendering\Particle\CParticle.h" />
     <ClInclude Include="source\Rendering\Particle\CParticleState.h" />

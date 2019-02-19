@@ -22,7 +22,7 @@ CSingletonCleaner::~CSingletonCleaner()
 	assert(s_instance);
 	while (m_cleanupables.size() > 0)
 	{
-		m_cleanupables[m_cleanupables.size()-1]->Cleanup();
+		m_cleanupables[m_cleanupables.size()-1]->cleanup();
 		m_cleanupables.pop_back();
 		fprintf(stderr, "CSingletonCleaner - %d objects unregistered\n", m_cleanupables.size());
 	}

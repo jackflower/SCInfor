@@ -7,7 +7,7 @@
 #ifndef H_HUD_SPRITE_JACK
 #define H_HUD_SPRITE_JACK
 
-#include "../Drawable/IDrawable.h"
+#include "../Drawable/Drawable.h"
 #include <SFML/Graphics/Rect.hpp>
 
 ///
@@ -35,7 +35,7 @@ namespace displayable
 	///
 	///Klasa reprezentuje sprite'a HUD - sprite "przyklejonego" do kamery
 	///
-	class HudSprite : public IDrawable
+	class HudSprite : public Drawable
 	{
 		RTTI_DECL;
 	public:

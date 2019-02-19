@@ -228,10 +228,10 @@ namespace weather
 	}
 
 	//Wirtualna metoda czyszcz¹ca singleton
-	void CWeather::Cleanup()
+	void CWeather::cleanup()
 	{
-		printf("CWeather::Cleanup()\n");
-		printf("CWeather::Cleanup() done...\n");
+		printf("CWeather::cleanup()\n");
+		printf("CWeather::cleanup() done...\n");
 	}
 
 	//implementacja metod private i proteceted:
