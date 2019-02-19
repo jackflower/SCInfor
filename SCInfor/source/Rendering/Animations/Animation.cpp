@@ -113,7 +113,7 @@ namespace rendering
 			if (m_frames.empty()) //jeśli nie ma klatek, to czas odtwarzania klatki animacji
 				return 0.0f; //jest równy zero
 			else
-				return m_frames.back().GetFrameTime();
+				return m_frames.back().getFrameTime();
 				//w przeciwnym wypadku jest to czas odtwarzania
 				//(ostatniej) klatki animacji wektora - czyli czas
 				//kumulacji poprzednich (suma trwania wszystkich klatek)

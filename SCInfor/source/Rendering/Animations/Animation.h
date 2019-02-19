@@ -8,7 +8,7 @@
 #define H_ANIMATION_JACK
 
 #include <vector>
-#include "CTimedAnimationFrame.h"
+#include "TimedAnimationFrame.h"
 #include "../../RTTI/RTTI.h"
 
 namespace rendering
@@ -90,7 +90,7 @@ namespace rendering
 
 		public:
 
-			std::vector<CTimedAnimationFrame> m_frames;	//wektor przechowujący klatki animacji
+			std::vector<TimedAnimationFrame> m_frames;	//wektor przechowujący klatki animacji
 		};
 	}//namespace animation
 }//namespace rendering

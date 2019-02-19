@@ -393,12 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Rendering\Animations\CNameAnimPairTranslator.cpp">
-      <Filter>source\Rendering\Animations</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Animations\CTimedAnimationFrame.cpp">
-      <Filter>source\Rendering\Animations</Filter>
-    </ClCompile>
     <ClCompile Include="source\Rendering\Displayable\CBar.cpp">
       <Filter>source\Rendering\Displayable</Filter>
     </ClCompile>
@@ -1005,6 +999,12 @@
     <ClCompile Include="source\Rendering\Animations\AnimSet.cpp">
       <Filter>source\Rendering\Animations</Filter>
     </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\NameAnimPairTranslator.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Animations\TimedAnimationFrame.cpp">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1113,12 +1113,6 @@
     </ClInclude>
     <ClInclude Include="source\Map\MapHeader.h">
       <Filter>source\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Animations\CNameAnimPairTranslator.h">
-      <Filter>source\Rendering\Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Animations\CTimedAnimationFrame.h">
-      <Filter>source\Rendering\Animations</Filter>
     </ClInclude>
     <ClInclude Include="source\Rendering\Animations\EAnimHandler.h">
       <Filter>source\Rendering\Animations</Filter>
@@ -1763,6 +1757,12 @@
       <Filter>source\Rendering\Animations</Filter>
     </ClInclude>
     <ClInclude Include="source\Rendering\Animations\AnimSet.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\NameAnimPairTranslator.h">
+      <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Animations\TimedAnimationFrame.h">
       <Filter>source\Rendering\Animations</Filter>
     </ClInclude>
   </ItemGroup>

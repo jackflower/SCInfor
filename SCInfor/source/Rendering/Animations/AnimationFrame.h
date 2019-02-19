@@ -83,6 +83,13 @@ namespace rendering
 			const std::string & getTextureName() const;
 
 			///
+			///Metoda ustawia nazwę tekstury std::string
+			///
+			///@param texture_name - nazwa tekstury - stała referencja na obiekt klasy std::string
+			///
+			void setTextureName(const std::string & texture_name);
+
+			///
 			///Metoda zwraca stałą referencję na prostokątny obszar tekstury sf::IntRect
 			///
 			const sf::IntRect & getImageRectangle() const;

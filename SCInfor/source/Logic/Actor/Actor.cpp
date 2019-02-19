@@ -9,7 +9,7 @@
 #include "../../Rendering/Displayable/CDisplayable.h"
 #include "../../Rendering/Animations/AnimSet.h"
 #include "../../Rendering/Animations/AnimationState.h"
-#include "../../Rendering/Animations/CNameAnimPairTranslator.h"
+#include "../../Rendering/Animations/NameAnimPairTranslator.h"
 #include "../../Equipment/Engine/Engine.h"
 #include "../../Equipment/Energy/Energy.h"
 #include "../../Equipment/Thermodynamics/Airconditioning/Airconditioning.h"
@@ -544,10 +544,10 @@ namespace logic
 			Animation *curr_anim = getAnimationBody();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->getAnims();
+			const std::vector<NameAnimPairTranslator> & old_anims = p_anim_set->getAnims();
 
 			//kontener przechowujący nowy (parametr tej metody) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> & new_anims = anim_set->getAnims();
+			const std::vector<NameAnimPairTranslator> & new_anims = anim_set->getAnims();
 
 			//indeks, pod którym może znajdować się szukana animacja
 			unsigned int index = -1;
@@ -556,7 +556,7 @@ namespace logic
 			for (unsigned int i = 0; i < old_anims.size(); i++)
 			{
 				//jeśli znalazłem szukaną animację w starym (dotychczasowym) kontenerze
-				if (old_anims[i].GetAnimation() == curr_anim)
+				if (old_anims[i].getAnimation() == curr_anim)
 				{
 					index = i;	//zapamiętuję pod jakim jest indeksem w kontenerze
 					break;		//i przerywam przeszukiwanie
@@ -566,13 +566,13 @@ namespace logic
 			//jeśli indeks jest większy od zera oraz indeks jest mniejszy od rozmiaru kontenera
 			//z zestawem (nie można przekroczyć rozmiaru nowego kontenera)
 			//i w nowym zestawie (parametr), pod tym indeksem jest animacja
-			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].GetAnimation() != NULL))
+			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].getAnimation() != NULL))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
 				float currTime = getDisplayableBody()->GetAnimationState()->getCurrentTime();
 
 				//podmieniam starą animację ze starego zestawu na nową animację z nowego zestawu
-				setAnimationBody(new_anims[index].GetAnimation());
+				setAnimationBody(new_anims[index].getAnimation());
 
 				//przewijam animację do "czasu", w którym rozpoczął się proces podmiany animacji
 				getDisplayableBody()->GetAnimationState()->rewindTo(currTime);
@@ -590,10 +590,10 @@ namespace logic
 			Animation *curr_anim = getAnimationHead();
 
 			//kontener przechowujący stary (dotychczasowy) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> & old_anims = p_anim_set->getAnims();
+			const std::vector<NameAnimPairTranslator> & old_anims = p_anim_set->getAnims();
 
 			//kontener przechowujący nowy (parametr tej metody) zestaw animacji
-			const std::vector<CNameAnimPairTranslator> & new_anims = anim_set->getAnims();
+			const std::vector<NameAnimPairTranslator> & new_anims = anim_set->getAnims();
 
 			//indeks, pod którym może znajdować się szukana animacja
 			unsigned int index = -1;
@@ -602,7 +602,7 @@ namespace logic
 			for (unsigned int i = 0; i < old_anims.size(); i++)
 			{
 				//jeśli znalazłem szukaną animację w starym (dotychczasowym) kontenerze
-				if (old_anims[i].GetAnimation() == curr_anim)
+				if (old_anims[i].getAnimation() == curr_anim)
 				{
 					index = i;	//zapamiętuję pod jakim jest indeksem w kontenerze
 					break;		//i przerywam przeszukiwanie
@@ -612,13 +612,13 @@ namespace logic
 			//jeśli indeks jest większy od zera oraz indeks jest mniejszy od rozmiaru kontenera
 			//z zestawem (nie można przekroczyć rozmiaru nowego kontenera)
 			//i w nowym zestawie (parametr), pod tym indeksem jest animacja
-			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].GetAnimation() != NULL))
+			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].getAnimation() != NULL))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
 				float currTime = getDisplayableHead()->GetAnimationState()->getCurrentTime();
 
 				//podmieniam starą animację ze starego zestawu na nową animację z nowego zestawu
-				setAnimationHead(new_anims[index].GetAnimation());
+				setAnimationHead(new_anims[index].getAnimation());
 
 				//przewijam animację do "czasu", w którym rozpoczął się proces podmiany animacji
 				getDisplayableHead()->GetAnimationState()->rewindTo(currTime);

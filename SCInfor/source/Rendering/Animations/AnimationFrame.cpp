@@ -38,7 +38,7 @@ namespace rendering
 
 		//Konstruktor przenoszący
 		AnimationFrame::AnimationFrame(AnimationFrame && other)
-			:
+		:
 			m_texture_name(""),
 			m_rectangle()
 		{
@@ -123,6 +123,12 @@ namespace rendering
 		const std::string & AnimationFrame::getTextureName() const
 		{
 			return m_texture_name;
+		}
+
+		//Metoda ustawia nazwę tekstury std::string
+		void AnimationFrame::setTextureName(const std::string & texture_name)
+		{
+			m_texture_name = texture_name;
 		}
 
 		//Metoda zwraca stałą referencję na prostokątny obszar tekstury sf::IntRect

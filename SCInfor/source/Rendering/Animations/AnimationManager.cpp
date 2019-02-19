@@ -151,7 +151,7 @@ namespace rendering
 					//float Animation::TotalLength()
 					m_total_frame_time += m_frame_time;
 					m_animations[animation->getAnimationName()] = animation;
-					animation->m_frames.push_back(CTimedAnimationFrame(m_total_frame_time, AnimationFrame(m_texture_name, rectangle)));
+					animation->m_frames.push_back(TimedAnimationFrame(m_total_frame_time, AnimationFrame(m_texture_name, rectangle)));
 				}
 			}
 		}

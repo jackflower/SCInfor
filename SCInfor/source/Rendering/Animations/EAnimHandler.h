@@ -1,4 +1,4 @@
-//  ___________________________________________________
+﻿//  ___________________________________________________
 // | EAnimHandler.h - enumeration of states animations |
 // | Jack Flower - March 2012                          |
 // |___________________________________________________|
@@ -10,7 +10,7 @@
 namespace animation
 {
 	///
-	///Wyliczenie uchwyt�w animacji
+	///Wyliczenie uchwytów animacji
 	///
 	enum EAnimHandler
 	{

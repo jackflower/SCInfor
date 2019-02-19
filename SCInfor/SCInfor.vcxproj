@@ -285,8 +285,8 @@
     <ClCompile Include="source\Rendering\Animations\AnimationManager.cpp" />
     <ClCompile Include="source\Rendering\Animations\AnimationState.cpp" />
     <ClCompile Include="source\Rendering\Animations\AnimSet.cpp" />
-    <ClCompile Include="source\Rendering\Animations\CNameAnimPairTranslator.cpp" />
-    <ClCompile Include="source\Rendering\Animations\CTimedAnimationFrame.cpp" />
+    <ClCompile Include="source\Rendering\Animations\NameAnimPairTranslator.cpp" />
+    <ClCompile Include="source\Rendering\Animations\TimedAnimationFrame.cpp" />
     <ClCompile Include="source\Rendering\Displayable\CBar.cpp" />
     <ClCompile Include="source\Rendering\Displayable\CClippedSprite.cpp" />
     <ClCompile Include="source\Rendering\Displayable\CDisplayable.cpp" />
@@ -528,8 +528,8 @@
     <ClInclude Include="source\Rendering\Animations\AnimationManager.h" />
     <ClInclude Include="source\Rendering\Animations\AnimationState.h" />
     <ClInclude Include="source\Rendering\Animations\AnimSet.h" />
-    <ClInclude Include="source\Rendering\Animations\CNameAnimPairTranslator.h" />
-    <ClInclude Include="source\Rendering\Animations\CTimedAnimationFrame.h" />
+    <ClInclude Include="source\Rendering\Animations\NameAnimPairTranslator.h" />
+    <ClInclude Include="source\Rendering\Animations\TimedAnimationFrame.h" />
     <ClInclude Include="source\Rendering\Animations\EAnimHandler.h" />
     <ClInclude Include="source\Rendering\Displayable\CBar.h" />
     <ClInclude Include="source\Rendering\Displayable\CClippedSprite.h" />

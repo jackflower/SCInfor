@@ -27,7 +27,7 @@ namespace rendering
 		///
 		///Forward declaration
 		///
-		class CNameAnimPairTranslator;
+		class NameAnimPairTranslator;
 
 		///
 		///Klasa reprezentuje zestaw animacji obiektu
@@ -760,12 +760,12 @@ namespace rendering
 			///
 			///Metoda zwraca stała referencję na wektor przechowujący zestawy animacji
 			///
-			inline const std::vector<CNameAnimPairTranslator> & getAnims() const { return m_anims; }
+			inline const std::vector<NameAnimPairTranslator> & getAnims() const { return m_anims; }
 
 		private:
 
 			std::string m_animset_name; //nazwa zestawu
-			std::vector<CNameAnimPairTranslator> m_anims; //kontener przechowujący animacje
+			std::vector<NameAnimPairTranslator> m_anims; //kontener przechowujący animacje
 
 			static int m_anim_handle_number; //uchwyt animacji
 			static std::string m_anim_handle_names[]; //tablica stringów przechowująca nazwy animacji

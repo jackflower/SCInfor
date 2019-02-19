@@ -240,7 +240,7 @@ namespace rendering
 			size_t candidate = 0;											//kolejna klatka animacji do odtwarzania
 			for (size_t i = p_animation->m_frames.size()-1; i>0; i--)		//przeszukujemy kontener z klatkami animacji
 			{
-				if (p_animation->m_frames[i-1].GetFrameTime() < m_current_time)
+				if (p_animation->m_frames[i-1].getFrameTime() < m_current_time)
 																			//jeśli czas  odtwarzania klatki z kontenera
 																			//jest mniejszy niż bieżący czas
 																			//(skończył się czas jej ekspozycji)
@@ -250,7 +250,7 @@ namespace rendering
 				}
 			}
 			m_frame_number = candidate;
-			return p_animation->m_frames[candidate].GetAnimationFrame();	//zwracamy ją, jako kolejną do odtwarzania
+			return p_animation->m_frames[candidate].getAnimationFrame();	//zwracamy ją, jako kolejną do odtwarzania
 		}
 
 		//Metoda uruchamia animację

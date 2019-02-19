@@ -7,7 +7,7 @@
 #include "AnimSet.h"
 #include "AnimationManager.h"
 #include "Animation.h"
-#include "CNameAnimPairTranslator.h"
+#include "NameAnimPairTranslator.h"
 
 namespace rendering
 {
@@ -389,8 +389,8 @@ namespace rendering
 		{
 			if ((anim_handle < 0) || (p_anim == NULL)) return;
 			if ((unsigned int)anim_handle >= m_anims.size()) m_anims.resize(anim_handle + 1);
-			m_anims[anim_handle] = CNameAnimPairTranslator(p_anim->getAnimationName());
-			m_anims[anim_handle].SetAnim(p_anim);
+			m_anims[anim_handle] = NameAnimPairTranslator(p_anim->getAnimationName());
+			m_anims[anim_handle].setAnimation(p_anim);
 		}
 
 		//Metoda ustawia animację
@@ -398,7 +398,7 @@ namespace rendering
 		{
 			if (anim_handle < 0) return;
 			if ((unsigned int) anim_handle >= m_anims.size()) m_anims.resize(anim_handle + 1);
-			m_anims[anim_handle] = CNameAnimPairTranslator(anim_name);
+			m_anims[anim_handle] = NameAnimPairTranslator(anim_name);
 		}
 
 		//Metoda zwraca nazwę animacji na podstawie uchwytu
@@ -406,7 +406,7 @@ namespace rendering
 		{
 			if ((anim_handle < 0) || ((unsigned int) anim_handle >= m_anims.size()))
 				return NULL;
-			return &m_anims[anim_handle].GetAnimationName();
+			return &m_anims[anim_handle].getAnimationName();
 		}
 
 		//Metoda zwraca wskaźnik na animację na podstawie parametru - uchwytu
@@ -416,12 +416,12 @@ namespace rendering
 			if ((anim_handle < 0) || ((unsigned int) anim_handle >= m_anims.size()))
 				return NULL;
 			//jeśli animacja pod indeksem (uchwyt-parametr) nie jest gotowa (wgrana)
-			if (!m_anims[anim_handle].GetReady())
+			if (!m_anims[anim_handle].getReady())
 			{
 				//ustawiamy animację na pobraną w menadżera animacji
-				m_anims[anim_handle].SetAnim(gAnimationManager.getAnimation(m_anims[anim_handle].GetAnimationName()));
+				m_anims[anim_handle].setAnimation(gAnimationManager.getAnimation(m_anims[anim_handle].getAnimationName()));
 			}
-			return m_anims[anim_handle].GetAnimation();//zwracamy z wzrorca już gotową animację (wskaźnik)
+			return m_anims[anim_handle].getAnimation();//zwracamy z wzrorca już gotową animację (wskaźnik)
 		}
 
 		//Metoda sprawdza nazwy animacji i wstawia animacje do zestawu animacji
