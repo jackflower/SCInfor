@@ -8,12 +8,12 @@
 
 namespace animated
 {
-	RTTI_IMPL(Animated, CSprite);
+	RTTI_IMPL(Animated, Sprite);
 
 	// Konstruktor domyślny
 	Animated::Animated()
 	:
-		CSprite(),
+		Sprite(),
 		m_time(m_default_time),
 		m_elapsedtime(0),
 		m_paused(false),
@@ -31,7 +31,7 @@ namespace animated
 	//Konstruktor kopiujący
 	Animated::Animated(const Animated & copy)
 	:
-		CSprite(copy), //konstruktor kopiujący klasy bazowej
+		Sprite(copy), //konstruktor kopiujący klasy bazowej
 		m_time(copy.m_time),
 		m_elapsedtime(copy.m_elapsedtime),
 		m_paused(copy.m_paused),
@@ -47,7 +47,7 @@ namespace animated
 	//Konstruktor przenoszący
 	Animated::Animated(Animated && other)
 	:
-		CSprite(other), //konstruktor przenoszący klasy bazowej
+		Sprite(other), //konstruktor przenoszący klasy bazowej
 		m_time(std::move(other.m_time)),
 		m_elapsedtime(std::move(other.m_elapsedtime)),
 		m_paused(std::move(other.m_paused)),
@@ -75,7 +75,7 @@ namespace animated
 	// Konstruktor parametryczny
 	Animated::Animated(AnimatedAnimation* p_animation, bool play, bool loop, float time)
 	:
-		CSprite(), //konstruktor klasy bazowej
+		Sprite(), //konstruktor klasy bazowej
 		m_time(time),
 		m_elapsedtime(time),
 		m_paused(!play),
@@ -94,7 +94,7 @@ namespace animated
 	//Destruktor wirtualny
 	Animated::~Animated()
 	{
-		//~CSprite()
+		//~Sprite()
 		m_time = 0.f;
 		m_elapsedtime = 0.f;
 		m_paused = false;

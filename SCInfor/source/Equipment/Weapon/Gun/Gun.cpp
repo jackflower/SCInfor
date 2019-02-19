@@ -8,7 +8,7 @@
 #include "../../../Logic/PhysicalManager.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
-#include "../../../Rendering/Displayable/CDisplayable.h"
+#include "../../../Rendering/Displayable/Displayable.h"
 #include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Utilities/Utilities/Utilities.h"
@@ -408,8 +408,8 @@ namespace equipment
 					setAnimationBody(p_anim_set->getGunBodyDefaultAnim());
 					setAnimationHead(p_anim_set->getGunHeadDefaultAnim());
 					//animacja head odtwarza się w pętli
-					getDisplayableHead()->GetAnimationState()->setLooped(true);
-					getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
+					getDisplayableHead()->getAnimationState()->setLooped(true);
+					getDisplayableHeadShadow()->getAnimationState()->setLooped(true);
 				}
 				break;
 			}
@@ -420,8 +420,8 @@ namespace equipment
 					setAnimationBody(p_anim_set->getGunBodyShootAnim());
 					setAnimationHead(p_anim_set->getGunHeadShootAnim());
 					//animacja head odtwarza się jeden raz
-					getDisplayableHead()->GetAnimationState()->setLooped(false);
-					getDisplayableHeadShadow()->GetAnimationState()->setLooped(false);
+					getDisplayableHead()->getAnimationState()->setLooped(false);
+					getDisplayableHeadShadow()->getAnimationState()->setLooped(false);
 				}
 				break;
 			}
@@ -432,8 +432,8 @@ namespace equipment
 					setAnimationBody(p_anim_set->getGunBodyAmmoLoadingAnim());
 					setAnimationHead(p_anim_set->getGunHeadAmmoLoadingAnim());
 					//animacja head odtwarza się jeden raz
-					getDisplayableHead()->GetAnimationState()->setLooped(false);
-					getDisplayableHeadShadow()->GetAnimationState()->setLooped(false);
+					getDisplayableHead()->getAnimationState()->setLooped(false);
+					getDisplayableHeadShadow()->getAnimationState()->setLooped(false);
 				}
 				break;
 			}
@@ -444,8 +444,8 @@ namespace equipment
 					setAnimationBody(p_anim_set->getGunBodyAmmoEmptyAnim());
 					setAnimationHead(p_anim_set->getGunHeadAmmoEmptyAnim());
 					//animacja head odtwarza się w pętli
-					getDisplayableHead()->GetAnimationState()->setLooped(true);
-					getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
+					getDisplayableHead()->getAnimationState()->setLooped(true);
+					getDisplayableHeadShadow()->getAnimationState()->setLooped(true);
 				}
 				break;
 			}
@@ -456,8 +456,8 @@ namespace equipment
 					setAnimationBody(p_anim_set->getGunBodyDamageAnim());
 					setAnimationHead(p_anim_set->getGunHeadDamageAnim());
 					//animacja head odtwarza się w pętli
-					getDisplayableHead()->GetAnimationState()->setLooped(true);
-					getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
+					getDisplayableHead()->getAnimationState()->setLooped(true);
+					getDisplayableHeadShadow()->getAnimationState()->setLooped(true);
 				}
 				break;
 			}
@@ -468,8 +468,8 @@ namespace equipment
 					setAnimationBody(p_anim_set->getGunBodyServiceAnim());
 					setAnimationHead(p_anim_set->getGunHeadServiceAnim());
 					//animacja head odtwarza się w pętli
-					getDisplayableHead()->GetAnimationState()->setLooped(true);
-					getDisplayableHeadShadow()->GetAnimationState()->setLooped(true);
+					getDisplayableHead()->getAnimationState()->setLooped(true);
+					getDisplayableHeadShadow()->getAnimationState()->setLooped(true);
 				}
 				break;
 			}

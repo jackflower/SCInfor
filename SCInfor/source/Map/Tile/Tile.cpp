@@ -5,7 +5,7 @@
 //
 
 #include "Tile.h"
-#include "../../Rendering/Displayable/CDisplayable.h"
+#include "../../Rendering/Displayable/Displayable.h"
 #include "../../Rendering/Drawable/Layers.h"
 #include "../../Rendering/Drawable/CDrawableManager.h"
 

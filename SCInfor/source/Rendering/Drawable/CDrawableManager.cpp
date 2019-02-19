@@ -6,9 +6,9 @@
 
 #include "CDrawableManager.h"
 #include "IDrawable.h"
-#include "../Displayable/CDisplayable.h"
-#include "../Displayable/CRectangle.h"
-#include "../Displayable/CHudStaticText.h"
+#include "../Displayable/Displayable.h"
+#include "../Displayable/Rectangle.h"
+#include "../Displayable/HudStaticText.h"
 #include "../../Game/Game.h"
 
 template<> CDrawableManager* CSingleton<CDrawableManager>::m_singleton = 0;
@@ -45,34 +45,34 @@ namespace rendering
 			Cleanup();
 		}
 
-		//Metoda tworzy obiekt klasy CDisplayable i zwraca wskaŸnik na ten obiekt
-		CDisplayable* CDrawableManager::CreateDisplayable(int z_index)
+		//Metoda tworzy obiekt klasy Displayable i zwraca wskaŸnik na ten obiekt
+		Displayable* CDrawableManager::CreateDisplayable(int z_index)
 		{
 			if (!IsCorrectZIndex(z_index)) return NULL;
 
-			CDisplayable* displayable = new CDisplayable();
+			Displayable* displayable = new Displayable();
 			RegisterDrawable(displayable, z_index);
 
 			return displayable;
 		}
 
-		//Metoda tworzy obiekt klasy CRectangle i zwraca wskaŸnik na ten obiekt
-		CRectangle* CDrawableManager::CreateRectangle(int z_index)
+		//Metoda tworzy obiekt klasy Rectangle i zwraca wskaŸnik na ten obiekt
+		Rectangle* CDrawableManager::CreateRectangle(int z_index)
 		{
 			if (!IsCorrectZIndex(z_index)) return NULL;
 
-			CRectangle* rectangle = new CRectangle();
+			Rectangle* rectangle = new Rectangle();
 			RegisterDrawable(rectangle, z_index);
 
 			return rectangle;
 		}
 
-		//Metoda tworzy obiekt klasy CHudStaticText i zwraca wskaŸnik na ten obiekt
-		CHudStaticText* CDrawableManager::CreateHudStaticText(int z_index)
+		//Metoda tworzy obiekt klasy HudStaticText i zwraca wskaŸnik na ten obiekt
+		HudStaticText* CDrawableManager::CreateHudStaticText(int z_index)
 		{
 			if (!IsCorrectZIndex(z_index)) return NULL;
 
-			CHudStaticText* hudstatictext = new CHudStaticText();
+			HudStaticText* hudstatictext = new HudStaticText();
 			RegisterDrawable(hudstatictext, z_index);
 
 			return hudstatictext;
@@ -117,7 +117,7 @@ namespace rendering
 				fprintf(stderr, "warning: CDrawableManager::DestroyDrawable: tried to destroy null drawable\n");
 		}
 
-		//Metoda renderuj¹ca obiekt klasy CDisplayable
+		//Metoda renderuj¹ca obiekt klasy Displayable
 		void CDrawableManager::DrawFrame(sf::RenderWindow* render)
 		{
 			if (render == NULL)
@@ -130,7 +130,7 @@ namespace rendering
 				{
 					IDrawable* drawable = (*it2);
 					if (drawable->getVisible())
-						drawable->Draw(render);
+						drawable->draw(render);
 				} 
 			}
 		}

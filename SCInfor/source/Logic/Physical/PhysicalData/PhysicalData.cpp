@@ -5,7 +5,7 @@
 //
 
 #include "PhysicalData.h"
-#include "../../../Rendering/Displayable/CDisplayable.h"
+#include "../../../Rendering/Displayable/Displayable.h"
 #include "../../../Rendering/Drawable/CDrawableManager.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
@@ -339,32 +339,32 @@ namespace physicaldata
 		m_use_shadow_head = use_shadow_head;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body) /zgodność interfejsu/
-	CDisplayable *PhysicalData::getDisplayable()
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body) /zgodność interfejsu/
+	Displayable *PhysicalData::getDisplayable()
 	{
 		return p_displayable_body;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body) /zgodność interfejsu/
-	void PhysicalData::setDisplayable(CDisplayable *displayable)
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body) /zgodność interfejsu/
+	void PhysicalData::setDisplayable(Displayable *displayable)
 	{
 		p_displayable_body = displayable;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (shadow) /zgodność interfejsu/
-	CDisplayable *PhysicalData::getShadow()
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow) /zgodność interfejsu/
+	Displayable *PhysicalData::getShadow()
 	{
 		return p_displayable_body_shadow;
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body) /zgodność interfejsu/
-	void PhysicalData::setShadow(CDisplayable *displayable_shadow)
+	//Metoda ustawia wskaźnik na obiekt klasy Displayable (body) /zgodność interfejsu/
+	void PhysicalData::setShadow(Displayable *displayable_shadow)
 	{
 		p_displayable_body_shadow = displayable_shadow;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body)
-	CDisplayable *PhysicalData::getDisplayable(EPhysicalPart physical_part)
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
+	Displayable *PhysicalData::getDisplayable(EPhysicalPart physical_part)
 	{
 		if (physical_part == BODY)
 			return p_displayable_body;
@@ -373,8 +373,8 @@ namespace physicaldata
 		return p_displayable_body;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (shadow)
-	CDisplayable *PhysicalData::getShadow(EPhysicalPart physical_part)
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow)
+	Displayable *PhysicalData::getShadow(EPhysicalPart physical_part)
 	{
 		if (physical_part == BODY)
 			return p_displayable_body_shadow;
@@ -383,50 +383,50 @@ namespace physicaldata
 		return p_displayable_body_shadow;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body)
-	CDisplayable *PhysicalData::getDisplayableBody() const
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
+	Displayable *PhysicalData::getDisplayableBody() const
 	{
 		return p_displayable_body;
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body)
-	void PhysicalData::setDisplayableBody(CDisplayable *displayable_body)
+	//Metoda ustawia wskaźnik na obiekt klasy Displayable (body)
+	void PhysicalData::setDisplayableBody(Displayable *displayable_body)
 	{
 		p_displayable_body = displayable_body;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body shadow)
-	CDisplayable *PhysicalData::getDisplayableBodyShadow() const
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body shadow)
+	Displayable *PhysicalData::getDisplayableBodyShadow() const
 	{
 		return p_displayable_body_shadow;
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body)
-	void PhysicalData::setDisplayableBodyShadow(CDisplayable *displayable_body_shadow)
+	//Metoda ustawia wskaźnik na obiekt klasy Displayable (body)
+	void PhysicalData::setDisplayableBodyShadow(Displayable *displayable_body_shadow)
 	{
 		p_displayable_body_shadow = displayable_body_shadow;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (head)
-	CDisplayable *PhysicalData::getDisplayableHead() const
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (head)
+	Displayable *PhysicalData::getDisplayableHead() const
 	{
 		return p_displayable_head;
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body)
-	void PhysicalData::setDisplayableHead(CDisplayable *displayable_head)
+	//Metoda ustawia wskaźnik na obiekt klasy Displayable (body)
+	void PhysicalData::setDisplayableHead(Displayable *displayable_head)
 	{
 		p_displayable_head = displayable_head;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (head shadow)
-	CDisplayable *PhysicalData::getDisplayableHeadShadow() const
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (head shadow)
+	Displayable *PhysicalData::getDisplayableHeadShadow() const
 	{
 		return p_displayable_head_shadow;
 	}
 
-	//Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body)
-	void PhysicalData::setDisplayableHeadShadow(CDisplayable *displayable_head_shadow)
+	//Metoda ustawia wskaźnik na obiekt klasy Displayable (body)
+	void PhysicalData::setDisplayableHeadShadow(Displayable *displayable_head_shadow)
 	{
 		p_displayable_head_shadow = displayable_head_shadow;
 	}
@@ -845,16 +845,16 @@ namespace physicaldata
 		p_animation_body = p_anim_body;
 
 		if (p_displayable_body)
-			p_displayable_body->SetAnimation(p_animation_body);
+			p_displayable_body->setAnimation(p_animation_body);
 
 		if (p_displayable_body_shadow)
-			p_displayable_body_shadow->SetAnimation(p_animation_body);
+			p_displayable_body_shadow->setAnimation(p_animation_body);
 	}
 
 	//Metoda zwraca nazwę animacji (body)
 	const std::string & PhysicalData::getAnimationBodyName() const
 	{
-		return p_displayable_body->GetAnimationState()->getAnimation()->getAnimationName();
+		return p_displayable_body->getAnimationState()->getAnimation()->getAnimationName();
 	}
 
 	//Metoda ustawia nazwę animacji (body)
@@ -863,14 +863,14 @@ namespace physicaldata
 		checkDisplayableBody();
 
 		if (p_displayable_body)
-			p_displayable_body->SetAnimation(anim_body_name);
+			p_displayable_body->setAnimation(anim_body_name);
 
 		if (p_displayable_body_shadow)
-			p_displayable_body_shadow->SetAnimation(anim_body_name);
+			p_displayable_body_shadow->setAnimation(anim_body_name);
 
 		//po załadowaniu animacji (parametr std::string), aktualizacja wskaźnika
 		if (p_displayable_body)
-			p_animation_body = p_displayable_body->GetAnimationState()->getAnimation();
+			p_animation_body = p_displayable_body->getAnimationState()->getAnimation();
 	}
 
 	//Metoda zwraca wskaźnik na animację - obiekt klasy Animation (head)
@@ -887,16 +887,16 @@ namespace physicaldata
 		p_animation_head = p_anim_head;
 
 		if (p_displayable_head)
-			p_displayable_head->SetAnimation(p_animation_head);
+			p_displayable_head->setAnimation(p_animation_head);
 
 		if (p_displayable_head_shadow)
-			p_displayable_head_shadow->SetAnimation(p_animation_head);
+			p_displayable_head_shadow->setAnimation(p_animation_head);
 	}
 
 	//Metoda zwraca nazwę animacji (head)
 	const std::string & PhysicalData::getAnimationHeadName() const
 	{
-		return p_displayable_head->GetAnimationState()->getAnimation()->getAnimationName();
+		return p_displayable_head->getAnimationState()->getAnimation()->getAnimationName();
 	}
 
 	//Metoda ustawia nazwę animacji (head)
@@ -905,14 +905,14 @@ namespace physicaldata
 		checkDisplayableHead();
 
 		if (p_displayable_head)
-			p_displayable_head->SetAnimation(anim_head_name);
+			p_displayable_head->setAnimation(anim_head_name);
 
 		if (p_displayable_head_shadow)
-			p_displayable_head_shadow->SetAnimation(anim_head_name);
+			p_displayable_head_shadow->setAnimation(anim_head_name);
 
 		//po załadowaniu animacji (parametr std::string), aktualizacja wskaźnika
 		if (p_displayable_head)
-			p_animation_head = p_displayable_head->GetAnimationState()->getAnimation();
+			p_animation_head = p_displayable_head->getAnimationState()->getAnimation();
 	}
 
 	//Metoda ustawia komplet animacji
@@ -958,9 +958,9 @@ namespace physicaldata
 	{
 		m_anim_speed_body = anim_speed;
 		if (p_displayable_body)
-			p_displayable_body->GetAnimationState()->setAnimSpeed(m_anim_speed_body);
+			p_displayable_body->getAnimationState()->setAnimSpeed(m_anim_speed_body);
 		if (p_displayable_body_shadow)
-			p_displayable_body_shadow->GetAnimationState()->setAnimSpeed(m_anim_speed_head);
+			p_displayable_body_shadow->getAnimationState()->setAnimSpeed(m_anim_speed_head);
 	}
 
 	//Metoda ustawia współczynnik prędkości odtwarzania animacji 1.0f - normal speed (head)
@@ -968,9 +968,9 @@ namespace physicaldata
 	{
 		m_anim_speed_head = anim_speed;
 		if (p_displayable_head)
-			p_displayable_head->GetAnimationState()->setAnimSpeed(m_anim_speed_head);
+			p_displayable_head->getAnimationState()->setAnimSpeed(m_anim_speed_head);
 		if(p_displayable_head_shadow)
-			p_displayable_head_shadow->GetAnimationState()->setAnimSpeed(m_anim_speed_head);
+			p_displayable_head_shadow->getAnimationState()->setAnimSpeed(m_anim_speed_head);
 	}
 
 	//Metoda ustawia współczynnik prędkości odtwarzania animacji 1.0f - normal speed (body and head)
@@ -987,7 +987,7 @@ namespace physicaldata
 		setAnimSpeedHead(anim_speed_head);
 	}
 
-	//Metoda sprawdza, czy trzeba utworzyć obiekt klasy CDisplayable (body)
+	//Metoda sprawdza, czy trzeba utworzyć obiekt klasy Displayable (body)
 	//np. gdy chcemy dodać obrazek, animację, etc...
 	void PhysicalData::checkDisplayableBody()
 	{
@@ -1033,7 +1033,7 @@ namespace physicaldata
 		}
 	}
 
-	//Metoda sprawdza, czy trzeba utworzyć obiekt klasy CDisplayable (head)
+	//Metoda sprawdza, czy trzeba utworzyć obiekt klasy Displayable (head)
 	//np. gdy chcemy dodać obrazek, animację, etc...
 	void PhysicalData::checkDisplayableHead()
 	{
@@ -1242,7 +1242,7 @@ namespace physicaldata
 	{
 		checkDisplayableBody();
 		if (p_displayable_body)
-			p_displayable_body->SetTexture(width, height, color);
+			p_displayable_body->setTexture(width, height, color);
 	}
 
 	//Metoda generuje obraz tekstury
@@ -1250,7 +1250,7 @@ namespace physicaldata
 	{
 		checkDisplayableBody();
 		if (p_displayable_body)
-			p_displayable_body->SetTexture(width, height, r, g, b, a);
+			p_displayable_body->setTexture(width, height, r, g, b, a);
 	}
 
 	//Metoda generuje obraz tekstury
@@ -1258,7 +1258,7 @@ namespace physicaldata
 	{
 		checkDisplayableHead();
 		if (p_displayable_head)
-			p_displayable_head->SetTexture(width, height, color);
+			p_displayable_head->setTexture(width, height, color);
 	}
 
 	//Metoda generuje obraz tekstury
@@ -1266,7 +1266,7 @@ namespace physicaldata
 	{
 		checkDisplayableHead();
 		if (p_displayable_head)
-			p_displayable_head->SetTexture(width, height, r, g, b, a);
+			p_displayable_head->setTexture(width, height, r, g, b, a);
 	}
 
 }//namespace physicaldata

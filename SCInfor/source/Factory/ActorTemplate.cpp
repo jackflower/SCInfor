@@ -18,7 +18,7 @@
 #include "../XML/CXml.h"
 #include "../Rendering/Animations/AnimSet.h"
 #include "../ResourceManager/CResourceManager.h"
-#include "../Rendering/Displayable/CDisplayable.h"
+#include "../Rendering/Displayable/Displayable.h"
 #include "../Weather/CWeather.h"
 
 using namespace resource;

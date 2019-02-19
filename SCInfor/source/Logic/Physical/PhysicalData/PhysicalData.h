@@ -21,7 +21,7 @@ namespace rendering
 {
 	namespace displayable
 	{
-		class CDisplayable;
+		class Displayable;
 	}
 }
 
@@ -231,90 +231,90 @@ namespace physicaldata
 		void setUseShadowHead(const bool use_shadow_head);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body) /zgodność interfejsu/
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (body) /zgodność interfejsu/
 		///
-		CDisplayable *getDisplayable();
+		Displayable *getDisplayable();
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body) /zgodność interfejsu/
+		///Metoda ustawia wskaźnik na obiekt klasy Displayable (body) /zgodność interfejsu/
 		///
-		///@param *displayable - wskaźnik na obiekt klasy CDisplayable
+		///@param *displayable - wskaźnik na obiekt klasy Displayable
 		///
-		void setDisplayable(CDisplayable *displayable);
+		void setDisplayable(Displayable *displayable);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (shadow) /zgodność interfejsu/
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow) /zgodność interfejsu/
 		///
-		CDisplayable *getShadow();
+		Displayable *getShadow();
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body) /zgodność interfejsu/
+		///Metoda ustawia wskaźnik na obiekt klasy Displayable (body) /zgodność interfejsu/
 		///
-		///@param *displayable_shadow - wskaźnik na obiekt klasy CDisplayable
+		///@param *displayable_shadow - wskaźnik na obiekt klasy Displayable
 		///
-		void setShadow(CDisplayable *displayable_shadow);
+		void setShadow(Displayable *displayable_shadow);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
 		///
 		///@param physical_part - wyliczenie EPhysicalPart - część physical
 		///
-		CDisplayable *getDisplayable(EPhysicalPart physical_part);
+		Displayable *getDisplayable(EPhysicalPart physical_part);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (shadow)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow)
 		///
 		///@param physical_part - wyliczenie EPhysicalPart - część physical
 		///
-		CDisplayable *getShadow(EPhysicalPart physical_part);
+		Displayable *getShadow(EPhysicalPart physical_part);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
 		///
-		CDisplayable *getDisplayableBody() const;
+		Displayable *getDisplayableBody() const;
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body)
+		///Metoda ustawia wskaźnik na obiekt klasy Displayable (body)
 		///
-		///@param *displayable_body - wskaźnik na obiekt klasy CDisplayable
+		///@param *displayable_body - wskaźnik na obiekt klasy Displayable
 		///
-		void setDisplayableBody(CDisplayable *displayable_body);
+		void setDisplayableBody(Displayable *displayable_body);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body shadow)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (body shadow)
 		///
-		CDisplayable *getDisplayableBodyShadow() const;
+		Displayable *getDisplayableBodyShadow() const;
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body)
+		///Metoda ustawia wskaźnik na obiekt klasy Displayable (body)
 		///
-		///@param *displayable_body_shadow - wskaźnik na obiekt klasy CDisplayable
+		///@param *displayable_body_shadow - wskaźnik na obiekt klasy Displayable
 		///
-		void setDisplayableBodyShadow(CDisplayable *displayable_body_shadow);
+		void setDisplayableBodyShadow(Displayable *displayable_body_shadow);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (head)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (head)
 		///
-		CDisplayable *getDisplayableHead() const;
+		Displayable *getDisplayableHead() const;
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body)
+		///Metoda ustawia wskaźnik na obiekt klasy Displayable (body)
 		///
-		///@param *displayable_head - wskaźnik na obiekt klasy CDisplayable
+		///@param *displayable_head - wskaźnik na obiekt klasy Displayable
 		///
-		void setDisplayableHead(CDisplayable *displayable_head);
+		void setDisplayableHead(Displayable *displayable_head);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (head shadow)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (head shadow)
 		///
-		CDisplayable *getDisplayableHeadShadow() const;
+		Displayable *getDisplayableHeadShadow() const;
 
 		///
-		///Metoda ustawia wskaźnik na obiekt klasy CDisplayable (body)
+		///Metoda ustawia wskaźnik na obiekt klasy Displayable (body)
 		///
-		///@param *displayable_head_shadow - wskaźnik na obiekt klasy CDisplayable
+		///@param *displayable_head_shadow - wskaźnik na obiekt klasy Displayable
 		///
-		void setDisplayableHeadShadow(CDisplayable *displayable_head_shadow);
+		void setDisplayableHeadShadow(Displayable *displayable_head_shadow);
 
 		///
 		///Metoda zwraca kolor obiektu - body
@@ -736,13 +736,13 @@ namespace physicaldata
 		//wrapper = animation
 
 		///
-		///Metoda sprawdza, czy trzeba utworzyć obiekt klasy CDisplayable (body)
+		///Metoda sprawdza, czy trzeba utworzyć obiekt klasy Displayable (body)
 		///np. gdy chcemy dodać obrazek, animację, etc...
 		///
 		void checkDisplayableBody();
 
 		///
-		///Metoda sprawdza, czy trzeba utworzyć obiekt klasy CDisplayable (head)
+		///Metoda sprawdza, czy trzeba utworzyć obiekt klasy Displayable (head)
 		///np. gdy chcemy dodać obrazek, animację, etc...
 		///
 		void checkDisplayableHead();
@@ -854,10 +854,10 @@ namespace physicaldata
 		bool m_use_shadow_body; //flaga określa, czy obiekt posiada reprezentację graficzną - body - cień
 		bool m_use_displayable_head; //flaga określa, czy obiekt posiada reprezentację graficzną - head
 		bool m_use_shadow_head; //flaga określa, czy obiekt posiada reprezentację graficzną - head - cień
-		CDisplayable *p_displayable_body; //wskaźnik na obiekt CDisplayable - body (część zasadnicza)
-		CDisplayable *p_displayable_body_shadow; //wskaźnik na obiekt CDisplayable - body shadow	(cień części zasadniczej)
-		CDisplayable *p_displayable_head; //wskaźnik na obiekt CDisplayable - head (część dodatkowa)
-		CDisplayable *p_displayable_head_shadow; //wskaźnik na obiekt CDisplayable - head shadow (cień części dodatkowej)
+		Displayable *p_displayable_body; //wskaźnik na obiekt Displayable - body (część zasadnicza)
+		Displayable *p_displayable_body_shadow; //wskaźnik na obiekt Displayable - body shadow	(cień części zasadniczej)
+		Displayable *p_displayable_head; //wskaźnik na obiekt Displayable - head (część dodatkowa)
+		Displayable *p_displayable_head_shadow; //wskaźnik na obiekt Displayable - head shadow (cień części dodatkowej)
 		sf::Color m_color_body; //kolor obiektu - body
 		sf::Color m_color_head; //kolor obiektu - head
 		sf::Color m_color_stored_body; //zapamiętany kolor obiektu

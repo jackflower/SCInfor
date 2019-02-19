@@ -6,7 +6,7 @@
 
 #include "BulletTemplate.h"
 #include "../XML/CXml.h"
-#include "../Rendering/Displayable/CDisplayable.h"
+#include "../Rendering/Displayable/Displayable.h"
 #include "../Rendering/Animations/AnimationManager.h"
 #include "../Rendering/Animations/AnimationState.h"
 #include <iostream>

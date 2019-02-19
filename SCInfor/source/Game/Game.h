@@ -12,7 +12,7 @@
 #include "GameProperties.h"
 #include "../Utilities/Singleton/CSingleton.h"
 #include "../Utilities/StringUtils/StringUtils.h"
-#include "../Rendering/Displayable/CHudStaticText.h"
+#include "../Rendering/Displayable/HudStaticText.h"
 
 #define gGame Game::GetSingleton()
 

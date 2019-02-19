@@ -11,7 +11,7 @@
 #include <SFML/Graphics.hpp>
 #include "../../RTTI/RTTI.h"
 #include "../../ResourceManager/CTexture.h"
-#include "../../Rendering/Displayable/CDisplayable.h"
+#include "../../Rendering/Displayable/Displayable.h"
 
 ///
 ///Forward declaration
@@ -20,7 +20,7 @@ namespace rendering
 {
 	namespace displayable
 	{
-		class CDisplayable;
+		class Displayable;
 	}
 }
 
@@ -323,9 +323,9 @@ namespace mapengine
 		void setTemplate(MapPhysicalTemplate *p_template_param);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable
 		///
-		CDisplayable *getDisplayable();
+		Displayable *getDisplayable();
 
 		///
 		///Wirtualna metoda aktualizująca obiekt
@@ -338,7 +338,7 @@ namespace mapengine
 
 		std::wstring m_unique_id; //unikalny identyfikator (nadawany w MapPhysicalManager)
 		std::string m_code; //nazwa kodu dla typu podłoża (obiektu fabrycznego)
-		CDisplayable *p_displayable; //wskaźnik na graficzną reprezentację obiektu
+		Displayable *p_displayable; //wskaźnik na graficzną reprezentację obiektu
 		sf::Vector2f m_map_physical_position; //pozycja podłoża (podobnie jak kafle)
 		sf::Vector2f m_scale; //skala obiektu
 		sf::Vector2f m_origin; //opakowanie współrzędnych uchwytu (hot point) obiektu
@@ -356,7 +356,7 @@ namespace mapengine
 		bool m_ready_for_destruction; //flaga ustawia obiekty gotowe do destrukcji
 
 		//prywatna metoda sprawdza, czy trzeba utworzyć
-		//obiekt klasy CDisplayable (body), np. gdy chcemy
+		//obiekt klasy Displayable (body), np. gdy chcemy
 		//dodać obrazek, animację, syntetyk, etc...
 		void checkDisplayable();
 	};

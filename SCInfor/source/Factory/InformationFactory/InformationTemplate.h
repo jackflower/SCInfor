@@ -97,7 +97,7 @@ namespace factory
 		///
 		///Metoda zwraca wskaźnik na graficzną reprezentację obiektu - cyfra
 		///
-		inline const CDisplayable *getDisplayableDigit() const
+		inline const Displayable *getDisplayableDigit() const
 		{
 			return p_templ_digit_displayable;
 		}
@@ -105,7 +105,7 @@ namespace factory
 		///
 		///Metoda zwraca wskaźnik na graficzną reprezentację obiektu - mask
 		///
-		inline const CDisplayable *getDisplayableMask() const
+		inline const Displayable *getDisplayableMask() const
 		{
 			return p_templ_mask_displayable;
 		}
@@ -166,8 +166,8 @@ namespace factory
 
 		std::string m_templ_filename; //nazwa pliku xml
 		std::string m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
-		CDisplayable *p_templ_digit_displayable; //wskaźnik na graficzną reprezentację obiektu - cyfra
-		CDisplayable *p_templ_mask_displayable; //wskaźnik na graficzną reprezentację obiektu - maska
+		Displayable *p_templ_digit_displayable; //wskaźnik na graficzną reprezentację obiektu - cyfra
+		Displayable *p_templ_mask_displayable; //wskaźnik na graficzną reprezentację obiektu - maska
 		std::string m_templ_texture_digit_name;	//nazwa tekstury - digit
 		std::string m_templ_texture_mask_name;	//nazwa tekstury - mask
 		sf::Transformable m_templ_tranformable_digit; //opakowanie danych do transforamcji geometrycznej - digit

@@ -9,7 +9,7 @@
 
 #include "../RTTI/RTTI.h"
 #include "BaseInformation.h"
-#include "../Rendering/Displayable/CDisplayable.h"
+#include "../Rendering/Displayable/Displayable.h"
 
 ///
 ///Forward declaration
@@ -18,7 +18,7 @@ namespace rendering
 {
 	namespace displayable
 	{
-		class CDisplayable;
+		class Displayable;
 	}
 }
 
@@ -454,8 +454,8 @@ namespace information
 
 	protected:
 
-		CDisplayable *p_digit_displayable; //wskaźnik na graficzną reprezentację obiektu - cyfra
-		CDisplayable *p_mask_displayable; //wskaźnik na graficzną reprezentację obiektu - maska
+		Displayable *p_digit_displayable; //wskaźnik na graficzną reprezentację obiektu - cyfra
+		Displayable *p_mask_displayable; //wskaźnik na graficzną reprezentację obiektu - maska
 		std::string m_texture_digit_name; //nazwa tekstury - digit
 		std::string m_texture_mask_name; //nazwa tekstury - mask
 		InformationTemplate *p_template; //wskaźnik na wzorzec
@@ -465,12 +465,12 @@ namespace information
 	private:
 
 		//prywatna metoda sprawdza, czy trzeba utworzyć
-		//obiekt klasy CDisplayable (digit),
+		//obiekt klasy Displayable (digit),
 		//np. gdy chcemy dodać teksturę, animację, syntetyk, etc...
 		void checkDisplayable_digit();
 
 		//prywatna metoda sprawdza, czy trzeba utworzyć
-		//obiekt klasy CDisplayable (mask),
+		//obiekt klasy Displayable (mask),
 		//np. gdy chcemy dodać teksturę, animację, syntetyk, etc...
 		void checkDisplayable_mask();
 

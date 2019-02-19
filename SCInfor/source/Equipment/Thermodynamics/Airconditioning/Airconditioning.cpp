@@ -8,7 +8,7 @@
 #include "../../../Weather/CWeather.h"
 #include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
-#include "../../../Rendering/Displayable/CDisplayable.h"
+#include "../../../Rendering/Displayable/Displayable.h"
 
 using namespace weather;
 using namespace rendering::displayable;

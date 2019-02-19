@@ -1,15 +1,15 @@
-//  _______________________________________
-// | CHudSprite.cpp - class implementation |
-// | Jack Flower October 2012              |
-// |_______________________________________|
+ï»¿//  ______________________________________
+// | HudSprite.cpp - class implementation |
+// | Jack Flower October 2012             |
+// |______________________________________|
 //
 
-#include "CHudSprite.h"
+#include "HudSprite.h"
 //#include "../Camera/CCamera.h"
 //#include "../../GameManager/CGame.h"
 //#include "../../GameManager/CGameProperties.h"
 //
-//#include "CClippedSprite.h"
+//#include "ClippedSprite.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/System/Vector2.hpp>
@@ -23,40 +23,40 @@
 
 namespace displayable
 {
-	RTTI_IMPL(CHudSprite, IDrawable);
+	RTTI_IMPL(HudSprite, IDrawable);
 
 	//Konstruktor
-	CHudSprite::CHudSprite()
+	HudSprite::HudSprite()
 	:
-		IDrawable			(),//konstruktor klasy bazowej
-		m_sprite			(NULL), 
-		m_clip_rect_enabled	(false)
+		IDrawable(),//konstruktor klasy bazowej
+		m_sprite(NULL), 
+		m_clip_rect_enabled(false)
 	{
 		memset(m_clip_rect, 0, 4*sizeof(int));
-		//m_sprite = new CClippedSprite;
+		//m_sprite = new ClippedSprite;
 	}
 
 	//Destruktor wirtualny
-	CHudSprite::~CHudSprite()
+	HudSprite::~HudSprite()
 	{
 		//delete m_sprite;
 	}
 
-	//Metoda zwraca wskaŸnik na obiekt klasy CClippedSprite
-	sf::Sprite* CHudSprite::GetSprite() 
+	//Metoda zwraca wskaÅºnik na obiekt klasy ClippedSprite
+	sf::Sprite *HudSprite::getSprite() 
 	{ 
 		//return m_sprite; 
 		return NULL;//atrapa
 	} 
 
-	//Metoda zwraca wskaŸnik na obiekt klasy CClippedSprite
-	CClippedSprite* CHudSprite::GetClippedSprite() 
+	//Metoda zwraca wskaÅºnik na obiekt klasy ClippedSprite
+	ClippedSprite *HudSprite::getClippedSprite() 
 	{ 
 		return m_sprite; 
 	}
 
 	//Metoda ustawia obszar przycinania
-	void CHudSprite::SetClipRect(int left, int top, int right, int bottom)
+	void HudSprite::setClipRect(int left, int top, int right, int bottom)
 	{
 		//m_clip_rect_enabled = true;
 		//m_clip_rect[0] = left;
@@ -66,13 +66,13 @@ namespace displayable
 	}
 
 	//Metoda ustawia obszar przycinania
-	void CHudSprite::SetClipRect(const sf::FloatRect &rect)
+	void HudSprite::setClipRect(const sf::FloatRect & rect)
 	{
-		//SetClipRect((int)rect.Left, (int)rect.Top, (int)rect.Right, (int)rect.Bottom );
+		setClipRect((int)rect.left, (int)rect.top, (int)rect.width, (int)rect.height );
 	}
 
-	//Wirtualna metoda renderuj¹ca obiekt klasy CHudSprite
-	void CHudSprite::Draw( sf::RenderWindow* render_window )
+	//Wirtualna metoda renderujÄ…ca obiekt klasy HudSprite
+	void HudSprite::draw( sf::RenderWindow *render_window )
 	{
 		//float zoom = gCamera.GetZoom();
 		//gCamera.SetZoom(1.0f); 
@@ -86,7 +86,7 @@ namespace displayable
 		//	glScissor(m_clip_rect[0], m_clip_rect[1], m_clip_rect[2], m_clip_rect[3]);
 		//}
 		
-		//render_window->Draw(*m_sprite);
+		//render_window->draw(*m_sprite);
 			
 		//glDisable(GL_SCISSOR_TEST);
 		//gCamera.SetZoom(zoom);

@@ -6,7 +6,7 @@
 
 #include "Physical.h"
 #include "../../Weather/CWeather.h"
-#include "../../Rendering/Displayable/CDisplayable.h"
+#include "../../Rendering/Displayable/Displayable.h"
 #include "../../Rendering/Drawable/CDrawableManager.h"
 #include "../../Rendering/Animations/Animation.h"
 #include "../../Rendering/Animations/AnimationState.h"
@@ -460,7 +460,7 @@ namespace logic
 	
 	//Metoda zwraca stałą referencję na wektor wielkości obiektu
 	//wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-	//klasy CDisplayable
+	//klasy Displayable
 	const sf::Vector2f & Physical::getRectangleSizeHead() const
 	{
 		return m_rect_size_head;
@@ -468,7 +468,7 @@ namespace logic
 
 	//Metoda ustawia referencję na wektor wielkości obiektu
 	//wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-	//klasy CDisplayable
+	//klasy Displayable
 	void Physical::setRectangleSizeHead(const sf::Vector2f & rect_size_head)
 	{
 		m_rect_size_head = rect_size_head;
@@ -477,7 +477,7 @@ namespace logic
 
 	//Metoda ustawia referencję na wektor wielkości obiektu
 	//wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-	//klasy CDisplayable
+	//klasy Displayable
 	void Physical::setRectangleSizeHead(float rect_size_head_width, float rect_size_head_height)
 	{
 		m_rect_size_head.x = rect_size_head_width;
@@ -485,7 +485,7 @@ namespace logic
 
 	//Metoda ustawia referencję na wektor wielkości obiektu
 	//wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-	//klasy CDisplayable - body and head
+	//klasy Displayable - body and head
 	void Physical::setRectangleSize(const sf::Vector2f & rect_size_uniform)
 	{
 		m_rect_size_body = rect_size_uniform;
@@ -503,7 +503,7 @@ namespace logic
 
 	//Metoda ustawia referencję na wektor wielkości obiektu
 	//wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-	//klasy CDisplayable - body and head
+	//klasy Displayable - body and head
 	void Physical::setRectangleSize(const sf::Vector2f & rect_size_body, const sf::Vector2f & rect_size_head)
 	{
 		m_rect_size_body = rect_size_body;
@@ -512,7 +512,7 @@ namespace logic
 
 	//Metoda ustawia referencję na wektor wielkości obiektu
 	//wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-	//klasy CDisplayable - body and head
+	//klasy Displayable - body and head
 	void Physical::setRectangleSize(float rect_size_body_width, float rect_size_body_height, float rect_size_head_width, float rect_size_head_height)
 	{
 		m_rect_size_body.x = rect_size_body_width;
@@ -832,20 +832,20 @@ namespace logic
 		setAnimSpeedHead(anim_speed_head);
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body) /zgodność interfejsu/
-	CDisplayable *Physical::getDisplayable()
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body) /zgodność interfejsu/
+	Displayable *Physical::getDisplayable()
 	{
 		return m_physical_data.getDisplayableBody();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (shadow) /zgodność interfejsu/
-	CDisplayable *Physical::getShadow()
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow) /zgodność interfejsu/
+	Displayable *Physical::getShadow()
 	{
 		return m_physical_data.getDisplayableBodyShadow();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body)
-	CDisplayable *Physical::getDisplayable(EPhysicalPart physical_part)
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
+	Displayable *Physical::getDisplayable(EPhysicalPart physical_part)
 	{
 		if (physical_part == BODY)
 			return m_physical_data.getDisplayableBody();
@@ -854,8 +854,8 @@ namespace logic
 		return m_physical_data.getDisplayableBody();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (shadow)
-	CDisplayable *Physical::getShadow(EPhysicalPart physical_part)
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow)
+	Displayable *Physical::getShadow(EPhysicalPart physical_part)
 	{
 		if (physical_part == BODY)
 			return m_physical_data.getDisplayableBodyShadow();
@@ -864,26 +864,26 @@ namespace logic
 		return m_physical_data.getDisplayableBodyShadow();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body)
-	CDisplayable *Physical::getDisplayableBody()
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
+	Displayable *Physical::getDisplayableBody()
 	{
 		return m_physical_data.getDisplayableBody();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body shadow)
-	CDisplayable *Physical::getDisplayableBodyShadow()
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body shadow)
+	Displayable *Physical::getDisplayableBodyShadow()
 	{
 		return m_physical_data.getDisplayableBodyShadow();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (head)
-	CDisplayable *Physical::getDisplayableHead()
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (head)
+	Displayable *Physical::getDisplayableHead()
 	{
 		return m_physical_data.getDisplayableHead();
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable (head shadow)
-	CDisplayable *Physical::getDisplayableHeadShadow()
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable (head shadow)
+	Displayable *Physical::getDisplayableHeadShadow()
 	{
 		return m_physical_data.getDisplayableHeadShadow();
 	}
@@ -1095,13 +1095,13 @@ namespace logic
 
 	//implementajca metod private:
 
-	//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy CDisplayable
+	//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy Displayable
 	void Physical::checkDisplayableBody()
 	{
 		m_physical_data.checkDisplayableBody();
 	}
 
-	//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy CDisplayable
+	//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy Displayable
 	void Physical::checkDisplayableHead()
 	{
 		m_physical_data.checkDisplayableHead();

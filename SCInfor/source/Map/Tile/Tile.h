@@ -19,7 +19,7 @@ namespace rendering
 {
 	namespace displayable
 	{
-		class CDisplayable;
+		class Displayable;
 	}
 }
 
@@ -113,7 +113,7 @@ namespace mapengine
 
 		protected:
 
-			CDisplayable *p_displayable;//wskaźnik na graficzną reprezentację kafla
+			Displayable *p_displayable;//wskaźnik na graficzną reprezentację kafla
 			std::string m_code;//nazwa znacznika kafla na mapie
 			sf::Vector2f m_tile_position; //pozycja kafla
 		};

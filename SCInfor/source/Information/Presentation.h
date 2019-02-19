@@ -8,7 +8,7 @@
 #define H_PRESENTATION_JACK
 
 #include "BaseInformation.h"
-#include "../Rendering/Displayable/CHudStaticText.h"
+#include "../Rendering/Displayable/HudStaticText.h"
 
 namespace factory
 {
@@ -306,8 +306,8 @@ namespace information
 
 		private:
 
-			CHudStaticText*			p_hud_static_text_front;	//wskaźnik na obiekt klasy CHudStaticText - front
-			CHudStaticText*			p_hud_static_text_back;		//wskaźnik na obiekt klasy CHudStaticText - back
+			HudStaticText*			p_hud_static_text_front;	//wskaźnik na obiekt klasy HudStaticText - front
+			HudStaticText*			p_hud_static_text_back;		//wskaźnik na obiekt klasy HudStaticText - back
 			sf::Transformable		m_tranformable;				//opakowanie danych do transformacji geometrycznej
 			std::string				m_font_name;				//nazwa czcionki
 			sf::Color				m_color_front;				//kolor front
@@ -318,9 +318,9 @@ namespace information
 			sf::Vector2f			m_offset;					//wektor dla efektu 3D
 			PresentationTemplate*	p_template;				//wskaźnik na wzorzec
 
-			//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy CHudStaticText
+			//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy HudStaticText
 			void checkHudStaticTextFront();
-			//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy CHudStaticText
+			//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy HudStaticText
 			void checkHudStaticTextBack();
 			
 		};

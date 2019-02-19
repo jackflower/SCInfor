@@ -6,7 +6,7 @@
 
 #include "Actor.h"
 #include "../PhysicalManager.h"
-#include "../../Rendering/Displayable/CDisplayable.h"
+#include "../../Rendering/Displayable/Displayable.h"
 #include "../../Rendering/Animations/AnimSet.h"
 #include "../../Rendering/Animations/AnimationState.h"
 #include "../../Rendering/Animations/NameAnimPairTranslator.h"
@@ -569,13 +569,13 @@ namespace logic
 			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].getAnimation() != NULL))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
-				float currTime = getDisplayableBody()->GetAnimationState()->getCurrentTime();
+				float currTime = getDisplayableBody()->getAnimationState()->getCurrentTime();
 
 				//podmieniam starą animację ze starego zestawu na nową animację z nowego zestawu
 				setAnimationBody(new_anims[index].getAnimation());
 
 				//przewijam animację do "czasu", w którym rozpoczął się proces podmiany animacji
-				getDisplayableBody()->GetAnimationState()->rewindTo(currTime);
+				getDisplayableBody()->getAnimationState()->rewindTo(currTime);
 			}
 		}
 	}
@@ -615,13 +615,13 @@ namespace logic
 			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].getAnimation() != NULL))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
-				float currTime = getDisplayableHead()->GetAnimationState()->getCurrentTime();
+				float currTime = getDisplayableHead()->getAnimationState()->getCurrentTime();
 
 				//podmieniam starą animację ze starego zestawu na nową animację z nowego zestawu
 				setAnimationHead(new_anims[index].getAnimation());
 
 				//przewijam animację do "czasu", w którym rozpoczął się proces podmiany animacji
-				getDisplayableHead()->GetAnimationState()->rewindTo(currTime);
+				getDisplayableHead()->getAnimationState()->rewindTo(currTime);
 			}
 		}
 	}

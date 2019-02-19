@@ -143,13 +143,13 @@ namespace information
 
 			checkHudStaticTextFront();
 			if(p_hud_static_text_front)
-				p_hud_static_text_front->SetFont(font);
+				p_hud_static_text_front->setFont(font);
 			
-			if(m_use_under)									//czy obiekt ma efekt 3D
+			if(m_use_under) //czy obiekt ma efekt 3D
 			{
-				checkHudStaticTextBack();					//sprawdzam czy mam obiekt drawable
-				if(p_hud_static_text_back)					//jeśli wskaźnik został zainicjowany
-					p_hud_static_text_back->SetFont(font);	//ustawiam czcionkę
+				checkHudStaticTextBack(); //sprawdzam czy mam obiekt drawable
+				if(p_hud_static_text_back) //jeśli wskaźnik został zainicjowany
+					p_hud_static_text_back->setFont(font); //ustawiam czcionkę
 			}
 		}
 
@@ -168,8 +168,8 @@ namespace information
 			checkHudStaticTextFront();
 			if(p_hud_static_text_front)
 			{
-				p_hud_static_text_front->SetFont(font);
-				p_hud_static_text_front->SetFontSize(size);
+				p_hud_static_text_front->setFont(font);
+				p_hud_static_text_front->setFontSize(size);
 			}
 
 			if(m_use_under)	//czy obiekt ma efekt 3D
@@ -177,8 +177,8 @@ namespace information
 				checkHudStaticTextBack();
 				if(p_hud_static_text_back)
 				{
-					p_hud_static_text_back->SetFont(font);
-					p_hud_static_text_back->SetFontSize(size);
+					p_hud_static_text_back->setFont(font);
+					p_hud_static_text_back->setFontSize(size);
 				}
 			}
 		}
@@ -190,13 +190,13 @@ namespace information
 
 			checkHudStaticTextFront();
 			if(p_hud_static_text_front)
-				p_hud_static_text_front->SetFontSize(m_font_size);
+				p_hud_static_text_front->setFontSize(m_font_size);
 
 			if(m_use_under)	//czy obiekt ma efekt 3D
 			{
 				checkHudStaticTextBack();
 				if(p_hud_static_text_back)
-					p_hud_static_text_back->SetFontSize(m_font_size);
+					p_hud_static_text_back->setFontSize(m_font_size);
 			}
 		}
 
@@ -213,13 +213,13 @@ namespace information
 
 			checkHudStaticTextFront();
 			if(p_hud_static_text_front)
-				p_hud_static_text_front->SetString(m_string);
+				p_hud_static_text_front->setString(m_string);
 
 			if(m_use_under)	//czy obiekt ma efekt 3D
 			{
 				checkHudStaticTextBack();
 				if(p_hud_static_text_back)
-					p_hud_static_text_back->SetString(m_string);
+					p_hud_static_text_back->setString(m_string);
 			}
 		}
 
@@ -437,14 +437,14 @@ namespace information
 
 		//implementajca metod private:
 
-		//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy CHudStaticText
+		//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy HudStaticText
 		void Presentation::checkHudStaticTextFront()
 		{
 			if (!p_hud_static_text_front)
 				p_hud_static_text_front = gDrawableManager.CreateHudStaticText(Z_INFORMATION_FRONT);
 		}
 
-		//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy CHudStaticText
+		//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy HudStaticText
 		void Presentation::checkHudStaticTextBack()
 		{
 			if (!p_hud_static_text_back)

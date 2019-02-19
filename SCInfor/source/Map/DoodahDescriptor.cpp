@@ -7,7 +7,7 @@
 
 #include "DoodahDescriptor.h"
 #include "../Rendering/Drawable/Layers.h"
-#include "../Rendering/Displayable/CDisplayable.h"
+#include "../Rendering/Displayable/Displayable.h"
 #include "../Rendering/Animations/AnimationManager.h"
 #include "../Rendering/Drawable/CDrawableManager.h"
 //#include "SceneManager/CSceneNode.h"
@@ -76,12 +76,12 @@ namespace mapengine
 	//Metoda tworzy obiekt mapy
 	void DoodahDescriptor::create()
 	{
-		//tworzymy obiekt klasy CDisplayable
-		CDisplayable* p_displayable = gDrawableManager.CreateDisplayable(m_zindex);
+		//tworzymy obiekt klasy Displayable
+		Displayable* p_displayable = gDrawableManager.CreateDisplayable(m_zindex);
 		
 		if (!m_anim.empty())//jeśli jest nazwa animacji
 		{
-			p_displayable->SetAnimation(m_anim);	//ustawiamy animację
+			p_displayable->setAnimation(m_anim);	//ustawiamy animację
 			p_displayable->setScale(m_scale);		//skalujemy obiekt według wartości wczytanych z xml
 		}
 		else
@@ -90,7 +90,7 @@ namespace mapengine
 			//	p_displayable->SetStaticImage(m_file_name);	//ustawiamy statyczny obraz
 			p_displayable->setTexture(m_file_name);	//ustawiamy statyczny obraz
 			//tworzymy wskaźnik na obiekt klasy sf::Sprite i inicjujemy wskaźnik wskaźnikiem *p_displayable
-			sf::Sprite* p_sf_sprite = p_displayable->GetSprite();
+			sf::Sprite* p_sf_sprite = p_displayable->getSprite();
 			//jeśli sprite nie ma zainnicjowanego obrazu
 			//	if (p_sf_sprite->GetImage() == NULL)
 			if (p_sf_sprite->getTexture() == NULL)

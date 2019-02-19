@@ -393,30 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Rendering\Displayable\CBar.cpp">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Displayable\CClippedSprite.cpp">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Displayable\CDisplayable.cpp">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Displayable\CHudSprite.cpp">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Displayable\CHudStaticText.cpp">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Displayable\CRectangle.cpp">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Displayable\CSprite.cpp">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Displayable\CTextHeadUpDisplay.cpp">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClCompile>
     <ClCompile Include="source\Rendering\Drawable\CDrawableManager.cpp">
       <Filter>source\Rendering\Drawable</Filter>
     </ClCompile>
@@ -1005,6 +981,30 @@
     <ClCompile Include="source\Rendering\Animations\TimedAnimationFrame.cpp">
       <Filter>source\Rendering\Animations</Filter>
     </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\Bar.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\ClippedSprite.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\HudSprite.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\HudStaticText.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\TextHeadUpDisplay.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\Rectangle.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\Sprite.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Displayable\Displayable.cpp">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1116,30 +1116,6 @@
     </ClInclude>
     <ClInclude Include="source\Rendering\Animations\EAnimHandler.h">
       <Filter>source\Rendering\Animations</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Displayable\CBar.h">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Displayable\CClippedSprite.h">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Displayable\CDisplayable.h">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Displayable\CHudSprite.h">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Displayable\CHudStaticText.h">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Displayable\CRectangle.h">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Displayable\CSprite.h">
-      <Filter>source\Rendering\Displayable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Displayable\CTextHeadUpDisplay.h">
-      <Filter>source\Rendering\Displayable</Filter>
     </ClInclude>
     <ClInclude Include="source\Rendering\Drawable\CDrawableManager.h">
       <Filter>source\Rendering\Drawable</Filter>
@@ -1764,6 +1740,30 @@
     </ClInclude>
     <ClInclude Include="source\Rendering\Animations\TimedAnimationFrame.h">
       <Filter>source\Rendering\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\Bar.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\ClippedSprite.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\HudSprite.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\HudStaticText.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\TextHeadUpDisplay.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\Rectangle.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\Sprite.h">
+      <Filter>source\Rendering\Displayable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Displayable\Displayable.h">
+      <Filter>source\Rendering\Displayable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

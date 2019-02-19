@@ -6,7 +6,7 @@
 
 #include "CTransformation.h"
 #include "../../Logic/Actor/Actor.h"
-#include "../../Rendering/Displayable/CDisplayable.h"
+#include "../../Rendering/Displayable/Displayable.h"
 #include "../Utilities/Utilities.h"
 
 using namespace rendering::displayable;

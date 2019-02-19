@@ -7,7 +7,7 @@
 #include "GunTemplate.h"
 #include "../../../../ResourceManager/CResourceManager.h"
 #include "../../../../Rendering/Animations/AnimSet.h"
-#include "../../../../Rendering/Displayable/CDisplayable.h"
+#include "../../../../Rendering/Displayable/Displayable.h"
 #include "../../../../Utilities/Random/CRandom.h"
 
 using namespace resource;

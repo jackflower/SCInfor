@@ -11,7 +11,7 @@
 
 #include "Map.h"
 #include "../ResourceManager/CResourceManager.h"
-#include "../Rendering/Displayable/CDisplayable.h"
+#include "../Rendering/Displayable/Displayable.h"
 #include "../Rendering/Drawable/CDrawableManager.h"
 #include "../Rendering/Drawable/Layers.h"
 #include "../Weather/CWeather.h"

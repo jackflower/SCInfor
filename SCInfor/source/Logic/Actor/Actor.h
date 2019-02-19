@@ -26,7 +26,7 @@ namespace rendering
 {
 	namespace displayable
 	{
-		class CDisplayable;
+		class Displayable;
 	}
 
 	namespace animation

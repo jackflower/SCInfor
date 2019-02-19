@@ -92,14 +92,14 @@ namespace rendering
 			///
 			///@param *renderWindow - wskaŸnik na okno renderingu
 			///
-			virtual void Draw(sf::RenderWindow* renderWindow) = 0;
+			virtual void draw(sf::RenderWindow* renderWindow) = 0;
 
 		protected:
 
 			bool	m_can_draw;	//flaga okreœlaj¹cy, czy mo¿na rysowaæ ten obiekt
 								//pod modyfikatorem protected:
 								//aby klasy bazowe implementuj¹ce wirtualn¹ metodê
-								//virtual void Draw(sf::RenderWindow* renderWindow) = 0;
+								//virtual void draw(sf::RenderWindow* renderWindow) = 0;
 								//mog³y w zale¿noœci od tego pola zarz¹dzaæ rysowaniem obiektów
 
 		private:

@@ -9,7 +9,7 @@
 
 #include "../Physical.h"
 #include "../../../RTTI/RTTI.h"
-#include "../../../Rendering/Displayable/CRectangle.h"
+#include "../../../Rendering/Displayable/Rectangle.h"
 
 using namespace rendering::primitives;
 
@@ -256,26 +256,26 @@ namespace logic
 		void setFuelPositionStatusBarOffset(float position_offset_fuel_x, float position_offset_fuel_y);
 
 		///
-		///Metoda sprawdza, czy trzeba utworzyć obiekt klasy CRectangle (energia-życie)
+		///Metoda sprawdza, czy trzeba utworzyć obiekt klasy Rectangle (energia-życie)
 		///
 		void initStatusBarEnergy();
 
 		///
-		///Metoda sprawdza, czy trzeba utworzyć obiekt klasy CRectangle (paliwo/tlen)
+		///Metoda sprawdza, czy trzeba utworzyć obiekt klasy Rectangle (paliwo/tlen)
 		///
 		void initStatusBarFuel();
 
 
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CRectangle - graficzna reprezentacja (energia-życie)
+		///Metoda zwraca wskaźnik na obiekt klasy Rectangle - graficzna reprezentacja (energia-życie)
 		///
-		CRectangle *getStatusBarEnergy();
+		Rectangle *getStatusBarEnergy();
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CRectangle - graficzna reprezentacja (paliwo/tlen)
+		///Metoda zwraca wskaźnik na obiekt klasy Rectangle - graficzna reprezentacja (paliwo/tlen)
 		///
-		CRectangle *getStatusBarFuel();
+		Rectangle *getStatusBarFuel();
 
 		///
 		///Wirtualna metoda aktualizująca obiekt
@@ -298,8 +298,8 @@ namespace logic
 		sf::Vector2f m_size_fuel; //rozmiar paska - progress bar (paliwo/tlen)
 		sf::Vector2f m_position_offset_energy; //wektor kalibracji położenia obiektu - progress bar (energia-życie)
 		sf::Vector2f m_position_offset_fuel; //wektor kalibracji położenia obiektu - progress bar (paliwo/tlen)
-		CRectangle *p_status_bar_energy; //wskaźnik na obiekt CRectangle (energia-życie)
-		CRectangle *p_status_bar_fuel; //wskaźnik na obiekt CRectangle (paliwo/tlen)
+		Rectangle *p_status_bar_energy; //wskaźnik na obiekt Rectangle (energia-życie)
+		Rectangle *p_status_bar_fuel; //wskaźnik na obiekt Rectangle (paliwo/tlen)
 	};
 }//namespace logic
 #endif//H_PHYSICAL_INFO_JACK

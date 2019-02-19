@@ -10,7 +10,7 @@
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
-#include "../../../Rendering/Displayable/CDisplayable.h"
+#include "../../../Rendering/Displayable/Displayable.h"
 #include "../../../Utilities/Random/CRandom.h"
 #include <iostream>
 

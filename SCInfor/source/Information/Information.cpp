@@ -477,7 +477,7 @@ namespace information
 	//implementajca metod private:
 
 	//prywatna metoda sprawdza, czy trzeba utworzyć
-	//obiekt klasy CDisplayable (digit),
+	//obiekt klasy Displayable (digit),
 	//np. gdy chcemy dodać teksturę, animację, syntetyk, etc...
 	void Information::checkDisplayable_digit()
 	{
@@ -486,7 +486,7 @@ namespace information
 	}
 
 	//prywatna metoda sprawdza, czy trzeba utworzyć
-	//obiekt klasy CDisplayable (mask),
+	//obiekt klasy Displayable (mask),
 	//np. gdy chcemy dodać teksturę, animację, syntetyk, etc...
 	void Information::checkDisplayable_mask()
 	{

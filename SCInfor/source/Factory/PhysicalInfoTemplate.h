@@ -8,7 +8,7 @@
 #define H_PHYSICAL_INFO_TEMPLATE_JACK
 
 #include "PhysicalTemplate.h"
-#include "../Rendering/Displayable/CRectangle.h"
+#include "../Rendering/Displayable/Rectangle.h"
 #include "../Logic/Physical/PhysicalInfo/PhysicalInfo.h"
 
 ///
@@ -93,8 +93,8 @@ namespace factory
 		sf::Vector2f m_templ_size_fuel; //rozmiar paska - progress bar (paliwo/tlen)
 		sf::Vector2f m_templ_position_offset_energy; //wektor kalibracji położenia obiektu - progress bar (energia-życie)
 		sf::Vector2f m_templ_position_offset_fuel; //wektor kalibracji położenia obiektu - progress bar (paliwo/tlen)
-		CRectangle *p_templ_status_bar_energy; //wskaźnik na obiekt CRectangle (energia-życie)
-		CRectangle *p_templ_status_bar_fuel; //wskaźnik na obiekt CRectangle (paliwo/tlen)
+		Rectangle *p_templ_status_bar_energy; //wskaźnik na obiekt Rectangle (energia-życie)
+		Rectangle *p_templ_status_bar_fuel; //wskaźnik na obiekt Rectangle (paliwo/tlen)
 		bool m_templ_use_animation; //flaga, czy obiekt używa animacji/tekstury
 		bool m_templ_use_texture; //flaga, czy obiekt używa tekstury/animacji
 		std::string m_templ_animation_name; //nazwa animacji

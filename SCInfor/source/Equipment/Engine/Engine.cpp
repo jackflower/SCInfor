@@ -8,7 +8,7 @@
 #include "../../Logic/PhysicalManager.h"
 #include "../../Rendering/Animations/AnimSet.h"
 #include "../../Rendering/Drawable/Layers.h"
-#include "../../Rendering/Displayable/CDisplayable.h"
+#include "../../Rendering/Displayable/Displayable.h"
 #include "../../Utilities/Utilities/Utilities.h"
 
 using namespace rendering::drawable;

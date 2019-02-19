@@ -7,7 +7,7 @@
 #include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
-#include "../../../Rendering/Displayable/CDisplayable.h"
+#include "../../../Rendering/Displayable/Displayable.h"
 #include "../../PhysicalManager.h"
 
 using namespace rendering::drawable;

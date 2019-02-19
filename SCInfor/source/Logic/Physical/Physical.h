@@ -313,14 +313,14 @@ namespace logic
 		///
 		///Metoda zwraca stałą referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable
+		///klasy Displayable
 		///
 		const sf::Vector2f & getRectangleSizeBody() const;
 
 		///
 		///Metoda ustawia referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable
+		///klasy Displayable
 		///
 		///@param rect_size_body - stałą referencja na obiekt klasy sf::Vector2f
 		///
@@ -329,7 +329,7 @@ namespace logic
 		///
 		///Metoda ustawia referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable
+		///klasy Displayable
 		///
 		///@param rect_size_body_width - szerokośc tekstury (wymaga rzutowania na typ całkowity)
 		///
@@ -340,14 +340,14 @@ namespace logic
 		///
 		///Metoda zwraca stałą referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable
+		///klasy Displayable
 		///
 		const sf::Vector2f & getRectangleSizeHead() const;
 
 		///
 		///Metoda ustawia referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable
+		///klasy Displayable
 		///
 		///@param rect_size_head - stałą referencja na obiekt klasy sf::Vector2f
 		///
@@ -356,7 +356,7 @@ namespace logic
 		///
 		///Metoda ustawia referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable
+		///klasy Displayable
 		///
 		///@param rect_size_head_width - szerokośc tekstury (wymaga rzutowania na typ całkowity)
 		///
@@ -367,7 +367,7 @@ namespace logic
 		///
 		///Metoda ustawia referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable - body and head
+		///klasy Displayable - body and head
 		///
 		///@param rect_size_uniform - stała referencja na obiekt klasy sf::Vector2f
 		///
@@ -376,7 +376,7 @@ namespace logic
 		///
 		///Metoda ustawia referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable - body and head
+		///klasy Displayable - body and head
 		///
 		///@param rect_size_uniform_width - szerokośc tekstury (wymaga rzutowania na typ całkowity)
 		///
@@ -387,7 +387,7 @@ namespace logic
 		///
 		///Metoda ustawia referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable - body and head
+		///klasy Displayable - body and head
 		///
 		///@param rect_size_body - stałą referencja na obiekt klasy sf::Vector2f
 		///
@@ -398,7 +398,7 @@ namespace logic
 		///
 		///Metoda ustawia referencję na wektor wielkości obiektu
 		///wykorzytywana przy tworzeniu syntetyków - tekstur dla obiektów
-		///klasy CDisplayable - body and head
+		///klasy Displayable - body and head
 		///
 		///@param rect_size_body_width - szerokośc tekstury (wymaga rzutowania na typ całkowity)
 		///
@@ -722,48 +722,48 @@ namespace logic
 		void setAnimSpeed(float anim_speed_body, float anim_speed_head);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body) /zgodność interfejsu/
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (body) /zgodność interfejsu/
 		///
-		CDisplayable *getDisplayable();
+		Displayable *getDisplayable();
 	    
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (shadow) /zgodność interfejsu/
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow) /zgodność interfejsu/
 		///
-		CDisplayable *getShadow();
+		Displayable *getShadow();
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
 		///
 		///@param physical_part - wyliczenie EPhysicalPart - część physical
 		///
-		CDisplayable *getDisplayable(EPhysicalPart physical_part);
+		Displayable *getDisplayable(EPhysicalPart physical_part);
 	    
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (shadow)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow)
 		///
 		///@param physical_part - wyliczenie EPhysicalPart - część physical
 		///
-		CDisplayable *getShadow(EPhysicalPart physical_part);
+		Displayable *getShadow(EPhysicalPart physical_part);
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
 		///
-		CDisplayable *getDisplayableBody();
+		Displayable *getDisplayableBody();
 	    
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (body shadow)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (body shadow)
 		///
-		CDisplayable *getDisplayableBodyShadow();
+		Displayable *getDisplayableBodyShadow();
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (head)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (head)
 		///
-		CDisplayable *getDisplayableHead();
+		Displayable *getDisplayableHead();
 
 		///
-		///Metoda zwraca wskaźnik na obiekt klasy CDisplayable (head shadow)
+		///Metoda zwraca wskaźnik na obiekt klasy Displayable (head shadow)
 		///
-		CDisplayable *getDisplayableHeadShadow();
+		Displayable *getDisplayableHeadShadow();
 
 		///
 		///Metoda ustawia flagę dla obiektów gotowych do destrukcji
@@ -997,11 +997,11 @@ namespace logic
 	private:
 
 		void checkDisplayableBody();		//prywatna metoda sprawdza, czy trzeba utworzyć
-											//obiekt klasy CDisplayable (body), np. gdy chcemy
+											//obiekt klasy Displayable (body), np. gdy chcemy
 											//dodać obrazek, animację, etc...
 
 		void checkDisplayableHead();		//prywatna metoda sprawdza, czy trzeba utworzyć
-											//obiekt klasy CDisplayable (head), np. gdy chcemy
+											//obiekt klasy Displayable (head), np. gdy chcemy
 											//dodać obrazek, animację, etc...
 
 		void updateShadowTransformation();	//prywatna metoda dobierająca przesunięcie cienia

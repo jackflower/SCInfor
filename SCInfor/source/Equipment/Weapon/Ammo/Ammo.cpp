@@ -9,7 +9,7 @@
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
-#include "../../../Rendering/Displayable/CDisplayable.h"
+#include "../../../Rendering/Displayable/Displayable.h"
 
 using namespace rendering::drawable;
 

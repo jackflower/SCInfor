@@ -1,10 +1,10 @@
-//  ___________________________________________
-// | CClippedSprite.cpp - class implementation |
+Ôªø//  ___________________________________________
+// | ClippedSprite.cpp - class implementation |
 // | Jack Flower February 2012                 |
 // |___________________________________________|
 //
 
-#include "CClippedSprite.h"
+#include "ClippedSprite.h"
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics.hpp>
 #include <vector>
@@ -18,100 +18,100 @@
 
 namespace displayable
 {
-	RTTI_IMPL_NOPARENT(CClippedSprite);
+	RTTI_IMPL_NOPARENT(ClippedSprite);
 
-	//Konstruktor domyúlny
-	CClippedSprite::CClippedSprite()
+	//Konstruktor domy≈õlny
+	ClippedSprite::ClippedSprite()
 	:
 		m_clip_plane_enabled(false)
 	{
 	}
 
-	//Metoda w≥πcza przycinanie
-	void CClippedSprite::EnableClipPlane()
+	//Metoda w≈ÇƒÖcza przycinanie
+	void ClippedSprite::enableClipPlane()
 	{ 
 		m_clip_plane_enabled = true;
 	}
 
-	//Metoda wy≥πcza przycinanie
-	void CClippedSprite::DisableClipPlane()
+	//Metoda wy≈ÇƒÖcza przycinanie
+	void ClippedSprite::disableClipPlane()
 	{ 
 		m_clip_plane_enabled = false;
 	}
 
 
-	//Sprawdzamy, czy punkt znajduje siÍ ('nad', 'zawiera siÍ w', 'naleøy do') p≥aszczyznπ
+	//Sprawdzamy, czy punkt znajduje siƒô ('nad', 'zawiera siƒô w', 'nale≈ºy do') p≈ÇaszczyznƒÖ
 	inline bool TestPoint(float a, float b, float c, float x, float y)
 	{
-		return (a * x + b * y + c) > 0.0f;//rÛwnanie prostej
+		return (a * x + b * y + c) > 0.0f;//r√≥wnanie prostej
 	}
 
 	////Wirtualna metoda renderingu
-	//void CClippedSprite::Render(sf::RenderTarget &renderTarget) const
+	//void ClippedSprite::Render(sf::RenderTarget &renderTarget) const
 	//{
-	//	sf::Vector2f	vertex[5];			//tablica na piÍÊ wierzcho≥kÛw
-	//	sf::Vector2f	uv[5];				//tablica na piÍÊ wierzcho≥kÛw
-	//	unsigned int	vertex_count = 0;	//licznik wierzcho≥kÛw
+	//	sf::Vector2f	vertex[5];			//tablica na piƒôƒá wierzcho≈Çk√≥w
+	//	sf::Vector2f	uv[5];				//tablica na piƒôƒá wierzcho≈Çk√≥w
+	//	unsigned int	vertex_count = 0;	//licznik wierzcho≈Çk√≥w
 
-	//	//Tworzymy wierzcho≥ki dla prostokπta [0-1,0-1] przyciÍtego prostπ-p≥aszczyznπ
+	//	//Tworzymy wierzcho≈Çki dla prostokƒÖta [0-1,0-1] przyciƒôtego prostƒÖ-p≈ÇaszczyznƒÖ
 
-	//	if (m_clip_plane_enabled)//jeúli flaga pozwala generujemy wspÛ≥rzÍdne przyciÍtego prostokπta
+	//	if (m_clip_plane_enabled)//je≈õli flaga pozwala generujemy wsp√≥≈Çrzƒôdne przyciƒôtego prostokƒÖta
 	//	{
-	//		//Sprawdzamy, czy punkty znajduje siÍ 'nad' p≥aszczyznπ
+	//		//Sprawdzamy, czy punkty znajduje siƒô 'nad' p≈ÇaszczyznƒÖ
 	//		bool leftup		= TestPoint(m_A, m_B, m_C, 0.0f, 0.0f);
 	//		bool rightup	= TestPoint(m_A, m_B, m_C, 1.0f, 0.0f);
 	//		bool rightbot	= TestPoint(m_A, m_B, m_C, 1.0f, 1.0f);
 	//		bool leftbot	= TestPoint(m_A, m_B, m_C, 0.0f, 1.0f);
 
-	//		// lewy gÛrny rÛg
+	//		// lewy g√≥rny r√≥g
 	//		if (leftup)					vertex[vertex_count++] = sf::Vector2f(0.0f,0.0f);
-	//		// przeciÍcie clipplane		- gÛrny bok => dodajemy punkt przeciÍcia
+	//		// przeciƒôcie clipplane		- g√≥rny bok => dodajemy punkt przeciƒôcia
 	//		if (leftup != rightup)		vertex[vertex_count++] = sf::Vector2f(-m_C/m_A,0.0f);
-	//									//zwiÍkszamy licznik wiercho≥kÛw
+	//									//zwiƒôkszamy licznik wiercho≈Çk√≥w
 	//		
-	//		// prawy gÛrny rÛg
+	//		// prawy g√≥rny r√≥g
 	//		if (rightup)				vertex[vertex_count++] = sf::Vector2f(1.0f,0.0f);
-	//		// przeciÍcie clipplane		- prawy bok => dodajemy punkt przeciÍcia
+	//		// przeciƒôcie clipplane		- prawy bok => dodajemy punkt przeciƒôcia
 	//		if (rightup != rightbot)	vertex[vertex_count++] = sf::Vector2f(1.0f,(-m_C-m_A)/m_B);
-	//									//zwiÍkszamy licznik wiercho≥kÛw
+	//									//zwiƒôkszamy licznik wiercho≈Çk√≥w
 	//		
-	//		// prawy dolny rÛg
+	//		// prawy dolny r√≥g
 	//		if (rightbot)				vertex[vertex_count++] = sf::Vector2f(1.0f,1.0f);
-	//		// przeciÍcie clipplane		- dolny bok => dodajemy punkt przeciÍcia
+	//		// przeciƒôcie clipplane		- dolny bok => dodajemy punkt przeciƒôcia
 	//		if (rightbot != leftbot)	vertex[vertex_count++] = sf::Vector2f((-m_C-m_B)/m_A,1.0f);
-	//									//zwiÍkszamy licznik wiercho≥kÛw
+	//									//zwiƒôkszamy licznik wiercho≈Çk√≥w
 	//		
-	//		// lewy dolny rÛg
+	//		// lewy dolny r√≥g
 	//		if (leftbot)				vertex[vertex_count++] = sf::Vector2f(0.0f,1.0f);
-	//		// przeciÍcie clipplane		- lewy bok => dodajemy punkt przeciÍcia
+	//		// przeciƒôcie clipplane		- lewy bok => dodajemy punkt przeciƒôcia
 	//		if (leftbot != leftup)		vertex[vertex_count++] = sf::Vector2f(0.0f,-m_C/m_B);		
-	//									//zwiÍkszamy licznik wiercho≥kÛw
+	//									//zwiƒôkszamy licznik wiercho≈Çk√≥w
 	//	}
 	//	else
-	//	{	//Jeúli flaga nie pozwala na przyciÍcie - pozostawiamy wierzcho≥ki bez zmian
+	//	{	//Je≈õli flaga nie pozwala na przyciƒôcie - pozostawiamy wierzcho≈Çki bez zmian
 	//		vertex[vertex_count++] = sf::Vector2f(0.0f,0.0f);
 	//		vertex[vertex_count++] = sf::Vector2f(1.0f,0.0f);
 	//		vertex[vertex_count++] = sf::Vector2f(1.0f,1.0f);
 	//		vertex[vertex_count++] = sf::Vector2f(0.0f,1.0f);
 	//	}
 
-	//	//jeúli licznik wierzcho≥kÛw przekroczy 5, to coú nie gra (np. precyzja floatow)
+	//	//je≈õli licznik wierzcho≈Çk√≥w przekroczy 5, to co≈õ nie gra (np. precyzja floatow)
 	//	assert(vertex_count <= 5);
 
-	//	//Obliczamy wielkoúÊ sprite'a
+	//	//Obliczamy wielko≈õƒá sprite'a
 	//	float sprite_width		= static_cast<float>(GetSubRect().GetWidth());
 	//	float sprite_height		= static_cast<float>(GetSubRect().GetHeight());
 
-	//	//jeúli sprite ma ustawionπ teksturÍ sf::Image
+	//	//je≈õli sprite ma ustawionƒÖ teksturƒô sf::Image
 	//	if (GetImage())
 	//	{
-	//		GetImage()->Bind();//bindujemy teksturÍ, aby dopasowaÊ do niej rozmiar sprite'a
+	//		GetImage()->Bind();//bindujemy teksturƒô, aby dopasowaƒá do niej rozmiar sprite'a
 
 	//		sf::FloatRect	texture_coordinate	= GetImage()->GetTexCoords(GetSubRect());
 	//		float			texture_width		= texture_coordinate.GetWidth();
 	//		float			texture_height		= texture_coordinate.GetHeight();
 
-	//		//Generujemy wierzcho≥ki prostokπta i skalujemy sprite'a do jego rozmiarow
+	//		//Generujemy wierzcho≈Çki prostokƒÖta i skalujemy sprite'a do jego rozmiarow
 	//		for (unsigned int i = 0; i < vertex_count; i++)
 	//		{
 	//			uv[i].x		= texture_coordinate.Left	+ vertex[i].x * texture_width;
@@ -130,7 +130,7 @@ namespace displayable
 	//	}
 	//	else
 	//	{
-	//		//Skalujemy sprite'a do jego rozmiarÛw - sprite'e nie ma tekstury
+	//		//Skalujemy sprite'a do jego rozmiar√≥w - sprite'e nie ma tekstury
 	//		for (unsigned i = 0; i < vertex_count; i++)
 	//		{
 	//			vertex[i].x *= sprite_width;

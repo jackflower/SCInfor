@@ -31,12 +31,12 @@ namespace rendering
 	}
 	namespace displayable
 	{
-		class CDisplayable;
-		class CHudStaticText;
+		class Displayable;
+		class HudStaticText;
 	}
 	namespace primitives
 	{
-		class CRectangle;
+		class Rectangle;
 	}
 }
 
@@ -74,25 +74,25 @@ namespace rendering
 			~CDrawableManager();
 
 			///
-			///Metoda tworzy obiekt klasy CDisplayable i zwraca wskaünik na ten obiekt
+			///Metoda tworzy obiekt klasy Displayable i zwraca wskaünik na ten obiekt
 			///
 			///@param z_index - warstwa renderingu
 			///
-			CDisplayable* CreateDisplayable(int z_index = Z_PHYSICAL_BODY);
+			Displayable* CreateDisplayable(int z_index = Z_PHYSICAL_BODY);
 
 			///
-			///Metoda tworzy obiekt klasy CRectangle i zwraca wskaünik na ten obiekt
+			///Metoda tworzy obiekt klasy Rectangle i zwraca wskaünik na ten obiekt
 			///
 			///@param z_index - warstwa renderingu
 			///
-			CRectangle* CreateRectangle(int z_index = Z_PHYSICAL_INFO_STATUS_BAR);
+			Rectangle* CreateRectangle(int z_index = Z_PHYSICAL_INFO_STATUS_BAR);
 
 			///
-			///Metoda tworzy obiekt klasy CHudStaticText i zwraca wskaünik na ten obiekt
+			///Metoda tworzy obiekt klasy HudStaticText i zwraca wskaünik na ten obiekt
 			///
 			///@param z_index - warstwa renderingu
 			///
-			CHudStaticText* CreateHudStaticText(int z_index = Z_INFORMATION_FRONT);
+			HudStaticText* CreateHudStaticText(int z_index = Z_INFORMATION_FRONT);
 
 			///
 			///Metoda rejestruje obiekt
@@ -125,13 +125,13 @@ namespace rendering
 			virtual void frameStarted(float secondsPassed) {};
 
 			///
-			///Metoda renderujπca obiekt klasy CDisplayable
+			///Metoda renderujπca obiekt klasy Displayable
 			///
 			///Metoda void DrawFrame(sf::RenderWindow* render);
 			///
 			///wywo≥uje w kontenerze ich metody wirtualne
 			///
-			///virtual Draw(sf::RenderWindow* render);
+			///virtual draw(sf::RenderWindow* render);
 			///
 			///@render render - parametr drawable
 			///

@@ -10,7 +10,7 @@
 #include <SFML/Graphics.hpp>
 #include "AnimatedAnimation.h"
 #include "../../RTTI/RTTI.h"
-#include "../Displayable/CSprite.h"
+#include "../Displayable/Sprite.h"
 
 using namespace rendering::displayable;
 
@@ -19,7 +19,7 @@ namespace animated
 	///
 	///Klasa reprezentuje animowany obiekt (sprite)
 	///
-	class Animated : public CSprite
+	class Animated : public Sprite
 	{
 		RTTI_DECL;
 

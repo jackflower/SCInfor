@@ -8,7 +8,7 @@
 #include "../../../Weather/CWeather.h"
 #include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
-#include "../../../Rendering/Displayable/CDisplayable.h"
+#include "../../../Rendering/Displayable/Displayable.h"
 #include "../../../Utilities/MathFunctions/MathFunctions.h"
 
 using namespace weather;

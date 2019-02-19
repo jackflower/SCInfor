@@ -322,14 +322,14 @@ namespace logic
 		m_position_offset_fuel.y = position_offset_fuel_y;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CRectangle - graficzna reprezentacja (energia-życie)
-	CRectangle *PhysicalInfo::getStatusBarEnergy()
+	//Metoda zwraca wskaźnik na obiekt klasy Rectangle - graficzna reprezentacja (energia-życie)
+	Rectangle *PhysicalInfo::getStatusBarEnergy()
 	{
 		return p_status_bar_energy;
 	}
 
-	//Metoda zwraca wskaźnik na obiekt klasy CRectangle - graficzna reprezentacja (paliwo/tlen)
-	CRectangle *PhysicalInfo::getStatusBarFuel()
+	//Metoda zwraca wskaźnik na obiekt klasy Rectangle - graficzna reprezentacja (paliwo/tlen)
+	Rectangle *PhysicalInfo::getStatusBarFuel()
 	{
 		return	p_status_bar_fuel;
 	}
@@ -344,7 +344,7 @@ namespace logic
 			setPositionStatusBarFuel(getPosition().x - m_position_offset_fuel.x, getPosition().y - m_position_offset_fuel.y);
 	}
 
-	//Metoda sprawdza, czy trzeba utworzyć obiekt klasy CRectangle (energia-życie)
+	//Metoda sprawdza, czy trzeba utworzyć obiekt klasy Rectangle (energia-życie)
 	void PhysicalInfo::initStatusBarEnergy()
 	{
 		if ((m_use_status_bar_energy) && (!p_status_bar_energy))
@@ -358,7 +358,7 @@ namespace logic
 		}
 	}
 
-	//Metoda sprawdza, czy trzeba utworzyć obiekt klasy CRectangle (paliwo/tlen)
+	//Metoda sprawdza, czy trzeba utworzyć obiekt klasy Rectangle (paliwo/tlen)
 	void PhysicalInfo::initStatusBarFuel()
 	{
 		if ((m_use_status_bar_fuel) && (!p_status_bar_fuel))

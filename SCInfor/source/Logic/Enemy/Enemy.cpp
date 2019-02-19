@@ -5,7 +5,7 @@
 //
 
 #include "Enemy.h"
-#include "../../Rendering/Displayable/CDisplayable.h"
+#include "../../Rendering/Displayable/Displayable.h"
 #include "../../Game/Game.h"
 
 using namespace rendering::displayable;

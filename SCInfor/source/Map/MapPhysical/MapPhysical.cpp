@@ -6,7 +6,7 @@
 
 #include "MapPhysical.h"
 #include "../Ground/PhysicsGround/PhysicsGround.h"
-#include "../../Rendering/Displayable/CDisplayable.h"
+#include "../../Rendering/Displayable/Displayable.h"
 #include "../../Rendering/Drawable/CDrawableManager.h"
 #include "../../Rendering/Drawable/Layers.h"
 #include "../../Rendering/Animations/Animation.h"
@@ -316,7 +316,7 @@ namespace mapengine
 	{
 		checkDisplayable();
 		if(p_displayable)
-			p_displayable->SetAnimation(animation_name);
+			p_displayable->setAnimation(animation_name);
 	}
 
 	//Metoda zwraca stałą referencję na typ reprezentacji graficznej obiektu
@@ -358,8 +358,8 @@ namespace mapengine
 	}
 
 
-	//Metoda zwraca wskaźnik na obiekt klasy CDisplayable
-	CDisplayable *MapPhysical::getDisplayable()
+	//Metoda zwraca wskaźnik na obiekt klasy Displayable
+	Displayable *MapPhysical::getDisplayable()
 	{
 		return p_displayable;
 	}
@@ -373,7 +373,7 @@ namespace mapengine
 	//implementajca metod private:
 
 	//prywatna metoda sprawdza, czy trzeba utworzyć
-	//obiekt klasy CDisplayable (body), np. gdy chcemy
+	//obiekt klasy Displayable (body), np. gdy chcemy
 	//dodać obrazek, animację, syntetyk, etc...
 	void MapPhysical::checkDisplayable()
 	{
