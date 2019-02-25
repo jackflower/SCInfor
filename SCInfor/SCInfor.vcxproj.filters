@@ -393,12 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\Rendering\Particle\CParticle.cpp">
-      <Filter>source\Rendering\Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Rendering\Particle\CParticleState.cpp">
-      <Filter>source\Rendering\Particle</Filter>
-    </ClCompile>
     <ClCompile Include="source\ResourceManager\CFont.cpp">
       <Filter>source\ResourceManager</Filter>
     </ClCompile>
@@ -1008,6 +1002,12 @@
     <ClCompile Include="source\Collision\Collision.cpp">
       <Filter>source\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="source\Rendering\Particle\Particle.cpp">
+      <Filter>source\Rendering\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\Particle\ParticleState.cpp">
+      <Filter>source\Rendering\Particle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1122,12 +1122,6 @@
     </ClInclude>
     <ClInclude Include="source\Rendering\Drawable\Layers.h">
       <Filter>source\Rendering\Drawable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Particle\CParticle.h">
-      <Filter>source\Rendering\Particle</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Rendering\Particle\CParticleState.h">
-      <Filter>source\Rendering\Particle</Filter>
     </ClInclude>
     <ClInclude Include="source\ResourceManager\CFont.h">
       <Filter>source\ResourceManager</Filter>
@@ -1770,6 +1764,12 @@
     </ClInclude>
     <ClInclude Include="source\Collision\Collision.h">
       <Filter>source\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Particle\Particle.h">
+      <Filter>source\Rendering\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Rendering\Particle\ParticleState.h">
+      <Filter>source\Rendering\Particle</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

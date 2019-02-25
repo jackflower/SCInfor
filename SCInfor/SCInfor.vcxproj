@@ -299,8 +299,8 @@
     <ClCompile Include="source\Rendering\Displayable\Texture.cpp" />
     <ClCompile Include="source\Rendering\Drawable\DrawableManager.cpp" />
     <ClCompile Include="source\Rendering\Drawable\Drawable.cpp" />
-    <ClCompile Include="source\Rendering\Particle\CParticle.cpp" />
-    <ClCompile Include="source\Rendering\Particle\CParticleState.cpp" />
+    <ClCompile Include="source\Rendering\Particle\Particle.cpp" />
+    <ClCompile Include="source\Rendering\Particle\ParticleState.cpp" />
     <ClCompile Include="source\ResourceManager\CFont.cpp" />
     <ClCompile Include="source\ResourceManager\CMusic.cpp" />
     <ClCompile Include="source\ResourceManager\CResourceManager.cpp" />
@@ -545,8 +545,8 @@
     <ClInclude Include="source\Rendering\Drawable\DrawableManager.h" />
     <ClInclude Include="source\Rendering\Drawable\Drawable.h" />
     <ClInclude Include="source\Rendering\Drawable\Layers.h" />
-    <ClInclude Include="source\Rendering\Particle\CParticle.h" />
-    <ClInclude Include="source\Rendering\Particle\CParticleState.h" />
+    <ClInclude Include="source\Rendering\Particle\Particle.h" />
+    <ClInclude Include="source\Rendering\Particle\ParticleState.h" />
     <ClInclude Include="source\ResourceManager\CFont.h" />
     <ClInclude Include="source\ResourceManager\CMusic.h" />
     <ClInclude Include="source\ResourceManager\CResourceManager.h" />
