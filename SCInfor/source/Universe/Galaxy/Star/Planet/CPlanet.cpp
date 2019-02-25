@@ -47,7 +47,7 @@ namespace universe
 				//Metoda zwraca typ obiektu /RTTI/
 				const std::string CPlanet::GetType() const
 				{
-					return rtti.GetNameClass();
+					return rtti.getNameClass();
 				}
 
 				//Metoda zwraca temperaturê planety

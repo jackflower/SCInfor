@@ -92,7 +92,7 @@ namespace rendering
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string Animation::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca referencję na nazwę animacji

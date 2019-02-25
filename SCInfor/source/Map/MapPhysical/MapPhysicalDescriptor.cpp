@@ -65,7 +65,7 @@ namespace mapengine
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string MapPhysicalDescriptor::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda tworzy obiekt mapy

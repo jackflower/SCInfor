@@ -38,7 +38,7 @@ namespace equipment
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string SolarBattery::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca wartość spadku pojemności baterii

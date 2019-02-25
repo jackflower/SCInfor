@@ -72,7 +72,7 @@ namespace equipment
 		//Metoda zwraca typ obiektu /RTTI/
 		std::string Ammo::getType()
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca zwraca kaliber uzbrojenie

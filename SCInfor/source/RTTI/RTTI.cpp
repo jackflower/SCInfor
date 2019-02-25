@@ -1,4 +1,4 @@
-//  _________________________________
+ï»¿//  _________________________________
 // | RTTI.cpp - class implementation |
 // | Jack Flower October 2012        |
 // |_________________________________|
@@ -9,24 +9,24 @@
 
 //Konstruktor
 RTTI::RTTI(const std::string & class_name)
-	:
-	m_class_name(class_name),
-	p_base_RTTI(NULL)
+:
+	m_class_name{ class_name },
+	p_base_RTTI{ NULL }
 {
 }
 
 //Konstruktor
 RTTI::RTTI(const std::string & class_name, const RTTI & baseRTTI)
-	:
-	m_class_name(class_name),
-	p_base_RTTI(&baseRTTI)
+:
+	m_class_name{ class_name },
+	p_base_RTTI{ &baseRTTI }
 {
 }
 
-//Metoda zwraca flagê, czy obiekt ma klasê bazow¹
-bool RTTI::DerivesFrom (const RTTI & rtti) const
+//Metoda zwraca flagÄ™, czy obiekt ma klasÄ™ bazowÄ…
+bool RTTI::derivesFrom (const RTTI & rtti) const
 {
-    const RTTI * pCompare = this;
+    const RTTI *pCompare = this;
 
     while (pCompare != NULL)
     {
@@ -35,4 +35,9 @@ bool RTTI::DerivesFrom (const RTTI & rtti) const
         pCompare = pCompare->p_base_RTTI;
     }
     return false;
+}
+
+RTTI & RTTI::operator = (const RTTI & obj)
+{
+	return *this;
 }

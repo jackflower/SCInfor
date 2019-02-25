@@ -41,7 +41,7 @@ namespace mapengine
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string GroundWork::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca współczynnik tarcia

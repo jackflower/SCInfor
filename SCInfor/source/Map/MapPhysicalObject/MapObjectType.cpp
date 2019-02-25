@@ -36,7 +36,7 @@ namespace mapengine
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string MapObjectType::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca nazwę znacznika obiektu na mapie

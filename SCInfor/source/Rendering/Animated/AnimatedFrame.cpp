@@ -104,7 +104,7 @@ namespace animated
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string AnimatedFrame::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 

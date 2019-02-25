@@ -43,7 +43,7 @@ namespace universe
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string CGalaxy::GetType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca nazwê galaktyki

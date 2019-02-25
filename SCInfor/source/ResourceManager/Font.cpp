@@ -26,7 +26,7 @@ namespace resource
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Font::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Wirtualna metoda ładująca zasób - implementacja

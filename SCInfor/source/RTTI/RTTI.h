@@ -1,4 +1,4 @@
-//  _________________________________
+ï»¿//  _________________________________
 // | RTTI.h - class definition       |
 // | Jack Flower October 2012        |
 // |_________________________________|
@@ -11,7 +11,7 @@
 #define H_RTTI_JACK
 
 ///
-///Klasa reprezentuje funkjonalnoœæ zwracaj¹c¹ typ klasy
+///Klasa reprezentuje funkjonalnoÅ›Ä‡ zwracajÄ…cÄ… typ klasy
 ///
 class RTTI 
 {
@@ -21,49 +21,49 @@ public:
 	///
 	///Konstruktor
 	///
-	///@param &class_name - sta³a referencja na nazwê klasy
+	///@param class_name - staÅ‚a referencja na nazwÄ™ klasy
 	///
-	RTTI(const std::string& class_name);
+	RTTI(const std::string & class_name);
 
 	///
 	///Konstruktor
 	///
-	///@param &class_name - sta³a referencja na nazwê klasy
+	///@param class_name - staÅ‚a referencja na nazwÄ™ klasy
 	///
-	///@param - &baseRTTI - sta³a referencja na klasê bazow¹
+	///@param - baseRTTI - staÅ‚a referencja na klasÄ™ bazowÄ…
 	///
-	RTTI(const std::string & class_name, const RTTI& baseRTTI);
+	RTTI(const std::string & class_name, const RTTI & baseRTTI);
 
 	///
-	///Metoda zwraca nazwê klasy
+	///Metoda zwraca nazwÄ™ klasy
 	///
-    const std::string& GetNameClass() const { return m_class_name; }
+    const std::string & getNameClass() const { return m_class_name; }
     
 	///
-	///Metoda zwraca flagê
+	///Metoda zwraca flagÄ™
 	///
-	///@param &rtti - sta³a referencja na obietk klasy RTTI
+	///@param rtti - staÅ‚a referencja na obietk klasy RTTI
 	///
-	bool IsExactly(const RTTI& rtti) const { return (this == &rtti); }
+	bool isExactly(const RTTI & rtti) const { return (this == & rtti); }
 
 	///
-	///Metoda zwraca flagê, czy obiekt ma klasê bazow¹
+	///Metoda zwraca flagÄ™, czy obiekt ma klasÄ™ bazowÄ…
 	///
-	///@param &rtti - sta³a referencja na obietk klasy RTTI
+	///@param rtti - staÅ‚a referencja na obietk klasy RTTI
 	///
-	bool DerivesFrom (const RTTI& rtti) const;
+	bool derivesFrom (const RTTI & rtti) const;
 
 	///
 	///
 	///
-	const RTTI* GetBaseRTTI() const { return p_base_RTTI; }
+	const RTTI *getBaseRTTI() const { return p_base_RTTI; }
   
 private:
 	
-	RTTI(const RTTI & obj);					//Konstruktor kopiuj¹cy prywatny - zabezpiecza przed kopiowaniem
-	RTTI & operator = (const RTTI & obj);	//operator
-	const std::string	m_class_name;		//nazwa klasy
-	const RTTI *		p_base_RTTI;		//wskaŸnik na klasê bazow¹
+	RTTI(const RTTI & obj); //Konstruktor kopiujÄ…cy prywatny - zabezpiecza przed kopiowaniem
+	RTTI & operator = (const RTTI & obj); //operator
+	const std::string m_class_name; //nazwa klasy
+	const RTTI *p_base_RTTI; //wskaÅºnik na klasÄ™ bazowÄ…
 };
 
 //Makro

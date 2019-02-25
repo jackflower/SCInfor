@@ -33,7 +33,7 @@ namespace mapengine
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string DynamicRegion::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca identyfikator regionu

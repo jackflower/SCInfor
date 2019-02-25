@@ -52,7 +52,7 @@ namespace logic
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string Robot::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca stałą referencję na obiekt klasy StrategyDuration

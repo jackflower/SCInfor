@@ -69,7 +69,7 @@ namespace rendering
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string Displayable::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca wskaźnik na obiekt sf::Sprite

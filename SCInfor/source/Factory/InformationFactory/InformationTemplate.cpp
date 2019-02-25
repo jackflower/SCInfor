@@ -49,7 +49,7 @@ namespace factory
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string InformationTemplate::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Wirtualna metoda zwalniająca zasób

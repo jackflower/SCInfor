@@ -45,7 +45,7 @@ namespace rendering
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string TimedAnimationFrame::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca czas odtwarzania klatki animacji

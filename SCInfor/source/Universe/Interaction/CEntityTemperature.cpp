@@ -35,7 +35,7 @@ namespace universe
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string CEntityTemperature::GetType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca temperaturê

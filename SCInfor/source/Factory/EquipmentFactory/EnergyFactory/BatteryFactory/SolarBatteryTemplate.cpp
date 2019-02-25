@@ -28,7 +28,7 @@ namespace factory
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string SolarBatteryTemplate::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Wirtualna metoda zwalniająca zasób

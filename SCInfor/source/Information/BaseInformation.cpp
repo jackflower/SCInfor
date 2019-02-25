@@ -39,7 +39,7 @@ namespace information
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string BaseInformation::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca unikalną nazwę obiektu (dla klasy CMapWork)

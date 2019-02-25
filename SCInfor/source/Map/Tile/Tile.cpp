@@ -47,7 +47,7 @@ namespace mapengine
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string Tile::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda inicjuje kafel danymi

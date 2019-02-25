@@ -57,7 +57,7 @@ namespace information
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Information::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda ustawia flagę dla obiektów gotowych do destrukcji

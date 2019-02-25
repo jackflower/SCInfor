@@ -30,7 +30,7 @@ namespace mapengine
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Cell::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca flagę kolizji w obrębie komóki (regionu, obszaru)

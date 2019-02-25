@@ -33,7 +33,7 @@ namespace logic
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Player::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Wirtualna metoda aktualizująca obiekt

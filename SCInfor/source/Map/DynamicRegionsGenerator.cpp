@@ -46,7 +46,7 @@ namespace mapengine
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string DynamicRegionsGenerator::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda generuje regiony

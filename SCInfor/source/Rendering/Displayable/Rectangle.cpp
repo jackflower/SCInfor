@@ -34,7 +34,7 @@ namespace rendering
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string Rectangle::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 	
 		//Metoda zwraca wskaźnik na obiekt sf::RectangleShape

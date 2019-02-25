@@ -109,7 +109,7 @@ namespace animated
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Animated::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Przeciążony operator przypisania kopiowania

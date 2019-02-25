@@ -39,7 +39,7 @@ namespace mapengine
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string GroundWorkCollision::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca rozmiar mapy kolizji

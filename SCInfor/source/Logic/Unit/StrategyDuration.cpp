@@ -40,7 +40,7 @@ StrategyDuration::~StrategyDuration()
 //Metoda zwraca typ obiektu /RTTI/
 const std::string StrategyDuration::getType() const
 {
-	return rtti.GetNameClass();
+	return rtti.getNameClass();
 }
 
 //Metoda zwraca czas przygotowania do stanu ataku

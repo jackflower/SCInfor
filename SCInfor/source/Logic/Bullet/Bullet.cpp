@@ -60,7 +60,7 @@ namespace logic
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Bullet::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca prędkość pocisku

@@ -36,7 +36,7 @@ namespace mapengine
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string MapPhysicalHeader::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca rozmiar podłoża wyrażony w ilości obiektów na mapie

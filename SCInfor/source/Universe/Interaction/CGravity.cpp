@@ -35,7 +35,7 @@ namespace interaction
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string CGravity::GetType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca si³ê grawitacji

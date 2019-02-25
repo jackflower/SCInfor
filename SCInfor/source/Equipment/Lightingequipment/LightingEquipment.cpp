@@ -59,7 +59,7 @@ namespace equipment
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string LightingEquipment::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca nazwę układu oświetlenia

@@ -43,7 +43,7 @@ namespace collisiondata
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string PartCollisionData::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca flagę, czy obiekt koliduje - body

@@ -31,7 +31,7 @@ StrategyController::~StrategyController()
 //Metoda zwraca typ obiektu /RTTI/
 const std::string StrategyController::getType() const
 {
-	return rtti.GetNameClass();
+	return rtti.getNameClass();
 }
 
 //Metoda ustawia strategię ataku

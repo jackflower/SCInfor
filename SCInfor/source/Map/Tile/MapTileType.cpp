@@ -41,7 +41,7 @@ namespace mapengine
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string MapTileType::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca kod typu kafla używanego na mapie ładowanego z pliku xml

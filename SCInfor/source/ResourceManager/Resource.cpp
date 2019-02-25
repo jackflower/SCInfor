@@ -23,7 +23,7 @@ namespace resource
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Resource::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 }//namespace resource

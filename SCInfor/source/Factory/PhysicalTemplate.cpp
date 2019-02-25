@@ -66,7 +66,7 @@ namespace factory
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string PhysicalTemplate::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda ładująca dane

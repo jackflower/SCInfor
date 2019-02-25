@@ -27,7 +27,7 @@ namespace factory
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string WindPowerStationMultipledTemplate::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Wirtualna metoda zwalniaj¹ca zasób - implementacje w klasach pochodnych

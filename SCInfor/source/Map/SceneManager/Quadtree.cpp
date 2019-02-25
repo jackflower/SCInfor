@@ -48,7 +48,7 @@ namespace mapengine
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Quadtree::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	void Quadtree::addObject(Object *object)

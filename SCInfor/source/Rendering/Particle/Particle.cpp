@@ -70,7 +70,7 @@ namespace particle
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Particle::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Przeciążony operator przypisania kopiowania

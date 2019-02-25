@@ -45,7 +45,7 @@ namespace equipment
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string PowerModule::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca ilość energii, którą można zgromadzić

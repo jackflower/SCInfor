@@ -81,7 +81,7 @@ namespace logic
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string PowerStation::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca ilość zgromadzonej energii

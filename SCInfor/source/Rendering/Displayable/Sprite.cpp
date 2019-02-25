@@ -29,7 +29,7 @@ namespace rendering
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string Sprite::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 	}//namespace displayable

@@ -136,7 +136,7 @@ namespace rendering
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string AnimationState::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca czas, który upłynął

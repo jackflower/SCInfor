@@ -40,7 +40,7 @@ namespace relaystationdata
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string SlotsRateData::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy SlotsRate

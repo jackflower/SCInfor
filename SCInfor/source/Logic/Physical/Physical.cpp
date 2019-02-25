@@ -93,7 +93,7 @@ namespace logic
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Physical::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca unikalną nazwę obiektu klasy Physical

@@ -36,7 +36,7 @@ namespace equipmentdata
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string EquipmentData::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca flagę, czy obiekt posiada wyposażenie

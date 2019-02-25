@@ -68,7 +68,7 @@ namespace physics
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string PhysicsData::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca wagę

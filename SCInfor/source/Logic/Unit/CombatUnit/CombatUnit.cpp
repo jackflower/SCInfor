@@ -34,7 +34,7 @@ namespace logic
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string CombatUnit::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Wirtualna metoda aktualizuje animacje w zależności od stanu logiki obiektu (move, attack, death, etc...)

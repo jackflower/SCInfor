@@ -35,7 +35,7 @@ namespace logic
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string NuclearPowerPlant::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 	}//namespace powerstation

@@ -40,7 +40,7 @@ namespace logic
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string ActorController::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda ustawia stan i prędkość obiekty

@@ -50,7 +50,7 @@ namespace physics
 		//Metoda zwraca typ obiektu /RTTI/
 		const std::string ActorTechnicalData::getType() const
 		{
-			return rtti.GetNameClass();
+			return rtti.getNameClass();
 		}
 
 		//Metoda zwraca masę obiektu

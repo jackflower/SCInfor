@@ -40,7 +40,7 @@ namespace equipmentdata
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string EquipmentEnergyData::getType() const
 	{
-		return rtti.GetNameClass();
+		return rtti.getNameClass();
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy Energy
