@@ -393,24 +393,6 @@
     <ClCompile Include="source\Logic\Physical\PhysicalCategories.cpp">
       <Filter>source\Logic\Physical</Filter>
     </ClCompile>
-    <ClCompile Include="source\ResourceManager\CFont.cpp">
-      <Filter>source\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ResourceManager\CMusic.cpp">
-      <Filter>source\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ResourceManager\CResourceManager.cpp">
-      <Filter>source\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ResourceManager\CSound.cpp">
-      <Filter>source\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ResourceManager\CTexture.cpp">
-      <Filter>source\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ResourceManager\IResource.cpp">
-      <Filter>source\ResourceManager</Filter>
-    </ClCompile>
     <ClCompile Include="source\RTTI\RTTI.cpp">
       <Filter>source\RTTI</Filter>
     </ClCompile>
@@ -1008,11 +990,24 @@
     <ClCompile Include="source\Rendering\Particle\ParticleState.cpp">
       <Filter>source\Rendering\Particle</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="notes\notes.txt">
-      <Filter>notes</Filter>
-    </Text>
+    <ClCompile Include="source\ResourceManager\Font.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\Music.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\Sound.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\RTexture.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\Resource.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\ResourceManager.cpp">
+      <Filter>source\ResourceManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h">
@@ -1122,24 +1117,6 @@
     </ClInclude>
     <ClInclude Include="source\Rendering\Drawable\Layers.h">
       <Filter>source\Rendering\Drawable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ResourceManager\CFont.h">
-      <Filter>source\ResourceManager</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ResourceManager\CMusic.h">
-      <Filter>source\ResourceManager</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ResourceManager\CResourceManager.h">
-      <Filter>source\ResourceManager</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ResourceManager\CSound.h">
-      <Filter>source\ResourceManager</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ResourceManager\CTexture.h">
-      <Filter>source\ResourceManager</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ResourceManager\IResource.h">
-      <Filter>source\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="source\RTTI\RTTI.h">
       <Filter>source\RTTI</Filter>
@@ -1771,5 +1748,28 @@
     <ClInclude Include="source\Rendering\Particle\ParticleState.h">
       <Filter>source\Rendering\Particle</Filter>
     </ClInclude>
+    <ClInclude Include="source\ResourceManager\Font.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\Music.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\Sound.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\RTexture.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\Resource.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\ResourceManager.h">
+      <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="notes\notes.txt">
+      <Filter>notes</Filter>
+    </Text>
   </ItemGroup>
 </Project>

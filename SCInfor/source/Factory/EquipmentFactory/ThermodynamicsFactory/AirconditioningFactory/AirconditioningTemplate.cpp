@@ -7,7 +7,7 @@
 #include "AirconditioningTemplate.h"
 #include "../../../../Weather/CWeather.h"
 #include "../../../../Utilities/Random/CRandom.h"
-#include "../../../../ResourceManager/CResourceManager.h"
+#include "../../../../ResourceManager/ResourceManager.h"
 #include "../../../../Rendering/Animations/AnimSet.h"
 
 using namespace weather;
@@ -100,7 +100,7 @@ namespace factory
 			m_templ_thermalinsulation_data.setEmiter(xml.GetFloat(node, "thermalinsulation_emiter_x"), xml.GetFloat(node, "thermalinsulation_emiter_y"));
 
 			if(m_templ_thermalinsulation_data.getUseEquipment())
-				p_templ_thermal_insulation = (ThermalInsulationTemplate*)gResourceManager.GetPhysicalTemplate(thermalinsulation_filename_tmp);
+				p_templ_thermal_insulation = (ThermalInsulationTemplate*)gResourceManager.getPhysicalTemplate(thermalinsulation_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

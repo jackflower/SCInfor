@@ -39,7 +39,7 @@ namespace rendering
 ///
 namespace resource
 {
-	class CTexture;
+	class RTexture;
 }
 
 using namespace rendering::animation;
@@ -264,9 +264,9 @@ namespace rendering
 			///
 			///Metoda ustawia teksturę obiektu
 			///
-			///@param *p_texture - wskaźnik na obiekt klasy CTexture
+			///@param *p_texture - wskaźnik na obiekt klasy RTexture
 			///
-			void setTexture(CTexture *p_texture, bool smoothing = true);
+			void setTexture(RTexture *p_texture, bool smoothing = true);
 
 			///
 			///Metoda generuje obraz tekstury

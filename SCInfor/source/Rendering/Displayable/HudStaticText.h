@@ -9,8 +9,8 @@
 #define H_HUD_STATIC_TEXT_JACK
 
 #include "../../RTTI/RTTI.h"
-#include "../../ResourceManager/CResourceManager.h"
-#include "../../ResourceManager/CFont.h"
+#include "../../ResourceManager/ResourceManager.h"
+#include "../../ResourceManager/Font.h"
 #include "../Drawable/Drawable.h"
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/Transformable.hpp>
@@ -22,6 +22,7 @@
 ///
 namespace sf
 {
+	class Font;
     class Text;
     class RenderWindow;
 }
@@ -227,7 +228,7 @@ namespace rendering
 			
 			sf::Text *p_text; //wskaźnik na obiekt klasy sf::Text (obiekt renderowalny)
 			sf::Color m_color; //kolor
-			CFont *p_font; //wskaźnik na czcionkę
+			resource::Font *p_font; //wskaźnik na czcionkę
 			unsigned m_font_size; //rozmiar czcionki
 			sf::String m_string; //łańcych znaków
 			sf::Transformable m_tranformable; //opakowanie danych transformacji geometrycznej

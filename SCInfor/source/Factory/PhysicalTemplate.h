@@ -7,7 +7,7 @@
 #ifndef H_PHYSICAL_TEMPLATE_JACK
 #define H_PHYSICAL_TEMPLATE_JACK
 
-#include "../ResourceManager/IResource.h"
+#include "../ResourceManager/Resource.h"
 #include "../Logic/Physical/Physical.h"
 #include "../Logic/PhysicalManager.h"
 #include "../XML/CXml.h"
@@ -24,7 +24,7 @@ namespace factory
 	///
 	///Klasa reprezentuje prawzorzec wszystkich wzorców
 	///
-	class PhysicalTemplate : public IResource
+	class PhysicalTemplate : public Resource
 	{
 		RTTI_DECL;
 
@@ -106,7 +106,7 @@ namespace factory
 	protected:
 
 		std::string m_templ_filename; //nazwa pliku xml
-		std::string m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+		std::string m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 		std::wstring m_templ_genre; //nazwa "gatunku" obiektu (np. robot, human, gun, etc.)
 		float m_templ_circle_radius; //promień detekcji kolizji
 		sf::Vector2f m_templ_rect_size; //wektor przechowujący rozmiar obszaru prostokątnego

@@ -301,12 +301,12 @@
     <ClCompile Include="source\Rendering\Drawable\Drawable.cpp" />
     <ClCompile Include="source\Rendering\Particle\Particle.cpp" />
     <ClCompile Include="source\Rendering\Particle\ParticleState.cpp" />
-    <ClCompile Include="source\ResourceManager\CFont.cpp" />
-    <ClCompile Include="source\ResourceManager\CMusic.cpp" />
-    <ClCompile Include="source\ResourceManager\CResourceManager.cpp" />
-    <ClCompile Include="source\ResourceManager\CSound.cpp" />
-    <ClCompile Include="source\ResourceManager\CTexture.cpp" />
-    <ClCompile Include="source\ResourceManager\IResource.cpp" />
+    <ClCompile Include="source\ResourceManager\Font.cpp" />
+    <ClCompile Include="source\ResourceManager\Music.cpp" />
+    <ClCompile Include="source\ResourceManager\ResourceManager.cpp" />
+    <ClCompile Include="source\ResourceManager\Sound.cpp" />
+    <ClCompile Include="source\ResourceManager\RTexture.cpp" />
+    <ClCompile Include="source\ResourceManager\Resource.cpp" />
     <ClCompile Include="source\RTTI\RTTI.cpp" />
     <ClCompile Include="source\Universe\CUniverse.cpp" />
     <ClCompile Include="source\Universe\Galaxy\CGalaxy.cpp" />
@@ -342,9 +342,6 @@
     <ClCompile Include="source\Weather\CWeather.cpp" />
     <ClCompile Include="source\Weather\CWind.cpp" />
     <ClCompile Include="source\XML\CXml.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="notes\notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Collision\Collision.h" />
@@ -547,12 +544,12 @@
     <ClInclude Include="source\Rendering\Drawable\Layers.h" />
     <ClInclude Include="source\Rendering\Particle\Particle.h" />
     <ClInclude Include="source\Rendering\Particle\ParticleState.h" />
-    <ClInclude Include="source\ResourceManager\CFont.h" />
-    <ClInclude Include="source\ResourceManager\CMusic.h" />
-    <ClInclude Include="source\ResourceManager\CResourceManager.h" />
-    <ClInclude Include="source\ResourceManager\CSound.h" />
-    <ClInclude Include="source\ResourceManager\CTexture.h" />
-    <ClInclude Include="source\ResourceManager\IResource.h" />
+    <ClInclude Include="source\ResourceManager\Font.h" />
+    <ClInclude Include="source\ResourceManager\Music.h" />
+    <ClInclude Include="source\ResourceManager\ResourceManager.h" />
+    <ClInclude Include="source\ResourceManager\Sound.h" />
+    <ClInclude Include="source\ResourceManager\RTexture.h" />
+    <ClInclude Include="source\ResourceManager\Resource.h" />
     <ClInclude Include="source\RTTI\RTTI.h" />
     <ClInclude Include="source\Universe\CUniverse.h" />
     <ClInclude Include="source\Universe\Galaxy\CGalaxy.h" />
@@ -599,6 +596,9 @@
     <ClInclude Include="source\XML\RapidXML\rapidxml_iterators.hpp" />
     <ClInclude Include="source\XML\RapidXML\rapidxml_print.hpp" />
     <ClInclude Include="source\XML\RapidXML\rapidxml_utils.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="notes\notes.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

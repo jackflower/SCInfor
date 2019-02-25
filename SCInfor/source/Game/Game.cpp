@@ -8,9 +8,9 @@
 #include <iostream>
 #include <string>
 #include "Game.h"
-#include "../ResourceManager/CResourceManager.h"
-#include "../ResourceManager/CTexture.h"
-#include "../ResourceManager/CFont.h"
+#include "../ResourceManager/ResourceManager.h"
+#include "../ResourceManager/RTexture.h"
+#include "../ResourceManager/Font.h"
 #include "../Rendering/Animations/AnimationManager.h"
 #include "../Rendering/Drawable/DrawableManager.h"
 #include "../Rendering/Displayable/Displayable.h"
@@ -263,7 +263,7 @@ namespace game
 		gCharSetManager.InitializeValidChars("../data/xml_data/gameconfiguration/unicode-cheatsheet.xml");
 
 		//bardzo źle napisane...można poniższe opakować do jakiejś klasy/metody?
-		CFont font = *gResourceManager.GetFont("../data/fonts/tahoma.ttf");
+		resource::Font font = *gResourceManager.getFont("../data/fonts/tahoma.ttf");
 		m_fps_text.setString("ZaczynamyęęśśććźźĄĄ");
 		m_fps_text.setFont(font);
 		m_fps_text.setCharacterSize(20);
@@ -374,7 +374,7 @@ void game::Game::gameTest()
 
 
 	//p h y s i c a l - obiekt testowy - mam być tylko jeden tej klasy (respawn używa innych)
-	PhysicalTemplate *p_enemy_factory = gResourceManager.GetPhysicalTemplate(file_name);
+	PhysicalTemplate *p_enemy_factory = gResourceManager.getPhysicalTemplate(file_name);
 	Physical *p_enemy = p_enemy_factory->create(L"ID_Enemy");
 	if (p_enemy)
 	{

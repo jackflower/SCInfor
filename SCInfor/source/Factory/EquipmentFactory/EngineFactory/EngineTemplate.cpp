@@ -6,7 +6,7 @@
 
 #include "EngineTemplate.h"
 #include "../../../Rendering/Animations/AnimSet.h"
-#include "../../../ResourceManager/CResourceManager.h"
+#include "../../../ResourceManager/ResourceManager.h"
 
 using namespace resource;
 
@@ -98,7 +98,7 @@ namespace factory
 			m_templ_fueltank_data.setEmiter(xml.GetFloat(node, "fuel_tank_emiter_x"), xml.GetFloat(node, "fuel_tank_emiter_y"));
 
 			if(m_templ_fueltank_data.getUseEquipment())
-				p_templ_fuel_tank = (FuelTankTemplate*)gResourceManager.GetPhysicalTemplate(fueltank_filename_tmp);
+				p_templ_fuel_tank = (FuelTankTemplate*)gResourceManager.getPhysicalTemplate(fueltank_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

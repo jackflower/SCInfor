@@ -11,7 +11,7 @@
 #include "../Game/Game.h"
 #include "../Rendering/Drawable/DrawableManager.h"
 //#include "../Rendering/Camera/CCamera.h"
-#include "../ResourceManager/CResourceManager.h"
+#include "../ResourceManager/ResourceManager.h"
 //#include "../Logic/Player.h"
 //#include "../Logic/CPlayerManager.h"
 #include <SFML/Graphics/Rect.hpp>
@@ -56,10 +56,10 @@ namespace mapengine
 		//if (p_scene_manager)
 		//	delete p_scene_manager;
 		if (p_map)
-			gResourceManager.DropResource(p_map->getFilename());
+			gResourceManager.dropResource(p_map->getFilename());
 
 		for (unsigned i = 0; i < m_visited_maps.size(); i++)
-			gResourceManager.DropResource(m_visited_maps[i]->getFilename());
+			gResourceManager.dropResource(m_visited_maps[i]->getFilename());
 
 		m_visited_maps.clear();
 	}
@@ -128,7 +128,7 @@ namespace mapengine
 				//gBossManager.ClearData();
 		//jeszcze tego nie mam...
 
-		p_map = gResourceManager.GetMap( map_file );
+		p_map = gResourceManager.getMap( map_file );
 		if ( p_map )
 		{
 			fprintf( stderr, "mapFile = %s\n", map_file.c_str() );

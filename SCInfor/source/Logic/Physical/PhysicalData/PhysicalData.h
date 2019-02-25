@@ -10,7 +10,7 @@
 #include "../../Physics/PhysicsData.h"
 #include "../../../RTTI/RTTI.h"
 #include "../../../Logic/Physical/EPhysicalPart.h"
-#include "../../../ResourceManager/CTexture.h"
+#include "../../../ResourceManager/RTexture.h"
 
 using namespace resource;
 
@@ -877,7 +877,7 @@ namespace physicaldata
 		int m_z_index_shadow_head; //indeks warstwy rysowania (head shadow)
 		std::string m_texture_body; //nazwa tekstury reprezentacji graficznej obiektu - body
 		std::string m_texture_head; //nazwa tekstury reprezentacji graficznej obiektu - head
-		CTexture *p_synthetic_texture; //wskaźnik na obiekt klasy CTexture - wykorzytywany przy tworzeniu syntetycznej tekstury
+		RTexture *p_synthetic_texture; //wskaźnik na obiekt klasy RTexture - wykorzytywany przy tworzeniu syntetycznej tekstury
 		sf::Image *p_synthetic_image; //wskaźnik na obiekt klasy sf::Image - wykorzytywany przy tworzeniu syntetycznego obrazu
 		sf::Texture p_texture; //obiekt klasy sf::Texture - obiekt pomozniczy
 

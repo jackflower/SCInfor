@@ -13,12 +13,12 @@ using namespace charsettools;
 
 namespace factory
 {
-	RTTI_IMPL(PresentationTemplate, IResource);
+	RTTI_IMPL(PresentationTemplate, Resource);
 	
 	//Konstruktor
 	PresentationTemplate::PresentationTemplate(void)
 	:
-		IResource(),//konstruktor klasy bazowej
+		Resource(),//konstruktor klasy bazowej
 		m_templ_filename(""),
 		m_templ_type(""),
 		m_templ_tranformable(),
@@ -36,7 +36,7 @@ namespace factory
 	//Destruktor wirtualny
 	PresentationTemplate::~PresentationTemplate(void)
 	{
-		//IResource
+		//Resource
 		m_templ_filename = "";
 		m_templ_type = "";
 		//m_templ_tranformable

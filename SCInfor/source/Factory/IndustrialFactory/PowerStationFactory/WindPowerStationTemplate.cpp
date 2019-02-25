@@ -6,7 +6,7 @@
 
 #include "WindPowerStationTemplate.h"
 #include "../../../Rendering/Animations/AnimSet.h"
-#include "../../../ResourceManager/CResourceManager.h"
+#include "../../../ResourceManager/ResourceManager.h"
 using namespace resource;
 
 namespace factory
@@ -81,7 +81,7 @@ namespace factory
 			std::string windturbine_filename_tmp = xml.GetString(node, "windturbine_filename");
 			
 			if(m_templ_use_windturbine)
-				p_templ_windturbine = (WindTurbineTemplate*)gResourceManager.GetPhysicalTemplate(windturbine_filename_tmp);
+				p_templ_windturbine = (WindTurbineTemplate*)gResourceManager.getPhysicalTemplate(windturbine_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

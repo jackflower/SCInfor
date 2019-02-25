@@ -8,12 +8,12 @@
 
 namespace factory
 {
-	RTTI_IMPL(FuelBarTemplate, IResource);
+	RTTI_IMPL(FuelBarTemplate, Resource);
 
 	//Konstruktor
 	FuelBarTemplate::FuelBarTemplate()
 	:
-		IResource(),//konstruktor klasy bazowej
+		Resource(),//konstruktor klasy bazowej
 		m_templ_fuelbar_name(),
 		m_templ_thickness(0.0f),
 		m_templ_size(0.0f, 0.0f),
@@ -25,7 +25,7 @@ namespace factory
 	//Destruktor
 	FuelBarTemplate::~FuelBarTemplate()
 	{
-		//IResource
+		//Resource
 		m_templ_fuelbar_name= "";
 		m_templ_thickness = 0.0f;
 		m_templ_size.x = 0.0f;

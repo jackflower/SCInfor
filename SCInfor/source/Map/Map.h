@@ -9,7 +9,7 @@
 
 #include <vector>
 #include <SFML/Graphics/Rect.hpp>
-#include "../ResourceManager/IResource.h"
+#include "../ResourceManager/Resource.h"
 #include "MapHeader.h"
 #include "Tile/Tile.h"
 #include "Tile/MapTileType.h"
@@ -45,7 +45,7 @@ namespace mapengine
 	///
 	///Klasa reprezentuje mapę gry - mapa świata gry
 	///
-	class Map : public IResource
+	class Map : public Resource
 	{
 		RTTI_DECL;
 

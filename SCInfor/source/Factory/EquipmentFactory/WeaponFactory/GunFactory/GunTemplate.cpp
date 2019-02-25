@@ -5,7 +5,7 @@
 //
 
 #include "GunTemplate.h"
-#include "../../../../ResourceManager/CResourceManager.h"
+#include "../../../../ResourceManager/ResourceManager.h"
 #include "../../../../Rendering/Animations/AnimSet.h"
 #include "../../../../Rendering/Displayable/Displayable.h"
 #include "../../../../Utilities/Random/CRandom.h"
@@ -93,7 +93,7 @@ namespace factory
 			m_templ_ammo_data.setEmiter(xml.GetFloat(node, "ammo_emiter_x"), xml.GetFloat(node, "ammo_emiter_y"));
 
 			if (m_templ_ammo_data.getUseEquipment())
-				p_templ_ammo = (AmmoTemplate*)gResourceManager.GetPhysicalTemplate(ammo_filename_tmp);
+				p_templ_ammo = (AmmoTemplate*)gResourceManager.getPhysicalTemplate(ammo_filename_tmp);
 	
 			m_templ_time_ammo_load_delay = xml.GetFloat(node, "time_ammo_load_delay");
 			m_templ_time_shot = xml.GetFloat(node, "time_shot");

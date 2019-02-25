@@ -7,7 +7,7 @@
 #ifndef H_INFORMATION_TEMPLATE_JACK
 #define H_INFORMATION_TEMPLATE_JACK
 
-#include "../../ResourceManager/IResource.h"
+#include "../../ResourceManager/Resource.h"
 #include "../../Information/Information.h"
 #include "../../XML/CXml.h"
 #include "../../RTTI/RTTI.h"
@@ -22,7 +22,7 @@ namespace factory
 	///
 	///Klasa reprezentuje prawzorzec wszystkich wzorców
 	///
-	class InformationTemplate : public IResource
+	class InformationTemplate : public Resource
 	{
 		RTTI_DECL;
 
@@ -87,7 +87,7 @@ namespace factory
 		}
 
 		///
-		///Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+		///Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 		///
 		inline const std::string & getTypeName() const
 		{
@@ -165,7 +165,7 @@ namespace factory
 	protected:
 
 		std::string m_templ_filename; //nazwa pliku xml
-		std::string m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+		std::string m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 		Displayable *p_templ_digit_displayable; //wskaźnik na graficzną reprezentację obiektu - cyfra
 		Displayable *p_templ_mask_displayable; //wskaźnik na graficzną reprezentację obiektu - maska
 		std::string m_templ_texture_digit_name;	//nazwa tekstury - digit

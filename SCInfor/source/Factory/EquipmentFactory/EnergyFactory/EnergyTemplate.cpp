@@ -6,7 +6,7 @@
 
 #include "EnergyTemplate.h"
 #include "../../../Rendering/Animations/AnimSet.h"
-#include "../../../ResourceManager/CResourceManager.h"
+#include "../../../ResourceManager/ResourceManager.h"
 
 using namespace resource;
 
@@ -105,7 +105,7 @@ namespace factory
 			m_templ_energytank_data.setEmiter(xml.GetFloat(node, "energytank_emiter_x"), xml.GetFloat(node, "energytank_emiter_y"));
 
 			if(m_templ_energytank_data.getUseEquipment())
-				p_templ_energy_tank = (EnergyTankTemplate*)gResourceManager.GetPhysicalTemplate(energytank_filename_tmp);
+				p_templ_energy_tank = (EnergyTankTemplate*)gResourceManager.getPhysicalTemplate(energytank_filename_tmp);
 		}
 
 		//ładowanie konfiguracji battery
@@ -121,7 +121,7 @@ namespace factory
 			m_templ_battery_data.setEmiter(xml.GetFloat(node, "battery_emiter_x"), xml.GetFloat(node, "battery_emiter_y"));
 
 			if(m_templ_battery_data.getUseEquipment())
-				p_templ_battery = (BatteryTemplate*)gResourceManager.GetPhysicalTemplate(battery_filename_tmp);
+				p_templ_battery = (BatteryTemplate*)gResourceManager.getPhysicalTemplate(battery_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

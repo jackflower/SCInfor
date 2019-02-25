@@ -6,7 +6,7 @@
 
 #include "PowerStationTemplate.h"
 #include "../../../Rendering/Animations/AnimSet.h"
-#include "../../../ResourceManager/CResourceManager.h"
+#include "../../../ResourceManager/ResourceManager.h"
 #include "../../EquipmentFactory/CommunicationFactory/CommunicationTemplate.h"
 
 using namespace resource;
@@ -82,7 +82,7 @@ namespace factory
 			mm_templ_communication_data.setEmiter(xml.GetFloat(node, "communication_emiter_x"), xml.GetFloat(node, "communication_emiter_y"));
 
 			if(mm_templ_communication_data.getUseEquipment())
-				p_templ_communication = (CommunicationTemplate*)gResourceManager.GetPhysicalTemplate(communication_filename_tmp);
+				p_templ_communication = (CommunicationTemplate*)gResourceManager.getPhysicalTemplate(communication_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

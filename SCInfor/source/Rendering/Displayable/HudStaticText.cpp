@@ -80,14 +80,14 @@ namespace rendering
 		//Metoda ustawia czcionkę graficzną tekstu dla obiektu klasy sf::String
 		void HudStaticText::setFont(const std::string & font)
 		{
-			p_font = gResourceManager.GetFont(font);
+			p_font = gResourceManager.getFont(font);
 			p_text->setFont(*p_font);
 		}
 
 		//Metoda ustawia czcionkę graficzną tekstu dla obiektu klasy sf::String
 		void HudStaticText::setFont(const std::string & font, unsigned int size)
 		{
-			p_font = gResourceManager.GetFont(font);
+			p_font = gResourceManager.getFont(font);
 			p_text->setFont(*p_font);
 			if (m_font_size != size)//nie ma sensu kopiowanie danych, gdy są takie same
 				p_text->setCharacterSize(m_font_size);

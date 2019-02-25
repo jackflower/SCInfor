@@ -7,7 +7,7 @@
 #ifndef H_MAP_PHYSICAL_TEMPLATE_JACK
 #define H_MAP_PHYSICAL_TEMPLATE_JACK
 
-#include "../../ResourceManager/IResource.h"
+#include "../../ResourceManager/Resource.h"
 #include "../../Map/MapPhysical/MapPhysical.h"
 #include "../../Logic/MapPhysicalManager.h"
 #include "../../XML/CXml.h"
@@ -25,7 +25,7 @@ namespace factory
 	///Klasa reprezentuje wzorzec fabryczny dla obiektów logicznych i posiadających 
 	///reprezentację graficzną, które mogą być zarządzane i umieszczone na mapie
 	///
-	class MapPhysicalTemplate : public IResource
+	class MapPhysicalTemplate : public Resource
 	{
 		RTTI_DECL;
 
@@ -101,12 +101,12 @@ namespace factory
 		void setFilename(const std::string & templ_filename);
 
 		///
-		///Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+		///Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 		///
 		const std::string getTypeName() const;
 
 		///
-		///Metoda ustawia typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+		///Metoda ustawia typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 		///
 		///@param templ_type - typ obiektu odczytanego z xml'a - stała referencja na obiekt klasy std::string
 		///
@@ -139,7 +139,7 @@ namespace factory
 	protected:
 
 		std::string	 m_templ_filename; //nazwa pliku xml
-		std::string	 m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+		std::string	 m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 		std::string	 m_templ_code; //nazwa kodu dla typu podłoża (nazwa w tablicy 2D - zapisanej w pliku xml)
 		std::string m_templ_displayable_type; //typ graficznej reprezentacji obiektu
 		//graficzna reprezentacja obiektu

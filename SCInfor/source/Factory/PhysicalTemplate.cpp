@@ -8,12 +8,12 @@
 
 namespace factory
 {
-	RTTI_IMPL(PhysicalTemplate, IResource);
+	RTTI_IMPL(PhysicalTemplate, Resource);
 
 	//Konstruktor
 	PhysicalTemplate::PhysicalTemplate()
 	:
-		IResource(),//konstruktor klasy bazowej
+		Resource(),//konstruktor klasy bazowej
 		m_templ_filename(),
 		m_templ_type(),
 		m_templ_genre(),
@@ -39,7 +39,7 @@ namespace factory
 	//Destruktor
 	PhysicalTemplate::~PhysicalTemplate()
 	{
-		//~IResource()
+		//~Resource()
 		m_templ_filename = "";
 		m_templ_type = "";
 		m_templ_genre = L"";

@@ -6,7 +6,7 @@
 
 #include "SlotsRateTemplate.h"
 #include "../../../../Rendering/Animations/AnimSet.h"
-#include "../../../../ResourceManager/CResourceManager.h"
+#include "../../../../ResourceManager/ResourceManager.h"
 
 namespace factory
 {

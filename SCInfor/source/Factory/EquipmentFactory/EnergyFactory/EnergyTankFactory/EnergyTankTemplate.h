@@ -7,7 +7,7 @@
 #ifndef H_ENERGY_TANK_TEMPLATE_JACK
 #define H_ENERGY_TANK_TEMPLATE_JACK
 
-#include "../../../../ResourceManager/IResource.h"
+#include "../../../../ResourceManager/Resource.h"
 #include "../../../../Factory/ActorTemplate.h"
 #include "../../../../XML/CXml.h"
 #include "../../../../RTTI/RTTI.h"

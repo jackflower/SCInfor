@@ -17,7 +17,7 @@
 #include "../Logic/Actor/Actor.h"
 #include "../XML/CXml.h"
 #include "../Rendering/Animations/AnimSet.h"
-#include "../ResourceManager/CResourceManager.h"
+#include "../ResourceManager/ResourceManager.h"
 #include "../Rendering/Displayable/Displayable.h"
 #include "../Weather/CWeather.h"
 
@@ -153,7 +153,7 @@ namespace factory
 			m_templ_engine_data.setEmiter(xml.GetFloat(node, "engine_emiter_x"), xml.GetFloat(node, "engine_emiter_y"));
 
 			if(m_templ_engine_data.getUseEquipment())
-				p_templ_engine = (EngineTemplate*)gResourceManager.GetPhysicalTemplate(engine_filename_tmp);
+				p_templ_engine = (EngineTemplate*)gResourceManager.getPhysicalTemplate(engine_filename_tmp);
 		}
 
 		//ładowanie nazwy pliku z konfiguracją physical_info 
@@ -165,7 +165,7 @@ namespace factory
 			std::string physical_info_filename_tmp = xml.GetString(node, "physical_info_filename");
 
 			if(m_templ_use_physical_info)
-				p_templ_physical_info = (PhysicalInfoTemplate*)gResourceManager.GetPhysicalTemplate(physical_info_filename_tmp);
+				p_templ_physical_info = (PhysicalInfoTemplate*)gResourceManager.getPhysicalTemplate(physical_info_filename_tmp);
 		}
 
 		//ładowanie nazwy pliku z konfiguracją energy
@@ -180,7 +180,7 @@ namespace factory
 			m_templ_energy_data.setEmiter(xml.GetFloat(node, "energy_emiter_x"), xml.GetFloat(node, "energy_emiter_y"));
 			
 			if(m_templ_energy_data.getUseEquipment())
-				p_templ_energy = (EnergyTemplate*)gResourceManager.GetPhysicalTemplate(energy_filename_tmp);
+				p_templ_energy = (EnergyTemplate*)gResourceManager.getPhysicalTemplate(energy_filename_tmp);
 		}
 
 		//ładowanie modułu klimatyzatora
@@ -195,7 +195,7 @@ namespace factory
 			m_templ_airconditioning_data.setEmiter(xml.GetFloat(node, "airconditioning_emiter_x"), xml.GetFloat(node, "airconditioning_emiter_y"));
 			
 			if(m_templ_airconditioning_data.getUseEquipment())
-				p_templ_airconditioning = (AirconditioningTemplate*)gResourceManager.GetPhysicalTemplate(airconditioning_filename_tmp);
+				p_templ_airconditioning = (AirconditioningTemplate*)gResourceManager.getPhysicalTemplate(airconditioning_filename_tmp);
 		}
 
 		//ładowanie modułu wentylatora
@@ -210,7 +210,7 @@ namespace factory
 			m_templ_ventilator_data.setEmiter(xml.GetFloat(node, "ventilator_emiter_x"), xml.GetFloat(node, "ventilator_emiter_y"));
 
 			if(m_templ_ventilator_data.getUseEquipment())
-				p_templ_ventilator = (VentilatorTemplate*)gResourceManager.GetPhysicalTemplate(ventilator_filename_tmp);
+				p_templ_ventilator = (VentilatorTemplate*)gResourceManager.getPhysicalTemplate(ventilator_filename_tmp);
 		}
 
 		//ładowanie modułu działa (dopisać w xml'u)...
@@ -225,7 +225,7 @@ namespace factory
 			m_templ_gun_data.setEmiter(xml.GetFloat(node, "gun_emiter_x"), xml.GetFloat(node, "gun_emiter_y"));
 
 			if (m_templ_gun_data.getUseEquipment())
-				p_templ_gun = (GunTemplate*)gResourceManager.GetPhysicalTemplate(gun_filename_tmp);
+				p_templ_gun = (GunTemplate*)gResourceManager.getPhysicalTemplate(gun_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

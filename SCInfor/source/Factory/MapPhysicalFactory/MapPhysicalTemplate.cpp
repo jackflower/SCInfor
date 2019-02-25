@@ -8,12 +8,12 @@
 
 namespace factory
 {
-	RTTI_IMPL(MapPhysicalTemplate, IResource);
+	RTTI_IMPL(MapPhysicalTemplate, Resource);
 
 	//Konstruktor
 	MapPhysicalTemplate::MapPhysicalTemplate()
 	:
-		IResource(),//konstruktor klasy bazowej
+		Resource(),//konstruktor klasy bazowej
 		m_templ_filename(),
 		m_templ_type(),
 		m_templ_code(),
@@ -33,7 +33,7 @@ namespace factory
 	//Konstruktor kopiujący
 	MapPhysicalTemplate::MapPhysicalTemplate(const MapPhysicalTemplate & MapPhysicalTemplateCopy)
 	:
-		IResource(MapPhysicalTemplateCopy),//konstruktor kopiujący klasy bazowej
+		Resource(MapPhysicalTemplateCopy),//konstruktor kopiujący klasy bazowej
 		m_templ_filename(MapPhysicalTemplateCopy.m_templ_filename),
 		m_templ_type(MapPhysicalTemplateCopy.m_templ_type),
 		m_templ_code(MapPhysicalTemplateCopy.m_templ_code),
@@ -53,7 +53,7 @@ namespace factory
 	//Destruktor wirtualny
 	MapPhysicalTemplate::~MapPhysicalTemplate()
 	{
-		//IResource
+		//Resource
 		m_templ_filename = "";
 		m_templ_type = "";
 		m_templ_code = "";
@@ -96,7 +96,7 @@ namespace factory
 		//nazwa pliku xml
 		m_templ_filename = xml.GetFilename();
 
-		//typ obiektu - CResourceManager - na tej podstawie tworzy MapPhysical
+		//typ obiektu - ResourceManager - na tej podstawie tworzy MapPhysical
 		if (xml_node<> *node = xml.GetRootNode())
 			m_templ_type = xml.GetString(node, "type");
 
@@ -167,13 +167,13 @@ namespace factory
 		m_templ_filename = templ_filename;
 	}
 
-	//Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+	//Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 	const std::string MapPhysicalTemplate::getTypeName() const
 	{
 		return m_templ_type;
 	}
 
-	//Metoda ustawia typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+	//Metoda ustawia typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 	void MapPhysicalTemplate::setTypeName(const std::string & templ_type)
 	{
 		m_templ_type = templ_type;

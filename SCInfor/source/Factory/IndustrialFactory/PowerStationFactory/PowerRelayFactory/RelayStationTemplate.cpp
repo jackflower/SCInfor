@@ -6,7 +6,7 @@
 
 #include "RelayStationTemplate.h"
 #include "../../../../Rendering/Animations/AnimSet.h"
-#include "../../../../ResourceManager/CResourceManager.h"
+#include "../../../../ResourceManager/ResourceManager.h"
 
 using namespace resource;
 
@@ -73,7 +73,7 @@ namespace factory
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu komunikacji
 			std::string communication_filename_tmp = xml.GetString(node, "communication_filename");
 			if(m_templ_use_communication)
-				p_templ_communication = (CommunicationTemplate*)gResourceManager.GetPhysicalTemplate(communication_filename_tmp);
+				p_templ_communication = (CommunicationTemplate*)gResourceManager.getPhysicalTemplate(communication_filename_tmp);
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

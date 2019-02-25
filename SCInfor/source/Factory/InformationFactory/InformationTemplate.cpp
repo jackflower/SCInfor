@@ -15,12 +15,12 @@ template<> InformationTemplate* CSingleton<InformationTemplate>::m_singleton = 0
 
 namespace factory
 {
-	RTTI_IMPL(InformationTemplate, IResource);
+	RTTI_IMPL(InformationTemplate, Resource);
 
 	//Konstruktor
 	InformationTemplate::InformationTemplate()
 	:
-		IResource(),//konstruktor klasy bazowej
+		Resource(),//konstruktor klasy bazowej
 		m_templ_filename(""),
 		m_templ_type(""),
 		p_templ_digit_displayable(NULL),
@@ -35,7 +35,7 @@ namespace factory
 	//Destruktor
 	InformationTemplate::~InformationTemplate()
 	{
-		//IResource
+		//Resource
 		m_templ_filename = "";
 		m_templ_type = "";
 		p_templ_digit_displayable = NULL;

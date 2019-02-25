@@ -10,7 +10,7 @@
 #include <string>
 
 #include "Map.h"
-#include "../ResourceManager/CResourceManager.h"
+#include "../ResourceManager/ResourceManager.h"
 #include "../Rendering/Displayable/Displayable.h"
 #include "../Rendering/Drawable/DrawableManager.h"
 #include "../Rendering/Drawable/Layers.h"
@@ -26,7 +26,7 @@ using namespace stringutils;
 
 namespace mapengine
 {
-	RTTI_IMPL(Map, IResource);
+	RTTI_IMPL(Map, Resource);
 
 	//Konstruktor
 	Map::Map()
@@ -192,7 +192,7 @@ namespace mapengine
 			p_map_tile_type->setImageFileName(xml.GetString(node,"image"));
 			p_map_tile_type->setImageNumberInAtlas(xml.GetInt(node,"index"));
 
-			if(gResourceManager.LoadTexture(p_map_tile_type->getImageFileName()) == false)
+			if(gResourceManager.loadTexture(p_map_tile_type->getImageFileName()) == false)
 			{
 				fprintf(stderr, "Cannot load tile image file: %s", p_map_tile_type->getImageFileName().c_str());
 				ClearTiles();
@@ -241,14 +241,14 @@ namespace mapengine
 		for (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "objtype"); node; node = xml.GetSibling(node, "objtype"))
 		{
 			str_data = xml.GetString(node, "file");
-			if(gResourceManager.LoadPhysicalTemplate(str_data) == false)
+			if(gResourceManager.loadPhysicalTemplate(str_data) == false)
 			{
 				fprintf(stderr, "Cannot load object template file: %s", str_data.c_str());
 				return false;
 			}
 			p_map_object_type = new MapObjectType();
 			p_map_object_type->setCode(xml.GetString(node, "code"));
-			p_map_object_type->setTemplate(gResourceManager.GetPhysicalTemplate(str_data));
+			p_map_object_type->setTemplate(gResourceManager.getPhysicalTemplate(str_data));
 			m_map_object_types.push_back(p_map_object_type);
         }
 

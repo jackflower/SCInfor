@@ -7,7 +7,7 @@
 #ifndef H_FUEL_BAR_TEMPLATE_JACK
 #define H_FUEL_BAR_TEMPLATE_JACK
 
-#include "../../../../ResourceManager/IResource.h"
+#include "../../../../ResourceManager/Resource.h"
 #include "../../../../Factory/ActorTemplate.h"
 #include "../../../../XML/CXml.h"
 #include "../../../../RTTI/RTTI.h"
@@ -18,7 +18,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec progress bar - paliwo
 	///
-	class FuelBarTemplate : public IResource
+	class FuelBarTemplate : public Resource
 	{
 		RTTI_DECL;
 

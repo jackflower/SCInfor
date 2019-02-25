@@ -54,7 +54,7 @@ namespace physicaldata
 		m_texture_body(),
 		m_texture_head()
 	{
-		p_synthetic_texture = new CTexture();
+		p_synthetic_texture = new RTexture();
 		p_synthetic_image = new sf::Image;
 	}
 
@@ -92,7 +92,7 @@ namespace physicaldata
 		m_texture_body(PhysicalDataCopy.m_texture_body),
 		m_texture_head(PhysicalDataCopy.m_texture_head)
 	{
-		p_synthetic_texture = new CTexture();
+		p_synthetic_texture = new RTexture();
 		p_synthetic_image = new sf::Image;
 	}
 

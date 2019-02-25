@@ -7,7 +7,7 @@
 #ifndef H_PRESENTATION_TEMPLATE_JACK
 #define H_PRESENTATION_TEMPLATE_JACK
 
-#include "../../ResourceManager/IResource.h"
+#include "../../ResourceManager/Resource.h"
 #include "../../Information/Presentation.h"
 #include "../../XML/CXml.h"
 #include "../../RTTI/RTTI.h"
@@ -22,7 +22,7 @@ namespace factory
 	///
 	///Klasa reprezentuje wzorzec dla obiektu klasy Presentation
 	///
-	class PresentationTemplate : public IResource
+	class PresentationTemplate : public Resource
 	{
 		RTTI_DECL;
 
@@ -87,7 +87,7 @@ namespace factory
 		}
 
 		///
-		///Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+		///Metoda zwraca typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 		///
 		inline const std::string & getTypeName() const
 		{
@@ -260,7 +260,7 @@ namespace factory
 	protected:
 
 		std::string m_templ_filename; //nazwa pliku xml
-		std::string m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie którego CResourceManager tworzy zasób
+		std::string m_templ_type; //typ obiektu odczytanego z xml'a, na podstawie którego ResourceManager tworzy zasób
 		sf::Transformable m_templ_tranformable;	//opakowanie danych do transformacji geometrycznej
 		std::string m_templ_font_name; //nazwa czcionki
 		sf::Color m_templ_color_front; //kolor front

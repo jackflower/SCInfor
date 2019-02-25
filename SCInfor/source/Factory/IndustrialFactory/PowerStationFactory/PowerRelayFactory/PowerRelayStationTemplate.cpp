@@ -6,7 +6,7 @@
 
 #include "PowerRelayStationTemplate.h"
 #include "../../../../Rendering/Animations/AnimSet.h"
-#include "../../../../ResourceManager/CResourceManager.h"
+#include "../../../../ResourceManager/ResourceManager.h"
 #include "../../../../Utilities/Random/CRandom.h"
 
 using namespace resource;
@@ -97,7 +97,7 @@ namespace factory
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu prezentacji stanu slotów
 			std::string slots_rate_filename_tmp = xml.GetString(node, "slots_rate_filename");
 			if (m_templ_use_slots_rate)
-				p_templ_slot_rate = (SlotsRateTemplate*)gResourceManager.GetPhysicalTemplate(slots_rate_filename_tmp);
+				p_templ_slot_rate = (SlotsRateTemplate*)gResourceManager.getPhysicalTemplate(slots_rate_filename_tmp);
 		}
 
 		//ładowanie modułu baterii slotów przekaźnika
@@ -108,7 +108,7 @@ namespace factory
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu prezentacji stanu slotów
 			std::string battery_filename_tmp = xml.GetString(node, "battery_filename");
 			if (m_templ_use_battery)
-				p_templ_battery = (BatteryTemplate*)gResourceManager.GetPhysicalTemplate(battery_filename_tmp);
+				p_templ_battery = (BatteryTemplate*)gResourceManager.getPhysicalTemplate(battery_filename_tmp);
 		}
 
 

@@ -6,7 +6,7 @@
 
 #include "CommunicationTemplate.h"
 #include "../../../Rendering/Animations/AnimSet.h"
-#include "../../../ResourceManager/CResourceManager.h"
+#include "../../../ResourceManager/ResourceManager.h"
 
 using namespace resource;
 
