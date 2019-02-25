@@ -13,16 +13,16 @@ namespace animated
 	// Konstruktor domyślny
 	Animated::Animated()
 	:
-		Sprite(),
-		m_time(m_default_time),
-		m_elapsedtime(0),
-		m_paused(false),
-		m_loop(true),
-		p_animation(NULL),
-		m_currentframe(0),
-		m_lastanimframe(0),
-		m_default_anim_mode(true),
-		m_animation_spped(1.f)
+		Sprite{},
+		m_time{ m_default_time },
+		m_elapsedtime{ 0 },
+		m_paused{ false },
+		m_loop{ true },
+		p_animation{ NULL },
+		m_currentframe{ 0 },
+		m_lastanimframe{ 0 },
+		m_default_anim_mode{ true },
+		m_animation_spped{ 1.f }
 	{
 		setFrame(0);
 		setOrigin(getGlobalBounds().width * 0.5f, getGlobalBounds().height * 0.5f);
@@ -31,32 +31,32 @@ namespace animated
 	//Konstruktor kopiujący
 	Animated::Animated(const Animated & copy)
 	:
-		Sprite(copy), //konstruktor kopiujący klasy bazowej
-		m_time(copy.m_time),
-		m_elapsedtime(copy.m_elapsedtime),
-		m_paused(copy.m_paused),
-		m_loop(copy.m_loop),
-		p_animation(copy.p_animation),
-		m_currentframe(copy.m_currentframe),
-		m_lastanimframe(copy.m_lastanimframe),
-		m_default_anim_mode(copy.m_default_anim_mode),
-		m_animation_spped(copy.m_animation_spped)
+		Sprite{ copy }, //konstruktor kopiujący klasy bazowej
+		m_time{ copy.m_time },
+		m_elapsedtime{ copy.m_elapsedtime },
+		m_paused{ copy.m_paused },
+		m_loop{ copy.m_loop },
+		p_animation{ copy.p_animation },
+		m_currentframe{ copy.m_currentframe },
+		m_lastanimframe{ copy.m_lastanimframe },
+		m_default_anim_mode{ copy.m_default_anim_mode },
+		m_animation_spped{ copy.m_animation_spped }
 	{
 	}
 
 	//Konstruktor przenoszący
 	Animated::Animated(Animated && other)
 	:
-		Sprite(other), //konstruktor przenoszący klasy bazowej
-		m_time(std::move(other.m_time)),
-		m_elapsedtime(std::move(other.m_elapsedtime)),
-		m_paused(std::move(other.m_paused)),
-		m_loop(std::move(other.m_loop)),
+		Sprite{ other }, //konstruktor przenoszący klasy bazowej
+		m_time{ other.m_time },
+		m_elapsedtime{ other.m_elapsedtime },
+		m_paused{ other.m_paused },
+		m_loop{ other.m_loop },
 		//kopiujemy pod wskaźnik dane obiektu źródłowego
-		p_animation(std::move(other.p_animation)),
-		m_currentframe(std::move(other.m_currentframe)),
-		m_lastanimframe(std::move(other.m_lastanimframe)),
-		m_animation_spped(std::move(other.m_animation_spped))
+		p_animation{ other.p_animation },
+		m_currentframe{ other.m_currentframe },
+		m_lastanimframe{ other.m_lastanimframe },
+		m_animation_spped{ other.m_animation_spped }
 
 	{
 		//zerujemy składowe obiektu źródłowego...
@@ -75,16 +75,16 @@ namespace animated
 	// Konstruktor parametryczny
 	Animated::Animated(AnimatedAnimation* p_animation, bool play, bool loop, float time)
 	:
-		Sprite(), //konstruktor klasy bazowej
-		m_time(time),
-		m_elapsedtime(time),
-		m_paused(!play),
-		m_loop(loop),
-		p_animation(p_animation),
-		m_currentframe(0),
-		m_lastanimframe(0),
-		m_default_anim_mode(true),
-		m_animation_spped(1.f)
+		Sprite{}, //konstruktor klasy bazowej
+		m_time{ time },
+		m_elapsedtime{ time },
+		m_paused{ !play },
+		m_loop{ loop },
+		p_animation{ p_animation },
+		m_currentframe{ 0 },
+		m_lastanimframe{ 0 },
+		m_default_anim_mode{ true },
+		m_animation_spped{ 1.f }
 	{
 		setFrame(0);
 		setOrigin(getGlobalBounds().width * 0.5f, getGlobalBounds().height * 0.5f);

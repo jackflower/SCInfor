@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Collision\Collision.cpp" />
     <ClCompile Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory\MagazineAmmunitionTemplate.cpp" />
     <ClCompile Include="source\Equipment\Switch.cpp" />
     <ClCompile Include="source\Equipment\Energy\Battery\Battery.cpp" />
@@ -346,6 +347,7 @@
     <Text Include="notes\notes.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Collision\Collision.h" />
     <ClInclude Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory\MagazineAmmunitionTemplate.h" />
     <ClInclude Include="source\Equipment\Switch.h" />
     <ClInclude Include="source\Equipment\Energy\Battery\Battery.h" />

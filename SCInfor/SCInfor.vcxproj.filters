@@ -1005,6 +1005,9 @@
     <ClCompile Include="source\Rendering\Drawable\DrawableManager.cpp">
       <Filter>source\Rendering\Drawable</Filter>
     </ClCompile>
+    <ClCompile Include="source\Collision\Collision.cpp">
+      <Filter>source\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt">
@@ -1764,6 +1767,9 @@
     </ClInclude>
     <ClInclude Include="source\Rendering\Drawable\DrawableManager.h">
       <Filter>source\Rendering\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Collision\Collision.h">
+      <Filter>source\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
