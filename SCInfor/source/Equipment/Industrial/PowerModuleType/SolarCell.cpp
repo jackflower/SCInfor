@@ -5,7 +5,7 @@
 //
 
 #include "SolarCell.h"
-#include "../../../Weather/CWeather.h"
+#include "../../../Weather/Weather.h"
 #include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"

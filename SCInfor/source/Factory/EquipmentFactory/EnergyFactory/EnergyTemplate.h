@@ -57,9 +57,9 @@ namespace factory
 		///
 		///Wirtualna metoda ładująca dane z xml
 		///
-		///@param xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy Xml
 		///
-		virtual bool load(CXml & xml);
+		virtual bool load(Xml & xml);
 
 		///
 		///Metoda tworzy obiekt klasy Energy

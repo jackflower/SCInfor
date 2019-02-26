@@ -53,26 +53,26 @@ namespace factory
 	//Metoda ładująca dane
 	bool WindTurbineTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool WindTurbineTemplate::load(CXml & xml)
+	bool WindTurbineTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji dla turbiny
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "turbine_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "turbine_config"))
 		{
-			m_templ_turbine_name = xml.GetString(node, "turbine_name");
-			m_templ_speed_rotor = xml.GetFloat(node, "speed_rotor");
-			m_templ_speed_transmission = xml.GetFloat(node, "speed_transmission");
-			m_templ_energy_capacitor = xml.GetFloat(node, "energy_capacitor");
-			m_templ_power = xml.GetFloat(node, "power_turbine");
-			m_templ_percentage_activation = xml.GetFloat(node, "percentage_activation");
-			m_templ_energy_full_duration = xml.GetFloat(node, "energy_full_duration");
+			m_templ_turbine_name = xml.getString(node, "turbine_name");
+			m_templ_speed_rotor = xml.getFloat(node, "speed_rotor");
+			m_templ_speed_transmission = xml.getFloat(node, "speed_transmission");
+			m_templ_energy_capacitor = xml.getFloat(node, "energy_capacitor");
+			m_templ_power = xml.getFloat(node, "power_turbine");
+			m_templ_percentage_activation = xml.getFloat(node, "percentage_activation");
+			m_templ_energy_full_duration = xml.getFloat(node, "energy_full_duration");
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

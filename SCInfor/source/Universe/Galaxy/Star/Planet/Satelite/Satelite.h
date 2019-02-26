@@ -1,10 +1,8 @@
-/*
- ______________________________________
-| CSatelite.h - definicja klasy.       |
-| Jack Flower - May 2014.              |
-|______________________________________|
-
-*/
+//  _____________________________________
+// | Satelite.h - class definition klasy |
+// | Jack Flower - May 2014              |
+// |_____________________________________|
+//
 
 #ifndef H_SATELITE_JACK
 #define H_SATELITE_JACK
@@ -29,7 +27,7 @@ namespace universe
 					///
 					///Klasa reprezentuje satelitê
 					///
-					class CSatelite
+					class Satelite
 					{
 						RTTI_DECL;
 
@@ -38,24 +36,45 @@ namespace universe
 						///
 						///Knstruktor
 						///
-						CSatelite(void);
+						Satelite();
 
 						///
 						///Konstruktor kopiuj¹cy
 						///
-						///@param CSatelite - sta³a referecja na obiekt klasy CSateliteCopy
+						///@param copy - sta³a referecja na obiekt klasy Satelite
 						///
-						CSatelite(const CSatelite & CSateliteCopy);
+						Satelite(const Satelite & copy);
+
+						///
+						///Konstruktor przenosz¹cy
+						///
+						///@param other - referencja do r-wartoœci
+						///
+						Satelite(Satelite && other);
 
 						///
 						///Destruktor
 						///
-						~CSatelite(void);
+						~Satelite();
+
+						///
+						///Przeci¹¿ony operator przypisania kopiowania
+						///
+						///@param copy - sta³a referencja na obiekt klasy Satelite
+						///
+						Satelite & operator=(const Satelite & copy);
+
+						///
+						///Przeci¹¿ony operator przypisania przenoszenia
+						///
+						///@param other -  referencja do r-wartoœci
+						///
+						Satelite & operator=(Satelite && other);
 
 						///
 						///Metoda zwraca typ obiektu /RTTI/
 						///
-						const std::string GetType() const;
+						const std::string getType() const;
 
 						///
 						///Metoda zwraca temperaturê satelity
@@ -83,8 +102,8 @@ namespace universe
 
 					private:
 					
-						CEntityTemperature	m_satelite_temperature;	//temperatura satelity
-						CGravity			m_satelite_gravity;		//grawitacja
+						CEntityTemperature m_satelite_temperature; //temperatura satelity
+						CGravity m_satelite_gravity; //grawitacja
 					};
 				}//namespace satelite
 			}//namespace planet

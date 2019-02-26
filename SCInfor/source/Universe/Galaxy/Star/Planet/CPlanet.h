@@ -12,7 +12,7 @@
 #include <map>
 #include <string>
 #include "../../../../RTTI/RTTI.h"
-#include "Satelite/CSatelite.h"
+#include "Satelite/Satelite.h"
 #include "../../../Interaction/CGravity.h"
 #include "../../../Interaction/CEntityTemperature.h"
 
@@ -85,7 +85,7 @@ namespace universe
 
 				private:
 				
-					typedef std::map<std::string, CSatelite*>	SateliteMap;	//definicja typu - kontener (mapa) na satelity
+					typedef std::map<std::string, Satelite*>	SateliteMap;	//definicja typu - kontener (mapa) na satelity
 					SateliteMap									m_satelite;		//kontener (mapa) na satelity
 					
 					CEntityTemperature							m_planet_temperature;	//temperatura planety

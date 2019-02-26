@@ -48,26 +48,26 @@ namespace factory
 	//Wirtualna metoda ładująca dane
 	bool FuelBarTemplate::load(const std::string &name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool FuelBarTemplate::load(CXml &xml)
+	bool FuelBarTemplate::load(Xml &xml)
 	{
 		//ładowanie danych configuracji paska paliwa
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "fuelbar_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "fuelbar_config"))
 		{
-			m_templ_fuelbar_name = xml.GetString(node, "bar_fuelbar_name");
-			m_templ_thickness = xml.GetFloat(node, "bar_thickness");
-			m_templ_size.x = xml.GetFloat(node, "bar_size_x");
-			m_templ_size.y = xml.GetFloat(node, "bar_size_y");
-			m_templ_position_offset.x = xml.GetFloat(node, "bar_position_offset_x");
-			m_templ_position_offset.y = xml.GetFloat(node, "bar_position_offset_y");
-			m_templ_color.r = xml.GetInt(node, "bar_color_red");
-			m_templ_color.g = xml.GetInt(node, "bar_color_green");
-			m_templ_color.b = xml.GetInt(node, "bar_color_blue");
-			m_templ_color.a = xml.GetInt(node, "bar_color_alpha");
+			m_templ_fuelbar_name = xml.getString(node, "bar_fuelbar_name");
+			m_templ_thickness = xml.getFloat(node, "bar_thickness");
+			m_templ_size.x = xml.getFloat(node, "bar_size_x");
+			m_templ_size.y = xml.getFloat(node, "bar_size_y");
+			m_templ_position_offset.x = xml.getFloat(node, "bar_position_offset_x");
+			m_templ_position_offset.y = xml.getFloat(node, "bar_position_offset_y");
+			m_templ_color.r = xml.getInt(node, "bar_color_red");
+			m_templ_color.g = xml.getInt(node, "bar_color_green");
+			m_templ_color.b = xml.getInt(node, "bar_color_blue");
+			m_templ_color.a = xml.getInt(node, "bar_color_alpha");
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

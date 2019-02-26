@@ -9,7 +9,7 @@
 
 #include <vector>
 #include "EAnimHandler.h"
-#include "../../XML/CXml.h"
+#include "../../XML/Xml.h"
 #include "../../RTTI/RTTI.h"
 
 using namespace animation;
@@ -751,11 +751,11 @@ namespace rendering
 			///
 			///Metoda sprawdza nazwy animacji i wstawia animacje do zestawu animacji
 			///
-			///@param xml - referencja na obiekt klasy CXml
+			///@param xml - referencja na obiekt klasy Xml
 			///
 			///@param *root - wskaźnik na węzeł dokumentu xml
 			///
-			void parse(CXml & xml, rapidxml::xml_node<> *root = 0);
+			void parse(Xml & xml, rapidxml::xml_node<> *root = 0);
 
 			///
 			///Metoda zwraca stała referencję na wektor przechowujący zestawy animacji

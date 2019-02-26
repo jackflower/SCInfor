@@ -53,23 +53,23 @@ namespace factory
 	//Wirtualna metoda ładująca dane
 	bool EnergyTankTemplate::load(const std::string &name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool EnergyTankTemplate::load(CXml &xml)
+	bool EnergyTankTemplate::load(Xml &xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji akumulatora energii
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "energytank_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "energytank_config"))
 		{
-			m_templ_energy_tank_name = xml.GetString(node, "energy_tank_name");
-			m_templ_energy_tank_capacity = xml.GetFloat(node, "energy_tank_capacity");
-			m_templ_energy = xml.GetFloat(node, "energy");
-			m_templ_energy_tank_rotation_speed = xml.GetFloat(node, "energy_tank_rotation_speed");
+			m_templ_energy_tank_name = xml.getString(node, "energy_tank_name");
+			m_templ_energy_tank_capacity = xml.getFloat(node, "energy_tank_capacity");
+			m_templ_energy = xml.getFloat(node, "energy");
+			m_templ_energy_tank_rotation_speed = xml.getFloat(node, "energy_tank_rotation_speed");
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

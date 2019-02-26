@@ -17,7 +17,7 @@
 ///
 namespace xml
 {
-	class CXml;
+	class Xml;
 }
 
 ///
@@ -95,9 +95,9 @@ namespace factory
 		///
 		///Wirtualna metoda ładująca dane z xml
 		///
-		///@param xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy Xml
 		///
-		bool load(CXml & xml);
+		bool load(Xml & xml);
 			
 	protected:
 

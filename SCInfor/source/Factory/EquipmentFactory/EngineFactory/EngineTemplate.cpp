@@ -64,38 +64,38 @@ namespace factory
 	//Wirtualna metoda ładująca dane
 	bool EngineTemplate::load(const std::string &name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool EngineTemplate::load(CXml &xml)
+	bool EngineTemplate::load(Xml &xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji engine
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "engine_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "engine_config"))
 		{
-			m_templ_engine_name = xml.GetString(node, "engine_name");
-			m_templ_fueltank_data.setUseEquipment(xml.GetBool(node, "use_fueltank"));
-			m_templ_percentage_reserve_fuel = xml.GetFloat(node, "percentage_reserve_fuel");
-			m_templ_fuel_consumption = xml.GetFloat(node, "fuel_consumption");
-			m_templ_fuel_consumption_move = xml.GetFloat(node, "fuel_consumption_move");
-			m_templ_tank_time_delayed = xml.GetFloat(node, "tank_time_delayed");
-			m_templ_fuel_empty_message = xml.GetBool(node, "fuel_empty_message");
-			m_templ_engine_run = xml.GetBool(node, "engine_run");
-			m_templ_regeneration_time = xml.GetFloat(node, "regeneration_time");
-			m_templ_engine_rotation_speed = xml.GetFloat(node, "engine_rotation_speed");
+			m_templ_engine_name = xml.getString(node, "engine_name");
+			m_templ_fueltank_data.setUseEquipment(xml.getBool(node, "use_fueltank"));
+			m_templ_percentage_reserve_fuel = xml.getFloat(node, "percentage_reserve_fuel");
+			m_templ_fuel_consumption = xml.getFloat(node, "fuel_consumption");
+			m_templ_fuel_consumption_move = xml.getFloat(node, "fuel_consumption_move");
+			m_templ_tank_time_delayed = xml.getFloat(node, "tank_time_delayed");
+			m_templ_fuel_empty_message = xml.getBool(node, "fuel_empty_message");
+			m_templ_engine_run = xml.getBool(node, "engine_run");
+			m_templ_regeneration_time = xml.getFloat(node, "regeneration_time");
+			m_templ_engine_rotation_speed = xml.getFloat(node, "engine_rotation_speed");
 		}
 
 		//ładowanie nazwy pliku z konfiguracją zbiornika paliwa
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "engine_fueltank_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "engine_fueltank_config"))
 		{
 			//nazwa pliku z konfiguracją fueltank
-			std::string fueltank_filename_tmp = xml.GetString(node, "fueltank_filename");
+			std::string fueltank_filename_tmp = xml.getString(node, "fueltank_filename");
 			//emitery dla obiektu klasy FuelTank
-			m_templ_fueltank_data.setEmiter(xml.GetFloat(node, "fuel_tank_emiter_x"), xml.GetFloat(node, "fuel_tank_emiter_y"));
+			m_templ_fueltank_data.setEmiter(xml.getFloat(node, "fuel_tank_emiter_x"), xml.getFloat(node, "fuel_tank_emiter_y"));
 
 			if(m_templ_fueltank_data.getUseEquipment())
 				p_templ_fuel_tank = (FuelTankTemplate*)gResourceManager.getPhysicalTemplate(fueltank_filename_tmp);

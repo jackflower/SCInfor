@@ -51,24 +51,24 @@ namespace factory
 	//Metoda ładująca dane
 	bool SolarCellTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool SolarCellTemplate::load(CXml & xml)
+	bool SolarCellTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji dla turbiny
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "solarcell_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "solarcell_config"))
 		{
-			m_templ_solarcell_name = xml.GetString(node, "solarcell_name");
-			m_templ_stored_energy = xml.GetFloat(node, "stored_energy");
-			m_templ_power = xml.GetFloat(node, "power");
-			m_templ_energy_duration = xml.GetFloat(node, "energy_duration");
-			m_templ_rotation_speed = xml.GetFloat(node, "rotation_speed");
+			m_templ_solarcell_name = xml.getString(node, "solarcell_name");
+			m_templ_stored_energy = xml.getFloat(node, "stored_energy");
+			m_templ_power = xml.getFloat(node, "power");
+			m_templ_energy_duration = xml.getFloat(node, "energy_duration");
+			m_templ_rotation_speed = xml.getFloat(node, "rotation_speed");
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

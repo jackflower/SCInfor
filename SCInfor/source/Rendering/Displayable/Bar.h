@@ -8,7 +8,7 @@
 #define H_BAR_JACK
 
 #include "Displayable.h"
-#include "../../XML/CXml.h"
+#include "../../XML/Xml.h"
 
 ///
 ///Forward declaration
@@ -109,9 +109,9 @@ namespace displayable
 		///
 		///Metoda ładująca dane z xml
 		///
-		///@param xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy Xml
 		///
-		bool load(CXml & xml);
+		bool load(Xml & xml);
 
 		///
 		///Wirtualna metoda rysująca obiekt

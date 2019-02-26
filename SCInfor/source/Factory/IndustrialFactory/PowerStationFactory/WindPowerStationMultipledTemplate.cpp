@@ -39,32 +39,32 @@ namespace factory
 	//Wirtualna metoda ³aduj¹ca dane
 	bool WindPowerStationMultipledTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ³aduj¹ca dane
-	bool WindPowerStationMultipledTemplate::load(CXml & xml)
+	bool WindPowerStationMultipledTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy mo¿na za³adowaæ dane z klasy bazowej WindPowerStationTemplate
 		if (!WindPowerStationTemplate::load(xml)) return false;
 
 		//dane obiektu
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "Alabama"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "Alabama"))
 		{
 			//sk³adowe tej klasy...
 			//o ile bêd¹...
 		}
 
 		//nazwa pliku z konfiguracj¹ turbiny wiatrowej
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "windturbine_data"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "windturbine_data"))
 		{
 			//czytam raz nazwê pliku, z wzorcem do tworzenia turbin...
 			//for(...)
 			//flaga, czy obiekt posiada turbinê wiatrow¹
-			//m_templ_use_windturbine = xml.GetBool(node, "use_windturbine");
+			//m_templ_use_windturbine = xml.getBool(node, "use_windturbine");
 			//zapisujê do zmiennej nazwê pliku z konfiguracj¹ turbiny wiatrowej
-			//std::string windturbine_filename_tmp = xml.GetString(node, "windturbine_filename");
+			//std::string windturbine_filename_tmp = xml.getString(node, "windturbine_filename");
 
 			//if (m_templ_use_windturbine)
 			//	p_templ_windturbine = (WindTurbineTemplate*)gResourceManager.GetPhysicalTemplate(windturbine_filename_tmp);

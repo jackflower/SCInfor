@@ -68,57 +68,57 @@ namespace factory
 	//Wirtualna metoda ładująca dane
 	bool EnergyTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool EnergyTemplate::load(CXml & xml)
+	bool EnergyTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji energy
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "energy_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "energy_config"))
 		{
-			m_templ_energy_name = xml.GetString(node, "energy_name");
-			m_templ_percentage_reserve_energy = xml.GetFloat(node, "percentage_reserve_energy");
-			m_templ_energy_time_delayed = xml.GetFloat(node, "energy_time_delayed");
-			m_templ_energy_empty_message = xml.GetBool(node, "energy_empty_message");
-			m_templ_energy_regeneration = xml.GetFloat(node, "energy_regeneration");
-			m_templ_regeneration_time = xml.GetFloat(node, "regeneration_time");
-			m_templ_energy_rotation_speed = xml.GetFloat(node, "energy_rotation_speed");
-			m_templ_critical_duration = xml.GetFloat(node, "critical_duration");
-			m_templ_damage_duration = xml.GetFloat(node, "damage_duration");
+			m_templ_energy_name = xml.getString(node, "energy_name");
+			m_templ_percentage_reserve_energy = xml.getFloat(node, "percentage_reserve_energy");
+			m_templ_energy_time_delayed = xml.getFloat(node, "energy_time_delayed");
+			m_templ_energy_empty_message = xml.getBool(node, "energy_empty_message");
+			m_templ_energy_regeneration = xml.getFloat(node, "energy_regeneration");
+			m_templ_regeneration_time = xml.getFloat(node, "regeneration_time");
+			m_templ_energy_rotation_speed = xml.getFloat(node, "energy_rotation_speed");
+			m_templ_critical_duration = xml.getFloat(node, "critical_duration");
+			m_templ_damage_duration = xml.getFloat(node, "damage_duration");
 		}
 
 		//ładowanie nazwy pliku z konfiguracją zbiornika paliwa
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "energy_tank_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "energy_tank_config"))
 		{
 			//flaga, czy obiekt posiada akumulator energii
-			m_templ_energytank_data.setUseEquipment(xml.GetBool(node, "use_energytank"));
+			m_templ_energytank_data.setUseEquipment(xml.getBool(node, "use_energytank"));
 
 			//nazwa pliku z konfiguracją fueltank
-			std::string energytank_filename_tmp = xml.GetString(node, "energy_tank_filename");
+			std::string energytank_filename_tmp = xml.getString(node, "energy_tank_filename");
 			
 			//emitery dla obiektu klasy EnergyTank
-			m_templ_energytank_data.setEmiter(xml.GetFloat(node, "energytank_emiter_x"), xml.GetFloat(node, "energytank_emiter_y"));
+			m_templ_energytank_data.setEmiter(xml.getFloat(node, "energytank_emiter_x"), xml.getFloat(node, "energytank_emiter_y"));
 
 			if(m_templ_energytank_data.getUseEquipment())
 				p_templ_energy_tank = (EnergyTankTemplate*)gResourceManager.getPhysicalTemplate(energytank_filename_tmp);
 		}
 
 		//ładowanie konfiguracji battery
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "battery_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "battery_config"))
 		{
 			//flaga, czy obiekt posiada baterię
-			m_templ_battery_data.setUseEquipment(xml.GetBool(node, "use_battery"));//dopisać do xml'a
+			m_templ_battery_data.setUseEquipment(xml.getBool(node, "use_battery"));//dopisać do xml'a
 
 			//nazwa pliku z konfiguracją battery
-			std::string battery_filename_tmp = xml.GetString(node, "battery_filename");
+			std::string battery_filename_tmp = xml.getString(node, "battery_filename");
 
 			//emitery dla obiektu klasy Battery (dopisać do pliku xml)
-			m_templ_battery_data.setEmiter(xml.GetFloat(node, "battery_emiter_x"), xml.GetFloat(node, "battery_emiter_y"));
+			m_templ_battery_data.setEmiter(xml.getFloat(node, "battery_emiter_x"), xml.getFloat(node, "battery_emiter_y"));
 
 			if(m_templ_battery_data.getUseEquipment())
 				p_templ_battery = (BatteryTemplate*)gResourceManager.getPhysicalTemplate(battery_filename_tmp);

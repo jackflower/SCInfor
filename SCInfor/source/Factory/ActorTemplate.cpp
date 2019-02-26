@@ -15,11 +15,11 @@
 #include "EquipmentFactory/IndustrialFactory/PowerModuleFactory/WindTurbineTemplate.h"
 #include "EquipmentFactory/EngineFactory/FuelBarFactory/FuelBarTemplate.h"
 #include "../Logic/Actor/Actor.h"
-#include "../XML/CXml.h"
+#include "../XML/Xml.h"
 #include "../Rendering/Animations/AnimSet.h"
 #include "../ResourceManager/ResourceManager.h"
 #include "../Rendering/Displayable/Displayable.h"
-#include "../Weather/CWeather.h"
+#include "../Weather/Weather.h"
 
 using namespace resource;
 using namespace rendering::animation;
@@ -87,41 +87,41 @@ namespace factory
 	//Metoda ładująca dane
 	bool ActorTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool ActorTemplate::load(CXml & xml)
+	bool ActorTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej Physical
 		if (!PhysicalTemplate::load(xml)) return false;
 
 		//dane techniczne obiektu
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "technical_data"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "technical_data"))
 		{
-			m_templ_technical_data.setMass(xml.GetFloat(node, "mass"));
+			m_templ_technical_data.setMass(xml.getFloat(node, "mass"));
 			m_templ_technical_data.setTemperature(gWeather.getTemperature());
-			m_templ_technical_data.setSpeed(xml.GetFloat(node, "speed"));
-			m_templ_technical_data.setIsMovabled(xml.GetBool(node, "movabled"));
+			m_templ_technical_data.setSpeed(xml.getFloat(node, "speed"));
+			m_templ_technical_data.setIsMovabled(xml.getBool(node, "movabled"));
 			m_templ_technical_data.setIsMove(m_templ_technical_data.getIsMove());
 		}
 
 		//ładowanie danych - obraz statyczny - reprezentacja graficzna
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "static_image"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "static_image"))
 		{
 			//zaślepka...
-			//std::string image_body_name = xml.GetString(node, "image_name_body");
-			//std::string image_head_name = xml.GetString(node, "image_name_head");
+			//std::string image_body_name = xml.getString(node, "image_name_body");
+			//std::string image_head_name = xml.getString(node, "image_name_head");
 		}
 
 		//ładowanie zestawów animacji
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "animset"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "animset"))
 		{
-			for (xml_node<>* node = xml.GetChild(xml.GetRootNode(), "animset"); node; node = xml.GetSibling(node,"animset"))
+			for (xml_node<>* node = xml.getChild(xml.getRootNode(), "animset"); node; node = xml.getSibling(node,"animset"))
 			{
 				AnimSet * animations = new AnimSet();
-				animations->setAnimSetName(xml.GetString(node, "name_animset"));
+				animations->setAnimSetName(xml.getString(node, "name_animset"));
 				animations->parse(xml,node);
 				m_templ_available_animations.push_back(animations);
 			}
@@ -142,87 +142,87 @@ namespace factory
 
 
 		//ładowanie nazwy pliku z konfiguracją engine
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "engine_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "engine_data"))
 		{
 			//flaga, czy obiekt posiada silnik
-			m_templ_engine_data.setUseEquipment(xml.GetBool(node, "use_engine"));
+			m_templ_engine_data.setUseEquipment(xml.getBool(node, "use_engine"));
 			//zapisuję do zmiennej nazwę pliku z konfiguracją engine
-			std::string engine_filename_tmp = xml.GetString(node, "engine_filename");
+			std::string engine_filename_tmp = xml.getString(node, "engine_filename");
 			
 			//emitery dla obiektu klasy Engine
-			m_templ_engine_data.setEmiter(xml.GetFloat(node, "engine_emiter_x"), xml.GetFloat(node, "engine_emiter_y"));
+			m_templ_engine_data.setEmiter(xml.getFloat(node, "engine_emiter_x"), xml.getFloat(node, "engine_emiter_y"));
 
 			if(m_templ_engine_data.getUseEquipment())
 				p_templ_engine = (EngineTemplate*)gResourceManager.getPhysicalTemplate(engine_filename_tmp);
 		}
 
 		//ładowanie nazwy pliku z konfiguracją physical_info 
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "physical_info_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "physical_info_data"))
 		{
 			//flaga, czy obiekt posiada physical_info
-			m_templ_use_physical_info = xml.GetBool(node, "use_physical_info");
+			m_templ_use_physical_info = xml.getBool(node, "use_physical_info");
 			//zapisuję do zmiennej nazwę pliku z konfiguracją physical_info
-			std::string physical_info_filename_tmp = xml.GetString(node, "physical_info_filename");
+			std::string physical_info_filename_tmp = xml.getString(node, "physical_info_filename");
 
 			if(m_templ_use_physical_info)
 				p_templ_physical_info = (PhysicalInfoTemplate*)gResourceManager.getPhysicalTemplate(physical_info_filename_tmp);
 		}
 
 		//ładowanie nazwy pliku z konfiguracją energy
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "energy_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "energy_data"))
 		{
 			//flaga, czy obiekt posiada moduł energii
-			m_templ_energy_data.setUseEquipment(xml.GetBool(node, "use_energy"));
+			m_templ_energy_data.setUseEquipment(xml.getBool(node, "use_energy"));
 			//zapisuję do zmiennej nazwę pliku z konfiguracją energy
-			std::string energy_filename_tmp = xml.GetString(node, "energy_filename");
+			std::string energy_filename_tmp = xml.getString(node, "energy_filename");
 			
 			//emitery dla obiektu klasy Energy
-			m_templ_energy_data.setEmiter(xml.GetFloat(node, "energy_emiter_x"), xml.GetFloat(node, "energy_emiter_y"));
+			m_templ_energy_data.setEmiter(xml.getFloat(node, "energy_emiter_x"), xml.getFloat(node, "energy_emiter_y"));
 			
 			if(m_templ_energy_data.getUseEquipment())
 				p_templ_energy = (EnergyTemplate*)gResourceManager.getPhysicalTemplate(energy_filename_tmp);
 		}
 
 		//ładowanie modułu klimatyzatora
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "airconditioning_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "airconditioning_data"))
 		{
 			//flaga, czy obiekt posiada moduł klimatyzatora
-			m_templ_airconditioning_data.setUseEquipment(xml.GetBool(node, "use_airconditioning"));
+			m_templ_airconditioning_data.setUseEquipment(xml.getBool(node, "use_airconditioning"));
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu klimatyzatora
-			std::string airconditioning_filename_tmp = xml.GetString(node, "airconditioning_filename");
+			std::string airconditioning_filename_tmp = xml.getString(node, "airconditioning_filename");
 			
 			//emitery dla obiektu klasy Airconditioning (dopisać w xml'u)
-			m_templ_airconditioning_data.setEmiter(xml.GetFloat(node, "airconditioning_emiter_x"), xml.GetFloat(node, "airconditioning_emiter_y"));
+			m_templ_airconditioning_data.setEmiter(xml.getFloat(node, "airconditioning_emiter_x"), xml.getFloat(node, "airconditioning_emiter_y"));
 			
 			if(m_templ_airconditioning_data.getUseEquipment())
 				p_templ_airconditioning = (AirconditioningTemplate*)gResourceManager.getPhysicalTemplate(airconditioning_filename_tmp);
 		}
 
 		//ładowanie modułu wentylatora
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "ventilator_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "ventilator_data"))
 		{
 			//flaga, czy obiekt posiada moduł wentylatora
-			m_templ_ventilator_data.setUseEquipment(xml.GetBool(node, "use_ventilator"));
+			m_templ_ventilator_data.setUseEquipment(xml.getBool(node, "use_ventilator"));
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu wentylatora
-			std::string ventilator_filename_tmp = xml.GetString(node, "ventilator_filename");
+			std::string ventilator_filename_tmp = xml.getString(node, "ventilator_filename");
 
 			//emitery dla obiektu klasy Ventilator (dopisać w xml'u)
-			m_templ_ventilator_data.setEmiter(xml.GetFloat(node, "ventilator_emiter_x"), xml.GetFloat(node, "ventilator_emiter_y"));
+			m_templ_ventilator_data.setEmiter(xml.getFloat(node, "ventilator_emiter_x"), xml.getFloat(node, "ventilator_emiter_y"));
 
 			if(m_templ_ventilator_data.getUseEquipment())
 				p_templ_ventilator = (VentilatorTemplate*)gResourceManager.getPhysicalTemplate(ventilator_filename_tmp);
 		}
 
 		//ładowanie modułu działa (dopisać w xml'u)...
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "gun_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "gun_data"))
 		{
 			//flaga, czy obiekt posiada moduł wentylatora
-			m_templ_gun_data.setUseEquipment(xml.GetBool(node, "use_gun"));
+			m_templ_gun_data.setUseEquipment(xml.getBool(node, "use_gun"));
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu wentylatora
-			std::string gun_filename_tmp = xml.GetString(node, "gun_filename");
+			std::string gun_filename_tmp = xml.getString(node, "gun_filename");
 
 			//emitery dla obiektu klasy Gun (dopisać w xml'u)
-			m_templ_gun_data.setEmiter(xml.GetFloat(node, "gun_emiter_x"), xml.GetFloat(node, "gun_emiter_y"));
+			m_templ_gun_data.setEmiter(xml.getFloat(node, "gun_emiter_x"), xml.getFloat(node, "gun_emiter_y"));
 
 			if (m_templ_gun_data.getUseEquipment())
 				p_templ_gun = (GunTemplate*)gResourceManager.getPhysicalTemplate(gun_filename_tmp);

@@ -51,35 +51,35 @@ namespace factory
 	//Metoda ładująca dane
 	bool PowerStationTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool PowerStationTemplate::load(CXml & xml)
+	bool PowerStationTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane obiektu
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "power_station_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "power_station_config"))
 		{
-			m_templ_power_station_name = xml.GetString(node, "power_station_name");
-			m_templ_energy_capacitor = xml.GetFloat(node,"energy_capacitor");
-			m_templ_amount_power_modules = xml.GetInt(node, "amount_power_modules");
+			m_templ_power_station_name = xml.getString(node, "power_station_name");
+			m_templ_energy_capacitor = xml.getFloat(node,"energy_capacitor");
+			m_templ_amount_power_modules = xml.getInt(node, "amount_power_modules");
 		}
 
 		//ładowanie modułu komunikacyjnego
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "communication_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "communication_data"))
 		{
 			//flaga, czy obiekt posiada moduł komunikacyjny
-			mm_templ_communication_data.setUseEquipment(xml.GetBool(node, "use_communication"));
+			mm_templ_communication_data.setUseEquipment(xml.getBool(node, "use_communication"));
 
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu komunikacji
-			std::string communication_filename_tmp = xml.GetString(node, "communication_filename");
+			std::string communication_filename_tmp = xml.getString(node, "communication_filename");
 			
 			//emitery dla obiektu klasy Communication
-			mm_templ_communication_data.setEmiter(xml.GetFloat(node, "communication_emiter_x"), xml.GetFloat(node, "communication_emiter_y"));
+			mm_templ_communication_data.setEmiter(xml.getFloat(node, "communication_emiter_x"), xml.getFloat(node, "communication_emiter_y"));
 
 			if(mm_templ_communication_data.getUseEquipment())
 				p_templ_communication = (CommunicationTemplate*)gResourceManager.getPhysicalTemplate(communication_filename_tmp);

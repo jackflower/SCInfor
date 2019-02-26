@@ -17,7 +17,7 @@
 ///
 namespace xml
 {
-	class CXml;
+	class Xml;
 }
 
 ///

@@ -71,43 +71,43 @@ namespace factory
 	//Metoda ładująca dane
 	bool GunTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml ładuje wspólne cechy Actor
-	bool GunTemplate::load(CXml & xml)
+	bool GunTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie modułu prezentacji magazynka z amunicją
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "gun_data"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "gun_data"))
 		{
 			//flaga, czy obiekt posiada magazynek z amunicją
-			//m_templ_use_ammo = xml.GetBool(node, "use_ammo");
-			m_templ_ammo_data.setUseEquipment(xml.GetBool(node, "use_ammo"));
+			//m_templ_use_ammo = xml.getBool(node, "use_ammo");
+			m_templ_ammo_data.setUseEquipment(xml.getBool(node, "use_ammo"));
 			//zapisuję do zmiennej nazwę pliku z konfiguracją ammo
-			std::string ammo_filename_tmp = xml.GetString(node, "ammo_filename");
+			std::string ammo_filename_tmp = xml.getString(node, "ammo_filename");
 			//emitery dla obiektu klasy Ammo
-			m_templ_ammo_data.setEmiter(xml.GetFloat(node, "ammo_emiter_x"), xml.GetFloat(node, "ammo_emiter_y"));
+			m_templ_ammo_data.setEmiter(xml.getFloat(node, "ammo_emiter_x"), xml.getFloat(node, "ammo_emiter_y"));
 
 			if (m_templ_ammo_data.getUseEquipment())
 				p_templ_ammo = (AmmoTemplate*)gResourceManager.getPhysicalTemplate(ammo_filename_tmp);
 	
-			m_templ_time_ammo_load_delay = xml.GetFloat(node, "time_ammo_load_delay");
-			m_templ_time_shot = xml.GetFloat(node, "time_shot");
-			m_templ_range_shot = xml.GetFloat(node, "range_shot");
-			m_templ_bullet_speed = xml.GetFloat(node, "bullet_speed");
-			m_templ_barrel_count = xml.GetInt(node, "barrel_count");
-			m_templ_target_altitude = xml.GetFloat(node, "target_altitude");
-			m_templ_explosion_emiter.x = xml.GetFloat(node, "explosion_emiter_x");
-			m_templ_explosion_emiter.y = xml.GetFloat(node, "explosion_emiter_y");
-			m_templ_ammo_time_delayed = xml.GetFloat(node, "ammo_time_delayed");
-			m_templ_limit_amount_damage = xml.GetInt(node, "limit_amount_damage");
+			m_templ_time_ammo_load_delay = xml.getFloat(node, "time_ammo_load_delay");
+			m_templ_time_shot = xml.getFloat(node, "time_shot");
+			m_templ_range_shot = xml.getFloat(node, "range_shot");
+			m_templ_bullet_speed = xml.getFloat(node, "bullet_speed");
+			m_templ_barrel_count = xml.getInt(node, "barrel_count");
+			m_templ_target_altitude = xml.getFloat(node, "target_altitude");
+			m_templ_explosion_emiter.x = xml.getFloat(node, "explosion_emiter_x");
+			m_templ_explosion_emiter.y = xml.getFloat(node, "explosion_emiter_y");
+			m_templ_ammo_time_delayed = xml.getFloat(node, "ammo_time_delayed");
+			m_templ_limit_amount_damage = xml.getInt(node, "limit_amount_damage");
 			//damage
-			m_templ_damage.setDamageRange(xml.GetFloat(node, "reliability_range_first"), xml.GetFloat(node, "reliability_range_second"));
-			m_templ_damage.setDurationDamage(xml.GetFloat(node, "duration_damage"));
+			m_templ_damage.setDamageRange(xml.getFloat(node, "reliability_range_first"), xml.getFloat(node, "reliability_range_second"));
+			m_templ_damage.setDurationDamage(xml.getFloat(node, "duration_damage"));
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

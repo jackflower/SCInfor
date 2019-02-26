@@ -51,22 +51,22 @@ namespace factory
 	//Metoda ładująca dane
 	bool GroundTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool GroundTemplate::load(CXml & xml)
+	bool GroundTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej Physical
 		if (!ActorTemplate::load(xml)) return false;
 		
 		//dane dla fizyki podłoża
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "ground_physics_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "ground_physics_config"))
 		{
-			m_template_physicsground.setFriction(xml.GetFloat(node, "friction"));
-			m_template_physicsground.setHumidity(xml.GetFloat(node, "humidity"));
-			m_template_physicsground.setThermalTransmittance(xml.GetFloat(node, "thermal_transmittance"));
+			m_template_physicsground.setFriction(xml.getFloat(node, "friction"));
+			m_template_physicsground.setHumidity(xml.getFloat(node, "humidity"));
+			m_template_physicsground.setThermalTransmittance(xml.getFloat(node, "thermal_transmittance"));
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

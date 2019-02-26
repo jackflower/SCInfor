@@ -86,52 +86,52 @@ namespace factory
 	//Metoda ładująca dane
 	bool PhysicalInfoTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool PhysicalInfoTemplate::load(CXml & xml)
+	bool PhysicalInfoTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej Physical
 		if (!PhysicalTemplate::load(xml)) return false;
 
 		//odczytanie danych animacji - owner(this) body part
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "unit_animation"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "unit_animation"))
 		{
-			m_templ_use_animation = xml.GetBool(node, "use_animation");
-			m_templ_animation_name = xml.GetString(node, "animation_name");
+			m_templ_use_animation = xml.getBool(node, "use_animation");
+			m_templ_animation_name = xml.getString(node, "animation_name");
 		}
 
 		//odczytanie danych static image - owner(this) body part
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "unit_texture"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "unit_texture"))
 		{
-			m_templ_use_texture = xml.GetBool(node, "use_texture");
-			m_templ_texture_name = xml.GetString(node, "texture_name");
+			m_templ_use_texture = xml.getBool(node, "use_texture");
+			m_templ_texture_name = xml.getString(node, "texture_name");
 		}
 
 		//przepisanie do klasy danych z pliku xml
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "physical_info_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "physical_info_config"))
 		{
-			m_templ_physical_info_name = xml.GetString(node, "physical_info_name");
-			m_templ_use_status_bar_energy = xml.GetBool(node, "use_status_bar_energy");
-			m_templ_use_status_bar_fuel = xml.GetBool(node, "use_status_bar_fuel");
-			m_templ_color_bar_energy.r = xml.GetInt(node, "energy_bar_color_red");
-			m_templ_color_bar_energy.g = xml.GetInt(node, "energy_bar_color_green");
-			m_templ_color_bar_energy.b = xml.GetInt(node, "energy_bar_color_blue");
-			m_templ_color_bar_energy.a = xml.GetInt(node, "energy_bar_color_alpha");
-			m_templ_color_bar_fuel.r = xml.GetInt(node, "fuel_bar_color_red");
-			m_templ_color_bar_fuel.g = xml.GetInt(node, "fuel_bar_color_green");
-			m_templ_color_bar_fuel.b = xml.GetInt(node, "fuel_bar_color_blue");
-			m_templ_color_bar_fuel.a = xml.GetInt(node, "fuel_bar_color_alpha");
-			m_templ_size_energy.x = xml.GetFloat(node, "size_energy_x");
-			m_templ_size_energy.y = xml.GetFloat(node, "size_energy_y");
-			m_templ_size_fuel.x = xml.GetFloat(node, "size_fuel_x");
-			m_templ_size_fuel.y = xml.GetFloat(node, "size_fuel_y");
-			m_templ_position_offset_energy.x = xml.GetFloat(node, "position_offset_energy_x");
-			m_templ_position_offset_energy.y = xml.GetFloat(node, "position_offset_energy_y");
-			m_templ_position_offset_fuel.x = xml.GetFloat(node, "position_offset_fuel_x");
-			m_templ_position_offset_fuel.y = xml.GetFloat(node, "position_offset_fuel_y");
+			m_templ_physical_info_name = xml.getString(node, "physical_info_name");
+			m_templ_use_status_bar_energy = xml.getBool(node, "use_status_bar_energy");
+			m_templ_use_status_bar_fuel = xml.getBool(node, "use_status_bar_fuel");
+			m_templ_color_bar_energy.r = xml.getInt(node, "energy_bar_color_red");
+			m_templ_color_bar_energy.g = xml.getInt(node, "energy_bar_color_green");
+			m_templ_color_bar_energy.b = xml.getInt(node, "energy_bar_color_blue");
+			m_templ_color_bar_energy.a = xml.getInt(node, "energy_bar_color_alpha");
+			m_templ_color_bar_fuel.r = xml.getInt(node, "fuel_bar_color_red");
+			m_templ_color_bar_fuel.g = xml.getInt(node, "fuel_bar_color_green");
+			m_templ_color_bar_fuel.b = xml.getInt(node, "fuel_bar_color_blue");
+			m_templ_color_bar_fuel.a = xml.getInt(node, "fuel_bar_color_alpha");
+			m_templ_size_energy.x = xml.getFloat(node, "size_energy_x");
+			m_templ_size_energy.y = xml.getFloat(node, "size_energy_y");
+			m_templ_size_fuel.x = xml.getFloat(node, "size_fuel_x");
+			m_templ_size_fuel.y = xml.getFloat(node, "size_fuel_y");
+			m_templ_position_offset_energy.x = xml.getFloat(node, "position_offset_energy_x");
+			m_templ_position_offset_energy.y = xml.getFloat(node, "position_offset_energy_y");
+			m_templ_position_offset_fuel.x = xml.getFloat(node, "position_offset_fuel_x");
+			m_templ_position_offset_fuel.y = xml.getFloat(node, "position_offset_fuel_y");
 		}
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny
 		return true;

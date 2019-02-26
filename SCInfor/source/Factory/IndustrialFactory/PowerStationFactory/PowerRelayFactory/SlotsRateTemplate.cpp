@@ -40,12 +40,12 @@ namespace factory
 	//Metoda ładująca dane
 	bool SlotsRateTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool SlotsRateTemplate::load(CXml & xml)
+	bool SlotsRateTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;

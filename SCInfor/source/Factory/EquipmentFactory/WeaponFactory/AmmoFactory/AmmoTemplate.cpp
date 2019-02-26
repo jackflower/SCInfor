@@ -52,28 +52,28 @@ namespace factory
 	//Metoda ładująca dane
 	bool AmmoTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml ładuje wspólne cechy Actor
-	bool AmmoTemplate::load(CXml & xml)
+	bool AmmoTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane amunicji
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "ammo_data"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "ammo_data"))
 		{
-			m_templ_ammo_capacity = xml.GetInt(node, "ammo_capacity");
-			m_templ_ammo = xml.GetInt(node, "ammo");
+			m_templ_ammo_capacity = xml.getInt(node, "ammo_capacity");
+			m_templ_ammo = xml.getInt(node, "ammo");
 			//parsowanie logiki na poziomie ładowania danych (nadgorliwość)
 			if (m_templ_ammo > m_templ_ammo_capacity)
 				m_templ_ammo = m_templ_ammo_capacity;
-			m_templ_percentage_reserve_ammo = xml.GetFloat(node, "percentage_reserve_ammo");
-			m_templ_caliber.setName(xml.GetString(node, "caliber_name"));
-			m_templ_caliber.setCaliber(xml.GetFloat(node, "caliber"));
-			m_templ_caliber.setCaliberType(gEntityTranslator.TranslateToCaliberEntity(xml.GetString(node, "e_caliber")));
+			m_templ_percentage_reserve_ammo = xml.getFloat(node, "percentage_reserve_ammo");
+			m_templ_caliber.setName(xml.getString(node, "caliber_name"));
+			m_templ_caliber.setCaliber(xml.getFloat(node, "caliber"));
+			m_templ_caliber.setCaliberType(gEntityTranslator.TranslateToCaliberEntity(xml.getString(node, "e_caliber")));
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

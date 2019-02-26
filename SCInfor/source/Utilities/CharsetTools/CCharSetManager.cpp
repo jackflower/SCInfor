@@ -89,21 +89,21 @@ namespace charsettools
 	//Metoda ³aduj¹ca dane
 	bool CCharSetManager::load(const std::string &name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Metoda ³aduj¹ca dane z xml
-	bool CCharSetManager::load(CXml &xml)
+	bool CCharSetManager::load(Xml &xml)
 	{
 		std::string string_tmp;//odczytany z xml'a string (dwa bajty definiuj¹ce znak)
 
-		for(xml_node<> *node = xml.GetChild(xml.GetRootNode(),"letter"); node; node = xml.GetSibling(node,"letter"))
+		for(xml_node<> *node = xml.getChild(xml.getRootNode(),"letter"); node; node = xml.getSibling(node,"letter"))
 		{
-			string_tmp = xml.GetString(node);//
+			string_tmp = xml.getString(node);//
 			m_translator.a = string_tmp[0];//pierwszy bajt
 			m_translator.b = string_tmp[1];//drugi bajt
-			m_translator.out = static_cast<wchar_t>(xml.GetInt(node, "code"));
+			m_translator.out = static_cast<wchar_t>(xml.getInt(node, "code"));
 			m_translators.push_back(m_translator);
 			m_valid_chars += m_translator.out;
 		}

@@ -5,7 +5,7 @@
 //
 
 #include "WindTurbine.h"
-#include "../../../Weather/CWeather.h"
+#include "../../../Weather/Weather.h"
 #include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
@@ -253,7 +253,7 @@ namespace equipment
 		{
 			if(m_turbine_state == TURBINE_DEFAULT)
 			{
-				if(gWeather.GetWindSpeed() >= gWeather.getWindSpeedRange().second * m_percentage_activation)
+				if(gWeather.getWindSpeed() >= gWeather.getWindSpeedRange().second * m_percentage_activation)
 					m_turbine_state = TURBINE_CARGO_DOOR_OPEN;
 			}
 			if(m_turbine_state == TURBINE_CARGO_DOOR_OPEN)
@@ -264,7 +264,7 @@ namespace equipment
 				if(m_cargo_open_duration >= getAnimationHead()->totalLength())
 				{
 					//obliczam prędkość łopatek turniny
-					m_calculated_speed_rotor = m_speed_rotor * m_speed_transmission * gWeather.GetWindSpeed() * dt;
+					m_calculated_speed_rotor = m_speed_rotor * m_speed_transmission * gWeather.getWindSpeed() * dt;
 					//zmiana stanu - aktualizacja energii
 					m_turbine_state = TURBINE_UPDATE_ENERGY;
 					//zeruję czas
@@ -280,7 +280,7 @@ namespace equipment
 
 				//diagnostyka
 				//std::cout << "Inside Turbine:	"<< m_stored_energy << std::endl;
-				if(gWeather.GetWindSpeed() < gWeather.getWindSpeedRange().second * m_percentage_activation)
+				if(gWeather.getWindSpeed() < gWeather.getWindSpeedRange().second * m_percentage_activation)
 					m_turbine_state = TURBINE_CARGO_DOOR_CLOSE;
 			}
 			if(m_turbine_state == TURBINE_CARGO_DOOR_CLOSE)

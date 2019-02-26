@@ -5,7 +5,7 @@
 //
 
 #include "PlayerTemplate.h"
-//#include "../XML/CXml.h"
+//#include "../XML/Xml.h"
 //#include "../Logic/PhysicalManager.h"
 
 namespace factory
@@ -41,15 +41,15 @@ namespace factory
 	//Metoda ładująca dane
 	bool PlayerTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool PlayerTemplate::load(CXml & xml)
+	bool PlayerTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy xml zawiera informację, że jest player
-		if (xml.GetString(xml.GetRootNode(), "type") != "player")
+		if (xml.getString(xml.getRootNode(), "type") != "player")
 			return false;
 
 		//sprawdzamy, czy można załadować dane z klasy bazowej

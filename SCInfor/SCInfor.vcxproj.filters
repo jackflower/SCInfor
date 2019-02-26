@@ -408,9 +408,6 @@
     <ClCompile Include="source\Universe\Galaxy\Star\Planet\CPlanet.cpp">
       <Filter>source\Universe\Galaxy\Star\Planet</Filter>
     </ClCompile>
-    <ClCompile Include="source\Universe\Galaxy\Star\Planet\Satelite\CSatelite.cpp">
-      <Filter>source\Universe\Galaxy\Star\Planet\Satelite</Filter>
-    </ClCompile>
     <ClCompile Include="source\Universe\Interaction\CEntityTemperature.cpp">
       <Filter>source\Universe\Interaction</Filter>
     </ClCompile>
@@ -479,24 +476,6 @@
     </ClCompile>
     <ClCompile Include="source\Utilities\Translation\Directions.cpp">
       <Filter>source\Utilities\Translation</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Weather\CDay.cpp">
-      <Filter>source\Weather</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Weather\CShadowEngine.cpp">
-      <Filter>source\Weather</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Weather\CTemperature.cpp">
-      <Filter>source\Weather</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Weather\CWeather.cpp">
-      <Filter>source\Weather</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Weather\CWind.cpp">
-      <Filter>source\Weather</Filter>
-    </ClCompile>
-    <ClCompile Include="source\XML\CXml.cpp">
-      <Filter>source\XML</Filter>
     </ClCompile>
     <ClCompile Include="source\Game\Game.cpp">
       <Filter>source\Game</Filter>
@@ -1008,6 +987,27 @@
     <ClCompile Include="source\ResourceManager\ResourceManager.cpp">
       <Filter>source\ResourceManager</Filter>
     </ClCompile>
+    <ClCompile Include="source\Weather\Day.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Weather\ShadowEngine.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Weather\Temperature.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Weather\Wind.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Weather\Weather.cpp">
+      <Filter>source\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XML\Xml.cpp">
+      <Filter>source\XML</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.cpp">
+      <Filter>source\Universe\Galaxy\Star\Planet\Satelite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h">
@@ -1133,9 +1133,6 @@
     <ClInclude Include="source\Universe\Galaxy\Star\Planet\CPlanet.h">
       <Filter>source\Universe\Galaxy\Star\Planet</Filter>
     </ClInclude>
-    <ClInclude Include="source\Universe\Galaxy\Star\Planet\Satelite\CSatelite.h">
-      <Filter>source\Universe\Galaxy\Star\Planet\Satelite</Filter>
-    </ClInclude>
     <ClInclude Include="source\Universe\Interaction\CGravity.h">
       <Filter>source\Universe\Interaction</Filter>
     </ClInclude>
@@ -1226,21 +1223,6 @@
     <ClInclude Include="source\Utilities\Utilities\Utilities.h">
       <Filter>source\Utilities\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="source\Weather\CDay.h">
-      <Filter>source\Weather</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Weather\CShadowEngine.h">
-      <Filter>source\Weather</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Weather\CTemperature.h">
-      <Filter>source\Weather</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Weather\CWeather.h">
-      <Filter>source\Weather</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Weather\CWind.h">
-      <Filter>source\Weather</Filter>
-    </ClInclude>
     <ClInclude Include="source\XML\RapidXML\rapidxml.hpp">
       <Filter>source\XML\RapidXML</Filter>
     </ClInclude>
@@ -1252,9 +1234,6 @@
     </ClInclude>
     <ClInclude Include="source\XML\RapidXML\rapidxml_utils.hpp">
       <Filter>source\XML\RapidXML</Filter>
-    </ClInclude>
-    <ClInclude Include="source\XML\CXml.h">
-      <Filter>source\XML</Filter>
     </ClInclude>
     <ClInclude Include="source\Game\Game.h">
       <Filter>source\Game</Filter>
@@ -1765,6 +1744,27 @@
     </ClInclude>
     <ClInclude Include="source\ResourceManager\ResourceManager.h">
       <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\Day.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\ShadowEngine.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\Temperature.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\Wind.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Weather\Weather.h">
+      <Filter>source\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="source\XML\Xml.h">
+      <Filter>source\XML</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.h">
+      <Filter>source\Universe\Galaxy\Star\Planet\Satelite</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

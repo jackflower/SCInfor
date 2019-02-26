@@ -9,7 +9,7 @@
 #include "../../../Rendering/Drawable/DrawableManager.h"
 #include "../../../Rendering/Animations/Animation.h"
 #include "../../../Rendering/Animations/AnimationState.h"
-#include "../../../Weather/CWeather.h"
+#include "../../../Weather/Weather.h"
 #include "../../../Utilities/Utilities/Utilities.h"
 #include <math.h>
 
@@ -1028,7 +1028,7 @@ namespace physicaldata
 			);
 
 			p_displayable_body_shadow->setRotation(m_physics_data.getRotationBody());
-			p_displayable_body_shadow->setColor(gWeather.GetShadowColor());
+			p_displayable_body_shadow->setColor(gWeather.getShadowColor());
 			p_displayable_body_shadow->setScale(m_physics_data.getStoredScaleBody());
 		}
 	}
@@ -1074,7 +1074,7 @@ namespace physicaldata
 			);
 
 			p_displayable_head_shadow->setRotation(m_physics_data.getRotationHead());
-			p_displayable_head_shadow->setColor(gWeather.GetShadowColor());
+			p_displayable_head_shadow->setColor(gWeather.getShadowColor());
 			p_displayable_head_shadow->setScale(m_physics_data.getStoredScaleHead());
 		}
 	}
@@ -1146,7 +1146,7 @@ namespace physicaldata
 	void PhysicalData::updateShadowTransformation()
 	{
 		//ustawiamy kolor cienia
-		setColorShadow(gWeather.GetShadowColor());
+		setColorShadow(gWeather.getShadowColor());
 
 		//offset body
 		if (p_displayable_body)

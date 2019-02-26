@@ -43,23 +43,23 @@ namespace factory
 	//Metoda ładująca dane
 	bool RobotTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool RobotTemplate::load(CXml & xml)
+	bool RobotTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane opakowania mechanizmu zarządzania czasem stanów strategicznych obiektu
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "strategy_duration_data"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "strategy_duration_data"))
 		{
-			m_templ_strategy_duration.setTimeAttackPrepare(xml.GetFloat(node, "time_attack_prepare"));
-			m_templ_strategy_duration.setTimeAttackTerminate(xml.GetFloat(node, "time_attack_terminate"));
-			m_templ_strategy_duration.setTimeDefensePrepare(xml.GetFloat(node, "time_defense_prepare"));
-			m_templ_strategy_duration.setTimeDefenseTerminate(xml.GetFloat(node, "time_defense_terminate"));
+			m_templ_strategy_duration.setTimeAttackPrepare(xml.getFloat(node, "time_attack_prepare"));
+			m_templ_strategy_duration.setTimeAttackTerminate(xml.getFloat(node, "time_attack_terminate"));
+			m_templ_strategy_duration.setTimeDefensePrepare(xml.getFloat(node, "time_defense_prepare"));
+			m_templ_strategy_duration.setTimeDefenseTerminate(xml.getFloat(node, "time_defense_terminate"));
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

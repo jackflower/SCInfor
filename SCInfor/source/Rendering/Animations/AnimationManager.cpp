@@ -8,7 +8,7 @@
 #include "AnimationState.h"
 #include "Animation.h"
 #include "../../Game/Game.h"
-#include "../../XML/CXml.h"
+#include "../../XML/Xml.h"
 
 using namespace rendering::animation;
 using namespace game;
@@ -125,25 +125,25 @@ namespace rendering
 			std::string m_texture_name = "";
 			sf::IntRect rectangle = sf::IntRect(0,0,0,0);
 
-			CXml xml(file_name, node_name);
+			Xml xml(file_name, node_name);
 			
-			for(xml_node<> *node = xml.GetChild(xml.GetRootNode(), "animation_name"); node; node = xml.GetSibling(node, "animation_name"))
+			for(xml_node<> *node = xml.getChild(xml.getRootNode(), "animation_name"); node; node = xml.getSibling(node, "animation_name"))
 			{
-				m_animation_name = xml.GetString(node, "name");	//odczutuję nazwę
+				m_animation_name = xml.getString(node, "name");	//odczutuję nazwę
 				Animation *animation = new Animation(); //tworzę animację
 				animation->setAnimationName(m_animation_name); //nadaję nazwę animacji
 				m_total_frame_time = 0; //resetujemy kumulację czasu trwania animacji
 
-				for(xml_node<> *second_node = xml.GetChild(node, "animation_frame"); second_node; second_node = xml.GetSibling(second_node,"animation_frame"))
+				for(xml_node<> *second_node = xml.getChild(node, "animation_frame"); second_node; second_node = xml.getSibling(second_node,"animation_frame"))
 				{
-					m_frame_time = xml.GetFloat(second_node,"frame_time"); //odczyt czasu ekspozycji klatki animacji
-					m_texture_name = xml.GetString(second_node,"texture_name"); //odczyt nazwy tekstury, z której pobierany jest obraz klatki
+					m_frame_time = xml.getFloat(second_node,"frame_time"); //odczyt czasu ekspozycji klatki animacji
+					m_texture_name = xml.getString(second_node,"texture_name"); //odczyt nazwy tekstury, z której pobierany jest obraz klatki
 					rectangle = sf::IntRect //odczyt koordynatów poszczególnych klatek animacji
 						(
-							xml.GetInt(second_node,"rect_left"),
-							xml.GetInt(second_node,"rect_top"),
-							xml.GetInt(second_node,"rect_width"),
-							xml.GetInt(second_node,"rect_height")
+							xml.getInt(second_node,"rect_left"),
+							xml.getInt(second_node,"rect_top"),
+							xml.getInt(second_node,"rect_width"),
+							xml.getInt(second_node,"rect_height")
 						);
 					//kumulacja czasów ekspozycji poszczególnych klatek animacji
 					//zatem, pobierając z wektora ostatni element kontenera

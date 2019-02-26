@@ -8,7 +8,7 @@
 #define H_GAME_PROPERTIES_JACK
 
 #include "../Utilities/Singleton/CSingleton.h"
-#include "../XML/CXml.h"
+#include "../XML/Xml.h"
 
 #define gGameProperties GameProperties::GetSingleton()
 
@@ -146,9 +146,9 @@ namespace game
 		///
 		///Metoda ładująca dane z xml
 		///
-		///@param xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy Xml
 		///
-		bool load(CXml & xml);
+		bool load(Xml & xml);
 
 		///
 		///Metoda tworzy okno

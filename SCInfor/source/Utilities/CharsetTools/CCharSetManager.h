@@ -9,7 +9,7 @@
 
 #include "CCharsetTranslator.h"
 #include "../../Utilities/Singleton/CSingleton.h"
-#include "../../XML/CXml.h"
+#include "../../XML/Xml.h"
 #include <vector>
 
 #define gCharSetManager CCharSetManager::GetSingleton()
@@ -59,9 +59,9 @@ namespace charsettools
 		///
 		///Metoda ³aduj¹ca dane z xml
 		///
-		///@param &xml - referencja na obiekt klasy CXml
+		///@param &xml - referencja na obiekt klasy Xml
 		///
-		bool load(CXml &xml);
+		bool load(Xml &xml);
 
 		///
 		///Wirtualny interfejs - implementacja

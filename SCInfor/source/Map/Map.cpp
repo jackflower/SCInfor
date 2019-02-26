@@ -14,7 +14,7 @@
 #include "../Rendering/Displayable/Displayable.h"
 #include "../Rendering/Drawable/DrawableManager.h"
 #include "../Rendering/Drawable/Layers.h"
-#include "../Weather/CWeather.h"
+#include "../Weather/Weather.h"
 #include "../Utilities/StringUtils/StringUtils.h"
 
 using namespace rapidxml;
@@ -128,24 +128,24 @@ namespace mapengine
 	{
 		fprintf(stderr, "map %s loaded...\n", filename.c_str());
 		//wszystkie pliki xml z mapami - mają nagłówek root <map>
-		CXml xml(filename, "map" );
+		Xml xml(filename, "map" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool Map::load(CXml &xml)
+	bool Map::load(Xml &xml)
 	{
-		m_map_filename = xml.GetFilename();				//nazwa pliku xml mapy
+		m_map_filename = xml.getFilename();				//nazwa pliku xml mapy
 		p_fields = new std::vector<Tile*>();			//inicjujemy wskaźnik na wektor wskaźników do obiektów klasy Tile - kafli
         m_map_header = new MapHeader();					//tworzymy nagłówek mapy
 
 		//konfiguracja mapy - lokacji
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "map_header_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "map_header_config"))
 		{
 			//wypełniamy danymi strukturę opisującą mapę
 
 			//sprawdzamy, czy wersja mapy jest poprawna
-			m_map_header->m_map_version = xml.GetInt(node, "version" );
+			m_map_header->m_map_version = xml.getInt(node, "version" );
 			if(m_map_header->m_map_version != CURRENT_MAP_VERSION)
 			{
 				fprintf(stderr, "Invalid map version (%d, expected %d) for map %s", m_map_header->m_map_version, CURRENT_MAP_VERSION, m_map_filename.c_str());
@@ -153,29 +153,29 @@ namespace mapengine
 			}
 
 			//odczyt z pliku xml rozmiaru mapy w kaflach
-			m_map_header->m_map_width_in_tile = xml.GetInt(node, "width" );
-			m_map_header->m_map_height_in_tile = xml.GetInt(node, "height" );
+			m_map_header->m_map_width_in_tile = xml.getInt(node, "width" );
+			m_map_header->m_map_height_in_tile = xml.getInt(node, "height" );
 
 			//przypisanie rozmiaru do wektora z rozmiarem mapy
 			m_size.x = m_map_header->m_map_width_in_tile;
 			m_size.y = m_map_header->m_map_height_in_tile;
 
 			//maksymalna ilosc zywych potworow - jeśli nie odczytano z xml - default
-			m_max_living_monsters = xml.GetInt(node, "max_living_monsters" );
+			m_max_living_monsters = xml.getInt(node, "max_living_monsters" );
 
 			if(m_max_living_monsters < 0)//kara za próbę wpisania ujemnej liczby potworów
 				m_max_living_monsters = MAX_MONSTERS_DEFAULT;
 		}
 		else
 		{
-			fprintf(stderr, "error map loading... for map filename:  %s\n", xml.GetFilename().c_str());
+			fprintf(stderr, "error map loading... for map filename:  %s\n", xml.getFilename().c_str());
 			return false;
 		}
 
 		//ładowanie danych dla zjawisk pogodowych
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "weather_data"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "weather_data"))
 		{
-			std::string filename = xml.GetString(node, "weather_data_filename"); 
+			std::string filename = xml.getString(node, "weather_data_filename"); 
 			gWeather.load(filename);
 			//po załadowaniu pogody, przekazuję flagę do mapy, czy na danej mapie jest wiatr...
 			m_use_wind = gWeather.getUseWind();
@@ -184,13 +184,13 @@ namespace mapengine
 		//typy fabryczne kafli używanych na mapie
 		MapTileType *p_map_tile_type;//wskaźnik na obiekt klasy - opakowanie informacji o kaflu
 		
-		for (xml_node<> *node = xml.GetChild(xml.GetRootNode(),"tiletype"); node; node=xml.GetSibling(node,"tiletype"))
+		for (xml_node<> *node = xml.getChild(xml.getRootNode(),"tiletype"); node; node=xml.getSibling(node,"tiletype"))
 		{
 			p_map_tile_type = new MapTileType();
 
-			p_map_tile_type->setCode(xml.GetString(node,"code"));
-			p_map_tile_type->setImageFileName(xml.GetString(node,"image"));
-			p_map_tile_type->setImageNumberInAtlas(xml.GetInt(node,"index"));
+			p_map_tile_type->setCode(xml.getString(node,"code"));
+			p_map_tile_type->setImageFileName(xml.getString(node,"image"));
+			p_map_tile_type->setImageNumberInAtlas(xml.getInt(node,"index"));
 
 			if(gResourceManager.loadTexture(p_map_tile_type->getImageFileName()) == false)
 			{
@@ -204,9 +204,9 @@ namespace mapengine
 		}
 
         //rozmieszczenie kafli
-        if(xml_node<> *node = xml.GetChild(xml.GetRootNode(),"tiles"))//odczytuję do węzła tablicę kafli
+        if(xml_node<> *node = xml.getChild(xml.getRootNode(),"tiles"))//odczytuję do węzła tablicę kafli
 		{
-			const std::string &cdata = xml.GetString(node);	//odczytany łańcuch zawierający tablicę kafli
+			const std::string &cdata = xml.getString(node);	//odczytany łańcuch zawierający tablicę kafli
 			std::stringstream ss(cdata);					//przekazanie tablicy kafli do strumienia
 			//obliczamy ilość kafli, które należy wygenerować na mapie
 			int tilesNum = m_map_header->m_map_width_in_tile *  m_map_header->m_map_height_in_tile;
@@ -238,37 +238,37 @@ namespace mapengine
 		//typy fabryczne dla physicali na danej mapie
 		MapObjectType* p_map_object_type;
 
-		for (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "objtype"); node; node = xml.GetSibling(node, "objtype"))
+		for (xml_node<> *node = xml.getChild(xml.getRootNode(), "objtype"); node; node = xml.getSibling(node, "objtype"))
 		{
-			str_data = xml.GetString(node, "file");
+			str_data = xml.getString(node, "file");
 			if(gResourceManager.loadPhysicalTemplate(str_data) == false)
 			{
 				fprintf(stderr, "Cannot load object template file: %s", str_data.c_str());
 				return false;
 			}
 			p_map_object_type = new MapObjectType();
-			p_map_object_type->setCode(xml.GetString(node, "code"));
+			p_map_object_type->setCode(xml.getString(node, "code"));
 			p_map_object_type->setTemplate(gResourceManager.getPhysicalTemplate(str_data));
 			m_map_object_types.push_back(p_map_object_type);
         }
 
 		//physical's (potwory, drzewka, domki, to co potrafimy utworzyć)
 		MapObjectDescriptor *p_map_object;
-		for (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "obj"); node; node = xml.GetSibling(node, "obj"))
+		for (xml_node<> *node = xml.getChild(xml.getRootNode(), "obj"); node; node = xml.getSibling(node, "obj"))
 		{
-			str_data = xml.GetString(node, "code");
+			str_data = xml.getString(node, "code");
 			int i = getMapObjectTypeIndex(str_data);//pobieramy indeks wzorca fabrycznego na podstawie nazwy
 			if (i < 0)			//jeśli nie ma wzorców fabrycznych
 				return false;	//wychodzimy z pętli
 			p_map_object = new MapObjectDescriptor();
 
 			p_map_object->setCode(str_data);//nazwa wzorca (fabryczna)
-			p_map_object->setName(xml.GetString(node, "name"));//nazwa obiektu
-			p_map_object->setXPosition(xml.GetFloat(node, "x"));
-			p_map_object->setYPosition(xml.GetFloat(node, "y"));
-			p_map_object->setRotationBody(xml.GetFloat(node, "rotation_body"));
-			p_map_object->setRotationHead(xml.GetFloat(node, "rotation_head"));
-			p_map_object->setSmooth(xml.GetBool(node, "smooth"));
+			p_map_object->setName(xml.getString(node, "name"));//nazwa obiektu
+			p_map_object->setXPosition(xml.getFloat(node, "x"));
+			p_map_object->setYPosition(xml.getFloat(node, "y"));
+			p_map_object->setRotationBody(xml.getFloat(node, "rotation_body"));
+			p_map_object->setRotationHead(xml.getFloat(node, "rotation_head"));
+			p_map_object->setSmooth(xml.getBool(node, "smooth"));
 			p_map_object->setTemplate(m_map_object_types[i]->getTemplate());
 			//wstawiamy do kontenera opakowania danych do utworzenia physical's
 			m_map_object_descriptors.push_back(p_map_object);

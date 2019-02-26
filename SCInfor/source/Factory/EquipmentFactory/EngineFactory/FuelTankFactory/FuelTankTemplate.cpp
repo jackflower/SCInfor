@@ -51,22 +51,22 @@ namespace factory
 	//Wirtualna metoda ładująca dane
 	bool FuelTankTemplate::load(const std::string &name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool FuelTankTemplate::load(CXml & xml)
+	bool FuelTankTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//ładowanie wartości konfiguracji zbiornika paliwa
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "fueltank_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "fueltank_config"))
 		{
-			m_templ_fuel_tank_name = xml.GetString(node, "fuel_tank_name");
-			m_templ_fuel_tank_capacity = xml.GetFloat(node, "fuel_tank_capacity");
-			m_templ_fuel = xml.GetFloat(node, "fuel");
+			m_templ_fuel_tank_name = xml.getString(node, "fuel_tank_name");
+			m_templ_fuel_tank_capacity = xml.getFloat(node, "fuel_tank_capacity");
+			m_templ_fuel = xml.getFloat(node, "fuel");
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

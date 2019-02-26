@@ -5,7 +5,7 @@
 //
 
 #include "MonsterTemplate.h"
-#include "../XML/CXml.h"
+#include "../XML/Xml.h"
 #include "../Logic/PhysicalManager.h"
 
 namespace factory
@@ -31,15 +31,15 @@ namespace factory
 	//Metoda ładująca dane
 	bool MonsterTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool MonsterTemplate::load(CXml & xml)
+	bool MonsterTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy xml zawiera informację, że jest potwór
-		if (xml.GetString(xml.GetRootNode(), "type") != "monster")
+		if (xml.getString(xml.getRootNode(), "type") != "monster")
 			return false;
 
 		//sprawdzamy, czy można załadować dane z klasy bazowej

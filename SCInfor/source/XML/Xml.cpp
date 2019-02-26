@@ -1,12 +1,10 @@
-/*
- ________________________________
-| CXml.cpp - implemetacja klasy. |
-| Jack Flower -  September 2012. |
-|________________________________|
+ï»¿//  ________________________________
+// | Xml.cpp - class implementation |
+// | Jack Flower -  September 2012  |
+// |________________________________|
+//
 
-*/
-
-#include "CXml.h"
+#include "Xml.h"
 #include "../Utilities/StringUtils/StringUtils.h"
 
 using namespace stringutils;
@@ -14,50 +12,53 @@ using namespace rapidxml;
 
 namespace xml
 {
-	//Konstruktor domyœlny
-	CXml::CXml(std::string filename, std::string root)
+	//Konstruktor domyÅ›lny
+	Xml::Xml(std::string filename, std::string root)
 	:
-		m_xml_document	(),
-		m_xml_root		(NULL),
-		m_filename		(filename),
-		m_file			(NULL)
+		m_xml_document{},
+		m_xml_root{ NULL },
+		m_filename{ filename },
+		m_file{ NULL }
 	{
-
-		try//próba utworzenia i otwarcia pliku
+		try//prÃ³ba utworzenia i otwarcia pliku
 		{
-			m_file = new file<>(filename.c_str());							//tworzymy nowy plik i otwieramy jego zawartoœæ
-			m_xml_document.parse<parse_declaration_node>(m_file->data());	//przepisujemy zawartoœæ pliku do
-																			//dokumentu xml (parsujemy)
-			m_xml_root = m_xml_document.first_node(root.c_str());			//ustawiamy siê na g³ównym
-																			//wêŸle pliku xml "root"
+			//tworzymy nowy plik i otwieramy jego zawartoÅ›Ä‡
+			m_file = new file<>(filename.c_str());
+			
+			//przepisujemy zawartoÅ›Ä‡ pliku do dokumentu xml (parsujemy)
+			m_xml_document.parse<parse_declaration_node>(m_file->data());
+			
+			//ustawiamy siÄ™ na gÅ‚Ã³wnym wÄ™Åºle pliku xml "root"								  
+			m_xml_root = m_xml_document.first_node(root.c_str()); 
+																
 		}
-		catch(std::runtime_error &ex)
+		catch(std::runtime_error & ex)
 		{
 			fprintf(stderr, "Error while reading file %s: %s\n", filename.c_str(), ex.what());
 		}
 	}
 
 	//Destruktor
-	CXml::~CXml()
+	Xml::~Xml()
 	{
 		if (m_file != NULL)
 			delete m_file;
 	}
 
-	//Metoda zwraca wskaŸnik na wêze³ root dokumentu
-	xml_node<>* CXml::GetRootNode()
+	//Metoda zwraca wskaÅºnik na wÄ™zeÅ‚ root dokumentu
+	xml_node<> *Xml::getRootNode()
 	{
 		return m_xml_root;
 	}
 
-	//Metoda zwraca nazwê pliku
-	const std::string &CXml::GetFilename() const
+	//Metoda zwraca nazwÄ™ pliku
+	const std::string & Xml::getFilename() const
 	{
 		return m_filename;
 	}
 
-	//Metoda zwraca wskaŸnik na wêze³ dzieci
-	xml_node<>* CXml::GetChild(xml_node<> *parent, const std::string &node_name)
+	//Metoda zwraca wskaÅºnik na wÄ™zeÅ‚ dzieci
+	xml_node<> *Xml::getChild(xml_node<> *parent, const std::string & node_name)
 	{
 		xml_node<>* real_parent = parent ? parent : m_xml_root;
 		if (real_parent)
@@ -65,8 +66,8 @@ namespace xml
 		return NULL;
 	}
 
-	//Metoda zwraca wskaŸnik na wêze³ rodzeñstwa
-	xml_node<>* CXml::GetSibling(xml_node<> *sibling, const std::string &node_name)
+	//Metoda zwraca wskaÅºnik na wÄ™zeÅ‚ rodzeÅ„stwa
+	xml_node<> *Xml::getSibling(xml_node<> *sibling, const std::string & node_name)
 	{
 		if (sibling)
 			return sibling->next_sibling(node_name.c_str());
@@ -74,7 +75,7 @@ namespace xml
 	}
 
 	//Metoda zwraca atrybut wskazanego typu
-	bool CXml::GetBool(xml_node<>* parent, const std::string &attrib_name, bool default_value)
+	bool Xml::getBool(xml_node<> *parent, const std::string & attrib_name, bool default_value)
 	{
 		bool out = default_value;
 		xml_node<>* real_parent = parent ? parent : m_xml_root;
@@ -102,15 +103,15 @@ namespace xml
 	}
 
 	//Metoda zwraca atrybut wskazanego typu
-	bool CXml::GetBool(const std::string &node_name, const std::string &attrib_name, bool default_value)
+	bool Xml::getBool(const std::string & node_name, const std::string & attrib_name, bool default_value)
 	{
 		if (m_xml_root)
-			return GetBool(m_xml_root->first_node(node_name.c_str()), attrib_name, default_value);
+			return getBool(m_xml_root->first_node(node_name.c_str()), attrib_name, default_value);
 		return default_value;
 	}
 
 	//Metoda zwraca atrybut wskazanego typu
-	int CXml::GetInt(xml_node<> *parent, const std::string &attrib_name, int default_value)
+	int Xml::getInt(xml_node<> *parent, const std::string & attrib_name, int default_value)
 	{
 		int out = default_value;
 		xml_node<>* real_parent = parent ? parent : m_xml_root;
@@ -137,16 +138,16 @@ namespace xml
 	}
 
 	//Metoda zwraca atrybut wskazanego typu
-	int CXml::GetInt(const std::string &node_name, const std::string &attrib_name, int default_value)
+	int Xml::getInt(const std::string & node_name, const std::string & attrib_name, int default_value)
 	{
 		if (m_xml_root)
-			return GetInt(m_xml_root->first_node(node_name.c_str()), attrib_name, default_value);
+			return getInt(m_xml_root->first_node(node_name.c_str()), attrib_name, default_value);
 		return default_value;
 	}
 
 
 	//Metoda zwraca atrybut wskazanego typu
-	float CXml::GetFloat(xml_node<> *parent, const std::string &attrib_name, float default_value)
+	float Xml::getFloat(xml_node<> *parent, const std::string & attrib_name, float default_value)
 	{
 		float out = default_value;
 		xml_node<>* real_parent = parent ? parent : m_xml_root;
@@ -173,15 +174,15 @@ namespace xml
 	}
 
 	//Metoda zwraca atrybut wskazanego typu
-	float CXml::GetFloat(const std::string &node_name, const std::string &attrib_name, float default_value)
+	float Xml::getFloat(const std::string & node_name, const std::string & attrib_name, float default_value)
 	{
 		if (m_xml_root)
-			return GetFloat(m_xml_root->first_node(node_name.c_str()), attrib_name, default_value);
+			return getFloat(m_xml_root->first_node(node_name.c_str()), attrib_name, default_value);
 		return default_value;
 	}
 
 	//Metoda zwraca atrybut wskazanego typu
-	std::string CXml::GetString(xml_node<> *parent, const std::string &attrib_name)
+	std::string Xml::getString(xml_node<> *parent, const std::string & attrib_name)
 	{
 		xml_node<>* real_parent = parent ? parent : m_xml_root;
 
@@ -202,15 +203,15 @@ namespace xml
 	}
 
 	//Metoda zwraca atrybut wskazanego typu
-	std::string CXml::GetString(const std::string &node_name, const std::string &attrib_name)
+	std::string Xml::getString(const std::string & node_name, const std::string & attrib_name)
 	{
 		if (m_xml_root)
-			return GetString(m_xml_root->first_node(node_name.c_str()), attrib_name);
+			return getString(m_xml_root->first_node(node_name.c_str()), attrib_name);
 		return "";
 	}
 
 	//Metoda zwraca atrybut wskazanego typu
-	std::wstring CXml::GetWString(xml_node<> *parent, const std::string &attrib_name)
+	std::wstring Xml::getWString(xml_node<> *parent, const std::string &attrib_name)
 	{
 		xml_node<>* real_parent = parent ? parent : m_xml_root;
 
@@ -231,10 +232,10 @@ namespace xml
 	}
 
 	//Metoda zwraca atrybut wskazanego typu
-	std::wstring CXml::GetWString(const std::string &node_name, const std::string &attrib_name)
+	std::wstring Xml::getWString(const std::string & node_name, const std::string & attrib_name)
 	{
 		if (m_xml_root)
-			return GetWString(m_xml_root->first_node(node_name.c_str()), attrib_name);
+			return getWString(m_xml_root->first_node(node_name.c_str()), attrib_name);
 		return L"";
 	}
 }//namespace xml

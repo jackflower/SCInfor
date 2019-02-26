@@ -86,39 +86,39 @@ namespace factory
 	//Metoda ładująca dane
 	bool MapPhysicalTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool MapPhysicalTemplate::load(CXml & xml)
+	bool MapPhysicalTemplate::load(Xml & xml)
 	{
 		//nazwa pliku xml
-		m_templ_filename = xml.GetFilename();
+		m_templ_filename = xml.getFilename();
 
 		//typ obiektu - ResourceManager - na tej podstawie tworzy MapPhysical
-		if (xml_node<> *node = xml.GetRootNode())
-			m_templ_type = xml.GetString(node, "type");
+		if (xml_node<> *node = xml.getRootNode())
+			m_templ_type = xml.getString(node, "type");
 
 		//odczyt konfiguracji i danych dla obiektu
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "mapphysical_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "mapphysical_config"))
 		{
-			m_templ_code = xml.GetString(node, "code");
-			m_templ_displayable_type = xml.GetString(node, "displayable_type");
-			m_texture_name = xml.GetString(node, "texture_name");
-			m_texture_width = xml.GetInt(node, "texture_width");
-			m_texture_height = xml.GetInt(node, "texture_height");
-			m_color.r = xml.GetInt(node, "color_r");
-			m_color.g = xml.GetInt(node, "color_g");
-			m_color.b = xml.GetInt(node, "color_b");
-			m_color.a = xml.GetInt(node, "color_a");
-			m_animation_name = xml.GetString(node, "animation_name");
-			m_templ_scale.x = xml.GetFloat(node, "scale_x");
-			m_templ_scale.y = xml.GetFloat(node, "scale_y");
-			m_templ_rotation = xml.GetFloat(node, "rotation");
-			m_templ_size.x = xml.GetFloat(node, "size_x");
-			m_templ_size.y = xml.GetFloat(node, "size_y");
-			m_templ_smooth = xml.GetBool(node, "smooth");
+			m_templ_code = xml.getString(node, "code");
+			m_templ_displayable_type = xml.getString(node, "displayable_type");
+			m_texture_name = xml.getString(node, "texture_name");
+			m_texture_width = xml.getInt(node, "texture_width");
+			m_texture_height = xml.getInt(node, "texture_height");
+			m_color.r = xml.getInt(node, "color_r");
+			m_color.g = xml.getInt(node, "color_g");
+			m_color.b = xml.getInt(node, "color_b");
+			m_color.a = xml.getInt(node, "color_a");
+			m_animation_name = xml.getString(node, "animation_name");
+			m_templ_scale.x = xml.getFloat(node, "scale_x");
+			m_templ_scale.y = xml.getFloat(node, "scale_y");
+			m_templ_rotation = xml.getFloat(node, "rotation");
+			m_templ_size.x = xml.getFloat(node, "size_x");
+			m_templ_size.y = xml.getFloat(node, "size_y");
+			m_templ_smooth = xml.getBool(node, "smooth");
 		}
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny
 		return true;

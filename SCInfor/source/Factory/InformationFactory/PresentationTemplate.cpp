@@ -66,37 +66,37 @@ namespace factory
 	//Metoda ładująca dane
 	bool PresentationTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool PresentationTemplate::load(CXml & xml)
+	bool PresentationTemplate::load(Xml & xml)
 	{
 		//nazwa pliku xml
-		m_templ_filename = xml.GetFilename();
+		m_templ_filename = xml.getFilename();
 
 		//typ obiektu
-		if (xml_node<> *node = xml.GetRootNode())
-			m_templ_type = xml.GetString(node, "type");
+		if (xml_node<> *node = xml.getRootNode())
+			m_templ_type = xml.getString(node, "type");
 
 		//reprezentacja graficzna
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "presentation_configuration"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "presentation_configuration"))
 		{
-			m_templ_font_name = xml.GetString(node, "font_name");
-			m_templ_color_front.r = xml.GetInt(node, "color_front_r");
-			m_templ_color_front.g = xml.GetInt(node, "color_front_g");
-			m_templ_color_front.b = xml.GetInt(node, "color_front_b");
-			m_templ_color_front.a = xml.GetInt(node, "color_front_a");
-			m_templ_color_back.r = xml.GetInt(node, "color_back_r");
-			m_templ_color_back.g = xml.GetInt(node, "color_back_g");
-			m_templ_color_back.b = xml.GetInt(node, "color_back_b");
-			m_templ_color_back.a = xml.GetInt(node, "color_back_a");
-			m_templ_font_size = xml.GetInt(node, "font_size");
-			m_templ_string = xml.GetString(node, "string");
-			m_templ_use_under = xml.GetBool(node, "use_under");
-			m_templ_offset.x = xml.GetFloat(node, "offset_x");
-			m_templ_offset.y = xml.GetFloat(node, "offset_y");
+			m_templ_font_name = xml.getString(node, "font_name");
+			m_templ_color_front.r = xml.getInt(node, "color_front_r");
+			m_templ_color_front.g = xml.getInt(node, "color_front_g");
+			m_templ_color_front.b = xml.getInt(node, "color_front_b");
+			m_templ_color_front.a = xml.getInt(node, "color_front_a");
+			m_templ_color_back.r = xml.getInt(node, "color_back_r");
+			m_templ_color_back.g = xml.getInt(node, "color_back_g");
+			m_templ_color_back.b = xml.getInt(node, "color_back_b");
+			m_templ_color_back.a = xml.getInt(node, "color_back_a");
+			m_templ_font_size = xml.getInt(node, "font_size");
+			m_templ_string = xml.getString(node, "string");
+			m_templ_use_under = xml.getBool(node, "use_under");
+			m_templ_offset.x = xml.getFloat(node, "offset_x");
+			m_templ_offset.y = xml.getFloat(node, "offset_y");
 		}
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny
 		return true;

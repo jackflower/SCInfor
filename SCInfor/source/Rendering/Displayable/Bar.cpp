@@ -134,31 +134,31 @@ namespace displayable
 	//Metoda ładująca dane
 	bool Bar::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	///Metoda ładująca dane z xml
-	bool Bar::load(CXml & xml)
+	bool Bar::load(Xml & xml)
 	{
 		//typ obiektu
-		if (xml_node<> *node = xml.GetRootNode())
-			m_bar_name = xml.GetString(node, "type");
+		if (xml_node<> *node = xml.getRootNode())
+			m_bar_name = xml.getString(node, "type");
 
 		//pola konfiguracyjne paska energii
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "bar_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "bar_config"))
 		{
-			m_thickness = xml.GetFloat(node, "bar_thickness");
-			m_vector_offset.x = xml.GetFloat(node, "vector_offset_x");
-			m_vector_offset.y = xml.GetFloat(node, "vector_offset_y");
+			m_thickness = xml.getFloat(node, "bar_thickness");
+			m_vector_offset.x = xml.getFloat(node, "vector_offset_x");
+			m_vector_offset.y = xml.getFloat(node, "vector_offset_y");
 			setColor
 			(
 				sf::Color
 					(
-						xml.GetInt(node, "bar_color_red"),
-						xml.GetInt(node, "bar_color_green"),
-						xml.GetInt(node, "bar_color_blue"),
-						xml.GetInt(node, "bar_color_alpha")
+						xml.getInt(node, "bar_color_red"),
+						xml.getInt(node, "bar_color_green"),
+						xml.getInt(node, "bar_color_blue"),
+						xml.getInt(node, "bar_color_alpha")
 					)
 			);
 		}

@@ -51,9 +51,9 @@ namespace factory
 		///
 		///Wirtualna metoda ładująca dane z xml ładuje wspólne cechy Actor
 		///
-		///@param xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy Xml
 		///
-		bool load(CXml & xml);
+		bool load(Xml & xml);
 
 		///
 		///Metoda tworzy obiekt klasy WindTurbine

@@ -53,32 +53,32 @@ namespace factory
 	//Wirtualna metoda ładująca dane
 	bool WindPowerStationTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane
-	bool WindPowerStationTemplate::load(CXml & xml)
+	bool WindPowerStationTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej PowerStationTemplate
 		if (!PowerStationTemplate::load(xml)) return false;
 
 		//dane obiektu
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "windpower_station_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "windpower_station_config"))
 		{
-			m_templ_energy_condensation_time = xml.GetFloat(node, "energy_condensation_time");
-			m_templ_portion_energy = xml.GetFloat(node, "portion_energy");
-			m_templ_use_rotation_head = xml.GetBool(node, "use_rotation_head");
-			m_templ_speed_rotation_head = xml.GetFloat(node, "speed_rotation_head");
+			m_templ_energy_condensation_time = xml.getFloat(node, "energy_condensation_time");
+			m_templ_portion_energy = xml.getFloat(node, "portion_energy");
+			m_templ_use_rotation_head = xml.getBool(node, "use_rotation_head");
+			m_templ_speed_rotation_head = xml.getFloat(node, "speed_rotation_head");
 		}
 
 		//nazwa pliku z konfiguracją turbiny wiatrowej
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "windturbine_data"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "windturbine_data"))
 		{
 			//flaga, czy obiekt posiada turbinę wiatrową
-			m_templ_use_windturbine = xml.GetBool(node, "use_windturbine");
+			m_templ_use_windturbine = xml.getBool(node, "use_windturbine");
 			//zapisuję do zmiennej nazwę pliku z konfiguracją turbiny wiatrowej
-			std::string windturbine_filename_tmp = xml.GetString(node, "windturbine_filename");
+			std::string windturbine_filename_tmp = xml.getString(node, "windturbine_filename");
 			
 			if(m_templ_use_windturbine)
 				p_templ_windturbine = (WindTurbineTemplate*)gResourceManager.getPhysicalTemplate(windturbine_filename_tmp);

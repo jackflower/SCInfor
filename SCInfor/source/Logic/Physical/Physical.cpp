@@ -5,7 +5,7 @@
 //
 
 #include "Physical.h"
-#include "../../Weather/CWeather.h"
+#include "../../Weather/Weather.h"
 #include "../../Rendering/Displayable/Displayable.h"
 #include "../../Rendering/Drawable/DrawableManager.h"
 #include "../../Rendering/Animations/Animation.h"

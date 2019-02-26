@@ -40,20 +40,20 @@ namespace factory
 	//Wirtualna metoda ładująca dane
 	bool SolarBatteryTemplate::load(const std::string &name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool SolarBatteryTemplate::load(CXml &xml)
+	bool SolarBatteryTemplate::load(Xml &xml)
 	{
 		//ładowanie danych klasy bazowej BatteryTemplate
 		if (!BatteryTemplate::load(xml)) return false;
 
 		//ładowanie konfiguracji solarbattery
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "solar_battery_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "solar_battery_config"))
 		{
-			m_templ_decline = xml.GetFloat(node, "decline");
+			m_templ_decline = xml.getFloat(node, "decline");
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

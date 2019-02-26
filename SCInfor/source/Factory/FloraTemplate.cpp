@@ -5,7 +5,7 @@
 //
 
 #include "FloraTemplate.h"
-#include "../XML/CXml.h"
+#include "../XML/Xml.h"
 #include "../Logic/PhysicalManager.h"
 
 namespace factory
@@ -44,15 +44,15 @@ namespace factory
 	//Metoda ładująca dane
 	bool FloraTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool FloraTemplate::load(CXml & xml)
+	bool FloraTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy xml zawiera informację, że jest to jakaś roślinność
-		if (xml.GetString(xml.GetRootNode(), "type") != "flora")
+		if (xml.getString(xml.getRootNode(), "type") != "flora")
 			return false;
 
 		//sprawdzamy, czy można załadować dane z klasy bazowej
@@ -64,10 +64,10 @@ namespace factory
 		//należay utworzyć takie same pola oraz je uwzględnić
 
 		//ładujemy dane o prędkości obrotu
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "rotation_speed"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "rotation_speed"))
 		{
-			m_rotation_speed_body_template = xml.GetFloat(node, "rotation_speed_body");
-			m_rotation_speed_head_template = xml.GetFloat(node, "rotation_speed_head");
+			m_rotation_speed_body_template = xml.getFloat(node, "rotation_speed_body");
+			m_rotation_speed_head_template = xml.getFloat(node, "rotation_speed_head");
 		}
 
 		return true;

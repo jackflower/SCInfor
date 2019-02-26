@@ -17,7 +17,7 @@
 #include "../Rendering/Displayable/Rectangle.h"
 #include "../Rendering/Displayable/HudStaticText.h"
 #include "../Universe/CUniverse.h"
-#include "../Weather/CWeather.h"
+#include "../Weather/Weather.h"
 #include "../Factory/PhysicalTemplate.h"
 #include "../Logic/Logic.h"
 #include "../Map/Map.h"

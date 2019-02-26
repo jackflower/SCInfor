@@ -52,24 +52,24 @@ namespace factory
 	//Metoda ładująca dane
 	bool CommunicationTemplate::load(const std::string &name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool CommunicationTemplate::load(CXml &xml)
+	bool CommunicationTemplate::load(Xml &xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane obiektu
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "communication_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "communication_config"))
 		{
-			m_templ_communication_name = xml.GetString(node, "communication_name");
-			m_templ_range = xml.GetFloat(node,"range");
-			m_templ_reset_duration = xml.GetFloat(node, "reset_duration");
-			m_templ_login = xml.GetString(node, "login");
-			m_templ_password = xml.GetString(node, "password");
+			m_templ_communication_name = xml.getString(node, "communication_name");
+			m_templ_range = xml.getFloat(node,"range");
+			m_templ_reset_duration = xml.getFloat(node, "reset_duration");
+			m_templ_login = xml.getString(node, "login");
+			m_templ_password = xml.getString(node, "password");
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

@@ -48,30 +48,30 @@ namespace factory
 	//Metoda ładująca dane
 	bool RelayStationTemplate::load(const std::string &name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool RelayStationTemplate::load(CXml & xml)
+	bool RelayStationTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane obiektu
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "relay_station_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "relay_station_config"))
 		{
-			m_templ_relay_station_name = xml.GetString(node, "relay_station_name");
-			m_templ_use_communication = xml.GetBool(node, "use_communication");
+			m_templ_relay_station_name = xml.getString(node, "relay_station_name");
+			m_templ_use_communication = xml.getBool(node, "use_communication");
 		}
 
 		//ładowanie modułu komunikacyjnego
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "communication_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "communication_data"))
 		{
 			//flaga, czy obiekt posiada moduł komunikacyjny
-			m_templ_use_communication = xml.GetBool(node, "use_communication");
+			m_templ_use_communication = xml.getBool(node, "use_communication");
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu komunikacji
-			std::string communication_filename_tmp = xml.GetString(node, "communication_filename");
+			std::string communication_filename_tmp = xml.getString(node, "communication_filename");
 			if(m_templ_use_communication)
 				p_templ_communication = (CommunicationTemplate*)gResourceManager.getPhysicalTemplate(communication_filename_tmp);
 		}

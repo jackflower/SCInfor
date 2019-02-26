@@ -159,24 +159,24 @@ namespace game
 	bool GameProperties::load(const std::string &name)
 	{
 		std::cout << "GameProperties::load ...game properties loading..." << std::endl;
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Metoda ładująca dane z xml
-	bool GameProperties::load(CXml &xml)
+	bool GameProperties::load(Xml &xml)
 	{
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "game_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "game_config"))
 		{
-			m_width = xml.GetInt(node, "width");
-			m_height = xml.GetInt(node, "height");
-			m_bits_per_pixel_depth = xml.GetInt(node, "bits_per_pixel_depth");
-			m_fullscreen = xml.GetBool(node, "fullscreen");
-			m_vsync	= xml.GetBool(node, "vsync");
-			m_sound_volume = xml.GetFloat(node, "sound_volume");
-			m_music_volume = xml.GetFloat(node, "music_volume");
-			m_windows_name = xml.GetString(node, "windows_name");
-			m_time_step = xml.GetFloat(node, "time_step");
+			m_width = xml.getInt(node, "width");
+			m_height = xml.getInt(node, "height");
+			m_bits_per_pixel_depth = xml.getInt(node, "bits_per_pixel_depth");
+			m_fullscreen = xml.getBool(node, "fullscreen");
+			m_vsync	= xml.getBool(node, "vsync");
+			m_sound_volume = xml.getFloat(node, "sound_volume");
+			m_music_volume = xml.getFloat(node, "music_volume");
+			m_windows_name = xml.getString(node, "windows_name");
+			m_time_step = xml.getFloat(node, "time_step");
 
 			if(m_time_step <=0.f)
 				m_time_step = 0.025f;//gdyby coś się nie powiodło...

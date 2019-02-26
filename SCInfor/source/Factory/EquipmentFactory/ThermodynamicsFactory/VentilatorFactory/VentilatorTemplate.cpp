@@ -48,24 +48,24 @@ namespace factory
 	//Metoda ładująca dane
 	bool VentilatorTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml ładuje wspólne cechy Actor
-	bool VentilatorTemplate::load(CXml & xml)
+	bool VentilatorTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane wentylatora
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "ventilator_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "ventilator_config"))
 		{
-			m_templ_ventilator_name = xml.GetString(node, "ventilator_name");
-			m_templ_performance = xml.GetFloat(node, "performance");
-			m_templ_performance_factor = xml.GetFloat(node, "performance_factor");
-			m_templ_energy_consumption = xml.GetFloat(node, "energy_consumption");
-			m_templ_energy_consumption_factor = xml.GetFloat(node, "energy_consumption_factor");
+			m_templ_ventilator_name = xml.getString(node, "ventilator_name");
+			m_templ_performance = xml.getFloat(node, "performance");
+			m_templ_performance_factor = xml.getFloat(node, "performance_factor");
+			m_templ_energy_consumption = xml.getFloat(node, "energy_consumption");
+			m_templ_energy_consumption_factor = xml.getFloat(node, "energy_consumption_factor");
 		}
 		
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

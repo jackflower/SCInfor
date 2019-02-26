@@ -7,7 +7,7 @@
 */
 
 #include "CUniverse.h"
-#include "../XML/CXml.h"
+#include "../XML/Xml.h"
 
 using namespace universe;
 using namespace xml;
@@ -123,19 +123,19 @@ namespace universe
 			//zmienne pomocnicze, poza pêtl¹, aby nie obci¹¿aæ stosu
 			std::string m_galaxy_name = "";
 
-			CXml xml(file_name, node_name);
+			Xml xml(file_name, node_name);
 			//dodatkowo odczytaæ dane dla klasy CUniverse (wszechœwiata...)
 			//
 
-			for(xml_node<> *node = xml.GetChild(xml.GetRootNode(),"galaxy_name"); node; node = xml.GetSibling(node,"galaxy_name"))
+			for(xml_node<> *node = xml.getChild(xml.getRootNode(),"galaxy_name"); node; node = xml.getSibling(node,"galaxy_name"))
 			{
-				m_galaxy_name = xml.GetString(node, "name");	//odczutujê nazwê galaktyki - (unikalna nazwa dla kontenera)
+				m_galaxy_name = xml.getString(node, "name");	//odczutujê nazwê galaktyki - (unikalna nazwa dla kontenera)
 				CGalaxy* galaxy = new CGalaxy();				//tworzê galaktykê
-				for(xml_node<> *second_node = xml.GetChild(node,"galaxy_data"); second_node; second_node = xml.GetSibling(second_node,"galaxy_data"))
+				for(xml_node<> *second_node = xml.getChild(node,"galaxy_data"); second_node; second_node = xml.getSibling(second_node,"galaxy_data"))
 				{
 					//przepisujê dane galaktyki
-					galaxy->setName(xml.GetString(second_node, "galaxy_name"));
-					galaxy->setGalaxyType(xml.GetString(second_node, "galaxy_type"));
+					galaxy->setName(xml.getString(second_node, "galaxy_name"));
+					galaxy->setGalaxyType(xml.getString(second_node, "galaxy_type"));
 					
 					
 					//dodajê galaktykê do kontenera

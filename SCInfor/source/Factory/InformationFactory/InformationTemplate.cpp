@@ -61,32 +61,32 @@ namespace factory
 	//Metoda ładująca dane
 	bool InformationTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool InformationTemplate::load(CXml & xml)
+	bool InformationTemplate::load(Xml & xml)
 	{
 		//nazwa pliku xml
-		m_templ_filename = xml.GetFilename();
+		m_templ_filename = xml.getFilename();
 
 		//typ obiektu
-		if (xml_node<> *node = xml.GetRootNode())
-			m_templ_type = xml.GetString(node, "type");
+		if (xml_node<> *node = xml.getRootNode())
+			m_templ_type = xml.getString(node, "type");
 
 		//reprezentacja graficzna - tekstury
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "graphics_configuration"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "graphics_configuration"))
 		{
-			m_templ_texture_digit_name = xml.GetString(node, "texture_digit_name");
-			m_templ_texture_mask_name = xml.GetString(node, "texture_mask_name");
+			m_templ_texture_digit_name = xml.getString(node, "texture_digit_name");
+			m_templ_texture_mask_name = xml.getString(node, "texture_mask_name");
 		}
 
 		//transformacja geometryczna
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "scale"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "scale"))
 		{
-			m_templ_tranformable_digit.setScale(xml.GetFloat(node, "scale_digit_x"),xml.GetFloat(node, "scale_digit_y"));
-			m_templ_tranformable_mask.setScale(xml.GetFloat(node, "scale_mask_x"),xml.GetFloat(node, "scale_mask_y"));
+			m_templ_tranformable_digit.setScale(xml.getFloat(node, "scale_digit_x"),xml.getFloat(node, "scale_digit_y"));
+			m_templ_tranformable_mask.setScale(xml.getFloat(node, "scale_mask_x"),xml.getFloat(node, "scale_mask_y"));
 		}
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny
 		return true;

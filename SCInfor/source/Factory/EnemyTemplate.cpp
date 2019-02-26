@@ -38,15 +38,15 @@ namespace factory
 	//Metoda ładująca dane
 	bool EnemyTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool EnemyTemplate::load(CXml & xml)
+	bool EnemyTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy xml zawiera informację, że jest enemy
-		if (xml.GetString(xml.GetRootNode(), "type") != "enemy")
+		if (xml.getString(xml.getRootNode(), "type") != "enemy")
 			return false;
 
 		//sprawdzamy, czy można załadować dane z klasy bazowej

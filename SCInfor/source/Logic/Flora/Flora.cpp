@@ -6,7 +6,7 @@
 
 #include "Flora.h"
 #include "../../Rendering/Drawable/Layers.h"
-#include "../../Weather/CWeather.h"
+#include "../../Weather/Weather.h"
 
 using namespace rendering::drawable;
 using namespace weather;
@@ -82,8 +82,8 @@ namespace logic
 	{
 		updateShadow(dt);	//aktualizacja shadow engine
 
-		rotateBody(m_rotation_speed_body * gWeather.GetWindSpeed());
-		rotateHead(m_rotation_speed_head * gWeather.GetWindSpeed());
+		rotateBody(m_rotation_speed_body * gWeather.getWindSpeed());
+		rotateHead(m_rotation_speed_head * gWeather.getWindSpeed());
 		//AI flora: To Do...
 	}
 }//namespace logic

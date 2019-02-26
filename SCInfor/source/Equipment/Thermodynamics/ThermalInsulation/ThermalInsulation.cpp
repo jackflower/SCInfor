@@ -5,7 +5,7 @@
 //
 
 #include "ThermalInsulation.h"
-#include "../../../Weather/CWeather.h"
+#include "../../../Weather/Weather.h"
 #include "../../../Rendering/Animations/AnimSet.h"
 #include "../../../Rendering/Drawable/Layers.h"
 #include "../../../Rendering/Displayable/Displayable.h"

@@ -72,98 +72,98 @@ namespace factory
 	//Metoda ładująca dane
 	bool PhysicalTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool PhysicalTemplate::load(CXml & xml)
+	bool PhysicalTemplate::load(Xml & xml)
 	{
 		//nazwa pliku xml
-		m_templ_filename = xml.GetFilename();
+		m_templ_filename = xml.getFilename();
 
 		//typ obiektu
-		if (xml_node<> *node = xml.GetRootNode())
-			m_templ_type = xml.GetString(node, "type");
+		if (xml_node<> *node = xml.getRootNode())
+			m_templ_type = xml.getString(node, "type");
 
 		//nazwa "gatunku" obiektu (np. robot, human, gun, etc...)
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "genre"))
-			m_templ_genre = xml.GetWString(node, "genre");
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "genre"))
+			m_templ_genre = xml.getWString(node, "genre");
 
 		//zakres promienia detekcji kolizji
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "radius"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "radius"))
 		{
-			m_templ_circle_radius = xml.GetFloat(node, "circle_radius");
+			m_templ_circle_radius = xml.getFloat(node, "circle_radius");
 		}
 
 		//wektor przechowujący rozmiar obszaru prostokątnego
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "rect_size"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "rect_size"))
 		{
-			m_templ_rect_size.x = xml.GetFloat(node, "rect_size_x");
-			m_templ_rect_size.y = xml.GetFloat(node, "rect_size_y");
+			m_templ_rect_size.x = xml.getFloat(node, "rect_size_x");
+			m_templ_rect_size.y = xml.getFloat(node, "rect_size_y");
 		}
 
 		//wektor przechowujący rozmiar obszaru prostokątnego
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "rect_size"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "rect_size"))
 		{
 			//body
-			m_templ_rect_size_body.x = xml.GetFloat(node, "rect_size_body_x");
-			m_templ_rect_size_body.y = xml.GetFloat(node, "rect_size_body_y");
+			m_templ_rect_size_body.x = xml.getFloat(node, "rect_size_body_x");
+			m_templ_rect_size_body.y = xml.getFloat(node, "rect_size_body_y");
 			//head
-			m_templ_rect_size_head.x = xml.GetFloat(node, "rect_size_head_x");
-			m_templ_rect_size_head.y = xml.GetFloat(node, "rect_size_head_y");
+			m_templ_rect_size_head.x = xml.getFloat(node, "rect_size_head_x");
+			m_templ_rect_size_head.y = xml.getFloat(node, "rect_size_head_y");
 		}
 
 		//skala obiektu (body and head)
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "scale"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "scale"))
 		{
-			m_templ_scale_body = xml.GetFloat(node, "scale_body");
-			m_templ_scale_head = xml.GetFloat(node, "scale_head");
+			m_templ_scale_body = xml.getFloat(node, "scale_body");
+			m_templ_scale_head = xml.getFloat(node, "scale_head");
 		}
 
 		//wartość pułapu obiektu względem podłoża
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "altitude"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "altitude"))
 		{
-			m_templ_altitude = xml.GetFloat(node, "altitude");
+			m_templ_altitude = xml.getFloat(node, "altitude");
 		}
 
 		//pola konfiguracyjne - potrzebne przy podejmowaniu decyzji - wygląd obiektu
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "physical_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "physical_config"))
 		{
-			m_templ_use_displayable_body = xml.GetBool(node, "use_displayable_body");
-			m_templ_use_shadow_body = xml.GetBool(node, "use_shadow_body");
-			m_templ_use_displayable_head = xml.GetBool(node, "use_displayable_head");
-			m_templ_use_shadow_head = xml.GetBool(node, "use_shadow_head");
+			m_templ_use_displayable_body = xml.getBool(node, "use_displayable_body");
+			m_templ_use_shadow_body = xml.getBool(node, "use_shadow_body");
+			m_templ_use_displayable_head = xml.getBool(node, "use_displayable_head");
+			m_templ_use_shadow_head = xml.getBool(node, "use_shadow_head");
 		}
 		
 		//konfiguraja koloru
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "physical_color"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "physical_color"))
 		{
-			m_templ_color_body.r = xml.GetInt(node, "color_body_r");
-			m_templ_color_body.g = xml.GetInt(node, "color_body_g");
-			m_templ_color_body.b = xml.GetInt(node, "color_body_b");
-			m_templ_color_body.a = xml.GetInt(node, "color_body_a");
+			m_templ_color_body.r = xml.getInt(node, "color_body_r");
+			m_templ_color_body.g = xml.getInt(node, "color_body_g");
+			m_templ_color_body.b = xml.getInt(node, "color_body_b");
+			m_templ_color_body.a = xml.getInt(node, "color_body_a");
 
-			m_templ_color_head.r = xml.GetInt(node, "color_head_r");
-			m_templ_color_head.g = xml.GetInt(node, "color_head_g");
-			m_templ_color_head.b = xml.GetInt(node, "color_head_b");
-			m_templ_color_head.a = xml.GetInt(node, "color_head_a");
+			m_templ_color_head.r = xml.getInt(node, "color_head_r");
+			m_templ_color_head.g = xml.getInt(node, "color_head_g");
+			m_templ_color_head.b = xml.getInt(node, "color_head_b");
+			m_templ_color_head.a = xml.getInt(node, "color_head_a");
 		}
 
 		//ładowanie danych reprezentacji graficznej - obrazy statyczne
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "static_image"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "static_image"))
 		{
-			m_templ_texture_body = xml.GetString(node, "image_name_body");
-			m_templ_texture_head = xml.GetString(node, "image_name_head");
+			m_templ_texture_body = xml.getString(node, "image_name_body");
+			m_templ_texture_head = xml.getString(node, "image_name_head");
 		}
 
 		//konfiguraja danych o kolidowaniu poszczególnych części, z których składa się obiekt
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "colliding_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "colliding_config"))
 		{
-			m_templ_part_collision_data.setCollidingBody(xml.GetBool(node, "colliding_body"));
-			m_templ_part_collision_data.setCollidingBodyShadow(xml.GetBool(node, "colliding_body_shadow"));
-			m_templ_part_collision_data.setCollidingHead(xml.GetBool(node, "colliding_head"));
-			m_templ_part_collision_data.setCollidingHeadShadow(xml.GetBool(node, "colliding_head_shadow"));
+			m_templ_part_collision_data.setCollidingBody(xml.getBool(node, "colliding_body"));
+			m_templ_part_collision_data.setCollidingBodyShadow(xml.getBool(node, "colliding_body_shadow"));
+			m_templ_part_collision_data.setCollidingHead(xml.getBool(node, "colliding_head"));
+			m_templ_part_collision_data.setCollidingHeadShadow(xml.getBool(node, "colliding_head_shadow"));
 		}
 
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny

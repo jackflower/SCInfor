@@ -10,7 +10,7 @@
 #include "Music.h"
 #include "Sound.h"
 #include "Font.h"
-#include "../XML/CXml.h"
+#include "../XML/Xml.h"
 #include "../Factory/PhysicalTemplate.h"
 #include "../Factory/ActorTemplate.h"
 #include "../Factory/RobotTemplate.h"
@@ -412,7 +412,7 @@ namespace resource
 		if(m_resources.count(handle) != 0)				//jeśli w kontenerze już jest taki zasób (wzorzec)
 			return handle;								//nie ma potrzeby go tworzyć - zwracamy go
 
-		CXml xml(name, "root" );						//tworzymy obiekt xml i otwieramy plik z damymi
+		Xml xml(name, "root" );						//tworzymy obiekt xml i otwieramy plik z damymi
 		
 		//Z pliku xml wzorca (factory, template) odczytujemy z węzła type
 		//rodzaj wzorca, jaki mamy utworzyć, a następnie umieszczamy
@@ -462,7 +462,7 @@ namespace resource
 		//w technologiach web, mobilnych, telefony, etc...
 		
 		//pobieramy typ wzorca
-		const std::string &type = xml.GetString(xml.GetRootNode(),"type");
+		const std::string &type = xml.getString(xml.getRootNode(),"type");
 		
 		Resource *resource;	//tworzymy wskaźnik na zasób
 		

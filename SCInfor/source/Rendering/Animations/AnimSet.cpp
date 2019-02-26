@@ -425,15 +425,15 @@ namespace rendering
 		}
 
 		//Metoda sprawdza nazwy animacji i wstawia animacje do zestawu animacji
-		void AnimSet::parse(CXml & xml, rapidxml::xml_node<> *root)
+		void AnimSet::parse(Xml & xml, rapidxml::xml_node<> *root)
 		{
 			std::string tmp;//zmienna na odczytaną nazwę animacji i odczytany typ animacji z zestawu
-			for (xml_node<> *node = xml.GetChild(root, "anim"); node; node=xml.GetSibling(node, "anim") )
+			for (xml_node<> *node = xml.getChild(root, "anim"); node; node=xml.getSibling(node, "anim") )
 			{
-				tmp = xml.GetString(node, "type");	//odczytuję typ animacji z zestawu
+				tmp = xml.getString(node, "type");	//odczytuję typ animacji z zestawu
 				int a_handle = parseAnimHandle(tmp);//sprawdzam, czy odczytany typ animacji istnieje (zamiana na uchwyt)
 				if (a_handle < 0) continue;			//kontynuacja, gdy nie ma typu (zostanie to i tak zapisane pod takim kluczem)
-				tmp = xml.GetString(node, "name");	//odczyt nazwy animacji z zestawu
+				tmp = xml.getString(node, "name");	//odczyt nazwy animacji z zestawu
 				setAnimation(a_handle, tmp);		//ustawienie animacji (uchwyt, nazwa animacji)
 													//i zapis do wektora
 			}

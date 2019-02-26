@@ -312,7 +312,7 @@
     <ClCompile Include="source\Universe\Galaxy\CGalaxy.cpp" />
     <ClCompile Include="source\Universe\Galaxy\Star\CStar.cpp" />
     <ClCompile Include="source\Universe\Galaxy\Star\Planet\CPlanet.cpp" />
-    <ClCompile Include="source\Universe\Galaxy\Star\Planet\Satelite\CSatelite.cpp" />
+    <ClCompile Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.cpp" />
     <ClCompile Include="source\Universe\Interaction\CEntityTemperature.cpp" />
     <ClCompile Include="source\Universe\Interaction\CGravity.cpp" />
     <ClCompile Include="source\Utilities\CharsetTools\CCharSetManager.cpp" />
@@ -336,12 +336,12 @@
     <ClCompile Include="source\Utilities\TimeUtilities\CFPS.cpp" />
     <ClCompile Include="source\Utilities\Transformation\CTransformation.cpp" />
     <ClCompile Include="source\Utilities\Translation\Directions.cpp" />
-    <ClCompile Include="source\Weather\CDay.cpp" />
-    <ClCompile Include="source\Weather\CShadowEngine.cpp" />
-    <ClCompile Include="source\Weather\CTemperature.cpp" />
-    <ClCompile Include="source\Weather\CWeather.cpp" />
-    <ClCompile Include="source\Weather\CWind.cpp" />
-    <ClCompile Include="source\XML\CXml.cpp" />
+    <ClCompile Include="source\Weather\Day.cpp" />
+    <ClCompile Include="source\Weather\ShadowEngine.cpp" />
+    <ClCompile Include="source\Weather\Temperature.cpp" />
+    <ClCompile Include="source\Weather\Weather.cpp" />
+    <ClCompile Include="source\Weather\Wind.cpp" />
+    <ClCompile Include="source\XML\Xml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Collision\Collision.h" />
@@ -555,7 +555,7 @@
     <ClInclude Include="source\Universe\Galaxy\CGalaxy.h" />
     <ClInclude Include="source\Universe\Galaxy\Star\CStar.h" />
     <ClInclude Include="source\Universe\Galaxy\Star\Planet\CPlanet.h" />
-    <ClInclude Include="source\Universe\Galaxy\Star\Planet\Satelite\CSatelite.h" />
+    <ClInclude Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.h" />
     <ClInclude Include="source\Universe\Interaction\CEntityTemperature.h" />
     <ClInclude Include="source\Universe\Interaction\CGravity.h" />
     <ClInclude Include="source\Utilities\CharsetTools\CCharSetManager.h" />
@@ -586,12 +586,12 @@
     <ClInclude Include="source\Utilities\Transformation\CTransformation.h" />
     <ClInclude Include="source\Utilities\Translation\Directions.h" />
     <ClInclude Include="source\Utilities\Utilities\Utilities.h" />
-    <ClInclude Include="source\Weather\CDay.h" />
-    <ClInclude Include="source\Weather\CShadowEngine.h" />
-    <ClInclude Include="source\Weather\CTemperature.h" />
-    <ClInclude Include="source\Weather\CWeather.h" />
-    <ClInclude Include="source\Weather\CWind.h" />
-    <ClInclude Include="source\XML\CXml.h" />
+    <ClInclude Include="source\Weather\Day.h" />
+    <ClInclude Include="source\Weather\ShadowEngine.h" />
+    <ClInclude Include="source\Weather\Temperature.h" />
+    <ClInclude Include="source\Weather\Weather.h" />
+    <ClInclude Include="source\Weather\Wind.h" />
+    <ClInclude Include="source\XML\Xml.h" />
     <ClInclude Include="source\XML\RapidXML\rapidxml.hpp" />
     <ClInclude Include="source\XML\RapidXML\rapidxml_iterators.hpp" />
     <ClInclude Include="source\XML\RapidXML\rapidxml_print.hpp" />

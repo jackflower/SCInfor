@@ -9,7 +9,7 @@
 
 #include "../../ResourceManager/Resource.h"
 #include "../../Information/Information.h"
-#include "../../XML/CXml.h"
+#include "../../XML/Xml.h"
 #include "../../RTTI/RTTI.h"
 #include <string>
 
@@ -58,9 +58,9 @@ namespace factory
 		///
 		///Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
 		///
-		///@param xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy Xml
 		///
-		virtual bool load(CXml & xml);
+		virtual bool load(Xml & xml);
 
 		///
 		///Wirtualna metoda tworzenie obiektów pochodnych klasy Information

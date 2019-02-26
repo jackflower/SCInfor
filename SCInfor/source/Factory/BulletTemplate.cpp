@@ -5,7 +5,7 @@
 //
 
 #include "BulletTemplate.h"
-#include "../XML/CXml.h"
+#include "../XML/Xml.h"
 #include "../Rendering/Displayable/Displayable.h"
 #include "../Rendering/Animations/AnimationManager.h"
 #include "../Rendering/Animations/AnimationState.h"
@@ -45,41 +45,41 @@ namespace factory
 	//Metoda ładująca dane
 	bool BulletTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root");
+		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool BulletTemplate::load(CXml & xml)
+	bool BulletTemplate::load(Xml & xml)
 	{
 		//if (!PhysicalTemplate::load(xml)) return false;
 		if (!ActorTemplate::load(xml)) return false;
 
 		//sprawdzamy, czy xml zawiera informację, że jest to bullet
-		if (xml.GetString(xml.GetRootNode(), "type") != "bullet")
+		if (xml.getString(xml.getRootNode(), "type") != "bullet")
 			return false;
 
 		//plik xml pocisku przypomina plik physical'a
 		//ewentualne ładowanie danych generycznych pocisku...
 
 
-		//if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "zabawa z pociskiem..."))
+		//if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "zabawa z pociskiem..."))
 
-		//mMinDamage = xml.GetFloat( "damage", "min" );
-		//mMaxDamage = xml.GetFloat( "damage", "max" );
+		//mMinDamage = xml.getFloat( "damage", "min" );
+		//mMaxDamage = xml.getFloat( "damage", "max" );
 
-		//node = xml.GetChild(0, "anim");
+		//node = xml.getChild(0, "anim");
 		//if (node)
-		  //  mAnimation = gAnimationManager.GetAnimation(xml.GetString(node,"name"));
+		  //  mAnimation = gAnimationManager.GetAnimation(xml.getString(node,"name"));
 
-		//for (node=xml.GetChild(0,"image"); node; node=xml.GetSibl(node,"image") )
-		//	mImages.push_back( xml.GetString(node,"filename") );
+		//for (node=xml.getChild(0,"image"); node; node=xml.GetSibl(node,"image") )
+		//	mImages.push_back( xml.getString(node,"filename") );
 
-		//for (node=xml.GetChild(0,"effect"); node; node=xml.GetSibl(node,"effect") )
-		//	mEffects.push_back( xml.GetString(node,"name") );
+		//for (node=xml.getChild(0,"effect"); node; node=xml.GetSibl(node,"effect") )
+		//	mEffects.push_back( xml.getString(node,"name") );
 
-		//for (node=xml.GetChild(0,"destroyEffect"); node; node=xml.GetSibl(node,"destroyEffect") )
-		//	mDestroyEffects.push_back( xml.GetString(node,"name") );
+		//for (node=xml.getChild(0,"destroyEffect"); node; node=xml.GetSibl(node,"destroyEffect") )
+		//	mDestroyEffects.push_back( xml.getString(node,"name") );
 
 		return true;
 	}

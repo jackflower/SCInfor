@@ -67,46 +67,46 @@ namespace factory
 	//Metoda ładująca dane
 	bool PowerRelayStationTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool PowerRelayStationTemplate::load(CXml & xml)
+	bool PowerRelayStationTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej RelayStationTemplate
 		if (!RelayStationTemplate::load(xml)) return false;
 
 		//dane obiektu
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "power_relay_station_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "power_relay_station_config"))
 		{
-			m_templ_powerstations_capacity = xml.GetInt(node, "powerstations_capacity");
-			m_templ_state_time_range.first = xml.GetFloat(node, "state_time_range_first");
-			m_templ_state_time_range.second = xml.GetFloat(node, "state_time_range_second");
-			m_templ_rotation_speed_range.first = xml.GetFloat(node, "rotation_speed_range_first");
-			m_templ_rotation_speed_range.second = xml.GetFloat(node, "rotation_speed_range_second");
-			m_templ_time_to_start = xml.GetFloat(node, "time_to_start");
-			m_templ_duration_disconnect = xml.GetFloat(node, "duration_disconnect");
+			m_templ_powerstations_capacity = xml.getInt(node, "powerstations_capacity");
+			m_templ_state_time_range.first = xml.getFloat(node, "state_time_range_first");
+			m_templ_state_time_range.second = xml.getFloat(node, "state_time_range_second");
+			m_templ_rotation_speed_range.first = xml.getFloat(node, "rotation_speed_range_first");
+			m_templ_rotation_speed_range.second = xml.getFloat(node, "rotation_speed_range_second");
+			m_templ_time_to_start = xml.getFloat(node, "time_to_start");
+			m_templ_duration_disconnect = xml.getFloat(node, "duration_disconnect");
 		}
 
 		//ładowanie modułu prezentacji slotów przekaźnika
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "slots_rate_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "slots_rate_data"))
 		{
 			//flaga, czy obiekt posiada moduł prezentacji stanu slotów
-			m_templ_use_slots_rate = xml.GetBool(node, "use_slots_rate");
+			m_templ_use_slots_rate = xml.getBool(node, "use_slots_rate");
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu prezentacji stanu slotów
-			std::string slots_rate_filename_tmp = xml.GetString(node, "slots_rate_filename");
+			std::string slots_rate_filename_tmp = xml.getString(node, "slots_rate_filename");
 			if (m_templ_use_slots_rate)
 				p_templ_slot_rate = (SlotsRateTemplate*)gResourceManager.getPhysicalTemplate(slots_rate_filename_tmp);
 		}
 
 		//ładowanie modułu baterii slotów przekaźnika
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "battery_data"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "battery_data"))
 		{
 			//flaga, czy obiekt posiada moduł prezentacji stanu slotów
-			m_templ_use_battery = xml.GetBool(node, "use_battery");
+			m_templ_use_battery = xml.getBool(node, "use_battery");
 			//zapisuję do zmiennej nazwę pliku z konfiguracją modułu prezentacji stanu slotów
-			std::string battery_filename_tmp = xml.GetString(node, "battery_filename");
+			std::string battery_filename_tmp = xml.getString(node, "battery_filename");
 			if (m_templ_use_battery)
 				p_templ_battery = (BatteryTemplate*)gResourceManager.getPhysicalTemplate(battery_filename_tmp);
 		}

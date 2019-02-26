@@ -9,7 +9,7 @@
 
 #include "../../../../ResourceManager/Resource.h"
 #include "../../../../Factory/ActorTemplate.h"
-#include "../../../../XML/CXml.h"
+#include "../../../../XML/Xml.h"
 #include "../../../../RTTI/RTTI.h"
 #include "../../../../Equipment/Energy/EnergyTank/EnergyTank.h"
 
@@ -59,9 +59,9 @@ namespace factory
 		///
 		///Wirtualna metoda ładująca dane z xml
 		///
-		///@param xml - referencja na obiekt klasy CXml
+		///@param xml - referencja na obiekt klasy Xml
 		///
-		virtual bool load(CXml & xml);
+		virtual bool load(Xml & xml);
 
 		///
 		///Metoda tworzy obiekt klasy EnergyTank

@@ -5,7 +5,7 @@
 //
 
 #include "AirconditioningTemplate.h"
-#include "../../../../Weather/CWeather.h"
+#include "../../../../Weather/Weather.h"
 #include "../../../../Utilities/Random/CRandom.h"
 #include "../../../../ResourceManager/ResourceManager.h"
 #include "../../../../Rendering/Animations/AnimSet.h"
@@ -64,40 +64,40 @@ namespace factory
 	//Metoda ładująca dane
 	bool AirconditioningTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool AirconditioningTemplate::load(CXml & xml)
+	bool AirconditioningTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane modułu klimatyzatora
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "airconditioning_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "airconditioning_config"))
 		{
-			m_templ_airconditioning_name = xml.GetString(node, "airconditioning_name");
-			m_templ_temperature = xml.GetFloat(node, "temperature");
-			m_templ_temperature_set = xml.GetFloat(node, "temperature_set");
-			m_templ_temperature_range.first = xml.GetFloat(node, "temperature_range_cold");
-			m_templ_temperature_range.second = xml.GetFloat(node, "temperature_range_warm");
-			m_templ_temperature_increment = xml.GetFloat(node, "temperature_increment");
-			m_templ_energy_consumption = xml.GetFloat(node, "energy_consumption");
-			m_templ_fuel_consumption = xml.GetFloat(node, "fuel_consumption");
+			m_templ_airconditioning_name = xml.getString(node, "airconditioning_name");
+			m_templ_temperature = xml.getFloat(node, "temperature");
+			m_templ_temperature_set = xml.getFloat(node, "temperature_set");
+			m_templ_temperature_range.first = xml.getFloat(node, "temperature_range_cold");
+			m_templ_temperature_range.second = xml.getFloat(node, "temperature_range_warm");
+			m_templ_temperature_increment = xml.getFloat(node, "temperature_increment");
+			m_templ_energy_consumption = xml.getFloat(node, "energy_consumption");
+			m_templ_fuel_consumption = xml.getFloat(node, "fuel_consumption");
 		}
 
 		//ładowanie nazwy pliku z konfiguracją termoizolatora
-		if (xml_node<>*	node = xml.GetChild(xml.GetRootNode(), "thermalinsulation_config"))
+		if (xml_node<>*	node = xml.getChild(xml.getRootNode(), "thermalinsulation_config"))
 		{
 			//flaga, czy obiekt posiada moduł termoizolatora
-			m_templ_thermalinsulation_data.setUseEquipment(xml.GetBool(node, "use_thermal_insulation"));//dopisać do xml'a
+			m_templ_thermalinsulation_data.setUseEquipment(xml.getBool(node, "use_thermal_insulation"));//dopisać do xml'a
 
 			//nazwa pliku z konfiguracją thermalinsulation
-			std::string thermalinsulation_filename_tmp = xml.GetString(node, "thermalinsulation_filename");
+			std::string thermalinsulation_filename_tmp = xml.getString(node, "thermalinsulation_filename");
 		
 			//emitery dla obiektu klasy ThermalInsulation
-			m_templ_thermalinsulation_data.setEmiter(xml.GetFloat(node, "thermalinsulation_emiter_x"), xml.GetFloat(node, "thermalinsulation_emiter_y"));
+			m_templ_thermalinsulation_data.setEmiter(xml.getFloat(node, "thermalinsulation_emiter_x"), xml.getFloat(node, "thermalinsulation_emiter_y"));
 
 			if(m_templ_thermalinsulation_data.getUseEquipment())
 				p_templ_thermal_insulation = (ThermalInsulationTemplate*)gResourceManager.getPhysicalTemplate(thermalinsulation_filename_tmp);

@@ -17,7 +17,7 @@
 #include "../../Equipment/Weapon/Gun/Gun.h"
 #include "../../Utilities/Utilities/Utilities.h"
 #include "../../Game/Game.h"
-#include "../../Weather/CWeather.h"
+#include "../../Weather/Weather.h"
 #include <iostream>
 
 using namespace rendering::displayable;

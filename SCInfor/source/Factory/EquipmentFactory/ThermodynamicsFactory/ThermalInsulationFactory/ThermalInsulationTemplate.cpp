@@ -5,7 +5,7 @@
 //
 
 #include "ThermalInsulationTemplate.h"
-#include "../../../../Weather/CWeather.h"
+#include "../../../../Weather/Weather.h"
 #include "../../../../Rendering/Animations/AnimSet.h"
 
 using namespace weather;
@@ -52,25 +52,25 @@ namespace factory
 	//Metoda ładująca dane
 	bool ThermalInsulationTemplate::load(const std::string & name)
 	{
-		CXml xml(name, "root" );
+		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml ładuje wspólne cechy Actor
-	bool ThermalInsulationTemplate::load(CXml & xml)
+	bool ThermalInsulationTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;
 
 		//dane termoizolatora
-		if (xml_node<> *node = xml.GetChild(xml.GetRootNode(), "thermalinsulation_config"))
+		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "thermalinsulation_config"))
 		{
-			m_templ_thermalinsulation_name = xml.GetString(node, "thermalinsulation_name");
-			m_templ_temperature_ambient = xml.GetFloat(node, "temperature_ambient");
-			m_templ_thermal_protection = xml.GetFloat(node, "thermal_protection");
-			m_templ_thermal_protection_factor = xml.GetFloat(node, "thermal_protection_factor");
-			m_templ_thermal_protection_consume = xml.GetFloat(node, "thermal_protection_consume");
-			m_templ_thermal_protection_duration = xml.GetFloat(node, "thermal_protection_duration");
+			m_templ_thermalinsulation_name = xml.getString(node, "thermalinsulation_name");
+			m_templ_temperature_ambient = xml.getFloat(node, "temperature_ambient");
+			m_templ_thermal_protection = xml.getFloat(node, "thermal_protection");
+			m_templ_thermal_protection_factor = xml.getFloat(node, "thermal_protection_factor");
+			m_templ_thermal_protection_consume = xml.getFloat(node, "thermal_protection_consume");
+			m_templ_thermal_protection_duration = xml.getFloat(node, "thermal_protection_duration");
 		}
 		
 		//wszystkie podklasy sprawdzają, czy xml jest poprawny
