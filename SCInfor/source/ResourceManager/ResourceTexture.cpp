@@ -1,17 +1,17 @@
-﻿//  _____________________________________
-// | RTexture.cpp - class implementation |
-// | Jack Flower - October 2013          |
-// |_____________________________________|
+﻿//  ____________________________________________
+// | ResourceTexture.cpp - class implementation |
+// | Jack Flower - October 2013                 |
+// |____________________________________________|
 //
 
-#include "RTexture.h"
+#include "ResourceTexture.h"
 
 namespace resource
 {
-	RTTI_IMPL(RTexture, Resource);
+	RTTI_IMPL(ResourceTexture, Resource);
 
 	//Konstruktor
-	RTexture::RTexture()
+	ResourceTexture::ResourceTexture()
 	:
 		Resource{}, //konstruktor klasy bazowej
 		sf::Texture{} //konstruktor klasy bazowej
@@ -19,18 +19,18 @@ namespace resource
 	}
 
 	//Destruktor
-	RTexture::~RTexture()
+	ResourceTexture::~ResourceTexture()
 	{
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
-	const std::string RTexture::getType() const
+	const std::string ResourceTexture::getType() const
 	{
 		return rtti.getNameClass();
 	}
 
 	//Wirtualna metoda ładująca zasób - implementacja
-	bool RTexture::load(const std::string & file_name)
+	bool ResourceTexture::load(const std::string & file_name)
 	{
 		if (loadFromFile(file_name))//jeśli dane zostały załadowane
 			return true;			//zwracamy flagę true (ok)
@@ -38,7 +38,7 @@ namespace resource
 	}
 
 	//Wirtualna metoda zwalniająca zasób
-	void RTexture::drop()
+	void ResourceTexture::drop()
 	{
 		delete this;
 	}

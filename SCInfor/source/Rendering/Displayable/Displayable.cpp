@@ -9,7 +9,7 @@
 #include "../Animations/AnimationManager.h"
 #include "../Animations/AnimationState.h"
 #include "../../ResourceManager/ResourceManager.h"
-#include "../../ResourceManager/RTexture.h"
+#include "../../ResourceManager/ResourceTexture.h"
 #include <SFML/Graphics.hpp>
 
 namespace rendering
@@ -226,7 +226,7 @@ namespace rendering
 		void Displayable::setTexture(const std::string & texture_name, bool smoothing)
 		{
 			m_smooth = smoothing;
-			RTexture* p_texture = gResourceManager.getTexture(texture_name);
+			ResourceTexture* p_texture = gResourceManager.getTexture(texture_name);
 			if (!p_texture)
 			{
 				fprintf(stderr, "warning: Displayable::setTexture: unable to obtain image `%s'\n", texture_name.c_str());
@@ -237,7 +237,7 @@ namespace rendering
 		}
 
 		//Metoda ustawia teksturę obiektu
-		void Displayable::setTexture(RTexture *p_texture, bool smoothing)
+		void Displayable::setTexture(ResourceTexture *p_texture, bool smoothing)
 		{
 			if (m_animation_state)					//jeśli wskaźnik na AnimationState jest zainicjowany
 			{
@@ -361,11 +361,11 @@ namespace rendering
 				//tworzymy klatkę animacji i pobieramy bieżącą klatkę z AnimationState
 				AnimationFrame frame = m_animation_state->getCurrentFrame();
 
-				//tworzymy wskaźnik na obiekt klasy RTexture (tekstura)
+				//tworzymy wskaźnik na obiekt klasy ResourceTexture (tekstura)
 				//inicjujemy ten wskaźnik obrazem pobranym na podstawie nazwy
 				//tekstury, na której znajduje sie klatka animacji.
 				//ResourceManager zwraca na podstawie tej nazwy wskaźnik na teksturę.
-				RTexture *p_texture = gResourceManager.getTexture(frame.getTextureName());
+				ResourceTexture *p_texture = gResourceManager.getTexture(frame.getTextureName());
 				//ustawiamy flagę wygładzania tekstury
 				p_texture->setSmooth(m_smooth);
 

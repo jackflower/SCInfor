@@ -10,7 +10,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics.hpp>
 #include "../../RTTI/RTTI.h"
-#include "../../ResourceManager/RTexture.h"
+#include "../../ResourceManager/ResourceTexture.h"
 #include "../../Rendering/Displayable/Displayable.h"
 
 ///
@@ -346,7 +346,7 @@ namespace mapengine
 		sf::Vector2f m_size; //wektor wielkości obiektu (niezależnie od rozmiaru tekstury)
 		std::string m_displayable_type; //typ graficznej reprezentacji obiektu
 		MapPhysicalTemplate *p_template; //wskaźnik na wzorzec - obiekt klasy MapPhysical jak i też pochodne tej klasy
-		RTexture *p_synthetic_texture; //wskaźnik na obiekt klasy RTexture - wykorzytywany przy tworzeniu syntetycznej tekstury
+		ResourceTexture *p_synthetic_texture; //wskaźnik na obiekt klasy ResourceTexture - wykorzytywany przy tworzeniu syntetycznej tekstury
 		sf::Image *p_synthetic_image; //wskaźnik na obiekt klasy sf::Image - wykorzytywany przy tworzeniu syntetycznego obrazu
 		bool m_smooth; //flaga określająca filtr wygładzający teksturę
 

@@ -6,7 +6,7 @@
 
 #include "ResourceManager.h"
 #include "../Utilities/StringUtils/StringUtils.h"
-#include "RTexture.h"
+#include "ResourceTexture.h"
 #include "Music.h"
 #include "Sound.h"
 #include "Font.h"
@@ -71,11 +71,11 @@ namespace resource
 
 	//Metody  ł a d u j ą c e  zasoby - implementacja
 
-	//Metoda ładuje zasób RTexture
+	//Metoda ładuje zasób ResourceTexture
 	ResourceHandle ResourceManager::loadTexture(const std::string & name)
 	{
 		fprintf(stderr, "ResourceManager::loadTexture() %s\n", name.c_str());
-		return loadResource<RTexture>(name);
+		return loadResource<ResourceTexture>(name);
 	}
 	
 	//Metoda ładuje zasób Music
@@ -143,10 +143,10 @@ namespace resource
 
 	//Metody  z w r a c a j ą c e  zasoby - implementacja
 
-	//Metoda zwraca wskaźnik na zasób - obiekt klasy RTexture
-	RTexture *ResourceManager::getTexture(const std::string & name)
+	//Metoda zwraca wskaźnik na zasób - obiekt klasy ResourceTexture
+	ResourceTexture *ResourceManager::getTexture(const std::string & name)
 	{
-		return (RTexture*)getResource<RTexture>(name);
+		return (ResourceTexture*)getResource<ResourceTexture>(name);
 	}
 
 	//Metoda zwraca wskaźnik na zasób - obiekt klasy Music
@@ -215,10 +215,10 @@ namespace resource
 		return (PowerRelayStationTemplate*)getResource<PowerRelayStationTemplate>(name);
 	}
 
-	//Metoda zwraca wskaźnik na zasób - obiekt klasy RTexture
-	RTexture *ResourceManager::getTexture(ResourceHandle handle)
+	//Metoda zwraca wskaźnik na zasób - obiekt klasy ResourceTexture
+	ResourceTexture *ResourceManager::getTexture(ResourceHandle handle)
 	{
-		return (RTexture*)getResource<RTexture>(handle);
+		return (ResourceTexture*)getResource<ResourceTexture>(handle);
 	}
 	
 	//Metoda zwraca wskaźnik na zasób - obiekt klasy Music
@@ -362,7 +362,7 @@ namespace resource
 														//Pamiętaj, że wskaźnikiem na obiekt klasy
 														//bazowej Resource, możemy także pokazywać
 														//na obiekty klas potomnych, czyli
-														//np. RTexture, Sound, Music,Font
+														//np. ResourceTexture, Sound, Music,Font
 														//i każdy inny zasób. który Resource Manager
 														//może produkować
 														//Ważne:

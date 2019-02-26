@@ -37,7 +37,7 @@ namespace mapengine
 		m_mapphysical_manager_index(-1),
 		m_ready_for_destruction(false)
 	{
-		p_synthetic_texture = new RTexture();
+		p_synthetic_texture = new ResourceTexture();
 		p_synthetic_image = new sf::Image;
 	}
 

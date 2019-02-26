@@ -1,7 +1,7 @@
-﻿//  _____________________________________
-// | RTexture.h - class definitoin       |
-// | Jack Flower - October 2013          |
-// |_____________________________________|
+﻿//  ____________________________________________
+// | ResourceTexture.h - class definitoin       |
+// | Jack Flower - October 2013                 |
+// |____________________________________________|
 //
 
 #ifndef H_RTEXTURE_JACK
@@ -15,9 +15,9 @@ namespace resource
 	///
 	///Klasa reprezetuje opakowanie obiektu klasy sf::Texture
 	///
-	class RTexture: public Resource, public sf::Texture
+	class ResourceTexture: public Resource, public sf::Texture
 	{
-		RTTI_DECL;	//uwaga - musimy przyjąć założenie, że klasa RTexture 
+		RTTI_DECL;	//uwaga - musimy przyjąć założenie, że klasa ResourceTexture 
 					//nie dziedziczy (dziedziczy po sf::Texture), ponieważ
 					//klasa sf::Texture to biblioteka, której nie możemy
 					//modyfikować - wykazujemy, że dziedziczy po Resource
@@ -27,12 +27,12 @@ namespace resource
 		///
 		///Konstruktor
 		///
-		RTexture();
+		ResourceTexture();
 
 		///
 		///Destruktor
 		///
-		~RTexture();
+		~ResourceTexture();
 
 		///
 		///Metoda zwraca typ obiektu /RTTI/

@@ -978,9 +978,6 @@
     <ClCompile Include="source\ResourceManager\Sound.cpp">
       <Filter>source\ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="source\ResourceManager\RTexture.cpp">
-      <Filter>source\ResourceManager</Filter>
-    </ClCompile>
     <ClCompile Include="source\ResourceManager\Resource.cpp">
       <Filter>source\ResourceManager</Filter>
     </ClCompile>
@@ -1007,6 +1004,9 @@
     </ClCompile>
     <ClCompile Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.cpp">
       <Filter>source\Universe\Galaxy\Star\Planet\Satelite</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ResourceManager\ResourceTexture.cpp">
+      <Filter>source\ResourceManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1736,9 +1736,6 @@
     <ClInclude Include="source\ResourceManager\Sound.h">
       <Filter>source\ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="source\ResourceManager\RTexture.h">
-      <Filter>source\ResourceManager</Filter>
-    </ClInclude>
     <ClInclude Include="source\ResourceManager\Resource.h">
       <Filter>source\ResourceManager</Filter>
     </ClInclude>
@@ -1765,6 +1762,9 @@
     </ClInclude>
     <ClInclude Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.h">
       <Filter>source\Universe\Galaxy\Star\Planet\Satelite</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ResourceManager\ResourceTexture.h">
+      <Filter>source\ResourceManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

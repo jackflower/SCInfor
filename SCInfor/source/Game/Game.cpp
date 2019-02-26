@@ -9,7 +9,7 @@
 #include <string>
 #include "Game.h"
 #include "../ResourceManager/ResourceManager.h"
-#include "../ResourceManager/RTexture.h"
+#include "../ResourceManager/ResourceTexture.h"
 #include "../ResourceManager/Font.h"
 #include "../Rendering/Animations/AnimationManager.h"
 #include "../Rendering/Drawable/DrawableManager.h"

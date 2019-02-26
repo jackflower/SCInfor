@@ -305,7 +305,7 @@
     <ClCompile Include="source\ResourceManager\Music.cpp" />
     <ClCompile Include="source\ResourceManager\ResourceManager.cpp" />
     <ClCompile Include="source\ResourceManager\Sound.cpp" />
-    <ClCompile Include="source\ResourceManager\RTexture.cpp" />
+    <ClCompile Include="source\ResourceManager\ResourceTexture.cpp" />
     <ClCompile Include="source\ResourceManager\Resource.cpp" />
     <ClCompile Include="source\RTTI\RTTI.cpp" />
     <ClCompile Include="source\Universe\CUniverse.cpp" />
@@ -548,7 +548,7 @@
     <ClInclude Include="source\ResourceManager\Music.h" />
     <ClInclude Include="source\ResourceManager\ResourceManager.h" />
     <ClInclude Include="source\ResourceManager\Sound.h" />
-    <ClInclude Include="source\ResourceManager\RTexture.h" />
+    <ClInclude Include="source\ResourceManager\ResourceTexture.h" />
     <ClInclude Include="source\ResourceManager\Resource.h" />
     <ClInclude Include="source\RTTI\RTTI.h" />
     <ClInclude Include="source\Universe\CUniverse.h" />

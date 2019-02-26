@@ -62,7 +62,7 @@ namespace factory
 ///
 namespace resource
 {
-	class RTexture;	//opakowanie sf::Texture 
+	class ResourceTexture;	//opakowanie sf::Texture 
 	class Music; //opakowanie sf::Music
 	class Sound; //opakowanie sf::SoundBuffer
 	class Font;	//opakowanie sf::Font
@@ -114,7 +114,7 @@ namespace resource
 		//Metody  ł a d u j ą c e  zasoby
 
 		///
-		///Metoda ładuje zasób RTexture
+		///Metoda ładuje zasób ResourceTexture
 		///
 		///@param name - stała referencja na nazwę zasobu
 		///
@@ -186,11 +186,11 @@ namespace resource
 		//Metody  z w r a c a j ą c e  zasoby
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy RTexture
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy ResourceTexture
 		///
 		///@param name - stała referencja na nazwę zasobu
 		///
-		RTexture *getTexture(const std::string & name);
+		ResourceTexture *getTexture(const std::string & name);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy Music
@@ -270,11 +270,11 @@ namespace resource
 		PowerRelayStationTemplate *getPowerRelayStationTemplate(const std::string & name);
 
 		///
-		///Metoda zwraca wskaźnik na zasób - obiekt klasy RTexture
+		///Metoda zwraca wskaźnik na zasób - obiekt klasy ResourceTexture
 		///
 		///@param handle - uchwyt zasobu
 		///
-		RTexture *getTexture(ResourceHandle handle);
+		ResourceTexture *getTexture(ResourceHandle handle);
 
 		///
 		///Metoda zwraca wskaźnik na zasób - obiekt klasy Music
