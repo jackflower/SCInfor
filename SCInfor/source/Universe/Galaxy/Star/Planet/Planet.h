@@ -11,8 +11,8 @@
 #include <string>
 #include "../../../../RTTI/RTTI.h"
 #include "Satelite/Satelite.h"
-#include "../../../Interaction/CGravity.h"
-#include "../../../Interaction/CEntityTemperature.h"
+#include "../../../Interaction/Gravity.h"
+#include "../../../Interaction/EntityTemperature.h"
 
 using namespace universe::galaxy::star::planet::satelite;
 using namespace interaction;
@@ -86,8 +86,8 @@ namespace universe
 					//definicja typu - kontener (mapa) na satelity
 					typedef std::map<std::string, Satelite*> SateliteMap;
 					SateliteMap m_satelite; //kontener (mapa) na satelity
-					CEntityTemperature m_planet_temperature; //temperatura planety
-					CGravity m_planet_gravity; //grawitacja
+					EntityTemperature m_planet_temperature; //temperatura planety
+					Gravity m_planet_gravity; //grawitacja
 					//masa, wielkośc, inne...
 				};
 			}//namespace planet

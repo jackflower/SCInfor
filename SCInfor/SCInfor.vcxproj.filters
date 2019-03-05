@@ -396,15 +396,6 @@
     <ClCompile Include="source\RTTI\RTTI.cpp">
       <Filter>source\RTTI</Filter>
     </ClCompile>
-    <ClCompile Include="source\Universe\CUniverse.cpp">
-      <Filter>source\Universe</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Universe\Interaction\CEntityTemperature.cpp">
-      <Filter>source\Universe\Interaction</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Universe\Interaction\CGravity.cpp">
-      <Filter>source\Universe\Interaction</Filter>
-    </ClCompile>
     <ClCompile Include="source\Utilities\CharsetTools\CCharSetManager.cpp">
       <Filter>source\Utilities\CharsetTools</Filter>
     </ClCompile>
@@ -1008,6 +999,15 @@
     <ClCompile Include="source\Universe\Galaxy\Galaxy.cpp">
       <Filter>source\Universe\Galaxy</Filter>
     </ClCompile>
+    <ClCompile Include="source\Universe\Interaction\EntityTemperature.cpp">
+      <Filter>source\Universe\Interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Interaction\Gravity.cpp">
+      <Filter>source\Universe\Interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Universe.cpp">
+      <Filter>source\Universe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h">
@@ -1120,15 +1120,6 @@
     </ClInclude>
     <ClInclude Include="source\RTTI\RTTI.h">
       <Filter>source\RTTI</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Universe\CUniverse.h">
-      <Filter>source\Universe</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Universe\Interaction\CGravity.h">
-      <Filter>source\Universe\Interaction</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Universe\Interaction\CEntityTemperature.h">
-      <Filter>source\Universe\Interaction</Filter>
     </ClInclude>
     <ClInclude Include="source\Utilities\CharsetTools\CCharSetManager.h">
       <Filter>source\Utilities\CharsetTools</Filter>
@@ -1765,6 +1756,15 @@
     </ClInclude>
     <ClInclude Include="source\Universe\Galaxy\Galaxy.h">
       <Filter>source\Universe\Galaxy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Interaction\EntityTemperature.h">
+      <Filter>source\Universe\Interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Interaction\Gravity.h">
+      <Filter>source\Universe\Interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Universe.h">
+      <Filter>source\Universe</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

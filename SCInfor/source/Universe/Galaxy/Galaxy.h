@@ -11,7 +11,7 @@
 #include <string>
 #include "../../RTTI/RTTI.h"
 #include "Star/Star.h"
-#include "../Interaction/CEntityTemperature.h"
+#include "../Interaction/EntityTemperature.h"
 
 using namespace universe::galaxy::star;
 
@@ -90,7 +90,7 @@ namespace universe
 
 		std::string m_galaxy_name; //nazwa galaktyki
 		std::string m_galaxy_type; //typ galaktyki
-		CEntityTemperature m_galaxy_temperature; //temperatura galaktyki
+		EntityTemperature m_galaxy_temperature; //temperatura galaktyki
 		
 		//definicja typu - kontener (mapa) na gwiazdy
 		typedef std::map<std::string, Star*> StarsMap;

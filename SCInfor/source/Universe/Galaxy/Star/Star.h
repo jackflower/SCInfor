@@ -11,7 +11,7 @@
 #include <string>
 #include "../../../RTTI/RTTI.h"
 #include "Planet/Planet.h"
-#include "../../Interaction/CEntityTemperature.h"
+#include "../../Interaction/EntityTemperature.h"
 
 using namespace universe::galaxy::star::planet;
 
@@ -70,7 +70,7 @@ namespace universe
 				//definicja typu - kontener (mapa) na planety
 				typedef std::map<std::string, Planet*> PlanetMap;
 				PlanetMap m_planet; //kontener (mapa) na planety
-				CEntityTemperature m_star_temperature; //temperatura gwiazdy
+				EntityTemperature m_star_temperature; //temperatura gwiazdy
 
 			};
 		}//namespace star
