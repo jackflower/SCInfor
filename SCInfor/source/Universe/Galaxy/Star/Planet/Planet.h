@@ -1,10 +1,8 @@
-/*
- ____________________________________
-| CPlanet.h - definicja klasy.       |
-| Jack Flower - May 2014.            |
-|____________________________________|
+ï»¿//  ____________________________________
+// | Planet.h - class definition        |
+// | Jack Flower - May 2014             |
+// |____________________________________|
 
-*/
 
 #ifndef H_PLANET_JACK
 #define H_PLANET_JACK
@@ -29,9 +27,9 @@ namespace universe
 			{
 			
 				///
-				///Klasa reprezentuje planetê
+				///Klasa reprezentuje planetÄ™
 				///
-				class CPlanet
+				class Planet
 				{
 					RTTI_DECL;
 
@@ -40,60 +38,57 @@ namespace universe
 					///
 					///Knstruktor
 					///
-					CPlanet(void);
+					Planet();
 
 					///
-					///Konstruktor kopiuj¹cy
+					///Konstruktor kopiujÄ…cy
 					///
-					///@param CPlanetCopy - sta³a referecja na obiekt klasy CPlanet
+					///@param copy - staÅ‚a referecja na obiekt klasy Planet
 					///
-					CPlanet(const CPlanet & CPlanetCopy);
+					Planet(const Planet & copy);
 
 					///
 					///Destruktor
 					///
-					~CPlanet(void);
+					~Planet();
 
 					///
 					///Metoda zwraca typ obiektu /RTTI/
 					///
-					const std::string GetType() const;
+					const std::string getType() const;
 
 					///
-					///Metoda zwraca temperaturê planety
+					///Metoda zwraca temperaturÄ™ planety
 					///
 					const float getPlanetTemperature() const;
 
 					///
-					///Metoda ustawia temperaturê planety
+					///Metoda ustawia temperaturÄ™ planety
 					///
 					///@param planet_temperature - temperatura planety
 					///
 					void setPlanetTemperature(float planet_temperature);
 
 					///
-					///Metoda zwraca grawitacjê planety
+					///Metoda zwraca grawitacjÄ™ planety
 					///
 					const float getPlanetGravity() const;
 
 					///
-					///Metoda ustawia grawitacjê planety
+					///Metoda ustawia grawitacjÄ™ planety
 					///
-					///@param planet_gravity - grawitacjê planety
+					///@param planet_gravity - grawitacjÄ™ planety
 					///
 					void setPlanetGravity(float planet_gravity);
 
 				private:
 				
-					typedef std::map<std::string, Satelite*>	SateliteMap;	//definicja typu - kontener (mapa) na satelity
-					SateliteMap									m_satelite;		//kontener (mapa) na satelity
-					
-					CEntityTemperature							m_planet_temperature;	//temperatura planety
-					CGravity									m_planet_gravity;		//grawitacja
-					//masa
-					//wielkoœæ
-					//inne ...
-
+					//definicja typu - kontener (mapa) na satelity
+					typedef std::map<std::string, Satelite*> SateliteMap;
+					SateliteMap m_satelite; //kontener (mapa) na satelity
+					CEntityTemperature m_planet_temperature; //temperatura planety
+					CGravity m_planet_gravity; //grawitacja
+					//masa, wielkoÅ›c, inne...
 				};
 			}//namespace planet
 		}//namespace star

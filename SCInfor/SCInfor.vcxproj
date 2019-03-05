@@ -311,7 +311,7 @@
     <ClCompile Include="source\Universe\CUniverse.cpp" />
     <ClCompile Include="source\Universe\Galaxy\CGalaxy.cpp" />
     <ClCompile Include="source\Universe\Galaxy\Star\CStar.cpp" />
-    <ClCompile Include="source\Universe\Galaxy\Star\Planet\CPlanet.cpp" />
+    <ClCompile Include="source\Universe\Galaxy\Star\Planet\Planet.cpp" />
     <ClCompile Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.cpp" />
     <ClCompile Include="source\Universe\Interaction\CEntityTemperature.cpp" />
     <ClCompile Include="source\Universe\Interaction\CGravity.cpp" />
@@ -554,7 +554,7 @@
     <ClInclude Include="source\Universe\CUniverse.h" />
     <ClInclude Include="source\Universe\Galaxy\CGalaxy.h" />
     <ClInclude Include="source\Universe\Galaxy\Star\CStar.h" />
-    <ClInclude Include="source\Universe\Galaxy\Star\Planet\CPlanet.h" />
+    <ClInclude Include="source\Universe\Galaxy\Star\Planet\Planet.h" />
     <ClInclude Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.h" />
     <ClInclude Include="source\Universe\Interaction\CEntityTemperature.h" />
     <ClInclude Include="source\Universe\Interaction\CGravity.h" />

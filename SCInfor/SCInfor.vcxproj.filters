@@ -405,9 +405,6 @@
     <ClCompile Include="source\Universe\Galaxy\Star\CStar.cpp">
       <Filter>source\Universe\Galaxy\Star</Filter>
     </ClCompile>
-    <ClCompile Include="source\Universe\Galaxy\Star\Planet\CPlanet.cpp">
-      <Filter>source\Universe\Galaxy\Star\Planet</Filter>
-    </ClCompile>
     <ClCompile Include="source\Universe\Interaction\CEntityTemperature.cpp">
       <Filter>source\Universe\Interaction</Filter>
     </ClCompile>
@@ -1008,6 +1005,9 @@
     <ClCompile Include="source\ResourceManager\ResourceTexture.cpp">
       <Filter>source\ResourceManager</Filter>
     </ClCompile>
+    <ClCompile Include="source\Universe\Galaxy\Star\Planet\Planet.cpp">
+      <Filter>source\Universe\Galaxy\Star\Planet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h">
@@ -1129,9 +1129,6 @@
     </ClInclude>
     <ClInclude Include="source\Universe\Galaxy\Star\CStar.h">
       <Filter>source\Universe\Galaxy\Star</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Universe\Galaxy\Star\Planet\CPlanet.h">
-      <Filter>source\Universe\Galaxy\Star\Planet</Filter>
     </ClInclude>
     <ClInclude Include="source\Universe\Interaction\CGravity.h">
       <Filter>source\Universe\Interaction</Filter>
@@ -1765,6 +1762,9 @@
     </ClInclude>
     <ClInclude Include="source\ResourceManager\ResourceTexture.h">
       <Filter>source\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Galaxy\Star\Planet\Planet.h">
+      <Filter>source\Universe\Galaxy\Star\Planet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
