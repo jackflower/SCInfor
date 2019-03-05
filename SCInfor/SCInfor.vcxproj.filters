@@ -399,12 +399,6 @@
     <ClCompile Include="source\Universe\CUniverse.cpp">
       <Filter>source\Universe</Filter>
     </ClCompile>
-    <ClCompile Include="source\Universe\Galaxy\CGalaxy.cpp">
-      <Filter>source\Universe\Galaxy</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Universe\Galaxy\Star\CStar.cpp">
-      <Filter>source\Universe\Galaxy\Star</Filter>
-    </ClCompile>
     <ClCompile Include="source\Universe\Interaction\CEntityTemperature.cpp">
       <Filter>source\Universe\Interaction</Filter>
     </ClCompile>
@@ -1008,6 +1002,12 @@
     <ClCompile Include="source\Universe\Galaxy\Star\Planet\Planet.cpp">
       <Filter>source\Universe\Galaxy\Star\Planet</Filter>
     </ClCompile>
+    <ClCompile Include="source\Universe\Galaxy\Star\Star.cpp">
+      <Filter>source\Universe\Galaxy\Star</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Universe\Galaxy\Galaxy.cpp">
+      <Filter>source\Universe\Galaxy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h">
@@ -1123,12 +1123,6 @@
     </ClInclude>
     <ClInclude Include="source\Universe\CUniverse.h">
       <Filter>source\Universe</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Universe\Galaxy\CGalaxy.h">
-      <Filter>source\Universe\Galaxy</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Universe\Galaxy\Star\CStar.h">
-      <Filter>source\Universe\Galaxy\Star</Filter>
     </ClInclude>
     <ClInclude Include="source\Universe\Interaction\CGravity.h">
       <Filter>source\Universe\Interaction</Filter>
@@ -1765,6 +1759,12 @@
     </ClInclude>
     <ClInclude Include="source\Universe\Galaxy\Star\Planet\Planet.h">
       <Filter>source\Universe\Galaxy\Star\Planet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Galaxy\Star\Star.h">
+      <Filter>source\Universe\Galaxy\Star</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Universe\Galaxy\Galaxy.h">
+      <Filter>source\Universe\Galaxy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

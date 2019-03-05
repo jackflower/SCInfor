@@ -309,8 +309,8 @@
     <ClCompile Include="source\ResourceManager\Resource.cpp" />
     <ClCompile Include="source\RTTI\RTTI.cpp" />
     <ClCompile Include="source\Universe\CUniverse.cpp" />
-    <ClCompile Include="source\Universe\Galaxy\CGalaxy.cpp" />
-    <ClCompile Include="source\Universe\Galaxy\Star\CStar.cpp" />
+    <ClCompile Include="source\Universe\Galaxy\Galaxy.cpp" />
+    <ClCompile Include="source\Universe\Galaxy\Star\Star.cpp" />
     <ClCompile Include="source\Universe\Galaxy\Star\Planet\Planet.cpp" />
     <ClCompile Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.cpp" />
     <ClCompile Include="source\Universe\Interaction\CEntityTemperature.cpp" />
@@ -552,8 +552,8 @@
     <ClInclude Include="source\ResourceManager\Resource.h" />
     <ClInclude Include="source\RTTI\RTTI.h" />
     <ClInclude Include="source\Universe\CUniverse.h" />
-    <ClInclude Include="source\Universe\Galaxy\CGalaxy.h" />
-    <ClInclude Include="source\Universe\Galaxy\Star\CStar.h" />
+    <ClInclude Include="source\Universe\Galaxy\Galaxy.h" />
+    <ClInclude Include="source\Universe\Galaxy\Star\Star.h" />
     <ClInclude Include="source\Universe\Galaxy\Star\Planet\Planet.h" />
     <ClInclude Include="source\Universe\Galaxy\Star\Planet\Satelite\Satelite.h" />
     <ClInclude Include="source\Universe\Interaction\CEntityTemperature.h" />

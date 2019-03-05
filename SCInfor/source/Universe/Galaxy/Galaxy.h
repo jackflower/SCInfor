@@ -1,10 +1,8 @@
-/*
- ____________________________________
-| CGalaxy.h - definicja klasy.       |
-| Jack Flower - May 2014.            |
-|____________________________________|
-
-*/
+ï»¿//  ___________________________________
+// | Galaxy.h - classs definition      |
+// | Jack Flower - May 2014            |
+// |___________________________________|
+//
 
 #ifndef H_GALAXY_JACK
 #define H_GALAXY_JACK
@@ -12,7 +10,7 @@
 #include <map>
 #include <string>
 #include "../../RTTI/RTTI.h"
-#include "Star/CStar.h"
+#include "Star/Star.h"
 #include "../Interaction/CEntityTemperature.h"
 
 using namespace universe::galaxy::star;
@@ -22,9 +20,9 @@ namespace universe
 	namespace galaxy
 	{
 		///
-		///Klasa reprezentuje galaktykê
+		///Klasa reprezentuje galaktykÄ™
 		///
-		class CGalaxy
+		class Galaxy
 		{
 			RTTI_DECL;
 
@@ -33,32 +31,32 @@ namespace universe
 			///
 			///Konstruktor
 			///
-			CGalaxy(void);
+			Galaxy();
 
 			///
-			///Konstruktor kopiuj¹cy
+			///Konstruktor kopiujÄ…cy
 			///
-			///@param &CGalaxyCopy - sta³a referencja na obiekt klasy CGalaxy
+			///@param copyy - staÅ‚a referencja na obiekt klasy Galaxy
 			///
-			CGalaxy(const CGalaxy & CGalaxyCopy);
+			Galaxy(const Galaxy & copy);
 
 			///
 			///Destruktor
 			///
-			~CGalaxy(void);
+			~Galaxy();
 
 			///
 			///Metoda zwraca typ obiektu /RTTI/
 			///
-			const std::string GetType() const;
+			const std::string getType() const;
 		
 			///
-			///Metoda zwraca nazwê galaktyki
+			///Metoda zwraca nazwÄ™ galaktyki
 			///
 			const std::string getName() const;
 
 			///
-			///Metoda ustawia nazwê galaktyki
+			///Metoda ustawia nazwÄ™ galaktyki
 			///
 			///@param &galaxy_name - nazwa galaktyki
 			///
@@ -72,17 +70,17 @@ namespace universe
 			///
 			///Metoda ustawia typ galaktyki
 			///
-			///@param &galaxy_type - typ galaktyki
+			///@param galaxy_type - typ galaktyki
 			///
 			void setGalaxyType(const std::string & galaxy_type);
 
 			///
-			///Metoda zwraca temperaturê galaktyki
+			///Metoda zwraca temperaturÄ™ galaktyki
 			///
 			const float getGalaxyTemperature() const;
 
 			///
-			///Metoda ustawia temperaturê galaktyki
+			///Metoda ustawia temperaturÄ™ galaktyki
 			///
 			///@param galaxy_temperature - temepratura galaktyki
 			///
@@ -90,13 +88,13 @@ namespace universe
 
 		private:
 
-		std::string			m_galaxy_name;			//nazwa galaktyki
-		std::string			m_galaxy_type;			//typ galaktyki
-		CEntityTemperature	m_galaxy_temperature;	//temperatura galaktyki
+		std::string m_galaxy_name; //nazwa galaktyki
+		std::string m_galaxy_type; //typ galaktyki
+		CEntityTemperature m_galaxy_temperature; //temperatura galaktyki
 		
-		
-		typedef std::map<std::string, CStar*>	StarsMap;	//definicja typu - kontener (mapa) na gwiazdy
-		StarsMap								m_stars;	//kontener (mapa) na gwiazdy
+		//definicja typu - kontener (mapa) na gwiazdy
+		typedef std::map<std::string, Star*> StarsMap;
+		StarsMap m_stars; //kontener (mapa) na gwiazdy
 
 		};
 	}//namespace galaxy

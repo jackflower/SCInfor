@@ -1,10 +1,8 @@
-/*
- __________________________________
-| CStar.h - definicja klasy.       |
-| Jack Flower - May 2014.          |
-|__________________________________|
-
-*/
+ï»¿//  _________________________________
+// | Star.h - class definition       |
+// | Jack Flower - May 2014          |
+// |_________________________________|
+//
 
 #ifndef H_STAR_JACK
 #define H_STAR_JACK
@@ -25,9 +23,9 @@ namespace universe
 		{
 
 			///
-			///Klasa reprezentuje gwiazdê
+			///Klasa reprezentuje gwiazdÄ™
 			///
-			class CStar
+			class Star
 			{
 				RTTI_DECL;
 
@@ -36,32 +34,32 @@ namespace universe
 				///
 				///Knstruktor
 				///
-				CStar(void);
+				Star();
 
 				///
-				///Konstruktor kopiuj¹cy
+				///Konstruktor kopiujÄ…cy
 				///
-				///@param CStarCopy - sta³a referecja na obiekt klasy CStar
+				///@param copy - staÅ‚a referecja na obiekt klasy Star
 				///
-				CStar(const CStar & CStarCopy);
+				Star(const Star & copy);
 
 				///
 				///Destruktor
 				///
-				~CStar(void);
+				~Star();
 
 				///
 				///Metoda zwraca typ obiektu /RTTI/
 				///
-				const std::string GetType() const;
+				const std::string getType() const;
 
 				///
-				///Metoda zwraca temperaturê gwiazdy
+				///Metoda zwraca temperaturÄ™ gwiazdy
 				///
 				const float getStarTemperature() const;
 
 				///
-				///Metoda ustawia temperaturê gwiazdy
+				///Metoda ustawia temperaturÄ™ gwiazdy
 				///
 				///@param star_temperature - temepratura gwiazdy
 				///
@@ -69,9 +67,10 @@ namespace universe
 
 			private:
 				
-				typedef std::map<std::string, Planet*>	PlanetMap;			//definicja typu - kontener (mapa) na planety
-				PlanetMap								m_planet;			//kontener (mapa) na planety
-				CEntityTemperature						m_star_temperature;	//temperatura gwiazdy
+				//definicja typu - kontener (mapa) na planety
+				typedef std::map<std::string, Planet*> PlanetMap;
+				PlanetMap m_planet; //kontener (mapa) na planety
+				CEntityTemperature m_star_temperature; //temperatura gwiazdy
 
 			};
 		}//namespace star

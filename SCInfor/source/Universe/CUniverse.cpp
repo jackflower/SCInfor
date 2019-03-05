@@ -43,9 +43,9 @@ namespace universe
 	}
 
 	//Metoda na podstawie nazwy zwraca z kontenera wskaŸnik na galaktykê
-	CGalaxy* CUniverse::GetGalaxy(const std::string& galaxy_name)
+	Galaxy* CUniverse::GetGalaxy(const std::string& galaxy_name)
 	{
-		CGalaxy* galaxyPtr = NULL;
+		Galaxy* galaxyPtr = NULL;
 		if (m_galaxy.find(galaxy_name) != m_galaxy.end())
 			galaxyPtr = m_galaxy[galaxy_name];
 
@@ -60,9 +60,9 @@ namespace universe
 
 	/*
 	//Metoda tworzy galaktykê
-	CGalaxy* CUniverse::CreateGalaxy(const std::string& galaxy_name)
+	Galaxy* CUniverse::CreateGalaxy(const std::string& galaxy_name)
 	{
-		CGalaxy* galaxyPtr = GetGalaxy(galaxy_name);
+		Galaxy* galaxyPtr = GetGalaxy(galaxy_name);
 		return CreateGalaxy(galaxyPtr);
 	}
 	*/
@@ -70,11 +70,11 @@ namespace universe
 	
 	/*
 	//Metoda tworzy galaktykê
-	CGalaxy* CUniverse::CreateGalaxy(CGalaxy *p_galaxy)
+	Galaxy* CUniverse::CreateGalaxy(Galaxy *p_galaxy)
 	{
 		if (p_galaxy == NULL)
 			return NULL;
-		CGalaxy* p_new_galaxy = new CGalaxy();
+		Galaxy* p_new_galaxy = new Galaxy();
 		m_galaxy[p_new_galaxy->galaxy_name] = p_new_galaxy;
 		return p_new_galaxy;
 
@@ -130,7 +130,7 @@ namespace universe
 			for(xml_node<> *node = xml.getChild(xml.getRootNode(),"galaxy_name"); node; node = xml.getSibling(node,"galaxy_name"))
 			{
 				m_galaxy_name = xml.getString(node, "name");	//odczutujê nazwê galaktyki - (unikalna nazwa dla kontenera)
-				CGalaxy* galaxy = new CGalaxy();				//tworzê galaktykê
+				Galaxy* galaxy = new Galaxy();				//tworzê galaktykê
 				for(xml_node<> *second_node = xml.getChild(node,"galaxy_data"); second_node; second_node = xml.getSibling(second_node,"galaxy_data"))
 				{
 					//przepisujê dane galaktyki

@@ -12,7 +12,7 @@
 #include <map>
 #include <string>
 #include "../Utilities/Singleton/CSingleton.h"
-#include "Galaxy/CGalaxy.h"
+#include "Galaxy/Galaxy.h"
 
 using namespace universe::galaxy;
 
@@ -48,28 +48,28 @@ namespace universe
 		///
 		///@param &animation_name - nazwa animacji
 		///
-		CGalaxy* GetGalaxy(const std::string& galaxy_name);
+		Galaxy* GetGalaxy(const std::string& galaxy_name);
 
 		///
 		///Metoda tworzy galaktykê
 		///
 		///@param &galaxy_name - nazwa galaktyki
 		///
-		//CGalaxy* CreateGalaxy(const std::string& galaxy_name);
+		//Galaxy* CreateGalaxy(const std::string& galaxy_name);
 
 		///
 		///Metoda tworzy galaktykê
 		///
-		///@param *p_galaxy - wskaŸnik na obiekt klasy CGalaxy
+		///@param *p_galaxy - wskaŸnik na obiekt klasy Galaxy
 		///
-		//CGalaxy* CreateGalaxy(CGalaxy *p_galaxy);
+		//Galaxy* CreateGalaxy(Galaxy *p_galaxy);
 
 		///
 		///Metoda usuwa galaktykê
 		///
-		///@param *p_galaxy - wskaŸnik na obiekt klasy CGalaxy
+		///@param *p_galaxy - wskaŸnik na obiekt klasy Galaxy
 		///
-		//void DestroyGalaxy(CGalaxy* p_galaxy);
+		//void DestroyGalaxy(Galaxy* p_galaxy);
 
 //Metoda usuwa zasób na podstawie identyfikatora
 //void CAnimManager::ReleaseAnimation(std::string anim_type_string)//const & string
@@ -95,7 +95,7 @@ namespace universe
 
 		//poprawiæ nazwy, ctor, dtor, set, get, ma czytaæ parent'a,
 		//ma zwracaæ ca³e kontenery, ma byæ lepiej i czytelniej, etc...
-		typedef std::map<std::string, CGalaxy*>	GalaxyMap;		//definicja typu - kontener (mapa) - galaktyki
+		typedef std::map<std::string, Galaxy*>	GalaxyMap;		//definicja typu - kontener (mapa) - galaktyki
 		GalaxyMap								m_galaxy;		//kontener (mapa) na galaktyki
 	};
 }//namespace universe
