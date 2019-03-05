@@ -14,50 +14,50 @@ namespace equipment
 		RTTI_IMPL(Battery, Actor);
 
 		//Konstruktor domyślny chroniony
-		Battery::Battery(const std::wstring& uniqueId)
+		Battery::Battery(const std::wstring & uniqueId)
 		:
-			Actor							(uniqueId),//konstruktor klasy bazowej
-			m_battery_name					(""),
-			m_capacity						(0.0f),
-			m_particle_energy				(0.0f),
-			m_battery_regeneration_duration	(0.0f),
-			m_battery_regeneration_timer	(0.0f),
-			m_unit_controller				(false),//urządzenie wyłączone - uruchamia się z opóźnieniem
-			m_battery_state					(EBatteryState::BATTERY_DEFAULT),
-			m_battery_charge				(0.0f),
-			run_battery						(false)
+			Actor{ uniqueId },//konstruktor klasy bazowej
+			m_battery_name{ "" },
+			m_capacity{ 0.0f },
+			m_particle_energy{ 0.0f },
+			m_battery_regeneration_duration{ 0.0f },
+			m_battery_regeneration_timer{ 0.0f },
+			m_unit_controller{ false },//urządzenie wyłączone - uruchamia się z opóźnieniem
+			m_battery_state{ EBatteryState::BATTERY_DEFAULT },
+			m_battery_charge{ 0.0f },
+			run_battery{ false }
 		{
 		}
 
 		//Konstruktor kopiujący chroniony
-		Battery::Battery(const Battery& CBatteryCopy)
+		Battery::Battery(const Battery & copy)
 		:
-			Actor							(CBatteryCopy),//konstruktor kopiujący klasy bazowej
-			m_battery_name					(CBatteryCopy.m_battery_name),
-			m_capacity						(CBatteryCopy.m_capacity),
-			m_particle_energy				(CBatteryCopy.m_particle_energy),
-			m_battery_regeneration_duration (CBatteryCopy.m_battery_regeneration_duration),
-			m_battery_regeneration_timer	(CBatteryCopy.m_battery_regeneration_timer),
-			m_unit_controller				(CBatteryCopy.m_unit_controller),
-			m_battery_state					(CBatteryCopy.m_battery_state),
-			m_battery_charge				(CBatteryCopy.m_battery_charge),
-			run_battery						(CBatteryCopy.run_battery)
+			Actor(copy),//konstruktor kopiujący klasy bazowej
+			m_battery_name{ copy.m_battery_name },
+			m_capacity{ copy.m_capacity },
+			m_particle_energy{ copy.m_particle_energy },
+			m_battery_regeneration_duration{ copy.m_battery_regeneration_duration },
+			m_battery_regeneration_timer{ copy.m_battery_regeneration_timer },
+			m_unit_controller{ copy.m_unit_controller },
+			m_battery_state{ copy.m_battery_state },
+			m_battery_charge{ copy.m_battery_charge },
+			run_battery{ copy.run_battery }
 		{
 		}
 
 		//Destruktor chroniony
 		Battery::~Battery()
 		{
-			//Actor						not edit
-			m_battery_name					= "";
-			m_capacity						= 0.0f;
-			m_particle_energy				= 0.0f;
+			//~Actor()
+			m_battery_name = "";
+			m_capacity = 0.0f;
+			m_particle_energy = 0.0f;
 			m_battery_regeneration_duration = 0.0f;
-			m_battery_regeneration_timer	= 0.0f;
-			//m_unit_controller				not edit
-			m_battery_state					= EBatteryState::BATTERY_DEFAULT;
-			m_battery_charge				= 0.0f;
-			run_battery						= false;
+			m_battery_regeneration_timer = 0.0f;
+			m_unit_controller;
+			m_battery_state = EBatteryState::BATTERY_DEFAULT;
+			m_battery_charge = 0.0f;
+			run_battery = false;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

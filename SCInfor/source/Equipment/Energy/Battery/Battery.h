@@ -45,9 +45,9 @@ namespace equipment
 			///
 			///Konstruktor kopiujący chroniony
 			///
-			///@param BatteryCopy - stała referencja na obiekt klasy Battery
+			///@param copy - stała referencja na obiekt klasy Battery
 			///
-			Battery(const Battery & BatteryCopy);
+			Battery(const Battery & copy);
 
 			///
 			///Destruktor wirtualny chroniony
@@ -164,19 +164,19 @@ namespace equipment
 
 		protected:
 
-			std::string		m_battery_name;						//nazwa baterii (niklowa, kadmowa, litowa, atomowa...etc)
-			float			m_capacity;							//pojemność baterii - przy każdym pełnym przeładowaniu - spada o m_decline
-			float			m_factory_capacity;					//fabryczna pojemność baterii (znamionowa)
-			float			m_particle_energy;					//wartość cząstki energii przekazywanej z baterii do odbiorcy (zbilansowanie stanu)
-			float			m_battery_regeneration_duration;	//czas procesu zużycia jednostki energii
-			float			m_battery_regeneration_timer;		//lokalny zegar
-			Switch			m_unit_controller;					//włącznik, sterownik, moduł zarządzania, starter, stacyjka
-			EBatteryState	m_battery_state;					//wyliczenie stanów dla obiektu Battery
+			std::string m_battery_name; //nazwa baterii (niklowa, kadmowa, litowa, atomowa...etc)
+			float m_capacity; //pojemność baterii - przy każdym pełnym przeładowaniu - spada o m_decline
+			float m_factory_capacity; //fabryczna pojemność baterii (znamionowa)
+			float m_particle_energy; //wartość cząstki energii przekazywanej z baterii do odbiorcy (zbilansowanie stanu)
+			float m_battery_regeneration_duration; //czas procesu zużycia jednostki energii
+			float m_battery_regeneration_timer; //lokalny zegar
+			Switch m_unit_controller; //włącznik, sterownik, moduł zarządzania, starter, stacyjka
+			EBatteryState m_battery_state; //wyliczenie stanów dla obiektu Battery
 
 		private:
 
-			float			m_battery_charge;					//obliczany współczynnik stanu (poziomu) naładowania baterii
-			bool			run_battery;						//flaga uruchamia procesy i funkcjonalność baterii
+			float m_battery_charge; //obliczany współczynnik stanu (poziomu) naładowania baterii
+			bool run_battery; //flaga uruchamia procesy i funkcjonalność baterii
 			
 			//prywatna metoda aktualizuje stan obiektu - bateria
 			void updateBatteryState(float dt);
