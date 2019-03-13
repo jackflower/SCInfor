@@ -12,7 +12,7 @@ namespace equipment
 	///
 	///Wyliczenie stanów dla obiektu Battery
 	///
-	enum EBatteryState
+	enum class EBatteryState
 	{
 		BATTERY_DEFAULT		= 0,//stan default - czas przed włączeniem
 		BATTERY_CHARGED		= 1,//bateria - naładowana funkcjonuje

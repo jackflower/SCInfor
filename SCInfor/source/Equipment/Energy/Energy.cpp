@@ -34,7 +34,7 @@ namespace equipment
 		m_energy_percentage_energy(0.0f),
 		m_energy_rotor_speed(0.0f),
 		m_energy_rotation_speed(750.0f),
-		m_energy_state(ENERGY_DEFAULT),
+		m_energy_state(EEnergyState::ENERGY_DEFAULT),
 		m_battery_data(),
 		m_critical_duration(0.0f),
 		m_critical_timer(0.0f),
@@ -95,7 +95,7 @@ namespace equipment
 		m_energy_percentage_energy = 0.0f;
 		m_energy_rotor_speed = 0.0f;
 		m_energy_rotation_speed = 0.0f;
-		m_energy_state = ENERGY_DEFAULT;
+		m_energy_state = EEnergyState::ENERGY_DEFAULT;
 		//m_battery_data
 		m_critical_duration = 0.0f;
 		m_critical_timer = 0.0f;
@@ -248,7 +248,7 @@ namespace equipment
 	{
 		switch(m_energy_state)
 		{
-		case ENERGY_DEFAULT:
+		case EEnergyState::ENERGY_DEFAULT:
 		{
 			if (p_anim_set)
 			{
@@ -257,7 +257,7 @@ namespace equipment
 			}
 			break;
 		}
-		case ENERGY_RESERVE:
+		case EEnergyState::ENERGY_RESERVE:
 		{
 			if (p_anim_set)
 			{
@@ -266,7 +266,7 @@ namespace equipment
 			}
 			break;
 		}
-		case ENERGY_EMPTY:
+		case EEnergyState::ENERGY_EMPTY:
 		{
 			if (p_anim_set)
 			{
@@ -275,7 +275,7 @@ namespace equipment
 			}
 			break;
 		}
-		case ENERGY_DAMAGE:
+		case EEnergyState::ENERGY_DAMAGE:
 		{
 			if (p_anim_set)
 			{
@@ -284,7 +284,7 @@ namespace equipment
 			}
 			break;
 		}
-		case ENERGY_DEATH:
+		case EEnergyState::ENERGY_DEATH:
 		{
 			if (p_anim_set)
 			{
@@ -377,26 +377,26 @@ namespace equipment
 				m_energy_rotor_speed = m_energy_rotation_speed * m_energy_percentage_energy;
 
 				//prędkość rotacji wirnika alternatora zależy od energii akumulatora i stanu obiektu
-				if(m_energytank_data.getEnergyTank()->getEnergy() && m_energy_state != ENERGY_DEATH)
+				if(m_energytank_data.getEnergyTank()->getEnergy() && m_energy_state != EEnergyState::ENERGY_DEATH)
 					rotateHead(m_energy_rotor_speed * dt);
 				
 				//regeneracja - energii w akumulatorze jest mniej niż wynosi pojemność akumulatora
 				if(m_energytank_data.getEnergyTank()->getEnergy() < m_energytank_data.getEnergyTank()->getEnergyTankCapacity())
 				{
-					if(m_energy_timer >= m_energy_regeneration_time)//jeśli upłynął jakiś czas
+					if(m_energy_timer >= m_energy_regeneration_time) //jeśli upłynął jakiś czas
 					{
 						//regenerujemy energię
 						m_energytank_data.getEnergyTank()->setEnergy(m_energytank_data.getEnergyTank()->getEnergy() + (m_energy_regeneration * gWeather.getSolarEnergyFactor()));
-						m_energy_timer = 0.0f;//zerujemy czas
+						m_energy_timer = 0.0f; //zerujemy czas
 					}
 				}
 
 				//prędkość rotacji wirnika - moduł energii uszkodony - zasilanie bateryjne
-				if(m_energy_state == ENERGY_DAMAGE)
+				if(m_energy_state == EEnergyState::ENERGY_DAMAGE)
 					rotateHead(- m_energy_rotation_speed * 0.5f * dt);
 
 				//prędkość rotacji wirnika - moduł energii zniszczony
-				if(m_energy_state == ENERGY_DEATH)
+				if(m_energy_state == EEnergyState::ENERGY_DEATH)
 					rotateHead(- m_energy_rotation_speed * 0.25f * dt);
 			}
 
@@ -404,8 +404,8 @@ namespace equipment
 			if(m_energytank_data.getEnergyTank())
 				updateEnergyTank(dt);
 
-			updateEnergyState(dt);	//aktualizuja stanu obiektu
-			updateAnimations(dt);	//aktualizacja animacji (stany energy)
+			updateEnergyState(dt); //aktualizuja stanu obiektu
+			updateAnimations(dt); //aktualizacja animacji (stany energy)
 		}
 	}
 
@@ -414,48 +414,48 @@ namespace equipment
 	//Metoda aktualizuje stan obiektu
 	void Energy::updateEnergyState(float dt)
 	{
-		if(m_energytank_data.getEnergyTank() && m_energy_state != ENERGY_DAMAGE && m_energy_state != ENERGY_DEATH)
+		if(m_energytank_data.getEnergyTank() && m_energy_state != EEnergyState::ENERGY_DAMAGE && m_energy_state != EEnergyState::ENERGY_DEATH)
 		{
 			//jest wystarczająca ilość energii w akumulatorze
 			if(m_energytank_data.getEnergyTank()->getEnergy() > m_energytank_data.getEnergyTank()->getEnergyTankCapacity() * m_percentage_reserve_energy)
-				m_energy_state = ENERGY_DEFAULT;
+				m_energy_state = EEnergyState::ENERGY_DEFAULT;
 
 			//rezerwa energii w akumulatorze
 			if(m_energytank_data.getEnergyTank()->getEnergy() <= m_energytank_data.getEnergyTank()->getEnergyTankCapacity() * m_percentage_reserve_energy)
-				m_energy_state = ENERGY_RESERVE;
+				m_energy_state = EEnergyState::ENERGY_RESERVE;
 
 			//brak energii w akumulatorze
 			if(m_energytank_data.getEnergyTank()->getEnergy() <= 0.f)
-				m_energy_state = ENERGY_EMPTY;
+				m_energy_state = EEnergyState::ENERGY_EMPTY;
 
 			//brak energii w akumulatorze trwa jakiś czas - stan krytyczny
-			if(m_energy_state == ENERGY_EMPTY)
+			if(m_energy_state == EEnergyState::ENERGY_EMPTY)
 			{
 				//czekam jakiś czas, gdy akumulator jest rozładowany
 				m_critical_timer += dt;
 				if(m_critical_timer >= m_critical_duration)
 				{
-					m_energy_state = ENERGY_DAMAGE;		//ustawiam moduł energii - uszkodzony
+					m_energy_state = EEnergyState::ENERGY_DAMAGE; //ustawiam moduł energii - uszkodzony
 					m_critical_timer = 0.0f;
 				}
 			}
 		}
 
 		//wykryto uszkodzenie - sprawdzam możliwość zasilania z baterii
-		if(m_energy_state == ENERGY_DAMAGE)
+		if(m_energy_state == EEnergyState::ENERGY_DAMAGE)
 		{
 			//czekam jakiś czas - akumulator jest uszkodzony
 			m_damage_timer += dt;
 			if(m_damage_timer >= m_damage_duration)
 			{
-				m_energy_state = ENERGY_DEATH;				//moduł energii zniszczony
-				m_battery_data.getBattery()->runBattery();	//przełączam się na zasilanie bateryjne
+				m_energy_state = EEnergyState::ENERGY_DEATH; //moduł energii zniszczony
+				m_battery_data.getBattery()->runBattery(); //przełączam się na zasilanie bateryjne
 				m_damage_timer = 0.0f;
 			}
 		}
 
 		//bateria jest zainicjowana, a moduł energii przestał działać/istnieć
-		if(m_battery_data.getBattery() && m_energy_state == ENERGY_DEATH)
+		if(m_battery_data.getBattery() && m_energy_state == EEnergyState::ENERGY_DEATH)
 		{
 			//jeśli moduł energii posiada baterię
 			if(m_battery_data.getBattery())
@@ -475,15 +475,15 @@ namespace equipment
 		{
 			//jest wystarczająca ilość energii
 			if(m_energytank_data.getEnergyTank()->getEnergy() > m_energytank_data.getEnergyTank()->getEnergyTankCapacity() * m_percentage_reserve_energy)
-				m_energytank_data.getEnergyTank()->getEnergyTankState() = ENERGYTANK_DEFAULT;
+				m_energytank_data.getEnergyTank()->getEnergyTankState() = EEnergyTankState::ENERGYTANK_DEFAULT;
 
 			//rezerwa energii
 			if(m_energytank_data.getEnergyTank()->getEnergy() <= m_energytank_data.getEnergyTank()->getEnergyTankCapacity() * m_percentage_reserve_energy)
-				m_energytank_data.getEnergyTank()->getEnergyTankState() = ENERGYTANK_RESERVE;
+				m_energytank_data.getEnergyTank()->getEnergyTankState() = EEnergyTankState::ENERGYTANK_RESERVE;
 
 			//brak energii
 			if(m_energytank_data.getEnergyTank()->getEnergy() <= 0.f)
-				m_energytank_data.getEnergyTank()->getEnergyTankState() = ENERGYTANK_EMPTY;
+				m_energytank_data.getEnergyTank()->getEnergyTankState() = EEnergyTankState::ENERGYTANK_EMPTY;
 		}
 	}
 

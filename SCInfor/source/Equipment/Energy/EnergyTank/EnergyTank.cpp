@@ -19,12 +19,12 @@ namespace equipment
 	EnergyTank::EnergyTank(const std::wstring & uniqueId)
 	:							
 		Actor(uniqueId),
-		m_energy_tank_name(),
-		m_energy_tank_capacity(0.0f),	
-		m_energy(0.0f),
-		m_energy_tank_rotation_speed(0.0f),
-		m_energy_tank_rotor_speed(0.0f),
-		m_unit_controller(true)//urządzenie włączone
+		m_energy_tank_name{},
+		m_energy_tank_capacity{ 0.0f },
+		m_energy{ 0.0f },
+		m_energy_tank_rotation_speed{ 0.0f },
+		m_energy_tank_rotor_speed{ 0.0f },
+		m_unit_controller{ true }//urządzenie włączone
 	{
 		setZIndexBody(Z_PHYSICAL_ENERGY_TANK_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_TANK_BODY);
@@ -36,12 +36,12 @@ namespace equipment
 	EnergyTank::EnergyTank(const EnergyTank & EnergyTankCopy)
 	:
 		Actor(EnergyTankCopy),//kostruktor kopiujący klasy bazowej
-		m_energy_tank_name(EnergyTankCopy.m_energy_tank_name),
-		m_energy_tank_capacity(EnergyTankCopy.m_energy_tank_capacity),
-		m_energy(EnergyTankCopy.m_energy),
-		m_energy_tank_rotation_speed(EnergyTankCopy.m_energy_tank_rotation_speed),
-		m_energy_tank_rotor_speed(EnergyTankCopy.m_energy_tank_rotor_speed),
-		m_unit_controller(EnergyTankCopy.m_unit_controller)
+		m_energy_tank_name{ EnergyTankCopy.m_energy_tank_name },
+		m_energy_tank_capacity{ EnergyTankCopy.m_energy_tank_capacity },
+		m_energy{ EnergyTankCopy.m_energy },
+		m_energy_tank_rotation_speed{ EnergyTankCopy.m_energy_tank_rotation_speed },
+		m_energy_tank_rotor_speed{ EnergyTankCopy.m_energy_tank_rotor_speed },
+		m_unit_controller{ EnergyTankCopy.m_unit_controller }
 	{
 		setZIndexBody(Z_PHYSICAL_ENERGY_TANK_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENERGY_TANK_BODY);
@@ -52,13 +52,13 @@ namespace equipment
 	//Destruktor wirtualny
 	EnergyTank::~EnergyTank(void)
 	{
-		//Actor
+		//~Actor()
 		m_energy_tank_name = "";
 		m_energy_tank_capacity = 0.0f;
 		m_energy = 0.0f;
 		m_energy_tank_rotation_speed = 0.0f;
 		m_energy_tank_rotor_speed = 0.0f;
-		//m_unit_controller
+		m_unit_controller;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -144,7 +144,7 @@ namespace equipment
 	{
 		switch(m_energytank_state)
 		{
-		case ENERGYTANK_DEFAULT:
+		case EEnergyTankState::ENERGYTANK_DEFAULT:
 		{
 			if (p_anim_set)
 			{
@@ -153,7 +153,7 @@ namespace equipment
 			}
 			break;
 		}
-		case ENERGYTANK_RESERVE:
+		case EEnergyTankState::ENERGYTANK_RESERVE:
 		{
 			if (p_anim_set)
 			{
@@ -162,7 +162,7 @@ namespace equipment
 			}
 			break;
 		}
-		case ENERGYTANK_EMPTY:
+		case EEnergyTankState::ENERGYTANK_EMPTY:
 		{
 			if (p_anim_set)
 			{
@@ -171,7 +171,7 @@ namespace equipment
 			}
 			break;
 		}
-		case ENERGYTANK_DAMAGE:
+		case EEnergyTankState::ENERGYTANK_DAMAGE:
 		{
 			if (p_anim_set)
 			{

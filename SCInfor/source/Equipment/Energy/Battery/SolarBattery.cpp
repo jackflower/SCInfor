@@ -16,7 +16,7 @@ namespace equipment
 		SolarBattery::SolarBattery(const std::wstring & uniqueId)
 		:
 			Battery(uniqueId),//konstruktor klasy bazowej
-			m_decline(0.0f)
+			m_decline{ 0.0f }
 		{
 		}
 
@@ -24,14 +24,14 @@ namespace equipment
 		SolarBattery::SolarBattery(const SolarBattery & SolarBatteryCopy)
 		:
 			Battery(SolarBatteryCopy),//konstruktor kopiujący klasy bazowej
-			m_decline(SolarBatteryCopy.m_decline)
+			m_decline{ SolarBatteryCopy.m_decline }
 		{
 		}
 
 		//Destruktor chroniony
 		SolarBattery::~SolarBattery(void)
 		{
-			//Battery
+			//~Battery();
 			m_decline = 0.0f;
 		}
 

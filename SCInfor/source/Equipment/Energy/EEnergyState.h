@@ -12,7 +12,7 @@ namespace equipment
 	///
 	///Wyliczenie stanów dla obiektu Energy
 	///
-	enum EEnergyState
+	enum class EEnergyState
 	{
 		ENERGY_DEFAULT	= 0,
 		ENERGY_RESERVE	= 1,

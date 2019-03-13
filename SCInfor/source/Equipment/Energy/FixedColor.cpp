@@ -9,14 +9,14 @@
 //Konstruktor
 FixedColor::FixedColor()
 :
-	r_low(0.0f),
-	g_low(0.0f),
-	b_low(0.0f),
-	a_low(0.0f),
-	r_high(0.0f),
-	g_high(0.0f),
-	b_high(0.0f),
-	a_high(0.0f)
+	r_low{ 0.0f },
+	g_low{ 0.0f },
+	b_low{ 0.0f },
+	a_low{ 0.0f },
+	r_high{ 0.0f },
+	g_high{ 0.0f },
+	b_high{ 0.0f },
+	a_high{ 0.0f }
 {
 }
 
