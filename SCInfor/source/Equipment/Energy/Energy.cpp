@@ -23,25 +23,25 @@ namespace equipment
 	Energy::Energy(const std::wstring & uniqueId)
 	:
 		Actor(uniqueId),//konstruktor klasy bazowej
-		m_energy_name(),
-		m_energytank_data(),
-		m_percentage_reserve_energy(0.1f),
-		m_energy_time_delayed(0.0f),
-		m_energy_empty_message(false),
-		m_energy_regeneration(0.0f),
-		m_energy_regeneration_time(0.0f),
-		m_energy_timer(0.0f),
-		m_energy_percentage_energy(0.0f),
-		m_energy_rotor_speed(0.0f),
-		m_energy_rotation_speed(750.0f),
-		m_energy_state(EEnergyState::ENERGY_DEFAULT),
-		m_battery_data(),
-		m_critical_duration(0.0f),
-		m_critical_timer(0.0f),
-		m_damage_duration(0.0f),
-		m_damage_timer(0.0f),
-		m_owner_death_candidate(false),
-		m_unit_controller(false)//urządzenie wyłączone - uruchamia się z opóźnieniem
+		m_energy_name{},
+		m_energytank_data{},
+		m_percentage_reserve_energy{ 0.1f },
+		m_energy_time_delayed{ 0.0f },
+		m_energy_empty_message{ false },
+		m_energy_regeneration{ 0.0f },
+		m_energy_regeneration_time{ 0.0f },
+		m_energy_timer{ 0.0f },
+		m_energy_percentage_energy{ 0.0f },
+		m_energy_rotor_speed{ 0.0f },
+		m_energy_rotation_speed{ 750.0f },
+		m_energy_state{ EEnergyState::ENERGY_DEFAULT },
+		m_battery_data{},
+		m_critical_duration{ 0.0f },
+		m_critical_timer{ 0.0f },
+		m_damage_duration{ 0.0f },
+		m_damage_timer{ 0.0f },
+		m_owner_death_candidate{ false },
+		m_unit_controller{ false }//urządzenie wyłączone - uruchamia się z opóźnieniem
 	{
 		//inverse - docelowo jakaś metoda...
 		setZIndexBody(Z_PHYSICAL_ENERGY_HEAD);
@@ -54,25 +54,25 @@ namespace equipment
 	Energy::Energy(const Energy & EnergyCopy)
 	:
 		Actor(EnergyCopy),//konstruktor kopiujący klasy bazowej
-		m_energy_name(EnergyCopy.m_energy_name),
-		m_energytank_data(EnergyCopy.m_energytank_data),
-		m_percentage_reserve_energy(EnergyCopy.m_percentage_reserve_energy),
-		m_energy_time_delayed(EnergyCopy.m_energy_time_delayed),
-		m_energy_empty_message(EnergyCopy.m_energy_empty_message),
-		m_energy_regeneration(EnergyCopy.m_energy_regeneration),
-		m_energy_regeneration_time(EnergyCopy.m_energy_regeneration_time),
-		m_energy_timer(EnergyCopy.m_energy_timer),
-		m_energy_percentage_energy(EnergyCopy.m_energy_percentage_energy),
-		m_energy_rotor_speed(EnergyCopy.m_energy_rotor_speed),
-		m_energy_rotation_speed(EnergyCopy.m_energy_rotation_speed),
-		m_energy_state(EnergyCopy.m_energy_state),
-		m_battery_data(EnergyCopy.m_battery_data),
-		m_critical_duration(EnergyCopy.m_critical_duration),
-		m_critical_timer(EnergyCopy.m_critical_timer),
-		m_damage_duration(EnergyCopy.m_damage_duration),
-		m_damage_timer(EnergyCopy.m_damage_timer),
-		m_owner_death_candidate(EnergyCopy.m_owner_death_candidate),
-		m_unit_controller(EnergyCopy.m_unit_controller)
+		m_energy_name{ EnergyCopy.m_energy_name },
+		m_energytank_data{ EnergyCopy.m_energytank_data },
+		m_percentage_reserve_energy{ EnergyCopy.m_percentage_reserve_energy },
+		m_energy_time_delayed{ EnergyCopy.m_energy_time_delayed },
+		m_energy_empty_message{ EnergyCopy.m_energy_empty_message },
+		m_energy_regeneration{ EnergyCopy.m_energy_regeneration },
+		m_energy_regeneration_time{ EnergyCopy.m_energy_regeneration_time },
+		m_energy_timer{ EnergyCopy.m_energy_timer },
+		m_energy_percentage_energy{ EnergyCopy.m_energy_percentage_energy },
+		m_energy_rotor_speed{ EnergyCopy.m_energy_rotor_speed },
+		m_energy_rotation_speed{ EnergyCopy.m_energy_rotation_speed },
+		m_energy_state{ EnergyCopy.m_energy_state },
+		m_battery_data{ EnergyCopy.m_battery_data },
+		m_critical_duration{ EnergyCopy.m_critical_duration },
+		m_critical_timer{ EnergyCopy.m_critical_timer },
+		m_damage_duration{ EnergyCopy.m_damage_duration },
+		m_damage_timer{ EnergyCopy.m_damage_timer },
+		m_owner_death_candidate{ EnergyCopy.m_owner_death_candidate },
+		m_unit_controller{ EnergyCopy.m_unit_controller }
 	{
 		//inverse - docelowo jakaś metoda...
 		setZIndexBody(Z_PHYSICAL_ENERGY_HEAD);
@@ -84,9 +84,9 @@ namespace equipment
 	//Destruktor
 	Energy::~Energy(void)
 	{
-		//Actor
+		//~Actor()
 		m_energy_name = "";
-		//m_energytank_data
+		m_energytank_data;
 		m_percentage_reserve_energy = 0.0f;
 		m_energy_time_delayed = 0.0f;
 		m_energy_empty_message = false;
@@ -96,13 +96,13 @@ namespace equipment
 		m_energy_rotor_speed = 0.0f;
 		m_energy_rotation_speed = 0.0f;
 		m_energy_state = EEnergyState::ENERGY_DEFAULT;
-		//m_battery_data
+		m_battery_data;
 		m_critical_duration = 0.0f;
 		m_critical_timer = 0.0f;
 		m_damage_duration = 0.0f;
 		m_damage_timer = 0.0f;
 		m_owner_death_candidate = false;
-		//m_unit_controller
+		m_unit_controller;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
