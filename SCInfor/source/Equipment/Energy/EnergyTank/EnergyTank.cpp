@@ -74,7 +74,7 @@ namespace equipment
 	}
 
 	//Metoda ustawia nazwę akumulatora energii
-	void EnergyTank::setEnergyTankName(const std::string& energy_tank_name)
+	void EnergyTank::setEnergyTankName(const std::string & energy_tank_name)
 	{
 		m_energy_tank_name = energy_tank_name;
 	}

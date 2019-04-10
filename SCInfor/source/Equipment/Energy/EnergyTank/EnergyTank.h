@@ -68,7 +68,7 @@ namespace equipment
 		///
 		///@param energy_tank_name - stała referencja na obiekt klasy std::string
 		///
-		void setEnergyTankName(const std::string& energy_tank_name);
+		void setEnergyTankName(const std::string & energy_tank_name);
 		
 		///
 		///Metoda zwraca pojemność pojemność akumulatora energii
