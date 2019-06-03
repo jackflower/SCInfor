@@ -599,6 +599,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt" />
+    <Text Include="notes\random_engine.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
