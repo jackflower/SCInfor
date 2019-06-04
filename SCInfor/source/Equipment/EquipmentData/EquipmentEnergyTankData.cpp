@@ -15,23 +15,23 @@ namespace equipmentdata
 	//Konstruktor
 	EquipmentEnergyTankData::EquipmentEnergyTankData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_energytank(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_energytank{ NULL }
 	{
 	}
 
 	//Konstruktor kopiujacy
 	EquipmentEnergyTankData::EquipmentEnergyTankData(const EquipmentEnergyTankData & EquipmentEnergylTankDataDataCopy)
 	:
-		EquipmentData(EquipmentEnergylTankDataDataCopy),//konstruktor kopiujπcy klasy bazowej
-		p_energytank(EquipmentEnergylTankDataDataCopy.p_energytank)
+		EquipmentData{ EquipmentEnergylTankDataDataCopy },//konstruktor kopiujπcy klasy bazowej
+		p_energytank{ EquipmentEnergylTankDataDataCopy.p_energytank }
 	{
 	}
 
 	//Destruktor wirtualny
 	EquipmentEnergyTankData::~EquipmentEnergyTankData()
 	{
-		//EquipmentData
+		//~EquipmentData()
 		if (p_energytank)
 			gPhysicalManager.destroyPhysical(p_energytank);
 		p_energytank = NULL;
@@ -44,7 +44,7 @@ namespace equipmentdata
 	}
 
 	//Metoda zwraca wskaünik na obiekt klasy EnergyTank
-	EnergyTank* EquipmentEnergyTankData::getEnergyTank()
+	EnergyTank *EquipmentEnergyTankData::getEnergyTank()
 	{
 		return p_energytank;
 	}

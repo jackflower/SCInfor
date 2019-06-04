@@ -65,7 +65,7 @@ namespace equipmentdata
 		///
 		///@param *communication - wskaźnik na obiekt klasy Communication
 		///
-		void setCommunication(Communication * communication);
+		void setCommunication(Communication *communication);
 
 	private:
 

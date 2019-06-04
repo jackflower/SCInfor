@@ -15,23 +15,23 @@ namespace equipmentdata
 	//Konstruktor
 	ThermalInsulationData::ThermalInsulationData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_thermalinsulation(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_thermalinsulation{ NULL }
 	{
 	}
 
 	//Konstruktor kopiujący
 	ThermalInsulationData::ThermalInsulationData(const ThermalInsulationData & ThermalInsulationDataCopy)
 	:
-		EquipmentData(ThermalInsulationDataCopy),//konstruktor kopiujący klasy bazowej
-		p_thermalinsulation(ThermalInsulationDataCopy.p_thermalinsulation)
+		EquipmentData{ ThermalInsulationDataCopy },//konstruktor kopiujący klasy bazowej
+		p_thermalinsulation{ ThermalInsulationDataCopy.p_thermalinsulation }
 	{
 	}
 
 	//Destruktor wirtualny
 	ThermalInsulationData::~ThermalInsulationData()
 	{
-		//EquipmentData	not edit
+		//~EquipmentData()
 		if (p_thermalinsulation)
 			gPhysicalManager.destroyPhysical(p_thermalinsulation);
 		p_thermalinsulation = NULL;
@@ -44,13 +44,13 @@ namespace equipmentdata
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy ThermalInsulation
-	ThermalInsulation* ThermalInsulationData::getThermalInsulation()
+	ThermalInsulation *ThermalInsulationData::getThermalInsulation()
 	{
 		return p_thermalinsulation;
 	}
 
 	//Metoda ustawia wskaźnik na obiekt klasy ThermalInsulation
-	void ThermalInsulationData::setThermalInsulation(ThermalInsulation* thermalinsulation)
+	void ThermalInsulationData::setThermalInsulation(ThermalInsulation *thermalinsulation)
 	{
 		p_thermalinsulation = thermalinsulation;
 	}

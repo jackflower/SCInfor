@@ -55,14 +55,14 @@ namespace equipmentdata
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy Ventilator
 		///
-		Ventilator* getVentilator();
+		Ventilator *getVentilator();
 
 		///
 		///Metoda ustawia wskaźnik na obiekt klasy Ventilator
 		///
 		///@param *ventilator - wskaźnik na obiekt klasy Ventilator
 		///
-		void setVentilator(Ventilator * ventilator);
+		void setVentilator(Ventilator *ventilator);
 
 	private:
 

@@ -66,7 +66,7 @@ namespace equipmentdata
 
 	private:
 
-		Engine *p_engine; //wskaŸnik na klasê Engine - silnik
+		Engine *p_engine; //wskaŸnik na klasê Engine - silnik obiektu
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_ENGINE_DATA_JACK

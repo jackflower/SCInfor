@@ -15,23 +15,23 @@ namespace equipmentdata
 	//Konstruktor
 	EquipmentCommunicationData::EquipmentCommunicationData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_communication(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_communication{ NULL }
 	{
 	}
 
 	//Konstruktor kopiujący
 	EquipmentCommunicationData::EquipmentCommunicationData(const EquipmentCommunicationData & EquipmentCommunicationDataCopy)
-		:
-		EquipmentData(EquipmentCommunicationDataCopy),//konstruktor kopiujący klasy bazowej
-		p_communication(EquipmentCommunicationDataCopy.p_communication)
+	:
+		EquipmentData{ EquipmentCommunicationDataCopy },//konstruktor kopiujący klasy bazowej
+		p_communication{ EquipmentCommunicationDataCopy.p_communication }
 	{
 	}
 
 	//Destruktor wirtualny
 	EquipmentCommunicationData::~EquipmentCommunicationData()
 	{
-		//EquipmentData	not edit
+		//~EquipmentData()
 		if (p_communication)
 			gPhysicalManager.destroyPhysical(p_communication);
 		p_communication = NULL;
@@ -44,13 +44,13 @@ namespace equipmentdata
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy Communication
-	Communication* EquipmentCommunicationData::getCommunication()
+	Communication *EquipmentCommunicationData::getCommunication()
 	{
 		return p_communication;
 	}
 
 	//Metoda ustawia wskaźnik na obiekt klasy Communication
-	void EquipmentCommunicationData::setCommunication(Communication* communication)
+	void EquipmentCommunicationData::setCommunication(Communication *communication)
 	{
 		p_communication = communication;
 	}

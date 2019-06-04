@@ -15,23 +15,23 @@ namespace equipmentdata
 	//Konstruktor
 	EquipmentEngineData::EquipmentEngineData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_engine(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_engine{ NULL }
 	{
 	}
 
 	//Konstruktor kopiuj¹cy
 	EquipmentEngineData::EquipmentEngineData(const EquipmentEngineData & EquipmentEngineDataCopy)
 	:
-		EquipmentData(EquipmentEngineDataCopy),//konstruktor kopiuj¹cy klasy bazowej
-		p_engine(EquipmentEngineDataCopy.p_engine)
+		EquipmentData{ EquipmentEngineDataCopy },//konstruktor kopiuj¹cy klasy bazowej
+		p_engine{ EquipmentEngineDataCopy.p_engine }
 	{
 	}
 
 	//Destruktor wirtualny
 	EquipmentEngineData::~EquipmentEngineData()
 	{
-		//EquipmentData
+		//~EquipmentData()
 		if (p_engine)
 			gPhysicalManager.destroyPhysical(p_engine);
 		p_engine = NULL;

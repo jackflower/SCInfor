@@ -13,16 +13,16 @@ namespace equipmentdata
 	//Konstruktor
 	EquipmentData::EquipmentData()
 	:
-		m_use_equipment(false),
-		m_transformation()
+		m_use_equipment{ false },
+		m_transformation{}
 	{
 	}
 
 	//Konstruktor kopiujacy
 	EquipmentData::EquipmentData(const EquipmentData & EquipmentDataCopy)
 	:
-		m_use_equipment(EquipmentDataCopy.m_use_equipment),
-		m_transformation(EquipmentDataCopy.m_transformation)
+		m_use_equipment{ EquipmentDataCopy.m_use_equipment },
+		m_transformation{ EquipmentDataCopy.m_transformation }
 	{
 	}
 
@@ -30,7 +30,7 @@ namespace equipmentdata
 	EquipmentData::~EquipmentData()
 	{
 		m_use_equipment = false;
-		//m_transformation
+		m_transformation;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

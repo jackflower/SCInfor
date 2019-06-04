@@ -22,22 +22,22 @@ namespace equipment
 	//Chroniony konstruktor domyślny
 	Engine::Engine(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId),//konstruktor klasy bazowej
-		m_engine_name(),
-		m_fueltank_data(),
-		m_percentage_reserve_fuel(0.1f),
-		m_fuel_consumption(0.0f),
-		m_fuel_consumption_move(0.0f),
-		m_tank_time_delayed(0.0f),
-		m_fuel_empty_message(false),
-		m_engine_run(false),
-		m_engine_rotation_speed(0.0f),
-		m_engine_regeneration_time(0.0f),
-		m_engine_state(ENGINE_DEFAULT),
-		m_engine_timer(0.0f),
-		m_rotor_speed(0.0f),
-		m_percentage_fuel(0.0f),
-		m_unit_controller(true)//urządzenie włączone
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_engine_name{},
+		m_fueltank_data{},
+		m_percentage_reserve_fuel{ 0.1f },
+		m_fuel_consumption{ 0.0f },
+		m_fuel_consumption_move{ 0.0f },
+		m_tank_time_delayed{ 0.0f },
+		m_fuel_empty_message{ false },
+		m_engine_run{ false },
+		m_engine_rotation_speed{ 0.0f },
+		m_engine_regeneration_time{ 0.0f },
+		m_engine_state{ ENGINE_DEFAULT },
+		m_engine_timer{ 0.0f },
+		m_rotor_speed{ 0.0f },
+		m_percentage_fuel{ 0.0f },
+		m_unit_controller{ true }//urządzenie włączone
 	{
 		setZIndexBody(Z_PHYSICAL_ENGINE_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENGINE_BODY);
@@ -49,21 +49,21 @@ namespace equipment
 	Engine::Engine(const Engine & EngineCopy)
 	:
 		Actor(EngineCopy),//konstruktor kopiujący klasy bazowej
-		m_engine_name(EngineCopy.m_engine_name),
-		m_fueltank_data(EngineCopy.m_fueltank_data),
-		m_percentage_reserve_fuel(EngineCopy.m_percentage_reserve_fuel),
-		m_fuel_consumption(EngineCopy.m_fuel_consumption),
-		m_fuel_consumption_move(EngineCopy.m_fuel_consumption_move),
-		m_tank_time_delayed(EngineCopy.m_tank_time_delayed),
-		m_fuel_empty_message(EngineCopy.m_fuel_empty_message),
-		m_engine_run(EngineCopy.m_engine_run),
-		m_engine_regeneration_time(EngineCopy.m_engine_regeneration_time),
-		m_engine_rotation_speed(EngineCopy.m_engine_rotation_speed),
-		m_engine_state(EngineCopy.m_engine_state),
-		m_engine_timer(EngineCopy.m_engine_timer),
-		m_rotor_speed(EngineCopy.m_rotor_speed),
-		m_percentage_fuel(EngineCopy.m_percentage_fuel),
-		m_unit_controller(EngineCopy.m_unit_controller)
+		m_engine_name{ EngineCopy.m_engine_name },
+		m_fueltank_data{ EngineCopy.m_fueltank_data },
+		m_percentage_reserve_fuel{ EngineCopy.m_percentage_reserve_fuel },
+		m_fuel_consumption{ EngineCopy.m_fuel_consumption },
+		m_fuel_consumption_move{ EngineCopy.m_fuel_consumption_move },
+		m_tank_time_delayed{ EngineCopy.m_tank_time_delayed },
+		m_fuel_empty_message{ EngineCopy.m_fuel_empty_message },
+		m_engine_run{ EngineCopy.m_engine_run },
+		m_engine_regeneration_time{ EngineCopy.m_engine_regeneration_time },
+		m_engine_rotation_speed{ EngineCopy.m_engine_rotation_speed },
+		m_engine_state{ EngineCopy.m_engine_state },
+		m_engine_timer{ EngineCopy.m_engine_timer },
+		m_rotor_speed{ EngineCopy.m_rotor_speed },
+		m_percentage_fuel{ EngineCopy.m_percentage_fuel },
+		m_unit_controller{ EngineCopy.m_unit_controller }
 	{
 		setZIndexBody(Z_PHYSICAL_ENGINE_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_SHADOW_ENGINE_BODY);
@@ -74,9 +74,9 @@ namespace equipment
 	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	Engine::~Engine(void)
 	{
-		//Actor
+		//~Actor();
 		m_engine_name = "";
-		//m_fueltank_data
+		m_fueltank_data;
 		m_percentage_reserve_fuel = 0.0f;
 		m_fuel_consumption = 0.0f;
 		m_fuel_consumption_move = 0.0f;
@@ -105,19 +105,19 @@ namespace equipment
 	}
 
 	//Metoda ustawia typ silnika
-	void Engine::setEngineName(const std::string& engine_name)
+	void Engine::setEngineName(const std::string & engine_name)
 	{
 		m_engine_name = engine_name;
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy FuelTank
-	FuelTank* Engine::getFuelTank()
+	FuelTank *Engine::getFuelTank()
 	{
 		return m_fueltank_data.getFuelTank();
 	}
 
 	//Metoda ustawia wskaźnik na obiekt klasy FuelTank
-	void Engine::setFuelTank(FuelTank* fuel_tank)
+	void Engine::setFuelTank(FuelTank *fuel_tank)
 	{
 		m_fueltank_data.setFuelTank(fuel_tank);
 	}

@@ -22,7 +22,7 @@ namespace equipment
 	//Konstruktor
 	Energy::Energy(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId),//konstruktor klasy bazowej
+		Actor{ uniqueId },//konstruktor klasy bazowej
 		m_energy_name{},
 		m_energytank_data{},
 		m_percentage_reserve_energy{ 0.1f },

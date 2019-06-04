@@ -69,7 +69,7 @@ namespace equipmentdata
 
 	private:
 
-		Gun *p_gun; //wskaŸnik na klasê Gun - dzia³o
+		Gun *p_gun; //wskaŸnik na klasê Gun - dzia³o obiektu
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_GUN_DATA_JACK

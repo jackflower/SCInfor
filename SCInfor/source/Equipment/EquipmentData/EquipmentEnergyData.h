@@ -66,7 +66,7 @@ namespace equipmentdata
 
 	private:
 
-		Energy *p_energy; //wskaźnik na klasę Energy - energia
+		Energy *p_energy; //wskaźnik na klasę Energy - energia obiektu
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_ENERGY_DATA_JACK

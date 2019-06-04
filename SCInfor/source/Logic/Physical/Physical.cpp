@@ -24,22 +24,22 @@ namespace logic
 	Physical::Physical(const std::wstring & uniqueId)
 	:
 		//private:
-		m_physical_manager_index(-1),
-		m_physical_data(),
-		m_smooth(false),
+		m_physical_manager_index{ -1 },
+		m_physical_data{},
+		m_smooth{ false },
 		
 		//protected:
-		m_unique_id(uniqueId),
-		m_genre(),
-		m_circle_radius(1.0f),
-		m_collision_shape(SHAPE_CIRCLE),
-		m_rect_size(1.0f, 1.0f),
-		m_rect_size_body(1.0f, 1.0f),
-		m_rect_size_head(1.0f, 1.0f),
-		p_template(NULL),
-		m_ready_for_destruction(false),
-		m_part_collision_data(),
-		m_new_anim_speed(1.0f)
+		m_unique_id{ uniqueId },
+		m_genre{},
+		m_circle_radius{ 1.0f },
+		m_collision_shape{ SHAPE_CIRCLE },
+		m_rect_size{ 1.0f, 1.0f },
+		m_rect_size_body{ 1.0f, 1.0f },
+		m_rect_size_head{ 1.0f, 1.0f },
+		p_template{ NULL },
+		m_ready_for_destruction{ false },
+		m_part_collision_data{},
+		m_new_anim_speed{ 1.0f }
 	{
 	}
 
@@ -47,22 +47,22 @@ namespace logic
 	Physical::Physical(const Physical & PhysicalCopy)
 	:
 		//private:
-		m_physical_manager_index(PhysicalCopy.m_physical_manager_index),
-		m_physical_data(PhysicalCopy.m_physical_data),
-		m_smooth(PhysicalCopy.m_smooth),
+		m_physical_manager_index{ PhysicalCopy.m_physical_manager_index },
+		m_physical_data{ PhysicalCopy.m_physical_data },
+		m_smooth{ PhysicalCopy.m_smooth },
 		
 		//protected:
-		m_unique_id(PhysicalCopy.m_unique_id),
-		m_genre(PhysicalCopy.m_genre),
-		m_circle_radius(PhysicalCopy.m_circle_radius),
-		m_collision_shape(PhysicalCopy.m_collision_shape),
-		m_rect_size(PhysicalCopy.m_rect_size),
-		m_rect_size_body(PhysicalCopy.m_rect_size_body),
-		m_rect_size_head(PhysicalCopy.m_rect_size_head),
-		p_template(PhysicalCopy.p_template),
-		m_ready_for_destruction(PhysicalCopy.m_ready_for_destruction),
-		m_part_collision_data(PhysicalCopy.m_part_collision_data),
-		m_new_anim_speed(PhysicalCopy.m_new_anim_speed)
+		m_unique_id{ PhysicalCopy.m_unique_id },
+		m_genre{ PhysicalCopy.m_genre },
+		m_circle_radius{ PhysicalCopy.m_circle_radius },
+		m_collision_shape{ PhysicalCopy.m_collision_shape },
+		m_rect_size{ PhysicalCopy.m_rect_size },
+		m_rect_size_body{ PhysicalCopy.m_rect_size_body },
+		m_rect_size_head{ PhysicalCopy.m_rect_size_head },
+		p_template{ PhysicalCopy.p_template },
+		m_ready_for_destruction{ PhysicalCopy.m_ready_for_destruction },
+		m_part_collision_data{ PhysicalCopy.m_part_collision_data },
+		m_new_anim_speed{ PhysicalCopy.m_new_anim_speed }
 	{
 	}
 

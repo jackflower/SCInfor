@@ -15,23 +15,23 @@ namespace equipmentdata
 	//Konstruktor
 	EquipmentEnergyData::EquipmentEnergyData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_energy(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_energy{ NULL }
 	{
 	}
 
 	//Konstruktor kopiujący
 	EquipmentEnergyData::EquipmentEnergyData(const EquipmentEnergyData & EquipmentEnergyDataCopy)
 	:
-		EquipmentData(EquipmentEnergyDataCopy),//konstruktor kopiujący klasy bazowej
-		p_energy(EquipmentEnergyDataCopy.p_energy)
+		EquipmentData{ EquipmentEnergyDataCopy },//konstruktor kopiujący klasy bazowej
+		p_energy{ EquipmentEnergyDataCopy.p_energy }
 	{
 	}
 
 	//Destruktor wirtualny
 	EquipmentEnergyData::~EquipmentEnergyData()
 	{
-		//EquipmentData	not edit
+		//~EquipmentData()
 		if (p_energy)
 			gPhysicalManager.destroyPhysical(p_energy);
 		p_energy = NULL;
@@ -44,7 +44,7 @@ namespace equipmentdata
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy Energy
-	Energy* EquipmentEnergyData::getEnergy()
+	Energy *EquipmentEnergyData::getEnergy()
 	{
 		return p_energy;
 	}

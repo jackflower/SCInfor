@@ -31,32 +31,32 @@ namespace logic
 	//Chroniony konstruktor domyślny
 	Actor::Actor(const std::wstring & uniqueId)
 	:
-		Physical(uniqueId), //konstruktor klasy bazowej
-		p_anim_set(NULL),
-		m_technical_data(),
-		m_engine_data(),
-		m_energy_data(),
-		m_airconditiong_data(),
-		m_ventilator_data(),
-		m_gun_data(),
-		m_state_data(),
-		p_actor_controller(NULL)
+		Physical{ uniqueId }, //konstruktor klasy bazowej
+		p_anim_set{ NULL },
+		m_technical_data{},
+		m_engine_data{},
+		m_energy_data{},
+		m_airconditiong_data{},
+		m_ventilator_data{},
+		m_gun_data{},
+		m_state_data{},
+		p_actor_controller{ NULL }
 	{
 	}
 
 	//Chroniony konstruktor kopiujący
 	Actor::Actor(const Actor & ActorCopy)
 	:
-		Physical(ActorCopy),//konstruktor kopiujący klasy bazowej
-		p_anim_set(ActorCopy.p_anim_set),
-		m_technical_data(ActorCopy.m_technical_data),
-		m_engine_data(ActorCopy.m_engine_data),
-		m_energy_data(ActorCopy.m_energy_data),
-		m_airconditiong_data(ActorCopy.m_airconditiong_data),
-		m_ventilator_data(ActorCopy.m_ventilator_data),
-		m_gun_data(ActorCopy.m_gun_data),
-		m_state_data(ActorCopy.m_state_data),
-		p_actor_controller(ActorCopy.p_actor_controller)
+		Physical{ ActorCopy },//konstruktor kopiujący klasy bazowej
+		p_anim_set{ ActorCopy.p_anim_set },
+		m_technical_data{ ActorCopy.m_technical_data },
+		m_engine_data{ ActorCopy.m_engine_data },
+		m_energy_data{ ActorCopy.m_energy_data },
+		m_airconditiong_data{ ActorCopy.m_airconditiong_data },
+		m_ventilator_data{ ActorCopy.m_ventilator_data },
+		m_gun_data{ ActorCopy.m_gun_data },
+		m_state_data{ ActorCopy.m_state_data },
+		p_actor_controller{ ActorCopy.p_actor_controller }
 	{
 	}
 
@@ -65,13 +65,13 @@ namespace logic
 	{
 		//~Physical()
 		p_anim_set = NULL;
-		//m_technical_data
-		//m_engine_data
-		//m_energy_data
-		//m_airconditiong_data
-		//m_ventilator_data
-		//m_gun_data
-		//m_state_data
+		m_technical_data;
+		m_engine_data;
+		m_energy_data;
+		m_airconditiong_data;
+		m_ventilator_data;
+		m_gun_data;
+		m_state_data;
 		p_actor_controller= NULL;
 	}
 

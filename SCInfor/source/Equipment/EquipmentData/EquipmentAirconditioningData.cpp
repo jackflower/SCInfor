@@ -15,23 +15,23 @@ namespace equipmentdata
 	//Konstruktor
 	EquipmentAirconditioningData::EquipmentAirconditioningData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_airconditiong	(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_airconditiong{ NULL }
 	{
 	}
 
 	//Konstruktor kopiujący
 	EquipmentAirconditioningData::EquipmentAirconditioningData(const EquipmentAirconditioningData & EquipmentAirconditioningDataCopy)
 	:
-		EquipmentData(EquipmentAirconditioningDataCopy),//konstruktor kopiujący klasy bazowej
-		p_airconditiong(EquipmentAirconditioningDataCopy.p_airconditiong)
+		EquipmentData{ EquipmentAirconditioningDataCopy },//konstruktor kopiujący klasy bazowej
+		p_airconditiong{ EquipmentAirconditioningDataCopy.p_airconditiong }
 	{
 	}
 
 	//Destruktor wirtualny
 	EquipmentAirconditioningData::~EquipmentAirconditioningData()
 	{
-		//EquipmentData
+		//~EquipmentData()
 		if (p_airconditiong)
 			gPhysicalManager.destroyPhysical(p_airconditiong);
 		p_airconditiong = NULL;
@@ -44,13 +44,13 @@ namespace equipmentdata
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy Engine
-	Airconditioning* EquipmentAirconditioningData::getAirconditioning()
+	Airconditioning *EquipmentAirconditioningData::getAirconditioning()
 	{
 		return p_airconditiong;
 	}
 
 	//Metoda ustawia wskaźnik na obiekt klasy Engine
-	void EquipmentAirconditioningData::setAirconditioning(Airconditioning* airconditiong)
+	void EquipmentAirconditioningData::setAirconditioning(Airconditioning *airconditiong)
 	{
 		p_airconditiong = airconditiong;
 	}

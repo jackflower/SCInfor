@@ -13,10 +13,10 @@ namespace equipment
 	///
 	enum EFuelTankState
 	{
-		FUELTANK_DEFAULT	= 0,
-		FUELTANK_RESERVE	= 1,
-		FUELTANK_EMPTY		= 2,
-		FUELTANK_DAMAGE		= 3,
+		FUELTANK_DEFAULT = 0,
+		FUELTANK_RESERVE = 1,
+		FUELTANK_EMPTY = 2,
+		FUELTANK_DAMAGE = 3,
 	};
 
 }//namespace equipment

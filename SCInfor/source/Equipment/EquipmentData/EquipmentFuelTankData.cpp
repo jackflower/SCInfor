@@ -15,23 +15,23 @@ namespace equipmentdata
 	//Konstruktor
 	EquipmentFuelTankData::EquipmentFuelTankData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_fueltank(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_fueltank{ NULL }
 	{
 	}
 
 	//Konstruktor kopiujacy
 	EquipmentFuelTankData::EquipmentFuelTankData(const EquipmentFuelTankData & EquipmentFuelTankDataCopy)
 	:
-		EquipmentData(EquipmentFuelTankDataCopy),//konstruktor kopiujπcy klasy bazowej
-		p_fueltank(EquipmentFuelTankDataCopy.p_fueltank)
+		EquipmentData{ EquipmentFuelTankDataCopy },//konstruktor kopiujπcy klasy bazowej
+		p_fueltank{ EquipmentFuelTankDataCopy.p_fueltank }
 	{
 	}
 
 	//Destruktor wirtualny
 	EquipmentFuelTankData::~EquipmentFuelTankData()
 	{
-		//EquipmentData
+		//~EquipmentData()
 		if (p_fueltank)
 			gPhysicalManager.destroyPhysical(p_fueltank);
 		p_fueltank = NULL;
@@ -50,7 +50,7 @@ namespace equipmentdata
 	}
 
 	//Metoda ustawia wskaünik na obiekt klasy FuelTank
-	void EquipmentFuelTankData::setFuelTank(FuelTank* fueltank)
+	void EquipmentFuelTankData::setFuelTank(FuelTank *fueltank)
 	{
 		p_fueltank = fueltank;
 	}

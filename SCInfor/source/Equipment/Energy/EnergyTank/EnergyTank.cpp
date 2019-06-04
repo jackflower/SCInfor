@@ -18,7 +18,7 @@ namespace equipment
 	//Chroniony konstruktor domyślny
 	EnergyTank::EnergyTank(const std::wstring & uniqueId)
 	:							
-		Actor(uniqueId),
+		Actor{ uniqueId },
 		m_energy_tank_name{},
 		m_energy_tank_capacity{ 0.0f },
 		m_energy{ 0.0f },

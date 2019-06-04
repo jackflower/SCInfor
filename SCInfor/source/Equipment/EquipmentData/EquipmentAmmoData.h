@@ -58,18 +58,18 @@ namespace equipmentdata
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy Ammo
 		///
-		Ammo* getAmmo();
+		Ammo *getAmmo();
 
 		///
 		///Metoda ustawia wskaźnik na obiekt klasy Ammo
 		///
 		///@param *ammo - wskaźnik na obiekt klasy Ammo
 		///
-		void setAmmo(Ammo * ammo);
+		void setAmmo(Ammo *ammo);
 
 	private:
 
-		Ammo *p_ammo;	//wskaźnik na klasę Ammo - amunicja
+		Ammo *p_ammo; //wskaźnik na klasę Ammo - amunicja
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_AMMO_DATA_JACK

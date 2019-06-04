@@ -55,18 +55,18 @@ namespace equipmentdata
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy Airconditioning
 		///
-		Airconditioning* getAirconditioning();
+		Airconditioning *getAirconditioning();
 
 		///
 		///Metoda ustawia wskaźnik na obiekt klasy Airconditioning
 		///
 		///@param *airconditiong - wskaźnik na obiekt klasy Airconditioning
 		///
-		void setAirconditioning(Airconditioning* airconditiong);
+		void setAirconditioning(Airconditioning *airconditiong);
 
 	private:
 
-		Airconditioning*	p_airconditiong;	//wskaźnik na klasę Airconditioning - klimatyzator
+		Airconditioning *p_airconditiong; //wskaźnik na klasę Airconditioning - klimatyzator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_AIRCONDITIONING_DATA_JACK

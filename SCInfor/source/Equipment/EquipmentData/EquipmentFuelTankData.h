@@ -57,7 +57,7 @@ namespace equipmentdata
 
 	private:
 
-		FuelTank *p_fueltank; //wskaŸnik na klasê FuelTank - zbiornik paliwa
+		FuelTank *p_fueltank; //wskaŸnik na klasê FuelTank - zbiornik paliwa obiektu
 
 	};
 }//namespace equipmentdata

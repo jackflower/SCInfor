@@ -30,7 +30,7 @@ namespace equipmentdata
 		EquipmentData();
 
 		///
-		///Konstruktor kopiujacy
+		///Konstruktor kopiujący
 		///
 		///@param EquipmentDataCopy - stała referencja na obiekt klasy EquipmentData
 		///

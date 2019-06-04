@@ -27,7 +27,7 @@ namespace equipmentdata
 		EquipmentEnergyTankData();
 
 		///
-		///Konstruktor kopiujacy
+		///Konstruktor kopiuj¹cy
 		///
 		///@param EquipmentEnergyTankDataCopy - sta³a referencja na obiekt klasy EquipmentEnergyTankData
 		///

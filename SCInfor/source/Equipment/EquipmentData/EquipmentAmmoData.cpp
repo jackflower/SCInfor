@@ -15,23 +15,23 @@ namespace equipmentdata
 	//Konstruktor
 	EquipmentAmmoData::EquipmentAmmoData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_ammo(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_ammo{ NULL }
 	{
 	}
 
 	//Konstruktor kopiujący
 	EquipmentAmmoData::EquipmentAmmoData(const EquipmentAmmoData & EquipmentAmmoDataCopy)
 	:
-		EquipmentData(EquipmentAmmoDataCopy),//konstruktor kopiujący klasy bazowej
-		p_ammo(EquipmentAmmoDataCopy.p_ammo)
+		EquipmentData{ EquipmentAmmoDataCopy },//konstruktor kopiujący klasy bazowej
+		p_ammo{ EquipmentAmmoDataCopy.p_ammo }
 	{
 	}
 
 	//Destruktor wirtualny
 	EquipmentAmmoData::~EquipmentAmmoData()
 	{
-		//EquipmentData
+		//~EquipmentData()
 		if (p_ammo)
 			gPhysicalManager.destroyPhysical(p_ammo);
 		p_ammo = NULL;
@@ -44,13 +44,13 @@ namespace equipmentdata
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy Ammo
-	Ammo* EquipmentAmmoData::getAmmo()
+	Ammo *EquipmentAmmoData::getAmmo()
 	{
 		return p_ammo;
 	}
 
 	//Metoda ustawia wskaźnik na obiekt klasy Ammo
-	void EquipmentAmmoData::setAmmo(Ammo* ammo)
+	void EquipmentAmmoData::setAmmo(Ammo *ammo)
 	{
 		p_ammo = ammo;
 	}

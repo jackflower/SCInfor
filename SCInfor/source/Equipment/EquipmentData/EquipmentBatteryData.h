@@ -66,7 +66,7 @@ namespace equipmentdata
 		///
 		///@param *battery - wskaźnik na obiekt klasy Battery
 		///
-		void setBattery(Battery* battery);
+		void setBattery(Battery *battery);
 
 	private:
 

@@ -55,18 +55,18 @@ namespace equipmentdata
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy ThermalInsulation
 		///
-		ThermalInsulation* getThermalInsulation();
+		ThermalInsulation *getThermalInsulation();
 
 		///
 		///Metoda ustawia wskaźnik na obiekt klasy ThermalInsulation
 		///
 		///@param *thermalinsulation - wskaźnik na obiekt klasy ThermalInsulation
 		///
-		void setThermalInsulation(ThermalInsulation* thermalinsulation);
+		void setThermalInsulation(ThermalInsulation *thermalinsulation);
 
 	private:
 
-		ThermalInsulation*	p_thermalinsulation;	//wskaźnik na klasę ThermalInsulation - termoizolator
+		ThermalInsulation *p_thermalinsulation; //wskaźnik na klasę ThermalInsulation - termoizolator
 	};
 }//namespace equipmentdata
 #endif//H_EQUIPMENT_THERMALINSULATION_DATA_JACK

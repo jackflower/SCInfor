@@ -68,19 +68,19 @@ namespace equipment
 		///
 		///@param &engine_name - typ silnika stała referencja na std::string
 		///
-		void setEngineName(const std::string& engine_name);
+		void setEngineName(const std::string & engine_name);
 
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy FuelTank
 		///
-		FuelTank* getFuelTank();
+		FuelTank *getFuelTank();
 
 		///
 		///Metoda ustawia wskaźnik na obiekt klasy FuelTank
 		///
 		///@param *fuel_tank - wskaźnik na obiekt klasy FuelTank
 		///
-		void setFuelTank(FuelTank* fuel_tank);
+		void setFuelTank(FuelTank *fuel_tank);
 
 		///
 		///Metoda zwraca flagę, czy obiekt posiada zbiornik paliwa

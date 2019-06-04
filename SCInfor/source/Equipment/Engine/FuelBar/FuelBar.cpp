@@ -15,20 +15,20 @@ namespace equipment
 	//Konstruktor
 	FuelBar::FuelBar(const std::wstring & uniqueId)
 	:
-		Physical(uniqueId),//konstruktor klasy bazowej
-		m_fuelbar_name(),
-		m_thickness(0.0f),
-		m_size(0.0f, 0.0f),
-		m_position_offset(0.0f, 0.0f)
+		Physical{ uniqueId },//konstruktor klasy bazowej
+		m_fuelbar_name{},
+		m_thickness{ 0.0f },
+		m_size{ 0.0f, 0.0f },
+		m_position_offset{ 0.0f, 0.0f }
 	{
 	}
 
 	//Konstruktor kopiujący
 	FuelBar::FuelBar(const FuelBar & FuelBarCopy)
 	:
-		Physical(FuelBarCopy),//konstruktor kopiujący klasy bazowej
-		m_fuelbar_name(FuelBarCopy.m_fuelbar_name),
-		m_thickness(FuelBarCopy.m_thickness),
+		Physical{ FuelBarCopy },//konstruktor kopiujący klasy bazowej
+		m_fuelbar_name{ FuelBarCopy.m_fuelbar_name },
+		m_thickness{ FuelBarCopy.m_thickness },
 		m_size(FuelBarCopy.m_size),
 		m_position_offset(FuelBarCopy.m_position_offset)
 	{

@@ -18,12 +18,12 @@ namespace equipment
 	//Chroniony konstruktor domyślny
 	FuelTank::FuelTank(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId),//konstruktor klasy bazowej
-		m_fuel_tank_name(),
-		m_fuel_tank_capacity(0.0f),
-		m_fuel(0.0f),
-		m_fueltank_state(EFuelTankState::FUELTANK_DEFAULT),
-		m_unit_controller(true)//urządzenie włączone
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_fuel_tank_name{},
+		m_fuel_tank_capacity{ 0.0f },
+		m_fuel{ 0.0f },
+		m_fueltank_state{ EFuelTankState::FUELTANK_DEFAULT },
+		m_unit_controller{ true }//urządzenie włączone
 	{
 		setZIndexBody(Z_PHYSICAL_FUEL_TANK_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_SHADOW_FUEL_TANK_BODY);
@@ -35,11 +35,11 @@ namespace equipment
 	FuelTank::FuelTank(const FuelTank & FuelTankCopy)
 	:
 		Actor(FuelTankCopy),//konstruktor kopiujący klasy bazowej
-		m_fuel_tank_name(FuelTankCopy.m_fuel_tank_name),
-		m_fuel_tank_capacity(FuelTankCopy.m_fuel_tank_capacity),
-		m_fuel(FuelTankCopy.m_fuel),
-		m_fueltank_state(FuelTankCopy.m_fueltank_state),
-		m_unit_controller(FuelTankCopy.m_unit_controller)
+		m_fuel_tank_name{ FuelTankCopy.m_fuel_tank_name },
+		m_fuel_tank_capacity{ FuelTankCopy.m_fuel_tank_capacity },
+		m_fuel{ FuelTankCopy.m_fuel },
+		m_fueltank_state{ FuelTankCopy.m_fueltank_state },
+		m_unit_controller{ FuelTankCopy.m_unit_controller }
 	{
 		setZIndexBody(Z_PHYSICAL_FUEL_TANK_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_SHADOW_FUEL_TANK_BODY);
@@ -50,12 +50,12 @@ namespace equipment
 	//Destruktor wirtualny
 	FuelTank::~FuelTank(void)
 	{
-		//Actor
+		//~Actor()
 		m_fuel_tank_name = "";
 		m_fuel_tank_capacity = 0.0f;
 		m_fuel = 0.0f;
 		m_fueltank_state = EFuelTankState::FUELTANK_DEFAULT;
-		//m_unit_controller
+		m_unit_controller;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

@@ -14,11 +14,11 @@ namespace equipment
 	///
 	enum class EEnergyState
 	{
-		ENERGY_DEFAULT	= 0,
-		ENERGY_RESERVE	= 1,
-		ENERGY_EMPTY	= 2,
-		ENERGY_DAMAGE	= 3,
-		ENERGY_DEATH	= 4,
+		ENERGY_DEFAULT = 0,
+		ENERGY_RESERVE = 1,
+		ENERGY_EMPTY = 2,
+		ENERGY_DAMAGE = 3,
+		ENERGY_DEATH = 4,
 	};
 
 }//namespace equipment

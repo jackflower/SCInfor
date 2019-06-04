@@ -21,10 +21,10 @@ namespace logic
 	//Konstruktor
 	ActorController::ActorController(Actor *actor)
 	:
-		p_actor	(actor),
-		m_strafe(0),
-		m_move(0),
-		m_true_rot(0.0f)
+		p_actor{ actor },
+		m_strafe{ 0 },
+		m_move{ 0 },
+		m_true_rot{ 0.0f }
 	{
 	}
 

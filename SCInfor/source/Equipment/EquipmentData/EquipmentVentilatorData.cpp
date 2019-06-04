@@ -15,8 +15,8 @@ namespace equipmentdata
 	//Konstruktor
 	EquipmentVentilatorData::EquipmentVentilatorData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_ventilator(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_ventilator{ NULL }
 	{
 	}
 
@@ -44,7 +44,7 @@ namespace equipmentdata
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy Ventilator
-	Ventilator* EquipmentVentilatorData::getVentilator()
+	Ventilator *EquipmentVentilatorData::getVentilator()
 	{
 		return p_ventilator;
 	}

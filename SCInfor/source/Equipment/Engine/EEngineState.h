@@ -14,11 +14,11 @@ namespace equipment
 	///
 	enum EEngineState
 	{
-		ENGINE_DEFAULT	= 0,
-		ENGINE_START	= 1,
-		ENGINE_STOP		= 2,
-		ENGINE_DAMAGE	= 3,
-		ENGINE_DEATH	= 4,
+		ENGINE_DEFAULT = 0,
+		ENGINE_START = 1,
+		ENGINE_STOP = 2,
+		ENGINE_DAMAGE = 3,
+		ENGINE_DEATH = 4,
 	};
 
 }//namespace equipment
