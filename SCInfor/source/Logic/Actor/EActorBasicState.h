@@ -11,13 +11,13 @@
 ///
 ///Wyliczenie stanów obiektu - podstawowe wytyczne dla reprezentacji graficznej
 ///
-enum EActorBasicState
+enum class EActorBasicState
 {
-	UNIT_DEFAULT,	//obiekt się dopiero rodzi, stan pierwotny, początkowy (iddle)
-	UNIT_MOVE,		//obiekt przenieszcza się
-	UNIT_ATTACK,	//obiekt atakuje
-	UNIT_DEFENSE,	//obiekt broni się
-	UNIT_DAMAGE,	//obiekt jest we śnie (ogłuszony, nieprzytomny, zahipnotyzowany)
-	UNIT_DEATH		//obiekt w trakcie umierania (śmierci)
+	UNIT_DEFAULT, //obiekt się dopiero rodzi, stan pierwotny, początkowy (iddle)
+	UNIT_MOVE, //obiekt przenieszcza się
+	UNIT_ATTACK, //obiekt atakuje
+	UNIT_DEFENSE, //obiekt broni się
+	UNIT_DAMAGE, //obiekt jest we śnie (ogłuszony, nieprzytomny, zahipnotyzowany)
+	UNIT_DEATH //obiekt w trakcie umierania (śmierci)
 };
 #endif//H_E_ACTOR_BASIC_STATE_JACK

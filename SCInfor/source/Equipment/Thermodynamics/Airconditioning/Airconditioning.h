@@ -177,7 +177,7 @@ namespace equipment
 		///
 		///@param *thermal_insulation - wskaźnik na obiekt klasy ThermalInsulation
 		///
-		void setThermalInsulation(ThermalInsulation * thermal_insulation);
+		void setThermalInsulation(ThermalInsulation *thermal_insulation);
 
 		///
 		///Metoda zwraca referencję na opakowanie danych dla transformacji

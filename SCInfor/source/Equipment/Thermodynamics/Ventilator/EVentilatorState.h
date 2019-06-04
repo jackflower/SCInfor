@@ -12,7 +12,7 @@ namespace equipment
 	///
 	///Wyliczenie stanów dla obiektu Ventilator
 	///
-	enum EVentilatorState
+	enum class EVentilatorState
 	{
 		VENTILATOR_DEFAULT = 0,	//urządzenie jest włączone - wentylator funkcjonuje
 		VENTILATOR_DAMAGE = 1,	//urządzenie jest włączone - wentylator stan damage

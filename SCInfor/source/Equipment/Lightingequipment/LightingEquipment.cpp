@@ -21,10 +21,10 @@ namespace equipment
 	//Chroniony konstruktor domyślny
 	LightingEquipment::LightingEquipment(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId),//konstruktor klasy bazowej
-		m_unit_controller(true),//urządzenie włączone
-		m_energy_consumption(0.0f),
-		m_lighting_equipment_state(LIGHTING_EQUIPMENT_DEFAULT)
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_unit_controller{ true },//urządzenie włączone
+		m_energy_consumption{ 0.0f },
+		m_lighting_equipment_state{ ELightingEquipmentState::LIGHTING_EQUIPMENT_DEFAULT }
 	{
 		setZIndexBody(Z_PHYSICAL_LIGHTING_EQUIPMENT_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_BODY);
@@ -36,9 +36,9 @@ namespace equipment
 	LightingEquipment::LightingEquipment(const LightingEquipment & LightingEquipmentCopy)
 	:
 		Actor(LightingEquipmentCopy),//konstruktor kopiujący klasy bazowej
-		m_unit_controller(LightingEquipmentCopy.m_unit_controller),//urządzenie włączone
-		m_energy_consumption(LightingEquipmentCopy.m_energy_consumption),
-		m_lighting_equipment_state(LightingEquipmentCopy.m_lighting_equipment_state)
+		m_unit_controller{ LightingEquipmentCopy.m_unit_controller },//urządzenie włączone
+		m_energy_consumption{ LightingEquipmentCopy.m_energy_consumption },
+		m_lighting_equipment_state{ LightingEquipmentCopy.m_lighting_equipment_state }
 	{
 		setZIndexBody(Z_PHYSICAL_LIGHTING_EQUIPMENT_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_SHADOW_LIGHTING_EQUIPMENT_BODY);
@@ -49,10 +49,10 @@ namespace equipment
 	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	LightingEquipment::~LightingEquipment(void)
 	{
-		//Actor
-		//m_unit_controller
+		//~Actor()
+		m_unit_controller;
 		m_energy_consumption = 0.0f;
-		m_lighting_equipment_state = LIGHTING_EQUIPMENT_DEFAULT;
+		m_lighting_equipment_state = ELightingEquipmentState::LIGHTING_EQUIPMENT_DEFAULT;
 
 	}
 
@@ -91,7 +91,7 @@ namespace equipment
 	{
 		switch(m_lighting_equipment_state)
 		{
-		case LIGHTING_EQUIPMENT_DEFAULT:
+		case ELightingEquipmentState::LIGHTING_EQUIPMENT_DEFAULT:
 		{
 			if (p_anim_set)
 			{
@@ -100,7 +100,7 @@ namespace equipment
 			}
 			break;
 		}
-		case LIGHTING_EQUIPMENT_LIGHT_ON:
+		case ELightingEquipmentState::LIGHTING_EQUIPMENT_LIGHT_ON:
 		{
 			if (p_anim_set)
 			{
@@ -109,7 +109,7 @@ namespace equipment
 			}
 			break;
 		}
-		case LIGHTING_EQUIPMENT_LIGHT_OFF:
+		case ELightingEquipmentState::LIGHTING_EQUIPMENT_LIGHT_OFF:
 		{
 			if (p_anim_set)
 			{
@@ -118,7 +118,7 @@ namespace equipment
 			}
 			break;
 		}
-		case LIGHTING_EQUIPMENT_DAMAGE:
+		case ELightingEquipmentState::LIGHTING_EQUIPMENT_DAMAGE:
 		{
 			if (p_anim_set)
 			{
@@ -127,7 +127,7 @@ namespace equipment
 			}
 			break;
 		}
-		case LIGHTING_EQUIPMENT_DEATH:
+		case ELightingEquipmentState::LIGHTING_EQUIPMENT_DEATH:
 		{
 			if (p_anim_set)
 			{

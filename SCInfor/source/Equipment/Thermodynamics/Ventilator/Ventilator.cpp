@@ -19,16 +19,16 @@ namespace equipment
 	RTTI_IMPL_NOPARENT(Ventilator);
 
 	////Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
-	Ventilator::Ventilator(const std::wstring& uniqueId)
+	Ventilator::Ventilator(const std::wstring & uniqueId)
 	:
-		Actor (uniqueId),//konstruktor klasy bazowej
-		m_ventilator_name (""),
-		m_performance (0.0f),
-		m_performance_factor (0.0f),
-		m_energy_consumption (0.0f),
-		m_energy_consumption_factor	(0.0f),
-		m_ventilator_state (EVentilatorState::VENTILATOR_DEFAULT),
-		m_unit_controller (false)//urządzenie wyłączone - uruchamia się z opóźnieniem
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_ventilator_name{ "" },
+		m_performance{ 0.0f },
+		m_performance_factor{ 0.0f },
+		m_energy_consumption{ 0.0f },
+		m_energy_consumption_factor{ 0.0f },
+		m_ventilator_state{ EVentilatorState::VENTILATOR_DEFAULT },
+		m_unit_controller{ false }//urządzenie wyłączone - uruchamia się z opóźnieniem
 	{
 		//to do: layer
 	}
@@ -37,13 +37,13 @@ namespace equipment
 	Ventilator::Ventilator(const Ventilator & VentilatorCopy)
 	:
 		Actor (VentilatorCopy),//konstruktor kopiujący klasy bazowej
-		m_ventilator_name (VentilatorCopy.m_ventilator_name),
-		m_performance (VentilatorCopy.m_performance),
-		m_performance_factor (VentilatorCopy.m_performance_factor),
-		m_energy_consumption (VentilatorCopy.m_energy_consumption),
-		m_energy_consumption_factor(VentilatorCopy.m_energy_consumption_factor),
-		m_ventilator_state (VentilatorCopy.m_ventilator_state),
-		m_unit_controller (VentilatorCopy.m_unit_controller)
+		m_ventilator_name{ VentilatorCopy.m_ventilator_name },
+		m_performance{ VentilatorCopy.m_performance },
+		m_performance_factor{ VentilatorCopy.m_performance_factor },
+		m_energy_consumption{ VentilatorCopy.m_energy_consumption },
+		m_energy_consumption_factor{ VentilatorCopy.m_energy_consumption_factor },
+		m_ventilator_state{ VentilatorCopy.m_ventilator_state },
+		m_unit_controller{ VentilatorCopy.m_unit_controller }
 	{
 		//to do: layer
 	}
@@ -51,7 +51,7 @@ namespace equipment
 	//Destruktor
 	Ventilator::~Ventilator()
 	{
-		//Actor
+		//~Actor()
 		m_ventilator_name = "";
 		m_performance = 0.0f;
 		m_performance_factor = 0.0f;

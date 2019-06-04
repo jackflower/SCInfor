@@ -20,16 +20,16 @@ namespace equipment
 	//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 	Airconditioning::Airconditioning(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId),//konstruktor klasy bazowej
-		m_temperature(0.0f),
-		m_temperature_set(0.0f),
-		m_temperature_range(0.0f, 0.0f),
-		m_temperature_increment(0.0f),
-		m_energy_consumption(0.0f),
-		m_fuel_consumption(0.0f),
-		m_thermal_insulation_data(),
-		m_airconditioning_state(EAirconditioningState::AIRCONDITIONING_DEFAULT),
-		m_unit_controller(false)//urządzenie wyłączone - uruchamia się z opóźnieniem
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_temperature{ 0.0f },
+		m_temperature_set{ 0.0f },
+		m_temperature_range{ 0.0f, 0.0f },
+		m_temperature_increment{ 0.0f },
+		m_energy_consumption{ 0.0f },
+		m_fuel_consumption{ 0.0f },
+		m_thermal_insulation_data{},
+		m_airconditioning_state{ EAirconditioningState::AIRCONDITIONING_DEFAULT },
+		m_unit_controller{ false }//urządzenie wyłączone - uruchamia się z opóźnieniem
 	{
 		//to do: layers
 	}
@@ -38,15 +38,15 @@ namespace equipment
 	Airconditioning::Airconditioning(const Airconditioning & AirconditioningCopy)
 	:
 		Actor(AirconditioningCopy),//konstruktor kopiujący klasy bazowej
-		m_temperature(AirconditioningCopy.m_temperature),
-		m_temperature_set(AirconditioningCopy.m_temperature_set),
-		m_temperature_range(AirconditioningCopy.m_temperature_range),
-		m_temperature_increment(AirconditioningCopy.m_temperature_increment),
-		m_energy_consumption(AirconditioningCopy.m_energy_consumption),
-		m_fuel_consumption(AirconditioningCopy.m_fuel_consumption),
-		m_thermal_insulation_data(AirconditioningCopy.m_thermal_insulation_data),
-		m_airconditioning_state(AirconditioningCopy.m_airconditioning_state),
-		m_unit_controller(AirconditioningCopy.m_unit_controller)
+		m_temperature{ AirconditioningCopy.m_temperature },
+		m_temperature_set{ AirconditioningCopy.m_temperature_set },
+		m_temperature_range{ AirconditioningCopy.m_temperature_range },
+		m_temperature_increment{ AirconditioningCopy.m_temperature_increment },
+		m_energy_consumption{ AirconditioningCopy.m_energy_consumption },
+		m_fuel_consumption{ AirconditioningCopy.m_fuel_consumption },
+		m_thermal_insulation_data{ AirconditioningCopy.m_thermal_insulation_data },
+		m_airconditioning_state{ AirconditioningCopy.m_airconditioning_state },
+		m_unit_controller{ AirconditioningCopy.m_unit_controller }
 	{
 		//to do: layers
 	}
@@ -62,9 +62,9 @@ namespace equipment
 		m_temperature_increment = 0.0f;
 		m_energy_consumption = 0.0f;
 		m_fuel_consumption = 0.0f;
-		//m_thermal_insulation_data
+		m_thermal_insulation_data;
 		m_airconditioning_state = EAirconditioningState::AIRCONDITIONING_DEFAULT;
-		//m_unit_controller
+		m_unit_controller;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

@@ -14,30 +14,30 @@ namespace equipment
 	//Konstruktor
 	Switch::Switch()
 	:
-		m_state(false),
-		m_time_to_run_range(m_time_to_run_first, m_time_to_run_second),
-		m_time_to_run(gRandom.Rndf(m_time_to_run_range.first, m_time_to_run_range.second)),
-		m_elapsed_time(0.0f)
+		m_state{ false },
+		m_time_to_run_range{ m_time_to_run_first, m_time_to_run_second },
+		m_time_to_run{ gRandom.Rndf(m_time_to_run_range.first, m_time_to_run_range.second) },
+		m_elapsed_time{ 0.0f }
 	{
 	}
 
 	//Konstruktor
 	Switch::Switch(bool state)
 	:
-		m_state(state),
-		m_time_to_run_range(m_time_to_run_first, m_time_to_run_second),
-		m_time_to_run(gRandom.Rndf(m_time_to_run_range.first, m_time_to_run_range.second)),
-		m_elapsed_time(0.0f)
+		m_state{ state },
+		m_time_to_run_range{ m_time_to_run_first, m_time_to_run_second },
+		m_time_to_run{ gRandom.Rndf(m_time_to_run_range.first, m_time_to_run_range.second) },
+		m_elapsed_time{ 0.0f }
 	{
 	}
 
 	//Konstruktor kopiujący
 	Switch::Switch(const Switch & SwitchCopy)
 	:
-		m_state(SwitchCopy.m_state),
-		m_time_to_run_range(SwitchCopy.m_time_to_run_range),
-		m_time_to_run(SwitchCopy.m_time_to_run),
-		m_elapsed_time(SwitchCopy.m_elapsed_time)
+		m_state{ SwitchCopy.m_state },
+		m_time_to_run_range{ SwitchCopy.m_time_to_run_range },
+		m_time_to_run{ SwitchCopy.m_time_to_run },
+		m_elapsed_time{ SwitchCopy.m_elapsed_time }
 	{
 	}
 

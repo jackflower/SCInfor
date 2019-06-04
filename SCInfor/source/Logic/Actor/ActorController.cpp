@@ -46,7 +46,7 @@ namespace logic
 	//Metoda ustawia stan i prędkość obiekty
 	void ActorController::setSpeed(float speed)
 	{
-		if (p_actor->getSpawnState() == SPAWN_STATE_ALIVE)
+		if (p_actor->getSpawnState() == EActorSpawnState::SPAWN_STATE_ALIVE)
 		{
 			//uwzględniam strafe
 			sf::Vector2f dir = RotationToVector((float)p_actor->getRotationBody());//body
@@ -57,7 +57,7 @@ namespace logic
 			{
 				move += VectorRightOf(dir) * (float) m_strafe;
 				//stan - obiekt ostrzeliwuje się, trwa wymiana ognia...
-				p_actor->setMoveState(MOVE_STATE_STRAFING);
+				p_actor->setMoveState(EActorMoveState::MOVE_STATE_STRAFING);
 			}
 
 			//jeśli aktor się porusza...
@@ -65,7 +65,7 @@ namespace logic
 			{
 				move += dir * (float) m_move;
 				//stan - obiekt porusza się, idzie, spaceruje, jest w ruchu
-				p_actor->setMoveState(MOVE_STATE_WALKING);
+				p_actor->setMoveState(EActorMoveState::MOVE_STATE_WALKING);
 			}
 
 			//jeśli obiekt się nie porusza i się nie ostrzeliwuje (iddle....)
@@ -82,14 +82,14 @@ namespace logic
 	void ActorController::turnBy(float rotation)
 	{
 		//jeśli aktor żyje...
-	    if (p_actor->getSpawnState() == SPAWN_STATE_ALIVE)
+	    if (p_actor->getSpawnState() == EActorSpawnState::SPAWN_STATE_ALIVE)
 		{
 	        m_true_rot += rotation;
 	        while (m_true_rot < 0.0f) m_true_rot += 360.0f;
 	        while (m_true_rot > 360.0f) m_true_rot -= 360.0f;
 			p_actor->setRotationBody(m_true_rot);//body
 	        if ((rotation >= 0.001f) || (rotation <= -0.001))
-				p_actor->setMoveState(MOVE_STATE_TURNING);
+				p_actor->setMoveState(EActorMoveState::MOVE_STATE_TURNING);
 	    }
 	}
 
@@ -117,12 +117,12 @@ namespace logic
 	void ActorController::update(float dt)
 	{
 		//przed zejściem z tego świata, obiekt się zatrzymuje...
-		if (p_actor->getSpawnState() != SPAWN_STATE_ALIVE)
+		if (p_actor->getSpawnState() != EActorSpawnState::SPAWN_STATE_ALIVE)
 		{
 			p_actor->setVelocity(sf::Vector2f(0.0f, 0.0f));
 		}
 
-		p_actor->setMoveState(MOVE_STATE_STANDING);
+		p_actor->setMoveState(EActorMoveState::MOVE_STATE_STANDING);
 		m_move = 0;
 		m_strafe = 0;
 	}

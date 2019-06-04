@@ -11,18 +11,18 @@ namespace statesdata
 	//Konstruktor
 	ActorStateData::ActorStateData()
 	:
-		e_basic_state(EActorBasicState::UNIT_DEFAULT),
-		e_move_state(EActorMoveState::MOVE_STATE_STANDING),
-		e_spawn_state(EActorSpawnState::SPAWN_STATE_ALIVE)
+		e_basic_state{ EActorBasicState::UNIT_DEFAULT },
+		e_move_state{ EActorMoveState::MOVE_STATE_STANDING },
+		e_spawn_state{ EActorSpawnState::SPAWN_STATE_ALIVE }
 	{
 	}
 
 	//Konstruktor kopiujący
 	ActorStateData::ActorStateData(const ActorStateData & ActorStateDataCopy)
 	:
-		e_basic_state(ActorStateDataCopy.e_basic_state),
-		e_move_state(ActorStateDataCopy.e_move_state),
-		e_spawn_state(ActorStateDataCopy.e_spawn_state)
+		e_basic_state{ ActorStateDataCopy.e_basic_state },
+		e_move_state{ ActorStateDataCopy.e_move_state },
+		e_spawn_state{ ActorStateDataCopy.e_spawn_state }
 	{
 	}
 

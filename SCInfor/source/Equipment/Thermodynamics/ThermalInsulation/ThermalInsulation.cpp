@@ -19,15 +19,15 @@ namespace equipment
 	//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 	ThermalInsulation::ThermalInsulation(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId),//konstruktor klasy bazowej
-		m_temperature_ambient(0.0f),
-		m_thermal_protection(0.0f),
-		m_thermal_protection_factor(0.0f),
-		m_thermal_protection_consume(0.0f),
-		m_thermal_protection_duration(0.0f),
-		m_thermalinsulation_state(EThermalInsulationState::THERMALINSULATION_DEFAULT),
-		m_unit_controller(false),//urządzenie wyłączone - uruchamia się z opóźnieniem
-		m_elapsed_time(0.0f)
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_temperature_ambient{ 0.0f },
+		m_thermal_protection{ 0.0f },
+		m_thermal_protection_factor{ 0.0f },
+		m_thermal_protection_consume{ 0.0f },
+		m_thermal_protection_duration{ 0.0f },
+		m_thermalinsulation_state{ EThermalInsulationState::THERMALINSULATION_DEFAULT },
+		m_unit_controller{ false },//urządzenie wyłączone - uruchamia się z opóźnieniem
+		m_elapsed_time{ 0.0f }
 	{
 		//to do: layers
 	}
@@ -36,14 +36,14 @@ namespace equipment
 	ThermalInsulation::ThermalInsulation(const ThermalInsulation & CThermalInsulationCopy)
 	:
 		Actor(CThermalInsulationCopy),
-		m_temperature_ambient(CThermalInsulationCopy.m_temperature_ambient),
-		m_thermal_protection(CThermalInsulationCopy.m_thermal_protection),
-		m_thermal_protection_factor(CThermalInsulationCopy.m_thermal_protection_factor),
-		m_thermal_protection_consume(CThermalInsulationCopy.m_thermal_protection_consume),
-		m_thermal_protection_duration(CThermalInsulationCopy.m_thermal_protection_duration),
-		m_thermalinsulation_state(CThermalInsulationCopy.m_thermalinsulation_state),
-		m_unit_controller(CThermalInsulationCopy.m_unit_controller),
-		m_elapsed_time(CThermalInsulationCopy.m_elapsed_time)
+		m_temperature_ambient{ CThermalInsulationCopy.m_temperature_ambient },
+		m_thermal_protection{ CThermalInsulationCopy.m_thermal_protection },
+		m_thermal_protection_factor{ CThermalInsulationCopy.m_thermal_protection_factor },
+		m_thermal_protection_consume{ CThermalInsulationCopy.m_thermal_protection_consume },
+		m_thermal_protection_duration{ CThermalInsulationCopy.m_thermal_protection_duration },
+		m_thermalinsulation_state{ CThermalInsulationCopy.m_thermalinsulation_state },
+		m_unit_controller{ CThermalInsulationCopy.m_unit_controller },
+		m_elapsed_time{ CThermalInsulationCopy.m_elapsed_time }
 	{
 		//to do: layers
 	}
@@ -51,14 +51,14 @@ namespace equipment
 	//Destruktor
 	ThermalInsulation::~ThermalInsulation()
 	{
-		//Actor
+		//~Actor()
 		m_temperature_ambient = 0.0f;
 		m_thermal_protection = 0.0f;
 		m_thermal_protection_factor = 0.0f;
 		m_thermal_protection_consume = 0.0f;
 		m_thermal_protection_duration = 0.0f;
 		m_thermalinsulation_state = EThermalInsulationState::THERMALINSULATION_DEFAULT;
-		//m_unit_controller
+		m_unit_controller;
 		m_elapsed_time = 0.0f;
 	}
 

@@ -12,7 +12,7 @@ namespace equipment
 	///
 	///Wyliczenie stanów dla obiektu Engine
 	///
-	enum EEngineState
+	enum class EEngineState
 	{
 		ENGINE_DEFAULT = 0,
 		ENGINE_START = 1,

@@ -13,34 +13,34 @@ namespace physics
 	//Konstruktor
 	PhysicsData::PhysicsData()
 	:
-		m_weight(0.0f),
-		m_position(0.0f, 0.0f),
-		m_old_position(0.0f, 0.0f),
-		m_velocity(0.0f, 0.0f),
-		m_altitude(1.0f),
-		m_init_height(0.0f),
-		m_stored_scale_body(0.0f, 0.0f),
-		m_stored_scale_head(0.0f, 0.0f),
-		m_rotation_uniform(0.0f),
-		m_rotation_body(0.0f),
-		m_rotation_head(0.0f)
+		m_weight{ 0.0f },
+		m_position{ 0.0f, 0.0f },
+		m_old_position{ 0.0f, 0.0f },
+		m_velocity{ 0.0f, 0.0f },
+		m_altitude{ 1.0f },
+		m_init_height{ 0.0f },
+		m_stored_scale_body{ 0.0f, 0.0f },
+		m_stored_scale_head{ 0.0f, 0.0f },
+		m_rotation_uniform{ 0.0f },
+		m_rotation_body{ 0.0f },
+		m_rotation_head{ 0.0f }
 	{
 	}
 
 	//Konstruktor kopiujący
 	PhysicsData::PhysicsData(const PhysicsData & PhysicsDataCopy)
 	:
-		m_weight(PhysicsDataCopy.m_weight),
-		m_position(PhysicsDataCopy.m_position),
-		m_old_position(PhysicsDataCopy.m_old_position),
-		m_velocity(PhysicsDataCopy.m_velocity),
-		m_altitude(PhysicsDataCopy.m_altitude),
-		m_init_height(PhysicsDataCopy.m_init_height),
-		m_stored_scale_body(PhysicsDataCopy.m_stored_scale_body),
-		m_stored_scale_head(PhysicsDataCopy.m_stored_scale_head),
-		m_rotation_uniform(PhysicsDataCopy.m_rotation_uniform),
-		m_rotation_body(PhysicsDataCopy.m_rotation_body),
-		m_rotation_head(PhysicsDataCopy.m_rotation_head)
+		m_weight{ PhysicsDataCopy.m_weight },
+		m_position{ PhysicsDataCopy.m_position },
+		m_old_position{ PhysicsDataCopy.m_old_position },
+		m_velocity{ PhysicsDataCopy.m_velocity },
+		m_altitude{ PhysicsDataCopy.m_altitude },
+		m_init_height{ PhysicsDataCopy.m_init_height },
+		m_stored_scale_body{ PhysicsDataCopy.m_stored_scale_body },
+		m_stored_scale_head{ PhysicsDataCopy.m_stored_scale_head },
+		m_rotation_uniform{ PhysicsDataCopy.m_rotation_uniform },
+		m_rotation_body{ PhysicsDataCopy.m_rotation_body },
+		m_rotation_head{ PhysicsDataCopy.m_rotation_head }
 	{
 	}
 
@@ -58,11 +58,11 @@ namespace physics
 		m_init_height = 0.0f;
 		m_stored_scale_body.x = 1;
 		m_stored_scale_body.y = 1;
-		m_stored_scale_head.x	= 1;
-		m_stored_scale_head.y	= 1;
-		m_rotation_uniform		= 0.0f;
-		m_rotation_body			= 0.0f;
-		m_rotation_head			= 0.0f;
+		m_stored_scale_head.x = 1;
+		m_stored_scale_head.y = 1;
+		m_rotation_uniform = 0.0f;
+		m_rotation_body = 0.0f;
+		m_rotation_head	= 0.0f;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

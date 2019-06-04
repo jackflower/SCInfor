@@ -7,7 +7,6 @@
 #ifndef H_ACTOR_CONTROLLER_JACK
 #define H_ACTOR_CONTROLLER_JACK
 
-//#include <string>
 #include "../../RTTI/RTTI.h"
 
 ///

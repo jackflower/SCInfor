@@ -12,10 +12,10 @@ namespace equipment
 	///
 	///Wyliczenie stanów dla obiektu Airconditioning
 	///
-	enum EThermalInsulationState
+	enum class EThermalInsulationState
 	{
-		THERMALINSULATION_DEFAULT	= 0,	//termoizolator funkcjonuje
-		THERMALINSULATION_DAMAGE	= 1,	//z racji faktu, że jest to urządzenie
+		THERMALINSULATION_DEFAULT = 0,	//termoizolator funkcjonuje
+		THERMALINSULATION_DAMAGE = 1,	//z racji faktu, że jest to urządzenie
 											//machaniczne, stan damage, należy traktować
 											//jako stan wyłączenia
 	};

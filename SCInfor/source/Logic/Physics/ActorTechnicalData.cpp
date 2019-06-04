@@ -15,24 +15,24 @@ namespace physics
 		//Konstruktor
 		ActorTechnicalData::ActorTechnicalData()
 		:
-			PhysicsData(),//konstruktor klasy bazowej
-			m_mass(0.0f),
-			m_temperature(0.0f),
-			m_speed(0.0f),
-			m_movabled(true),
-			m_is_move(false)
+			PhysicsData{},//konstruktor klasy bazowej
+			m_mass{ 0.0f },
+			m_temperature{ 0.0f },
+			m_speed{ 0.0f },
+			m_movabled{ true },
+			m_is_move{ false }
 		{
 		}
 
 		//Konstruktor kopiujący
 		ActorTechnicalData::ActorTechnicalData(const ActorTechnicalData & ActorTechnicalDataCopy)
 		:
-			PhysicsData(ActorTechnicalDataCopy),//konstruktor kopiujący klasy bazowej
-			m_mass(ActorTechnicalDataCopy.m_mass),
-			m_temperature(ActorTechnicalDataCopy.m_temperature),
-			m_speed(ActorTechnicalDataCopy.m_speed),
-			m_movabled(ActorTechnicalDataCopy.m_movabled),
-			m_is_move(ActorTechnicalDataCopy.m_is_move)
+			PhysicsData{ ActorTechnicalDataCopy },//konstruktor kopiujący klasy bazowej
+			m_mass{ ActorTechnicalDataCopy.m_mass },
+			m_temperature{ ActorTechnicalDataCopy.m_temperature },
+			m_speed{ ActorTechnicalDataCopy.m_speed },
+			m_movabled{ ActorTechnicalDataCopy.m_movabled },
+			m_is_move{ ActorTechnicalDataCopy.m_is_move }
 		{
 		}
 

@@ -33,7 +33,7 @@ namespace equipment
 		m_engine_run{ false },
 		m_engine_rotation_speed{ 0.0f },
 		m_engine_regeneration_time{ 0.0f },
-		m_engine_state{ ENGINE_DEFAULT },
+		m_engine_state{ EEngineState::ENGINE_DEFAULT },
 		m_engine_timer{ 0.0f },
 		m_rotor_speed{ 0.0f },
 		m_percentage_fuel{ 0.0f },
@@ -85,7 +85,7 @@ namespace equipment
 		m_engine_run = false;
 		m_engine_regeneration_time = 0.0f;
 		m_engine_rotation_speed = 0.0f;
-		m_engine_state = ENGINE_DEFAULT;
+		m_engine_state = EEngineState::ENGINE_DEFAULT;
 		m_engine_timer = 0.0f;
 		m_rotor_speed = 0.0f;
 		m_percentage_fuel = 0.0f;
