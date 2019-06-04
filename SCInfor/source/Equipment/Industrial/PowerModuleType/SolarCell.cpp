@@ -23,39 +23,39 @@ namespace equipment
 	//Chroniony konstruktor domyślny
 	SolarCell::SolarCell(const std::wstring& uniqueId)
 	:
-		PowerModule(uniqueId),//konstruktor klasy bazowej
-		m_solarcell_name(),
-		m_energy_duration(0.0f),
-		m_rotation_speed(0.0f),
-		m_solarcell_state(SOLARCELL_DEFAULT),
-		m_damage_duration(0.0f),
-		m_death_duration(0.0f),
-		m_calculated_energy_duration(0.0f)
+		PowerModule{ uniqueId },//konstruktor klasy bazowej
+		m_solarcell_name{},
+		m_energy_duration{ 0.0f },
+		m_rotation_speed{ 0.0f },
+		m_solarcell_state{ ESolarCellState::SOLARCELL_DEFAULT },
+		m_damage_duration{ 0.0f },
+		m_death_duration{ 0.0f },
+		m_calculated_energy_duration{ 0.0f }
 	{
 	}
 
 	//Chroniony konstruktor kopiujący
 	SolarCell::SolarCell(const SolarCell & SolarCellCopy)
 	:
-		PowerModule(SolarCellCopy),//konstruktor kopiujący klasy bazowej
-		m_solarcell_name(SolarCellCopy.m_solarcell_name),
-		m_energy_duration(SolarCellCopy.m_energy_duration),
-		m_rotation_speed(SolarCellCopy.m_rotation_speed),
-		m_solarcell_state(SolarCellCopy.m_solarcell_state),
-		m_damage_duration(SolarCellCopy.m_damage_duration),
-		m_death_duration(SolarCellCopy.m_death_duration),
-		m_calculated_energy_duration(SolarCellCopy.m_calculated_energy_duration)
+		PowerModule{ SolarCellCopy },//konstruktor kopiujący klasy bazowej
+		m_solarcell_name{ SolarCellCopy.m_solarcell_name },
+		m_energy_duration{ SolarCellCopy.m_energy_duration },
+		m_rotation_speed{ SolarCellCopy.m_rotation_speed },
+		m_solarcell_state{ SolarCellCopy.m_solarcell_state },
+		m_damage_duration{ SolarCellCopy.m_damage_duration },
+		m_death_duration{ SolarCellCopy.m_death_duration },
+		m_calculated_energy_duration{ SolarCellCopy.m_calculated_energy_duration }
 	{
 	}
 
 	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	SolarCell::~SolarCell(void)
 	{
-		//PowerModule
+		//~PowerModule()
 		m_solarcell_name = "";
 		m_energy_duration = 0.0f;
 		m_rotation_speed = 0.0f;
-		m_solarcell_state = SOLARCELL_DEFAULT;
+		m_solarcell_state = ESolarCellState::SOLARCELL_DEFAULT;
 		m_damage_duration = 0.0f;
 		m_death_duration = 0.0f;
 		m_calculated_energy_duration = 0.0f;
@@ -108,7 +108,7 @@ namespace equipment
 	{
 		switch(m_solarcell_state)
 		{
-		case SOLARCELL_DEFAULT:
+		case ESolarCellState::SOLARCELL_DEFAULT:
 		{
 			if (p_anim_set)
 			{
@@ -117,7 +117,7 @@ namespace equipment
 			}
 			break;
 		}
-		case SOLARCELL_UPDATE_ENERGY:
+		case ESolarCellState::SOLARCELL_UPDATE_ENERGY:
 		{
 			if (p_anim_set)
 			{
@@ -126,7 +126,7 @@ namespace equipment
 			}
 			break;
 		}
-		case SOLARCELL_DAMAGE:
+		case ESolarCellState::SOLARCELL_DAMAGE:
 		{
 			if (p_anim_set)
 			{
@@ -135,7 +135,7 @@ namespace equipment
 			}
 			break;
 		}
-		case SOLARCELL_DEATH:
+		case ESolarCellState::SOLARCELL_DEATH:
 		{
 			if (p_anim_set)
 			{
@@ -172,11 +172,11 @@ namespace equipment
 		if(m_stored_energy < m_energy_capacitor)
 		{
 			if(gWeather.getTemperature() > 0)
-				m_solarcell_state = SOLARCELL_UPDATE_ENERGY; //aktywacja ładowania fotoogniwa
+				m_solarcell_state = ESolarCellState::SOLARCELL_UPDATE_ENERGY; //aktywacja ładowania fotoogniwa
 			else
-				m_solarcell_state = SOLARCELL_DEFAULT; //default machine state
+				m_solarcell_state = ESolarCellState::SOLARCELL_DEFAULT; //default machine state
 
-			if(m_solarcell_state == SOLARCELL_UPDATE_ENERGY)
+			if(m_solarcell_state == ESolarCellState::SOLARCELL_UPDATE_ENERGY)
 			{
 				//ładowanie fotoogniwa i aktualizacja obrotu względem źródła energii (solar)
 				updateRotation(dt);
@@ -197,7 +197,7 @@ namespace equipment
 			}
 		}
 		else
-			m_solarcell_state = SOLARCELL_DEFAULT;//default machine state
+			m_solarcell_state = ESolarCellState::SOLARCELL_DEFAULT;//default machine state
 	}
 
 	//prywatna metoda płynnie obracająca fotoogniwo w kierunku źródła energii

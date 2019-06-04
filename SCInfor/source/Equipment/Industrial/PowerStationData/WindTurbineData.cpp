@@ -15,23 +15,23 @@ namespace equipmentpowerstationdata
 	//Konstruktor
 	WindTurbineData::WindTurbineData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_turbine(NULL)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_turbine{ NULL }
 	{
 	}
 
 	//Konstruktor kopiujący
 	WindTurbineData::WindTurbineData(const WindTurbineData & WindTurbineDataCopy)
 	:
-		EquipmentData(WindTurbineDataCopy),//konstruktor kopiujący klasy bazowej
-		p_turbine(WindTurbineDataCopy.p_turbine)
+		EquipmentData{ WindTurbineDataCopy },//konstruktor kopiujący klasy bazowej
+		p_turbine{ WindTurbineDataCopy.p_turbine }
 	{
 	}
 
 	//Destruktor wirtualny
 	WindTurbineData::~WindTurbineData()
 	{
-		//EquipmentData
+		//~EquipmentData()
 		if (p_turbine)
 			gPhysicalManager.destroyPhysical(p_turbine);
 		p_turbine = NULL;
@@ -44,13 +44,13 @@ namespace equipmentpowerstationdata
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy WindTurbine
-	WindTurbine* WindTurbineData::getTurbine()
+	WindTurbine *WindTurbineData::getTurbine()
 	{
 		return p_turbine;
 	}
 
 	//Metoda ustawia wskaźnik na obiekt klasy WindTurbine
-	void WindTurbineData::setTurbine(WindTurbine* turbine)
+	void WindTurbineData::setTurbine(WindTurbine *turbine)
 	{
 		p_turbine = turbine;
 	}

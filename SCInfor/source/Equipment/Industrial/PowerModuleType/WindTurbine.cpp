@@ -23,17 +23,17 @@ namespace equipment
 	//Chroniony konstruktor domyślny
 	WindTurbine::WindTurbine(const std::wstring & uniqueId)
 	:
-		PowerModule(uniqueId),//konstruktor klasy bazowej
-		m_turbine_name(),
-		m_speed_rotor(0.0f),
-		m_speed_transmission(1.0f),
-		m_percentage_activation(0.0f),
-		m_turbine_state(TURBINE_DEFAULT),
-		m_cargo_open_duration(0.0f),
-		m_cargo_close_duration(0.0f),
-		m_energy_full_duration(0.0f),
-		m_calculated_speed_rotor(0.0f),
-		m_calculated_energy_full_duration(0.0f)
+		PowerModule{ uniqueId },//konstruktor klasy bazowej
+		m_turbine_name{},
+		m_speed_rotor{ 0.0f },
+		m_speed_transmission{ 1.0f },
+		m_percentage_activation{ 0.0f },
+		m_turbine_state{ ETurbineState::TURBINE_DEFAULT },
+		m_cargo_open_duration{ 0.0f },
+		m_cargo_close_duration{ 0.0f },
+		m_energy_full_duration{ 0.0f },
+		m_calculated_speed_rotor{ 0.0f },
+		m_calculated_energy_full_duration{ 0.0f }
 	{
 		setZIndexBody(Z_PHYSICAL_SHADOW_WIND_TURBINE_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_WIND_TURBINE_BODY);
@@ -44,17 +44,17 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	WindTurbine::WindTurbine(const WindTurbine & WindTurbineCopy)
 	:
-		PowerModule(WindTurbineCopy),//konstruktor kopiujący klasy bazowej
-		m_turbine_name(WindTurbineCopy.m_turbine_name),
-		m_speed_rotor(WindTurbineCopy.m_speed_rotor),
-		m_speed_transmission(WindTurbineCopy.m_speed_transmission),
-		m_percentage_activation(WindTurbineCopy.m_percentage_activation),
-		m_turbine_state(WindTurbineCopy.m_turbine_state),
-		m_cargo_open_duration(WindTurbineCopy.m_cargo_open_duration),
-		m_cargo_close_duration(WindTurbineCopy.m_cargo_close_duration),
-		m_energy_full_duration(WindTurbineCopy.m_energy_full_duration),
-		m_calculated_speed_rotor(WindTurbineCopy.m_calculated_speed_rotor),
-		m_calculated_energy_full_duration (WindTurbineCopy.m_calculated_energy_full_duration)
+		PowerModule{ WindTurbineCopy },//konstruktor kopiujący klasy bazowej
+		m_turbine_name{ WindTurbineCopy.m_turbine_name },
+		m_speed_rotor{ WindTurbineCopy.m_speed_rotor },
+		m_speed_transmission{ WindTurbineCopy.m_speed_transmission },
+		m_percentage_activation{ WindTurbineCopy.m_percentage_activation },
+		m_turbine_state{ WindTurbineCopy.m_turbine_state },
+		m_cargo_open_duration{ WindTurbineCopy.m_cargo_open_duration },
+		m_cargo_close_duration{ WindTurbineCopy.m_cargo_close_duration },
+		m_energy_full_duration{ WindTurbineCopy.m_energy_full_duration },
+		m_calculated_speed_rotor{ WindTurbineCopy.m_calculated_speed_rotor },
+		m_calculated_energy_full_duration{ WindTurbineCopy.m_calculated_energy_full_duration }
 	{
 		setZIndexBody(Z_PHYSICAL_SHADOW_WIND_TURBINE_BODY);
 		setZIndexShadowBody(Z_PHYSICAL_WIND_TURBINE_BODY);
@@ -65,12 +65,12 @@ namespace equipment
 	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	WindTurbine::~WindTurbine(void)
 	{
-		//PowerModule
+		//~PowerModule()
 		m_turbine_name = "";
 		m_speed_rotor = 0.0f;
 		m_speed_transmission = 0.0f;
 		m_percentage_activation = 0.0f;
-		m_turbine_state = TURBINE_DEFAULT;
+		m_turbine_state = ETurbineState::TURBINE_DEFAULT;
 		m_cargo_open_duration = 0.0f;
 		m_cargo_close_duration = 0.0f;
 		m_energy_full_duration = 0.0f;
@@ -150,7 +150,7 @@ namespace equipment
 	{
 		switch(m_turbine_state)
 		{
-		case TURBINE_DEFAULT:
+		case ETurbineState::TURBINE_DEFAULT:
 		{
 			if (p_anim_set)
 			{
@@ -163,7 +163,7 @@ namespace equipment
 			}
 			break;
 		}
-		case TURBINE_CARGO_DOOR_OPEN:
+		case ETurbineState::TURBINE_CARGO_DOOR_OPEN:
 		{
 			if (p_anim_set)
 			{
@@ -176,7 +176,7 @@ namespace equipment
 			}
 			break;
 		}
-		case TURBINE_CARGO_DOOR_CLOSE:
+		case ETurbineState::TURBINE_CARGO_DOOR_CLOSE:
 		{
 			if (p_anim_set)
 			{
@@ -189,7 +189,7 @@ namespace equipment
 			}
 			break;
 		}
-		case TURBINE_UPDATE_ENERGY:
+		case ETurbineState::TURBINE_UPDATE_ENERGY:
 		{
 			if (p_anim_set)
 			{
@@ -201,7 +201,7 @@ namespace equipment
 			}
 			break;
 		}
-		case TURBINE_DAMAGE:
+		case ETurbineState::TURBINE_DAMAGE:
 		{
 			if (p_anim_set)
 			{
@@ -214,7 +214,7 @@ namespace equipment
 			}
 			break;
 		}
-		case TURBINE_DEATH:
+		case ETurbineState::TURBINE_DEATH:
 		{
 			if (p_anim_set)
 			{
@@ -251,12 +251,12 @@ namespace equipment
 		//proces przebiega - turbina gromadzi energię
 		if(m_stored_energy <= m_energy_capacitor)
 		{
-			if(m_turbine_state == TURBINE_DEFAULT)
+			if(m_turbine_state == ETurbineState::TURBINE_DEFAULT)
 			{
 				if(gWeather.getWindSpeed() >= gWeather.getWindSpeedRange().second * m_percentage_activation)
-					m_turbine_state = TURBINE_CARGO_DOOR_OPEN;
+					m_turbine_state = ETurbineState::TURBINE_CARGO_DOOR_OPEN;
 			}
-			if(m_turbine_state == TURBINE_CARGO_DOOR_OPEN)
+			if(m_turbine_state == ETurbineState::TURBINE_CARGO_DOOR_OPEN)
 			{
 				//zliczam czas
 				m_cargo_open_duration += dt;
@@ -266,12 +266,12 @@ namespace equipment
 					//obliczam prędkość łopatek turniny
 					m_calculated_speed_rotor = m_speed_rotor * m_speed_transmission * gWeather.getWindSpeed() * dt;
 					//zmiana stanu - aktualizacja energii
-					m_turbine_state = TURBINE_UPDATE_ENERGY;
+					m_turbine_state = ETurbineState::TURBINE_UPDATE_ENERGY;
 					//zeruję czas
 					m_cargo_open_duration = 0.0f;
 				}
 			}
-			if(m_turbine_state == TURBINE_UPDATE_ENERGY)
+			if(m_turbine_state == ETurbineState::TURBINE_UPDATE_ENERGY)
 			{
 				//włączam obracanie łopatek turbiny
 				setRotationBody(getRotationBody() + m_calculated_speed_rotor);
@@ -281,9 +281,9 @@ namespace equipment
 				//diagnostyka
 				//std::cout << "Inside Turbine:	"<< m_stored_energy << std::endl;
 				if(gWeather.getWindSpeed() < gWeather.getWindSpeedRange().second * m_percentage_activation)
-					m_turbine_state = TURBINE_CARGO_DOOR_CLOSE;
+					m_turbine_state = ETurbineState::TURBINE_CARGO_DOOR_CLOSE;
 			}
-			if(m_turbine_state == TURBINE_CARGO_DOOR_CLOSE)
+			if(m_turbine_state == ETurbineState::TURBINE_CARGO_DOOR_CLOSE)
 			{
 				//zliczam czas
 				m_cargo_close_duration += dt;
@@ -291,7 +291,7 @@ namespace equipment
 				if(m_cargo_close_duration >= getAnimationHead()->totalLength())
 				{
 					//zmiana stanu - odnowienie procesu aktualizacji energii
-					m_turbine_state = TURBINE_DEFAULT;
+					m_turbine_state = ETurbineState::TURBINE_DEFAULT;
 					//zeruję czas
 					m_cargo_close_duration = 0.0f;
 				}
@@ -299,39 +299,39 @@ namespace equipment
 		}
 
 		//turbina zgromadziła energię - jej stan musi przejść do TURBINE_DEFAULT
-		if(m_stored_energy >= m_energy_capacitor && m_turbine_state != TURBINE_DEFAULT)
+		if(m_stored_energy >= m_energy_capacitor && m_turbine_state != ETurbineState::TURBINE_DEFAULT)
 		{
 			//zliczam czas
 			m_calculated_energy_full_duration += dt;
 			if(m_calculated_energy_full_duration >= m_energy_full_duration)
 			{
-				m_turbine_state = TURBINE_CARGO_DOOR_CLOSE;
+				m_turbine_state = ETurbineState::TURBINE_CARGO_DOOR_CLOSE;
 				//zeruję czas
 				m_calculated_energy_full_duration = 0.0f;
 			}
 		}
 
 		//turbina zgromadziła energię i luk cargo został zamknięty - wymuszam TURBINE_DEFAULT
-		if(m_stored_energy >= m_energy_capacitor && m_turbine_state == TURBINE_CARGO_DOOR_CLOSE)
+		if(m_stored_energy >= m_energy_capacitor && m_turbine_state == ETurbineState::TURBINE_CARGO_DOOR_CLOSE)
 		{
 			//zliczam czas
 			m_calculated_energy_full_duration += dt;
 			if(m_calculated_energy_full_duration >= m_energy_full_duration)
 			{
-				m_turbine_state = TURBINE_DEFAULT;	//stan default
+				m_turbine_state = ETurbineState::TURBINE_DEFAULT;	//stan default
 				//zeruję czas
 				m_calculated_energy_full_duration = 0.0f;
 			}
 		}
 
-		if(m_turbine_state == TURBINE_DAMAGE)
+		if(m_turbine_state == ETurbineState::TURBINE_DAMAGE)
 		{
 			//czekam określony czas na dotarcie servisu,
 			//po tym czasie ustawiam stan TURBINE_DEATH
 			//to do...
 			//serwis...
 		}
-		if(m_turbine_state == TURBINE_DEATH)
+		if(m_turbine_state == ETurbineState::TURBINE_DEATH)
 		{
 			//czekam określony czas...prepare to delete...
 			//po tym czasie ustawiam flagę do usunięcia

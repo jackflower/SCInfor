@@ -12,12 +12,12 @@ namespace logic
 	///
 	///Wyliczenie stanów dla obiektu SolarCell
 	///
-	enum ESolarCellState
+	enum class ESolarCellState
 	{
-		SOLARCELL_DEFAULT		= 0,
+		SOLARCELL_DEFAULT = 0,
 		SOLARCELL_UPDATE_ENERGY = 1,
-		SOLARCELL_DAMAGE		= 2,
-		SOLARCELL_DEATH			= 3
+		SOLARCELL_DAMAGE = 2,
+		SOLARCELL_DEATH = 3
 	};
 
 	const unsigned int CALIBRATION_FACTOR_ANGLE = 90;

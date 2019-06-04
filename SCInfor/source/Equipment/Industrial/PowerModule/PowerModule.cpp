@@ -13,11 +13,11 @@ namespace equipment
 	//Chroniony konstruktor domyślny
 	PowerModule::PowerModule(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId),//konstruktor klasy bazowej
-		m_energy_capacitor(0.0f),
-		m_power(0.0f),
-		m_stored_energy(0.0f),
-		m_unit_controller(true)
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_energy_capacitor{ 0.0f },
+		m_power{ 0.0f },
+		m_stored_energy{ 0.0f },
+		m_unit_controller{ true }
 	{
 	}
 
@@ -25,17 +25,17 @@ namespace equipment
 	PowerModule::PowerModule(const PowerModule & PowerModuleCopy)
 	:
 		Actor(PowerModuleCopy),//konstruktor kopiujący klasy bazowej
-		m_energy_capacitor(PowerModuleCopy.m_energy_capacitor),
-		m_power(PowerModuleCopy.m_power),
-		m_stored_energy(PowerModuleCopy.m_stored_energy),
-		m_unit_controller(PowerModuleCopy.m_unit_controller)
+		m_energy_capacitor{ PowerModuleCopy.m_energy_capacitor },
+		m_power{ PowerModuleCopy.m_power },
+		m_stored_energy{ PowerModuleCopy.m_stored_energy },
+		m_unit_controller{ PowerModuleCopy.m_unit_controller }
 	{
 	}
 
 	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	PowerModule::~PowerModule(void)
 	{
-		//Actor
+		//~Actor()
 		m_energy_capacitor = 0.0f;
 		m_power = 0.0f;
 		m_stored_energy = 0.0f;
