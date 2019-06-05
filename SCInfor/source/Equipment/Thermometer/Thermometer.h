@@ -75,9 +75,9 @@ namespace equipment
 		
 		typedef struct {float min; float max;} Range;//definicja typu
 		
-		Range			m_range;		//zakres pomiaru temperatury
-		float			m_temperature;	//temperatura pomiaru
-		EDisplayType	e_display_type;	//typ prezentacji temperatury
+		Range m_range; //zakres pomiaru temperatury
+		float m_temperature; //temperatura pomiaru
+		EDisplayType e_display_type; //typ prezentacji temperatury
 	};
 }
 #endif//H_THERMOMETER_JACK

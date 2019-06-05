@@ -14,12 +14,12 @@ namespace equipment
 		///
 		///Wyliczenie stanów dla obiektów Ammo
 		///
-		enum EAmmoState
+		enum class EAmmoState
 		{
-			AMMO_DEFAULT	= 0,	//stan - default
-			AMMO_RESERVE	= 1,	//stan - rezerwa amunicji
-			AMMO_EMPTY		= 2,	//stan - magzynek jest pusty
-			AMMO_DAMAGE		= 3,	//stan - magzynek uszkodzony
+			AMMO_DEFAULT = 0, //stan - default
+			AMMO_RESERVE = 1, //stan - rezerwa amunicji
+			AMMO_EMPTY = 2, //stan - magzynek jest pusty
+			AMMO_DAMAGE = 3, //stan - magzynek uszkodzony
 		};
 	}//namespace weapon
 }//namespace equipment 

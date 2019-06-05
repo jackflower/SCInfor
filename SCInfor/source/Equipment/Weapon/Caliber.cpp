@@ -13,18 +13,18 @@ namespace equipment
 		//Konstruktor
 		Caliber::Caliber()
 		:
-			m_name(),
-			m_caliber(0.0f),
-			e_caliber(CALIBER_FIREARM)
+			m_name{},
+			m_caliber{ 0.0f },
+			e_caliber{ ECaliber::CALIBER_FIREARM }
 		{
 		}
 
 		//Konstruktor kopiujący
 		Caliber::Caliber(const Caliber& CaliberCopy)
 		:
-			m_name(CaliberCopy.m_name),
-			m_caliber(CaliberCopy.m_caliber),
-			e_caliber(CaliberCopy.e_caliber)
+			m_name{ CaliberCopy.m_name },
+			m_caliber{ CaliberCopy.m_caliber },
+			e_caliber{ CaliberCopy.e_caliber }
 		{
 		}
 
@@ -33,7 +33,7 @@ namespace equipment
 		{
 			m_name = "";
 			m_caliber = 0.0f;
-			e_caliber = CALIBER_FIREARM;
+			e_caliber = ECaliber::CALIBER_FIREARM;
 		}
 
 		//Metoda zwraca nazwę kalibru

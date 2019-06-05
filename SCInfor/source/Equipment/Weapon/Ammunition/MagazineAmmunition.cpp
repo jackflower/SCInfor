@@ -18,12 +18,12 @@ namespace equipment
 		//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		MagazineAmmunition::MagazineAmmunition(const std::wstring & uniqueId)
 		:
-			Actor(uniqueId),//konstruktor klasy bazowej
-			m_ammunition_name(),
-			m_ammunition_capacity(0),
-			m_magazine_ammunition_caliber(),
-			m_percentage_reserve_ammunition(0.0f),
-			m_bullets()
+			Actor{ uniqueId },//konstruktor klasy bazowej
+			m_ammunition_name{},
+			m_ammunition_capacity{ 0 },
+			m_magazine_ammunition_caliber{},
+			m_percentage_reserve_ammunition{ 0.0f },
+			m_bullets{}
 		{
 			//to do: layers
 		}
@@ -32,23 +32,23 @@ namespace equipment
 		MagazineAmmunition::MagazineAmmunition(const MagazineAmmunition& MagazineAmmunitionCopy)
 		:
 			Actor(MagazineAmmunitionCopy),//konstruktor kopiujący klasy bazowej
-			m_ammunition_name(MagazineAmmunitionCopy.m_ammunition_name),
-			m_ammunition_capacity(MagazineAmmunitionCopy.m_ammunition_capacity),
-			m_magazine_ammunition_caliber(MagazineAmmunitionCopy.m_magazine_ammunition_caliber),
-			m_percentage_reserve_ammunition(MagazineAmmunitionCopy.m_percentage_reserve_ammunition),
-			m_bullets(MagazineAmmunitionCopy.m_bullets)
+			m_ammunition_name{ MagazineAmmunitionCopy.m_ammunition_name },
+			m_ammunition_capacity{ MagazineAmmunitionCopy.m_ammunition_capacity },
+			m_magazine_ammunition_caliber{ MagazineAmmunitionCopy.m_magazine_ammunition_caliber },
+			m_percentage_reserve_ammunition{ MagazineAmmunitionCopy.m_percentage_reserve_ammunition },
+			m_bullets{ MagazineAmmunitionCopy.m_bullets }
 		{
 			//to do: layers
 		}
 
 		MagazineAmmunition::~MagazineAmmunition()
 		{
-			//Actor
+			//~Actor()
 			m_ammunition_name = "";
 			m_ammunition_capacity = 0;
-			//m_magazine_ammunition_caliber
+			m_magazine_ammunition_caliber;
 			m_percentage_reserve_ammunition = 0.0f;
-			//m_bullets
+			m_bullets;
 		}
 
 	}//namespace weapon

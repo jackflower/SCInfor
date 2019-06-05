@@ -14,15 +14,15 @@ namespace equipment
 		///
 		///Wyliczenie stanów dla obiektów Gun
 		///
-		enum EGunState
+		enum class EGunState
 		{
-			GUN_DEFAULT			= 0,	//stan default
-			GUN_SHOOT			= 1,	//stan trwania procesu wystrzału
-			GUN_AMMO_LOADING	= 2,	//stan ładowania aminucji (przeładowanie)
-			GUN_AMMO_EMPTY		= 3,	//pusty magazynek - nie ma czym strzelać
-			GUN_DAMAGE			= 4,	//uszkodzenie (np. zacięcie działa)
-			GUN_SERVICE			= 5,	//stan serwisowy - wymaga interwencji
-			GUN_DEATH			= 6		//death - proces destrukcji obiektu (wreck)
+			GUN_DEFAULT = 0, //stan default
+			GUN_SHOOT = 1, //stan trwania procesu wystrzału
+			GUN_AMMO_LOADING = 2, //stan ładowania aminucji (przeładowanie)
+			GUN_AMMO_EMPTY = 3, //pusty magazynek - nie ma czym strzelać
+			GUN_DAMAGE = 4, //uszkodzenie (np. zacięcie działa)
+			GUN_SERVICE = 5, //stan serwisowy - wymaga interwencji
+			GUN_DEATH = 6 //death - proces destrukcji obiektu (wreck)
 		};
 	}//namespace weapon
 }//namespace equipment 

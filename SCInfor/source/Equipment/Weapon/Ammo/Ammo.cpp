@@ -23,14 +23,14 @@ namespace equipment
 		////Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		Ammo::Ammo(const std::wstring & uniqueId)
 		:
-			Actor(uniqueId),
-			m_caliber(),
-			m_ammo_state(AMMO_DEFAULT),
-			m_ammo(0),
-			m_ammo_capacity(0),
-			m_percentage_reserve_ammo(0.1f),//factory...
-			m_ammo_empty_message(false),
-			m_reserve_ammo(0)
+			Actor{ uniqueId },
+			m_caliber{},
+			m_ammo_state{ EAmmoState::AMMO_DEFAULT },
+			m_ammo{ 0 },
+			m_ammo_capacity{ 0 },
+			m_percentage_reserve_ammo{ 0.1f },//factory...
+			m_ammo_empty_message{ false },
+			m_reserve_ammo{ 0 }
 		{
 			setZIndexBody(Z_PHYSICAL_AMMO_BODY);
 			setZIndexShadowBody(Z_PHYSICAL_SHADOW_AMMO_BODY);
@@ -42,13 +42,13 @@ namespace equipment
 		Ammo::Ammo(const Ammo & AmmoCopy)
 		:
 			Actor(AmmoCopy),
-			m_caliber(AmmoCopy.m_caliber),
-			m_ammo_state(AmmoCopy.m_ammo_state),
-			m_ammo(AmmoCopy.m_ammo),
-			m_ammo_capacity(AmmoCopy.m_ammo_capacity),
-			m_percentage_reserve_ammo(AmmoCopy.m_percentage_reserve_ammo),
-			m_ammo_empty_message(AmmoCopy.m_ammo_empty_message),
-			m_reserve_ammo(AmmoCopy.m_reserve_ammo)
+			m_caliber{ AmmoCopy.m_caliber },
+			m_ammo_state{ AmmoCopy.m_ammo_state },
+			m_ammo{ AmmoCopy.m_ammo },
+			m_ammo_capacity{ AmmoCopy.m_ammo_capacity },
+			m_percentage_reserve_ammo{ AmmoCopy.m_percentage_reserve_ammo },
+			m_ammo_empty_message{ AmmoCopy.m_ammo_empty_message },
+			m_reserve_ammo{ AmmoCopy.m_reserve_ammo }
 		{
 			setZIndexBody(Z_PHYSICAL_AMMO_BODY);
 			setZIndexShadowBody(Z_PHYSICAL_SHADOW_AMMO_BODY);
@@ -59,8 +59,8 @@ namespace equipment
 		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		Ammo::~Ammo()
 		{
-			//Actor
-			//m_caliber
+			//~Actor()
+			m_caliber;
 			m_ammo_state = EAmmoState::AMMO_DEFAULT;
 			m_ammo = 0;
 			m_ammo_capacity = 0;
@@ -222,7 +222,7 @@ namespace equipment
 		{
 			switch (m_ammo_state)
 			{
-			case AMMO_DEFAULT:
+			case EAmmoState::AMMO_DEFAULT:
 			{
 				if (p_anim_set)
 				{
@@ -231,7 +231,7 @@ namespace equipment
 				}
 				break;
 			}
-			case AMMO_RESERVE:
+			case EAmmoState::AMMO_RESERVE:
 			{
 				if (p_anim_set)
 				{
@@ -240,7 +240,7 @@ namespace equipment
 				}
 				break;
 			}
-			case AMMO_EMPTY:
+			case EAmmoState::AMMO_EMPTY:
 			{
 				if (p_anim_set)
 				{
@@ -249,7 +249,7 @@ namespace equipment
 				}
 				break;
 			}
-			case AMMO_DAMAGE:
+			case EAmmoState::AMMO_DAMAGE:
 			{
 				if (p_anim_set)
 				{
@@ -271,15 +271,15 @@ namespace equipment
 			
 			//jeśli ilość amunicji w magazynku jest większa od ilości dla rezerwy
 			if(m_ammo > m_reserve_ammo)
-				m_ammo_state = AMMO_DEFAULT;
+				m_ammo_state = EAmmoState::AMMO_DEFAULT;
 
 			//jeśli ilość amunicji w magazynku jest mniejsza lub równa od ilości dla rezerwy
 			else if (m_ammo <= m_reserve_ammo)
-				m_ammo_state = AMMO_RESERVE;
+				m_ammo_state = EAmmoState::AMMO_RESERVE;
 			
 			//jeśli nie ma amunicji w magazynku
 			if (m_ammo <= 0)
-				m_ammo_state = AMMO_EMPTY;
+				m_ammo_state = EAmmoState::AMMO_EMPTY;
 	
 			//future - warunek dla stanu AMMO_DAMAGE (już się pisze - chaos/zacięcie języka spustowego)
 		

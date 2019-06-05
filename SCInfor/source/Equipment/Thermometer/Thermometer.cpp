@@ -14,10 +14,10 @@ namespace equipment
 	//Chroniony konstruktor domyślny
 	Thermometer::Thermometer(const std::wstring & uniqueId)
 	:
-		Physical(uniqueId),//konstruktor klasy bazowej
-		m_range(),
-		m_temperature(0.0f),
-		e_display_type(EDisplayType::PROGRESS_BAR)
+		Physical{ uniqueId },//konstruktor klasy bazowej
+		m_range{},
+		m_temperature{ 0.0f },
+		e_display_type{ EDisplayType::PROGRESS_BAR }
 	{
 		//to do: layers
 	}
@@ -25,10 +25,10 @@ namespace equipment
 	//Chroniony konstruktor kopiujący
 	Thermometer::Thermometer(const Thermometer & ThermometerCopy)
 	:
-		Physical(ThermometerCopy),//konstruktor kopiujący klasy bazowej
-		m_range(ThermometerCopy.m_range),
-		m_temperature(ThermometerCopy.m_temperature),
-		e_display_type(ThermometerCopy.e_display_type)
+		Physical{ ThermometerCopy },//konstruktor kopiujący klasy bazowej
+		m_range{ ThermometerCopy.m_range },
+		m_temperature{ ThermometerCopy.m_temperature },
+		e_display_type{ ThermometerCopy.e_display_type }
 	{
 		//to do: layers
 	}
@@ -36,11 +36,11 @@ namespace equipment
 	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	Thermometer::~Thermometer()
 	{
-		//Physical
+		//~Physical()
 		m_range.max = 0.0f;
 		m_range.min = 0.0f;
 		m_temperature = 0.0f;
-		//e_display_type
+		e_display_type;
 	}
 
 	//Metoda zwraca temperaturę

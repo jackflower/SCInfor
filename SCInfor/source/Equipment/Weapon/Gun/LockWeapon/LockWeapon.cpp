@@ -16,20 +16,20 @@ namespace equipment
 			//Konstruktor
 			LockWeapon::LockWeapon()
 			:
-				m_damage(0.0f),
-				m_damage_range(0.0f, 0.0f),
-				m_damage_count(0),
-				m_duration_damage(0.0f)
+				m_damage{ 0.0f },
+				m_damage_range{ 0.0f, 0.0f },
+				m_damage_count{ 0 },
+				m_duration_damage{ 0.0f }
 			{
 			}
 
 			//Konstruktor kopiujący
 			LockWeapon::LockWeapon(const LockWeapon & LockWeaponCopy)
 			:
-				m_damage(LockWeaponCopy.m_damage),
-				m_damage_range(LockWeaponCopy.m_damage_range),
-				m_damage_count(LockWeaponCopy.m_damage_count),
-				m_duration_damage(LockWeaponCopy.m_duration_damage)
+				m_damage{ LockWeaponCopy.m_damage },
+				m_damage_range{ LockWeaponCopy.m_damage_range },
+				m_damage_count{ LockWeaponCopy.m_damage_count },
+				m_duration_damage{ LockWeaponCopy.m_duration_damage }
 			{
 			}
 

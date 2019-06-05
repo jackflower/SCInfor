@@ -10,10 +10,10 @@
 ///
 ///wyliczenie typów wyświetlania, prezentacji temperatury
 ///
-enum EDisplayType
+enum class EDisplayType
 {
-	PROGRESS_BAR,		//wskaźnik liniowy
-	DISK_INDICATOR,		//wskaźnik zegarowy
-	DIGITAL_DISPLAY		//wskaźnik cyfrowy - wartość liczbowa
+	PROGRESS_BAR, //wskaźnik liniowy
+	DISK_INDICATOR, //wskaźnik zegarowy
+	DIGITAL_DISPLAY	//wskaźnik cyfrowy - wartość liczbowa
 };
 #endif//H_E_DISPLAY_TYPE_JACK

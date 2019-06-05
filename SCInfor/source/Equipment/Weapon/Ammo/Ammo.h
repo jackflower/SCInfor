@@ -170,7 +170,7 @@ namespace equipment
 			///
 			///Metoda zaopatruje obiekt w amunicję z zewnętrznego źródła
 			///
-			///@param ammo_out - referencja na amunicję - zewnętrzne źródło aminicji
+			///@param ammo_out - referencja na amunicję - zewnętrzne źródło amunicji
 			///
 			void supplyAmmunition(int & ammo_out);
 

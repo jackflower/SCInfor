@@ -27,57 +27,57 @@ namespace equipment
 		//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 		Gun::Gun(const std::wstring & uniqueId)
 		:
-			Actor(uniqueId),//konstruktor klasy bazowej
-			m_ammo_data(),
-			m_ammo_loading(false),
-			m_time_ammo_load_delay(0.f),
-			m_shot_enabled(false),
-			m_time_shot(0.f),
-			m_shot_in_progress(false),
-			m_range_shot(0.f),
-			m_bullet_speed(0.f),
-			m_barrel_count(1),
-			m_target_altitude(0.f),
-			m_explosion_emiter(0.f, 0.f),
-			m_ammo_time_delayed(0.0f),
-			m_gun_state(EGunState::GUN_DEFAULT),
-			m_reliability(0.0f),
-			m_reliability_range(0.0f, 0.0f),
-			m_process_time(0.0f),
-			m_limit_amount_damage(0),
+			Actor{ uniqueId },//konstruktor klasy bazowej
+			m_ammo_data{},
+			m_ammo_loading{ false },
+			m_time_ammo_load_delay{ 0.f },
+			m_shot_enabled{ false },
+			m_time_shot{ 0.f },
+			m_shot_in_progress{ false },
+			m_range_shot{ 0.f },
+			m_bullet_speed{ 0.f },
+			m_barrel_count{ 1 },
+			m_target_altitude{ 0.f },
+			m_explosion_emiter{ 0.f, 0.f },
+			m_ammo_time_delayed{ 0.0f },
+			m_gun_state{ EGunState::GUN_DEFAULT },
+			m_reliability{ 0.0f },
+			m_reliability_range{ 0.0f, 0.0f },
+			m_process_time{ 0.0f },
+			m_limit_amount_damage{ 0 },
 			//waste
-			m_time_data(0.82f),	//zmienna pomocznicza (waste)
-			m_time(0.0),//zmienna pomocznicza (waste)
-			direction(0.0f)//zmienna pomocznicza (waste)
+			m_time_data{ 0.82f },	//zmienna pomocznicza (waste)
+			m_time{ 0.0f },//zmienna pomocznicza (waste)
+			direction{ 0.0f }//zmienna pomocznicza (waste)
 		{
 			//to do: layers
 		}
 
 		//Chroniony konstruktor kopiujący
-		Gun::Gun(const Gun& CGunCopy)
+		Gun::Gun(const Gun& GunCopy)
 		:
-			Actor(CGunCopy),//konstruktor kopiujący klasy bazowej
-			m_ammo_data(CGunCopy.m_ammo_data),
-			m_ammo_loading(CGunCopy.m_ammo_loading),
-			m_time_ammo_load_delay(CGunCopy.m_time_ammo_load_delay),
-			m_shot_enabled(CGunCopy.m_shot_enabled),
-			m_time_shot(CGunCopy.m_time_shot),
-			m_shot_in_progress(CGunCopy.m_shot_in_progress),
-			m_range_shot(CGunCopy.m_range_shot),
-			m_bullet_speed(CGunCopy.m_bullet_speed),
-			m_barrel_count(CGunCopy.m_barrel_count),
-			m_target_altitude(CGunCopy.m_target_altitude),
-			m_explosion_emiter(CGunCopy.m_explosion_emiter),
-			m_ammo_time_delayed(CGunCopy.m_ammo_time_delayed),
-			m_gun_state(CGunCopy.m_gun_state),
-			m_reliability(CGunCopy.m_reliability),
-			m_reliability_range(CGunCopy.m_reliability_range),
-			m_process_time(CGunCopy.m_process_time),
-			m_limit_amount_damage(CGunCopy.m_limit_amount_damage),
+			Actor(GunCopy),//konstruktor kopiujący klasy bazowej
+			m_ammo_data{ GunCopy.m_ammo_data },
+			m_ammo_loading{ GunCopy.m_ammo_loading },
+			m_time_ammo_load_delay{ GunCopy.m_time_ammo_load_delay },
+			m_shot_enabled{ GunCopy.m_shot_enabled },
+			m_time_shot{ GunCopy.m_time_shot },
+			m_shot_in_progress{ GunCopy.m_shot_in_progress },
+			m_range_shot{ GunCopy.m_range_shot },
+			m_bullet_speed{ GunCopy.m_bullet_speed },
+			m_barrel_count{ GunCopy.m_barrel_count },
+			m_target_altitude{ GunCopy.m_target_altitude },
+			m_explosion_emiter{ GunCopy.m_explosion_emiter },
+			m_ammo_time_delayed{ GunCopy.m_ammo_time_delayed },
+			m_gun_state{ GunCopy.m_gun_state },
+			m_reliability{ GunCopy.m_reliability },
+			m_reliability_range{ GunCopy.m_reliability_range },
+			m_process_time{ GunCopy.m_process_time },
+			m_limit_amount_damage{ GunCopy.m_limit_amount_damage },
 			//waste
-			m_time_data(CGunCopy.m_time_data), //zmienna pomocznicza (waste)
-			m_time(CGunCopy.m_time), //zmienna pomocznicza (waste)
-			direction(CGunCopy.direction) //zmienna pomocznicza (waste)
+			m_time_data{ GunCopy.m_time_data }, //zmienna pomocznicza (waste)
+			m_time{ GunCopy.m_time }, //zmienna pomocznicza (waste)
+			direction{ GunCopy.direction } //zmienna pomocznicza (waste)
 		{
 			//to do: layers
 		}
@@ -85,8 +85,8 @@ namespace equipment
 		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		Gun::~Gun(void)
 		{
-			//Actor
-			//m_ammo_data
+			//~Actor()
+			m_ammo_data;
 			m_ammo_loading = false;
 			m_time_ammo_load_delay = 0.0f;
 			m_shot_enabled = false;
@@ -106,9 +106,9 @@ namespace equipment
 			m_process_time = 0.0f;
 			m_limit_amount_damage = 0;
 			//waste
-			m_time_data = 0.0f;	//zmienna pomocznicza (waste)
-			m_time = 0.0f;	//zmienna pomocznicza (waste)
-			direction = 0.0f;	//zmienna pomocznicza (waste)
+			m_time_data = 0.0f; //zmienna pomocznicza (waste)
+			m_time = 0.0f; //zmienna pomocznicza (waste)
+			direction = 0.0f; //zmienna pomocznicza (waste)
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/
@@ -124,7 +124,7 @@ namespace equipment
 		}
 
 		//Metoda ustawia wskaźnik obiekt klasy Ammo
-		void Gun::setAmmo(Ammo * ammo)
+		void Gun::setAmmo(Ammo *ammo)
 		{
 			m_ammo_data.setAmmo(ammo);
 		}
@@ -401,7 +401,7 @@ namespace equipment
 		{
 			switch (m_gun_state)
 			{
-			case GUN_DEFAULT:
+			case EGunState::GUN_DEFAULT:
 			{
 				if (p_anim_set)
 				{
@@ -413,7 +413,7 @@ namespace equipment
 				}
 				break;
 			}
-			case GUN_SHOOT:
+			case EGunState::GUN_SHOOT:
 			{
 				if (p_anim_set)
 				{
@@ -425,7 +425,7 @@ namespace equipment
 				}
 				break;
 			}
-			case GUN_AMMO_LOADING:
+			case EGunState::GUN_AMMO_LOADING:
 			{
 				if (p_anim_set)
 				{
@@ -437,7 +437,7 @@ namespace equipment
 				}
 				break;
 			}
-			case GUN_AMMO_EMPTY:
+			case EGunState::GUN_AMMO_EMPTY:
 			{
 				if (p_anim_set)
 				{
@@ -449,7 +449,7 @@ namespace equipment
 				}
 				break;
 			}
-			case GUN_DAMAGE:
+			case EGunState::GUN_DAMAGE:
 			{
 				if (p_anim_set)
 				{
@@ -461,7 +461,7 @@ namespace equipment
 				}
 				break;
 			}
-			case GUN_SERVICE:
+			case EGunState::GUN_SERVICE:
 			{
 				if (p_anim_set)
 				{
@@ -473,7 +473,7 @@ namespace equipment
 				}
 				break;
 			}
-			case GUN_DEATH:
+			case EGunState::GUN_DEATH:
 			{
 				if (p_anim_set)
 				{
