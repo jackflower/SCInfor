@@ -14,19 +14,19 @@ namespace factory
 	//Konstruktor
 	BatteryTemplate::BatteryTemplate()
 	:
-		ActorTemplate (),//konstruktor klasy bazowej
-		m_templ_battery_name (""),
-		m_templ_capacity (0.0f),
-		m_templ_factory_capacity (0.0f),
-		m_templ_particle_energy (0.0f),
-		m_templ_battery_regeneration_duration(0.0f)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_battery_name{ "" },
+		m_templ_capacity{ 0.0f },
+		m_templ_factory_capacity{ 0.0f },
+		m_templ_particle_energy{ 0.0f },
+		m_templ_battery_regeneration_duration{ 0.0f }
 	{
 	}
 
 	//Destruktor
 	BatteryTemplate::~BatteryTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_battery_name = "";
 		m_templ_capacity = 0.0f;
 		m_templ_factory_capacity = 0.0f;
@@ -47,14 +47,14 @@ namespace factory
 	}
 
 	//Wirtualna metoda ładująca dane
-	bool BatteryTemplate::load(const std::string &name)
+	bool BatteryTemplate::load(const std::string & name)
 	{
 		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool BatteryTemplate::load(Xml &xml)
+	bool BatteryTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej Actor
 		if (!ActorTemplate::load(xml)) return false;

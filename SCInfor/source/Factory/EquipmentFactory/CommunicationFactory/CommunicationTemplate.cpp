@@ -17,19 +17,19 @@ namespace factory
 	//Konstruktor
 	CommunicationTemplate::CommunicationTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_communication_name(),
-		m_templ_range(0.0f),
-		m_templ_reset_duration(0.0f),
-		m_templ_login(),
-		m_templ_password()
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_communication_name{},
+		m_templ_range{ 0.0f },
+		m_templ_reset_duration{ 0.0f },
+		m_templ_login{},
+		m_templ_password{}
 	{
 	}
 
 	//Destruktor wirtualny
 	CommunicationTemplate::~CommunicationTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_communication_name = "";
 		m_templ_range = 0.0f;
 		m_templ_reset_duration = 0.0f;
@@ -50,14 +50,14 @@ namespace factory
 	}
 
 	//Metoda ładująca dane
-	bool CommunicationTemplate::load(const std::string &name)
+	bool CommunicationTemplate::load(const std::string & name)
 	{
 		Xml xml(name, "root" );
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool CommunicationTemplate::load(Xml &xml)
+	bool CommunicationTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;

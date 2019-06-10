@@ -80,7 +80,7 @@ namespace factory
 
 		//metody  p o m o c n i c z e
 
-		inline void setFuelTankName(const std::string& templ_fuel_tank_name)
+		inline void setFuelTankName(const std::string & templ_fuel_tank_name)
 		{
 			m_templ_fuel_tank_name = templ_fuel_tank_name;
 		}

@@ -19,6 +19,7 @@ namespace equipment
 			Actor{ uniqueId },//konstruktor klasy bazowej
 			m_battery_name{ "" },
 			m_capacity{ 0.0f },
+			m_factory_capacity{0.0f},
 			m_particle_energy{ 0.0f },
 			m_battery_regeneration_duration{ 0.0f },
 			m_battery_regeneration_timer{ 0.0f },
@@ -35,6 +36,7 @@ namespace equipment
 			Actor(copy),//konstruktor kopiujący klasy bazowej
 			m_battery_name{ copy.m_battery_name },
 			m_capacity{ copy.m_capacity },
+			m_factory_capacity{ copy.m_capacity },
 			m_particle_energy{ copy.m_particle_energy },
 			m_battery_regeneration_duration{ copy.m_battery_regeneration_duration },
 			m_battery_regeneration_timer{ copy.m_battery_regeneration_timer },
@@ -51,6 +53,7 @@ namespace equipment
 			//~Actor()
 			m_battery_name = "";
 			m_capacity = 0.0f;
+			m_factory_capacity = 0.0f;
 			m_particle_energy = 0.0f;
 			m_battery_regeneration_duration = 0.0f;
 			m_battery_regeneration_timer = 0.0f;

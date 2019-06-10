@@ -13,15 +13,15 @@ namespace factory
 	//Konstruktor
 	SolarBatteryTemplate::SolarBatteryTemplate()
 	:
-		BatteryTemplate(),//konstruktor klasy bazowej
-		m_templ_decline(0.0f)
+		BatteryTemplate{},//konstruktor klasy bazowej
+		m_templ_decline{ 0.0f }
 	{
 	}
 
 	//Destruktor
 	SolarBatteryTemplate::~SolarBatteryTemplate()
 	{
-		//BatteryTemplate
+		//~BatteryTemplate()
 		m_templ_decline = 0.0f;
 	}
 
@@ -38,14 +38,14 @@ namespace factory
 	}
 
 	//Wirtualna metoda ładująca dane
-	bool SolarBatteryTemplate::load(const std::string &name)
+	bool SolarBatteryTemplate::load(const std::string & name)
 	{
 		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool SolarBatteryTemplate::load(Xml &xml)
+	bool SolarBatteryTemplate::load(Xml & xml)
 	{
 		//ładowanie danych klasy bazowej BatteryTemplate
 		if (!BatteryTemplate::load(xml)) return false;

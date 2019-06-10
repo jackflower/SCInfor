@@ -17,31 +17,31 @@ namespace factory
 	//Konstruktor
 	EnergyTemplate::EnergyTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_energy_name(""),
-		m_templ_energytank_data(),
-		p_templ_energy_tank(NULL),
-		m_templ_battery_data(),
-		p_templ_battery(NULL),
-		m_templ_percentage_reserve_energy(0.0f),
-		m_templ_energy_time_delayed(0.0f),
-		m_templ_energy_empty_message(false),
-		m_templ_energy_regeneration(0.0f),
-		m_templ_regeneration_time(0.0f),
-		m_templ_energy_rotation_speed(0.0f),
-		m_templ_critical_duration(0.0f),
-		m_templ_damage_duration(0.0f)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_energy_name{ "" },
+		m_templ_energytank_data{},
+		p_templ_energy_tank{ NULL },
+		m_templ_battery_data{},
+		p_templ_battery{ NULL },
+		m_templ_percentage_reserve_energy{ 0.0f },
+		m_templ_energy_time_delayed{ 0.0f },
+		m_templ_energy_empty_message{ false },
+		m_templ_energy_regeneration{ 0.0f },
+		m_templ_regeneration_time{ 0.0f },
+		m_templ_energy_rotation_speed{ 0.0f },
+		m_templ_critical_duration{ 0.0f },
+		m_templ_damage_duration{ 0.0f }
 	{
 	}
 
 	//Destruktor
 	EnergyTemplate::~EnergyTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_energy_name = "";
-		//m_templ_energytank_data
+		m_templ_energytank_data;
 		p_templ_energy_tank = NULL;
-		//m_templ_battery_data
+		m_templ_battery_data;
 		p_templ_battery = NULL;
 		m_templ_percentage_reserve_energy = 0.0f;
 		m_templ_energy_time_delayed = 0.0f;

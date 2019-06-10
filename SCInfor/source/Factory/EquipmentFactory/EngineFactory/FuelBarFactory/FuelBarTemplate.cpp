@@ -13,20 +13,19 @@ namespace factory
 	//Konstruktor
 	FuelBarTemplate::FuelBarTemplate()
 	:
-		Resource(),//konstruktor klasy bazowej
-		m_templ_fuelbar_name(),
-		m_templ_thickness(0.0f),
-		m_templ_size(0.0f, 0.0f),
-		m_templ_position_offset(0.0f, 0.0f)
-
+		Resource{},//konstruktor klasy bazowej
+		m_templ_fuelbar_name{},
+		m_templ_thickness{ 0.0f },
+		m_templ_size{ 0.0f, 0.0f },
+		m_templ_position_offset{ 0.0f, 0.0f }
 	{
 	}
 
 	//Destruktor
 	FuelBarTemplate::~FuelBarTemplate()
 	{
-		//Resource
-		m_templ_fuelbar_name= "";
+		//~Resource()
+		m_templ_fuelbar_name = "";
 		m_templ_thickness = 0.0f;
 		m_templ_size.x = 0.0f;
 		m_templ_size.y = 0.0f;
@@ -46,14 +45,14 @@ namespace factory
 	}
 
 	//Wirtualna metoda ładująca dane
-	bool FuelBarTemplate::load(const std::string &name)
+	bool FuelBarTemplate::load(const std::string & name)
 	{
 		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
-	bool FuelBarTemplate::load(Xml &xml)
+	bool FuelBarTemplate::load(Xml & xml)
 	{
 		//ładowanie danych configuracji paska paliwa
 		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "fuelbar_config"))
@@ -77,7 +76,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy FuelBar
 	FuelBar* FuelBarTemplate::create(std::wstring id)
 	{
-		FuelBar* fuelbar = gPhysicalManager.createFuelBar(id);
+		FuelBar *fuelbar = gPhysicalManager.createFuelBar(id);
 		fill(fuelbar);
 		return fuelbar;
 	}

@@ -20,18 +20,18 @@ namespace factory
 	//Konstruktor
 	EnergyTankTemplate::EnergyTankTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_energy_tank_name(""),
-		m_templ_energy_tank_capacity(0.0f),
-		m_templ_energy(0.0f),
-		m_templ_energy_tank_rotation_speed(0.0f)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_energy_tank_name{ "" },
+		m_templ_energy_tank_capacity{ 0.0f },
+		m_templ_energy{ 0.0f },
+		m_templ_energy_tank_rotation_speed{ 0.0f }
 	{
 	}
 
 	//Destruktor
 	EnergyTankTemplate::~EnergyTankTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_energy_tank_name = "";
 		m_templ_energy_tank_capacity = 0.0f;
 		m_templ_energy = 0.0f;
@@ -51,14 +51,14 @@ namespace factory
 	}
 
 	//Wirtualna metoda ładująca dane
-	bool EnergyTankTemplate::load(const std::string &name)
+	bool EnergyTankTemplate::load(const std::string & name)
 	{
 		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool EnergyTankTemplate::load(Xml &xml)
+	bool EnergyTankTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;

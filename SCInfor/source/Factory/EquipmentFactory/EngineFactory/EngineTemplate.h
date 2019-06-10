@@ -78,7 +78,7 @@ namespace factory
 			return m_templ_engine_name;
 		}
 
-		inline void setEngineName(const std::string templ_engine_name)
+		inline void setEngineName(const std::string & templ_engine_name)
 		{
 			m_templ_engine_name = templ_engine_name;
 		}

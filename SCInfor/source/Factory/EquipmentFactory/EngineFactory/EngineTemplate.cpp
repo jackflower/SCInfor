@@ -17,27 +17,27 @@ namespace factory
 	//Konstruktor
 	EngineTemplate::EngineTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_engine_name(),
-		m_templ_fueltank_data(),
-		p_templ_fuel_tank(NULL),
-		m_templ_percentage_reserve_fuel(0.0f),
-		m_templ_fuel_consumption(0.0f),
-		m_templ_fuel_consumption_move(0.0f),
-		m_templ_tank_time_delayed(0.0f),
-		m_templ_fuel_empty_message(false),
-		m_templ_engine_run(false),
-		m_templ_engine_rotation_speed(0.0f),
-		m_templ_regeneration_time(0.0f)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_engine_name{},
+		m_templ_fueltank_data{},
+		p_templ_fuel_tank{ NULL },
+		m_templ_percentage_reserve_fuel{ 0.0f },
+		m_templ_fuel_consumption{ 0.0f },
+		m_templ_fuel_consumption_move{ 0.0f },
+		m_templ_tank_time_delayed{ 0.0f },
+		m_templ_fuel_empty_message{ false },
+		m_templ_engine_run{ false },
+		m_templ_engine_rotation_speed{ 0.0f },
+		m_templ_regeneration_time{ 0.0f }
 	{
 	}
 
 	//Destruktor
 	EngineTemplate::~EngineTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_engine_name = "";
-		//m_templ_fueltank_data
+		m_templ_fueltank_data;
 		p_templ_fuel_tank = NULL;
 		m_templ_percentage_reserve_fuel = 0.0f;
 		m_templ_fuel_consumption = 0.0f;
@@ -62,14 +62,14 @@ namespace factory
 	}
 
 	//Wirtualna metoda ładująca dane
-	bool EngineTemplate::load(const std::string &name)
+	bool EngineTemplate::load(const std::string & name)
 	{
 		Xml xml(name, "root");
 		return load(xml);
 	}
 
 	//Wirtualna metoda ładująca dane z xml
-	bool EngineTemplate::load(Xml &xml)
+	bool EngineTemplate::load(Xml & xml)
 	{
 		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
@@ -147,7 +147,7 @@ namespace factory
 			p_engine->setEngineRegenerationTime(m_templ_regeneration_time);
 			p_engine->setEngineRotationSpeed(m_templ_engine_rotation_speed);
 
-			//jeśli obiekt posiada fueltank (zbiornika paliwa)
+			//jeśli obiekt posiada fueltank (zbiornik paliwa)
 			if (m_templ_fueltank_data.getUseEquipment())
 			{
 				if(p_engine)

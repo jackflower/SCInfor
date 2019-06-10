@@ -20,17 +20,17 @@ namespace factory
 	//Konstruktor
 	FuelTankTemplate::FuelTankTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_fuel_tank_name(""),
-		m_templ_fuel_tank_capacity(0.0f),
-		m_templ_fuel(0.0f)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_fuel_tank_name{ "" },
+		m_templ_fuel_tank_capacity{ 0.0f },
+		m_templ_fuel{ 0.0f }
 	{
 	}
 
 	//Destruktor
 	FuelTankTemplate::~FuelTankTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_fuel_tank_name = "";
 		m_templ_fuel_tank_capacity = 0.0f;
 		m_templ_fuel = 0.0f;
@@ -49,7 +49,7 @@ namespace factory
 	}
 
 	//Wirtualna metoda ładująca dane
-	bool FuelTankTemplate::load(const std::string &name)
+	bool FuelTankTemplate::load(const std::string & name)
 	{
 		Xml xml(name, "root");
 		return load(xml);
@@ -76,7 +76,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy FuelTank
 	FuelTank* FuelTankTemplate::create(std::wstring id)
 	{
-		FuelTank* fueltank = gPhysicalManager.createFuelTank(id);
+		FuelTank *fueltank = gPhysicalManager.createFuelTank(id);
 		fill(fueltank);
 		return fueltank;
 	}
