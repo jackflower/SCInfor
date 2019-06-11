@@ -413,8 +413,14 @@ namespace logic
 		std::map<std::wstring, Physical*> m_named_physicals; //kontener <map> na nazwane obiekty klasy Physical
 		std::vector<Physical*> m_physicals; //kontener <vector> na wskaźniki na obiekty klasy Physical
 		std::vector<WindPowerStation*> m_wind_powerstation; //elektrownie wiatrowa
+		//2019-06-11
+		//Powyższa składowa m_wind_powerstation to tylko testy, tak samo jak metoda
+		//const std::vector<WindPowerStation*> & getWindPowerstations();
+		//zostawiam tutaj ten kod - niech poleży...
+		//w zasadzie to wywołanie tej metody jest tylko w ttym miejscu
+		//nie wpływa na rozgrywkę
 
-															//
+		//
 		//Prywatna metoda sprawdzająca jaki identyfikator nadać obiektowi przy utworzeniu
 		//
 		//@param new_unique_id - referencja na obiekt klasy std::wstring

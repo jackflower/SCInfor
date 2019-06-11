@@ -30,6 +30,7 @@ namespace scinfor
 		///
 		virtual ~Vector();
 
+	protected:
 	private:
 
 	};
