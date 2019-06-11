@@ -16,19 +16,19 @@ namespace factory
 
 	ThermalInsulationTemplate::ThermalInsulationTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_thermalinsulation_name(""),
-		m_templ_temperature_ambient(0.0f),
-		m_templ_thermal_protection(0.0f),
-		m_templ_thermal_protection_factor(0.0f),
-		m_templ_thermal_protection_consume(0.0f),
-		m_templ_thermal_protection_duration(0.0f)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_thermalinsulation_name{ "" },
+		m_templ_temperature_ambient{ 0.0f },
+		m_templ_thermal_protection{ 0.0f },
+		m_templ_thermal_protection_factor{ 0.0f },
+		m_templ_thermal_protection_consume{ 0.0f },
+		m_templ_thermal_protection_duration{ 0.0f }
 	{
 	}
 
 	ThermalInsulationTemplate::~ThermalInsulationTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_thermalinsulation_name = "";
 		m_templ_temperature_ambient = 0.0f;
 		m_templ_thermal_protection = 0.0f;
@@ -80,7 +80,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy ThermalInsulation
 	ThermalInsulation *ThermalInsulationTemplate::create(std::wstring id)
 	{
-		ThermalInsulation* thermalinsulation = gPhysicalManager.createThermalInsulation(id);
+		ThermalInsulation *thermalinsulation = gPhysicalManager.createThermalInsulation(id);
 		fill(thermalinsulation);
 		return thermalinsulation;
 	}

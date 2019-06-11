@@ -21,27 +21,27 @@ namespace factory
 	//Konstruktor
 	GunTemplate::GunTemplate(void)
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_ammo_data(),
-		p_templ_ammo(NULL),
-		m_templ_time_ammo_load_delay(0.0f),
-		m_templ_time_shot(0.0f),
-		m_templ_range_shot(0.0f),
-		m_templ_bullet_speed(0.0f),
-		m_templ_barrel_count(0),
-		m_templ_target_altitude(0.0f),
-		m_templ_explosion_emiter(0.0f, 0.0f),
-		m_templ_ammo_time_delayed(0.0f),
-		m_templ_limit_amount_damage(0),
-		m_templ_damage()
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_ammo_data{},
+		p_templ_ammo{ NULL },
+		m_templ_time_ammo_load_delay{ 0.0f },
+		m_templ_time_shot{ 0.0f },
+		m_templ_range_shot{ 0.0f },
+		m_templ_bullet_speed{ 0.0f },
+		m_templ_barrel_count{ 0 },
+		m_templ_target_altitude{ 0.0f },
+		m_templ_explosion_emiter{ 0.0f, 0.0f },
+		m_templ_ammo_time_delayed{ 0.0f },
+		m_templ_limit_amount_damage{ 0 },
+		m_templ_damage{}
 	{
 	}
 
 	//Destruktor wirtualny
 	GunTemplate::~GunTemplate(void)
 	{
-		//ActorTemplate
-		//m_templ_ammo_data
+		//~ActorTemplate()
+		m_templ_ammo_data;
 		p_templ_ammo = NULL;
 		m_templ_time_ammo_load_delay = 0.0f;
 		m_templ_time_shot = 0.0f;
@@ -53,7 +53,7 @@ namespace factory
 		m_templ_explosion_emiter.y = 0.0f;
 		m_templ_ammo_time_delayed = 0.0f;
 		m_templ_limit_amount_damage = 0;
-		//m_templ_damage
+		m_templ_damage;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

@@ -20,30 +20,30 @@ namespace factory
 	//Konstruktor
 	InformationTemplate::InformationTemplate()
 	:
-		Resource(),//konstruktor klasy bazowej
-		m_templ_filename(""),
-		m_templ_type(""),
-		p_templ_digit_displayable(NULL),
-		p_templ_mask_displayable(NULL),
-		m_templ_texture_digit_name(""),
-		m_templ_texture_mask_name(""),
-		m_templ_tranformable_digit(),
-		m_templ_tranformable_mask()
+		Resource{},//konstruktor klasy bazowej
+		m_templ_filename{ "" },
+		m_templ_type{ "" },
+		p_templ_digit_displayable{ NULL },
+		p_templ_mask_displayable{ NULL },
+		m_templ_texture_digit_name{ "" },
+		m_templ_texture_mask_name{ "" },
+		m_templ_tranformable_digit{},
+		m_templ_tranformable_mask{}
 	{
 	}
 
 	//Destruktor
 	InformationTemplate::~InformationTemplate()
 	{
-		//Resource
+		//~Resource()
 		m_templ_filename = "";
 		m_templ_type = "";
 		p_templ_digit_displayable = NULL;
 		p_templ_mask_displayable = NULL;
 		m_templ_texture_digit_name = "";
 		m_templ_texture_mask_name = "";
-		//m_templ_tranformable_digit	not edit
-		//m_templ_tranformable_mask		not edit
+		m_templ_tranformable_digit;
+		m_templ_tranformable_mask;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -93,7 +93,7 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy Actor
-	Information* InformationTemplate::create(std::wstring id)
+	Information *InformationTemplate::create(std::wstring id)
 	{
 		Information* information = gInfoManager.createInformation(id);
 		fill(information);

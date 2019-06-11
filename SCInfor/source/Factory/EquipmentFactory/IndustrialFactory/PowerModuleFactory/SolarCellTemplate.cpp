@@ -16,19 +16,19 @@ namespace factory
 	//Konstruktor
 	SolarCellTemplate::SolarCellTemplate()
 	:
-		ActorTemplate(),	//konstruktor klasy bazowej
-		m_templ_solarcell_name(),
-		m_templ_stored_energy(0.0f),
-		m_templ_power(0.0f),
-		m_templ_energy_duration(0.0f),
-		m_templ_rotation_speed(0.0f)
+		ActorTemplate{}, //konstruktor klasy bazowej
+		m_templ_solarcell_name{},
+		m_templ_stored_energy{ 0.0f },
+		m_templ_power{ 0.0f },
+		m_templ_energy_duration{ 0.0f },
+		m_templ_rotation_speed{ 0.0f }
 	{
 	}
 
 	//Destruktor wirtualny
 	SolarCellTemplate::~SolarCellTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_solarcell_name = "";
 		m_templ_stored_energy = 0.0f;
 		m_templ_power = 0.0f;
@@ -76,7 +76,7 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy SolarCell
-	SolarCell* SolarCellTemplate::create(std::wstring id)
+	SolarCell *SolarCellTemplate::create(std::wstring id)
 	{
 		SolarCell *solarcell = gPhysicalManager.createSolarCell(id);
 		fill(solarcell);

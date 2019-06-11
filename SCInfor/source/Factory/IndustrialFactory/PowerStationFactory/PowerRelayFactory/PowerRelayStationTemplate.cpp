@@ -18,25 +18,25 @@ namespace factory
 	//Konstruktor
 	PowerRelayStationTemplate::PowerRelayStationTemplate()
 	:
-		RelayStationTemplate(),//konstruktor klasy bazowej
-		m_templ_use_slots_rate(false),
-		m_templ_powerstations_capacity(0),
-		m_templ_state_time_range(0.0f, 0.0f),
-		m_templ_rotation_speed_range(0.0f, 0.0f),
-		m_templ_state_time(0.0f),
-		m_templ_rotation_speed(0.0f),
-		p_templ_slot_rate(NULL),
-		p_templ_battery(NULL),
-		m_templ_use_battery(false),
-		m_templ_time_to_start(0.0f),
-		m_templ_duration_disconnect(0.0f)
+		RelayStationTemplate{},//konstruktor klasy bazowej
+		m_templ_use_slots_rate{ false },
+		m_templ_powerstations_capacity{ 0 },
+		m_templ_state_time_range{ 0.0f, 0.0f },
+		m_templ_rotation_speed_range{ 0.0f, 0.0f },
+		m_templ_state_time{ 0.0f },
+		m_templ_rotation_speed{ 0.0f },
+		p_templ_slot_rate{ NULL },
+		p_templ_battery{ NULL },
+		m_templ_use_battery{ false },
+		m_templ_time_to_start{ 0.0f },
+		m_templ_duration_disconnect{ 0.0f }
 	{
 	}
 
 	//Destruktor wirtualny
 	PowerRelayStationTemplate::~PowerRelayStationTemplate()
 	{
-		//RelayStationTemplate
+		//~RelayStationTemplate()
 		m_templ_use_slots_rate = false;
 		m_templ_powerstations_capacity = 0;
 		m_templ_state_time_range.first = 0.0f;
@@ -186,4 +186,3 @@ namespace factory
 		}
 	}
 }//namespace factory
-

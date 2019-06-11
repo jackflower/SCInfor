@@ -18,21 +18,22 @@ namespace factory
 	//Konstruktor
 	PowerStationTemplate::PowerStationTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_power_station_name(),
-		m_templ_energy_capacitor(0.0f),
-		m_templ_amount_power_modules(0),
-		p_templ_communication(NULL)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_power_station_name{},
+		m_templ_energy_capacitor{ 0.0f },
+		m_templ_amount_power_modules{ 0 },
+		p_templ_communication{ NULL }
 	{
 	}
 
 	//Destruktor wirtualny
 	PowerStationTemplate::~PowerStationTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_power_station_name = "";
 		m_templ_energy_capacitor = 0.0f;
 		m_templ_amount_power_modules = 0;
+		mm_templ_communication_data;
 		p_templ_communication = NULL;
 	}
 

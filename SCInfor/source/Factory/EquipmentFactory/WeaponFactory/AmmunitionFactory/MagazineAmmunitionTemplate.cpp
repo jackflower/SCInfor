@@ -15,14 +15,13 @@ namespace factory
 	//Konstruktor domyślny
 	MagazineAmmunitionTemplate::MagazineAmmunitionTemplate()
 	:
-		ActorTemplate()//konstruktor klasy bazowej
+		ActorTemplate{}//konstruktor klasy bazowej
 	{
 	}
 
 	//Destruktor wirtualny
 	MagazineAmmunitionTemplate::~MagazineAmmunitionTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 	}
 }//namespace factory
-

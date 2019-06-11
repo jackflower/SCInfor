@@ -15,21 +15,21 @@ namespace factory
 	//Konstruktor
 	AmmoTemplate::AmmoTemplate(void)
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_caliber(),
-		m_templ_ammo_state(EAmmoState::AMMO_DEFAULT),
-		m_templ_ammo(0),
-		m_templ_ammo_capacity(0),
-		m_templ_percentage_reserve_ammo(0.0f),
-		m_templ_reserve_ammo(0)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_caliber{},
+		m_templ_ammo_state{ EAmmoState::AMMO_DEFAULT },
+		m_templ_ammo{ 0 },
+		m_templ_ammo_capacity{ 0 },
+		m_templ_percentage_reserve_ammo{ 0.0f },
+		m_templ_reserve_ammo{ 0 }
 	{
 	}
 
 	//Destruktor wirtualny
 	AmmoTemplate::~AmmoTemplate(void)
 	{
-		//ActorTemplate
-		//m_templ_caliber
+		//~ActorTemplate()
+		m_templ_caliber;
 		m_templ_ammo_state = EAmmoState::AMMO_DEFAULT;
 		m_templ_ammo = 0;
 		m_templ_ammo_capacity = 0;
@@ -81,9 +81,9 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy Ammo
-	Ammo* AmmoTemplate::create(std::wstring id)
+	Ammo *AmmoTemplate::create(std::wstring id)
 	{
-		Ammo* ammo = gPhysicalManager.createAmmo(id);
+		Ammo *ammo = gPhysicalManager.createAmmo(id);
 		fill(ammo);
 		return ammo;
 	}

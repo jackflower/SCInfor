@@ -17,17 +17,17 @@ namespace factory
 	//Konstruktor
 	RelayStationTemplate::RelayStationTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_relay_station_name(),
-		m_templ_use_communication(false),
-		p_templ_communication(NULL)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_relay_station_name{},
+		m_templ_use_communication{ false },
+		p_templ_communication{ NULL }
 	{
 	}
 
 	//Destruktor wirtualny
 	RelayStationTemplate::~RelayStationTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_relay_station_name = "";
 		m_templ_use_communication = false;
 		p_templ_communication = NULL;
@@ -130,4 +130,3 @@ namespace factory
 		}
 	}
 }//namespace factory
-

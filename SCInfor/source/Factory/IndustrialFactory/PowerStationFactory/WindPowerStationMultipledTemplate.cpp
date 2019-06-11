@@ -14,14 +14,14 @@ namespace factory
 	//Konstruktor
 	WindPowerStationMultipledTemplate::WindPowerStationMultipledTemplate()
 	:
-		WindPowerStationTemplate()//konstruktor klasy bazowej
+		WindPowerStationTemplate{}//konstruktor klasy bazowej
 	{
 	}
 
 	//Destruktor wirtualny
 	WindPowerStationMultipledTemplate::~WindPowerStationMultipledTemplate()
 	{
-		//WindPowerStationTemplate
+		//~WindPowerStationTemplate()
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

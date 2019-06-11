@@ -16,20 +16,20 @@ namespace factory
 	//Konstruktor
 	WindPowerStationTemplate::WindPowerStationTemplate()
 	:
-		PowerStationTemplate(),//konstruktor klasy bazowej
-		m_templ_energy_condensation_time(0.0f),
-		m_templ_use_windturbine(false),
-		m_templ_portion_energy(0.0f),
-		m_templ_use_rotation_head(false),
-		m_templ_speed_rotation_head(0.0f),
-		p_templ_windturbine(NULL)
+		PowerStationTemplate{},//konstruktor klasy bazowej
+		m_templ_energy_condensation_time{ 0.0f },
+		m_templ_use_windturbine{ false },
+		m_templ_portion_energy{ 0.0f },
+		m_templ_use_rotation_head{ false },
+		m_templ_speed_rotation_head{ 0.0f },
+		p_templ_windturbine{ NULL }
 	{
 	}
 
 	//Destruktor wirtualny
 	WindPowerStationTemplate::~WindPowerStationTemplate()
 	{
-		//PowerStationTemplate
+		//~PowerStationTemplate()
 		m_templ_energy_condensation_time = 0.0f;
 		m_templ_use_windturbine = false;
 		m_templ_portion_energy = 0.0f;
@@ -91,7 +91,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy WindTurbine
 	WindPowerStation* WindPowerStationTemplate::create(std::wstring id)
 	{
-		WindPowerStation* windpower_station = gPhysicalManager.createWindPowerStation(id);
+		WindPowerStation *windpower_station = gPhysicalManager.createWindPowerStation(id);
 		fill(windpower_station);
 		return windpower_station;
 	}

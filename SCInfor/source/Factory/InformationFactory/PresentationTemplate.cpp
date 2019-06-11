@@ -18,31 +18,31 @@ namespace factory
 	//Konstruktor
 	PresentationTemplate::PresentationTemplate(void)
 	:
-		Resource(),//konstruktor klasy bazowej
-		m_templ_filename(""),
-		m_templ_type(""),
-		m_templ_tranformable(),
-		m_templ_font_name(""),
-		m_templ_color_front(),
-		m_templ_color_back(),
-		m_templ_font_size(1),
-		m_templ_string(""),
-		m_templ_wide_string(),
-		m_templ_use_under(false),
-		m_templ_offset(0.0f, 0.0f)
+		Resource{},//konstruktor klasy bazowej
+		m_templ_filename{ "" },
+		m_templ_type{ "" },
+		m_templ_tranformable{},
+		m_templ_font_name{ "" },
+		m_templ_color_front{},
+		m_templ_color_back{},
+		m_templ_font_size{ 1 },
+		m_templ_string{ "" },
+		m_templ_wide_string{},
+		m_templ_use_under{ false },
+		m_templ_offset{ 0.0f, 0.0f }
 	{
 	}
 
 	//Destruktor wirtualny
 	PresentationTemplate::~PresentationTemplate(void)
 	{
-		//Resource
+		//~Resource()
 		m_templ_filename = "";
 		m_templ_type = "";
-		//m_templ_tranformable
+		m_templ_tranformable;
 		m_templ_font_name = "";
-		//m_templ_color_front 
-		//m_templ_color_back
+		m_templ_color_front;
+		m_templ_color_back;
 		m_templ_font_size = 0;
 		m_templ_string = "";
 		m_templ_wide_string = L"";
@@ -105,7 +105,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Actor
 	Presentation *PresentationTemplate::create(std::wstring id)
 	{
-		Presentation* presentation = gInfoManager.createPresentation(id);
+		Presentation *presentation = gInfoManager.createPresentation(id);
 		fill(presentation);
 		return presentation;
 	}

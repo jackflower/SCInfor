@@ -13,19 +13,19 @@ namespace factory
 	//Konstruktor
 	VentilatorTemplate::VentilatorTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_ventilator_name(""),
-		m_templ_performance(0.0f),
-		m_templ_performance_factor(0.0f),
-		m_templ_energy_consumption(0.0f),
-		m_templ_energy_consumption_factor(0.0f)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_ventilator_name{ "" },
+		m_templ_performance{ 0.0f },
+		m_templ_performance_factor{ 0.0f },
+		m_templ_energy_consumption{ 0.0f },
+		m_templ_energy_consumption_factor{ 0.0f }
 	{
 	}
 
 	//Destruktor wirtualny
 	VentilatorTemplate::~VentilatorTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_ventilator_name = "";
 		m_templ_performance = 0.0f;
 		m_templ_performance_factor = 0.0f;
@@ -75,7 +75,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy Ventilator
 	Ventilator *VentilatorTemplate::create(std::wstring id)
 	{
-		Ventilator* ventilator = gPhysicalManager.createVentilator(id);
+		Ventilator *ventilator = gPhysicalManager.createVentilator(id);
 		fill(ventilator);
 		return ventilator;
 	}
@@ -85,6 +85,7 @@ namespace factory
 	{
 		if(p_ventilator)
 		{
+			//ładowanie danych klasy bazowej Actor
 			ActorTemplate::fill(p_ventilator);
 	
 			//przekazanie danych...

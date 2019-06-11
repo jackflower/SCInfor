@@ -15,14 +15,14 @@ namespace factory
 	//Konstruktor
 	SlotsRateTemplate::SlotsRateTemplate()
 	:
-		ActorTemplate()//konstruktor klasy bazowej
+		ActorTemplate{}//konstruktor klasy bazowej
 	{
 	}
 
 	//Destruktor wirtualny
 	SlotsRateTemplate::~SlotsRateTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -57,7 +57,7 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy SlotsRate
-	SlotsRate* SlotsRateTemplate::create(std::wstring id)
+	SlotsRate *SlotsRateTemplate::create(std::wstring id)
 	{
 		SlotsRate *slots_rate = gPhysicalManager.createSlotsRate(id);
 		fill(slots_rate);

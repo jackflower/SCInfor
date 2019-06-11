@@ -20,23 +20,23 @@ namespace factory
 	//Konstruktor
 	AirconditioningTemplate::AirconditioningTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_airconditioning_name(""),
-		m_templ_temperature(0.0f),
-		m_templ_temperature_set(0.0f),
-		m_templ_temperature_range(0.0f, 0.0f),
-		m_templ_temperature_increment(0.0f),
-		m_templ_energy_consumption(0.0f),
-		m_templ_fuel_consumption(0.0f),
-		m_templ_thermalinsulation_data(),
-		p_templ_thermal_insulation(NULL)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_airconditioning_name{ "" },
+		m_templ_temperature{ 0.0f },
+		m_templ_temperature_set{ 0.0f },
+		m_templ_temperature_range{ 0.0f, 0.0f },
+		m_templ_temperature_increment{ 0.0f },
+		m_templ_energy_consumption{ 0.0f },
+		m_templ_fuel_consumption{ 0.0f },
+		m_templ_thermalinsulation_data{},
+		p_templ_thermal_insulation{ NULL }
 	{
 	}
 
 	//Destruktor wirtualny
 	AirconditioningTemplate::~AirconditioningTemplate()
 	{
-		//ActorTemplate
+		//~ActorTemplate()
 		m_templ_airconditioning_name = "";
 		m_templ_temperature = 0.0f;
 		m_templ_temperature_set = 0.0f;
@@ -45,7 +45,7 @@ namespace factory
 		m_templ_temperature_increment = 0.0f;
 		m_templ_energy_consumption = 0.0f;
 		m_templ_fuel_consumption = 0.0f;
-		//m_templ_thermalinsulation_data
+		m_templ_thermalinsulation_data;
 		p_templ_thermal_insulation = NULL;
 	}
 
@@ -108,9 +108,9 @@ namespace factory
 	}
 
 	//Metoda tworzy obiekt klasy Airconditioning
-	Airconditioning* AirconditioningTemplate::create(std::wstring id)
+	Airconditioning *AirconditioningTemplate::create(std::wstring id)
 	{
-		Airconditioning * airconditioning = gPhysicalManager.createAirconditioning(id);
+		Airconditioning *airconditioning = gPhysicalManager.createAirconditioning(id);
 		fill(airconditioning);
 		return airconditioning;
 	}
@@ -140,7 +140,7 @@ namespace factory
 			//tylko ze względu na zgodność pól w tej klasie z polami obiektu, który buduje.
 			//
 			//Na początku klimatyzator jako urządzenie - obiekt - posiada temperaturę otoczenia,
-			//na podstawie której oraz jej przeliczania, stara się doprowadzić do temperaturę
+			//na podstawie której oraz jej przeliczania, stara się doprowadzić temperaturę
 			//do wartości ustalonej - oczekiwanej, aby oddać ją obiektowe, który jest
 			//jego właścicielem.
 			m_templ_temperature = gWeather.getTemperature();
