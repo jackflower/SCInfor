@@ -342,6 +342,7 @@
     <ClCompile Include="source\Weather\Weather.cpp" />
     <ClCompile Include="source\Weather\Wind.cpp" />
     <ClCompile Include="source\XML\Xml.cpp" />
+    <ClCompile Include="source\Containers\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Collision\Collision.h" />
@@ -596,6 +597,7 @@
     <ClInclude Include="source\XML\RapidXML\rapidxml_iterators.hpp" />
     <ClInclude Include="source\XML\RapidXML\rapidxml_print.hpp" />
     <ClInclude Include="source\XML\RapidXML\rapidxml_utils.hpp" />
+    <ClInclude Include="source\Containers\Vector.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="notes\notes.txt" />

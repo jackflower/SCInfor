@@ -385,6 +385,9 @@
     <Filter Include="source\Factory\EquipmentFactory\WeaponFactory\AmmunitionFactory">
       <UniqueIdentifier>{61fc957f-bf65-41cd-bc46-141f87ce510c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\Containers">
+      <UniqueIdentifier>{2c2823d7-f2f8-46fd-b916-a56ad70640ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -1007,6 +1010,9 @@
     </ClCompile>
     <ClCompile Include="source\Universe\Universe.cpp">
       <Filter>source\Universe</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Containers\Vector.cpp">
+      <Filter>source\Containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1765,6 +1771,9 @@
     </ClInclude>
     <ClInclude Include="source\Universe\Universe.h">
       <Filter>source\Universe</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Containers\Vector.h">
+      <Filter>source\Containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
