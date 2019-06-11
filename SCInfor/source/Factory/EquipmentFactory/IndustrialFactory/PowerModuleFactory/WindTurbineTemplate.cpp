@@ -16,8 +16,8 @@ namespace factory
 	//Konstruktor
 	WindTurbineTemplate::WindTurbineTemplate()
 	:
-		ActorTemplate(),	//konstruktor klasy bazowej
-		m_templ_turbine_name(),
+		ActorTemplate{},	//konstruktor klasy bazowej
+		m_templ_turbine_name{},
 		m_templ_speed_rotor(0.0f),
 		m_templ_speed_transmission(1.0f),
 		m_templ_energy_capacitor(0.0f),
