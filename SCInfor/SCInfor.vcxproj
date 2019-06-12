@@ -449,7 +449,7 @@
     <ClInclude Include="source\Logic\Actor\EActorSpawnState.h" />
     <ClInclude Include="source\Logic\ArtificialIntelligence\ActorAI.h" />
     <ClInclude Include="source\Logic\ArtificialIntelligence\ActorAIData.h" />
-    <ClInclude Include="source\Logic\ArtificialIntelligence\CAIScheme.h" />
+    <ClInclude Include="source\Logic\ArtificialIntelligence\AIScheme.h" />
     <ClInclude Include="source\Logic\Bullet\Bullet.h" />
     <ClInclude Include="source\Logic\Logic.h" />
     <ClInclude Include="source\Logic\MapPhysicalManager.h" />

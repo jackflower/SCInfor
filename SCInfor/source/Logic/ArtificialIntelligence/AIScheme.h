@@ -11,15 +11,19 @@
 #include "../../RTTI/RTTI.h"
 //#include "../../Utils/Memory/CSafePtr.h"
 //#include "ActorAI.h" //czy to pomoże?
-// - jakkolwiek, uporządkować kod, aby nie byłó, aby więcej
+// - jakkolwiek, uporządkować kod, aby nie było, aby więcej
 //   jak jedna klas abyła w jednym pliku...
+// 2019-06-12: generalnie - ten framework (zarządzanie schamatami zachowania AI)
+// wymaga analizy i zaprojektowania na nowo
 
-class CAISchemeManager;	//zapowiedź wobec powyższego...
+class AISchemeManager; //zapowiedź wobec powyższego...
+
 namespace logic
 {
-	class ActorAI;			//zapowiedź wobec powyższego...
+	class ActorAI; //zapowiedź wobec powyższego...
 }
-class ActorAIData;		//zapowiedź wobec powyższego...
+
+class ActorAIData; //zapowiedź wobec powyższego...
 
 using namespace logic;
 
@@ -28,18 +32,18 @@ namespace artificialintelligence
 	///
 	///Klasa reprezentuje skalę bazową definiującą interfejs
 	///
-	class CAIScheme
+	class AIScheme
 	{
 		RTTI_DECL;
 
 	public:	
 
-		CAIScheme()
+		AIScheme()
 		{
-			//RTTI_IMPL_NOPARENT(CAIScheme);
+			//RTTI_IMPL_NOPARENT(AIScheme);
 		}
 		
-		virtual ~CAIScheme() {};
+		virtual ~AIScheme() {};
 		
 		//virtual void RegisterAI(Memory::CSafePtr<ActorAI> ai) {}
 		//virtual void UnregisterAI(Memory::CSafePtr<ActorAI> ai) {}
@@ -53,7 +57,7 @@ namespace artificialintelligence
 		virtual void UpdateAI(ActorAIData *ai, float dt) = 0;
 		virtual std::string GetName() const = 0;
 
-		virtual void Init(CAISchemeManager &sm) = 0;
+		virtual void Init(AISchemeManager &sm) = 0;
 	};
 }//namespace artificialintelligence
 #endif//H_AIDEMO_JACK

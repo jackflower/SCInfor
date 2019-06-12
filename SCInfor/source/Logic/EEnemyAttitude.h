@@ -11,11 +11,11 @@
 ///
 ///Wyliczenie nastawienia obiektu
 ///
-enum EEnemyAttitude
+enum class EEnemyAttitude
 {
-	AI_ENEMY,	//nastawienie wrogie
-	AI_NEUTRAL,	//nastawienie neutralne
-	AI_ALLY		//sojusznik
+	AI_ENEMY, //nastawienie wrogie
+	AI_NEUTRAL, //nastawienie neutralne
+	AI_ALLY //sojusznik
 };
 
 #endif//H_E_ENEMY_ATTITUDE_JACK

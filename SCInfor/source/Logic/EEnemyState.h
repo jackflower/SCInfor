@@ -11,12 +11,11 @@
 ///
 ///Wyliczenie stanów obiektu
 ///
-enum EEnemyState
+enum class EEnemyState
 { 
-	ENEMY_STATE_NORMAL,		//stan normalny
-	ENEMY_STATE_TURN,		//stan wykonywania obrotu
-	ENEMY_STATE_WAYPOINT	//wędrówka w kierunku puntu na mapie
+	ENEMY_STATE_NORMAL, //stan normalny
+	ENEMY_STATE_TURN, //stan wykonywania obrotu
+	ENEMY_STATE_WAYPOINT //wędrówka w kierunku puntu na mapie
 };
 
 #endif//H_E_ENEMY_STATE_JACK
-//

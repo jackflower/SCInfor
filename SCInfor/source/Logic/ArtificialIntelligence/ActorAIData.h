@@ -158,7 +158,7 @@ namespace artificialintelligence
 		//Actor* mCombatTarget;
 		CSafePtr<Actor> mCombatTarget;
 
-		//CAIScheme *mMovementScheme;
+		//AIScheme *mMovementScheme;
 		float m_movement_SchemeTimer;
 
 		//CAIScheme *mCombatScheme;

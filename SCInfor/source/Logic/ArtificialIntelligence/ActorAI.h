@@ -17,7 +17,7 @@
 ///
 namespace artificialintelligence
 {
-	class CAIScheme;
+	class AIScheme;
 }
 class CActorFlock;
 class IDecorator;
@@ -48,7 +48,7 @@ namespace artificialintelligence
 		///
 		///Metoda zwraca wskaźnik na schematu AI
 		///
-		inline CAIScheme *getScheme()
+		inline AIScheme *getScheme()
 		{
 			return p_scheme;
 		}
@@ -60,7 +60,7 @@ namespace artificialintelligence
 		///
 		///@duration - czas trwania
 		///
-		void setScheme(CAIScheme *scheme, float duration = 1.0f);
+		void setScheme(AIScheme *scheme, float duration = 1.0f);
 
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy Actor,
@@ -94,7 +94,7 @@ namespace artificialintelligence
 
 	protected:
 
-		CAIScheme *p_scheme; //wskaźnik na obiekt klasy CAIScheme (schemat AI)
+		AIScheme *p_scheme; //wskaźnik na obiekt klasy CAIScheme (schemat AI)
 		ActorAIData m_data; //opakowane dane AI
 		float m_turning_sharpness; //włączanie ostrości...związane z rotacją...
 		float m_time_to_change_scheme; //czas potrzebny na zmianę schematu AI

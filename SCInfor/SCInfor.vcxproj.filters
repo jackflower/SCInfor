@@ -1079,9 +1079,6 @@
     <ClInclude Include="source\Logic\Actor\EActorSpawnState.h">
       <Filter>source\Logic\Actor</Filter>
     </ClInclude>
-    <ClInclude Include="source\Logic\ArtificialIntelligence\CAIScheme.h">
-      <Filter>source\Logic\ArtificialIntelligence</Filter>
-    </ClInclude>
     <ClInclude Include="source\Logic\Communication\ECommunicationState.h">
       <Filter>source\Logic\Communication</Filter>
     </ClInclude>
@@ -1774,6 +1771,9 @@
     </ClInclude>
     <ClInclude Include="source\Containers\Vector.h">
       <Filter>source\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Logic\ArtificialIntelligence\AIScheme.h">
+      <Filter>source\Logic\ArtificialIntelligence</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

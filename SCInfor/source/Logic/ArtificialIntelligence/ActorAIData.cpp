@@ -16,21 +16,21 @@ namespace artificialintelligence
 	//Konstruktor
 	ActorAIData::ActorAIData(ActorAI *AI)
 	:
-		p_AI(AI),
-		//m_state(esNormal),
-		//m_attitude(AI_ENEMY),
-		//mWaypoint(sf::Vector2f(0.0f,0.0f)),
-		m_waypoint_tolerance(0.0f),
-		m_target_direction(0),
-		mCombatTarget(CSafePtr<Actor>::NullPtr()),
+		p_AI{ AI },
+		m_state{ EEnemyState::ENEMY_STATE_NORMAL },
+		m_attitude{ EEnemyAttitude::AI_ENEMY },
+		m_waypoint{ sf::Vector2f(0.0f,0.0f) },
+		m_waypoint_tolerance{ 0.0f },
+		m_target_direction{ 0 },
+		mCombatTarget{ CSafePtr<Actor>::NullPtr() },
 		//mCombatTarget(nullptr),
-		m_moving_time(0.0f),
+		m_moving_time{ 0.0f },
 		//mMovementScheme(nullptr),
 		m_movement_SchemeTimer(0.0f),
 		//mCombatScheme(nullptr),
-		m_combat_scheme_timer(0.0f),
+		m_combat_scheme_timer{ 0.0f },
 		//mFlock(nullptr),
-		m_waypoint_set(false)
+		m_waypoint_set{ false }
 	{
 	}
 

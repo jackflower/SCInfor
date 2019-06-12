@@ -8,7 +8,7 @@
 #include <cmath>
 #include <cstdio>
 #include "ActorAI.h"
-#include "CAIScheme.h"
+#include "AIScheme.h"
 #include "../../Utilities/Random/CRandom.h"
 #include "../../Utilities/MathFunctions/MathFunctions.h"
 
@@ -19,12 +19,12 @@ namespace artificialintelligence
 	//Konstruktor
 	ActorAI::ActorAI(Actor *actor)
 	:
-		ActorController(actor),	//konstruktor klasy bazowej
-		//m_data(this),	//ostrzeżenie zbyt wczesnego wiązania *)
-		m_data(nullptr),
-		m_turning_sharpness(0.0f),
-		p_scheme(nullptr),
-		m_time_to_change_scheme(0.0f)
+		ActorController{ actor },//konstruktor klasy bazowej
+		//m_data{ this },//ostrzeżenie zbyt wczesnego wiązania *)
+		m_data{ nullptr },
+		m_turning_sharpness{ 0.0f },
+		p_scheme{ nullptr },
+		m_time_to_change_scheme{ 0.0f }
 	{
 		m_data.setAI(this); //*) inicjacja wskaźnika - obiekt jest utworzony
 	}
@@ -33,7 +33,7 @@ namespace artificialintelligence
 	ActorAI::~ActorAI()
 	{
 		//~ActorController()
-		//m_data
+		m_data;
 		m_turning_sharpness = 0.0f;
 		p_scheme = nullptr;
 		m_time_to_change_scheme	= 0.0f;
@@ -41,7 +41,7 @@ namespace artificialintelligence
 	}
 
 	//Metoda ustawia wskaźnik na schemat AI
-	void ActorAI::setScheme(CAIScheme *scheme, float duration)
+	void ActorAI::setScheme(AIScheme *scheme, float duration)
 	{
 		//if (p_scheme)
 		//	p_scheme->UnregisterAI(this->GetSafePointer());
@@ -79,7 +79,7 @@ namespace artificialintelligence
 
 	float ActorAI::calculateSpeedModifier(float turning_sharpness)
 	{
-	    return 0.6f + 0.2f * (1.0f + cosf(turning_sharpness*3.14159265f/180.0f));
+	    return 0.6f + 0.2f * (1.0f + cosf(turning_sharpness * 3.14159265f/180.0f));
 	}
 
 	int ActorAI::chooseAbility()
