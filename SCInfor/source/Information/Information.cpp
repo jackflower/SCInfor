@@ -15,28 +15,28 @@ namespace information
 	//Chroniony konstruktor domyślny - używany wyłącznie przez InfoManager
 	Information::Information(const std::wstring & uniqueId)
 	:
-		BaseInformation			(uniqueId),//chroniony konstruktor klasy bazowej
-		p_digit_displayable		(nullptr),
-		p_mask_displayable		(nullptr),
-		m_texture_digit_name	(""),
-		m_texture_mask_name		(""),
-		p_template				(nullptr),
-		m_tranformable_digit	(),
-		m_tranformable_mask		()
+		BaseInformation{ uniqueId },//chroniony konstruktor klasy bazowej
+		p_digit_displayable{ nullptr },
+		p_mask_displayable{ nullptr },
+		m_texture_digit_name{ "" },
+		m_texture_mask_name{ "" },
+		p_template{ nullptr },
+		m_tranformable_digit{},
+		m_tranformable_mask{}
 	{
 	}
 
 	//Chroniony konstruktor kopiujący
 	Information::Information(const Information & InformationCopy)
 	:
-		BaseInformation			(InformationCopy),//chroniony konstruktor kopiujący klasy bazowej
-		p_digit_displayable		(InformationCopy.p_digit_displayable),
-		p_mask_displayable		(InformationCopy.p_mask_displayable),
-		m_texture_digit_name	(InformationCopy.m_texture_digit_name),
-		m_texture_mask_name		(InformationCopy.m_texture_mask_name),
-		p_template				(InformationCopy.p_template),
-		m_tranformable_digit	(InformationCopy.m_tranformable_digit),
-		m_tranformable_mask		(InformationCopy.m_tranformable_mask)
+		BaseInformation(InformationCopy),//chroniony konstruktor kopiujący klasy bazowej
+		p_digit_displayable{ InformationCopy.p_digit_displayable },
+		p_mask_displayable{ InformationCopy.p_mask_displayable },
+		m_texture_digit_name{ InformationCopy.m_texture_digit_name },
+		m_texture_mask_name{ InformationCopy.m_texture_mask_name },
+		p_template{ InformationCopy.p_template },
+		m_tranformable_digit{ InformationCopy.m_tranformable_digit },
+		m_tranformable_mask{ InformationCopy.m_tranformable_mask }
 	{
 	}
 
@@ -47,11 +47,11 @@ namespace information
 			gDrawableManager.destroyDrawable(p_digit_displayable);
 		if (p_mask_displayable != nullptr)
 			gDrawableManager.destroyDrawable(p_mask_displayable);
-		m_texture_digit_name	= "";
-		m_texture_mask_name		= "";
-		p_template				= nullptr;
-		//m_tranformable_digit	not edit
-		//m_tranformable_mask	not edit
+		m_texture_digit_name = "";
+		m_texture_mask_name = "";
+		p_template = nullptr;
+		m_tranformable_digit;
+		m_tranformable_mask;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -76,9 +76,9 @@ namespace information
 	//Metoda ustatawia teksturę - digit
 	void Information::setTextureDigit(const std::string& texture_digit)
 	{
-		m_texture_digit_name = texture_digit;	//ustawiam nazwę dla tekstury
-		checkDisplayable_digit();				//spradzam, czy obiekt renderowalny jest zainicjowany
-		if (p_digit_displayable)				//jeśli tak - ustawiam jego teksturę
+		m_texture_digit_name = texture_digit; //ustawiam nazwę dla tekstury
+		checkDisplayable_digit(); //spradzam, czy obiekt renderowalny jest zainicjowany
+		if (p_digit_displayable) //jeśli tak - ustawiam jego teksturę
 			p_digit_displayable->setTexture(texture_digit);
 	}
 
@@ -91,9 +91,9 @@ namespace information
 	//Metoda ustawia nazwę oraz inicjuje teskturą - mask
 	void Information::setTextureMask(const std::string& texture_mask)
 	{
-		m_texture_mask_name = texture_mask;		//ustawiam nazwę dla tekstury
-		checkDisplayable_mask();				//spradzam, czy obiekt renderowalny jest zainicjowany
-		if (p_mask_displayable)					//jeśli tak - ustawiam jego teksturę
+		m_texture_mask_name = texture_mask; //ustawiam nazwę dla tekstury
+		checkDisplayable_mask(); //spradzam, czy obiekt renderowalny jest zainicjowany
+		if (p_mask_displayable) //jeśli tak - ustawiam jego teksturę
 			p_mask_displayable->setTexture(texture_mask);
 	}
 

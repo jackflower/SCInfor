@@ -39,17 +39,17 @@ namespace game
 		///
 		///Konstruktor domyślny
 		///
-		Game(void);
+		Game();
 
 		///
 		///Destruktor
 		///
-		~Game(void);
+		~Game();
 
 		///
 		///Metoda zwraca wskaźnik na okno gry
 		///
-		sf::RenderWindow * getRenderWindow();
+		sf::RenderWindow *getRenderWindow();
 
 		///
 		///Metoda ustawia wskaźnik na okno gry
@@ -120,7 +120,7 @@ namespace game
 		std::set<listener::IFrameListener*>	m_frameListeners; //zbiór na wskaźniki obiektów aktualizowanych aktualizującymi logikę
 		std::set<listener::IKeyListener*>	m_keyListeners; //zbiór na wskaźniki obiektów aktualizowanych zdarzenia klawiatury
 		std::set<listener::IMouseListener*>	m_mouseListeners; //zbiór na wskaźniki obiektów aktualizowanych zdarzenia myszy
-		sf::RenderWindow* m_render_window; //wskaźnik na renderowany obszar okna
+		sf::RenderWindow *m_render_window; //wskaźnik na renderowany obszar okna
 		sf::Text m_fps_text; //obiekt do diagonostyki - wyświetlenie FPT...
 		sf::Event m_event; //zdarzenia
 		

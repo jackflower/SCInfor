@@ -17,18 +17,18 @@ namespace information
 		//Chroniony konstruktor domyślny - używany wyłącznie przez InfoManager
 		Presentation::Presentation(const std::wstring & uniqueId)
 		:
-			BaseInformation(uniqueId),//konstruktor klasy bazowej
-			p_hud_static_text_front(nullptr),
-			p_hud_static_text_back(nullptr),
-			m_tranformable(),
-			m_font_name(""),
-			m_color_front(),
-			m_color_back(),
-			m_font_size(1),
-			m_string(""),
-			m_use_under(true),
-			m_offset(0.0f, 0.0f),
-			p_template(nullptr)
+			BaseInformation{ uniqueId },//konstruktor klasy bazowej
+			p_hud_static_text_front{ nullptr },
+			p_hud_static_text_back{ nullptr },
+			m_tranformable{},
+			m_font_name{ "" },
+			m_color_front{},
+			m_color_back{},
+			m_font_size{ 1 },
+			m_string{ "" },
+			m_use_under{ true },
+			m_offset{ 0.0f, 0.0f },
+			p_template{ nullptr }
 		{
 		}
 
@@ -36,17 +36,17 @@ namespace information
 		Presentation::Presentation(const Presentation & PresentationCopy)
 		:
 			BaseInformation(PresentationCopy),//konstruktor kopiujący klasy bazowej
-			p_hud_static_text_front(PresentationCopy.p_hud_static_text_front),
-			p_hud_static_text_back(PresentationCopy.p_hud_static_text_back),
-			m_tranformable(PresentationCopy.m_tranformable),
-			m_font_name(PresentationCopy.m_font_name),
-			m_color_front(PresentationCopy.m_color_front),
-			m_color_back(PresentationCopy.m_color_back),
-			m_font_size(PresentationCopy.m_font_size),
-			m_string(PresentationCopy.m_string),
-			m_use_under(PresentationCopy.m_use_under),
-			m_offset(PresentationCopy.m_offset),
-			p_template(PresentationCopy.p_template)
+			p_hud_static_text_front{ PresentationCopy.p_hud_static_text_front },
+			p_hud_static_text_back{ PresentationCopy.p_hud_static_text_back },
+			m_tranformable{ PresentationCopy.m_tranformable },
+			m_font_name{ PresentationCopy.m_font_name },
+			m_color_front{ PresentationCopy.m_color_front },
+			m_color_back{ PresentationCopy.m_color_back },
+			m_font_size{ PresentationCopy.m_font_size },
+			m_string{ PresentationCopy.m_string },
+			m_use_under{ PresentationCopy.m_use_under },
+			m_offset{ PresentationCopy.m_offset },
+			p_template{ PresentationCopy.p_template }
 		{
 		}
 
@@ -60,11 +60,11 @@ namespace information
 			if (p_hud_static_text_back != nullptr)
 				gDrawableManager.destroyDrawable(p_hud_static_text_back);
 
-			//m_tranformable
+			m_tranformable;
 			m_font_name = "";
-			//m_color_front
-			//m_color_back
-			//m_font_size
+			m_color_front;
+			m_color_back;
+			m_font_size;
 			m_string = "";
 			m_use_under = false;
 			m_offset.x = 0.0f;
@@ -153,12 +153,6 @@ namespace information
 			}
 		}
 
-		//Metoda zwraca rozmiar czcionki graficznej tekstu
-		const unsigned Presentation::GetFontSize() const
-		{
-			return m_font_size;
-		}
-
 		//Metoda ustawia czcionkę graficzną tekstu dla obiektu klasy sf::String
 		void Presentation::setFont(const std::string & font, unsigned int size)
 		{
@@ -181,6 +175,12 @@ namespace information
 					p_hud_static_text_back->setFontSize(size);
 				}
 			}
+		}
+
+		//Metoda zwraca rozmiar czcionki graficznej tekstu
+		const unsigned Presentation::GetFontSize() const
+		{
+			return m_font_size;
 		}
 
 		//Metoda ustawia rozmiar czcionki graficznej tekstu

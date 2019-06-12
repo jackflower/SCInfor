@@ -13,18 +13,18 @@ namespace information
 	//Chroniony konstruktor domyślny
 	BaseInformation::BaseInformation(const std::wstring & uniqueId)
 	:
-		m_unique_id(uniqueId),
-		m_map_information_manager_index(-1),
-		m_ready_for_destruction(false)
+		m_unique_id{ uniqueId },
+		m_map_information_manager_index{ -1 },
+		m_ready_for_destruction{ false }
 	{
 	}
 
 	//Chroniony konstruktor kopiujący
 	BaseInformation::BaseInformation(const BaseInformation & InformationCopy)
 	:
-		m_unique_id(InformationCopy.m_unique_id),
-		m_map_information_manager_index(InformationCopy.m_map_information_manager_index),
-		m_ready_for_destruction(InformationCopy.m_ready_for_destruction)
+		m_unique_id{ InformationCopy.m_unique_id },
+		m_map_information_manager_index{ InformationCopy.m_map_information_manager_index },
+		m_ready_for_destruction{ InformationCopy.m_ready_for_destruction }
 	{
 	}
 

@@ -17,15 +17,15 @@ namespace game
 	//Konstruktor
 	GameProperties::GameProperties(void)
 	:
-		m_width(0),
-		m_height(0),
-		m_bits_per_pixel_depth(0),
-		m_fullscreen(false),
-		m_vsync(false),
-		m_sound_volume(0.0f),
-		m_music_volume(0.0f),
-		m_windows_name(),
-		m_time_step(0.0f)
+		m_width{ 0 },
+		m_height{ 0 },
+		m_bits_per_pixel_depth{ 0 },
+		m_fullscreen{ false },
+		m_vsync{ false },
+		m_sound_volume{ 0.0f },
+		m_music_volume{ 0.0f },
+		m_windows_name{},
+		m_time_step{ 0.0f }
 	{
 		std::cout << "CGameProperties::GameProperties()" << std::endl;
 	}
@@ -33,15 +33,15 @@ namespace game
 	//Konstruktor kopiujący
 	GameProperties::GameProperties(const GameProperties& GamePropertiesCopy)
 	:
-		m_width(GamePropertiesCopy.m_width),
-		m_height(GamePropertiesCopy.m_height),
-		m_bits_per_pixel_depth(GamePropertiesCopy.m_bits_per_pixel_depth),
-		m_fullscreen(GamePropertiesCopy.m_fullscreen),
-		m_vsync(GamePropertiesCopy.m_vsync),
-		m_sound_volume(GamePropertiesCopy.m_sound_volume),
-		m_music_volume(GamePropertiesCopy.m_music_volume),
-		m_windows_name(GamePropertiesCopy.m_windows_name),
-		m_time_step(GamePropertiesCopy.m_time_step)
+		m_width{ GamePropertiesCopy.m_width },
+		m_height{ GamePropertiesCopy.m_height },
+		m_bits_per_pixel_depth{ GamePropertiesCopy.m_bits_per_pixel_depth },
+		m_fullscreen{ GamePropertiesCopy.m_fullscreen },
+		m_vsync{ GamePropertiesCopy.m_vsync },
+		m_sound_volume{ GamePropertiesCopy.m_sound_volume },
+		m_music_volume{ GamePropertiesCopy.m_music_volume },
+		m_windows_name{ GamePropertiesCopy.m_windows_name },
+		m_time_step{ GamePropertiesCopy.m_time_step }
 	{
 	}
 

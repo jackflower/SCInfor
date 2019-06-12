@@ -49,7 +49,7 @@ namespace infologic
 	}
 
 	//Metoda tworzy obiekt klasy Presentation i zwraca wskaźnik na ten obiekt
-	Presentation* InfoManager::createPresentation(const std::wstring & unique_id)
+	Presentation *InfoManager::createPresentation(const std::wstring & unique_id)
 	{
 		fprintf(stderr, "Presentation created\n");
 		return create<Presentation>(unique_id);
@@ -70,7 +70,7 @@ namespace infologic
 	}
 	    
 	//Metoda usuwa obiekt klasy Information z kontenera
-	void InfoManager::destroyInformation(const std::wstring& id_mapinformation)
+	void InfoManager::destroyInformation(const std::wstring & id_mapinformation)
 	{
 		if (m_named_map_information.find(id_mapinformation) != m_named_map_information.end())
 		{
@@ -103,7 +103,7 @@ namespace infologic
 	}
 
 	//Metoda zwraca wskaźnik na obiekt klasy Information z kontenera na podstawie identyfikatora
-	BaseInformation* InfoManager::getMapInformationById(const std::wstring & information_id)
+	BaseInformation *InfoManager::getMapInformationById(const std::wstring & information_id)
 	{
 		if (m_named_map_information.find(information_id) != m_named_map_information.end())
 			return m_named_map_information[information_id];

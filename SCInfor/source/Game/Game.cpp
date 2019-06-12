@@ -91,13 +91,13 @@ namespace game
 	//Konstruktor domyślny
 	Game::Game(void)
 	:
-		m_render_window(0),
-		m_fps_text(),
-		m_seconds_passed(0.0f),
-		m_last_update_time(0.0f),
-		m_accumulator(0.0f),
-		m_time_step(0.025f),//gdyby nie udało się załadować tego z pliku konfiguracji
-		MAX_ACCUMULATED_TIME(1.f)
+		m_render_window{ 0 },
+		m_fps_text{},
+		m_seconds_passed{ 0.0f },
+		m_last_update_time{ 0.0f },
+		m_accumulator{ 0.0f },
+		m_time_step{ 0.025f },//gdyby nie udało się załadować tego z pliku konfiguracji
+		MAX_ACCUMULATED_TIME{ 1.f }
 	{
 		std::cout << "Game::Game()" << std::endl;
 		gGameProperties.load("../data/xml_data/gameconfiguration/game-config.xml");
@@ -108,12 +108,12 @@ namespace game
 	Game::~Game(void)
 	{
 		std::cout << "Game::~Game()" << std::endl;
-		//m_fps_text
+		m_fps_text;
 		m_seconds_passed = 0.0f;
 		m_last_update_time = 0.0f;
 		m_accumulator = 0.0f;
 		m_time_step = 0.0f;
-		//MAX_ACCUMULATED_TIME
+		MAX_ACCUMULATED_TIME;
 		cleanup();
 	}
 

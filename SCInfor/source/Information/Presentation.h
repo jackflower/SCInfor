@@ -306,17 +306,17 @@ namespace information
 
 		private:
 
-			HudStaticText*			p_hud_static_text_front;	//wskaźnik na obiekt klasy HudStaticText - front
-			HudStaticText*			p_hud_static_text_back;		//wskaźnik na obiekt klasy HudStaticText - back
-			sf::Transformable		m_tranformable;				//opakowanie danych do transformacji geometrycznej
-			std::string				m_font_name;				//nazwa czcionki
-			sf::Color				m_color_front;				//kolor front
-			sf::Color				m_color_back;				//kolor back
-			unsigned				m_font_size;				//rozmiar czcionki	(front and back)
-			sf::String				m_string;					//łańcych znaków	(front = back)
-			bool					m_use_under;				//flaga określa, czy obiekt posiada efekt 3D
-			sf::Vector2f			m_offset;					//wektor dla efektu 3D
-			PresentationTemplate*	p_template;				//wskaźnik na wzorzec
+			HudStaticText *p_hud_static_text_front;	//wskaźnik na obiekt klasy HudStaticText - front
+			HudStaticText *p_hud_static_text_back; //wskaźnik na obiekt klasy HudStaticText - back
+			sf::Transformable m_tranformable; //opakowanie danych do transformacji geometrycznej
+			std::string m_font_name; //nazwa czcionki
+			sf::Color m_color_front; //kolor front
+			sf::Color m_color_back; //kolor back
+			unsigned m_font_size; //rozmiar czcionki	(front and back)
+			sf::String m_string; //łańcych znaków (front = back)
+			bool m_use_under; //flaga określa, czy obiekt posiada efekt 3D
+			sf::Vector2f m_offset; //wektor dla efektu 3D
+			PresentationTemplate *p_template; //wskaźnik na wzorzec
 
 			//prywatna metoda sprawdza, czy trzeba utworzyć obiekt klasy HudStaticText
 			void checkHudStaticTextFront();

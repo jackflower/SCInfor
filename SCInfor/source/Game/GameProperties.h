@@ -173,9 +173,9 @@ namespace game
 		float m_music_volume; //głośność muzyki
 		std::string m_windows_name; //nazwa okna
 		float m_time_step; //wartość kroku czasowego
-		//time step:	1.f/60.f; //60 aktualizacji na sekundę (niektóre gotowe framework'i)
-		//time step:	1.f/40.f; //40 aktualizacji na sekundę (warto ją zastosować)
-		//time step:	1.f/30.f; //30 aktualizacji na sekundę (optymalna - stosowana)
+		//time step: 1.f/60.f; //60 aktualizacji na sekundę (niektóre gotowe framework'i)
+		//time step: 1.f/40.f; //40 aktualizacji na sekundę (warto ją zastosować)
+		//time step: 1.f/30.f; //30 aktualizacji na sekundę (optymalna - stosowana)
 	};
 }//namespace game
 #endif //H_GAME_PROPERTIES_JACK
