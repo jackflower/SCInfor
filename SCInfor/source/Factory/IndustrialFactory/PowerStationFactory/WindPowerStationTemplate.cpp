@@ -22,7 +22,7 @@ namespace factory
 		m_templ_portion_energy{ 0.0f },
 		m_templ_use_rotation_head{ false },
 		m_templ_speed_rotation_head{ 0.0f },
-		p_templ_windturbine{ NULL }
+		p_templ_windturbine{ nullptr }
 	{
 	}
 
@@ -35,7 +35,7 @@ namespace factory
 		m_templ_portion_energy = 0.0f;
 		m_templ_use_rotation_head = false;
 		m_templ_speed_rotation_head = 0.0f;
-		p_templ_windturbine = NULL;
+		p_templ_windturbine = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

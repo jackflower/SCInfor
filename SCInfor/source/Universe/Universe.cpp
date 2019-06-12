@@ -43,15 +43,15 @@ namespace universe
 	//Metoda na podstawie nazwy zwraca z kontenera wskaźnik na galaktykę
 	Galaxy *Universe::getGalaxy(const std::string & galaxy_name)
 	{
-		Galaxy *galaxyPtr = NULL;
+		Galaxy *galaxyPtr = nullptr;
 		if (m_galaxy.find(galaxy_name) != m_galaxy.end())
 			galaxyPtr = m_galaxy[galaxy_name];
 
-		if (galaxyPtr == NULL)
+		if (galaxyPtr == nullptr)
 		{
 			if (galaxy_name != "")
 				fprintf(stderr, "warning: Universe::getGalaxy - unable to find `%s' galaxy_name in m_galaxy map\n", galaxy_name.c_str());
-			return NULL;
+			return nullptr;
 		}
 		return galaxyPtr;
 	}

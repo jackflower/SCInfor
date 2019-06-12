@@ -12,7 +12,7 @@ using namespace memory;
 CRefPoolable::CRefPoolable()
 :
 	m_ref_count	(0),
-	p_pool		(NULL)
+	p_pool		(nullptr)
 {
 }
 
@@ -28,13 +28,13 @@ CRefPoolable::CRefPoolable(const CRefPoolable &other)
 CRefPoolable::~CRefPoolable()
 {
 	m_ref_count = 0;
-	p_pool		= NULL;
+	p_pool		= nullptr;
 }
 
 //Wirtualna metoda zwalnia zajmowan¹ pamiêæ
 void CRefPoolable::Release()
 {
-	if (p_pool != NULL)
+	if (p_pool != nullptr)
 		p_pool->DeallocMe(this);
 	else
 		delete this;

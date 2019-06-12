@@ -11,7 +11,7 @@
 RTTI::RTTI(const std::string & class_name)
 :
 	m_class_name{ class_name },
-	p_base_RTTI{ NULL }
+	p_base_RTTI{ nullptr }
 {
 }
 
@@ -28,7 +28,7 @@ bool RTTI::derivesFrom (const RTTI & rtti) const
 {
     const RTTI *pCompare = this;
 
-    while (pCompare != NULL)
+    while (pCompare != nullptr)
     {
         if (pCompare == &rtti)
             return true;

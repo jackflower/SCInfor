@@ -90,7 +90,7 @@ namespace memory
 		///
 		inline void Dealloc(T* obj)
 		{
-			assert(obj != NULL);
+			assert(obj != nullptr);
 			for (unsigned int i = 0; i < m_vector.size(); i++){
 				// arytmetyka wskaznikow
 				// nie dzielic przez sizeof

@@ -109,11 +109,11 @@ namespace factory
 				p_turbine->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getWindTurbineBodyDefaultAnim()!= NULL)
+				if (p_templ_animations->getWindTurbineBodyDefaultAnim()!= nullptr)
 					p_turbine->setAnimationBody(p_templ_animations->getWindTurbineBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getWindTurbineHeadDefaultAnim()!= NULL)
+				if (p_templ_animations->getWindTurbineHeadDefaultAnim()!= nullptr)
 					p_turbine->setAnimationHead(p_templ_animations->getWindTurbineHeadDefaultAnim());
 			}
 			//decorate

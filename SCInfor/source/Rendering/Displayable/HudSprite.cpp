@@ -29,7 +29,7 @@ namespace displayable
 	HudSprite::HudSprite()
 	:
 		Drawable(),//konstruktor klasy bazowej
-		m_sprite(NULL), 
+		m_sprite(nullptr), 
 		m_clip_rect_enabled(false)
 	{
 		memset(m_clip_rect, 0, 4*sizeof(int));
@@ -46,7 +46,7 @@ namespace displayable
 	sf::Sprite *HudSprite::getSprite() 
 	{ 
 		//return m_sprite; 
-		return NULL;//atrapa
+		return nullptr;//atrapa
 	} 
 
 	//Metoda zwraca wskaźnik na obiekt klasy ClippedSprite

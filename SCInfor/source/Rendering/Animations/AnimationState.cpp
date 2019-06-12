@@ -23,7 +23,7 @@ namespace rendering
 			m_anim_speed(1.0f),
 			m_is_looped(true),
 			m_is_paused(false),
-			p_animation(NULL),
+			p_animation(nullptr),
 			m_frame_number(0)
 		{
 		}
@@ -80,7 +80,7 @@ namespace rendering
 			m_anim_speed = 0.0f;
 			m_is_looped = true;
 			m_is_paused = false;
-			p_animation = NULL;
+			p_animation = nullptr;
 			m_frame_number = 0;
 		}
 

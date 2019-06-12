@@ -31,8 +31,8 @@ namespace factory
 		m_templ_size_fuel{ 0.0f, 0.0f },
 		m_templ_position_offset_energy{ 0.0f, 0.0f },
 		m_templ_position_offset_fuel{ 0.0f, 0.0f },
-		p_templ_status_bar_energy{ NULL },
-		p_templ_status_bar_fuel{ NULL },
+		p_templ_status_bar_energy{ nullptr },
+		p_templ_status_bar_fuel{ nullptr },
 		m_templ_use_animation{ false },
 		m_templ_use_texture{ false },
 		m_templ_animation_name{},
@@ -63,8 +63,8 @@ namespace factory
 		m_templ_position_offset_energy.y = 0.0f;
 		m_templ_position_offset_fuel.x = 0.0f;
 		m_templ_position_offset_fuel.y = 0.0f;
-		p_templ_status_bar_energy = NULL;
-		p_templ_status_bar_fuel = NULL;
+		p_templ_status_bar_energy = nullptr;
+		p_templ_status_bar_fuel = nullptr;
 		m_templ_use_animation = false;
 		m_templ_use_texture = false;
 		m_templ_animation_name = "";

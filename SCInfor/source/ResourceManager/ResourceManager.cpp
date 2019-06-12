@@ -302,7 +302,7 @@ namespace resource
 		ResourceHandle handle = stringutils::GetStringHash(name);	//zamieniamy nazwę zasobu na uchwyt
 		if(m_resources.count(handle) > 0)							//jeśli w kontenerze są obiekty
 		{
-			if(m_resources[handle] != NULL)							//jeśli pod wskazanym uchwytem są dane
+			if(m_resources[handle] != nullptr)							//jeśli pod wskazanym uchwytem są dane
 				m_resources[handle]->drop();						//niszczymy je (to co jest pod iteratorem)
 			m_resources.erase(handle);								//i usuwamy z kontenera ten wspis
 		}
@@ -338,7 +338,7 @@ namespace resource
 		else if(loadResource<T>(name))								//w przeciwnym wypadku próbujemy załadować zasób
 			return (T*)m_resources[handle];							//i po załadowaniu zwrócić
 		else														//w przeciwnym wypadku
-			return (T*)NULL;										//zwracamy wskaźnik na NULL
+			return (T*)nullptr;										//zwracamy wskaźnik na nullptr
 	}
 
 	//Szablon metody zwracającej zasób na podstawie uchwytu
@@ -347,7 +347,7 @@ namespace resource
 		if(m_resources.count(handle) > 0)
 			return (T*)m_resources[handle];
 		else
-			return (T*)NULL;
+			return (T*)nullptr;
 	}
 
 	//Szablon prywatnej metody ładującej zasób

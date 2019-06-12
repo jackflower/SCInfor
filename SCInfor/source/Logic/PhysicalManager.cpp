@@ -91,10 +91,10 @@ namespace logic
 			if (m_named_physicals.find(new_unique_id) != m_named_physicals.end())
 			{
 				fprintf(stderr, "PhysicalsManager::create<T> - %ls key already in m_named_physicals map", new_unique_id.c_str());
-				return NULL;
+				return nullptr;
 			}
 
-			m_named_physicals[new_unique_id] = NULL; // zarezerwowanie nazwy przed utworzeniem obiektu
+			m_named_physicals[new_unique_id] = nullptr; // zarezerwowanie nazwy przed utworzeniem obiektu
 		}
 
 		T* obj = new T(new_unique_id);
@@ -392,7 +392,7 @@ namespace logic
 		else
 		{
 			fprintf(stderr, "PhysicalsManager::GetPhysicalById - %ls key not found in m_named_physicals map", physical_id.c_str());
-			return NULL;
+			return nullptr;
 		}
 	}
 

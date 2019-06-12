@@ -99,7 +99,7 @@ namespace mapengine
 		///
 		///@param *region - stały wskaźnik na std::string - nazwa regionu
 		///
-		void scheduleSetMap(const std::string *p_map_file, bool load_complete_map, const std::string *region = NULL);
+		void scheduleSetMap(const std::string *p_map_file, bool load_complete_map, const std::string *region = nullptr);
 
 		///
 		///Metoda sprawdza i ustawiam mapę na odwiedzoną (gracz opuszcza mapę - następna)

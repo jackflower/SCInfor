@@ -70,7 +70,7 @@ public:
 	{
         assert(a = 13);
         assert(b = 15);
-        assert(c!=NULL);
+        assert(c!=nullptr);
         for (int i = 0; i < 15; i++)
             assert(c[i] == i);
     }
@@ -190,10 +190,10 @@ void RefTest2()
 
 void RefTest3()
 {
-    fprintf(stderr,"Memory::Tests: running RefCntPtr test 3 (pointers to NULL, 10x)...");
+    fprintf(stderr,"Memory::Tests: running RefCntPtr test 3 (pointers to nullptr, 10x)...");
     for (int i = 0; i < 10; i++)
 	{
-        testptr_t t(NULL);
+        testptr_t t(nullptr);
     }
     assert(PoolTest::cAllocs == 0);
     fprintf(stderr,"passed!\n");
@@ -253,12 +253,12 @@ void SafePtrTest1()
 	test = foo->GetSafePointer();
 	assert(test == foo);
 	test.DeleteObject();
-	assert(test == NULL);
+	assert(test == nullptr);
 	
 	foo = new SPFoo();
 	test = foo->GetSafePointer();
 	delete foo;
-	assert(test == NULL);
+	assert(test == nullptr);
     fprintf(stderr,"passed!\n");
 }
 
@@ -270,25 +270,25 @@ void SafePtrTest2()
 	tests.push_back(foo->GetSafePointer());
 	delete foo;
 	for (unsigned int i = 0; i < tests.size(); i++)
-		assert(tests[i] == NULL);
+		assert(tests[i] == nullptr);
 	
 	fprintf(stderr,"passed!\n");
 }
 
 void SafePtrTestFunc(CSafePtr<SPFoo> foo)
 {
-	assert(foo != NULL);
+	assert(foo != nullptr);
 	foo.DeleteObject();
-	assert(foo == NULL);
+	assert(foo == nullptr);
 }
 
 void SafePtrTest3()
 {
     fprintf(stderr,"Memory::Tests: running SafePtr test 3 (passing to function)...");
 	CSafePtr<SPFoo> foo = (new SPFoo())->GetSafePointer();
-	assert(foo != NULL);
+	assert(foo != nullptr);
 	SafePtrTestFunc(foo);
-	assert(foo == NULL);
+	assert(foo == nullptr);
 	fprintf(stderr,"passed!\n");
 }
 

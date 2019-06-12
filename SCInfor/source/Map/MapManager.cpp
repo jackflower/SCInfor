@@ -35,7 +35,7 @@ namespace mapengine
 	//Konstruktor
 	MapManager::MapManager()
 	:
-		p_map(NULL)//,
+		p_map(nullptr)//,
 	//	p_scene_manager				(new CQuadTreeSceneManager()),
 	//	p_collision_map				(new CollisionMap()),
     //  m_current_map_time_elapsed	(0.0f),
@@ -83,9 +83,9 @@ namespace mapengine
 	{
 		//blokuję (luty 2015)
 		/*
-		if (p_map != NULL)
+		if (p_map != nullptr)
 		{
-			//gEditor.SetSelectedToErase( NULL );
+			//gEditor.SetSelectedToErase( nullptr );
 			p_scene_manager->ClearScene();
 
 			for (unsigned i = 0; i < m_visited_maps.size(); i++)
@@ -95,10 +95,10 @@ namespace mapengine
 			}
 			sf::FloatRect zero(0.0f,0.0f,0.0f,0.0f);
 			p_map->CullVisibility(zero);//zerujemy widoczność kafli znajdujących się w obszarze kamery
-			p_map = NULL;
+			p_map = nullptr;
 		}
 		*/
-		p_map = NULL;
+		p_map = nullptr;
 	}
 
 	//Metoda ładuje i/lub udostepnia mapę z zasobów. Automatycznie czyście scenę
@@ -110,7 +110,7 @@ namespace mapengine
         //timer.Reset();
 
 		//#ifndef __NONAME___
-		//		if ( p_map != NULL && p_map->GetFilename() == mapFile ){
+		//		if ( p_map != nullptr && p_map->GetFilename() == mapFile ){
 		//			if ( region != "" )
 		//			{
 		//              gPlayerManager.MovePlayersToRegion(region);
@@ -216,7 +216,7 @@ namespace mapengine
 	//Metoda zapisuje mapę
     bool MapManager::saveMap(const std::string & map_file)
 	{
-        if (p_map == NULL)
+        if (p_map == nullptr)
             return false;
         else
            return p_map->save(map_file);

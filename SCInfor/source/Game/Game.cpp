@@ -121,7 +121,7 @@ namespace game
 	void Game::cleanup()
 	{
 		std::cout << "Game::cleanup()" << std::endl;
-		m_render_window = NULL;
+		m_render_window = nullptr;
 		std::cout << "Game::cleanup() done..." << std::endl;
 	}
 

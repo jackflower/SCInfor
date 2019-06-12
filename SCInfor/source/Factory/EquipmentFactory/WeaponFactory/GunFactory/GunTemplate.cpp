@@ -23,7 +23,7 @@ namespace factory
 	:
 		ActorTemplate{},//konstruktor klasy bazowej
 		m_templ_ammo_data{},
-		p_templ_ammo{ NULL },
+		p_templ_ammo{ nullptr },
 		m_templ_time_ammo_load_delay{ 0.0f },
 		m_templ_time_shot{ 0.0f },
 		m_templ_range_shot{ 0.0f },
@@ -42,7 +42,7 @@ namespace factory
 	{
 		//~ActorTemplate()
 		m_templ_ammo_data;
-		p_templ_ammo = NULL;
+		p_templ_ammo = nullptr;
 		m_templ_time_ammo_load_delay = 0.0f;
 		m_templ_time_shot = 0.0f;
 		m_templ_range_shot = 0.0f;
@@ -152,11 +152,11 @@ namespace factory
 				p_gun->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getGunBodyDefaultAnim() != NULL)
+				if (p_templ_animations->getGunBodyDefaultAnim() != nullptr)
 					p_gun->setAnimationBody(p_templ_animations->getGunBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getGunHeadDefaultAnim() != NULL)
+				if (p_templ_animations->getGunHeadDefaultAnim() != nullptr)
 					p_gun->setAnimationHead(p_templ_animations->getGunHeadDefaultAnim());
 			}
 

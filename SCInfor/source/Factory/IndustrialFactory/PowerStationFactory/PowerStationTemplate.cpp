@@ -22,7 +22,7 @@ namespace factory
 		m_templ_power_station_name{},
 		m_templ_energy_capacitor{ 0.0f },
 		m_templ_amount_power_modules{ 0 },
-		p_templ_communication{ NULL }
+		p_templ_communication{ nullptr }
 	{
 	}
 
@@ -34,7 +34,7 @@ namespace factory
 		m_templ_energy_capacitor = 0.0f;
 		m_templ_amount_power_modules = 0;
 		mm_templ_communication_data;
-		p_templ_communication = NULL;
+		p_templ_communication = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -111,11 +111,11 @@ namespace factory
 				p_power_station->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getWindPowerStationBodyDefaultAnim() != NULL)
+				if (p_templ_animations->getWindPowerStationBodyDefaultAnim() != nullptr)
 					p_power_station->setAnimationBody(p_templ_animations->getWindPowerStationBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getWindPowerStationHeadDefaultAnim() != NULL)
+				if (p_templ_animations->getWindPowerStationHeadDefaultAnim() != nullptr)
 					p_power_station->setAnimationHead(p_templ_animations->getWindPowerStationHeadDefaultAnim());
 			}
 

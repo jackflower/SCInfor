@@ -97,11 +97,11 @@ namespace factory
 				p_energytank->setAnimSet(p_templ_animations);  
 				
 				//body
-				if (p_templ_animations->getEnergyTankBodyDefaultAnim()!= NULL)
+				if (p_templ_animations->getEnergyTankBodyDefaultAnim()!= nullptr)
 					p_energytank->setAnimationBody(p_templ_animations->getEnergyTankBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getEnergyTankHeadDefaultAnim()!= NULL)
+				if (p_templ_animations->getEnergyTankHeadDefaultAnim()!= nullptr)
 					p_energytank->setAnimationHead(p_templ_animations->getEnergyTankHeadDefaultAnim());
 			}
 

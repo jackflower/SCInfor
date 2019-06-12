@@ -16,7 +16,7 @@ namespace equipmentpowerstationdata
 	WindTurbineData::WindTurbineData()
 	:
 		EquipmentData{},//konstruktor klasy bazowej
-		p_turbine{ NULL }
+		p_turbine{ nullptr }
 	{
 	}
 
@@ -34,7 +34,7 @@ namespace equipmentpowerstationdata
 		//~EquipmentData()
 		if (p_turbine)
 			gPhysicalManager.destroyPhysical(p_turbine);
-		p_turbine = NULL;
+		p_turbine = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

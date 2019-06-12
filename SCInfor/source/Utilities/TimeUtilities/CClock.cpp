@@ -77,10 +77,10 @@ clock_t CClock::GetClock()
 const std::string CClock::GenerateTimestamp() 
 {
 	static char buff[15] = { 0 };	//tablica char - bufor przechowuj¹cy czas systemowy
-									//yyyymmddHHMMSS + NULL == 15
+									//yyyymmddHHMMSS + nullptr == 15
 	static struct tm * timeinfo;	//wskaŸnik na strukturê przechowuj¹c¹ czas systemowy
 
-	time_t t = time (NULL);			//czas systemowy
+	time_t t = time (nullptr);			//czas systemowy
 	timeinfo = localtime(&t);		//uzupe³niamy strukturê czasu systemowego
 
 	//castujemy czas na string

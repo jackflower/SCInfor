@@ -294,6 +294,6 @@ namespace mapengine
 			if ((*it)->getRegionID() == regionId)
 		        return *it;
 		}
-		return NULL;
+		return nullptr;
 	}
 }//namespace mapengine

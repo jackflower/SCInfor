@@ -23,16 +23,16 @@ namespace mapengine
 	:
 		m_unique_id(uniqueId),
 		m_code(),
-		p_displayable(NULL),
+		p_displayable(nullptr),
 		m_map_physical_position(0.0f, 0.0f),
 		m_scale(0.0f, 0.0f),
 		m_origin(0.0f, 0.0f),
 		m_rotation(0.0f),
 		m_size(0.0f, 0.0f),
 		m_displayable_type(),
-		p_template(NULL),
-		p_synthetic_texture(NULL),
-		p_synthetic_image(NULL),
+		p_template(nullptr),
+		p_synthetic_texture(nullptr),
+		p_synthetic_image(nullptr),
 		m_smooth(false),
 		m_mapphysical_manager_index(-1),
 		m_ready_for_destruction(false)
@@ -68,10 +68,10 @@ namespace mapengine
 		m_unique_id = L"";
 		m_code = "";
 		
-		if (p_displayable != NULL)
+		if (p_displayable != nullptr)
 			gDrawableManager.destroyDrawable(p_displayable);
 		
-		p_displayable = NULL;
+		p_displayable = nullptr;
 		m_map_physical_position.x = 0.0f;
 		m_map_physical_position.y = 0.0f;
 		m_scale.x = 0.0f;
@@ -82,15 +82,15 @@ namespace mapengine
 		m_size.x = 0.0f;
 		m_size.y = 0.0f;
 		m_displayable_type = "";
-		p_template = NULL;
+		p_template = nullptr;
 		
 		if(p_synthetic_texture)
 			delete p_synthetic_texture;
-		p_synthetic_texture = NULL;
+		p_synthetic_texture = nullptr;
 		
 		if(p_synthetic_image)
 			delete p_synthetic_image;
-		p_synthetic_image = NULL;
+		p_synthetic_image = nullptr;
 
 		m_smooth = false;
 		m_mapphysical_manager_index = 0;
@@ -138,7 +138,7 @@ namespace mapengine
 	{
 		m_map_physical_position.x = x;
 		m_map_physical_position.y = y;
-		if (p_displayable != NULL)
+		if (p_displayable != nullptr)
 			p_displayable->setPosition(x, y);
 	}
 
@@ -146,7 +146,7 @@ namespace mapengine
 	void MapPhysical::setPosition(const sf::Vector2f & map_physical_position)
 	{
 		m_map_physical_position = map_physical_position;
-		if (p_displayable != NULL)
+		if (p_displayable != nullptr)
 			p_displayable->setPosition(map_physical_position);
 	}
 
@@ -273,7 +273,7 @@ namespace mapengine
 	//Metoda ustawia widoczność podłoża na mapie
 	void MapPhysical::setVisible(bool visible)
 	{
-		if (p_displayable != NULL)
+		if (p_displayable != nullptr)
 			p_displayable->setVisible(visible);
 	}
 

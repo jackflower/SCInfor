@@ -25,7 +25,7 @@ namespace logic
 			m_relay_station_name(),
 			m_unit_controller(true),//urządzenie włączone
 			m_use_communication(false),
-			p_communication(NULL)
+			p_communication(nullptr)
 		{
 		}
 

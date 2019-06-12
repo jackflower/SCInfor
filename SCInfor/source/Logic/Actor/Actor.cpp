@@ -32,7 +32,7 @@ namespace logic
 	Actor::Actor(const std::wstring & uniqueId)
 	:
 		Physical{ uniqueId }, //konstruktor klasy bazowej
-		p_anim_set{ NULL },
+		p_anim_set{ nullptr },
 		m_technical_data{},
 		m_engine_data{},
 		m_energy_data{},
@@ -40,7 +40,7 @@ namespace logic
 		m_ventilator_data{},
 		m_gun_data{},
 		m_state_data{},
-		p_actor_controller{ NULL }
+		p_actor_controller{ nullptr }
 	{
 	}
 
@@ -64,7 +64,7 @@ namespace logic
 	Actor::~Actor()
 	{
 		//~Physical()
-		p_anim_set = NULL;
+		p_anim_set = nullptr;
 		m_technical_data;
 		m_engine_data;
 		m_energy_data;
@@ -72,7 +72,7 @@ namespace logic
 		m_ventilator_data;
 		m_gun_data;
 		m_state_data;
-		p_actor_controller= NULL;
+		p_actor_controller= nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -566,7 +566,7 @@ namespace logic
 			//jeśli indeks jest większy od zera oraz indeks jest mniejszy od rozmiaru kontenera
 			//z zestawem (nie można przekroczyć rozmiaru nowego kontenera)
 			//i w nowym zestawie (parametr), pod tym indeksem jest animacja
-			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].getAnimation() != NULL))
+			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].getAnimation() != nullptr))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
 				float currTime = getDisplayableBody()->getAnimationState()->getCurrentTime();
@@ -612,7 +612,7 @@ namespace logic
 			//jeśli indeks jest większy od zera oraz indeks jest mniejszy od rozmiaru kontenera
 			//z zestawem (nie można przekroczyć rozmiaru nowego kontenera)
 			//i w nowym zestawie (parametr), pod tym indeksem jest animacja
-			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].getAnimation() != NULL))
+			if ((index >= 0) && (index < new_anims.size()) && (new_anims[index].getAnimation() != nullptr))
 			{
 				//zapamiętuję czas trwania bieżącej animacji
 				float currTime = getDisplayableHead()->getAnimationState()->getCurrentTime();

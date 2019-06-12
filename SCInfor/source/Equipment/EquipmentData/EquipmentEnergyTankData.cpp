@@ -16,7 +16,7 @@ namespace equipmentdata
 	EquipmentEnergyTankData::EquipmentEnergyTankData()
 	:
 		EquipmentData{},//konstruktor klasy bazowej
-		p_energytank{ NULL }
+		p_energytank{ nullptr }
 	{
 	}
 
@@ -34,7 +34,7 @@ namespace equipmentdata
 		//~EquipmentData()
 		if (p_energytank)
 			gPhysicalManager.destroyPhysical(p_energytank);
-		p_energytank = NULL;
+		p_energytank = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

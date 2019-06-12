@@ -68,13 +68,13 @@ namespace mapengine
 	Map::~Map(void)
 	{
 		m_map_filename = "";
-		m_map_header = NULL;
+		m_map_header = nullptr;
 		m_size.x = 0;
 		m_size.y = 0;
 		//m_view_rectangle
 		//p_map_physical_types
 		//p_map_physical_descriptors
-		p_fields = NULL;
+		p_fields = nullptr;
 		//m_map_tile_types
 		//m_map_object_types
 		//m_map_object_descriptors
@@ -100,7 +100,7 @@ namespace mapengine
 		for(size_t i = 0; i < tileCount; i++)
 		{
 			delete (*p_fields)[i];
-			(*p_fields)[i]=NULL;
+			(*p_fields)[i]=nullptr;
 		}
 		
 		p_fields->clear();
@@ -479,7 +479,7 @@ namespace mapengine
 			//param - zupełnie mi obcy obszar wiedzy...
 			//z czym to jeść...?
 
-            //if (m_map_object_descriptors[i]->param != NULL)
+            //if (m_map_object_descriptors[i]->param != nullptr)
 			//{
             //    out << ">\n";
 			//if (m_map_object_descriptors[i]->GetTemplate())

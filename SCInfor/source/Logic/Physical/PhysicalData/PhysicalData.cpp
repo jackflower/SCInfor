@@ -28,10 +28,10 @@ namespace physicaldata
 		m_use_shadow_body(false),
 		m_use_displayable_head(false),
 		m_use_shadow_head(false),
-		p_displayable_body(NULL),
-		p_displayable_body_shadow(NULL),
-		p_displayable_head(NULL),
-		p_displayable_head_shadow(NULL),
+		p_displayable_body(nullptr),
+		p_displayable_body_shadow(nullptr),
+		p_displayable_head(nullptr),
+		p_displayable_head_shadow(nullptr),
 		m_color_body(sf::Color()),
 		m_color_head(sf::Color()),
 		m_color_stored_body(sf::Color()),
@@ -39,8 +39,8 @@ namespace physicaldata
 		m_color_shadow(),
 		m_shadow_offset_body(0.0f, 0.0f),
 		m_shadow_offset_head(0.0f, 0.0f),
-		p_animation_body(NULL),
-		p_animation_head(NULL),
+		p_animation_body(nullptr),
+		p_animation_head(nullptr),
 		m_anim_speed_body(1.0f),
 		m_anim_speed_head(1.0f),
 		m_stored_anim_speed_body(1.0f),
@@ -49,8 +49,8 @@ namespace physicaldata
 		m_z_index_shadow_body(Z_PHYSICAL_SHADOWS_BODY),
 		m_z_index_head(Z_PHYSICAL_HEAD),
 		m_z_index_shadow_head(Z_PHYSICAL_SHADOWS_HEAD),
-		p_synthetic_texture(NULL),
-		p_synthetic_image(NULL),
+		p_synthetic_texture(nullptr),
+		p_synthetic_image(nullptr),
 		m_texture_body(),
 		m_texture_head()
 	{
@@ -87,8 +87,8 @@ namespace physicaldata
 		m_z_index_shadow_body(PhysicalDataCopy.m_z_index_shadow_body),
 		m_z_index_head(PhysicalDataCopy.m_z_index_head),
 		m_z_index_shadow_head(PhysicalDataCopy.m_z_index_shadow_head),
-		p_synthetic_texture(NULL),
-		p_synthetic_image(NULL),
+		p_synthetic_texture(nullptr),
+		p_synthetic_image(nullptr),
 		m_texture_body(PhysicalDataCopy.m_texture_body),
 		m_texture_head(PhysicalDataCopy.m_texture_head)
 	{
@@ -117,10 +117,10 @@ namespace physicaldata
 		if (p_displayable_head_shadow)
 			gDrawableManager.destroyDrawable(p_displayable_head_shadow);
 
-		p_displayable_body = NULL;
-		p_displayable_body_shadow= NULL;
-		p_displayable_head = NULL;
-		p_displayable_head_shadow = NULL;
+		p_displayable_body = nullptr;
+		p_displayable_body_shadow= nullptr;
+		p_displayable_head = nullptr;
+		p_displayable_head_shadow = nullptr;
 		//m_color_body
 		//m_color_head
 		//m_color_stored_body
@@ -130,8 +130,8 @@ namespace physicaldata
 		m_shadow_offset_body.y = 0.0f;
 		m_shadow_offset_head.x = 0.0f;
 		m_shadow_offset_head.y = 0.0f;
-		p_animation_body = NULL;
-		p_animation_head = NULL;
+		p_animation_body = nullptr;
+		p_animation_head = nullptr;
 		m_anim_speed_body = 0.0f;
 		m_anim_speed_head = 0.0f;
 		m_stored_anim_speed_body = 0.0f;
@@ -143,11 +143,11 @@ namespace physicaldata
 
 		if (p_synthetic_texture)
 			delete p_synthetic_texture;
-		p_synthetic_texture = NULL;
+		p_synthetic_texture = nullptr;
 
 		if (p_synthetic_image)
 			delete p_synthetic_image;
-		p_synthetic_image = NULL;
+		p_synthetic_image = nullptr;
 
 		m_texture_body = "";
 		m_texture_head = "";
@@ -609,7 +609,7 @@ namespace physicaldata
 		//indeks warstwy, zmieniamy na inny niż w tej klasie (default jest to Z_PHYSICAL_BODY)
 		//co może (powinno) być zaimplementowane w klasach pochodnych
 		//oraz gdy wskaźnik jest zainicjowany
-		if ((m_z_index_body != layer_index) && (p_displayable_body != NULL))
+		if ((m_z_index_body != layer_index) && (p_displayable_body != nullptr))
 			gDrawableManager.registerDrawable(p_displayable_body, layer_index);
 		
 		//przekazanie
@@ -632,7 +632,7 @@ namespace physicaldata
 		//indeks warstwy, zmieniamy na inny niż w tej klasie (default jest to Z_PHYSICAL_SHADOWS_BODY)
 		//co może (powinno) być zaimplementowane w klasach pochodnych
 		//oraz gdy wskaźnik jest zainicjowany
-		if ((m_z_index_shadow_body != layer_index) && (p_displayable_body_shadow != NULL))
+		if ((m_z_index_shadow_body != layer_index) && (p_displayable_body_shadow != nullptr))
 			gDrawableManager.registerDrawable(p_displayable_body_shadow, layer_index);
 		
 		//przekazanie
@@ -655,7 +655,7 @@ namespace physicaldata
 		//indeks warstwy, zmieniamy na inny niż w tej klasie (default jest to Z_PHYSICAL_HEAD)
 		//co może (powinno) być zaimplementowane w klasach pochodnych
 		//oraz gdy wskaźnik jest zainicjowany
-		if ((m_z_index_head != layer_index) && (p_displayable_head != NULL))
+		if ((m_z_index_head != layer_index) && (p_displayable_head != nullptr))
 			gDrawableManager.registerDrawable(p_displayable_head, layer_index);
 
 		//przekazanie
@@ -678,7 +678,7 @@ namespace physicaldata
 		//indeks warstwy, zmieniamy na inny niż w tej klasie (default jest to Z_PHYSICAL_SHADOWS_HEAD)
 		//co może (powinno) być zaimplementowane w klasach pochodnych
 		//oraz gdy wskaźnik jest zainicjowany
-		if ((m_z_index_shadow_head != layer_index) && (p_displayable_head_shadow != NULL))
+		if ((m_z_index_shadow_head != layer_index) && (p_displayable_head_shadow != nullptr))
 			gDrawableManager.registerDrawable(p_displayable_head_shadow, layer_index);
 
 		//przekazanie

@@ -97,11 +97,11 @@ namespace factory
 				p_communication->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getCommunicationBodyDefaultAnim() != NULL)
+				if (p_templ_animations->getCommunicationBodyDefaultAnim() != nullptr)
 					p_communication->setAnimationBody(p_templ_animations->getCommunicationBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getCommunicationHeadDefaultAnim() != NULL)
+				if (p_templ_animations->getCommunicationHeadDefaultAnim() != nullptr)
 					p_communication->setAnimationHead(p_templ_animations->getCommunicationHeadDefaultAnim());
 			}
 

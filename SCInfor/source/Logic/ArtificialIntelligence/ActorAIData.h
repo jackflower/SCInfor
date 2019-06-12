@@ -81,7 +81,7 @@ namespace artificialintelligence
 		//{
 		//	if (mMovementScheme != s){
 		//		SetState(esNormal);
-		//		if (p_AI != NULL){
+		//		if (p_AI != nullptr){
 		//			MoveTo(GetActor()->GetPosition(),GetActor()->GetCircleRadius());
 		//		} else {
 		//			MoveTo(GetPosition());

@@ -387,7 +387,7 @@ namespace rendering
 		//Metoda ustawia animację
 		void AnimSet::setAnimation(int anim_handle, Animation *p_anim)
 		{
-			if ((anim_handle < 0) || (p_anim == NULL)) return;
+			if ((anim_handle < 0) || (p_anim == nullptr)) return;
 			if ((unsigned int)anim_handle >= m_anims.size()) m_anims.resize(anim_handle + 1);
 			m_anims[anim_handle] = NameAnimPairTranslator(p_anim->getAnimationName());
 			m_anims[anim_handle].setAnimation(p_anim);
@@ -405,16 +405,16 @@ namespace rendering
 		std::string *AnimSet::getAnimName(int anim_handle)
 		{
 			if ((anim_handle < 0) || ((unsigned int) anim_handle >= m_anims.size()))
-				return NULL;
+				return nullptr;
 			return &m_anims[anim_handle].getAnimationName();
 		}
 
 		//Metoda zwraca wskaźnik na animację na podstawie parametru - uchwytu
 		Animation *AnimSet::getAnim(int anim_handle)
 		{
-			//nieprawidłowy uchwyt zwraca NULL
+			//nieprawidłowy uchwyt zwraca nullptr
 			if ((anim_handle < 0) || ((unsigned int) anim_handle >= m_anims.size()))
-				return NULL;
+				return nullptr;
 			//jeśli animacja pod indeksem (uchwyt-parametr) nie jest gotowa (wgrana)
 			if (!m_anims[anim_handle].getReady())
 			{

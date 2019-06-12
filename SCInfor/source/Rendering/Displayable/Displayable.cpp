@@ -23,11 +23,11 @@ namespace rendering
 		:
 			Drawable(),//konstruktor klasy bazowej
 			m_sprite(),
-			m_animation_state(NULL),
+			m_animation_state(nullptr),
 			m_animation_name(""),
 			m_smooth(false),
-			p_synthetic_texture(NULL),
-			p_synthetic_image(NULL)
+			p_synthetic_texture(nullptr),
+			p_synthetic_image(nullptr)
 		{
 			m_sprite = new Sprite();
 			p_synthetic_texture = new sf::Texture;
@@ -51,19 +51,19 @@ namespace rendering
 		Displayable::~Displayable() 
 		{
 			delete m_sprite;//usuwamy obiekt (mamy pewność, że istnieje, bo konstruktor go stworzył)
-			m_sprite = NULL;
+			m_sprite = nullptr;
 
 			if(m_animation_state)
 				gAnimationManager.destroyAnimationState(m_animation_state);
 			
-			m_animation_state = NULL;
+			m_animation_state = nullptr;
 			m_animation_name = "";
 			m_smooth = false;
 
 			delete p_synthetic_texture;
-			p_synthetic_texture	= NULL;
+			p_synthetic_texture	= nullptr;
 			delete p_synthetic_image;
-			p_synthetic_image = NULL;
+			p_synthetic_image = nullptr;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/
@@ -230,7 +230,7 @@ namespace rendering
 			if (!p_texture)
 			{
 				fprintf(stderr, "warning: Displayable::setTexture: unable to obtain image `%s'\n", texture_name.c_str());
-				setTexture(NULL);
+				setTexture(nullptr);
 				return;
 			}
 			setTexture(p_texture, m_smooth);
@@ -242,10 +242,10 @@ namespace rendering
 			if (m_animation_state)					//jeśli wskaźnik na AnimationState jest zainicjowany
 			{
 				gAnimationManager.destroyAnimationState(m_animation_state);//usuwamy animację
-				m_animation_state = NULL;			//ustawiamy wskaźnik na NULL
+				m_animation_state = nullptr;			//ustawiamy wskaźnik na nullptr
 			}
 
-			if (p_texture != NULL)					//jeśli mamy wskaźnik poprawnie wskazujący na teksturę
+			if (p_texture != nullptr)					//jeśli mamy wskaźnik poprawnie wskazujący na teksturę
 			{
 				p_texture->setSmooth(m_smooth);
 				m_sprite->setTexture(*p_texture);	//ustawiamy teskturę
@@ -260,7 +260,7 @@ namespace rendering
 			if (m_animation_state)					//jeśli wskaźnik na AnimationState jest zainicjowany
 			{
 				gAnimationManager.destroyAnimationState(m_animation_state);//usuwamy animację
-				m_animation_state = NULL;			//ustawiamy wskaźnik na NULL
+				m_animation_state = nullptr;			//ustawiamy wskaźnik na nullptr
 			}
 
 			p_synthetic_texture->create(width, height);
@@ -275,7 +275,7 @@ namespace rendering
 			if (m_animation_state)					//jeśli wskaźnik na AnimationState jest zainicjowany
 			{
 				gAnimationManager.destroyAnimationState(m_animation_state);//usuwamy animację
-				m_animation_state = NULL;			//ustawiamy wskaźnik na NULL
+				m_animation_state = nullptr;			//ustawiamy wskaźnik na nullptr
 			}
 			
 			p_synthetic_texture->create(width, height);
@@ -311,12 +311,12 @@ namespace rendering
 		void Displayable::setAnimation(Animation *p_animation)
 		{
 			//warunki, gdy zamiana animacji się nie powiedzie:
-			//jeśli wskaźnik jest NULL - return
+			//jeśli wskaźnik jest nullptr - return
 			//jeśli wskaźnik jest zainicjowany, a próbujemy go zainicjować takim samym wskaźnikiem - return
 
-			if (p_animation == NULL)
+			if (p_animation == nullptr)
 				return;
-			if ((m_animation_state != NULL) && (m_animation_state->getAnimation() == p_animation))
+			if ((m_animation_state != nullptr) && (m_animation_state->getAnimation() == p_animation))
 				return;
 
 			m_animation_name = p_animation->getAnimationName();

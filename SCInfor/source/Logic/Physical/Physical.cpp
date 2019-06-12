@@ -36,7 +36,7 @@ namespace logic
 		m_rect_size{ 1.0f, 1.0f },
 		m_rect_size_body{ 1.0f, 1.0f },
 		m_rect_size_head{ 1.0f, 1.0f },
-		p_template{ NULL },
+		p_template{ nullptr },
 		m_ready_for_destruction{ false },
 		m_part_collision_data{},
 		m_new_anim_speed{ 1.0f }
@@ -84,7 +84,7 @@ namespace logic
 		m_rect_size_body.y = 0.0f;
 		m_rect_size_head.x = 0.0f;
 		m_rect_size_head.y = 0.0f;
-		p_template = NULL;
+		p_template = nullptr;
 		m_ready_for_destruction = false;
 		//m_part_collision_data
 		m_new_anim_speed = 0.0f;

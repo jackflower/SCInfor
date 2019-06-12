@@ -29,7 +29,7 @@ namespace factory
 		m_templ_energy_consumption{ 0.0f },
 		m_templ_fuel_consumption{ 0.0f },
 		m_templ_thermalinsulation_data{},
-		p_templ_thermal_insulation{ NULL }
+		p_templ_thermal_insulation{ nullptr }
 	{
 	}
 
@@ -46,7 +46,7 @@ namespace factory
 		m_templ_energy_consumption = 0.0f;
 		m_templ_fuel_consumption = 0.0f;
 		m_templ_thermalinsulation_data;
-		p_templ_thermal_insulation = NULL;
+		p_templ_thermal_insulation = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -128,11 +128,11 @@ namespace factory
 				p_airconditioning->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getAirconditioningBodyDefaultAnim() != NULL)
+				if (p_templ_animations->getAirconditioningBodyDefaultAnim() != nullptr)
 					p_airconditioning->setAnimationBody(p_templ_animations->getAirconditioningBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getAirconditioningHeadDefaultAnim() != NULL)
+				if (p_templ_animations->getAirconditioningHeadDefaultAnim() != nullptr)
 					p_airconditioning->setAnimationHead(p_templ_animations->getAirconditioningHeadDefaultAnim());
 			}
 

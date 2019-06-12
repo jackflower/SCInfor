@@ -18,8 +18,8 @@ namespace information
 		Presentation::Presentation(const std::wstring & uniqueId)
 		:
 			BaseInformation(uniqueId),//konstruktor klasy bazowej
-			p_hud_static_text_front(NULL),
-			p_hud_static_text_back(NULL),
+			p_hud_static_text_front(nullptr),
+			p_hud_static_text_back(nullptr),
 			m_tranformable(),
 			m_font_name(""),
 			m_color_front(),
@@ -28,7 +28,7 @@ namespace information
 			m_string(""),
 			m_use_under(true),
 			m_offset(0.0f, 0.0f),
-			p_template(NULL)
+			p_template(nullptr)
 		{
 		}
 
@@ -54,10 +54,10 @@ namespace information
 		Presentation::~Presentation(void)
 		{
 			//~BaseInformation()
-			if (p_hud_static_text_front != NULL)
+			if (p_hud_static_text_front != nullptr)
 				gDrawableManager.destroyDrawable(p_hud_static_text_front);
 
-			if (p_hud_static_text_back != NULL)
+			if (p_hud_static_text_back != nullptr)
 				gDrawableManager.destroyDrawable(p_hud_static_text_back);
 
 			//m_tranformable
@@ -69,7 +69,7 @@ namespace information
 			m_use_under = false;
 			m_offset.x = 0.0f;
 			m_offset.y = 0.0f;
-			p_template = NULL;
+			p_template = nullptr;
 		}
 		
 		//Metoda zwraca kolor

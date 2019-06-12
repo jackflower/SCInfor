@@ -16,7 +16,7 @@ namespace mapengine
 	//Konstruktor
 	MapPhysicalDescriptor::MapPhysicalDescriptor()
 	:
-		p_template(NULL),
+		p_template(nullptr),
 		m_unique_id(0),
 		m_code(),
 		m_name(),
@@ -48,7 +48,7 @@ namespace mapengine
 	//Destruktor
 	MapPhysicalDescriptor::~MapPhysicalDescriptor()
 	{
-		p_template = NULL;
+		p_template = nullptr;
 		m_unique_id = 0;
 		m_code = "";
 		m_name = "";

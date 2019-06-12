@@ -20,9 +20,9 @@ namespace factory
 		ActorTemplate{},//konstruktor klasy bazowej
 		m_templ_energy_name{ "" },
 		m_templ_energytank_data{},
-		p_templ_energy_tank{ NULL },
+		p_templ_energy_tank{ nullptr },
 		m_templ_battery_data{},
-		p_templ_battery{ NULL },
+		p_templ_battery{ nullptr },
 		m_templ_percentage_reserve_energy{ 0.0f },
 		m_templ_energy_time_delayed{ 0.0f },
 		m_templ_energy_empty_message{ false },
@@ -40,9 +40,9 @@ namespace factory
 		//~ActorTemplate()
 		m_templ_energy_name = "";
 		m_templ_energytank_data;
-		p_templ_energy_tank = NULL;
+		p_templ_energy_tank = nullptr;
 		m_templ_battery_data;
-		p_templ_battery = NULL;
+		p_templ_battery = nullptr;
 		m_templ_percentage_reserve_energy = 0.0f;
 		m_templ_energy_time_delayed = 0.0f;
 		m_templ_energy_empty_message = false;
@@ -149,11 +149,11 @@ namespace factory
 				p_energy->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getEnergyBodyDefaultAnim()!= NULL)
+				if (p_templ_animations->getEnergyBodyDefaultAnim()!= nullptr)
 					p_energy->setAnimationBody(p_templ_animations->getEnergyBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getEnergyHeadDefaultAnim()!= NULL)
+				if (p_templ_animations->getEnergyHeadDefaultAnim()!= nullptr)
 					p_energy->setAnimationHead(p_templ_animations->getEnergyHeadDefaultAnim());
 			}
 

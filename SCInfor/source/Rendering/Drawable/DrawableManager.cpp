@@ -48,7 +48,7 @@ namespace rendering
 		//Metoda tworzy obiekt klasy Displayable i zwraca wskaźnik na ten obiekt
 		Displayable *DrawableManager::createDisplayable(int z_index)
 		{
-			if (!isCorrectZIndex(z_index)) return NULL;
+			if (!isCorrectZIndex(z_index)) return nullptr;
 
 			Displayable* displayable = new Displayable();
 			registerDrawable(displayable, z_index);
@@ -59,7 +59,7 @@ namespace rendering
 		//Metoda tworzy obiekt klasy Rectangle i zwraca wskaźnik na ten obiekt
 		Rectangle *DrawableManager::createRectangle(int z_index)
 		{
-			if (!isCorrectZIndex(z_index)) return NULL;
+			if (!isCorrectZIndex(z_index)) return nullptr;
 
 			Rectangle* rectangle = new Rectangle();
 			registerDrawable(rectangle, z_index);
@@ -70,7 +70,7 @@ namespace rendering
 		//Metoda tworzy obiekt klasy HudStaticText i zwraca wskaźnik na ten obiekt
 		HudStaticText *DrawableManager::createHudStaticText(int z_index)
 		{
-			if (!isCorrectZIndex(z_index)) return NULL;
+			if (!isCorrectZIndex(z_index)) return nullptr;
 
 			HudStaticText* hudstatictext = new HudStaticText();
 			registerDrawable(hudstatictext, z_index);
@@ -82,7 +82,7 @@ namespace rendering
 		void DrawableManager::registerDrawable(Drawable* drawable, int z_index)
 		{
 			if (!isCorrectZIndex(z_index)) return;
-			if (drawable == NULL) return;
+			if (drawable == nullptr) return;
 
 			if (drawable->m_layer_index >= 0)
 				unregisterDrawable(drawable);
@@ -94,7 +94,7 @@ namespace rendering
 		//Metoda wyrejstrowuje obiekt - bez usuwania
 		void DrawableManager::unregisterDrawable(Drawable *drawable)
 		{
-			if ((drawable == NULL) || (drawable->m_layer_index < 0) || (drawable->m_layer_vector_index < 0))
+			if ((drawable == nullptr) || (drawable->m_layer_index < 0) || (drawable->m_layer_vector_index < 0))
 				return;
 			int zi = drawable->m_layer_index, vi = drawable->m_layer_vector_index;
 			m_layers[zi][vi] = m_layers[zi][m_layers[zi].size()-1];
@@ -107,7 +107,7 @@ namespace rendering
 		//Metoda usuwa obiekt z kontenera
 		void DrawableManager::destroyDrawable(Drawable* drawable)
 		{
-			if (drawable != NULL)
+			if (drawable != nullptr)
 			{
 				unregisterDrawable(drawable);
 				delete drawable;
@@ -120,7 +120,7 @@ namespace rendering
 		//Metoda renderująca obiekt klasy Displayable
 		void DrawableManager::drawFrame(sf::RenderWindow* render)
 		{
-			if (render == NULL)
+			if (render == nullptr)
 				render = gGame.getRenderWindow();
 
 			for (DrawableLists::reverse_iterator it1 = m_layers.rbegin(); it1 != m_layers.rend(); it1++ )

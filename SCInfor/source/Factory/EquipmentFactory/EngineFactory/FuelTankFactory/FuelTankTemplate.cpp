@@ -94,11 +94,11 @@ namespace factory
 				p_fueltank->setAnimSet(p_templ_animations);  
 				
 				//body
-				if (p_templ_animations->getFuelBodyDefaultAnim()!= NULL)
+				if (p_templ_animations->getFuelBodyDefaultAnim()!= nullptr)
 					p_fueltank->setAnimationBody(p_templ_animations->getFuelBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getFuelHeadDefaultAnim()!= NULL)
+				if (p_templ_animations->getFuelHeadDefaultAnim()!= nullptr)
 					p_fueltank->setAnimationHead(p_templ_animations->getFuelHeadDefaultAnim());
 			}
 

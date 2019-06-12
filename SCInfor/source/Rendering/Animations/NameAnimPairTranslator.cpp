@@ -17,7 +17,7 @@ namespace rendering
 		NameAnimPairTranslator::NameAnimPairTranslator(void)
 		:
 			m_animation_name(""),
-			p_animation(NULL),
+			p_animation(nullptr),
 			m_is_ready(false)
 		{
 		}
@@ -50,7 +50,7 @@ namespace rendering
 		NameAnimPairTranslator::NameAnimPairTranslator(const std::string & animation_name)
 		:
 			m_animation_name(animation_name),
-			p_animation(NULL),
+			p_animation(nullptr),
 			m_is_ready(false)
 		{
 		}
@@ -59,7 +59,7 @@ namespace rendering
 		NameAnimPairTranslator::~NameAnimPairTranslator(void)
 		{
 			m_animation_name = "";
-			p_animation = NULL;
+			p_animation = nullptr;
 			m_is_ready = false;
 		}
 

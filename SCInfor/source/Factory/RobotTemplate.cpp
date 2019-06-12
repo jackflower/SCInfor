@@ -87,11 +87,11 @@ namespace factory
 				robot->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getRobotBodyDefaultAnim() != NULL)
+				if (p_templ_animations->getRobotBodyDefaultAnim() != nullptr)
 					robot->setAnimationBody(p_templ_animations->getRobotBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getRobotHeadDefaultAnim() != NULL)
+				if (p_templ_animations->getRobotHeadDefaultAnim() != nullptr)
 					robot->setAnimationHead(p_templ_animations->getRobotHeadDefaultAnim());
 			}
 

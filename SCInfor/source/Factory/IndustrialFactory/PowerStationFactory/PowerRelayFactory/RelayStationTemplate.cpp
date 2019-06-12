@@ -20,7 +20,7 @@ namespace factory
 		ActorTemplate{},//konstruktor klasy bazowej
 		m_templ_relay_station_name{},
 		m_templ_use_communication{ false },
-		p_templ_communication{ NULL }
+		p_templ_communication{ nullptr }
 	{
 	}
 
@@ -30,7 +30,7 @@ namespace factory
 		//~ActorTemplate()
 		m_templ_relay_station_name = "";
 		m_templ_use_communication = false;
-		p_templ_communication = NULL;
+		p_templ_communication = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -105,11 +105,11 @@ namespace factory
 				p_relay_station->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getPowerRelayStationBodyDefaultAnim()!= NULL)
+				if (p_templ_animations->getPowerRelayStationBodyDefaultAnim()!= nullptr)
 					p_relay_station->setAnimationBody(p_templ_animations->getPowerRelayStationBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getPowerRelayStationHeadDefaultAnim()!= NULL)
+				if (p_templ_animations->getPowerRelayStationHeadDefaultAnim()!= nullptr)
 					p_relay_station->setAnimationHead(p_templ_animations->getPowerRelayStationHeadDefaultAnim());
 			}
 

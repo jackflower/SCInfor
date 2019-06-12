@@ -16,9 +16,9 @@ namespace xml
 	Xml::Xml(std::string filename, std::string root)
 	:
 		m_xml_document{},
-		m_xml_root{ NULL },
+		m_xml_root{ nullptr },
 		m_filename{ filename },
-		m_file{ NULL }
+		m_file{ nullptr }
 	{
 		try//próba utworzenia i otwarcia pliku
 		{
@@ -41,7 +41,7 @@ namespace xml
 	//Destruktor
 	Xml::~Xml()
 	{
-		if (m_file != NULL)
+		if (m_file != nullptr)
 			delete m_file;
 	}
 
@@ -63,7 +63,7 @@ namespace xml
 		xml_node<>* real_parent = parent ? parent : m_xml_root;
 		if (real_parent)
 			return real_parent->first_node(node_name.c_str());
-		return NULL;
+		return nullptr;
 	}
 
 	//Metoda zwraca wskaźnik na węzeł rodzeństwa
@@ -71,7 +71,7 @@ namespace xml
 	{
 		if (sibling)
 			return sibling->next_sibling(node_name.c_str());
-		return NULL;
+		return nullptr;
 	}
 
 	//Metoda zwraca atrybut wskazanego typu

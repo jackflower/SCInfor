@@ -80,7 +80,7 @@ namespace factory
 		//WindPowerStationMultipled* windpower_station_multipled = gPhysicalManager.XXX(id);
 		//fill(windpower_station);
 		//return windpower_station;
-		return NULL;//atrapa...
+		return nullptr;//atrapa...
 	}
 
 	//Wirtualna metoda wype³niaj¹ca wskazany obiekt danymi tej klasy

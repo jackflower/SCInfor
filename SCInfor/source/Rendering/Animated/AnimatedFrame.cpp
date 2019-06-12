@@ -60,7 +60,7 @@ namespace animated
 	//Destruktor
 	AnimatedFrame::~AnimatedFrame()
 	{
-		p_texture = NULL;
+		p_texture = nullptr;
 	}
 
 	//Przeciążony operator przypisania kopiowania

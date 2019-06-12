@@ -14,7 +14,7 @@ namespace mapengine
 	MapObjectType::MapObjectType()
 	:
 		m_code(""),
-		p_template(NULL)
+		p_template(nullptr)
 	{
 	}
 
@@ -30,7 +30,7 @@ namespace mapengine
 	MapObjectType::~MapObjectType()
 	{	
 		m_code = "";
-		p_template = NULL;
+		p_template = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

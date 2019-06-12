@@ -11,7 +11,7 @@
 
 //Inteligentny wskaŸnik, który zlicza referencje do obiektu.
 //Przy braku referencji zwalnia obiekt.
-//WskaŸnik pozwala na to, aby mieæ wartoœæ NULL
+//WskaŸnik pozwala na to, aby mieæ wartoœæ nullptr
 
 //Wymagania co do klas wewnatrz-szablonowych:
 //	void Release(); - metoda uruchamiana zamiast destruktora przy braku referencji
@@ -36,7 +36,7 @@ namespace memory
 		///
 		RefCntPtr()
 		:
-			obj(NULL)//inicjuje wskaŸnik na NULL
+			obj(nullptr)//inicjuje wskaŸnik na nullptr
 		{
 		}
 
@@ -49,7 +49,7 @@ namespace memory
 		:
 			obj(obj)
 		{
-			if (obj != NULL)//jeœli na coœ wskazuje, zwiêksza licznik referencji
+			if (obj != nullptr)//jeœli na coœ wskazuje, zwiêksza licznik referencji
 				Attach();
 		}
 		
@@ -61,7 +61,7 @@ namespace memory
 		RefCntPtr(const RefCntPtr<T> &other)
 		{
 			obj = other.obj;
-			if (obj != NULL)//jeœli na coœ wskazuje, zwiêksza licznik referencji
+			if (obj != nullptr)//jeœli na coœ wskazuje, zwiêksza licznik referencji
 				Attach();
 		}
 
@@ -70,7 +70,7 @@ namespace memory
 		///
 		~RefCntPtr()
 		{
-			if (obj != NULL)//jeœli wskaŸnik na coœ wskazuje,
+			if (obj != nullptr)//jeœli wskaŸnik na coœ wskazuje,
 							//a jakiœ obiekt siê zniszczy,
 							//to destruktor zmniejsza licznik referencji
 				Detach();
@@ -115,10 +115,10 @@ namespace memory
 		{
 			if (&other == this)
 				return *this;
-			if (obj!=NULL)
+			if (obj!=nullptr)
 				Detach();
 			obj = other.obj;
-			if (obj!=NULL)
+			if (obj!=nullptr)
 				Attach();
 			return *this;
 		}

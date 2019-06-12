@@ -16,7 +16,7 @@ namespace equipmentdata
 	EquipmentCommunicationData::EquipmentCommunicationData()
 	:
 		EquipmentData{},//konstruktor klasy bazowej
-		p_communication{ NULL }
+		p_communication{ nullptr }
 	{
 	}
 
@@ -34,7 +34,7 @@ namespace equipmentdata
 		//~EquipmentData()
 		if (p_communication)
 			gPhysicalManager.destroyPhysical(p_communication);
-		p_communication = NULL;
+		p_communication = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

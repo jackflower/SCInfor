@@ -72,7 +72,7 @@ void WaypointPriorityQueue::releaseQueue()
 	{
 		for (Heap::iterator it = m_heap.begin(); it != m_heap.end(); it++)
 		{
-			(*it) = NULL;
+			(*it) = nullptr;
 				delete (*it);
 		}
 	}

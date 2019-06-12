@@ -20,7 +20,7 @@ namespace factory
 		ActorTemplate{},//konstruktor klasy bazowej
 		m_templ_engine_name{},
 		m_templ_fueltank_data{},
-		p_templ_fuel_tank{ NULL },
+		p_templ_fuel_tank{ nullptr },
 		m_templ_percentage_reserve_fuel{ 0.0f },
 		m_templ_fuel_consumption{ 0.0f },
 		m_templ_fuel_consumption_move{ 0.0f },
@@ -38,7 +38,7 @@ namespace factory
 		//~ActorTemplate()
 		m_templ_engine_name = "";
 		m_templ_fueltank_data;
-		p_templ_fuel_tank = NULL;
+		p_templ_fuel_tank = nullptr;
 		m_templ_percentage_reserve_fuel = 0.0f;
 		m_templ_fuel_consumption = 0.0f;
 		m_templ_fuel_consumption_move = 0.0f;
@@ -126,11 +126,11 @@ namespace factory
 				p_engine->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getEngineBodyDefaultAnim()!= NULL)
+				if (p_templ_animations->getEngineBodyDefaultAnim()!= nullptr)
 					p_engine->setAnimationBody(p_templ_animations->getEngineBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getEngineHeadDefaultAnim()!= NULL)
+				if (p_templ_animations->getEngineHeadDefaultAnim()!= nullptr)
 					p_engine->setAnimationHead(p_templ_animations->getEngineHeadDefaultAnim());
 			}
 

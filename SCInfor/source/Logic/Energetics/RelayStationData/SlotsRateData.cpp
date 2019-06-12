@@ -16,7 +16,7 @@ namespace relaystationdata
 	SlotsRateData::SlotsRateData()
 	:
 		EquipmentData(),//konstruktor klasy bazowej
-		p_slotsrate(NULL)
+		p_slotsrate(nullptr)
 	{
 	}
 
@@ -34,7 +34,7 @@ namespace relaystationdata
 		//~EquipmentData()
 		if (p_slotsrate)
 			gPhysicalManager.destroyPhysical(p_slotsrate);
-		p_slotsrate	= NULL;
+		p_slotsrate	= nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

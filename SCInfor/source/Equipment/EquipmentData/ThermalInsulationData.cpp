@@ -16,7 +16,7 @@ namespace equipmentdata
 	ThermalInsulationData::ThermalInsulationData()
 	:
 		EquipmentData{},//konstruktor klasy bazowej
-		p_thermalinsulation{ NULL }
+		p_thermalinsulation{ nullptr }
 	{
 	}
 
@@ -34,7 +34,7 @@ namespace equipmentdata
 		//~EquipmentData()
 		if (p_thermalinsulation)
 			gPhysicalManager.destroyPhysical(p_thermalinsulation);
-		p_thermalinsulation = NULL;
+		p_thermalinsulation = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

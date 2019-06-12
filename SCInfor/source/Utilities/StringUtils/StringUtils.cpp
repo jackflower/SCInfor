@@ -19,7 +19,7 @@ namespace stringutils
 		unsigned long long hash = len, tmp;
 		int rem;
 
-		if (len <= 0 || data == NULL) return 0;
+		if (len <= 0 || data == nullptr) return 0;
 
 		rem = len & 3;
 		len >>= 2;
@@ -89,7 +89,7 @@ namespace stringutils
 			
 			result[idx] = *(new std::wstring(p));
 	
-			if (out_cnt != NULL)
+			if (out_cnt != nullptr)
 				*out_cnt = (int)count;
    
 			return result;

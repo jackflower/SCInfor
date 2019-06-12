@@ -20,9 +20,9 @@ namespace rendering
 		HudStaticText::HudStaticText()
 		:
 			Drawable(),//konstruktor klasy bazowej
-			p_text(NULL),
+			p_text(nullptr),
 			m_color(),
-			p_font(NULL),
+			p_font(nullptr),
 			m_font_size(1),
 			m_string(),
 			m_tranformable()
@@ -34,7 +34,7 @@ namespace rendering
 		HudStaticText::~HudStaticText()
 		{
 			delete p_text;
-			p_text = NULL;
+			p_text = nullptr;
 			//m_color
 			//p_font
 			m_font_size = 0;

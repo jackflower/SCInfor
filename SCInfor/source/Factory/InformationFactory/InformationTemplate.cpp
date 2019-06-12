@@ -23,8 +23,8 @@ namespace factory
 		Resource{},//konstruktor klasy bazowej
 		m_templ_filename{ "" },
 		m_templ_type{ "" },
-		p_templ_digit_displayable{ NULL },
-		p_templ_mask_displayable{ NULL },
+		p_templ_digit_displayable{ nullptr },
+		p_templ_mask_displayable{ nullptr },
 		m_templ_texture_digit_name{ "" },
 		m_templ_texture_mask_name{ "" },
 		m_templ_tranformable_digit{},
@@ -38,8 +38,8 @@ namespace factory
 		//~Resource()
 		m_templ_filename = "";
 		m_templ_type = "";
-		p_templ_digit_displayable = NULL;
-		p_templ_mask_displayable = NULL;
+		p_templ_digit_displayable = nullptr;
+		p_templ_mask_displayable = nullptr;
 		m_templ_texture_digit_name = "";
 		m_templ_texture_mask_name = "";
 		m_templ_tranformable_digit;

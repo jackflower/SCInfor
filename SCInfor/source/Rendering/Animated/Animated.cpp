@@ -18,7 +18,7 @@ namespace animated
 		m_elapsedtime{ 0 },
 		m_paused{ false },
 		m_loop{ true },
-		p_animation{ NULL },
+		p_animation{ nullptr },
 		m_currentframe{ 0 },
 		m_lastanimframe{ 0 },
 		m_default_anim_mode{ true },
@@ -99,7 +99,7 @@ namespace animated
 		m_elapsedtime = 0.f;
 		m_paused = false;
 		m_loop = false;
-		p_animation = NULL;
+		p_animation = nullptr;
 		m_currentframe = 0;
 		m_lastanimframe = 0;
 		m_default_anim_mode = false;
@@ -201,11 +201,11 @@ namespace animated
 	//Metoda ustawia numer klatki animacji obiektu klasy Animation
 	const void Animated::setFrame(int frame)
 	{
-		if (p_animation != NULL)
+		if (p_animation != nullptr)
 		{
 			if (p_animation->size() > 0)
 			{
-				if ((*p_animation)[frame].getFrameImage() != NULL)
+				if ((*p_animation)[frame].getFrameImage() != nullptr)
 					setTexture(*((*p_animation)[frame].getFrameImage()));
 				setTextureRect((*p_animation)[frame].getFrameRectangle());
 				m_currentframe = frame;
@@ -284,7 +284,7 @@ namespace animated
 	//Metoda uruchamia animację
 	void Animated::update(float elapsed_time)
 	{
-		if (!m_paused && p_animation != NULL)
+		if (!m_paused && p_animation != nullptr)
 		{
 			m_elapsedtime -= elapsed_time * m_animation_spped;
 

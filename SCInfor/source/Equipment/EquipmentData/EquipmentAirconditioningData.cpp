@@ -16,7 +16,7 @@ namespace equipmentdata
 	EquipmentAirconditioningData::EquipmentAirconditioningData()
 	:
 		EquipmentData{},//konstruktor klasy bazowej
-		p_airconditiong{ NULL }
+		p_airconditiong{ nullptr }
 	{
 	}
 
@@ -34,7 +34,7 @@ namespace equipmentdata
 		//~EquipmentData()
 		if (p_airconditiong)
 			gPhysicalManager.destroyPhysical(p_airconditiong);
-		p_airconditiong = NULL;
+		p_airconditiong = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

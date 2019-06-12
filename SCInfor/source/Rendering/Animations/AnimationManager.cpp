@@ -63,15 +63,15 @@ namespace rendering
 		//Metoda zwraca animację z kontenera na podstawie nazwy
 		Animation *AnimationManager::getAnimation(const std::string & animation_name)
 		{
-			Animation *animationPtr = NULL;
+			Animation *animationPtr = nullptr;
 			if (m_animations.find(animation_name) != m_animations.end())
 				animationPtr = m_animations[animation_name];
 
-			if (animationPtr == NULL)
+			if (animationPtr == nullptr)
 			{
 				if (animation_name != "")
 					fprintf(stderr, "warning: AnimationManager::GetAnimation - unable to find `%s' animation in m_animations map\n", animation_name.c_str());
-				return NULL;
+				return nullptr;
 			}
 			return animationPtr;
 		}
@@ -86,8 +86,8 @@ namespace rendering
 		//Metoda tworzy funkcjonalny obiekt animowany
 		AnimationState *AnimationManager::createAnimationState(Animation *p_animation)
 		{
-			if (p_animation == NULL)
-				return NULL;
+			if (p_animation == nullptr)
+				return nullptr;
 			AnimationState* p_animation_state = new AnimationState(p_animation);
 			m_animation_states.insert(p_animation_state);
 			return p_animation_state;
@@ -98,7 +98,7 @@ namespace rendering
 		{
 			if (!p_animation_state)
 			{
-				fprintf(stderr, "warning: AnimationManager::DestroyAnimationState - p_animation_state was NULL\n");
+				fprintf(stderr, "warning: AnimationManager::DestroyAnimationState - p_animation_state was nullptr\n");
 				return;
 			}
 

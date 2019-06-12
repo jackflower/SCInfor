@@ -19,7 +19,7 @@ namespace mapengine
 		//Konstruktor
 		Tile::Tile(const std::string &code)
 		:
-			p_displayable(NULL),
+			p_displayable(nullptr),
 			m_code(code),
 			m_tile_position(0.0f, 0.0f)
 		{
@@ -37,7 +37,7 @@ namespace mapengine
 		//Destruktor
 		Tile::~Tile()
 		{
-			if (p_displayable != NULL)
+			if (p_displayable != nullptr)
 				gDrawableManager.destroyDrawable(p_displayable);
 			m_code = "";
 			m_tile_position.x = 0.0f;
@@ -53,7 +53,7 @@ namespace mapengine
 		//Metoda inicjuje kafel danymi
 		void Tile::initializeTile(const std::string & image_file, int number)
 		{
-			if (p_displayable == NULL)
+			if (p_displayable == nullptr)
 				p_displayable = gDrawableManager.createDisplayable(Z_TILE);
 			if(p_displayable)
 			{
@@ -75,7 +75,7 @@ namespace mapengine
 			m_tile_position.x	= x;
 			m_tile_position.y	= y;
 			
-			if (p_displayable != NULL)
+			if (p_displayable != nullptr)
 				p_displayable->setPosition(x, y);
 		}
 
@@ -84,14 +84,14 @@ namespace mapengine
 		{
 			m_tile_position = tile_position;
 
-			if (p_displayable != NULL)
+			if (p_displayable != nullptr)
 				p_displayable->setPosition(tile_position);
 		}
 
 		//Metoda ustawia widoczność kafla na mapie
 		void Tile::setVisible(bool visible)
 		{
-			if (p_displayable != NULL)
+			if (p_displayable != nullptr)
 				p_displayable->setVisible(visible);
 		}
 

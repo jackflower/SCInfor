@@ -31,7 +31,7 @@ namespace logic
 	//Destruktor wirtualny
 	ActorController::~ActorController()
 	{
-		p_actor = NULL;
+		p_actor = nullptr;
 		m_strafe = 0;
 		m_move = 0;
 		m_true_rot = 0.0f;
@@ -136,7 +136,7 @@ namespace logic
 	/*
 	void ActorController::GotDamageFrom(float dmg, EffectSourcePtr source)
 	{
-		if (source != EffectSourcePtr(NULL))
+		if (source != EffectSourcePtr(nullptr))
 		{
 			Physical *dealer = source->DeterminePhysicalSource();
 			if (dealer)

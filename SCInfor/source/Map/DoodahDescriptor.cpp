@@ -92,8 +92,8 @@ namespace mapengine
 			//tworzymy wskaźnik na obiekt klasy sf::Sprite i inicjujemy wskaźnik wskaźnikiem *p_displayable
 			sf::Sprite* p_sf_sprite = p_displayable->getSprite();
 			//jeśli sprite nie ma zainnicjowanego obrazu
-			//	if (p_sf_sprite->GetImage() == NULL)
-			if (p_sf_sprite->getTexture() == NULL)
+			//	if (p_sf_sprite->GetImage() == nullptr)
+			if (p_sf_sprite->getTexture() == nullptr)
 				return; //error - return
 			//a co z tym kodem?
 			//	p_sf_sprite->Resize( p_sf_sprite->GetImage()->GetWidth() * m_scale, p_sf_sprite->GetImage()->GetHeight() * m_scale );

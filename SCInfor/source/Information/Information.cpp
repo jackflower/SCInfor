@@ -16,11 +16,11 @@ namespace information
 	Information::Information(const std::wstring & uniqueId)
 	:
 		BaseInformation			(uniqueId),//chroniony konstruktor klasy bazowej
-		p_digit_displayable		(NULL),
-		p_mask_displayable		(NULL),
+		p_digit_displayable		(nullptr),
+		p_mask_displayable		(nullptr),
 		m_texture_digit_name	(""),
 		m_texture_mask_name		(""),
-		p_template				(NULL),
+		p_template				(nullptr),
 		m_tranformable_digit	(),
 		m_tranformable_mask		()
 	{
@@ -43,13 +43,13 @@ namespace information
 	//Chroniony destruktor wirtualny - używany wyłącznie przez InfoManager
 	Information::~Information()
 	{
-		if (p_digit_displayable != NULL)
+		if (p_digit_displayable != nullptr)
 			gDrawableManager.destroyDrawable(p_digit_displayable);
-		if (p_mask_displayable != NULL)
+		if (p_mask_displayable != nullptr)
 			gDrawableManager.destroyDrawable(p_mask_displayable);
 		m_texture_digit_name	= "";
 		m_texture_mask_name		= "";
-		p_template				= NULL;
+		p_template				= nullptr;
 		//m_tranformable_digit	not edit
 		//m_tranformable_mask	not edit
 	}

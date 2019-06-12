@@ -21,9 +21,9 @@ namespace artificialintelligence
 	:
 		ActorController(actor),	//konstruktor klasy bazowej
 		//m_data(this),	//ostrzeżenie zbyt wczesnego wiązania *)
-		m_data(NULL),
+		m_data(nullptr),
 		m_turning_sharpness(0.0f),
-		p_scheme(NULL),
+		p_scheme(nullptr),
 		m_time_to_change_scheme(0.0f)
 	{
 		m_data.setAI(this); //*) inicjacja wskaźnika - obiekt jest utworzony
@@ -35,7 +35,7 @@ namespace artificialintelligence
 		//~ActorController()
 		//m_data
 		m_turning_sharpness = 0.0f;
-		p_scheme = NULL;
+		p_scheme = nullptr;
 		m_time_to_change_scheme	= 0.0f;
 
 	}
@@ -155,16 +155,16 @@ namespace artificialintelligence
 		for ( unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++ )
 		{
 			Player *player = gPlayerManager.GetPlayerByOrder( i );
-			if (player == NULL) continue;
+			if (player == nullptr) continue;
 			mAvailableAbilities.clear();
 			GetActor()->GetAbilityPerformer().GetAvailableAbilities(mAvailableAbilities);
 			if (mAvailableAbilities.size() > 0){
 				int idx = ChooseAbility(); //GetActor()->GetAbilityPerformer().GetDefaultAttack()
 				CAbility *abi = GetActor()->GetAbilityPerformer().GetAbility( idx )->ability;
 				ExecutionContextPtr context = GetActor()->GetAbilityPerformer().GetContext(idx);
-				if (abi == NULL) continue;
+				if (abi == nullptr) continue;
 				bool useAbility = false;
-				if (abi->mAIHint == NULL)
+				if (abi->mAIHint == nullptr)
 					useAbility = abi->InMeleeRange( GetActor(), player, context );
 				else
 					useAbility = abi->mAIHint->UseAbility( GetActor(), player);

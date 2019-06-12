@@ -11,7 +11,7 @@ Waypoint::Waypoint()
 :
 	m_cost_from_start(0),
 	m_cost_to_goal(0),
-	m_parent(NULL),
+	m_parent(nullptr),
 	m_is_on_open(false),
 	m_is_on_closed(false),
 	m_is_in_use(false)
@@ -35,7 +35,7 @@ Waypoint::~Waypoint()
 {
 	m_cost_from_start = 0;
 	m_cost_to_goal = 0;
-	m_parent = NULL;
+	m_parent = nullptr;
 	m_is_on_open = false;
 	m_is_on_closed = false;
 	m_is_in_use = false;

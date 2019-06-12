@@ -135,7 +135,7 @@ namespace rendering
 			///
 			///@render render - parametr drawable
 			///
-			void drawFrame(sf::RenderWindow * render = NULL);
+			void drawFrame(sf::RenderWindow * render = nullptr);
 
 			///
 			///Wirtualny interfejs - implementacja

@@ -26,7 +26,7 @@ CSingletonCleaner::~CSingletonCleaner()
 		m_cleanupables.pop_back();
 		fprintf(stderr, "CSingletonCleaner - %d objects unregistered\n", m_cleanupables.size());
 	}
-	s_instance = NULL;
+	s_instance = nullptr;
 }
 
 //Metoda rejestruje obiekty dziedzicz¹ce po klasie ICleanupable (Singletony)
@@ -44,4 +44,4 @@ CSingletonCleaner& CSingletonCleaner::GetSingleton()
 }
 
 //Nadanie wartoœci pocz¹tkowej sk³adowej statycznej
-CSingletonCleaner *CSingletonCleaner::s_instance = NULL;
+CSingletonCleaner *CSingletonCleaner::s_instance = nullptr;

@@ -17,7 +17,7 @@ namespace mapengine
 	:
 		m_code(""),
 		m_name(""),
-		p_templ(NULL),
+		p_templ(nullptr),
 		m_x_position(0.0f),
 		m_y_position(0.0f),
 		m_rotation_body(0),
@@ -48,7 +48,7 @@ namespace mapengine
 	{
 		m_code = "";
 		m_name = "";
-		p_templ = NULL;
+		p_templ = nullptr;
 		m_x_position = 0.0f;
 		m_y_position = 0.0f;
 		m_rotation_body = 0;

@@ -110,7 +110,7 @@ namespace infologic
 		else
 		{
 			fprintf(stderr, "InfoManager::GetMapInformationById - %ls key not found in m_named_map_information map", information_id.c_str());
-			return NULL;
+			return nullptr;
 		}
 	}
 
@@ -135,10 +135,10 @@ namespace infologic
 			if (m_named_map_information.find(new_unique_id) != m_named_map_information.end())
 			{
 				fprintf(stderr, "InfoManager::create<T> - %ls key already in m_named_map_information map", new_unique_id.c_str());
-				return NULL;
+				return nullptr;
 			}
 
-			m_named_map_information[new_unique_id] = NULL; // zarezerwowanie nazwy przed utworzeniem obiektu
+			m_named_map_information[new_unique_id] = nullptr; // zarezerwowanie nazwy przed utworzeniem obiektu
 		}
 
 		T* obj = new T(new_unique_id);

@@ -23,13 +23,13 @@ namespace artificialintelligence
 		m_waypoint_tolerance(0.0f),
 		m_target_direction(0),
 		mCombatTarget(CSafePtr<Actor>::NullPtr()),
-		//mCombatTarget(NULL),
+		//mCombatTarget(nullptr),
 		m_moving_time(0.0f),
-		//mMovementScheme(NULL),
+		//mMovementScheme(nullptr),
 		m_movement_SchemeTimer(0.0f),
-		//mCombatScheme(NULL),
+		//mCombatScheme(nullptr),
 		m_combat_scheme_timer(0.0f),
-		//mFlock(NULL),
+		//mFlock(nullptr),
 		m_waypoint_set(false)
 	{
 	}
@@ -77,7 +77,7 @@ namespace artificialintelligence
 
 	sf::Vector2f ActorAIData::getPosition()
 	{
-		if (p_AI != NULL)
+		if (p_AI != nullptr)
 		{
 			return getActor()->getPosition();
 		}

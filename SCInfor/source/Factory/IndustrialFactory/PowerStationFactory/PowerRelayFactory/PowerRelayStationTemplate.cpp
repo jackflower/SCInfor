@@ -25,8 +25,8 @@ namespace factory
 		m_templ_rotation_speed_range{ 0.0f, 0.0f },
 		m_templ_state_time{ 0.0f },
 		m_templ_rotation_speed{ 0.0f },
-		p_templ_slot_rate{ NULL },
-		p_templ_battery{ NULL },
+		p_templ_slot_rate{ nullptr },
+		p_templ_battery{ nullptr },
 		m_templ_use_battery{ false },
 		m_templ_time_to_start{ 0.0f },
 		m_templ_duration_disconnect{ 0.0f }
@@ -45,8 +45,8 @@ namespace factory
 		m_templ_rotation_speed_range.second	= 0.0f;
 		m_templ_state_time = 0.0f;
 		m_templ_rotation_speed = 0.0f;
-		p_templ_slot_rate = NULL;
-		p_templ_battery = NULL;
+		p_templ_slot_rate = nullptr;
+		p_templ_battery = nullptr;
 		m_templ_use_battery = false;
 		m_templ_time_to_start = 0.0f;
 		m_templ_duration_disconnect = 0.0f;
@@ -150,10 +150,10 @@ namespace factory
 			{
 				p_power_relay_station->setAnimSet(p_templ_animations);
 				//body
-				if (p_templ_animations->getPowerRelayStationBodyDefaultAnim()!= NULL)
+				if (p_templ_animations->getPowerRelayStationBodyDefaultAnim()!= nullptr)
 					p_power_relay_station->setAnimationBody(p_templ_animations->getPowerRelayStationBodyDefaultAnim());
 				//head
-				if (p_templ_animations->getPowerRelayStationHeadDefaultAnim()!= NULL)
+				if (p_templ_animations->getPowerRelayStationHeadDefaultAnim()!= nullptr)
 					p_power_relay_station->setAnimationHead(p_templ_animations->getPowerRelayStationHeadDefaultAnim());
 			}
 			

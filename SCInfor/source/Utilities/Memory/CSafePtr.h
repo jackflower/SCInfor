@@ -14,7 +14,7 @@ namespace memory
 	template<class T> class CSafePtrable;
 
 	///
-	///Szablon klasy reprezentuje inteligentny, bezpieczny wakaŸnik, który przyjmuje wartoœæ NULL po zniszczeniu obiektu
+	///Szablon klasy reprezentuje inteligentny, bezpieczny wakaŸnik, który przyjmuje wartoœæ nullptr po zniszczeniu obiektu
 	///
 	template<class T>
 	class CSafePtr
@@ -108,7 +108,7 @@ namespace memory
 		///
 		inline static CSafePtr<T> NullPtr()
 		{
-			return CSafePtr((T*)NULL);
+			return CSafePtr((T*)nullptr);
 		}
 	
 	private:
@@ -151,7 +151,7 @@ namespace memory
 		
 		inline void NullAll()
 		{
-			obj = NULL;
+			obj = nullptr;
 			CSafePtr<T> *n = next;
 			Detach();
 			if (n != this)

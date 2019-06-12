@@ -113,9 +113,9 @@ namespace transformation
 		//dlatego wszystkie obliczenia (aktualizacja po³o¿enie)
 		//wszystkie obliczenia (transformacja) liczone s¹ wzglêdem czêœci body
 	
-		if (p_parent != NULL)
+		if (p_parent != nullptr)
 		{
-			if (p_child != NULL)
+			if (p_child != nullptr)
 			{
 				//pobieramy wartoœæ obrotu w³aœciciela (body)
 				p_child->setRotationBody(p_parent->getRotationBody());

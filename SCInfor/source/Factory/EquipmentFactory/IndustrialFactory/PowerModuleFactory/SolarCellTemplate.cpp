@@ -103,11 +103,11 @@ namespace factory
 				p_solarcell->setAnimSet(p_templ_animations);
 
 				//body
-				if (p_templ_animations->getSolarCellBodyDefaultAnim()!= NULL)
+				if (p_templ_animations->getSolarCellBodyDefaultAnim()!= nullptr)
 					p_solarcell->setAnimationBody(p_templ_animations->getSolarCellBodyDefaultAnim());
 
 				//head
-				if (p_templ_animations->getSolarCellHeadDefaultAnim()!= NULL)
+				if (p_templ_animations->getSolarCellHeadDefaultAnim()!= nullptr)
 					p_solarcell->setAnimationHead(p_templ_animations->getSolarCellHeadDefaultAnim());
 			}
 			//decorate

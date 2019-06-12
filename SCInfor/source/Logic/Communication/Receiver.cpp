@@ -19,7 +19,7 @@ namespace logic
 			m_receiver_name(""),
 			m_unit_controller(false),//urządzenie wyłączone
 			m_use_communication(false),
-			p_communication(NULL)
+			p_communication(nullptr)
 		{
 		}
 			
@@ -41,7 +41,7 @@ namespace logic
 			m_receiver_name = "";
 			//m_unit_controller
 			m_use_communication = false;
-			p_communication = NULL;
+			p_communication = nullptr;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

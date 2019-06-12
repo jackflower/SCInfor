@@ -116,7 +116,7 @@ namespace logic
 		else
 		{
 			fprintf(stderr, "MapPhysicalManager::GetMapPhysicalById - %ls key not found in m_named_mapphysicals map", mapphysical_id.c_str());
-			return NULL;
+			return nullptr;
 		}
 	}
 
@@ -146,10 +146,10 @@ namespace logic
 			if (m_named_mapphysicals.find(new_unique_id) != m_named_mapphysicals.end())
 			{
 				fprintf(stderr, "MapPhysicalManager::create<T> - %ls key already in m_named_mapphysicals map", new_unique_id.c_str());
-				return NULL;
+				return nullptr;
 			}
 
-			m_named_mapphysicals[new_unique_id] = NULL; // zarezerwowanie nazwy przed utworzeniem obiektu
+			m_named_mapphysicals[new_unique_id] = nullptr; // zarezerwowanie nazwy przed utworzeniem obiektu
 		}
 
 		T* obj = new T(new_unique_id);

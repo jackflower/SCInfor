@@ -34,7 +34,7 @@ namespace factory
 	ActorTemplate::ActorTemplate()
 	:
 		PhysicalTemplate{},//konstruktor klasy bazowej
-		p_templ_animations{ NULL },
+		p_templ_animations{ nullptr },
 		m_templ_available_animations{},
 		m_templ_technical_data{},
 		m_templ_engine_data{},
@@ -42,20 +42,20 @@ namespace factory
 		m_templ_airconditioning_data{},
 		m_templ_ventilator_data{},
 		m_templ_gun_data{},
-		p_templ_engine{ NULL },
-		p_templ_energy{ NULL },
-		p_templ_airconditioning{ NULL },
-		p_templ_ventilator{ NULL },
-		p_templ_gun{ NULL },
+		p_templ_engine{ nullptr },
+		p_templ_energy{ nullptr },
+		p_templ_airconditioning{ nullptr },
+		p_templ_ventilator{ nullptr },
+		p_templ_gun{ nullptr },
 		m_templ_use_physical_info{ false },
-		p_templ_physical_info{ NULL }
+		p_templ_physical_info{ nullptr }
 	{
 	}
 
 	//Destruktor wirtualny
 	ActorTemplate::~ActorTemplate()
 	{
-		p_templ_animations = NULL;
+		p_templ_animations = nullptr;
 		m_templ_available_animations;
 		m_templ_technical_data;
 		m_templ_engine_data;
@@ -63,13 +63,13 @@ namespace factory
 		m_templ_airconditioning_data;
 		m_templ_ventilator_data;
 		m_templ_gun_data;
-		p_templ_engine = NULL;
-		p_templ_energy = NULL;
-		p_templ_airconditioning = NULL;
-		p_templ_ventilator = NULL;
-		p_templ_gun = NULL;
+		p_templ_engine = nullptr;
+		p_templ_energy = nullptr;
+		p_templ_airconditioning = nullptr;
+		p_templ_ventilator = nullptr;
+		p_templ_gun = nullptr;
 		m_templ_use_physical_info = false;
-		p_templ_physical_info = NULL;
+		p_templ_physical_info = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -138,7 +138,7 @@ namespace factory
 			//ustawiam się w zestawie na pierwszą pod zerowym indeksem
 			p_templ_animations = m_templ_available_animations[0];
 		else
-			p_templ_animations = NULL;
+			p_templ_animations = nullptr;
 
 
 		//ładowanie nazwy pliku z konfiguracją engine
@@ -268,11 +268,11 @@ namespace factory
 				actor->setAnimSet(p_templ_animations);
 				
 				//body
-				if (p_templ_animations->getDefaultAnimBody()!= NULL)
+				if (p_templ_animations->getDefaultAnimBody()!= nullptr)
 					actor->setAnimationBody(p_templ_animations->getDefaultAnimBody());
 
 				//head
-				if (p_templ_animations->getDefaultAnimHead()!= NULL)
+				if (p_templ_animations->getDefaultAnimHead()!= nullptr)
 					actor->setAnimationHead(p_templ_animations->getDefaultAnimHead());
 			}
 

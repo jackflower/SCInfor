@@ -28,7 +28,7 @@ namespace rendering
 		Rectangle::~Rectangle()
 		{
 			delete p_rectangle;//usuwamy obiekt (mamy pewność, że istnieje, bo konstruktor go stworzył)
-			p_rectangle	= NULL;
+			p_rectangle	= nullptr;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

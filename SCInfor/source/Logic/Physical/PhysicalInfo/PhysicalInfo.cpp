@@ -29,8 +29,8 @@ namespace logic
 		m_size_fuel(0.0f, 0.0f),
 		m_position_offset_energy(0.0f, 0.0f),
 		m_position_offset_fuel(0.0f, 0.0f),
-		p_status_bar_energy(NULL),
-		p_status_bar_fuel(NULL)
+		p_status_bar_energy(nullptr),
+		p_status_bar_fuel(nullptr)
 	{
 		//zakładam, że wykorzystuję tylko część body, ale routing ligiki pozostaje elastyczny
 		setZIndexBody(Z_PHYSICAL_INFO_BODY);
@@ -92,8 +92,8 @@ namespace logic
 		m_position_offset_energy.y = 0.0f;
 		m_position_offset_fuel.x = 0.0f;
 		m_position_offset_fuel.y = 0.0f;
-		p_status_bar_energy = NULL;
-		p_status_bar_fuel = NULL;
+		p_status_bar_energy = nullptr;
+		p_status_bar_fuel = nullptr;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

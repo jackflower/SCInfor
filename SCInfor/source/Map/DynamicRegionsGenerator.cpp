@@ -23,8 +23,8 @@ namespace mapengine
 		m_last_point_checked(0, 0),
 		m_open_List(),
 		m_link_list(),
-		p_cell_list(NULL),
-		p_region_list(NULL)
+		p_cell_list(nullptr),
+		p_region_list(nullptr)
 	{
 	}
 
@@ -84,8 +84,8 @@ namespace mapengine
 		//         out << (*p_region_list->at(i)) << std::endl;
 		//     }    
 	    
-		p_cell_list = NULL;
-		p_region_list = NULL;
+		p_cell_list = nullptr;
+		p_region_list = nullptr;
 	}
 
 	//Metoda zjaduje następny punkt startowy
@@ -127,7 +127,7 @@ namespace mapengine
 	void DynamicRegionsGenerator::createRegion(int region, int regionID)
 	{
 		DynamicRegion * newRegion = findRegion(regionID);
-		if (newRegion == NULL)
+		if (newRegion == nullptr)
 		{
 			newRegion = new DynamicRegion(regionID);
 			p_region_list->push_back(newRegion);
@@ -195,7 +195,7 @@ namespace mapengine
 			if ((*it)->getRegionID() == regionID)
 				return *it;
 		}
-		return NULL;
+		return nullptr;
 	}
 
 	//Metoda przetwarza punkty wokół danego węzła
