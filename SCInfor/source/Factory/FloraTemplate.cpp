@@ -15,9 +15,9 @@ namespace factory
 	//Konstruktor
 	FloraTemplate::FloraTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_rotation_speed_body_template(0.0f),
-		m_rotation_speed_head_template(0.0f)
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_rotation_speed_body_template{ 0.0f },
+		m_rotation_speed_head_template{ 0.0f }
 	{
 	} 
 

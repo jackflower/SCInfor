@@ -13,20 +13,20 @@ namespace factory
 	//Konstruktor
 	MapPhysicalTemplate::MapPhysicalTemplate()
 	:
-		Resource(),//konstruktor klasy bazowej
-		m_templ_filename(),
-		m_templ_type(),
-		m_templ_code(),
-		m_templ_displayable_type(),
-		m_texture_name(),
-		m_texture_width(0),
-		m_texture_height(0),
-		m_color(),
-		m_animation_name(),
-		m_templ_scale(0.0f, 0.0f),
-		m_templ_rotation(0.0f),
-		m_templ_size(0.0f, 0.0f),
-		m_templ_smooth(false)
+		Resource{},//konstruktor klasy bazowej
+		m_templ_filename{},
+		m_templ_type{},
+		m_templ_code{},
+		m_templ_displayable_type{},
+		m_texture_name{},
+		m_texture_width{ 0 },
+		m_texture_height{ 0 },
+		m_color{},
+		m_animation_name{},
+		m_templ_scale{ 0.0f, 0.0f },
+		m_templ_rotation{ 0.0f },
+		m_templ_size{ 0.0f, 0.0f },
+		m_templ_smooth{ false }
 	{
 	}
 
@@ -34,26 +34,26 @@ namespace factory
 	MapPhysicalTemplate::MapPhysicalTemplate(const MapPhysicalTemplate & MapPhysicalTemplateCopy)
 	:
 		Resource(MapPhysicalTemplateCopy),//konstruktor kopiujący klasy bazowej
-		m_templ_filename(MapPhysicalTemplateCopy.m_templ_filename),
-		m_templ_type(MapPhysicalTemplateCopy.m_templ_type),
-		m_templ_code(MapPhysicalTemplateCopy.m_templ_code),
-		m_templ_displayable_type(MapPhysicalTemplateCopy.m_templ_displayable_type),
-		m_texture_name(MapPhysicalTemplateCopy.m_texture_name),
-		m_texture_width(MapPhysicalTemplateCopy.m_texture_width),
-		m_texture_height(MapPhysicalTemplateCopy.m_texture_height),
-		m_color(MapPhysicalTemplateCopy.m_color),
-		m_animation_name(MapPhysicalTemplateCopy.m_animation_name),
-		m_templ_scale(MapPhysicalTemplateCopy.m_templ_scale),
-		m_templ_rotation(MapPhysicalTemplateCopy.m_templ_rotation),
-		m_templ_size(MapPhysicalTemplateCopy.m_templ_size),
-		m_templ_smooth(MapPhysicalTemplateCopy.m_templ_smooth)
+		m_templ_filename{ MapPhysicalTemplateCopy.m_templ_filename },
+		m_templ_type{ MapPhysicalTemplateCopy.m_templ_type },
+		m_templ_code{ MapPhysicalTemplateCopy.m_templ_code },
+		m_templ_displayable_type{ MapPhysicalTemplateCopy.m_templ_displayable_type },
+		m_texture_name{ MapPhysicalTemplateCopy.m_texture_name },
+		m_texture_width{ MapPhysicalTemplateCopy.m_texture_width },
+		m_texture_height{ MapPhysicalTemplateCopy.m_texture_height },
+		m_color{ MapPhysicalTemplateCopy.m_color },
+		m_animation_name{ MapPhysicalTemplateCopy.m_animation_name },
+		m_templ_scale{ MapPhysicalTemplateCopy.m_templ_scale },
+		m_templ_rotation{ MapPhysicalTemplateCopy.m_templ_rotation },
+		m_templ_size{ MapPhysicalTemplateCopy.m_templ_size },
+		m_templ_smooth{ MapPhysicalTemplateCopy.m_templ_smooth }
 	{
 	}
 
 	//Destruktor wirtualny
 	MapPhysicalTemplate::~MapPhysicalTemplate()
 	{
-		//Resource
+		//~Resource()
 		m_templ_filename = "";
 		m_templ_type = "";
 		m_templ_code = "";
@@ -61,7 +61,7 @@ namespace factory
 		m_texture_name = "";
 		m_texture_width = 0;
 		m_texture_height = 0;
-		//m_color
+		m_color;
 		m_animation_name = "";
 		m_templ_scale.x = 0.0f;
 		m_templ_scale.y = 0.0f;
@@ -125,7 +125,7 @@ namespace factory
 	}
 
 	//Wirtualna metoda tworzenie obiektów pochodnych klasy MapPhysical
-	MapPhysical* MapPhysicalTemplate::create(std::wstring id)
+	MapPhysical *MapPhysicalTemplate::create(std::wstring id)
 	{
 		MapPhysical *mapphysical = gMapPhysicalManager.createMapPhysical(id);
 		fill(mapphysical);

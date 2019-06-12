@@ -13,13 +13,14 @@ namespace factory
 	//Konstruktor
 	EnemyTemplate::EnemyTemplate()
 	:
-		ActorTemplate()//konstruktor klasy bazowej
+		ActorTemplate{}//konstruktor klasy bazowej
 	{
 	} 
 
 	//Destruktor wirtualny
 	EnemyTemplate::~EnemyTemplate()
 	{
+		//~ActorTemplate()
 		m_enemy_AI.clear();
 	}
 

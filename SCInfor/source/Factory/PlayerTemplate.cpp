@@ -5,8 +5,6 @@
 //
 
 #include "PlayerTemplate.h"
-//#include "../XML/Xml.h"
-//#include "../Logic/PhysicalManager.h"
 
 namespace factory
 {
@@ -15,7 +13,7 @@ namespace factory
 	//Konstruktor
 	PlayerTemplate::PlayerTemplate()
 	:
-		ActorTemplate()
+		ActorTemplate{}
 	{
 	} 
 

@@ -16,8 +16,8 @@ namespace factory
 	//Konstruktor
 	RobotTemplate::RobotTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_templ_strategy_duration()
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_templ_strategy_duration{}
 	{
 	}
 
@@ -25,7 +25,7 @@ namespace factory
 	RobotTemplate::~RobotTemplate()
 	{
 		//~ActorTemplate()
-		//m_templ_strategy_duration
+		m_templ_strategy_duration;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

@@ -20,14 +20,14 @@ namespace factory
 	//Konstruktor
 	BulletTemplate::BulletTemplate()
 	:
-		ActorTemplate()//konstruktor klasy bazowej
+		ActorTemplate{}//konstruktor klasy bazowej
 	{
 	}
 
 	//Destruktor
 	BulletTemplate::~BulletTemplate()
 	{
-		//~ActorTemplate
+		//~ActorTemplate()
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -137,7 +137,7 @@ namespace factory
 		bullet->setTemplate(this);
 		
 		//Friday, February 8, 2019
-		//ten kod jest prawdopodobnie poporawny
+		//ten kod jest prawdopodobnie poprawny
 		//jak będą pocisku, to się przetestuje...
 		ActorTemplate::fill(bullet);
 		

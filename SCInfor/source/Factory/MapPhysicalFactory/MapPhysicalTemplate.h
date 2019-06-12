@@ -154,7 +154,7 @@ namespace factory
 		bool m_templ_smooth; //flaga określająca filtr wygładzający teksturę
 
 		//czekam na klasę, czekam na nazwę...
-		//CGroundPhysicsTemplate*		p_templ_physicsground			//dane wzorca obiektu CGroundPhysics
+		//CGroundPhysicsTemplate *p_templ_physicsground //dane wzorca obiektu CGroundPhysics
 
 	};
 }//namespace factory

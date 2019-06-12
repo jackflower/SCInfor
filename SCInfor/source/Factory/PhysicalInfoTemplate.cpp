@@ -20,23 +20,23 @@ namespace factory
 	//Konstruktor
 	PhysicalInfoTemplate::PhysicalInfoTemplate()
 	:
-		PhysicalTemplate(),//konstruktor klasy bazowej
-		m_templ_physical_info_name(""),
-		m_templ_z_index_rectangle(Z_PHYSICAL_INFO_STATUS_BAR),
-		m_templ_use_status_bar_energy(false),
-		m_templ_use_status_bar_fuel(false),
-		m_templ_color_bar_energy(),
-		m_templ_color_bar_fuel(),
-		m_templ_size_energy(0.0f, 0.0f),
-		m_templ_size_fuel(0.0f, 0.0f),
-		m_templ_position_offset_energy(0.0f, 0.0f),
-		m_templ_position_offset_fuel(0.0f, 0.0f),
-		p_templ_status_bar_energy(NULL),
-		p_templ_status_bar_fuel(NULL),
-		m_templ_use_animation(false),
-		m_templ_use_texture(false),
-		m_templ_animation_name(),
-		m_templ_texture_name()
+		PhysicalTemplate{},//konstruktor klasy bazowej
+		m_templ_physical_info_name{ "" },
+		m_templ_z_index_rectangle{ Z_PHYSICAL_INFO_STATUS_BAR },
+		m_templ_use_status_bar_energy{ false },
+		m_templ_use_status_bar_fuel{ false },
+		m_templ_color_bar_energy{},
+		m_templ_color_bar_fuel{},
+		m_templ_size_energy{ 0.0f, 0.0f },
+		m_templ_size_fuel{ 0.0f, 0.0f },
+		m_templ_position_offset_energy{ 0.0f, 0.0f },
+		m_templ_position_offset_fuel{ 0.0f, 0.0f },
+		p_templ_status_bar_energy{ NULL },
+		p_templ_status_bar_fuel{ NULL },
+		m_templ_use_animation{ false },
+		m_templ_use_texture{ false },
+		m_templ_animation_name{},
+		m_templ_texture_name{}
 	{
 	}
 	
@@ -53,8 +53,8 @@ namespace factory
 		m_templ_z_index_rectangle = 0;
 		m_templ_use_status_bar_energy = false;
 		m_templ_use_status_bar_fuel = false;
-		//m_templ_color_bar_energy
-		//m_templ_color_bar_fuel
+		m_templ_color_bar_energy;
+		m_templ_color_bar_fuel;
 		m_templ_size_energy.x = 0.0f;
 		m_templ_size_energy.y = 0.0f;
 		m_templ_size_fuel.x = 0.0f;

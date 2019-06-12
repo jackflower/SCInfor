@@ -33,22 +33,22 @@ namespace factory
 	//Konstruktor
 	ActorTemplate::ActorTemplate()
 	:
-		PhysicalTemplate(),//konstruktor klasy bazowej
-		p_templ_animations(NULL),
-		m_templ_available_animations(),
-		m_templ_technical_data(),
-		m_templ_engine_data(),
-		m_templ_energy_data(),
-		m_templ_airconditioning_data(),
-		m_templ_ventilator_data(),
-		m_templ_gun_data(),
-		p_templ_engine(NULL),
-		p_templ_energy(NULL),
-		p_templ_airconditioning(NULL),
-		p_templ_ventilator(NULL),
-		p_templ_gun(NULL),
-		m_templ_use_physical_info(false),
-		p_templ_physical_info(NULL)
+		PhysicalTemplate{},//konstruktor klasy bazowej
+		p_templ_animations{ NULL },
+		m_templ_available_animations{},
+		m_templ_technical_data{},
+		m_templ_engine_data{},
+		m_templ_energy_data{},
+		m_templ_airconditioning_data{},
+		m_templ_ventilator_data{},
+		m_templ_gun_data{},
+		p_templ_engine{ NULL },
+		p_templ_energy{ NULL },
+		p_templ_airconditioning{ NULL },
+		p_templ_ventilator{ NULL },
+		p_templ_gun{ NULL },
+		m_templ_use_physical_info{ false },
+		p_templ_physical_info{ NULL }
 	{
 	}
 
@@ -56,13 +56,13 @@ namespace factory
 	ActorTemplate::~ActorTemplate()
 	{
 		p_templ_animations = NULL;
-		//m_templ_available_animations
-		//m_templ_technical_data
-		//m_templ_engine_data
-		//m_templ_energy_data
-		//m_templ_airconditioning_data
-		//m_templ_ventilator_data
-		//m_templ_gun_data
+		m_templ_available_animations;
+		m_templ_technical_data;
+		m_templ_engine_data;
+		m_templ_energy_data;
+		m_templ_airconditioning_data;
+		m_templ_ventilator_data;
+		m_templ_gun_data;
 		p_templ_engine = NULL;
 		p_templ_energy = NULL;
 		p_templ_airconditioning = NULL;
@@ -120,7 +120,7 @@ namespace factory
 		{
 			for (xml_node<>* node = xml.getChild(xml.getRootNode(), "animset"); node; node = xml.getSibling(node,"animset"))
 			{
-				AnimSet * animations = new AnimSet();
+				AnimSet *animations = new AnimSet();
 				animations->setAnimSetName(xml.getString(node, "name_animset"));
 				animations->parse(xml,node);
 				m_templ_available_animations.push_back(animations);

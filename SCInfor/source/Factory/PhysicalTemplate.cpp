@@ -13,26 +13,26 @@ namespace factory
 	//Konstruktor
 	PhysicalTemplate::PhysicalTemplate()
 	:
-		Resource(),//konstruktor klasy bazowej
-		m_templ_filename(),
-		m_templ_type(),
-		m_templ_genre(),
-		m_templ_circle_radius(0.0f),
-		m_templ_rect_size(1.0f, 1.0f),
-		m_templ_rect_size_body(1.0f, 1.0f),
-		m_templ_rect_size_head(1.0f, 1.0f),
-		m_templ_texture_body(),
-		m_templ_texture_head(),
-		m_templ_altitude(1.0f),
-		m_templ_use_displayable_body(false),
-		m_templ_use_shadow_body(false),
-		m_templ_use_displayable_head(false),
-		m_templ_use_shadow_head(false),
-		m_templ_color_body(sf::Color()),
-		m_templ_color_head(sf::Color()),
-		m_templ_scale_body(1.0f),
-		m_templ_scale_head(1.0f),
-		m_templ_part_collision_data()
+		Resource{},//konstruktor klasy bazowej
+		m_templ_filename{},
+		m_templ_type{},
+		m_templ_genre{},
+		m_templ_circle_radius{ 0.0f },
+		m_templ_rect_size{ 1.0f, 1.0f },
+		m_templ_rect_size_body{ 1.0f, 1.0f },
+		m_templ_rect_size_head{ 1.0f, 1.0f },
+		m_templ_texture_body{},
+		m_templ_texture_head{},
+		m_templ_altitude{ 1.0f },
+		m_templ_use_displayable_body{ false },
+		m_templ_use_shadow_body{ false },
+		m_templ_use_displayable_head{ false },
+		m_templ_use_shadow_head{ false },
+		m_templ_color_body{ sf::Color{} },
+		m_templ_color_head{ sf::Color{} },
+		m_templ_scale_body{ 1.0f },
+		m_templ_scale_head{ 1.0f },
+		m_templ_part_collision_data{}
 	{
 	}
 
@@ -44,7 +44,7 @@ namespace factory
 		m_templ_type = "";
 		m_templ_genre = L"";
 		m_templ_circle_radius = 0.0f;
-		//m_templ_rect_size
+		m_templ_rect_size;
 		m_templ_rect_size_body.x = 0.0;
 		m_templ_rect_size_body.y = 0.0;
 		m_templ_rect_size_head.x = 0.0;
@@ -56,11 +56,11 @@ namespace factory
 		m_templ_use_shadow_body = false;
 		m_templ_use_displayable_head = false;
 		m_templ_use_shadow_head = false;
-		//m_templ_color_body
-		//m_templ_color_head
+		m_templ_color_body;
+		m_templ_color_head;
 		m_templ_scale_body = 0.0f;
 		m_templ_scale_head = 0.0f;
-		//m_templ_part_collision_data
+		m_templ_part_collision_data;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

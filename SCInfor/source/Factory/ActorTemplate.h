@@ -136,7 +136,10 @@ namespace factory
 	public:
 
 		//metoda zwraca referencję na kontener z zestawem animacji
-		inline const std::vector<AnimSet*> & getAvailableAnims() { return m_templ_available_animations; }
+		inline const std::vector<AnimSet*> & getAvailableAnims()
+		{
+			return m_templ_available_animations;
+		}
 	};
 } //namespace factory
 #endif //H_ACTOR_TEMPLATE_JACK

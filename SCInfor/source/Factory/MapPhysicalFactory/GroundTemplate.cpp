@@ -15,25 +15,25 @@ namespace factory
 	//Konstruktor
 	GroundTemplate::GroundTemplate()
 	:
-		ActorTemplate(),//konstruktor klasy bazowej
-		m_template_physicsground()
+		ActorTemplate{},//konstruktor klasy bazowej
+		m_template_physicsground{}
 	{
-		//to do..
+		//to do..layers...
 	}
 
 	//Konstruktor kopiujący
 	GroundTemplate::GroundTemplate(const GroundTemplate & GroundTemplateCopy)
 	:
-		ActorTemplate(GroundTemplateCopy),//konstruktor kopiujący klasy bazowej
-		m_template_physicsground(GroundTemplateCopy.m_template_physicsground)
+		ActorTemplate{ GroundTemplateCopy },//konstruktor kopiujący klasy bazowej
+		m_template_physicsground{ GroundTemplateCopy.m_template_physicsground }
 	{
 	}
 
 	//Destruktor wirtualny
 	GroundTemplate::~GroundTemplate()
 	{
-		//ActorTemplate
-		//m_template_physicsground
+		//~ActorTemplate()
+		m_template_physicsground;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -58,7 +58,7 @@ namespace factory
 	//Wirtualna metoda ładująca dane z xml wywoływana przez implementacje klas potomnych
 	bool GroundTemplate::load(Xml & xml)
 	{
-		//ładowanie danych klasy bazowej Physical
+		//sprawdzamy, czy można załadować dane z klasy bazowej ActorTemplate
 		if (!ActorTemplate::load(xml)) return false;
 		
 		//dane dla fizyki podłoża
@@ -86,7 +86,8 @@ namespace factory
 	{
 		ActorTemplate::fill(ground);
 		
-		//chaos...lepiej to zaprojektować...
+		//odrobina chaosu...
+		//docelowo lepiej to zaprojektować - jakaś klasa generująca "chaos"
 		float flaga = gRandom.Rndf();
 
 		if (flaga > 0.5f)

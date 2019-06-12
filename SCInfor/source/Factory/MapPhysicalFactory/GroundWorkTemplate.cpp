@@ -15,24 +15,24 @@ namespace factory
 	//Konstruktor
 	GroundWorkTemplate::GroundWorkTemplate()
 	:
-		MapPhysicalTemplate(),//konstruktor klasy bazowej
-		m_template_physicsground()
+		MapPhysicalTemplate{},//konstruktor klasy bazowej
+		m_template_physicsground{}
 	{
 	}
 
 	//Konstruktor kopiujący
 	GroundWorkTemplate::GroundWorkTemplate(const GroundWorkTemplate & GroundWorkTemplateCopy)
 	:
-		MapPhysicalTemplate(GroundWorkTemplateCopy),//konstruktor kopiujący klasy bazowej
-		m_template_physicsground(GroundWorkTemplateCopy.m_template_physicsground)
+		MapPhysicalTemplate{ GroundWorkTemplateCopy },//konstruktor kopiujący klasy bazowej
+		m_template_physicsground{ GroundWorkTemplateCopy.m_template_physicsground }
 	{
 	}
 
 	//Destruktor wirtualny
 	GroundWorkTemplate::~GroundWorkTemplate()
 	{
-		//MapPhysicalTemplate
-		//m_template_physicsground
+		//~MapPhysicalTemplate()
+		m_template_physicsground;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
@@ -74,7 +74,7 @@ namespace factory
 	//Metoda tworzy obiekt klasy GroundWork
 	GroundWork *GroundWorkTemplate::create(const std::wstring id)
 	{
-		GroundWork* groundwork = gMapPhysicalManager.createGroundWork(id);
+		GroundWork *groundwork = gMapPhysicalManager.createGroundWork(id);
 		fill(groundwork);
 		return groundwork;
 	}
@@ -84,6 +84,8 @@ namespace factory
 	{
 		MapPhysicalTemplate::fill(groundwork);
 		
+		//odrobina chaosu...
+		//docelowo lepiej to zaprojektować - jakaś klasa generująca "chaos"
 		float flaga = gRandom.Rndf();
 
 		if(flaga > 0.5f)

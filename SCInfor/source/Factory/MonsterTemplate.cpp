@@ -13,13 +13,14 @@ namespace factory
 	//Konstruktor
 	MonsterTemplate::MonsterTemplate()
 	:
-		ActorTemplate()//konstruktor klasy bazowej
+		ActorTemplate{}//konstruktor klasy bazowej
 	{
 	} 
 
 	//Destruktor wirtualny
 	MonsterTemplate::~MonsterTemplate()
 	{
+		//~ActorTemplate()
 	}
 
 	//Wirtualna metoda zwalniająca zasób - implementacje w klasach pochodnych
