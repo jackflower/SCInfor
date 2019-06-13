@@ -94,9 +94,9 @@ namespace logic
 
 		private:
 
-			std::string		m_login;		//login
-			std::string		m_password;		//hasło
-			bool			m_connection;	//flaga, czy obiekt jest zalogowany do systemu
+			std::string m_login; //login
+			std::string m_password; //hasło
+			bool m_connection; //flaga, czy obiekt jest zalogowany do systemu
 		};
 	}//namespace communication
 }//namespace logic

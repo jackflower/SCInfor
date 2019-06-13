@@ -15,15 +15,16 @@ namespace logic
 	//Chroniony konstruktor domyślny
 	Bullet::Bullet(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId),//konstruktor klasy bazowej
-		m_speed(0.0f),
-		m_distance(0.0f),
-		m_half_distance(0.0f),
-		m_bullet_emiter(0.0f, 0.0f),
-		m_vector_move(0.0f, 0.0f),
-		m_destruction_time(0.0f),
-		m_bullet_force(0.0f),
-		m_road(0.0f)
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_distance{ 0.0f },
+		m_half_distance{ 0.0f },
+		m_bullet_emiter{ 0.0f, 0.0f },
+		m_vector_move{ 0.0f, 0.0f },
+		m_destruction_time{ 0.0f },
+		m_target{ 0.0f, 0.0f },
+		m_bullet_force{ 0.0f },
+		m_road{ 0.0f },
+		m_caliber{}
 	{
 	}
 
@@ -31,21 +32,22 @@ namespace logic
 	Bullet::Bullet(const Bullet & BulletCopy)
 	:
 		Actor(BulletCopy),//konstruktor kopiujący klasy bazowej
-		m_speed(BulletCopy.m_speed),
-		m_distance(BulletCopy.m_distance),
-		m_half_distance(BulletCopy.m_half_distance),
-		m_bullet_emiter(BulletCopy.m_bullet_emiter),
-		m_vector_move(BulletCopy.m_vector_move),
-		m_destruction_time(BulletCopy.m_destruction_time),
-		m_bullet_force(BulletCopy.m_bullet_force),
-		m_road(BulletCopy.m_road)
+		m_distance{ BulletCopy.m_distance },
+		m_half_distance{ BulletCopy.m_half_distance },
+		m_bullet_emiter{ BulletCopy.m_bullet_emiter },
+		m_vector_move{ BulletCopy.m_vector_move },
+		m_destruction_time{ BulletCopy.m_destruction_time },
+		m_target{ BulletCopy.m_target },
+		m_bullet_force{ BulletCopy.m_bullet_force },
+		m_road{ BulletCopy.m_road },
+		m_caliber{ BulletCopy.m_caliber }
 	{
 	}
 
 	//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 	Bullet::~Bullet()
 	{
-		m_speed = 0.0f;
+		//~Actor()
 		m_distance = 0.0f;
 		m_half_distance = 0.0f;
 		m_bullet_emiter.x = 0.0f;
@@ -53,29 +55,17 @@ namespace logic
 		m_vector_move.x = 0.0f;
 		m_vector_move.y = 0.0f;
 		m_destruction_time = 0.0f;
+		m_target.x = 0.0f;
+		m_target.y = 0.0f;
 		m_bullet_force = 0.0f;
 		m_road = 0.0f;
+		m_caliber;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/
 	const std::string Bullet::getType() const
 	{
 		return rtti.getNameClass();
-	}
-
-	//Metoda zwraca prędkość pocisku
-	const float Bullet::getSpeed() const
-	{
-		return m_speed;
-	}
-
-	//Metoda ustawia prędkość pocisku
-	void Bullet::setSpeed(float speed)
-	{
-		if (speed < 0) return;
-		m_speed = speed;
-		//2019-02-10 - sprawdzić, czy odwołać się do składowych
-		//m_velocity...
 	}
 
 	//Metoda zwraca dystans do pokonania przez pocisk
@@ -141,18 +131,6 @@ namespace logic
 		m_destruction_time = destruction_time;
 	}
 
-	//Metoda zwraca funkcjonalność ataku pocisku
-	const float Bullet::getBulletForce() const
-	{
-		return m_bullet_force;
-	}
-
-	//Metoda ustawia funkcjonalność ataku pocisku
-	void Bullet::setBulletForce(float bullet_force)
-	{
-		m_bullet_force = bullet_force;
-	}
-
 	//Metoda zwraca położenie celu - wektor, do którego podąża pocisk
 	const sf::Vector2f & Bullet::getTarget() const
 	{
@@ -172,6 +150,18 @@ namespace logic
 		m_target.y = target_y;
 	}
 
+	//Metoda zwraca funkcjonalność ataku pocisku
+	const float Bullet::getBulletForce() const
+	{
+		return m_bullet_force;
+	}
+
+	//Metoda ustawia funkcjonalność ataku pocisku
+	void Bullet::setBulletForce(float bullet_force)
+	{
+		m_bullet_force = bullet_force;
+	}
+
 	//Metoda zwraca drogę pokonaną przez pocisk
 	const float Bullet::getRoad()
 	{
@@ -182,18 +172,6 @@ namespace logic
 	void Bullet::setRoad(float road)
 	{
 		m_road = road;
-	}
-
-	//Metoda zwraca prędkość pocisku wystrzelonego z działa
-	const float Bullet::getBulletSpeed() const
-	{
-		return m_bullet_speed;
-	}
-
-	//Metoda ustawia prędkość pocisku wystrzelonego z działa
-	void Bullet::setBulletSpeed(float bullet_speed)
-	{
-		m_bullet_speed = bullet_speed;
 	}
 
 	//Metoda tworzy eksplozję - wymaga implementacji
@@ -215,8 +193,7 @@ namespace logic
 	//Metoda testowa
 	void Bullet::Test()
 	{
-		//testy, czy mam wszystkie pola...(potrzebne)
-		//this->
+		// testy jednostkowe...
 	}
 
 }//namespace logic

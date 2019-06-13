@@ -78,7 +78,7 @@ namespace equipment
 		private:
 
 			std::string m_name; //nazwa kalibru np. Caliber 44
-			float m_caliber; //kaliber urzbrojenia
+			float m_caliber; //kaliber uzbrojenia
 			ECaliber e_caliber;	//typ kalibru
 		};
 	}//namespace weapon

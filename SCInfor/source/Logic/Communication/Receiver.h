@@ -83,9 +83,6 @@ namespace logic
 			Switch m_unit_controller; //włącznik, sterownik, moduł zarządzania, starter, stacyjka
 			bool m_use_communication; //flaga, czy obiekt posiada moduł komunikacji
 			Communication *p_communication; //wskaźnik na obiekt klasy Communication (posiada moduł komunikacyjny)
-
-			//to do...analiza pól etc...
-
 		};
 	}//namespace communication
 }//namespace logic

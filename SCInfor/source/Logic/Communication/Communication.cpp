@@ -20,16 +20,16 @@ namespace logic
 		//Chroniony konstruktor domyślny
 		Communication::Communication(const std::wstring & uniqueId)
 		:
-			Actor(uniqueId), //konstruktor klasy bazowej
-			m_communication_name(),
-			m_unit_controller(true),//urządzenie włączone
-			e_communication_state(COMMUNICATION_DEFAULT),
-			m_connected(false),
-			m_range(0.0f),
-			m_reset_duration(0.0f),
-			m_duration(0.0f),
-			m_login_module(false),
-			m_networking(TYPE_DEFAULT)
+			Actor{ uniqueId }, //konstruktor klasy bazowej
+			m_communication_name{},
+			m_unit_controller{ true },//urządzenie włączone
+			e_communication_state{ ECommunicationState::COMMUNICATION_DEFAULT },
+			m_connected{ false },
+			m_range{ 0.0f },
+			m_reset_duration{ 0.0f },
+			m_duration{ 0.0f },
+			m_login_module{ false },
+			m_networking{ ENetworking::TYPE_DEFAULT }
 		{
 			//to do: layers
 		}
@@ -38,15 +38,15 @@ namespace logic
 		Communication::Communication(const Communication & CommunicationCopy)
 		:
 			Actor(CommunicationCopy),//konstruktor kopiujacy klasy bazowej
-			m_communication_name(CommunicationCopy.m_communication_name),
-			m_unit_controller(CommunicationCopy.m_unit_controller),
-			e_communication_state(CommunicationCopy.e_communication_state),
-			m_connected(CommunicationCopy.m_connected),
-			m_range(CommunicationCopy.m_range),
-			m_reset_duration(CommunicationCopy.m_reset_duration),
-			m_duration(CommunicationCopy.m_duration),
-			m_login_module(CommunicationCopy.m_login_module),
-			m_networking(CommunicationCopy.m_networking)
+			m_communication_name{ CommunicationCopy.m_communication_name },
+			m_unit_controller{ CommunicationCopy.m_unit_controller },
+			e_communication_state{ CommunicationCopy.e_communication_state },
+			m_connected{ CommunicationCopy.m_connected },
+			m_range{ CommunicationCopy.m_range },
+			m_reset_duration{ CommunicationCopy.m_reset_duration },
+			m_duration{ CommunicationCopy.m_duration },
+			m_login_module{ CommunicationCopy.m_login_module },
+			m_networking{ CommunicationCopy.m_networking }
 		{
 			//to do: layers
 		}
@@ -56,14 +56,14 @@ namespace logic
 		{
 			//~Actor()
 			m_communication_name = "";
-			//m_unit_controller
-			e_communication_state = COMMUNICATION_DEFAULT;
+			m_unit_controller;
+			e_communication_state = ECommunicationState::COMMUNICATION_DEFAULT;
 			m_connected = false;
 			m_range = 0.0f;
 			m_reset_duration = 0.0f;
 			m_duration = 0.0f;
-			//m_login_module
-			m_networking = TYPE_DEFAULT;
+			m_login_module;
+			m_networking = ENetworking::TYPE_DEFAULT;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/
@@ -156,9 +156,6 @@ namespace logic
 			m_login_module.setPassword(password);
 		}
 
-
-		////////
-
 		//Metoda zwraca referencję dla rodzaju technologii połączenia sieciowego
 		const ENetworking & Communication::getNetworking() const
 		{
@@ -176,7 +173,7 @@ namespace logic
 		{
 			switch(e_communication_state)
 			{
-			case COMMUNICATION_DEFAULT:
+			case ECommunicationState::COMMUNICATION_DEFAULT:
 			{
 				if (p_anim_set)
 				{
@@ -185,7 +182,7 @@ namespace logic
 				}
 				break;
 			}
-			case COMMUNICATION_SEARCH:
+			case ECommunicationState::COMMUNICATION_SEARCH:
 			{
 				if (p_anim_set)
 				{
@@ -194,7 +191,7 @@ namespace logic
 				}
 				break;
 			}
-			case COMMUNICATION_LOGIN:
+			case ECommunicationState::COMMUNICATION_LOGIN:
 			{
 				if (p_anim_set)
 				{
@@ -203,7 +200,7 @@ namespace logic
 				}
 				break;
 			}
-			case COMMUNICATION_AUTHORIZATION:
+			case ECommunicationState::COMMUNICATION_AUTHORIZATION:
 			{
 				if (p_anim_set)
 				{
@@ -212,7 +209,7 @@ namespace logic
 				}
 				break;
 			}
-			case COMMUNICATION_UPDATE:
+			case ECommunicationState::COMMUNICATION_UPDATE:
 			{
 				if (p_anim_set)
 				{
@@ -221,7 +218,7 @@ namespace logic
 				}
 				break;
 			}
-			case COMMUNICATION_DAMAGE:
+			case ECommunicationState::COMMUNICATION_DAMAGE:
 			{
 				if (p_anim_set)
 				{
@@ -230,7 +227,7 @@ namespace logic
 				}
 				break;
 			}
-			case COMMUNICATION_DEATH:
+			case ECommunicationState::COMMUNICATION_DEATH:
 			{
 				if (p_anim_set)
 				{

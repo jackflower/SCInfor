@@ -183,7 +183,7 @@ namespace logic
 			ENetworking m_networking; //rodzaj technologii połączenia sieciowego (IP, DHCP, Broadcast)
 
 			//Prywatna metoda zwraca stan, czy dane dane autoryzacji są poprawne i czy obiekt jest zalogowany
-			const bool IsConnected() const { return false; }
+			const bool IsConnected() const { return m_connected; }
 		};
 	}//namespace communication
 }//namespace logic

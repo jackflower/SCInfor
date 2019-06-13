@@ -14,12 +14,12 @@ namespace logic
 		///
 		///Wyliczenie rodzajów technologii połączeń sieciowych
 		///
-		enum ENetworking
+		enum class ENetworking
 		{
-			TYPE_DEFAULT	=	0,//any type (każdy - uniwersalny)
-			TYPE_IP			=	1,
-			TYPE_DHCP		=	2,
-			TYPE_BROADCAST	=	3
+			TYPE_DEFAULT =	0,//any type (każdy - uniwersalny)
+			TYPE_IP = 1,
+			TYPE_DHCP =	2,
+			TYPE_BROADCAST = 3
 		};
 	}//namespace communication
 }//namespace logic

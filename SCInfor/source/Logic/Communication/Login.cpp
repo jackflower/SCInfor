@@ -13,27 +13,27 @@ namespace logic
 		//Konstruktor
 		Login::Login(void)
 		:
-			m_login(),
-			m_password(),
-			m_connection(false)
+			m_login{},
+			m_password{},
+			m_connection{ false }
 		{
 		}
 			
 		//Konstruktor parametryczny
 		Login::Login(bool login)
-			:
-			m_login(),
-			m_password(),
-			m_connection(login)
+		:
+			m_login{},
+			m_password{},
+			m_connection{ login }
 		{
 		}
 
 		//Konstruktor kopiujący
 		Login::Login(const Login & LoginCopy)
 		:
-			m_login(LoginCopy.m_login),
-			m_password(LoginCopy.m_password),
-			m_connection(LoginCopy.m_connection)
+			m_login{ LoginCopy.m_login },
+			m_password{ LoginCopy.m_password },
+			m_connection{ LoginCopy.m_connection }
 		{
 		}
 

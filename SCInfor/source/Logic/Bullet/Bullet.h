@@ -9,6 +9,9 @@
 
 #include "../Physical/Physical.h"
 #include "../Actor/Actor.h"
+#include "../../Equipment/Weapon/Caliber.h"
+
+using namespace equipment::weapon;
 
 namespace logic
 {
@@ -51,18 +54,6 @@ namespace logic
 		///Metoda zwraca typ obiektu /RTTI/
 		///
 		const std::string getType() const;
-
-		///
-		///Metoda zwraca prędkość pocisku
-		///
-		const float getSpeed() const;
-
-		///
-		///Metoda ustawia prędkość pocisku
-		///
-		///@param speed - prędkość pocisku
-		///
-		void setSpeed(float speed);
 
 		///
 		///Metoda zwraca dystans do pokonania przez pocisk
@@ -131,18 +122,6 @@ namespace logic
 		void setDestructionTime(float destruction_time);
 
 		///
-		///Metoda zwraca funkcjonalność ataku pocisku
-		///
-		const float getBulletForce() const;
-
-		///
-		///Metoda ustawia funkcjonalność ataku pocisku
-		///
-		///@param bullet_force - funkcjonalność ataku pocisku
-		///
-		void setBulletForce(float bullet_force);
-
-		///
 		///Metoda zwraca położenie celu - wektor, do którego podąża pocisk
 		///
 		const sf::Vector2f & getTarget() const;
@@ -153,6 +132,18 @@ namespace logic
 		///@param target - referencja na wektor, do którego podąża pocisk
 		///
 		void setTarget(sf::Vector2f & target);
+
+		///
+		///Metoda zwraca funkcjonalność ataku pocisku
+		///
+		const float getBulletForce() const;
+
+		///
+		///Metoda ustawia funkcjonalność ataku pocisku
+		///
+		///@param bullet_force - funkcjonalność ataku pocisku
+		///
+		void setBulletForce(float bullet_force);
 
 		///
 		///Metoda ustawia położenie celu - współrzędne X, Y, do którego podąża pocisk
@@ -176,18 +167,6 @@ namespace logic
 		void setRoad(float road);
 
 		///
-		///Metoda zwraca prędkość pocisku wystrzelonego z działa
-		///
-		const float getBulletSpeed() const;
-
-		///
-		///Metoda ustawia prędkość pocisku wystrzelonego z działa
-		///
-		///@param bullet_speed - prędkość pocisku wystrzelonego z działa
-		///
-		void setBulletSpeed(float bullet_speed);
-
-		///
 		///Metoda tworzy eksplozję - wymaga implementacji
 		///
 		void explode();
@@ -204,21 +183,22 @@ namespace logic
 		///
 		void Test();
 
-		//uporządkowac kolejnosć metod:
-
-
 	protected:
 
-		//jeden wielki bajzel - uporządkować!
-		//2019-02-10
 		//
-		//Klasa wymaga analizy do postaw
+		//wymagana analizy
+		//
+		//2019-06-14
+		// propozycje:
+		//	-	klasa pocisku - zwykły pocisk podlegający prawom fizyki Newtona
+		//	-	klasa pocisk_extra (np. rakieta, samonaprowadzjący się, inne)
+		//
+		//Klasa wymaga analizy od postaw
 		// - dane fizyki pobrać z klas bazowych
-		// - sprawdzić, co znajsuje się w oapkowaniu
+		// - sprawdzić, co znajduje się w opakowaniu
 		//   dotyczącym cech technicznych
-		// - sprawa kalibru (jest przecież klasa - opakowanie)
 
-		float m_speed; //prędkość pocisku
+		//prawdopodobnie te składowe pozostaną
 		float m_distance; //dystans do pokonania przez pocisk bez kolizji
 		float m_half_distance; //połowa pystansu do pokonania przez pocisk opadanie cienia /optymalizacja/
 		sf::Vector2f m_bullet_emiter; //wektor położenia emitera pocisku względem właściciela
@@ -226,37 +206,26 @@ namespace logic
 		float m_destruction_time; //czas do destrukcji pocisku
 		sf::Vector2f m_target; //położenie celu, do którego podąża pocisk
 		float m_bullet_force; //siła destrukcji pocisku - obrażenia przy trafieniu
+		//docelowo klasa Force, Damage, etc...
 		float m_road; //przebyta droga
-		float m_caliber; //kaliber pocisku		[potrzebne]
-		float m_bullet_weight; //waga jednego pocisku	[nie - bo to już odziedziczone]
-		
-		//poniżej - czeka mnie bardzo czasochłonna analiza...
-		//zabrałem to z klasy Gun
-		float m_bullet_speed;				//prędkość pocisku - przenieść do Bullet (to pocisk posiada wiedzę, jaki jest "szybki")
+		Caliber m_caliber; //kaliber pocisku
 
-//
-//		float			m_range;							//zasięg strzału pobierany od właściciela działa (Robot-Gun)
-//		sf::Vector2f	m_initial;							//położenie początkowe pocisku
-//	[ok]		sf::Vector2f	m_target;							//położenie celu, do którego podąża pocisk
-//	[ok]		float			m_speed;							//prędkość pocisku
-//	[ok]		sf::Vector2f	m_bullet_emiter;					//wektor położenia emitera pocisku względem lufy
-//	[ok]		sf::Vector2f	m_vector_move;						//wektor kierunku
-//	[ok]		float			m_distance;							//dystans do pokonania przez pocisk
-//	[ok]		float			m_half_distance;					//połowa pystansu do pokonania przez pocisk /optymalizacja/
-//	[ok]		float			m_road;								//przebyta droga
-//		bool			m_bullet_in_distance;				//flaga, czy pocisk pokonał dystans
-//		float			m_destruction_time;					//czas destrukcji pocisku równy pełnemu obiegowi animacji
-//		CPausableClock	m_destruction_clock;				//zegar pocisku
-//		bool			m_destruction_enabled;				//flaga, czy pocisk dokonał autodestrukcji
-//		bool			m_explosion_enabled;				//flaga, czy pocisk eksplodował
-//		sf::Vector2f	m_bullet_offset;					//przesunięcie wektora pocisku
-//		CForce			m_bullet_force;						//funkcjonalność ataku pocisku
-//		float			m_bullet_shocks_range;				//zasięg rażenia odłamków pocisku po eksplozji bez kolizji z celem
-//		bool			m_bullet_check_collision;			//flaga, czy pocisk ma sprawdzać kolizję
-//		Robot*			p_bullet_parent;					//wskaźnik na właściciela pocisku
-//		float			m_target_altitude;					//apogeum pułapu - apogeum wysokości
-															//jaką może osiągnąć pocisk w czasie
-															//lotu balistycznego (max)
+		//poniższa funkcjonalność - wymaga analizy
+
+		// sf::Vector2f	m_initial; //położenie początkowe pocisku
+		// bool m_bullet_in_distance; //flaga, czy pocisk pokonał dystans
+		// float m_destruction_time; //czas destrukcji pocisku równy pełnemu obiegowi animacji
+		// CPausableClock m_destruction_clock; //zegar pocisku
+		// bool m_destruction_enabled; //flaga, czy pocisk dokonał autodestrukcji
+		// bool m_explosion_enabled; //flaga, czy pocisk eksplodował
+		// sf::Vector2f	m_bullet_offset; //przesunięcie wektora pocisku
+		// CForce m_bullet_force; //funkcjonalność ataku pocisku
+		// float m_bullet_shocks_range; //zasięg rażenia odłamków pocisku po eksplozji bez kolizji z celem
+		// bool m_bullet_check_collision; //flaga, czy pocisk ma sprawdzać kolizję
+		// Robot *p_bullet_parent; //wskaźnik na właściciela pocisku
+		// float m_target_altitude; //apogeum pułapu - apogeum wysokości
+									//jaką może osiągnąć pocisk w czasie
+									//lotu balistycznego (max)
 	private:
 
 	};

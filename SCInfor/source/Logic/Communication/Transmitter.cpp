@@ -15,22 +15,22 @@ namespace logic
 		//Chroniony konstruktor domyślny
 		Transmitter::Transmitter(const std::wstring & uniqueId)
 		:
-			Actor(uniqueId),//konstruktor klasy bazowej
-			m_transmitter_name(""),
-			m_unit_controller(false),//urządzenie wyłączone
-			m_use_communication(false),
-			p_communication(nullptr)
+			Actor{ uniqueId },//konstruktor klasy bazowej
+			m_transmitter_name{ "" },
+			m_unit_controller{ false },//urządzenie wyłączone
+			m_use_communication{ false },
+			p_communication{ nullptr }
 		{
 		}
 			
 		//Chroniony konstruktor kopiujący
 		Transmitter::Transmitter(const Transmitter & TransmitterCopy)
 		:
-			Actor (TransmitterCopy),//konstruktor kopiujacy klasy bazowej
-			m_transmitter_name(TransmitterCopy.m_transmitter_name),
-			m_unit_controller(TransmitterCopy.m_unit_controller),//urządzenie wyłączone
-			m_use_communication(TransmitterCopy.m_use_communication),
-			p_communication(TransmitterCopy.p_communication)
+			Actor(TransmitterCopy),//konstruktor kopiujacy klasy bazowej
+			m_transmitter_name{ TransmitterCopy.m_transmitter_name },
+			m_unit_controller{ TransmitterCopy.m_unit_controller },
+			m_use_communication{ TransmitterCopy.m_use_communication },
+			p_communication{ TransmitterCopy.p_communication }
 		{
 		}
 
@@ -39,7 +39,7 @@ namespace logic
 		{
 			//~Actor()
 			m_transmitter_name = "";
-			//m_unit_controller
+			m_unit_controller;
 			m_use_communication = false;
 			p_communication = nullptr;
 		}
