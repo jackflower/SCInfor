@@ -15,16 +15,16 @@ namespace relaystationdata
 	//Konstruktor
 	SlotsRateData::SlotsRateData()
 	:
-		EquipmentData(),//konstruktor klasy bazowej
-		p_slotsrate(nullptr)
+		EquipmentData{},//konstruktor klasy bazowej
+		p_slotsrate{ nullptr }
 	{
 	}
 
 	//Konstruktor kopiujący
 	SlotsRateData::SlotsRateData(const SlotsRateData & SlotsRateDataCopy)
 	:
-		EquipmentData(SlotsRateDataCopy),//konstruktor kopiujący klasy bazowej
-		p_slotsrate(SlotsRateDataCopy.p_slotsrate)
+		EquipmentData{ SlotsRateDataCopy },//konstruktor kopiujący klasy bazowej
+		p_slotsrate{ SlotsRateDataCopy.p_slotsrate }
 	{
 	}
 

@@ -24,19 +24,19 @@ namespace logic
 
 		//Chroniony konstruktor domyślny
 		PowerRelayStation::PowerRelayStation(const std::wstring & uniqueId)
-			:
-			RelayStation(uniqueId),//konstruktor klasy bazowej
-			m_powerrelaystation_state(POWER_RELAY_STATION_DEFAULT),
-			m_slotsrate_date(),
-			m_powerstations_capacity(0),
-			m_busy_slots(0),
-			m_state_time_range(0.0f, 0.0f),
-			m_rotation_speed_range(0.0f, 0.0f),
-			m_state_time(0.0f),
-			m_rotation_speed(0.0f),
-			m_battery_data(),
-			m_time_to_start(0.0f),
-			m_duration_disconnect(0.0f)
+		:
+			RelayStation{ uniqueId },//konstruktor klasy bazowej
+			m_powerrelaystation_state{ EPowerRelayStationState::POWER_RELAY_STATION_DEFAULT },
+			m_slotsrate_date{},
+			m_powerstations_capacity{ 0 },
+			m_busy_slots{ 0 },
+			m_state_time_range{ 0.0f, 0.0f },
+			m_rotation_speed_range{ 0.0f, 0.0f },
+			m_state_time{ 0.0f },
+			m_rotation_speed{ 0.0f },
+			m_battery_data{},
+			m_time_to_start{ 0.0f },
+			m_duration_disconnect{ 0.0f }
 		{
 			setZIndexBody(Z_PHYSICAL_RELAY_STATION_BODY);
 			setZIndexShadowBody(Z_PHYSICAL_SHADOW_RELAY_STATION_BODY);
@@ -48,17 +48,17 @@ namespace logic
 		PowerRelayStation::PowerRelayStation(const PowerRelayStation & PowerRelayStationCopy)
 			:
 			RelayStation(PowerRelayStationCopy),//konstruktor kopiujacy klasy bazowej
-			m_powerrelaystation_state(PowerRelayStationCopy.m_powerrelaystation_state),
-			m_slotsrate_date(PowerRelayStationCopy.m_slotsrate_date),
-			m_powerstations_capacity(PowerRelayStationCopy.m_powerstations_capacity),
-			m_busy_slots(PowerRelayStationCopy.m_busy_slots),
-			m_state_time_range(PowerRelayStationCopy.m_state_time_range),
-			m_rotation_speed_range(PowerRelayStationCopy.m_rotation_speed_range),
-			m_state_time(PowerRelayStationCopy.m_state_time),
-			m_rotation_speed(PowerRelayStationCopy.m_rotation_speed),
-			m_battery_data(PowerRelayStationCopy.m_battery_data),
-			m_time_to_start(PowerRelayStationCopy.m_time_to_start),
-			m_duration_disconnect(PowerRelayStationCopy.m_duration_disconnect)
+			m_powerrelaystation_state{ PowerRelayStationCopy.m_powerrelaystation_state },
+			m_slotsrate_date{ PowerRelayStationCopy.m_slotsrate_date },
+			m_powerstations_capacity{ PowerRelayStationCopy.m_powerstations_capacity },
+			m_busy_slots{ PowerRelayStationCopy.m_busy_slots },
+			m_state_time_range{ PowerRelayStationCopy.m_state_time_range },
+			m_rotation_speed_range{ PowerRelayStationCopy.m_rotation_speed_range },
+			m_state_time{ PowerRelayStationCopy.m_state_time },
+			m_rotation_speed{ PowerRelayStationCopy.m_rotation_speed },
+			m_battery_data{ PowerRelayStationCopy.m_battery_data },
+			m_time_to_start{ PowerRelayStationCopy.m_time_to_start },
+			m_duration_disconnect{ PowerRelayStationCopy.m_duration_disconnect }
 		{
 			setZIndexBody(Z_PHYSICAL_RELAY_STATION_BODY);
 			setZIndexShadowBody(Z_PHYSICAL_SHADOW_RELAY_STATION_BODY);
@@ -69,9 +69,9 @@ namespace logic
 		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 		PowerRelayStation::~PowerRelayStation()
 		{
-			//~RelayStation()						not edit
-			m_powerrelaystation_state = POWER_RELAY_STATION_DEFAULT;
-			//m_slotsrate_date
+			//~RelayStation()
+			m_powerrelaystation_state = EPowerRelayStationState::POWER_RELAY_STATION_DEFAULT;
+			m_slotsrate_date;
 			m_powerstations_capacity = 0;
 			m_busy_slots = 0;
 			m_state_time_range.first = 0.0f;
@@ -80,7 +80,7 @@ namespace logic
 			m_rotation_speed_range.second = 0.0f;
 			m_state_time = 0.0f;
 			m_rotation_speed = 0.0f;
-			//m_battery_data
+			m_battery_data;
 			m_time_to_start = 0.0f;
 			m_duration_disconnect = 0.0f;
 		}
@@ -189,7 +189,7 @@ namespace logic
 		}
 
 		//Metoda zwraca wskaźnik na obiekt klasy Battery
-		Battery* PowerRelayStation::getBattery()
+		Battery *PowerRelayStation::getBattery()
 		{
 			return m_battery_data.getBattery();
 		}
@@ -241,7 +241,7 @@ namespace logic
 		{
 			switch(m_powerrelaystation_state)
 			{
-			case POWER_RELAY_STATION_DEFAULT:
+			case EPowerRelayStationState::POWER_RELAY_STATION_DEFAULT:
 			{
 				if (p_anim_set)
 				{
@@ -250,7 +250,7 @@ namespace logic
 				}
 				break;
 			}
-			case POWER_RELAY_STATION_UPDATE_CONNECTION:
+			case EPowerRelayStationState::POWER_RELAY_STATION_UPDATE_CONNECTION:
 			{
 				if (p_anim_set)
 				{
@@ -259,7 +259,7 @@ namespace logic
 				}
 				break;
 			}
-			case POWER_RELAY_STATION_DISCONNECT:
+			case EPowerRelayStationState::POWER_RELAY_STATION_DISCONNECT:
 			{
 				if (p_anim_set)
 				{
@@ -268,7 +268,7 @@ namespace logic
 				}
 				break;
 			}
-			case POWER_RELAY_STATION_DAMAGE:
+			case EPowerRelayStationState::POWER_RELAY_STATION_DAMAGE:
 			{
 				if (p_anim_set)
 				{
@@ -277,7 +277,7 @@ namespace logic
 				}
 				break;
 			}
-			case POWER_RELAY_STATION_DEATHT:
+			case EPowerRelayStationState::POWER_RELAY_STATION_DEATHT:
 			{
 				if (p_anim_set)
 				{
@@ -343,17 +343,17 @@ namespace logic
 		void PowerRelayStation::updatePowerRelayStationState(float dt)
 		{
 			//automat stanów - tryb default
-			if (m_powerrelaystation_state == POWER_RELAY_STATION_DEFAULT)
+			if (m_powerrelaystation_state == EPowerRelayStationState::POWER_RELAY_STATION_DEFAULT)
 			{
 				if (RelayStation::m_unit_controller.getState())//jeśli urządzenie jest włączone
 				{
 					m_time_to_start -= dt;
 					if (m_time_to_start <= 0)
-						m_powerrelaystation_state = POWER_RELAY_STATION_UPDATE_CONNECTION;
+						m_powerrelaystation_state = EPowerRelayStationState::POWER_RELAY_STATION_UPDATE_CONNECTION;
 				}
 			}
 
-			if (m_powerrelaystation_state == POWER_RELAY_STATION_UPDATE_CONNECTION)
+			if (m_powerrelaystation_state == EPowerRelayStationState::POWER_RELAY_STATION_UPDATE_CONNECTION)
 			{
 				if (RelayStation::m_unit_controller.getState())//jeśli urządzenie jest włączone
 				{
@@ -375,7 +375,7 @@ namespace logic
 						//urządzenie zasilane jest bateryjnie - jeśli bateria się wyczerpała
 						if (m_battery_data.getBattery()->getCapacity() <= 0)
 						{
-							m_powerrelaystation_state = POWER_RELAY_STATION_DISCONNECT;
+							m_powerrelaystation_state = EPowerRelayStationState::POWER_RELAY_STATION_DISCONNECT;
 							if (m_slotsrate_date.getSlotsRate())
 								m_slotsrate_date.getSlotsRate()->setSlotCounter(0);//zerowanie licznika slotów
 							//...
@@ -389,17 +389,17 @@ namespace logic
 				}
 			}
 
-			if (m_powerrelaystation_state == POWER_RELAY_STATION_DISCONNECT)
+			if (m_powerrelaystation_state == EPowerRelayStationState::POWER_RELAY_STATION_DISCONNECT)
 			{
 				m_duration_disconnect -= dt;
 				if (m_duration_disconnect <= 0)
 				{
 					RelayStation::m_unit_controller.setState(false);//wyłączamy urządzenie
-					m_powerrelaystation_state = POWER_RELAY_STATION_DAMAGE;
+					m_powerrelaystation_state = EPowerRelayStationState::POWER_RELAY_STATION_DAMAGE;
 				}
 			}
 			
-			if (m_powerrelaystation_state == POWER_RELAY_STATION_DAMAGE)
+			if (m_powerrelaystation_state == EPowerRelayStationState::POWER_RELAY_STATION_DAMAGE)
 			{
 				//i po jakimś czasie...
 				//MarkForDelete();

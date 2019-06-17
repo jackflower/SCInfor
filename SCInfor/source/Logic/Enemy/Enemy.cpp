@@ -19,7 +19,7 @@ namespace logic
 	//Chroniony konstruktor domyślny
 	Enemy::Enemy(const std::wstring & uniqueId) 
 	:	
-		Actor(uniqueId)//konstruktor klasy bazowej
+		Actor{ uniqueId }//konstruktor klasy bazowej
 	{
 	}
 

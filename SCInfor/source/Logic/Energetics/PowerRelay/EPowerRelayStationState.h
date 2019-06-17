@@ -14,13 +14,13 @@ namespace logic
 		///
 		///Wyliczenie stanów dla obiektu PowerRelayStation
 		///
-		enum EPowerRelayStationState
+		enum class EPowerRelayStationState
 		{
-			POWER_RELAY_STATION_DEFAULT				= 0,
-			POWER_RELAY_STATION_UPDATE_CONNECTION	= 1,
-			POWER_RELAY_STATION_DISCONNECT			= 2,
-			POWER_RELAY_STATION_DAMAGE				= 3,
-			POWER_RELAY_STATION_DEATHT				= 4,
+			POWER_RELAY_STATION_DEFAULT = 0,
+			POWER_RELAY_STATION_UPDATE_CONNECTION = 1,
+			POWER_RELAY_STATION_DISCONNECT = 2,
+			POWER_RELAY_STATION_DAMAGE = 3,
+			POWER_RELAY_STATION_DEATHT = 4,
 		};
 	}//namespace energetics
 }//namespace logic

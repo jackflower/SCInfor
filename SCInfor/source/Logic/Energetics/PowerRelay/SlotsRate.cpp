@@ -19,8 +19,8 @@ namespace logic
 		//Chroniony konstruktor domyślny
 		SlotsRate::SlotsRate(const std::wstring & uniqueId)
 		:
-			Actor(uniqueId),//konstruktor klasy bazowej
-			m_slot_counter(0)
+			Actor{ uniqueId },//konstruktor klasy bazowej
+			m_slot_counter{ 0 }
 		{
 			//to do: layers
 		}
@@ -29,7 +29,7 @@ namespace logic
 		SlotsRate::SlotsRate(const SlotsRate & SlotsRateCopy)
 		:
 			Actor(SlotsRateCopy),//konstruktor kopiujacy klasy bazowej
-			m_slot_counter(SlotsRateCopy.m_slot_counter)
+			m_slot_counter{ SlotsRateCopy.m_slot_counter }
 		{
 			//to do: layers
 		}

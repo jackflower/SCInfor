@@ -21,11 +21,11 @@ namespace logic
 		//Chroniony konstruktor domyślny
 		RelayStation::RelayStation(const std::wstring & uniqueId)
 		:
-			Actor(uniqueId),//konstruktor klasy bazowej
-			m_relay_station_name(),
-			m_unit_controller(true),//urządzenie włączone
-			m_use_communication(false),
-			p_communication(nullptr)
+			Actor{ uniqueId },//konstruktor klasy bazowej
+			m_relay_station_name{},
+			m_unit_controller{ true },//urządzenie włączone
+			m_use_communication{ false },
+			p_communication{ nullptr }
 		{
 		}
 
@@ -33,10 +33,10 @@ namespace logic
 		RelayStation::RelayStation(const RelayStation & RelayStationCopy)
 		:
 			Actor(RelayStationCopy),//konstruktor kopiujacy klasy bazowej
-			m_relay_station_name(RelayStationCopy.m_relay_station_name),
-			m_unit_controller(RelayStationCopy.m_unit_controller),
-			m_use_communication(RelayStationCopy.m_use_communication),
-			p_communication(RelayStationCopy.p_communication)
+			m_relay_station_name{ RelayStationCopy.m_relay_station_name },
+			m_unit_controller{ RelayStationCopy.m_unit_controller },
+			m_use_communication{ RelayStationCopy.m_use_communication },
+			p_communication{ RelayStationCopy.p_communication }
 		{
 		}
 
@@ -45,7 +45,7 @@ namespace logic
 		{
 			//~Actor()
 			m_relay_station_name = "";
-			//m_unit_controller
+			m_unit_controller;
 			m_use_communication = false;
 			if (p_communication)
 				gPhysicalManager.destroyPhysical(p_communication);

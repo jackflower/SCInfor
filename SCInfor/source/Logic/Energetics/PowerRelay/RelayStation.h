@@ -101,7 +101,7 @@ namespace logic
 			std::string m_relay_station_name; //nazwa przekaźnika energii elektrycznej
 			Switch m_unit_controller; //włącznik, sterownik, moduł zarządzania, starter, stacyjka
 			bool m_use_communication; //flaga, czy obiekt posiada moduł do komunikacji
-			Communication * p_communication; //wskaźnik na obiekt klasy Communication
+			Communication *p_communication; //wskaźnik na obiekt klasy Communication
 		};
 	}//namespace energetics
 }//namespace logic
