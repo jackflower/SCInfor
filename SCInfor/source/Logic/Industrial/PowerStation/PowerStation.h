@@ -51,7 +51,7 @@ namespace logic
 			///
 			///Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
 			///
-			virtual ~PowerStation(void);
+			virtual ~PowerStation();
 
 		public:
 

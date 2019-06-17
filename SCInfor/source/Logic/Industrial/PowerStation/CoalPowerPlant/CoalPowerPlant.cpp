@@ -13,9 +13,9 @@ namespace logic
 		RTTI_IMPL(CoalPowerPlant, PowerStation);
 
 		//Chroniony konstruktor domyślny
-		CoalPowerPlant::CoalPowerPlant(const std::wstring& uniqueId)
+		CoalPowerPlant::CoalPowerPlant(const std::wstring & uniqueId)
 		:
-			PowerStation(uniqueId)//konstruktor klasy bazowej
+			PowerStation{ uniqueId }//konstruktor klasy bazowej
 		{
 		}
 

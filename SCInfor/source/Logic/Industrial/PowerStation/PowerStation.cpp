@@ -19,12 +19,12 @@ namespace logic
 		//Chroniony konstruktor domyślny
 		PowerStation::PowerStation(const std::wstring & uniqueId)
 		:
-			Actor(uniqueId),	//konstruktor klasy bazowej
-			m_stored_energy(0.0f),
-			m_energy_capacitor(0.0f),
-			m_amount_power_modules(0),
-			m_unit_controller(true),//urządzenie włączone
-			m_communication_data()
+			Actor{ uniqueId },	//konstruktor klasy bazowej
+			m_stored_energy{ 0.0f },
+			m_energy_capacitor{ 0.0f },
+			m_amount_power_modules{ 0 },
+			m_unit_controller{ true },//urządzenie włączone
+			m_communication_data{}
 		{
 			setZIndexBody(Z_PHYSICAL_SHADOW_POWER_STATION_BODY);
 			setZIndexShadowBody(Z_PHYSICAL_POWER_STATION_BODY);
@@ -43,11 +43,11 @@ namespace logic
 		PowerStation::PowerStation(const PowerStation & PowerStationCopy)
 		:
 			Actor(PowerStationCopy),//konstruktor kopiujacy klasy bazowej
-			m_stored_energy(PowerStationCopy.m_stored_energy),
-			m_energy_capacitor(PowerStationCopy.m_energy_capacitor),
-			m_amount_power_modules(PowerStationCopy.m_amount_power_modules),
-			m_unit_controller(PowerStationCopy.m_unit_controller),
-			m_communication_data(PowerStationCopy.m_communication_data)
+			m_stored_energy{ PowerStationCopy.m_stored_energy },
+			m_energy_capacitor{ PowerStationCopy.m_energy_capacitor },
+			m_amount_power_modules{ PowerStationCopy.m_amount_power_modules },
+			m_unit_controller{ PowerStationCopy.m_unit_controller },
+			m_communication_data{ PowerStationCopy.m_communication_data }
 		{
 			setZIndexBody(Z_PHYSICAL_SHADOW_POWER_STATION_BODY);
 			setZIndexShadowBody(Z_PHYSICAL_POWER_STATION_BODY);
@@ -56,14 +56,14 @@ namespace logic
 		}
 
 		//Chroniony destruktor wirtualny - używany wyłącznie przez PhysicalManager
-		PowerStation::~PowerStation(void)
+		PowerStation::~PowerStation()
 		{
 			//~Actor()
 			m_stored_energy = 0.0f;
 			m_energy_capacitor = 0;
 			m_amount_power_modules = 0;
-			//m_unit_controller
-			//m_communication_data
+			m_unit_controller;
+			m_communication_data;
 		}
 
 		//Metoda zwraca nazwę elektrowni wiatrowej

@@ -14,7 +14,7 @@ namespace logic
 		///
 		///Wyliczenie stanów dla obiektu WindPowerStation
 		///
-		enum EWindPowerStationState
+		enum class EWindPowerStationState
 		{
 			WINDPOWER_STATION_DEFAULT		= 0,
 			WINDPOWER_STATION_UPDATE_ENERGY = 1,

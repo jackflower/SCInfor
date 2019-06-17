@@ -15,7 +15,7 @@ namespace logic
 		//Chroniony konstruktor domyślny
 		Hydroelectric::Hydroelectric(const std::wstring & uniqueId)
 		:
-			PowerStation(uniqueId)//konstruktor klasy bazowej
+			PowerStation{ uniqueId }//konstruktor klasy bazowej
 		{
 		}
 

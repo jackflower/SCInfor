@@ -59,8 +59,8 @@ namespace logic
 		private:
 			
 			//
-			//[	w pliku graficznym jest elektrownia, która posiada	]
-			//cztery (to się jeszcze zobaczy)moduły SolarCell, które ustawiają się automatyczne
+			//[	w pliku graficznym jest elektrownia, która posiada cztery ]
+			//(to się jeszcze zobaczy) moduły SolarCell, które ustawiają się automatyczne
 			//w kierunku źródła energii solarnej
 			//zatem: nie będzie to wektor, a cztery, ręcznie (być może jednak jakaś tablica)
 			//zarządzane manualne.

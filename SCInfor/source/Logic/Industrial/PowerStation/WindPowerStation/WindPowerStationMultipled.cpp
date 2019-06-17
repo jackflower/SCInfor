@@ -16,8 +16,8 @@ namespace logic
 		//Chroniony konstruktor domyślny
 		WindPowerStationMultipled::WindPowerStationMultipled(const std::wstring& uniqueId)
 		:
-			WindPowerStation(uniqueId),//konstruktor klasy bazowej
-			m_wind_turbines()
+			WindPowerStation{ uniqueId },//konstruktor klasy bazowej
+			m_wind_turbines{}
 		{
 		}
 
@@ -25,7 +25,7 @@ namespace logic
 		WindPowerStationMultipled::WindPowerStationMultipled(const WindPowerStationMultipled & WindPowerStationMultipledCopy)
 		:
 			WindPowerStation( WindPowerStationMultipledCopy),//konstruktor kopiujący klasy bazowej
-			m_wind_turbines(WindPowerStationMultipledCopy.m_wind_turbines)
+			m_wind_turbines{ WindPowerStationMultipledCopy.m_wind_turbines }
 		{
 		}
 
@@ -33,7 +33,7 @@ namespace logic
 		WindPowerStationMultipled::~WindPowerStationMultipled()
 		{
 			//~WindPowerStation()
-			//m_wind_turbines
+			m_wind_turbines;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

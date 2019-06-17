@@ -16,9 +16,9 @@ namespace logic
 	//Chroniony konstruktor domyślny
 	Flora::Flora(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId),//konstruktor klasy bazowej
-		m_rotation_speed_body(0.0f),
-		m_rotation_speed_head(0.0f)
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_rotation_speed_body{ 0.0f },
+		m_rotation_speed_head{ 0.0f }
 	{
 		setZIndexBody(Z_FLORA_BODY);
 		setZIndexShadowBody(Z_FLORA_SHADOW_BODY);
@@ -30,8 +30,8 @@ namespace logic
 	Flora::Flora(const Flora & FloraCopy)
 	:
 		Actor(FloraCopy),//konstruktor kopiujący klasy bazowej
-		m_rotation_speed_body(FloraCopy.m_rotation_speed_body),
-		m_rotation_speed_head(FloraCopy.m_rotation_speed_head)
+		m_rotation_speed_body{ FloraCopy.m_rotation_speed_body },
+		m_rotation_speed_head{ FloraCopy.m_rotation_speed_head }
 	{
 		setZIndexBody(Z_FLORA_BODY);
 		setZIndexShadowBody(Z_FLORA_SHADOW_BODY);

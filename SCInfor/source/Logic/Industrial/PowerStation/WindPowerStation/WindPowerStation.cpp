@@ -21,16 +21,16 @@ namespace logic
 		//Chroniony konstruktor domyślny
 		WindPowerStation::WindPowerStation(const std::wstring & uniqueId)
 		:
-			PowerStation(uniqueId),//konstruktor klasy bazowej
-			m_windpower_station_state(EWindPowerStationState::WINDPOWER_STATION_DEFAULT),
-			m_windturbine_data(),
-			m_energy_condensation_time(0.0f),
-			m_portion_energy_factor(s_portion_energy_factor),
-			m_portion_energy(s_portion_energy_default),
-			m_use_rotation_head(false),
-			m_speed_rotation_head(0.0f),
-			m_damage(0.0f),
-			m_elapsed_time(0.0f)
+			PowerStation{ uniqueId },//konstruktor klasy bazowej
+			m_windpower_station_state{ EWindPowerStationState::WINDPOWER_STATION_DEFAULT },
+			m_windturbine_data{},
+			m_energy_condensation_time{ 0.0f },
+			m_portion_energy_factor{ s_portion_energy_factor },
+			m_portion_energy{ s_portion_energy_default },
+			m_use_rotation_head{ false },
+			m_speed_rotation_head{ 0.0f },
+			m_damage{ 0.0f },
+			m_elapsed_time{ 0.0f }
 		{
 		}
 
@@ -38,15 +38,15 @@ namespace logic
 		WindPowerStation::WindPowerStation(const WindPowerStation & WindPowerStationCopy)
 		:
 			PowerStation(WindPowerStationCopy),//konstruktor kopiujący klasy bazowej
-			m_windpower_station_state(WindPowerStationCopy.m_windpower_station_state),
-			m_windturbine_data(WindPowerStationCopy.m_windturbine_data),
-			m_energy_condensation_time(WindPowerStationCopy.m_energy_condensation_time),
-			m_portion_energy_factor(WindPowerStationCopy.m_portion_energy_factor),
-			m_portion_energy(WindPowerStationCopy.m_portion_energy),
-			m_use_rotation_head(WindPowerStationCopy.m_use_rotation_head),
-			m_speed_rotation_head(WindPowerStationCopy.m_speed_rotation_head),
-			m_damage(WindPowerStationCopy.m_damage),
-			m_elapsed_time(WindPowerStationCopy.m_elapsed_time)
+			m_windpower_station_state{ WindPowerStationCopy.m_windpower_station_state },
+			m_windturbine_data{ WindPowerStationCopy.m_windturbine_data },
+			m_energy_condensation_time{ WindPowerStationCopy.m_energy_condensation_time },
+			m_portion_energy_factor{ WindPowerStationCopy.m_portion_energy_factor },
+			m_portion_energy{ WindPowerStationCopy.m_portion_energy },
+			m_use_rotation_head{ WindPowerStationCopy.m_use_rotation_head },
+			m_speed_rotation_head{ WindPowerStationCopy.m_speed_rotation_head },
+			m_damage{ WindPowerStationCopy.m_damage },
+			m_elapsed_time{ WindPowerStationCopy.m_elapsed_time }
 		{
 		}
 
@@ -55,7 +55,7 @@ namespace logic
 		{
 			//~PowerStation()
 			m_windpower_station_state = EWindPowerStationState::WINDPOWER_STATION_DEFAULT;
-			//m_windturbine_data
+			m_windturbine_data;
 			m_energy_condensation_time = 0.0f;
 			m_portion_energy_factor = 0.0f;
 			m_portion_energy = 0.0f;
