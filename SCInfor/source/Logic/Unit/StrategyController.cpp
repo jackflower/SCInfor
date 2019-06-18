@@ -11,14 +11,14 @@ RTTI_IMPL_NOPARENT(StrategyController);
 //Konstruktor
 StrategyController::StrategyController()
 :
-	 m_strategy_state(EStrategyState::NEUTRAL)
+	m_strategy_state{ EStrategyState::NEUTRAL }
 {
 }
 
 //Konstruktor kopiujący
 StrategyController::StrategyController(const StrategyController & StrategyControllerCopy)
 :
-	m_strategy_state(StrategyControllerCopy.m_strategy_state)
+	m_strategy_state{ StrategyControllerCopy.m_strategy_state }
 {
 }
 

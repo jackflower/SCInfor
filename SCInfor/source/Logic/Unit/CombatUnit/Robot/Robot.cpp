@@ -23,10 +23,10 @@ namespace logic
 
 		Robot::Robot(const std::wstring & uniqueId)
 		:
-			Unit(uniqueId), //chroniony konstruktor klasy bazowej
-			m_robot_state(ERobotState::ROBOT_DEFAULT),
-			m_strategy_duration(),
-			m_elapsed_time(0.0f)
+			Unit{ uniqueId }, //chroniony konstruktor klasy bazowej
+			m_robot_state{ ERobotState::ROBOT_DEFAULT },
+			m_strategy_duration{},
+			m_elapsed_time{ 0.0f }
 		{
 		}
 
@@ -34,9 +34,9 @@ namespace logic
 		Robot::Robot(const Robot & RobottCopy)
 		:
 			Unit (RobottCopy), //chroniony konstruktor kopiujący klasy bazowej
-			m_robot_state(RobottCopy.m_robot_state),
-			m_strategy_duration(RobottCopy.m_strategy_duration),
-			m_elapsed_time(RobottCopy.m_elapsed_time)
+			m_robot_state{ RobottCopy.m_robot_state },
+			m_strategy_duration{ RobottCopy.m_strategy_duration },
+			m_elapsed_time{ RobottCopy.m_elapsed_time }
 		{
 		}
 
@@ -45,7 +45,7 @@ namespace logic
 		{
 			//~Unit()
 			m_robot_state = ERobotState::ROBOT_DEFAULT;
-			//m_strategy_duration
+			m_strategy_duration;
 			m_elapsed_time = 0.0f;
 		}
 
@@ -185,9 +185,6 @@ namespace logic
 		//Wirtualna metoda aktualizująca obiekt
 		void Robot::update(float dt)
 		{
-			//Physical::update(dt);
-			//Actor::update(dt);
-
 			updateState(dt);
 			updateAnimations(dt);
 			Physical::updateShadow(dt);

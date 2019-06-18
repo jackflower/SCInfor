@@ -14,8 +14,8 @@ namespace logic
 
 		Unit::Unit(const std::wstring & uniqueId)
 		:
-			Actor(uniqueId), //chroniony konstruktor klasy bazowej
-			m_strategy_controller()
+			Actor{ uniqueId }, //chroniony konstruktor klasy bazowej
+			m_strategy_controller{}
 		{
 		}
 
@@ -23,7 +23,7 @@ namespace logic
 		Unit::Unit(const Unit & UnitCopy)
 		:
 			Actor(UnitCopy), //chroniony konstruktor kopiujący klasy bazowej
-			m_strategy_controller(UnitCopy.m_strategy_controller)
+			m_strategy_controller{ UnitCopy.m_strategy_controller }
 		{
 		}
 
@@ -31,7 +31,7 @@ namespace logic
 		Unit::~Unit()
 		{
 			//~Actor()
-			//m_strategy_controller
+			m_strategy_controller;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

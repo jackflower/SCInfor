@@ -13,7 +13,7 @@ namespace logic
 	//Chroniony konstruktor domyślny
 	Player::Player(const std::wstring &uniqueId) 
 	:	
-		Actor(uniqueId)	
+		Actor{ uniqueId }
 	{
 	}
 

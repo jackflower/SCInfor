@@ -93,7 +93,6 @@ namespace logic
 			ERobotState m_robot_state; //wyliczenie stanów dla obiektu Robot
 			float m_elapsed_time; //upływający czas
 			StrategyDuration m_strategy_duration; //opakowanie mechanizmu zarządzania czasem stanów strategicznych
-			
 			void updateState(float dt); //metoda aktualizuje stan obiektu
 
 		};

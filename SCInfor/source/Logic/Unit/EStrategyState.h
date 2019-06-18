@@ -10,11 +10,11 @@
 ///
 ///Wyliczenie stanów obiektu
 ///
-enum EStrategyState
+enum class EStrategyState
 {
-	NEUTRAL = 0,	//stan neutralny...
-	ATTACK	= 1,	//atak
-	DEFENSE	= 2		//obrona
+	NEUTRAL = 0, //stan neutralny...
+	ATTACK	= 1, //atak
+	DEFENSE	= 2	 //obrona
 };
 
 #endif//H_E_STRATEGY_STATE_JACK

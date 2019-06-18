@@ -28,7 +28,7 @@ namespace logic
 	//Konstruktor
 	Logic::Logic()
 	:
-		m_state(L"main-menu")//potrzebna będzie jakaś tablica stanów logiki gry...
+		m_state{ L"main-menu" }//potrzebna będzie jakaś tablica stanów logiki gry...
 	{
 		fprintf(stderr, "Logic::Logic()\n");
 		gGame.addFrameListener(this);

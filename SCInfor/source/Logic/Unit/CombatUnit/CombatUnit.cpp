@@ -14,7 +14,7 @@ namespace logic
 
 		CombatUnit::CombatUnit(const std::wstring & uniqueId)
 		:
-			Unit(uniqueId)//chroniony konstruktor klasy bazowej
+			Unit{ uniqueId }//chroniony konstruktor klasy bazowej
 		{
 		}
 

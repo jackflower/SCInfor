@@ -11,20 +11,20 @@ RTTI_IMPL_NOPARENT(StrategyDuration);
 //Konstruktor
 StrategyDuration::StrategyDuration()
 :
-	m_time_attack_prepare(0.0f),
-	m_time_attack_terminate(0.0f),
-	m_time_defense_prepare(0.0f),
-	m_time_defense_terminate(0.0f)
+	m_time_attack_prepare{ 0.0f },
+	m_time_attack_terminate{ 0.0f },
+	m_time_defense_prepare{ 0.0f },
+	m_time_defense_terminate{ 0.0f }
 {
 }
 
 //Konstruktor kopiujący
 StrategyDuration::StrategyDuration(const StrategyDuration & StrategyDurationCopy)
 :
-	m_time_attack_prepare(StrategyDurationCopy.m_time_attack_prepare),
-	m_time_attack_terminate(StrategyDurationCopy.m_time_attack_terminate),
-	m_time_defense_prepare(StrategyDurationCopy.m_time_defense_prepare),
-	m_time_defense_terminate(StrategyDurationCopy.m_time_defense_terminate)
+	m_time_attack_prepare{ StrategyDurationCopy.m_time_attack_prepare },
+	m_time_attack_terminate{ StrategyDurationCopy.m_time_attack_terminate },
+	m_time_defense_prepare{ StrategyDurationCopy.m_time_defense_prepare },
+	m_time_defense_terminate{ StrategyDurationCopy.m_time_defense_terminate }
 {
 }
 

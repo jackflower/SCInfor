@@ -65,17 +65,17 @@ namespace logic
 	void PhysicalManager::frameStarted(float secondsPassed)
 	{
 		//Czyszczenie obiektów
-		std::vector<Physical*>				dirty;		//kontener na obiekty do zniszczenia
-		std::vector<Physical*>::iterator	it;			//iterator tego kontenera
+		std::vector<Physical*> dirty; //kontener na obiekty do zniszczenia
+		std::vector<Physical*>::iterator it; //iterator tego kontenera
 
 		for (it = m_physicals.begin(); it != m_physicals.end(); it++)
 		{
-			if ((*it)->m_ready_for_destruction)			//jeśli obiekt jest gotowy do zniszczaenia
-				dirty.push_back(*it);					//wstawiamy go do kontenera "śmierci"
+			if ((*it)->m_ready_for_destruction) //jeśli obiekt jest gotowy do zniszczaenia
+				dirty.push_back(*it); //wstawiamy go do kontenera "śmierci"
 		}
 
 		for (unsigned int i = 0; i < dirty.size(); i++)	//iterujemy po tym kontenerze
-			destroyPhysical(dirty[i]);					//i usuwamy obiekty
+			destroyPhysical(dirty[i]); //i usuwamy obiekty
 
 	}
 
@@ -350,7 +350,7 @@ namespace logic
 	{
 		if (m_named_physicals.find(id_physical) != m_named_physicals.end())
 		{
-			Physical* physical = m_named_physicals[id_physical];
+			Physical *physical = m_named_physicals[id_physical];
 			m_named_physicals.erase(m_named_physicals.find( id_physical));
 			destroyPhysical(physical);
 		}
