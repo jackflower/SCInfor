@@ -23,36 +23,36 @@ namespace physicaldata
 	//Konstruktor
 	PhysicalData::PhysicalData()
 	:
-		m_physics_data(),
-		m_use_displayable_body(false),
-		m_use_shadow_body(false),
-		m_use_displayable_head(false),
-		m_use_shadow_head(false),
-		p_displayable_body(nullptr),
-		p_displayable_body_shadow(nullptr),
-		p_displayable_head(nullptr),
-		p_displayable_head_shadow(nullptr),
-		m_color_body(sf::Color()),
-		m_color_head(sf::Color()),
-		m_color_stored_body(sf::Color()),
-		m_color_stored_head(sf::Color()),
-		m_color_shadow(),
-		m_shadow_offset_body(0.0f, 0.0f),
-		m_shadow_offset_head(0.0f, 0.0f),
-		p_animation_body(nullptr),
-		p_animation_head(nullptr),
-		m_anim_speed_body(1.0f),
-		m_anim_speed_head(1.0f),
-		m_stored_anim_speed_body(1.0f),
-		m_stored_anim_speed_head(1.0f),
-		m_z_index_body(Z_PHYSICAL_BODY),
-		m_z_index_shadow_body(Z_PHYSICAL_SHADOWS_BODY),
-		m_z_index_head(Z_PHYSICAL_HEAD),
-		m_z_index_shadow_head(Z_PHYSICAL_SHADOWS_HEAD),
-		p_synthetic_texture(nullptr),
-		p_synthetic_image(nullptr),
-		m_texture_body(),
-		m_texture_head()
+		m_physics_data{},
+		m_use_displayable_body{ false },
+		m_use_shadow_body{ false },
+		m_use_displayable_head{ false },
+		m_use_shadow_head{ false },
+		p_displayable_body{ nullptr },
+		p_displayable_body_shadow{ nullptr },
+		p_displayable_head{ nullptr },
+		p_displayable_head_shadow{ nullptr },
+		m_color_body{ sf::Color{} },
+		m_color_head{ sf::Color{} },
+		m_color_stored_body{ sf::Color{} },
+		m_color_stored_head{ sf::Color{} },
+		m_color_shadow{},
+		m_shadow_offset_body{ 0.0f, 0.0f },
+		m_shadow_offset_head{ 0.0f, 0.0f },
+		p_animation_body{ nullptr },
+		p_animation_head{ nullptr },
+		m_anim_speed_body{ 1.0f },
+		m_anim_speed_head{ 1.0f },
+		m_stored_anim_speed_body{ 1.0f },
+		m_stored_anim_speed_head{ 1.0f },
+		m_z_index_body{ Z_PHYSICAL_BODY },
+		m_z_index_shadow_body{ Z_PHYSICAL_SHADOWS_BODY },
+		m_z_index_head{ Z_PHYSICAL_HEAD },
+		m_z_index_shadow_head{ Z_PHYSICAL_SHADOWS_HEAD },
+		p_synthetic_texture{ nullptr },
+		p_synthetic_image{ nullptr },
+		m_texture_body{},
+		m_texture_head{}
 	{
 		p_synthetic_texture = new ResourceTexture();
 		p_synthetic_image = new sf::Image;
@@ -61,36 +61,36 @@ namespace physicaldata
 	//Konstruktor kopiujący
 	PhysicalData::PhysicalData(const PhysicalData & PhysicalDataCopy)
 	:
-		m_physics_data(PhysicalDataCopy.m_physics_data),
-		m_use_displayable_body(PhysicalDataCopy.m_use_displayable_body),
-		m_use_shadow_body(PhysicalDataCopy.m_use_shadow_body),
-		m_use_displayable_head(PhysicalDataCopy.m_use_displayable_head),
-		m_use_shadow_head(PhysicalDataCopy.m_use_shadow_head),
-		p_displayable_body(PhysicalDataCopy.p_displayable_body),
-		p_displayable_body_shadow(PhysicalDataCopy.p_displayable_body),
-		p_displayable_head(PhysicalDataCopy.p_displayable_body),
-		p_displayable_head_shadow(PhysicalDataCopy.p_displayable_body),
-		m_color_body(PhysicalDataCopy.m_color_body),
-		m_color_head(PhysicalDataCopy.m_color_head),
-		m_color_stored_body(PhysicalDataCopy.m_color_stored_body),
-		m_color_stored_head(PhysicalDataCopy.m_color_stored_head),
-		m_color_shadow(PhysicalDataCopy.m_color_shadow),
-		m_shadow_offset_body(PhysicalDataCopy.m_shadow_offset_body),
-		m_shadow_offset_head(PhysicalDataCopy.m_shadow_offset_head),
-		p_animation_body(PhysicalDataCopy.p_animation_body),
-		p_animation_head(PhysicalDataCopy.p_animation_head),
-		m_anim_speed_body(PhysicalDataCopy.m_anim_speed_body),
-		m_anim_speed_head(PhysicalDataCopy.m_anim_speed_head),
-		m_stored_anim_speed_body(PhysicalDataCopy.m_stored_anim_speed_body),
-		m_stored_anim_speed_head(PhysicalDataCopy.m_stored_anim_speed_head),
-		m_z_index_body(PhysicalDataCopy.m_z_index_body),
-		m_z_index_shadow_body(PhysicalDataCopy.m_z_index_shadow_body),
-		m_z_index_head(PhysicalDataCopy.m_z_index_head),
-		m_z_index_shadow_head(PhysicalDataCopy.m_z_index_shadow_head),
-		p_synthetic_texture(nullptr),
-		p_synthetic_image(nullptr),
-		m_texture_body(PhysicalDataCopy.m_texture_body),
-		m_texture_head(PhysicalDataCopy.m_texture_head)
+		m_physics_data{ PhysicalDataCopy.m_physics_data },
+		m_use_displayable_body{ PhysicalDataCopy.m_use_displayable_body },
+		m_use_shadow_body{ PhysicalDataCopy.m_use_shadow_body },
+		m_use_displayable_head{ PhysicalDataCopy.m_use_displayable_head },
+		m_use_shadow_head{ PhysicalDataCopy.m_use_shadow_head },
+		p_displayable_body{ PhysicalDataCopy.p_displayable_body },
+		p_displayable_body_shadow{ PhysicalDataCopy.p_displayable_body },
+		p_displayable_head{ PhysicalDataCopy.p_displayable_body },
+		p_displayable_head_shadow{ PhysicalDataCopy.p_displayable_body },
+		m_color_body{ PhysicalDataCopy.m_color_body },
+		m_color_head{ PhysicalDataCopy.m_color_head },
+		m_color_stored_body{ PhysicalDataCopy.m_color_stored_body },
+		m_color_stored_head{ PhysicalDataCopy.m_color_stored_head },
+		m_color_shadow{ PhysicalDataCopy.m_color_shadow },
+		m_shadow_offset_body{ PhysicalDataCopy.m_shadow_offset_body },
+		m_shadow_offset_head{ PhysicalDataCopy.m_shadow_offset_head },
+		p_animation_body{ PhysicalDataCopy.p_animation_body },
+		p_animation_head{ PhysicalDataCopy.p_animation_head },
+		m_anim_speed_body{ PhysicalDataCopy.m_anim_speed_body },
+		m_anim_speed_head{ PhysicalDataCopy.m_anim_speed_head },
+		m_stored_anim_speed_body{ PhysicalDataCopy.m_stored_anim_speed_body },
+		m_stored_anim_speed_head{ PhysicalDataCopy.m_stored_anim_speed_head },
+		m_z_index_body{ PhysicalDataCopy.m_z_index_body },
+		m_z_index_shadow_body{ PhysicalDataCopy.m_z_index_shadow_body },
+		m_z_index_head{ PhysicalDataCopy.m_z_index_head },
+		m_z_index_shadow_head{ PhysicalDataCopy.m_z_index_shadow_head },
+		p_synthetic_texture{ nullptr },
+		p_synthetic_image{ nullptr },
+		m_texture_body{ PhysicalDataCopy.m_texture_body },
+		m_texture_head{ PhysicalDataCopy.m_texture_head }
 	{
 		p_synthetic_texture = new ResourceTexture();
 		p_synthetic_image = new sf::Image;
@@ -99,7 +99,7 @@ namespace physicaldata
 	//Destruktor
 	PhysicalData::~PhysicalData()
 	{
-		//m_physics_data
+		m_physics_data;
 		m_use_displayable_body = false;
 		m_use_shadow_body = false;
 		m_use_displayable_head = false;
@@ -121,11 +121,11 @@ namespace physicaldata
 		p_displayable_body_shadow= nullptr;
 		p_displayable_head = nullptr;
 		p_displayable_head_shadow = nullptr;
-		//m_color_body
-		//m_color_head
-		//m_color_stored_body
-		//m_color_stored_head
-		//m_color_shadow
+		m_color_body;
+		m_color_head;
+		m_color_stored_body;
+		m_color_stored_head;
+		m_color_shadow;
 		m_shadow_offset_body.x = 0.0f;
 		m_shadow_offset_body.y = 0.0f;
 		m_shadow_offset_head.x = 0.0f;
@@ -366,9 +366,9 @@ namespace physicaldata
 	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
 	Displayable *PhysicalData::getDisplayable(EPhysicalPart physical_part)
 	{
-		if (physical_part == BODY)
+		if (physical_part == EPhysicalPart::BODY)
 			return p_displayable_body;
-		else if (physical_part == HEAD)
+		else if (physical_part == EPhysicalPart::HEAD)
 			return p_displayable_head;
 		return p_displayable_body;
 	}
@@ -376,9 +376,9 @@ namespace physicaldata
 	//Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow)
 	Displayable *PhysicalData::getShadow(EPhysicalPart physical_part)
 	{
-		if (physical_part == BODY)
+		if (physical_part == EPhysicalPart::BODY)
 			return p_displayable_body_shadow;
-		else if (physical_part == HEAD)
+		else if (physical_part == EPhysicalPart::HEAD)
 			return p_displayable_head_shadow;
 		return p_displayable_body_shadow;
 	}

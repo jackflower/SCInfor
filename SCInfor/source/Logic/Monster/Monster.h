@@ -61,7 +61,7 @@ namespace logic
 
 	private:
 
-		float m_time_do_death;//pol testowe...
+		float m_time_do_death;//pole testowe...
 
 	};
 }//namespace logic

@@ -16,21 +16,21 @@ namespace logic
 	//Chroniony konstruktor domyślny - używany wyłącznie przez PhysicalManager
 	PhysicalInfo::PhysicalInfo(const std::wstring & uniqueId)
 	:
-		Physical(uniqueId),//konstruktor klasy bazowej
-		m_physical_info_name(""),
-		m_z_index_rectangle(Z_PHYSICAL_INFO_STATUS_BAR),
-		m_use_status_bar_energy(true),
-		m_use_status_bar_fuel(true),
-		m_color_bar_energy(),
-		m_color_bar_fuel(),
-		m_position_status_bar_energy(0.0f, 0.0f),
-		m_position_status_bar_fuel(0.0f, 0.0f),
-		m_size_energy(0.0f, 0.0f),
-		m_size_fuel(0.0f, 0.0f),
-		m_position_offset_energy(0.0f, 0.0f),
-		m_position_offset_fuel(0.0f, 0.0f),
-		p_status_bar_energy(nullptr),
-		p_status_bar_fuel(nullptr)
+		Physical{ uniqueId },//konstruktor klasy bazowej
+		m_physical_info_name{ "" },
+		m_z_index_rectangle{ Z_PHYSICAL_INFO_STATUS_BAR },
+		m_use_status_bar_energy{ true },
+		m_use_status_bar_fuel{ true },
+		m_color_bar_energy{},
+		m_color_bar_fuel{},
+		m_position_status_bar_energy{ 0.0f, 0.0f },
+		m_position_status_bar_fuel{ 0.0f, 0.0f },
+		m_size_energy{ 0.0f, 0.0f },
+		m_size_fuel{ 0.0f, 0.0f },
+		m_position_offset_energy{ 0.0f, 0.0f },
+		m_position_offset_fuel{ 0.0f, 0.0f },
+		p_status_bar_energy{ nullptr },
+		p_status_bar_fuel{ nullptr }
 	{
 		//zakładam, że wykorzystuję tylko część body, ale routing ligiki pozostaje elastyczny
 		setZIndexBody(Z_PHYSICAL_INFO_BODY);
@@ -42,21 +42,21 @@ namespace logic
 	//Chroniony konstruktor kopiujący
 	PhysicalInfo::PhysicalInfo(const PhysicalInfo & PhysicalInfoCopy)
 	:
-		Physical(PhysicalInfoCopy),//konstruktor kopiujący klasy bazowej
-		m_physical_info_name(PhysicalInfoCopy.m_physical_info_name),
-		m_z_index_rectangle(PhysicalInfoCopy.m_z_index_rectangle),
-		m_use_status_bar_energy(PhysicalInfoCopy.m_use_status_bar_energy),
-		m_use_status_bar_fuel(PhysicalInfoCopy.m_use_status_bar_fuel),
-		m_color_bar_energy(PhysicalInfoCopy.m_color_bar_energy),
-		m_color_bar_fuel(PhysicalInfoCopy.m_color_bar_fuel),
-		m_position_status_bar_energy(PhysicalInfoCopy.m_position_status_bar_energy),
-		m_position_status_bar_fuel(PhysicalInfoCopy.m_position_status_bar_fuel),
-		m_size_energy(PhysicalInfoCopy.m_size_energy),
-		m_size_fuel(PhysicalInfoCopy.m_size_fuel),
-		m_position_offset_energy(PhysicalInfoCopy.m_position_offset_energy),
-		m_position_offset_fuel(PhysicalInfoCopy.m_position_offset_fuel),
-		p_status_bar_energy(PhysicalInfoCopy.p_status_bar_energy),
-		p_status_bar_fuel(PhysicalInfoCopy.p_status_bar_fuel)
+		Physical{ PhysicalInfoCopy },//konstruktor kopiujący klasy bazowej
+		m_physical_info_name{ PhysicalInfoCopy.m_physical_info_name },
+		m_z_index_rectangle{ PhysicalInfoCopy.m_z_index_rectangle },
+		m_use_status_bar_energy{ PhysicalInfoCopy.m_use_status_bar_energy },
+		m_use_status_bar_fuel{ PhysicalInfoCopy.m_use_status_bar_fuel },
+		m_color_bar_energy{ PhysicalInfoCopy.m_color_bar_energy },
+		m_color_bar_fuel{ PhysicalInfoCopy.m_color_bar_fuel },
+		m_position_status_bar_energy{ PhysicalInfoCopy.m_position_status_bar_energy },
+		m_position_status_bar_fuel{ PhysicalInfoCopy.m_position_status_bar_fuel },
+		m_size_energy{ PhysicalInfoCopy.m_size_energy },
+		m_size_fuel{ PhysicalInfoCopy.m_size_fuel },
+		m_position_offset_energy{ PhysicalInfoCopy.m_position_offset_energy },
+		m_position_offset_fuel{ PhysicalInfoCopy.m_position_offset_fuel },
+		p_status_bar_energy{ PhysicalInfoCopy.p_status_bar_energy },
+		p_status_bar_fuel{ PhysicalInfoCopy.p_status_bar_fuel }
 	{
 		//zakładam, że wykorzystuję tylko część body, ale routing ligiki pozostaje elastyczny
 		setZIndexBody(Z_PHYSICAL_INFO_BODY);
@@ -78,8 +78,8 @@ namespace logic
 		m_z_index_rectangle = 0;
 		m_use_status_bar_energy = false;
 		m_use_status_bar_fuel = false;
-		//m_color_bar_energy
-		//m_color_bar_fuel
+		m_color_bar_energy;
+		m_color_bar_fuel;
 		m_position_status_bar_energy.x = 0.0f;
 		m_position_status_bar_energy.y = 0.0f;
 		m_position_status_bar_fuel.x = 0.0f;

@@ -12,10 +12,10 @@ namespace logic
 	///
 	///Wyliczenie typów kolizji
 	///
-	enum ECollisionShape
+	enum class ECollisionShape
 	{
-		SHAPE_CIRCLE,	//kolizja okrąg - okrąg
-		SHAPE_RECT		//kolizja prostokąt - prostokąt
+		SHAPE_CIRCLE, //kolizja okrąg - okrąg
+		SHAPE_RECT //kolizja prostokąt - prostokąt
 	};
 }
 #endif //H_ECOLLISION_SHAPE_JACK

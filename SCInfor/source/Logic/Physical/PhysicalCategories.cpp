@@ -59,15 +59,15 @@ namespace logic
 	//tablica nazw filtrów kategorii Physical
 	const int Filters[] =
 	{
-		PHYSICAL_HOSTILES,		//1
-		PHYSICAL_FRIENDLY,		//2
-		PHYSICAL_ACTORS,		//3
-		PHYSICAL_STATIC,		//4
-		PHYSICAL_MOVING,		//5
-		PHYSICAL_NONMOVING,		//6
-		PHYSICAL_PATHBLOCKER,	//7
-		PHYSICAL_DESTRUCTIBLE,	//8
-		PHYSICAL_NONE			//9
+		PHYSICAL_HOSTILES, //1
+		PHYSICAL_FRIENDLY, //2
+		PHYSICAL_ACTORS, //3
+		PHYSICAL_STATIC, //4
+		PHYSICAL_MOVING, //5
+		PHYSICAL_NONMOVING, //6
+		PHYSICAL_PATHBLOCKER, //7
+		PHYSICAL_DESTRUCTIBLE, //8
+		PHYSICAL_NONE //9
 		//Aktualizacja i synchronizacja wzglêdem PhysicalCategories.h
 	};
 
@@ -75,15 +75,15 @@ namespace logic
 
 	const std::string FilterNames[] = 
 	{
-		"hostiles",				//1
-		"friendly",				//2
-		"actors",				//3
-		"static",				//4
-		"moving",				//5
-		"nonmoving",			//6
-		"pathblocker",			//7
-		"destructible",			//8
-		"none"					//9
+		"hostiles", //1
+		"friendly", //2
+		"actors", //3
+		"static", //4
+		"moving", //5
+		"nonmoving", //6
+		"pathblocker", //7
+		"destructible", //8
+		"none" //9
 		//Aktualizacja i synchronizacja wzglêdem PhysicalCategories.h
 	};
 

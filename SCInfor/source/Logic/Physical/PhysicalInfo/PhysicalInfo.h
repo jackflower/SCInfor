@@ -265,8 +265,6 @@ namespace logic
 		///
 		void initStatusBarFuel();
 
-
-
 		///
 		///Metoda zwraca wskaźnik na obiekt klasy Rectangle - graficzna reprezentacja (energia-życie)
 		///

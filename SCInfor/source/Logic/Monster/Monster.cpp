@@ -22,8 +22,8 @@ namespace logic
 	//Chroniony konstruktor domyślny
 	Monster::Monster(const std::wstring& uniqueId)
 		:
-		Actor(uniqueId),//konstruktor klasy bazowej
-		m_time_do_death(0.0f)
+		Actor{ uniqueId },//konstruktor klasy bazowej
+		m_time_do_death{ 0.0f }
 	{
 	}
 
@@ -31,7 +31,7 @@ namespace logic
 	Monster::Monster(const Monster & MonsterCopy)
 	:
 		Actor(MonsterCopy),//konstruktor kopiujący klasy bazowej
-		m_time_do_death(MonsterCopy.m_time_do_death)
+		m_time_do_death{ MonsterCopy.m_time_do_death }
 	{
 	}
 

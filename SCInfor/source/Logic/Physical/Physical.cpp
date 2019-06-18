@@ -32,7 +32,7 @@ namespace logic
 		m_unique_id{ uniqueId },
 		m_genre{},
 		m_circle_radius{ 1.0f },
-		m_collision_shape{ SHAPE_CIRCLE },
+		m_collision_shape{ ECollisionShape::SHAPE_CIRCLE },
 		m_rect_size{ 1.0f, 1.0f },
 		m_rect_size_body{ 1.0f, 1.0f },
 		m_rect_size_head{ 1.0f, 1.0f },
@@ -76,7 +76,7 @@ namespace logic
 		//protected:
 		m_unique_id = L"";
 		m_genre = L"";
-		//m_physics_data
+		m_physical_data;
 		m_circle_radius = 0.0f;
 		m_rect_size.x = 0.0f;
 		m_rect_size.y = 0.0f;
@@ -86,7 +86,7 @@ namespace logic
 		m_rect_size_head.y = 0.0f;
 		p_template = nullptr;
 		m_ready_for_destruction = false;
-		//m_part_collision_data
+		m_part_collision_data;
 		m_new_anim_speed = 0.0f;
 	}
 
@@ -415,7 +415,7 @@ namespace logic
 	//Wirtualna metoda ustawiająca wartość promienia detekcji wykorzystywaną przy liczeniu kolizji
 	void Physical::setBoundingCircle(float radius)
 	{
-		m_collision_shape = SHAPE_CIRCLE;
+		m_collision_shape = ECollisionShape::SHAPE_CIRCLE;
 		m_circle_radius = radius;
 		//obliczamy boki prostokąta (uproszczenie do kwadratu) wpisanego w okrag
 		m_rect_size.x = m_rect_size.y = radius * 2.0f;
@@ -424,7 +424,7 @@ namespace logic
 	//Metoda ustawia wartość obszaru prostokątnego detekcji wykorzystywany przy liczeniu kolizji
 	void Physical::setBoundingRect(const sf::Vector2f & rect_size)
 	{
-		m_collision_shape = SHAPE_RECT;
+		m_collision_shape = ECollisionShape::SHAPE_RECT;
 		m_rect_size = rect_size;
 		//obliczamy przeciwprostokątną, czyli średnicę okręgu opisanego na prostokącie
 		m_circle_radius =  sqrtf(rect_size.x * rect_size.x + rect_size.y * rect_size.y);
@@ -847,9 +847,9 @@ namespace logic
 	//Metoda zwraca wskaźnik na obiekt klasy Displayable (body)
 	Displayable *Physical::getDisplayable(EPhysicalPart physical_part)
 	{
-		if (physical_part == BODY)
+		if (physical_part == EPhysicalPart::BODY)
 			return m_physical_data.getDisplayableBody();
-		else if (physical_part == HEAD)
+		else if (physical_part == EPhysicalPart::HEAD)
 			return m_physical_data.getDisplayableHead();
 		return m_physical_data.getDisplayableBody();
 	}
@@ -857,9 +857,9 @@ namespace logic
 	//Metoda zwraca wskaźnik na obiekt klasy Displayable (shadow)
 	Displayable *Physical::getShadow(EPhysicalPart physical_part)
 	{
-		if (physical_part == BODY)
+		if (physical_part == EPhysicalPart::BODY)
 			return m_physical_data.getDisplayableBodyShadow();
-		else if (physical_part == HEAD)
+		else if (physical_part == EPhysicalPart::HEAD)
 			return m_physical_data.getDisplayableHead();
 		return m_physical_data.getDisplayableBodyShadow();
 	}

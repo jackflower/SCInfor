@@ -493,8 +493,6 @@ namespace physicaldata
 		///
 		void setZIndexShadowHead(int layer_index);
 
-		//wrapper - physics...
-
 		///
 		///Metoda zwraca zapamiętaną skalę (body)
 		///
@@ -733,8 +731,6 @@ namespace physicaldata
 		///
 		void setAnimSpeed(float anim_speed_body, float anim_speed_head);
 
-		//wrapper = animation
-
 		///
 		///Metoda sprawdza, czy trzeba utworzyć obiekt klasy Displayable (body)
 		///np. gdy chcemy dodać obrazek, animację, etc...
@@ -879,7 +875,7 @@ namespace physicaldata
 		std::string m_texture_head; //nazwa tekstury reprezentacji graficznej obiektu - head
 		ResourceTexture *p_synthetic_texture; //wskaźnik na obiekt klasy ResourceTexture - wykorzytywany przy tworzeniu syntetycznej tekstury
 		sf::Image *p_synthetic_image; //wskaźnik na obiekt klasy sf::Image - wykorzytywany przy tworzeniu syntetycznego obrazu
-		sf::Texture p_texture; //obiekt klasy sf::Texture - obiekt pomozniczy
+		sf::Texture p_texture; //obiekt klasy sf::Texture - obiekt pomocniczy
 
 	public:
 

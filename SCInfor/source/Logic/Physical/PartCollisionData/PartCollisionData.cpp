@@ -14,20 +14,20 @@ namespace collisiondata
 	//Konstruktor
 	PartCollisionData::PartCollisionData()
 	:
-		m_colliding_body(false),
-		m_colliding_body_shadow(false),
-		m_colliding_head(false),
-		m_colliding_head_shadow(false)
+		m_colliding_body{ false },
+		m_colliding_body_shadow{ false },
+		m_colliding_head{ false },
+		m_colliding_head_shadow{ false }
 	{
 	}
 
 	//Konstruktor kopiujący
 	PartCollisionData::PartCollisionData(const PartCollisionData & PartCollisionDataCopy)
-		:
-		m_colliding_body(PartCollisionDataCopy.m_colliding_body),
-		m_colliding_body_shadow(PartCollisionDataCopy.m_colliding_body_shadow),
-		m_colliding_head(PartCollisionDataCopy.m_colliding_head),
-		m_colliding_head_shadow(PartCollisionDataCopy.m_colliding_head_shadow)
+	:
+		m_colliding_body{ PartCollisionDataCopy.m_colliding_body },
+		m_colliding_body_shadow{ PartCollisionDataCopy.m_colliding_body_shadow },
+		m_colliding_head{PartCollisionDataCopy.m_colliding_head},
+		m_colliding_head_shadow{PartCollisionDataCopy.m_colliding_head_shadow}
 	{
 	}
 

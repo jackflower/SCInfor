@@ -12,10 +12,10 @@ namespace logic
 	///
 	///Wyliczenie reprezentuje elementy składowe klasy Physical
 	///
-	enum EPhysicalPart
+	enum class EPhysicalPart
 	{
-		BODY,	//część podstawa (np. w przypadku czołgu - podwozie)
-		HEAD	//część dodatkowa (np. w przypadku czołgu - wieża)
+		BODY, //część podstawa (np. w przypadku czołgu - podwozie)
+		HEAD //część dodatkowa (np. w przypadku czołgu - wieża)
 	};
 }
 #endif //H_PHYSICAL_PART_JACK
