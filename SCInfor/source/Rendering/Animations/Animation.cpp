@@ -15,22 +15,26 @@ namespace rendering
 		//Konstruktor domyślny
 		Animation::Animation()
 		:
-			m_animation_name("")
+			m_animation_name{ "" },
+			m_frames{}
 		{
 		}
 
 		//Konstruktor kopiujący
 		Animation::Animation(const Animation & AnimationCopy)
 		:
-			m_animation_name(AnimationCopy.m_animation_name)
+			m_animation_name{ AnimationCopy.m_animation_name },
+			m_frames{ AnimationCopy.m_frames }
 		{
 		}
 
 		//Konstruktor przenoszący
 		Animation::Animation(Animation && other)
 		:
-			m_animation_name(""),
-			m_frames()
+			m_animation_name{ "" },
+			m_frames{ }
+			//m_animation_name{ other.m_animation_name },
+			//m_frames{ other.m_frames }
 		{
 			// kopiujemy dane z obiektu źródłowego
 			m_animation_name = other.m_animation_name;

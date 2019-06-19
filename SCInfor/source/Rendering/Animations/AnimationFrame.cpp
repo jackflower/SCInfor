@@ -14,33 +14,36 @@ namespace rendering
 
 		//Konstruktor domyślny
 		AnimationFrame::AnimationFrame()
-			:
-			m_texture_name(),
-			m_rectangle(0, 0, 0, 0)
+		:
+			m_texture_name{},
+			m_rectangle{ 0, 0, 0, 0 }
 		{
 		}
 
 		//Konstruktor paramtryczny
 		AnimationFrame::AnimationFrame(const std::string & texture_name, const sf::IntRect & rectangle)
-			:
-			m_texture_name(texture_name),
-			m_rectangle(rectangle)
+		:
+			m_texture_name{ texture_name },
+			m_rectangle{ rectangle }
 		{
 		}
 
 		//Konstruktor kopiujący
 		AnimationFrame::AnimationFrame(const AnimationFrame & AnimationFrameCopy)
-			:
-			m_texture_name(AnimationFrameCopy.m_texture_name),
-			m_rectangle(AnimationFrameCopy.m_rectangle)
+		:
+			m_texture_name{ AnimationFrameCopy.m_texture_name },
+			m_rectangle{ AnimationFrameCopy.m_rectangle }
 		{
 		}
 
 		//Konstruktor przenoszący
 		AnimationFrame::AnimationFrame(AnimationFrame && other)
 		:
-			m_texture_name(""),
-			m_rectangle()
+			m_texture_name{ "" },
+			m_rectangle{}
+			//m_texture_name(other.m_texture_name),
+			//m_rectangle(other.m_rectangle)
+
 		{
 			// kopiujemy dane z obiektu źródłowego
 			m_texture_name = other.m_texture_name;
@@ -70,11 +73,7 @@ namespace rendering
 			return *this;
 		}
 
-		///
-		///Przeciążony operator przypisania przenoszenia
-		///
-		///@param other -  referencja do r-wartości
-		///
+		//Przeciążony operator przypisania przenoszenia
 		AnimationFrame & AnimationFrame::operator=(AnimationFrame && other)
 		{
 			if (this != & other)

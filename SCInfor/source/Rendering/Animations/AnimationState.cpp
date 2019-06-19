@@ -19,36 +19,36 @@ namespace rendering
 		//Konstruktor domyślny
 		AnimationState::AnimationState()
 		:
-			m_current_time(0),
-			m_anim_speed(1.0f),
-			m_is_looped(true),
-			m_is_paused(false),
-			p_animation(nullptr),
-			m_frame_number(0)
+			m_current_time{ 0 },
+			m_anim_speed{ 1.0f },
+			m_is_looped{ true },
+			m_is_paused{ false },
+			p_animation{ nullptr },
+			m_frame_number{ 0 }
 		{
 		}
 
 		//Konstruktor kopiujący
 		AnimationState::AnimationState(const AnimationState & AnimationStateCopy)
 		:
-			m_current_time(AnimationStateCopy.m_current_time),
-			m_anim_speed(AnimationStateCopy.m_anim_speed),
-			m_is_looped(AnimationStateCopy.m_is_looped),
-			m_is_paused(AnimationStateCopy.m_is_paused),
-			p_animation(AnimationStateCopy.p_animation),
-			m_frame_number(AnimationStateCopy.m_frame_number)
+			m_current_time{ AnimationStateCopy.m_current_time },
+			m_anim_speed{ AnimationStateCopy.m_anim_speed },
+			m_is_looped{ AnimationStateCopy.m_is_looped },
+			m_is_paused{ AnimationStateCopy.m_is_paused },
+			p_animation{ AnimationStateCopy.p_animation },
+			m_frame_number{ AnimationStateCopy.m_frame_number }
 		{
 		}
 	
 		//Konstruktor przenoszący
 		AnimationState::AnimationState(AnimationState && other)
 		:
-			m_current_time(other.m_current_time),
-			m_anim_speed(other.m_anim_speed),
-			m_is_looped(other.m_is_looped),
-			m_is_paused(other.m_is_paused),
-			p_animation(other.p_animation),
-			m_frame_number(other.m_frame_number)
+			m_current_time{ other.m_current_time },
+			m_anim_speed{ other.m_anim_speed },
+			m_is_looped{ other.m_is_looped },
+			m_is_paused{ other.m_is_paused },
+			p_animation{ other.p_animation },
+			m_frame_number{ other.m_frame_number }
 		{
 			//zerujemy składowe obiektu źródłowego...
 			other.m_current_time = 0.f;
@@ -64,12 +64,12 @@ namespace rendering
 		//Konstruktor parametryczny
 		AnimationState::AnimationState(Animation *animation)
 		:
-			m_current_time(0),
-			m_anim_speed(1.0f),
-			m_is_looped(true),
-			m_is_paused(false),
-			p_animation(animation),
-			m_frame_number(0)
+			m_current_time{ 0 },
+			m_anim_speed{ 1.0f },
+			m_is_looped{ true },
+			m_is_paused{ false },
+			p_animation{ animation },
+			m_frame_number{ 0 }
 		{
 		}
 

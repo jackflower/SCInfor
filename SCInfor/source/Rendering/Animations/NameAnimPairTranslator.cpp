@@ -16,27 +16,27 @@ namespace rendering
 		//Konstruktor domyślny
 		NameAnimPairTranslator::NameAnimPairTranslator(void)
 		:
-			m_animation_name(""),
-			p_animation(nullptr),
-			m_is_ready(false)
+			m_animation_name{ "" },
+			p_animation{ nullptr },
+			m_is_ready{ false }
 		{
 		}
 		
 		//Konstruktor kopiujący
 		NameAnimPairTranslator::NameAnimPairTranslator(const NameAnimPairTranslator & NameAnimPairTranslatorCopy)
 		:
-			m_animation_name(NameAnimPairTranslatorCopy.m_animation_name),
-			p_animation(NameAnimPairTranslatorCopy.p_animation),
-			m_is_ready(NameAnimPairTranslatorCopy.m_is_ready)
+			m_animation_name{ NameAnimPairTranslatorCopy.m_animation_name },
+			p_animation{ NameAnimPairTranslatorCopy.p_animation },
+			m_is_ready{ NameAnimPairTranslatorCopy.m_is_ready }
 		{
 		}
 
 		//Konstruktor przenoszący
 		NameAnimPairTranslator::NameAnimPairTranslator(NameAnimPairTranslator && other)
 		:
-			m_animation_name(other.m_animation_name),
-			p_animation(other.p_animation),
-			m_is_ready(other.m_is_ready)
+			m_animation_name{ other.m_animation_name },
+			p_animation{ other.p_animation },
+			m_is_ready{ other.m_is_ready }
 		{
 			//zerujemy składowe obiektu źródłowego...
 			other.m_animation_name = "";
@@ -49,9 +49,9 @@ namespace rendering
 		//Konstruktor parametryczny
 		NameAnimPairTranslator::NameAnimPairTranslator(const std::string & animation_name)
 		:
-			m_animation_name(animation_name),
-			p_animation(nullptr),
-			m_is_ready(false)
+			m_animation_name{ animation_name },
+			p_animation{ nullptr },
+			m_is_ready{ false }
 		{
 		}
 

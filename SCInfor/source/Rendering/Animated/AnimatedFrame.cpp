@@ -13,23 +13,23 @@ namespace animated
 	//Konstruktor
 	AnimatedFrame::AnimatedFrame()
 	: 
-		p_texture(0),
-		m_rectangle()
+		p_texture{ nullptr },
+		m_rectangle{}
 	{
 	}
 
 	//Konstruktor kopiujący
 	AnimatedFrame::AnimatedFrame(const AnimatedFrame & copy)
 	: 
-		p_texture(copy.p_texture),
-		m_rectangle(copy.m_rectangle)
+		p_texture{ copy.p_texture },
+		m_rectangle{ copy.m_rectangle }
 	{
 	}
 
 	//Konstruktor przenoszący
 	AnimatedFrame::AnimatedFrame(AnimatedFrame && other)
 	:
-		p_texture(nullptr)
+		p_texture{ nullptr }
 	{
 		//kopiujemy pod wskaźnik dane obiektu źródłowego
 		p_texture = other.p_texture;
@@ -42,8 +42,8 @@ namespace animated
 	AnimatedFrame::AnimatedFrame(const Texture & texture, const sf::IntRect & rectangle)
 	//AnimatedFrame::AnimatedFrame(const sf::Texture & texture, const sf::IntRect & rectangle)
 	: 
-		p_texture	(&texture),
-		m_rectangle	(rectangle)
+		p_texture{ &texture },
+		m_rectangle{ rectangle }
 	{
 	}
 
@@ -51,7 +51,7 @@ namespace animated
 	//AnimatedFrame::AnimatedFrame(const sf::Texture & texture)
 	AnimatedFrame::AnimatedFrame(const Texture & texture)
 	:
-		p_texture	(&texture)
+		p_texture{ &texture }
 	{
 		if (p_texture != 0)
 			m_rectangle = sf::IntRect(0, 0, p_texture->getSize().x, p_texture->getSize().y);
@@ -61,6 +61,7 @@ namespace animated
 	AnimatedFrame::~AnimatedFrame()
 	{
 		p_texture = nullptr;
+		m_rectangle;
 	}
 
 	//Przeciążony operator przypisania kopiowania

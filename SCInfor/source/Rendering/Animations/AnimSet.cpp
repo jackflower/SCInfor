@@ -289,8 +289,8 @@ namespace rendering
 		//Konstruktor domyślny
 		AnimSet::AnimSet()
 		:
-			m_animset_name(""),
-			m_anims()
+			m_animset_name{ "" },
+			m_anims{}
 		{
 			m_anims.resize(m_anim_handle_number);
 		}
@@ -298,8 +298,8 @@ namespace rendering
 		//Konstruktor kopiujący
 		AnimSet::AnimSet(const AnimSet & AnimSetCopy)
 		:
-			m_animset_name(AnimSetCopy.m_animset_name),
-			m_anims(AnimSetCopy.m_anims)
+			m_animset_name{ AnimSetCopy.m_animset_name },
+			m_anims{ AnimSetCopy.m_anims }
 		{
 			m_anims.resize(m_anim_handle_number);
 		}
@@ -307,8 +307,8 @@ namespace rendering
 		//Konstruktor przenoszący
 		AnimSet::AnimSet(AnimSet && other)
 		:
-			m_animset_name(other.m_animset_name),
-			m_anims(other.m_anims)
+			m_animset_name{ other.m_animset_name },
+			m_anims{ other.m_anims }
 		{
 			//zerujemy składowe obiektu źródłowego...
 			other.m_animset_name = "";

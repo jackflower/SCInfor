@@ -15,30 +15,31 @@ namespace rendering
 		//Konstruktor domyślny
 		TimedAnimationFrame::TimedAnimationFrame()
 		:
-			m_time(0.0f),
-			m_frame()
+			m_time{ 0.0f },
+			m_frame{}
 		{
 		}
 
 		//Konstruktor kopiujący
 		TimedAnimationFrame::TimedAnimationFrame(const TimedAnimationFrame & TimedAnimationFrameCopy)
 		:
-			m_time(TimedAnimationFrameCopy.m_time),
-			m_frame(TimedAnimationFrameCopy.m_frame)
+			m_time{ TimedAnimationFrameCopy.m_time },
+			m_frame{ TimedAnimationFrameCopy.m_frame }
 		{
 		}
 
 		//Konstruktor paramatryczny
 		TimedAnimationFrame::TimedAnimationFrame(float time, const AnimationFrame & frame)
 		:
-			m_time(time),
-			m_frame(frame)
+			m_time{ time },
+			m_frame{ frame }
 		{
 		}
 
 		//Destruktor
 		TimedAnimationFrame::~TimedAnimationFrame(void)
 		{
+			m_frame;
 			m_time = 0.0f;
 		}
 

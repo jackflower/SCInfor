@@ -13,13 +13,15 @@ namespace animated
 
 	//Konstruktor
 	AnimatedAnimation::AnimatedAnimation()
+	:
+		m_frame{}
 	{
 	}
 
 	//Konstruktor kopiujący
-	AnimatedAnimation::AnimatedAnimation(const AnimatedAnimation& copy)
-		:
-		m_frame(copy.m_frame)
+	AnimatedAnimation::AnimatedAnimation(const AnimatedAnimation & copy)
+	:
+		m_frame{ copy.m_frame }
 	{
 	}
 
@@ -32,7 +34,7 @@ namespace animated
 	//Konstruktor przenoszący
 	AnimatedAnimation::AnimatedAnimation(AnimatedAnimation && other)
 	:
-		m_frame(other.m_frame)
+		m_frame{ other.m_frame }
 	{
 	}
 

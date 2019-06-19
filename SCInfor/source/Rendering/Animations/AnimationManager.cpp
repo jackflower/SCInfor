@@ -22,8 +22,8 @@ namespace rendering
 		//Konstruktor domyślny
 		AnimationManager::AnimationManager()
 		:
-			m_animations(),
-			m_animation_states()
+			m_animations{},
+			m_animation_states{}
 		{
 			fprintf(stderr, "AnimationManager::CAnimationsManager()\n");
 			gGame.addFrameListener(this);
@@ -79,7 +79,7 @@ namespace rendering
 		//Metoda tworzy funkcjonalny obiekt animowany
 		AnimationState *AnimationManager::createAnimationState(const std::string & animation_name)
 		{
-			Animation* animationPtr = getAnimation(animation_name);
+			Animation *animationPtr = getAnimation(animation_name);
 			return createAnimationState(animationPtr);
 		}
 
