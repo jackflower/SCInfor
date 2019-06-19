@@ -13,16 +13,16 @@ namespace mapengine
 	//Konstruktor
 	MapPhysicalType::MapPhysicalType()
 	:
-		m_code		(),
-		p_template	(nullptr)
+		m_code{},
+		p_template{ nullptr }
 	{
 	}
 
 	//Konstruktor kopiujący
 	MapPhysicalType::MapPhysicalType(const MapPhysicalType & MapPhysicalTypeCopy)
 	:
-		m_code		(MapPhysicalTypeCopy.m_code),
-		p_template	(MapPhysicalTypeCopy.p_template)
+		m_code{ MapPhysicalTypeCopy.m_code },
+		p_template{ MapPhysicalTypeCopy.p_template }
 	{
 	}
 

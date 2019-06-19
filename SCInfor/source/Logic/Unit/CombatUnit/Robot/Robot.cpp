@@ -31,12 +31,12 @@ namespace logic
 		}
 
 		//Chroniony konstruktor kopiujący
-		Robot::Robot(const Robot & RobottCopy)
+		Robot::Robot(const Robot & RobotCopy)
 		:
-			Unit (RobottCopy), //chroniony konstruktor kopiujący klasy bazowej
-			m_robot_state{ RobottCopy.m_robot_state },
-			m_strategy_duration{ RobottCopy.m_strategy_duration },
-			m_elapsed_time{ RobottCopy.m_elapsed_time }
+			Unit (RobotCopy), //chroniony konstruktor kopiujący klasy bazowej
+			m_robot_state{ RobotCopy.m_robot_state },
+			m_strategy_duration{ RobotCopy.m_strategy_duration },
+			m_elapsed_time{ RobotCopy.m_elapsed_time }
 		{
 		}
 

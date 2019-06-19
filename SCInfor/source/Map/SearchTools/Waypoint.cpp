@@ -9,24 +9,24 @@
 //Konstruktor domyślny (protected)
 Waypoint::Waypoint()
 :
-	m_cost_from_start(0),
-	m_cost_to_goal(0),
-	m_parent(nullptr),
-	m_is_on_open(false),
-	m_is_on_closed(false),
-	m_is_in_use(false)
+	m_cost_from_start{ 0 },
+	m_cost_to_goal{ 0 },
+	m_parent{ nullptr },
+	m_is_on_open{ false },
+	m_is_on_closed{ false },
+	m_is_in_use{ false }
 {
 }
 
 //Konstruktor parametryczny (protected)
 Waypoint::Waypoint(int cost_from_start, int cost_to_goal, Waypoint *parent) 
 :
-	m_cost_from_start(cost_from_start),
-	m_cost_to_goal(cost_to_goal),
-    m_parent(parent),
-	m_is_on_open(true),
-	m_is_on_closed(false),
-	m_is_in_use(false)
+	m_cost_from_start{ cost_from_start },
+	m_cost_to_goal{ cost_to_goal },
+	m_parent{ parent },
+	m_is_on_open{ true },
+	m_is_on_closed{ false },
+	m_is_in_use{ false }
 {
 }
 

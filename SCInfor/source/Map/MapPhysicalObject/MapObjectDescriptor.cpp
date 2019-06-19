@@ -15,15 +15,15 @@ namespace mapengine
 	//Konstruktor
 	MapObjectDescriptor::MapObjectDescriptor()
 	:
-		m_code(""),
-		m_name(""),
-		p_templ(nullptr),
-		m_x_position(0.0f),
-		m_y_position(0.0f),
-		m_rotation_body(0),
-		m_rotation_head(0),
-		m_uniqueId(0),
-		m_smooth(false)
+		m_code{ "" },
+		m_name{ "" },
+		p_templ{ nullptr },
+		m_x_position{ 0.0f },
+		m_y_position{ 0.0f },
+		m_rotation_body{ 0 },
+		m_rotation_head{ 0 },
+		m_uniqueId{ 0 },
+		m_smooth{ false }
 	{
 		m_uniqueId = nextId++; //unikalna wartość identyfikatora zwiększana w konstruktorze
 	}
@@ -31,15 +31,15 @@ namespace mapengine
 	//Konstruktor kopiujący
 	MapObjectDescriptor::MapObjectDescriptor(const MapObjectDescriptor & MapObjectDescriptorCopy)
 	:
-		m_code(MapObjectDescriptorCopy.m_code),
-		m_name(MapObjectDescriptorCopy.m_name),
-		p_templ(MapObjectDescriptorCopy.p_templ),
-		m_x_position(MapObjectDescriptorCopy.m_x_position),
-		m_y_position(MapObjectDescriptorCopy.m_y_position),
-		m_rotation_body(MapObjectDescriptorCopy.m_rotation_body),
-		m_rotation_head(MapObjectDescriptorCopy.m_rotation_head),
-		m_uniqueId(MapObjectDescriptorCopy.m_uniqueId),
-		m_smooth(MapObjectDescriptorCopy.m_smooth)
+		m_code{ MapObjectDescriptorCopy.m_code },
+		m_name{ MapObjectDescriptorCopy.m_name },
+		p_templ{ MapObjectDescriptorCopy.p_templ },
+		m_x_position{ MapObjectDescriptorCopy.m_x_position },
+		m_y_position{ MapObjectDescriptorCopy.m_y_position },
+		m_rotation_body{ MapObjectDescriptorCopy.m_rotation_body },
+		m_rotation_head{ MapObjectDescriptorCopy.m_rotation_head },
+		m_uniqueId{ MapObjectDescriptorCopy.m_uniqueId },
+		m_smooth{ MapObjectDescriptorCopy.m_smooth }
 	{
 	}
 

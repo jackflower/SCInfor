@@ -16,18 +16,18 @@ namespace mapengine
 		//Konstruktor
 		PhysicsGround::PhysicsGround()
 		:
-			m_friction(0.0f),
-			m_humidity(0.0f),
-			m_thermal_transmittance(0.0f)
+			m_friction{ 0.0f },
+			m_humidity{ 0.0f },
+			m_thermal_transmittance{ 0.0f }
 		{
 		}
 
 		//Konstruktor kopiujący
 		PhysicsGround::PhysicsGround(const PhysicsGround & PhysicsGroundCopy)
 		:
-			m_friction(PhysicsGroundCopy.m_friction),
-			m_humidity(PhysicsGroundCopy.m_humidity),
-			m_thermal_transmittance(PhysicsGroundCopy.m_thermal_transmittance)
+			m_friction{ PhysicsGroundCopy.m_friction },
+			m_humidity{ PhysicsGroundCopy.m_humidity },
+			m_thermal_transmittance{ PhysicsGroundCopy.m_thermal_transmittance }
 		{
 		}
 

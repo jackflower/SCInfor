@@ -21,21 +21,21 @@ namespace mapengine
 	//Chroniony konstruktor domyślny - używany wyłącznie przez MapPhysicalManager
 	MapPhysical::MapPhysical(const std::wstring & uniqueId)
 	:
-		m_unique_id(uniqueId),
-		m_code(),
-		p_displayable(nullptr),
-		m_map_physical_position(0.0f, 0.0f),
-		m_scale(0.0f, 0.0f),
-		m_origin(0.0f, 0.0f),
-		m_rotation(0.0f),
-		m_size(0.0f, 0.0f),
-		m_displayable_type(),
-		p_template(nullptr),
-		p_synthetic_texture(nullptr),
-		p_synthetic_image(nullptr),
-		m_smooth(false),
-		m_mapphysical_manager_index(-1),
-		m_ready_for_destruction(false)
+		m_unique_id{ uniqueId },
+		m_code{},
+		p_displayable{ nullptr },
+		m_map_physical_position{ 0.0f, 0.0f },
+		m_scale{ 0.0f, 0.0f },
+		m_origin{ 0.0f, 0.0f },
+		m_rotation{ 0.0f },
+		m_size{ 0.0f, 0.0f },
+		m_displayable_type{},
+		p_template{ nullptr },
+		p_synthetic_texture{ nullptr },
+		p_synthetic_image{ nullptr },
+		m_smooth{ false },
+		m_mapphysical_manager_index{ -1 },
+		m_ready_for_destruction{ false }
 	{
 		p_synthetic_texture = new ResourceTexture();
 		p_synthetic_image = new sf::Image;
@@ -44,21 +44,21 @@ namespace mapengine
 	//Chroniony konstruktor kopiujący
 	MapPhysical::MapPhysical(const MapPhysical & MapPhysicalCopy)
 	:
-		m_unique_id(MapPhysicalCopy.m_unique_id),
-		m_code(MapPhysicalCopy.m_code),
-		p_displayable(MapPhysicalCopy.p_displayable),
-		m_map_physical_position(MapPhysicalCopy.m_map_physical_position),
-		m_scale(MapPhysicalCopy.m_scale),
-		m_origin(MapPhysicalCopy.m_origin),
-		m_rotation(MapPhysicalCopy.m_rotation),
-		m_size(MapPhysicalCopy.m_size),
-		m_displayable_type(MapPhysicalCopy.m_displayable_type),
-		p_template(MapPhysicalCopy.p_template),
-		p_synthetic_texture(MapPhysicalCopy.p_synthetic_texture),
-		p_synthetic_image(MapPhysicalCopy.p_synthetic_image),
-		m_smooth(MapPhysicalCopy.m_smooth),
-		m_mapphysical_manager_index(MapPhysicalCopy.m_mapphysical_manager_index),
-		m_ready_for_destruction(MapPhysicalCopy.m_ready_for_destruction)
+		m_unique_id{ MapPhysicalCopy.m_unique_id },
+		m_code{ MapPhysicalCopy.m_code },
+		p_displayable{ MapPhysicalCopy.p_displayable },
+		m_map_physical_position{ MapPhysicalCopy.m_map_physical_position },
+		m_scale{ MapPhysicalCopy.m_scale },
+		m_origin{ MapPhysicalCopy.m_origin },
+		m_rotation{ MapPhysicalCopy.m_rotation },
+		m_size{ MapPhysicalCopy.m_size },
+		m_displayable_type{ MapPhysicalCopy.m_displayable_type },
+		p_template{ MapPhysicalCopy.p_template },
+		p_synthetic_texture{ MapPhysicalCopy.p_synthetic_texture },
+		p_synthetic_image{ MapPhysicalCopy.p_synthetic_image },
+		m_smooth{ MapPhysicalCopy.m_smooth },
+		m_mapphysical_manager_index{ MapPhysicalCopy.m_mapphysical_manager_index },
+		m_ready_for_destruction{ MapPhysicalCopy.m_ready_for_destruction }
 	{
 	}
 

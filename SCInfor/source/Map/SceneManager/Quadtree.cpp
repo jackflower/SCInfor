@@ -17,12 +17,12 @@ namespace mapengine
 
 	Quadtree::Quadtree(float x, float y, float width, float height, int level, int maxLevel)
 	:
-		m_x(x),
-		m_y(y),
-		m_width(width),
-		m_height(height),
-		m_level(level),
-		m_maxLevel(maxLevel)
+		m_x{ x },
+		m_y{ y },
+		m_width{ width },
+		m_height{ height },
+		m_level{ level },
+		m_maxLevel{ maxLevel }
 	{
 		shape.setPosition(m_x, m_y);
 		shape.setSize(sf::Vector2f(m_width, m_height));

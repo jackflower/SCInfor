@@ -16,16 +16,16 @@ namespace mapengine
 	//Konstruktor
 	Ground::Ground(const std::wstring & uniqueId)
 	:
-		Actor(uniqueId), //konstruktor klasy bazowej
-		m_physicsground()
+		Actor{ uniqueId }, //konstruktor klasy bazowej
+		m_physicsground{}
 	{
 	}
 
 	//Konstruktor kopiujący
-	Ground::Ground(const Ground & CGroundCopy)
+	Ground::Ground(const Ground & GroundCopy)
 	:
-		Actor(CGroundCopy),	//konstruktor kopiujący klasy bazowej
-		m_physicsground(CGroundCopy.m_physicsground)
+		Actor(GroundCopy),	//konstruktor kopiujący klasy bazowej
+		m_physicsground{ GroundCopy.m_physicsground }
 	{
 	}
 
@@ -33,7 +33,7 @@ namespace mapengine
 	Ground::~Ground()
 	{
 		//~Actor()
-		//m_physicsground
+		m_physicsground;
 	}
 
 	//Metoda zwraca typ obiektu /RTTI/

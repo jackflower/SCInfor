@@ -16,15 +16,15 @@ namespace mapengine
 	//Konstruktor
 	MapPhysicalDescriptor::MapPhysicalDescriptor()
 	:
-		p_template(nullptr),
-		m_unique_id(0),
-		m_code(),
-		m_name(),
-		m_position(0.0f, 0.0f),
-		m_scale(1.0f, 1.0f),
-		m_rotation(0.0f),
-		m_size(0.0f, 0.0f),
-		m_smooth(false)
+		p_template{ nullptr },
+		m_unique_id{ 0 },
+		m_code{},
+		m_name{},
+		m_position{ 0.0f, 0.0f },
+		m_scale{ 1.0f, 1.0f },
+		m_rotation{ 0.0f },
+		m_size{ 0.0f, 0.0f },
+		m_smooth{ false }
 	{
 		m_unique_id = nextId++;	//unikalna wartość identyfikatora zwiększana w konstruktorze
 		//nazwa z pliku xml, lub liczba wygenerowana...
@@ -33,15 +33,15 @@ namespace mapengine
 	//Konstruktor kopiujący
 	MapPhysicalDescriptor::MapPhysicalDescriptor(const MapPhysicalDescriptor & MapPhysicalDescriptorCopy)
 	:
-		p_template(MapPhysicalDescriptorCopy.p_template),
-		m_unique_id(MapPhysicalDescriptorCopy.m_unique_id),//zerujemy licznik, czy kopia to kopia?
-		m_code(MapPhysicalDescriptorCopy.m_code),
-		m_name(MapPhysicalDescriptorCopy.m_name),
-		m_position(MapPhysicalDescriptorCopy.m_position),
-		m_scale(MapPhysicalDescriptorCopy.m_scale),
-		m_rotation(MapPhysicalDescriptorCopy.m_rotation),
-		m_size(MapPhysicalDescriptorCopy.m_size),
-		m_smooth(MapPhysicalDescriptorCopy.m_smooth)
+		p_template{ MapPhysicalDescriptorCopy.p_template },
+		m_unique_id{ MapPhysicalDescriptorCopy.m_unique_id },//zerujemy licznik, czy kopia to kopia?
+		m_code{ MapPhysicalDescriptorCopy.m_code },
+		m_name{ MapPhysicalDescriptorCopy.m_name },
+		m_position{ MapPhysicalDescriptorCopy.m_position },
+		m_scale{ MapPhysicalDescriptorCopy.m_scale },
+		m_rotation{ MapPhysicalDescriptorCopy.m_rotation },
+		m_size{ MapPhysicalDescriptorCopy.m_size },
+		m_smooth{ MapPhysicalDescriptorCopy.m_smooth }
 	{
 	}
 

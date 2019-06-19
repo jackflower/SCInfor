@@ -18,8 +18,8 @@ namespace mapengine
 		//Konstruktor
 		GroundWork::GroundWork(const std::wstring & uniqueId)
 		:
-			MapPhysical(uniqueId),	//konstruktor klasy bazowej
-			m_physicsground()
+			MapPhysical{ uniqueId },	//konstruktor klasy bazowej
+			m_physicsground{}
 		{
 		}
 
@@ -27,7 +27,7 @@ namespace mapengine
 		GroundWork::GroundWork(const GroundWork & GroundWorkCopy)
 		:
 			MapPhysical(GroundWorkCopy), //konstruktor kopiujący klasy bazowej
-			m_physicsground(GroundWorkCopy.m_physicsground)
+			m_physicsground{ GroundWorkCopy.m_physicsground }
 		{
 		}
 
@@ -35,7 +35,7 @@ namespace mapengine
 		GroundWork::~GroundWork()
 		{
 			//~MapPhysical()
-			//m_physicsground
+			m_physicsground;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

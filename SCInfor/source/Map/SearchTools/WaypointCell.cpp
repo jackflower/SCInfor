@@ -10,15 +10,15 @@
 
 WaypointCell::WaypointCell(const sf::Vector2i & cell)
 :
-    Waypoint(),
-	m_cell(cell)
+	Waypoint{},
+	m_cell{ cell }
 {
 }
 
 WaypointCell::WaypointCell(const WaypointCell & other)
 :
     Waypoint(other),
-	m_cell(other.getCell())
+	m_cell{ other.getCell() }
 {
 }
 

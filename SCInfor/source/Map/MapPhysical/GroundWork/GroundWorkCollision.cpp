@@ -15,16 +15,16 @@ namespace mapengine
 		//Konstruktor
 		GroundWorkCollision::GroundWorkCollision()
 		:
-			m_size(0, 0),
-			m_ground_work_list()
+			m_size{ 0, 0 },
+			m_ground_work_list{}
 		{
 		}
 
 		//Konstruktor kopiujący
 		GroundWorkCollision::GroundWorkCollision(const GroundWorkCollision & GroundWorkCollisionCopy)
 		:
-			m_size(GroundWorkCollisionCopy.m_size),
-			m_ground_work_list(GroundWorkCollisionCopy.m_ground_work_list)
+			m_size{ GroundWorkCollisionCopy.m_size },
+			m_ground_work_list{ GroundWorkCollisionCopy.m_ground_work_list }
 		{
 		}
 
@@ -33,7 +33,7 @@ namespace mapengine
 		{
 			m_size.x = 0;
 			m_size.y = 0;
-			//m_ground_work_list
+			m_ground_work_list;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

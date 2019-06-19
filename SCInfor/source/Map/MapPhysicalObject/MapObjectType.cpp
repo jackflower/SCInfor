@@ -13,16 +13,16 @@ namespace mapengine
 	//Konstruktor
 	MapObjectType::MapObjectType()
 	:
-		m_code(""),
-		p_template(nullptr)
+		m_code{ "" },
+		p_template{ nullptr }
 	{
 	}
 
 	//Konstruktor kopiujący
 	MapObjectType::MapObjectType(const MapObjectType & MapObjectTypeCopy)
 	:
-		m_code(MapObjectTypeCopy.m_code),
-		p_template(MapObjectTypeCopy.p_template)
+		m_code{ MapObjectTypeCopy.m_code },
+		p_template{ MapObjectTypeCopy.p_template }
 	{
 	}
 
