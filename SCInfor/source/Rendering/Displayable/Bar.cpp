@@ -14,33 +14,33 @@ namespace displayable
 	//Konstruktor domyślny
 	Bar::Bar()
 	:
-		Displayable(), //konstruktor klasy bazowej
-		m_bar_name(),
-		m_value(),
-		m_thickness(1.0f),
-		m_vector_offset(0.0f, 0.0f)
+		Displayable{}, //konstruktor klasy bazowej
+		m_bar_name{},
+		m_value{},
+		m_thickness{ 1.0f },
+		m_vector_offset{ 0.0f, 0.0f }
 	{
 	}
 
 	//Konstruktor kopiujący
 	Bar::Bar(const Bar & BarCopy)
 	:
-		Displayable (BarCopy), //konstruktor kopiujący klasy bazowej
-		m_bar_name (BarCopy.m_bar_name),
-		m_value(BarCopy.m_value),
-		m_thickness(BarCopy.m_thickness),
-		m_vector_offset	(BarCopy.m_vector_offset)
+		Displayable{ BarCopy }, //konstruktor kopiujący klasy bazowej
+		m_bar_name{ BarCopy.m_bar_name },
+		m_value{ BarCopy.m_value },
+		m_thickness{ BarCopy.m_thickness },
+		m_vector_offset{ BarCopy.m_vector_offset }
 	{
 	}
 
 	//Konstruktor przenoszący
 	Bar::Bar(Bar && other)
 	:
-		Displayable(other),//konstruktor przenoszący klasy bazowej
-		m_bar_name(other.m_bar_name),
-		m_value(other.m_value),
-		m_thickness(other.m_thickness),
-		m_vector_offset(other.m_vector_offset)
+		Displayable{ other },//konstruktor przenoszący klasy bazowej
+		m_bar_name{ other.m_bar_name },
+		m_value{ other.m_value },
+		m_thickness{ other.m_thickness },
+		m_vector_offset{ other.m_vector_offset }
 	{
 		// kopiujemy dane z obiektu źródłowego
 		m_bar_name = other.m_animation_name;
@@ -58,7 +58,7 @@ namespace displayable
 	//Destruktor wirtualny
 	Bar::~Bar()
 	{
-		//~Displayable
+		//~Displayable()
 		m_bar_name = "";
 		m_value = 0.0f;
 		m_thickness = 0.0f;
