@@ -23,7 +23,7 @@ namespace displayable
 	//Konstruktor domyślny
 	ClippedSprite::ClippedSprite()
 	:
-		m_clip_plane_enabled(false)
+		m_clip_plane_enabled{ false }
 	{
 	}
 

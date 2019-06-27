@@ -14,21 +14,21 @@ namespace rendering
 		//Konstruktor
 		Texture::Texture()
 		:
-			sf::Texture()//konstruktor klasy bazowej
+			sf::Texture{}//konstruktor klasy bazowej
 		{
 		}
 
 		//Konstruktor kopiujący
 		Texture::Texture(const Texture & copy)
 		:
-			sf::Texture(copy)//konstruktor kopiujący klasy bazowej
+			sf::Texture{ copy }//konstruktor kopiujący klasy bazowej
 		{
 		}
 
 		//Konstruktor przenoszący
 		Texture::Texture(Texture && other)
 		:
-			sf::Texture(std::move(other))
+			sf::Texture{ std::move(other) }
 		{
 		}
 
@@ -58,8 +58,8 @@ namespace rendering
 		{
 			//jeśli dane zostały załadowane
 			if (sf::Texture::loadFromFile(file_name))
-				return true;	//zwracamy flagę true (ok)
-			return false;		//false, jeśli program nie załadował pliku
+				return true; //zwracamy flagę true (ok)
+			return false; //false, jeśli program nie załadował pliku
 		}
 
 	}//namespace displayable

@@ -28,9 +28,9 @@ namespace displayable
 	//Konstruktor
 	HudSprite::HudSprite()
 	:
-		Drawable(),//konstruktor klasy bazowej
-		m_sprite(nullptr), 
-		m_clip_rect_enabled(false)
+		Drawable{},//konstruktor klasy bazowej
+		m_sprite{ nullptr },
+		m_clip_rect_enabled{ false }
 	{
 		memset(m_clip_rect, 0, 4*sizeof(int));
 		//m_sprite = new ClippedSprite;

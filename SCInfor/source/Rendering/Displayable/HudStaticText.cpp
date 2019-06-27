@@ -19,13 +19,13 @@ namespace rendering
 		//Konstruktor
 		HudStaticText::HudStaticText()
 		:
-			Drawable(),//konstruktor klasy bazowej
-			p_text(nullptr),
-			m_color(),
-			p_font(nullptr),
-			m_font_size(1),
-			m_string(),
-			m_tranformable()
+			Drawable{},//konstruktor klasy bazowej
+			p_text{ nullptr },
+			m_color{},
+			p_font{ nullptr },
+			m_font_size{ 1 },
+			m_string{},
+			m_tranformable{}
 		{
 			p_text = new sf::Text();
 		}
@@ -35,11 +35,11 @@ namespace rendering
 		{
 			delete p_text;
 			p_text = nullptr;
-			//m_color
-			//p_font
+			m_color;
+			p_font = nullptr;
 			m_font_size = 0;
 			m_string = "";
-			//m_tranformable
+			m_tranformable;
 		}
 
 		//Metoda zwraca typ obiektu /RTTI/

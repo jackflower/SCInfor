@@ -17,8 +17,8 @@ namespace rendering
 		//Konstruktor
 		Rectangle::Rectangle()
 		:
-			Drawable(), //konstruktor klasy bazowej
-			p_rectangle()
+			Drawable{}, //konstruktor klasy bazowej
+			p_rectangle{}
 		{
 			//tworzymy obiekt klasy sf::RectangleShape
 			p_rectangle = new sf::RectangleShape();

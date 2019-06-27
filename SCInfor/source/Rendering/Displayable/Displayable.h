@@ -240,7 +240,7 @@ namespace rendering
 			///
 			///@param offset - stała referencja na obiekt klasy sf::Vector2f - wektora przesunięcia
 			///
-			void move(const sf::Vector2f& offset);
+			void move(const sf::Vector2f & offset);
 
 			///
 			///Metoda zwraca kolor obiektu

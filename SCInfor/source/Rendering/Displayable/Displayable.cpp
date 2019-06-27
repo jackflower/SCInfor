@@ -21,13 +21,13 @@ namespace rendering
 		//Konstruktor domyślny
 		Displayable::Displayable()
 		:
-			Drawable(),//konstruktor klasy bazowej
-			m_sprite(),
-			m_animation_state(nullptr),
-			m_animation_name(""),
-			m_smooth(false),
-			p_synthetic_texture(nullptr),
-			p_synthetic_image(nullptr)
+			Drawable{},//konstruktor klasy bazowej
+			m_sprite{},
+			m_animation_state{ nullptr },
+			m_animation_name{ "" },
+			m_smooth{ false },
+			p_synthetic_texture{ nullptr },
+			p_synthetic_image{ nullptr }
 		{
 			m_sprite = new Sprite();
 			p_synthetic_texture = new sf::Texture;
@@ -39,11 +39,11 @@ namespace rendering
 		:
 			Drawable(DisplayableCopy),//konstruktor kopiujący klasy bazowej
 			//m_sprite //tego nie kopiujemy...(2019-02-19: poddać analizie...)
-			m_animation_state(DisplayableCopy.m_animation_state),
-			m_animation_name(DisplayableCopy.m_animation_name),
-			m_smooth(DisplayableCopy.m_smooth),
-			p_synthetic_texture(DisplayableCopy.p_synthetic_texture),
-			p_synthetic_image(DisplayableCopy.p_synthetic_image)
+			m_animation_state{ DisplayableCopy.m_animation_state },
+			m_animation_name{ DisplayableCopy.m_animation_name },
+			m_smooth{ DisplayableCopy.m_smooth },
+			p_synthetic_texture{ DisplayableCopy.p_synthetic_texture },
+			p_synthetic_image{ DisplayableCopy.p_synthetic_image }
 		{
 		}
 
@@ -239,16 +239,16 @@ namespace rendering
 		//Metoda ustawia teksturę obiektu
 		void Displayable::setTexture(ResourceTexture *p_texture, bool smoothing)
 		{
-			if (m_animation_state)					//jeśli wskaźnik na AnimationState jest zainicjowany
+			if (m_animation_state) //jeśli wskaźnik na AnimationState jest zainicjowany
 			{
 				gAnimationManager.destroyAnimationState(m_animation_state);//usuwamy animację
-				m_animation_state = nullptr;			//ustawiamy wskaźnik na nullptr
+				m_animation_state = nullptr; //ustawiamy wskaźnik na nullptr
 			}
 
-			if (p_texture != nullptr)					//jeśli mamy wskaźnik poprawnie wskazujący na teksturę
+			if (p_texture != nullptr) //jeśli mamy wskaźnik poprawnie wskazujący na teksturę
 			{
 				p_texture->setSmooth(m_smooth);
-				m_sprite->setTexture(*p_texture);	//ustawiamy teskturę
+				m_sprite->setTexture(*p_texture); //ustawiamy teskturę
 				//po załadowaniu tekstury wyznaczamy punkt uchwytu sprite'a na jego środek geometryczny
 				m_sprite->setOrigin(m_sprite->getLocalBounds().width * 0.5f, m_sprite->getLocalBounds().height * 0.5f);
 			}
@@ -257,10 +257,10 @@ namespace rendering
 		//Metoda generuje obraz tekstury
 		void Displayable::setTexture(unsigned width, unsigned height, const sf::Color & color)
 		{
-			if (m_animation_state)					//jeśli wskaźnik na AnimationState jest zainicjowany
+			if (m_animation_state) //jeśli wskaźnik na AnimationState jest zainicjowany
 			{
 				gAnimationManager.destroyAnimationState(m_animation_state);//usuwamy animację
-				m_animation_state = nullptr;			//ustawiamy wskaźnik na nullptr
+				m_animation_state = nullptr; //ustawiamy wskaźnik na nullptr
 			}
 
 			p_synthetic_texture->create(width, height);
@@ -272,10 +272,10 @@ namespace rendering
 		//Metoda generuje obraz tekstury
 		void Displayable::setTexture(unsigned width, unsigned height, unsigned r, unsigned g, unsigned b, unsigned a)
 		{
-			if (m_animation_state)					//jeśli wskaźnik na AnimationState jest zainicjowany
+			if (m_animation_state) //jeśli wskaźnik na AnimationState jest zainicjowany
 			{
 				gAnimationManager.destroyAnimationState(m_animation_state);//usuwamy animację
-				m_animation_state = nullptr;			//ustawiamy wskaźnik na nullptr
+				m_animation_state = nullptr; //ustawiamy wskaźnik na nullptr
 			}
 			
 			p_synthetic_texture->create(width, height);
@@ -337,7 +337,7 @@ namespace rendering
 			return m_animation_state;
 		}
 		
-		///Metoda zwraca tryb wygładzania tekstury
+		//Metoda zwraca tryb wygładzania tekstury
 		const bool Displayable::getSmoothing() const
 		{
 			return m_smooth;
@@ -383,12 +383,12 @@ namespace rendering
 					//niech na razie sobie tutaj poleży, najwyżej można to zakomentować...
 					//if (rect.left == 0 && rect.top == 0 && rect.width == 0 && rect.height == 0)
 					//{
-					//	rect.width = p_texture->getSize().x;	//wyznaczamy szerokość
-					//	rect.height = p_texture->getSize().y;	//wyznaczamy wysokość
+					//	rect.width = p_texture->getSize().x; //wyznaczamy szerokość
+					//	rect.height = p_texture->getSize().y; //wyznaczamy wysokość
 					//}
-					p_texture->setSmooth(m_smooth);				//filtr
-					m_sprite->setTexture(*p_texture);			//podłączamy wskaźnik na teksturę pod sprite'a
-					m_sprite->setTextureRect(rect);				//podłączamy wyliczony obszar tekstury pod sprite'a
+					p_texture->setSmooth(m_smooth); //filtr
+					m_sprite->setTexture(*p_texture); //podłączamy wskaźnik na teksturę pod sprite'a
+					m_sprite->setTextureRect(rect); //podłączamy wyliczony obszar tekstury pod sprite'a
 
 					//wyznaczamy punkt uchwytu sprite'a na jego środek geometryczny
 					m_sprite->setOrigin(m_sprite->getLocalBounds().width * 0.5f, m_sprite->getLocalBounds().height * 0.5f);
@@ -396,9 +396,9 @@ namespace rendering
 			}
 			
 			if(m_can_draw == false) return;	//na wszelki wypadek, gdyby w ramce czasu flaga ustawiła się na false
-			if (m_sprite)					//na wszelki wypadek, gdyby wskaźnik stracił adres...
+			if (m_sprite) //na wszelki wypadek, gdyby wskaźnik stracił adres...
 			{
-				render->draw(*m_sprite);	//rysujemy obiekt
+				render->draw(*m_sprite); //rysujemy obiekt
 			}
 		}
 	}//namespace displayable

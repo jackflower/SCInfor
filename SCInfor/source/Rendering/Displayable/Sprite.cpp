@@ -17,7 +17,7 @@ namespace rendering
 		//Konstruktor domyślny
 		Sprite::Sprite()
 		:
-			sf::Sprite()//konstruktor klasy bazowej
+			sf::Sprite{}//konstruktor klasy bazowej
 		{
 		}
 
