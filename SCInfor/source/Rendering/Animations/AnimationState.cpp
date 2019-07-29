@@ -203,50 +203,56 @@ namespace rendering
 		void AnimationState::addTime(float time)
 		{
 			//kumulujemy upływający czas
-			m_current_time += time * m_anim_speed;				//Główna idea - "oszczędzamy" czas
+			//główna idea - "oszczędzamy" czas
+			m_current_time += time * m_anim_speed;
 
-			float animationLength = p_animation->totalLength();	//długość animacji to czas równy
-																//całkowitej sumie czasów trwania wszystkich
-																//jej klatek animacji - suma poszczególnych czasów każdej klatki
+			//długość animacji to czas równy
+			//całkowitej sumie czasów trwania wszystkich
+			//jej klatek animacji - suma poszczególnych czasów każdej klatki
+			float animationLength = p_animation->totalLength();	
 
-			if (m_is_looped)									//jeśli animacja pracuje w trybie zapętlenia (loop)
+			if (m_is_looped) //jeśli animacja pracuje w trybie zapętlenia (loop)
 			{
-				if (animationLength > 0.0f)						//jeśli czas trwania animacji jest dodatni
+				if (animationLength > 0.0f) //jeśli czas trwania animacji jest dodatni
 				{
 					//jeśli skumulowany czas jest większy niż całkowity czas trwania animacji
 					//wchodzimy w pętlę...
-					while (m_current_time > animationLength)	//dopóki upływający czas jest większy
-																//od czasu długości trwania całej animacji
-						m_current_time -= animationLength;		//zmniejszam czas trwania animacji
-																//rekumulacja...
+
+					//dopóki upływający czas jest większy
+					//od czasu długości trwania całej animacji
+					//zmniejszam czas trwania animacji
+					while (m_current_time > animationLength)
+						m_current_time -= animationLength;		
+						//rekumulacja...
 				}
-				else											//w przeciwnym wypadku, zerujemy upływający czas												
+				else //w przeciwnym wypadku, zerujemy upływający czas												
 					m_current_time = 0.0f;
 			}
-			else												//animacja pracuje w trybie bez zapętlenia
+			else //animacja pracuje w trybie bez zapętlenia
 			{
-				if (m_current_time > animationLength)			//jeśli czas, który upłynął jest większy
-																//od czasu trwania animacji - to czas, który upłynął
-					m_current_time = animationLength;			//jest równy czasowi trwania animacji (reset)
+				//jeśli czas, który upłynął jest większy
+				//od czasu trwania animacji - to czas, który upłynął
+				if (m_current_time > animationLength)
+					m_current_time = animationLength;//jest równy czasowi trwania animacji (reset)
 			}
 		}
 		
 		//Metoda zwraca stałą referencję na kolejną (następną) klatkę animacji
 		const AnimationFrame& AnimationState::getCurrentFrame()
 		{
-			if (p_animation->m_frames.empty())								//jeśli w kontenerze nie ma klatek animacji
-					return gNullFrame;										//zwracamy pustą animację
+			if (p_animation->m_frames.empty()) //jeśli w kontenerze nie ma klatek animacji
+					return gNullFrame; //zwracamy pustą animację
 
-			size_t candidate = 0;											//kolejna klatka animacji do odtwarzania
-			for (size_t i = p_animation->m_frames.size()-1; i>0; i--)		//przeszukujemy kontener z klatkami animacji
+			size_t candidate = 0; //kolejna klatka animacji do odtwarzania
+			for (size_t i = p_animation->m_frames.size()-1; i>0; i--) //przeszukujemy kontener z klatkami animacji
 			{
+				//jeśli czas  odtwarzania klatki z kontenera
+				//jest mniejszy niż bieżący czas
+				//(skończył się czas jej ekspozycji)
 				if (p_animation->m_frames[i-1].getFrameTime() < m_current_time)
-																			//jeśli czas  odtwarzania klatki z kontenera
-																			//jest mniejszy niż bieżący czas
-																			//(skończył się czas jej ekspozycji)
 				{
-					candidate = i;											//to następną klatką do ekspozycji
-					break;													//jest kolejna klatka - przerywamy iterowanie
+					candidate = i; //to następną klatką do ekspozycji
+					break; //jest kolejna klatka - przerywamy iterowanie
 				}
 			}
 			m_frame_number = candidate;
