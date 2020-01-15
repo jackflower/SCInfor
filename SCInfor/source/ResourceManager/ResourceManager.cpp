@@ -299,24 +299,24 @@ namespace resource
 	//Metoda usuwa zasób na podstawie nazwy std::string
 	void ResourceManager::dropResource(const std::string & name)
 	{
-		ResourceHandle handle = stringutils::GetStringHash(name);	//zamieniamy nazwę zasobu na uchwyt
-		if(m_resources.count(handle) > 0)							//jeśli w kontenerze są obiekty
+		ResourceHandle handle = stringutils::GetStringHash(name); //zamieniamy nazwę zasobu na uchwyt
+		if(m_resources.count(handle) > 0) //jeśli w kontenerze są obiekty
 		{
-			if(m_resources[handle] != nullptr)							//jeśli pod wskazanym uchwytem są dane
-				m_resources[handle]->drop();						//niszczymy je (to co jest pod iteratorem)
-			m_resources.erase(handle);								//i usuwamy z kontenera ten wspis
+			if(m_resources[handle] != nullptr) //jeśli pod wskazanym uchwytem są dane
+				m_resources[handle]->drop(); //niszczymy je (to co jest pod iteratorem)
+			m_resources.erase(handle); //i usuwamy z kontenera ten wspis
 		}
 	}
 
 	//Metoda usuwa wszystkie zasoby
 	void ResourceManager::clear()
 	{
-		while(m_resources.size())						//dopóki w kontenerze są obiekty przeszukujemy kontener
+		while(m_resources.size()) //dopóki w kontenerze są obiekty przeszukujemy kontener
 		{
-			if(m_resources.begin()->second)				//jeśli pod pierwszym elementen są dane
-				m_resources.begin()->second->drop();	//niszczymy je (to co jest pod iteratorem)
-			m_resources.erase(m_resources.begin());		//i usuwamy z kontenera ten wspis
-														//ponownie ustawiając się na pierwszy element kontenera
+			if(m_resources.begin()->second) //jeśli pod pierwszym elementen są dane
+				m_resources.begin()->second->drop(); //niszczymy je (to co jest pod iteratorem)
+			m_resources.erase(m_resources.begin()); //i usuwamy z kontenera ten wspis
+			//ponownie ustawiając się na pierwszy element kontenera
 		}
 		fprintf(stderr, "ResourceManager::Clear()\n");
 	}
@@ -332,13 +332,13 @@ namespace resource
 	//Szablon prywatnej metody zwracającej wskaźnik na zasób na podstawie nazwy std::string
 	template <typename T> T* ResourceManager::getResource(const std::string & name)
 	{
-		ResourceHandle handle = stringutils::GetStringHash(name);	//zamieniamy nazwę na uchwyt
-		if(m_resources.count(handle) > 0)							//jeśli w kontenerze są obiekty
-			return (T*)m_resources[handle];							//zwracamy zasób z kontenera pod tym kluczem
-		else if(loadResource<T>(name))								//w przeciwnym wypadku próbujemy załadować zasób
-			return (T*)m_resources[handle];							//i po załadowaniu zwrócić
-		else														//w przeciwnym wypadku
-			return (T*)nullptr;										//zwracamy wskaźnik na nullptr
+		ResourceHandle handle = stringutils::GetStringHash(name); //zamieniamy nazwę na uchwyt
+		if(m_resources.count(handle) > 0) //jeśli w kontenerze są obiekty
+			return (T*)m_resources[handle]; //zwracamy zasób z kontenera pod tym kluczem
+		else if(loadResource<T>(name)) //w przeciwnym wypadku próbujemy załadować zasób
+			return (T*)m_resources[handle]; //i po załadowaniu zwrócić
+		else //w przeciwnym wypadku
+			return (T*)nullptr; //zwracamy wskaźnik na nullptr
 	}
 
 	//Szablon metody zwracającej zasób na podstawie uchwytu
@@ -353,40 +353,39 @@ namespace resource
 	//Szablon prywatnej metody ładującej zasób
 	template <typename T> ResourceHandle ResourceManager::loadResource(const std::string & name)
 	{
-		ResourceHandle handle = InvalidResourceHandle;	//na wszelki wypadek zerujemy uchwyt
-		handle = stringutils::GetStringHash(name);		//szyfrujemy funkcją haszującą std::string na liczbę
+		ResourceHandle handle = InvalidResourceHandle; //na wszelki wypadek zerujemy uchwyt
+		handle = stringutils::GetStringHash(name); //szyfrujemy funkcją haszującą std::string na liczbę
 
-		Resource* resource = new T();					//Tworzymy nowy obiekt szablonu
-														//ponieważ wskaźniki *Resource
-														//przechowujemy w kontenerze zasobów.
-														//Pamiętaj, że wskaźnikiem na obiekt klasy
-														//bazowej Resource, możemy także pokazywać
-														//na obiekty klas potomnych, czyli
-														//np. ResourceTexture, Sound, Music,Font
-														//i każdy inny zasób. który Resource Manager
-														//może produkować
-														//Ważne:
-														//Klasa taka musi dziedziczyć po klasie Resource,
-														//a ta ma tylko wirtualny interface.
-														//Zatem w klasach potomnych trzeba zaimplemntować
-														//jako osobne metody:
-														// virtual bool load(const std::string &file_name) = 0;
-														// virtual void drop() = 0;
+		Resource* resource = new T(); //Tworzymy nowy obiekt szablonu
+	
+		//ponieważ wskaźniki *Resource
+		//przechowujemy w kontenerze zasobów.
+		//Pamiętaj, że wskaźnikiem na obiekt klasy
+		//bazowej Resource, możemy także pokazywać
+		//na obiekty klas potomnych, czyli
+		//np. ResourceTexture, Sound, Music,Font
+		//i każdy inny zasób, który Resource Manager
+		//może produkować.
+		//Ważne:
+		//Klasa taka musi dziedziczyć po klasie Resource,
+		//a ta ma tylko wirtualny interface.
+		//Zatem w klasach potomnych trzeba je zaimplemntować jako osobne metody:
+		// virtual bool load(const std::string &file_name) = 0;
+		// virtual void drop() = 0;
 
-		if(resource->load(name))						//próbujemy załadować dane
+		if(resource->load(name)) //próbujemy załadować dane
 		{
-			m_resources[handle] = resource;				//jeśli to się powiedzie, wstawiamy do kontenera 
-														//wskaźnik na zasób (value), pod klucz (key)
-														//handle (uchwyt), wygenerowana liczba
-														//za pomocą funkcji hashującej
-			m_loaded_resource_names.push_back(name);	//wstawiamy nazwę do kontenera
-			return handle;								//zwracamy zasób, z którego można korzystać
-			
+			m_resources[handle] = resource; //jeśli to się powiedzie, wstawiamy do kontenera 
+			//wskaźnik na zasób (value), pod klucz (key)
+			//handle (uchwyt), wygenerowana liczba
+			//za pomocą funkcji hashującej
+			m_loaded_resource_names.push_back(name); //wstawiamy nazwę do kontenera
+			return handle; //zwracamy zasób, z którego można korzystać
 		}
-		else											//jeśli załadowanie się nie powiodło
+		else //jeśli załadowanie się nie powiodło
 		{
-			resource->drop();							//niszczymy zasób /patrz ciało metody drop()/
-			return InvalidResourceHandle;				//zwracamy zero...
+			resource->drop(); //niszczymy zasób /patrz ciało metody drop()/
+			return InvalidResourceHandle; //zwracamy zero...
 		}
 	}
 
@@ -406,53 +405,50 @@ namespace resource
 	ResourceHandle ResourceManager::parseHandle(const std::string& name)
 	{
 
-		ResourceHandle handle = InvalidResourceHandle;	//na wszelki wypadek zerujemy uchwyt
-		handle = stringutils::GetStringHash(name);		//szyfrujemy funkcją haszującą std::string na liczbę
+		ResourceHandle handle = InvalidResourceHandle; //na wszelki wypadek zerujemy uchwyt
+		handle = stringutils::GetStringHash(name); //szyfrujemy funkcją haszującą std::string na liczbę
 
-		if(m_resources.count(handle) != 0)				//jeśli w kontenerze już jest taki zasób (wzorzec)
-			return handle;								//nie ma potrzeby go tworzyć - zwracamy go
+		if(m_resources.count(handle) != 0) //jeśli w kontenerze już jest taki zasób (wzorzec)
+			return handle; //nie ma potrzeby go tworzyć - zwracamy go
 
-		Xml xml(name, "root" );						//tworzymy obiekt xml i otwieramy plik z damymi
+		Xml xml(name, "root" ); //tworzymy obiekt xml i otwieramy plik z damymi
 		
-		//Z pliku xml wzorca (factory, template) odczytujemy z węzła type
-		//rodzaj wzorca, jaki mamy utworzyć, a następnie umieszczamy
-		//go w kontenerze wzorców.
+		//Z pliku xml wzorca (factory, template) odczytujemy z węzła <...type..>
+		//rodzaj wzorca, jaki mamy utworzyć, a następnie umieszczamy go w kontenerze wzorców.
 		//Na podstawie zarejestrowanych wzroców można tworzyć obiekty,
 		//które te wzrorce potrafią generować.
 
 		//Fabryki tworzą ze wzorców obiekty poniższych klas:
 		//
-		//		- PhysicalTemplate						->tworzy->	Physical
-		//		- ActorTemplate						->tworzy->	Actor
-		//		- CRoborTemplate						->tworzy->	Robot
-		//		- EnemyTemplate						->tworzy->	Enemy
-		//		- PlayerTemplate						->tworzy->	Player
-		//		- BulletTemplate						->tworzy->	Bullet
-		//		- MonsterTemplate						->tworzy->	Monster
-		//		- FuelTankTemplate						->tworzy->	FuelTank
-		//		- EnergyTankTemplate					->tworzy->	EnergyTank
-		//		- FuelBarTemplate						->tworzy->	FuelBar
-		//		- EnergyTemplate						->tworzy->	Energy
-		//		- BatteryTemplate						->tworzy->	Battery
-		//		- SolarBatteryTemplate					->tworzy->	SolarBattery
-		//		- AirconditioningTemplate				->tworzy->	Airconditioning
-		//		- ThermalInsulationTemplate			->tworzy->	ThermalInsulation
-		//		- VentilatorTemplate					->tworzy->	Ventilator
-		//		- WindTurbineTemplate					->tworzy->	WindTurbine
-		//		- SolarCellTemplate					->tworzy->	SolarCell
-		//		- WindPowerStationTemplate				->tworzy->	WindPowerStation
-		//		- WindPowerStationMultipledTemplate	->tworzy->	WindPowerStationMultipled
-		//		- GroundWorkTemplate					->tworzy->	GroundWork
-
-		//		- GroundTemplate						->tworzy->	Ground
-
-		//		- MapPhysicalTemplate					->tworzy->	MapPhysical
-		//		- InformationTemplate					->tworzy->	Information
-		//		- PowerRelayStationTemplate			->tworzy->	PowerRelayStation
-		//		- CommunicationTemplate				->tworzy->	Communication
-		//		- SlotsRateTemplate					->tworzy->	SlotsRate
-		//		- AmmoTemplate							->tworzy->	Ammo
-		//		- GunTemplate							->tworzy->	Gun
+		// - PhysicalTemplate ->tworzy->	Physical
+		// - ActorTemplate ->tworzy->	Actor
+		// - CRoborTemplate                    ->tworzy->	Robot
+		// - EnemyTemplate                     ->tworzy->	Enemy
+		// - PlayerTemplate                    ->tworzy->	Player
+		// - BulletTemplate                    ->tworzy->	Bullet
+		// - MonsterTemplate                   ->tworzy->	Monster
+		// - FuelTankTemplate                  ->tworzy->	FuelTank
+		// - EnergyTankTemplate                ->tworzy->	EnergyTank
+		// - FuelBarTemplate                   ->tworzy->	FuelBar
+		// - EnergyTemplate                    ->tworzy->	Energy
+		// - BatteryTemplate                   ->tworzy->	Battery
+		// - SolarBatteryTemplate              ->tworzy->	SolarBattery
+		// - AirconditioningTemplate           ->tworzy->	Airconditioning
+		// - ThermalInsulationTemplate         ->tworzy->	ThermalInsulation
+		// - VentilatorTemplate                ->tworzy->	Ventilator
+		// - WindTurbineTemplate               ->tworzy->	WindTurbine
+		// - SolarCellTemplate                 ->tworzy->	SolarCell
+		// - WindPowerStationTemplate          ->tworzy->	WindPowerStation
+		// - WindPowerStationMultipledTemplate ->tworzy->	WindPowerStationMultipled
+		// - GroundWorkTemplate					->tworzy->	GroundWork
+		// - GroundTemplate						->tworzy->	Ground
+		// - MapPhysicalTemplate                ->tworzy->	MapPhysical
+		// - InformationTemplate                ->tworzy->	Information
+		// - PowerRelayStationTemplate          ->tworzy->	PowerRelayStation
+		// - CommunicationTemplate              ->tworzy->	Communication
+		// - SlotsRateTemplate                  ->tworzy->	SlotsRate
+		// - AmmoTemplate                       ->tworzy->	Ammo
+		// - GunTemplate                        ->tworzy->	Gun
 
 		//Poza tym możemy załadować do pamięci, czyli do naszego ResourceManager
 		//wzorce na obiekty całego levelu.
@@ -534,21 +530,21 @@ namespace resource
 		else
 			return InvalidResourceHandle;
 
-		if(resource->load(name))						//próbujemy załadować dane
+		if(resource->load(name)) //próbujemy załadować dane
 		{
-			m_resources[handle] = resource;				//jeśli to się powiedzie, wstawiamy do kontenera 
-														//wskaźnik na zasób w zależności
-														//od typu odczytanego z pliku xml
+			m_resources[handle] = resource; //jeśli to się powiedzie, wstawiamy do kontenera 
+            //wskaźnik na zasób w zależności
+			//od typu odczytanego z pliku xml
 			
-			m_loaded_resource_names.push_back(name);	//wstawiamy nazwę do kontenera
-			return handle;								//zwracamy zasób, z którego można korzystać
+			m_loaded_resource_names.push_back(name); //wstawiamy nazwę do kontenera
+			return handle; //zwracamy zasób, z którego można korzystać
 		}
-		else											//jeśli załadowanie się nie powiodło
+		else //jeśli załadowanie się nie powiodło
 		{
 			fprintf(stderr,"ERROR: Resource %s not found\n", name.c_str());
-			m_errors_occured++;							//księgujemy ilość błędów
-			resource->drop();							//niszczymy zasób /patrz ciało metody drop()/
-			return InvalidResourceHandle;				//zwracamy zero...
+			m_errors_occured++; //księgujemy ilość błędów
+			resource->drop(); //niszczymy zasób /patrz ciało metody drop()/
+			return InvalidResourceHandle; //zwracamy zero...
 		}
 	}
 }//namespace resource
