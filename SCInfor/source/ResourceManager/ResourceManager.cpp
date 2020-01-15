@@ -440,15 +440,15 @@ namespace resource
 		// - SolarCellTemplate                 ->tworzy->	SolarCell
 		// - WindPowerStationTemplate          ->tworzy->	WindPowerStation
 		// - WindPowerStationMultipledTemplate ->tworzy->	WindPowerStationMultipled
-		// - GroundWorkTemplate					->tworzy->	GroundWork
-		// - GroundTemplate						->tworzy->	Ground
-		// - MapPhysicalTemplate                ->tworzy->	MapPhysical
-		// - InformationTemplate                ->tworzy->	Information
-		// - PowerRelayStationTemplate          ->tworzy->	PowerRelayStation
-		// - CommunicationTemplate              ->tworzy->	Communication
-		// - SlotsRateTemplate                  ->tworzy->	SlotsRate
-		// - AmmoTemplate                       ->tworzy->	Ammo
-		// - GunTemplate                        ->tworzy->	Gun
+		// - GroundWorkTemplate                ->tworzy->	GroundWork
+		// - GroundTemplate                    ->tworzy->	Ground
+		// - MapPhysicalTemplate               ->tworzy->	MapPhysical
+		// - InformationTemplate               ->tworzy->	Information
+		// - PowerRelayStationTemplate         ->tworzy->	PowerRelayStation
+		// - CommunicationTemplate             ->tworzy->	Communication
+		// - SlotsRateTemplate                 ->tworzy->	SlotsRate
+		// - AmmoTemplate                      ->tworzy->	Ammo
+		// - GunTemplate                       ->tworzy->	Gun
 
 		//Poza tym możemy załadować do pamięci, czyli do naszego ResourceManager
 		//wzorce na obiekty całego levelu.
