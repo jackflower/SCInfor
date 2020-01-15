@@ -420,8 +420,8 @@ namespace resource
 
 		//Fabryki tworzą ze wzorców obiekty poniższych klas:
 		//
-		// - PhysicalTemplate ->tworzy->	Physical
-		// - ActorTemplate ->tworzy->	Actor
+		// - PhysicalTemplate                  ->tworzy->	Physical
+		// - ActorTemplate                     ->tworzy->	Actor
 		// - CRoborTemplate                    ->tworzy->	Robot
 		// - EnemyTemplate                     ->tworzy->	Enemy
 		// - PlayerTemplate                    ->tworzy->	Player
