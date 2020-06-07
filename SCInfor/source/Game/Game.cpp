@@ -86,9 +86,6 @@ float timeToGo = 1.f;
 
 template<> Game* CSingleton<Game>::m_singleton = 0;
 
-displayable::Displayable my_sprite;
-resource::ResourceTexture my_texture;
-
 namespace game
 {
 	//Konstruktor domyślny
@@ -105,13 +102,6 @@ namespace game
 		std::cout << "Game::Game()" << std::endl;
 		gGameProperties.load("../data/xml_data/gameconfiguration/game-config.xml");
 		gGameProperties.updateWindow();
-
-		//2020-06-04 (czwartek) zatrzymuję projekt do czasu nowego komputera...
-		
-		my_texture.loadFromFile("../data/proxima.png");
-		my_sprite.setTexture(&my_texture, true);
-		my_sprite.setPosition(300, 300);
-		int warta = 0;
 	}
 
 	//Destruktor
@@ -183,11 +173,10 @@ namespace game
 		//m_fps_text.setString(L"ęęźźÓÓĄŻłń");
 		m_render_window->setView(m_render_window->getDefaultView());
 		m_render_window->draw(m_fps_text);
-		my_sprite.draw(m_render_window);
 		
 		//2014-11-04
 		//to należy napisać lepiej, jak będzie czas...
-		//najprawdopodobniej, zamiast czysczenia ekranu
+		//najprawdopodobniej, zamiast czyszczenia ekranu
 		//będzie wyświetlany ekran startowy gry...
 		//mini wait...(wymaga dopracowania)
 		//zmienne gdzieś opakować...
