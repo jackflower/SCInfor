@@ -383,5 +383,6 @@ namespace factory
 				}
 			}
 		}
+		int warta = 0;
 	}
 }//namespace factory

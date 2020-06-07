@@ -130,6 +130,20 @@ namespace factory
 		//pola konfiguracyjne - potrzebne przy podejmowaniu decyzji - wygląd obiektu
 		if (xml_node<> *node = xml.getChild(xml.getRootNode(), "physical_config"))
 		{
+			// Note of June 7, 2020
+			// klasa Xml:
+			// Metoda:
+			// xml::bool getBool(xml_node<> *parent, const std::string & attrib_name = "", bool default_value = false);
+			// nieporawnie zwracała watość
+			//
+			// Problem w metodzie szablonowej:
+			// File::StringUtils.h
+			// File::StringUtils.cpp
+			// stringutils::inline bool FromString(const std::string& str, T& value)
+			// zasjakujacy polatach, trudny do namierzenia przypadek
+			// biblioteka xml - lata robią swoje
+			// funkcja - zbyt "daleko" od standardu
+			//
 			m_templ_use_displayable_body = xml.getBool(node, "use_displayable_body");
 			m_templ_use_shadow_body = xml.getBool(node, "use_shadow_body");
 			m_templ_use_displayable_head = xml.getBool(node, "use_displayable_head");

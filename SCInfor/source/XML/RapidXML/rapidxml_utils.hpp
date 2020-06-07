@@ -37,7 +37,9 @@ namespace rapidxml
             
             // Determine stream size
             stream.seekg(0, ios::end);
-            size_t size = stream.tellg();
+            size_t size = (size_t)stream.tellg();
+			//oryginalny zapis w rapidxml...
+			//size_t size = stream.tellg();
             stream.seekg(0);   
             
             // load data and add terminating 0

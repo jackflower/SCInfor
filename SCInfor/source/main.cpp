@@ -8,6 +8,9 @@ using namespace game;
 
 int main()
 {
+	// S E C R E T - 2020-06-07
+	// Klasa Xml....
+	//tutaj panuje pluskwa tysi¹clecia...
 	//k o n i e c z n e !
 	CSingletonCleaner cleaner;
 	gGame.run();

@@ -1776,12 +1776,4 @@
       <Filter>source\Logic\ArtificialIntelligence</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="notes\notes.txt">
-      <Filter>notes</Filter>
-    </Text>
-    <Text Include="notes\random_engine.txt">
-      <Filter>notes</Filter>
-    </Text>
-  </ItemGroup>
 </Project>

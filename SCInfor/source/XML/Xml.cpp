@@ -88,7 +88,8 @@ namespace xml
 				if (real_parent->first_node())
 				{
 					attr_value = real_parent->first_node()->value();
-					FromString(attr_value, out);
+					// 2020-06-07 - zaskakujący po latach przypadek...blokuję...
+					//FromString(attr_value, out);
 				}
 			}
 			else
@@ -96,7 +97,8 @@ namespace xml
 				{
 					attr_value = attr->value();
 					out = (attr_value == "true");
-					FromString(attr_value, out);
+					// 2020-06-07 - zaskakujący po latach przypadek...blokuję...
+					//FromString(attr_value, out);
 				}
 		}
 		return out;
