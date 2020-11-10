@@ -419,11 +419,12 @@ namespace logic
 	void Actor::update(float dt)
 	{
 		//aktualizacja klasy bazowej
-		Physical::update(dt);		
+		Physical::update(dt);
 
 		//aktualizacja animacji
 		updateAnimations(dt);
 
+		//aktualizacja komponentów obiektu
 		Actor::updateComponents(dt);
 	}
 
@@ -513,10 +514,10 @@ namespace logic
 	void Actor::updateTemperature(float dt)
 	{
 		//obiekt posiada moduł klimatyzatora
-		if(m_airconditiong_data.getAirconditioning())
+		if (m_airconditiong_data.getAirconditioning())
 		{
 			//jeśli urządzenie jest włączone
-			if(m_airconditiong_data.getAirconditioning()->getUnitController().getState())
+			if (m_airconditiong_data.getAirconditioning()->getUnitController().getState())
 				//temperatura modułu klimatyzatora
 				m_technical_data.setTemperature(m_airconditiong_data.getAirconditioning()->getTemperature());
 			else
@@ -524,14 +525,15 @@ namespace logic
 				m_technical_data.setTemperature(gWeather.getTemperature());
 		}
 		//obiekt nie posiada modułu klimatyzatora
-		else				
+		else
 			//temperatura otoczenia
 			m_technical_data.setTemperature(gWeather.getTemperature());
-		
+
 		//obiekt posiada moduł wentylatora (poprawka temperatury - wentylator)
 		//przy temperaturze dodatniej schładza, przy ujemnej nagrzewa
-		if(m_ventilator_data.getVentilator())
+		if (m_ventilator_data.getVentilator())
 			m_technical_data.setTemperature(m_technical_data.getTemperature() - m_ventilator_data.getVentilator()->getPerformanceFactor());
+
 	}
 
 	//metoda ustawia zestaw animacji - body
