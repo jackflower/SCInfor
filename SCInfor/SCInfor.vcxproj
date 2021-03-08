@@ -330,7 +330,7 @@
     <ClCompile Include="source\Utilities\Miscellaneous\Integer.cpp" />
     <ClCompile Include="source\Utilities\Miscellaneous\Miscellaneous.cpp" />
     <ClCompile Include="source\Utilities\Random\CRandom.cpp" />
-    <ClCompile Include="source\Utilities\Singleton\CSingletonCleaner.cpp" />
+    <ClCompile Include="source\Utilities\Singleton\SingletonCleaner.cpp" />
     <ClCompile Include="source\Utilities\StringUtils\StringUtils.cpp" />
     <ClCompile Include="source\Utilities\TimeUtilities\CClock.cpp" />
     <ClCompile Include="source\Utilities\TimeUtilities\CFPS.cpp" />
@@ -577,8 +577,8 @@
     <ClInclude Include="source\Utilities\Miscellaneous\Integer.h" />
     <ClInclude Include="source\Utilities\Miscellaneous\Miscellaneous.h" />
     <ClInclude Include="source\Utilities\Random\CRandom.h" />
-    <ClInclude Include="source\Utilities\Singleton\CSingleton.h" />
-    <ClInclude Include="source\Utilities\Singleton\CSingletonCleaner.h" />
+    <ClInclude Include="source\Utilities\Singleton\Singleton.h" />
+    <ClInclude Include="source\Utilities\Singleton\SingletonCleaner.h" />
     <ClInclude Include="source\Utilities\Singleton\ICleanupable.h" />
     <ClInclude Include="source\Utilities\StringUtils\StringUtils.h" />
     <ClInclude Include="source\Utilities\TimeUtilities\CClock.h" />

@@ -25,7 +25,7 @@
 
 //template<> mapengine::MapManager* CSingleton<mapengine::MapManager>::m_Singleton = 0;
 using namespace mapengine;
-template<> mapengine::MapManager* CSingleton<mapengine::MapManager>::m_singleton = 0;
+template<> mapengine::MapManager* Singleton<mapengine::MapManager>::m_singleton = 0;
 
 using namespace resource;
 using namespace game;

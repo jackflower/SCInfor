@@ -11,7 +11,7 @@
 #include "../Displayable/HudStaticText.h"
 #include "../../Game/Game.h"
 
-template<> DrawableManager* CSingleton<DrawableManager>::m_singleton = 0;
+template<> DrawableManager* Singleton<DrawableManager>::m_singleton = 0;
 
 using namespace game;
 

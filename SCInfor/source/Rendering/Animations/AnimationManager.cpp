@@ -13,7 +13,7 @@
 using namespace rendering::animation;
 using namespace game;
 
-template<> AnimationManager* CSingleton<AnimationManager>::m_singleton = 0;
+template<> AnimationManager* Singleton<AnimationManager>::m_singleton = 0;
 
 namespace rendering
 {

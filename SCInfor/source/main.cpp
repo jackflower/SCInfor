@@ -1,4 +1,4 @@
-#include "Game/Game.h"
+ï»¿#include "Game/Game.h"
 #include <iostream>
 #include "Utilities/Miscellaneous/Integer.h"
 #include "Utilities/Miscellaneous/Float.h"
@@ -8,12 +8,7 @@ using namespace game;
 
 int main()
 {
-	// S E C R E T - 2020-06-07
-	// Klasa Xml....
-	//tutaj panuje pluskwa tysi¹clecia...
-	//k o n i e c z n e !
-	CSingletonCleaner cleaner;
+	SingletonCleaner cleaner;
 	gGame.run();
-
 	return 0;
 }

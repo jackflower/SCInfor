@@ -10,7 +10,7 @@
 #include "../MathFunctions/MathFunctions.h"
 using namespace maths;
 
-template<> CRandom * CSingleton<CRandom>::m_singleton = 0;
+template<> CRandom * Singleton<CRandom>::m_singleton = 0;
 
 //Konstruktor
 CRandom::CRandom()

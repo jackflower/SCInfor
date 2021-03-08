@@ -9,7 +9,7 @@
 #ifndef H_CLOCK_JACK
 #define H_CLOCK_JACK
 
-#include "../Singleton/CSingleton.h"
+#include "../Singleton/Singleton.h"
 #include <SFML/System/Clock.hpp>
 #include <ctime>
 #include <string>
@@ -19,7 +19,7 @@
 ///
 ///Klasa reprezentuj¹ca prosty zegar
 ///
-class CClock : public CSingleton< CClock >
+class CClock : public Singleton< CClock >
 {
 
 public:

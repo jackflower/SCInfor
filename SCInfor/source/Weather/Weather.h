@@ -7,7 +7,7 @@
 #ifndef H_WEATHER_JACK
 #define H_WEATHER_JACK
 
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 #include "../Game/Listener/IFrameListener.h"
 #include <SFML/Graphics/Color.hpp>
 #include "../XML/Xml.h"
@@ -28,7 +28,7 @@ namespace weather
 	///
 	///Klasa reprezentuje menadżera zjawisk pogodowych
 	///
-	class Weather : public CSingleton<Weather>, public IFrameListener
+	class Weather : public Singleton<Weather>, public IFrameListener
 	{
 	public:
 

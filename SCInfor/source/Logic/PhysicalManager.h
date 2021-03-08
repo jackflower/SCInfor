@@ -7,7 +7,7 @@
 #ifndef H_PHYSICAL_MANAGER_JACK
 #define H_PHYSICAL_MANAGER_JACK
 
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 #include "../Game/Listener/IFrameListener.h"
 #include <string>
 #include <map>
@@ -105,7 +105,7 @@ namespace logic
 	///
 	///Klasa reprezentuje fabrykę produkującą obiekty gry i zarządzanie obiektami
 	///
-	class PhysicalManager : public CSingleton<PhysicalManager>, public IFrameListener
+	class PhysicalManager : public Singleton<PhysicalManager>, public IFrameListener
 	{
 	public:
 

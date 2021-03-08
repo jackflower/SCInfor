@@ -7,7 +7,7 @@
 #ifndef H_MAP_PHYSICAL_MANAGER_JACK
 #define H_MAP_PHYSICAL_MANAGER_JACK
 
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 #include "../Game/Listener/IFrameListener.h"
 #include <string>
 #include <map>
@@ -40,7 +40,7 @@ namespace logic
 	///wyświetlane na mapie, jak tekstury, tekstury programowo wygenerowane,
 	///animację, etc...
 	///
-	class MapPhysicalManager : public CSingleton<MapPhysicalManager>, public IFrameListener
+	class MapPhysicalManager : public Singleton<MapPhysicalManager>, public IFrameListener
 	{
 	public:
 

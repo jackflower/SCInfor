@@ -10,7 +10,7 @@
 #include <set>
 #include <SFML/Graphics.hpp>
 #include "GameProperties.h"
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 #include "../Utilities/StringUtils/StringUtils.h"
 #include "../Rendering/Displayable/HudStaticText.h"
 
@@ -32,7 +32,7 @@ namespace game
 	///
 	///Klasa reprezentuje okno gry
 	///
-	class Game : public CSingleton<Game>
+	class Game : public Singleton<Game>
 	{
 	public:
 

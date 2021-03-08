@@ -8,7 +8,7 @@
 
 using namespace charsettools;
 
-template<> CCharSetManager* CSingleton<CCharSetManager>::m_singleton = 0;
+template<> CCharSetManager* Singleton<CCharSetManager>::m_singleton = 0;
 
 namespace charsettools
 {

@@ -9,7 +9,7 @@
 
 #include <map>
 #include <string>
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 #include "Galaxy/Galaxy.h"
 
 using namespace universe::galaxy;
@@ -22,7 +22,7 @@ namespace universe
 	///
 	///Klasa repezentuje root wszechświata - singleton - wszechświat jest jeden
 	///
-	class Universe : public CSingleton<Universe>
+	class Universe : public Singleton<Universe>
 	{
 	public:
 

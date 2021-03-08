@@ -7,7 +7,7 @@
 #include "CPathManager.h"
 
 using namespace fileutils;
-template<> CPathManager* CSingleton<CPathManager>::m_singleton = 0;
+template<> CPathManager* Singleton<CPathManager>::m_singleton = 0;
 
 namespace fileutils
 {

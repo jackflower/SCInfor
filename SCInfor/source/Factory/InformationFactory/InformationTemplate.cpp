@@ -11,7 +11,7 @@
 
 using namespace infologic;
 
-template<> InformationTemplate* CSingleton<InformationTemplate>::m_singleton = 0;
+template<> InformationTemplate* Singleton<InformationTemplate>::m_singleton = 0;
 
 namespace factory
 {

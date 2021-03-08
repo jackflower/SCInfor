@@ -15,7 +15,7 @@ using namespace game;
 
 using namespace infologic;
 
-template<> InfoManager* CSingleton<InfoManager>::m_singleton = 0;
+template<> InfoManager* Singleton<InfoManager>::m_singleton = 0;
 
 namespace infologic
 {

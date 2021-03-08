@@ -1,23 +1,21 @@
-/*
- _____________________________________________________________
-| ICleanupable.h - definicja klasy abstrakcyjnej - interface. |
-| Jack Flower - April 2012.                                   |
-|_____________________________________________________________|
-
-*/
+ï»¿//  _______________________________________________________
+// | ICleanupable.h - abstract class definition - inteface |
+// | Jack Flower - December 2012                           |
+// |_______________________________________________________|
+//
 
 #ifndef H_ICLEANUPABLE_JACK
 #define H_ICLEANUPABLE_JACK
 
 ///
-///Klasa abstrakcyjna reprezentuje interfejs zarz¹dzaj¹cy obiektami klas typu Singleton
+///Klasa abstrakcyjna reprezentuje interfejs zarzÄ…dzajÄ…cy obiektami klas typu CSingleton
 ///
 class ICleanupable
 {
 	///
 	///Friendship declaration
 	///
-	friend class CSingletonCleaner;
+	friend class SingletonCleaner;
 
 protected:
 

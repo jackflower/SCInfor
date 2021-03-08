@@ -14,7 +14,7 @@
 #ifndef H_RAND_JACK
 #define H_RAND_JACK
 
-#include "../Singleton/CSingleton.h"
+#include "../Singleton/Singleton.h"
 #include <cstdlib>
 
 #define gRandom CRandom::GetSingleton()
@@ -22,7 +22,7 @@
 ///
 ///Klasa reprezentuj¹ca generator liczb pseudolosowych
 ///
-class CRandom : public CSingleton<CRandom>
+class CRandom : public Singleton<CRandom>
 {
 public:
 

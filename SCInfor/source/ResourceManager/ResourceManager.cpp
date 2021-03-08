@@ -49,7 +49,7 @@
 #include "../Map/Map.h"
 #include "../Map/Ground/Ground.h"
 
-template<> resource::ResourceManager* CSingleton<resource::ResourceManager>::m_singleton = 0;
+template<> resource::ResourceManager* Singleton<resource::ResourceManager>::m_singleton = 0;
 unsigned long long ResourceManager::m_resource_enumerator = 0x1000;
 
 namespace resource

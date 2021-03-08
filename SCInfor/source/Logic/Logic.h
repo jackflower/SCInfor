@@ -7,7 +7,7 @@
 #ifndef H_LOGIC_JACK
 #define H_LOGIC_JACK
 
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 #include "../Game/Listener/IFrameListener.h"
 #include "../Game/Listener/IKeyListener.h"
 #include "../Game/Listener/IMouseListener.h"
@@ -21,7 +21,7 @@ namespace logic
 	///
 	///Klasa reprezentuje mechanizm logiki rozgrywki
 	///
-	class Logic : public CSingleton<Logic>, IFrameListener, IKeyListener, IMouseListener
+	class Logic : public Singleton<Logic>, IFrameListener, IKeyListener, IMouseListener
 	{
 	public:
 

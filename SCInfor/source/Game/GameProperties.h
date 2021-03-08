@@ -7,7 +7,7 @@
 #ifndef H_GAME_PROPERTIES_JACK
 #define H_GAME_PROPERTIES_JACK
 
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 #include "../XML/Xml.h"
 
 #define gGameProperties GameProperties::GetSingleton()
@@ -19,7 +19,7 @@ namespace game
 	///
 	///Klasa reprezentuje opcje gry
 	///
-	class GameProperties : public CSingleton<GameProperties>
+	class GameProperties : public Singleton<GameProperties>
 	{
 	public:
 

@@ -8,7 +8,7 @@
 #define H_ANIMATION_MANAGER_JACK
 
 #include "../../Game/Listener/IFrameListener.h"
-#include "../../Utilities/Singleton/CSingleton.h"
+#include "../../Utilities/Singleton/Singleton.h"
 
 #include <string>
 #include <vector>
@@ -40,9 +40,9 @@ namespace rendering
 	namespace animation
 	{
 		///
-		///Klasa reprezentuje menadżera animacji - Singleton
+		///Klasa reprezentuje menadżera animacji - CSingleton
 		///
-		class AnimationManager: public CSingleton<AnimationManager> , IFrameListener
+		class AnimationManager: public Singleton<AnimationManager> , IFrameListener
 		{
 		public:
 

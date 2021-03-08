@@ -14,7 +14,7 @@
 using namespace rendering;
 using namespace game;
 
-template<> MapPhysicalManager *CSingleton<MapPhysicalManager>::m_singleton = 0;
+template<> MapPhysicalManager *Singleton<MapPhysicalManager>::m_singleton = 0;
 
 namespace logic
 {

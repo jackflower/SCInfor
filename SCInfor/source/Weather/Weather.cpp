@@ -12,7 +12,7 @@
 using namespace weather;
 using namespace game;
 
-template<> Weather* CSingleton<Weather>::m_singleton = 0;
+template<> Weather* Singleton<Weather>::m_singleton = 0;
 
 namespace weather
 {

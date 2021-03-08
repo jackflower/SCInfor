@@ -7,7 +7,7 @@
 #ifndef H_INFO_MANAGER_JACK
 #define H_INFO_MANAGER_JACK
 
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 #include "../Game/Listener/IFrameListener.h"
 #include <map>
 
@@ -40,7 +40,7 @@ namespace infologic
 	///które to obiekty prezentują dane za pomocą dostępnych środków
 	///multimedialnych (wykresy, wyświetlanie tekstu, paski stanu, etc...)
 	///
-	class InfoManager : public CSingleton<InfoManager>, public IFrameListener
+	class InfoManager : public Singleton<InfoManager>, public IFrameListener
 	{
 	public:
 

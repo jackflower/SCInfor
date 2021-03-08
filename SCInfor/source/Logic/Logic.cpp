@@ -21,7 +21,7 @@
 using namespace logic;
 using namespace game;
 
-template<> Logic* CSingleton<Logic>::m_singleton = 0;
+template<> Logic* Singleton<Logic>::m_singleton = 0;
 
 namespace logic
 {

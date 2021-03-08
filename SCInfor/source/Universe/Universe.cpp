@@ -10,7 +10,7 @@
 using namespace universe;
 using namespace xml;
 
-template<> Universe* CSingleton<Universe>::m_singleton = 0;
+template<> Universe* Singleton<Universe>::m_singleton = 0;
 
 namespace universe
 {

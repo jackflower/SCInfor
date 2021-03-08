@@ -444,9 +444,6 @@
     <ClCompile Include="source\Utilities\Random\CRandom.cpp">
       <Filter>source\Utilities\Random</Filter>
     </ClCompile>
-    <ClCompile Include="source\Utilities\Singleton\CSingletonCleaner.cpp">
-      <Filter>source\Utilities\Singleton</Filter>
-    </ClCompile>
     <ClCompile Include="source\Utilities\StringUtils\StringUtils.cpp">
       <Filter>source\Utilities\StringUtils</Filter>
     </ClCompile>
@@ -1014,6 +1011,9 @@
     <ClCompile Include="source\Containers\Vector.cpp">
       <Filter>source\Containers</Filter>
     </ClCompile>
+    <ClCompile Include="source\Utilities\Singleton\SingletonCleaner.cpp">
+      <Filter>source\Utilities\Singleton</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Equipment\Energy\EEnergyState.h">
@@ -1177,12 +1177,6 @@
     </ClInclude>
     <ClInclude Include="source\Utilities\Random\CRandom.h">
       <Filter>source\Utilities\Random</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Utilities\Singleton\CSingleton.h">
-      <Filter>source\Utilities\Singleton</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Utilities\Singleton\CSingletonCleaner.h">
-      <Filter>source\Utilities\Singleton</Filter>
     </ClInclude>
     <ClInclude Include="source\Utilities\Singleton\ICleanupable.h">
       <Filter>source\Utilities\Singleton</Filter>
@@ -1774,6 +1768,12 @@
     </ClInclude>
     <ClInclude Include="source\Logic\ArtificialIntelligence\AIScheme.h">
       <Filter>source\Logic\ArtificialIntelligence</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Singleton\SingletonCleaner.h">
+      <Filter>source\Utilities\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utilities\Singleton\Singleton.h">
+      <Filter>source\Utilities\Singleton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

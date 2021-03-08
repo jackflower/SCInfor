@@ -6,7 +6,7 @@
 
 #include "CEntityTranslator.h"
 
-template<> CEntityTranslator* CSingleton<CEntityTranslator>::m_singleton = 0;
+template<> CEntityTranslator* Singleton<CEntityTranslator>::m_singleton = 0;
 
 CEntityTranslator::CEntityTranslator(void)
 :

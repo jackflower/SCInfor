@@ -8,7 +8,7 @@
 #define H_CHAR_SET_MANAGER_JACK
 
 #include "CCharsetTranslator.h"
-#include "../../Utilities/Singleton/CSingleton.h"
+#include "../../Utilities/Singleton/Singleton.h"
 #include "../../XML/Xml.h"
 #include <vector>
 
@@ -21,7 +21,7 @@ namespace charsettools
 	///
 	///Klasa reprezentuje mechanizm transmisji i wyœwietlania dodatkowych znaków spoza ANSII
 	///
-	class CCharSetManager : public CSingleton<CCharSetManager>
+	class CCharSetManager : public Singleton<CCharSetManager>
 	{
 	public:
 

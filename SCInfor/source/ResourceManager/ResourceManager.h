@@ -7,7 +7,7 @@
 #ifndef H_RESOURCE_MANAGER_JACK
 #define H_RESOURCE_MANAGER_JACK
 
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 #include "Resource.h"
 #include <map>
 #include <string>
@@ -95,7 +95,7 @@ namespace resource
 	///
 	///Klasa reprezentuje menagera zasobów
 	///
-	class ResourceManager : public CSingleton<ResourceManager>
+	class ResourceManager : public Singleton<ResourceManager>
 	{
 	public:
 

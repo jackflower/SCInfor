@@ -9,7 +9,7 @@
 
 #include <map>
 #include <string>
-#include "../../Singleton/CSingleton.h"
+#include "../../Singleton/Singleton.h"
 
 #define gPathManager fileutils::CPathManager::GetSingleton()
 
@@ -35,7 +35,7 @@ namespace fileutils
 	///
 	///Klasa reprezentuje organizacjê œcie¿ek do plików
 	///
-	class CPathManager : public CSingleton<CPathManager>
+	class CPathManager : public Singleton<CPathManager>
 	{
 	public:
 	

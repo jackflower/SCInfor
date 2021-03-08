@@ -84,7 +84,7 @@ bool go = false;
 float timeToGo = 1.f;
 //p a u s e
 
-template<> Game* CSingleton<Game>::m_singleton = 0;
+template<> Game* Singleton<Game>::m_singleton = 0;
 
 namespace game
 {

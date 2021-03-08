@@ -43,7 +43,7 @@
 
 using namespace game;
 
-template<> PhysicalManager* CSingleton<PhysicalManager>::m_singleton = 0;
+template<> PhysicalManager* Singleton<PhysicalManager>::m_singleton = 0;
 
 namespace logic
 {

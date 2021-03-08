@@ -10,7 +10,7 @@
 
 using namespace game;
 
-template<> GameProperties* CSingleton<GameProperties>::m_singleton = 0;
+template<> GameProperties* Singleton<GameProperties>::m_singleton = 0;
 
 namespace game
 {

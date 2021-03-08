@@ -8,7 +8,7 @@
 
 #include "CClock.h"
 
-template<> CClock * CSingleton<CClock>::m_singleton = 0;
+template<> CClock * Singleton<CClock>::m_singleton = 0;
 
 //Konstruktor
 CClock::CClock()

@@ -9,7 +9,7 @@
 
 #include <map>
 #include <string>
-#include "../../Utilities/Singleton/CSingleton.h"
+#include "../../Utilities/Singleton/Singleton.h"
 #include "../../Equipment/Weapon/ECaliber.h"
 
 #define gEntityTranslator CEntityTranslator::GetSingleton()
@@ -19,7 +19,7 @@ using namespace equipment::weapon;
 ///
 ///Klasa reprezentuje translator std::string => Entity (np. typ wyliczeniowy)
 ///
-class CEntityTranslator : public CSingleton<CEntityTranslator>
+class CEntityTranslator : public Singleton<CEntityTranslator>
 {
 
 public:

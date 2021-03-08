@@ -9,7 +9,7 @@
 
 #include <vector>
 #include "../../Game/Listener/IFrameListener.h"
-#include "../../Utilities/Singleton/CSingleton.h"
+#include "../../Utilities/Singleton/Singleton.h"
 #include "Layers.h"
 
 ///
@@ -58,7 +58,7 @@ namespace rendering
 		///
 		///Klasa reprezentuje kontener wraz z funkcjonalnością na obiekty rysowalne
 		///
-		class DrawableManager: public CSingleton<DrawableManager>, IFrameListener
+		class DrawableManager: public Singleton<DrawableManager>, IFrameListener
 		{
 
 		public:

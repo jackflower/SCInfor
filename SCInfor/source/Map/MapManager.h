@@ -9,7 +9,7 @@
 
 #include "Map.h"
 #include "../Game/Listener/IFrameListener.h"
-#include "../Utilities/Singleton/CSingleton.h"
+#include "../Utilities/Singleton/Singleton.h"
 //#include "SceneManager/CQuadTreeSceneManager.h"
 #include "CollisionMap.h"
 #include <string>
@@ -31,7 +31,7 @@ namespace mapengine
 	///
 	///Klasa reprezentuje mechanizm tworzenia i zarządzania mapami świata
 	///
-	class MapManager : public CSingleton<MapManager>, IFrameListener
+	class MapManager : public Singleton<MapManager>, IFrameListener
 	{
 	
 	public:
