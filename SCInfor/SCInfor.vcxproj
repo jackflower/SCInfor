@@ -308,6 +308,7 @@
     <ClCompile Include="source\ResourceManager\ResourceTexture.cpp" />
     <ClCompile Include="source\ResourceManager\Resource.cpp" />
     <ClCompile Include="source\RTTI\RTTI.cpp" />
+    <ClCompile Include="source\SCILibrary\SCILibrary.cpp" />
     <ClCompile Include="source\Universe\Universe.cpp" />
     <ClCompile Include="source\Universe\Galaxy\Galaxy.cpp" />
     <ClCompile Include="source\Universe\Galaxy\Star\Star.cpp" />
@@ -552,6 +553,7 @@
     <ClInclude Include="source\ResourceManager\ResourceTexture.h" />
     <ClInclude Include="source\ResourceManager\Resource.h" />
     <ClInclude Include="source\RTTI\RTTI.h" />
+    <ClInclude Include="source\SCILibrary\SCILibrary.h" />
     <ClInclude Include="source\Universe\Universe.h" />
     <ClInclude Include="source\Universe\Galaxy\Galaxy.h" />
     <ClInclude Include="source\Universe\Galaxy\Star\Star.h" />
