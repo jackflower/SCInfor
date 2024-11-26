@@ -391,6 +391,12 @@
     <Filter Include="source\SCILibrary">
       <UniqueIdentifier>{602cbff1-1f85-49de-9896-2e7f53223fc2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\Experience">
+      <UniqueIdentifier>{fbeed756-d608-43bc-94a2-ada6c2c37192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Experience\Tests">
+      <UniqueIdentifier>{625fb5b6-1b0c-4c50-b28c-a01821d01e9b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -1019,6 +1025,9 @@
     </ClCompile>
     <ClCompile Include="source\SCILibrary\SCILibrary.cpp">
       <Filter>source\SCILibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Experience\Tests\Tests.cpp">
+      <Filter>source\Experience\Tests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1783,6 +1792,9 @@
     </ClInclude>
     <ClInclude Include="source\SCILibrary\SCILibrary.h">
       <Filter>source\SCILibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Experience\Tests\Tests.hpp">
+      <Filter>source\Experience\Tests</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
